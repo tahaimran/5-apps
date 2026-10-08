@@ -41,9 +41,6 @@ export const unitIdFor = (placement: string, format: AdFormat): string | null =>
   return unit && unit.format === format ? resolveUnitId(unit) : null;
 };
 
-export const placementsOf = (format: AdFormat): string[] =>
-  Object.keys(adsState.units).filter((p) => adsState.units[p].format === format);
-
 export const guardAllows = (placement: string): boolean => {
   try {
     return adsState.guard ? adsState.guard(placement) : true;

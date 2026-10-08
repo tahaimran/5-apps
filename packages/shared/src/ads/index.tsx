@@ -32,16 +32,29 @@ export { showInterstitial, showRewarded, isRewardedReady } from './fullscreen';
 /** True once any full-screen ad has been shown since launch (e.g. to hold back a review prompt). */
 export const adShownThisSession = (): boolean => adsState.fullScreenShown > 0;
 
-async function startSdk(): Promise<void> {
-  if (adsState.ready || !getCanRequestAds() || !adsState.policy.adsEnabled) return;
-  await MobileAds().setRequestConfiguration({
-    maxAdContentRating: adsState.policy.maxAdContentRating,
-    testDeviceIdentifiers: adsState.policy.testDeviceIds,
-  });
-  await MobileAds().initialize();
-  adsState.ready = true;
-  preloadAll();
-  notifyAds();
+let starting: Promise<void> | null = null;
+
+/**
+ * Initializes the SDK and preloads full-screen ads once consent allows. It can be reached from
+ * `initAds` and from a consent change at the same moment, so concurrent calls share one run.
+ */
+function startSdk(): Promise<void> {
+  if (adsState.ready || !getCanRequestAds() || !adsState.policy.adsEnabled) return Promise.resolve();
+  starting ??= (async () => {
+    try {
+      await MobileAds().setRequestConfiguration({
+        maxAdContentRating: adsState.policy.maxAdContentRating,
+        testDeviceIdentifiers: adsState.policy.testDeviceIds,
+      });
+      await MobileAds().initialize();
+      adsState.ready = true;
+      preloadAll();
+      notifyAds();
+    } finally {
+      starting = null;
+    }
+  })();
+  return starting;
 }
 
 let started = false;

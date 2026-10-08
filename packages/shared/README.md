@@ -62,3 +62,10 @@ Tokens (`colors`, `spacing`, `radius`, `type`, `motion`) plus `ThemeProvider` wi
 - i18n: `registerStrings({ en: require('./i18n/en.json') })` at startup. Shared UI strings are under the `shared.*` keys and can be overridden by the app bundle.
 - `store.exportBackup()` returns a file uri; sharing it is up to the app.
 - Each `sharedStore` key (onboarding, review, theme mode, session count) is in `SharedKeys`.
+
+## Tests
+`cd packages/shared && npm test` (or `npm test` at the repo root to run every workspace). `npm run test:coverage` enforces
+95% statements / 90% branches. The ads rules (first-session grace, every-Nth action, minimum gap, per-session cap,
+guard, rewarded-only-when-earned, consent ordering, single SDK start), consent fallbacks, storage migrations and backup,
+onboarding step logic, review rules, notification scheduling, theme, i18n and cross-promo are all covered with the native
+modules faked (`src/testing/`). Passing here does not replace running on a device.

@@ -4,7 +4,9 @@
   "private": true,
   "description": "Code reused by all 5 apps: consent, ads, storage, onboarding, theme, i18n, review, notify, crosspromo.",
   "scripts": {
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
   "peerDependencies": {
     "expo": "*",

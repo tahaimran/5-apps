@@ -137,9 +137,12 @@ export async function showInterstitial(placement: string): Promise<boolean> {
   const ad = slot.ad;
   slot.ad = null;
   slot.loaded = false;
-  adsState.interstitialsShown++;
-  adsState.lastInterstitialAt = Date.now();
   const shown = await present(ad);
+  // Only an ad that really appeared counts toward the caps; the gap is measured from when it closed.
+  if (shown) {
+    adsState.interstitialsShown++;
+    adsState.lastInterstitialAt = Date.now();
+  }
   loadInterstitial(placement);
   return shown;
 }
