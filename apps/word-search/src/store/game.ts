@@ -1,13 +1,16 @@
 import { create } from 'zustand';
 import { applySelection, startGame, type SelectionOutcome } from '@/domain/game';
+import { applyHint, type HintOutcome } from '@/domain/hints';
 import { parsePuzzleId } from '@/domain/puzzles';
 import { starsFor } from '@/domain/scoring';
 import type { Cell } from '@/domain/selection';
 import type { CompletedResult, Puzzle, SavedGame } from '@/domain/types';
+import { useDaily } from './daily';
 import { useProgress } from './progress';
 import { useResult } from './result';
 import { useStats } from './stats';
 import { db } from './storage';
+import { currentDateKey } from './today';
 
 interface GameState {
   /** The puzzle in progress (`ws.current`), autosaved after every found word and when the app leaves the foreground. */
@@ -19,6 +22,10 @@ interface GameState {
   /** Starts a new puzzle, replacing whatever was in progress. */
   begin: (puzzle: Puzzle) => SavedGame;
   select: (cells: Cell[]) => SelectionOutcome | null;
+  /** Uses a hint on the puzzle (shortest unfound word) and saves; null when every word is found. Spending from the wallet is the caller's job. */
+  hint: () => HintOutcome | null;
+  /** Starts the same puzzle over: no words found, no hints counted. */
+  restart: () => void;
   /** Adds the time since the puzzle was last active and saves (app to background, leaving the screen). */
   pause: () => void;
   /** Finishes the puzzle: records stars, progress and stats, clears the save, and returns what the Complete screen shows. */
@@ -54,6 +61,23 @@ export const useGame = create<GameState>((set, get) => ({
     }
     return out;
   },
+  hint: () => {
+    const game = get().current;
+    const out = game ? applyHint(game) : null;
+    if (!out) return null;
+    save(out.game);
+    set({ current: out.game });
+    return out;
+  },
+  restart: () => {
+    const game = get().current;
+    if (!game) return;
+    const fresh: SavedGame = {
+      ...startGame({ ...game.puzzle, words: game.puzzle.words.map(({ found, colorIdx, ...w }) => { void found; void colorIdx; return { ...w, found: false }; }) }, Date.now()),
+    };
+    save(fresh);
+    set({ current: fresh, activeSince: Date.now() });
+  },
   pause: () => {
     const { current, activeSince } = get();
     if (!current || activeSince === null) return;
@@ -71,6 +95,14 @@ export const useGame = create<GameState>((set, get) => ({
       useProgress.getState().record(parsed.packId, parsed.difficulty, parsed.level, stars);
     }
     useStats.getState().recordPuzzle(game);
+    let streak: number | undefined;
+    let streakCounted: boolean | undefined;
+    if (parsed?.kind === 'daily' && parsed.dateKey) {
+      // The date is read now: a puzzle finished after midnight is a catch-up day, not today's streak day.
+      const out = useDaily.getState().complete(parsed.dateKey, currentDateKey(), stars);
+      streak = out.state.streak;
+      streakCounted = out.counted;
+    }
     const result: CompletedResult = {
       puzzleId: game.puzzle.id,
       packId: game.puzzle.packId,
@@ -83,6 +115,8 @@ export const useGame = create<GameState>((set, get) => ({
       wordsFound: game.puzzle.words.length,
       elapsedMs: game.elapsedMs,
       hintsUsed: game.hintsUsed,
+      streak,
+      streakCounted,
     };
     useResult.getState().set(result);
     save(null);

@@ -8,7 +8,12 @@
     "settings": "Settings"
   },
   "common": {
-    "comingSoon": "This screen is coming soon."
+    "comingSoon": "This screen is coming soon.",
+    "on": "On",
+    "off": "Off",
+    "close": "Close",
+    "done": "Done",
+    "cancel": "Cancel"
   },
   "home": {
     "title": "Welcome to Word Search",
@@ -20,13 +25,70 @@
     "continue": "Continue",
     "progress": "{found} of {total} words found",
     "packs": "Word packs",
-    "packLabel": "{name}, Level {level}"
+    "packLabel": "{name}, Level {level}",
+    "streak_one": "{count}-day streak",
+    "streak_other": "{count}-day streak",
+    "streakLabel_one": "{count}-day streak",
+    "streakLabel_other": "{count}-day streak",
+    "today": "Today's puzzle",
+    "todayTheme": "{date} · {theme}",
+    "playToday": "Play today's puzzle",
+    "continueToday": "Continue today's puzzle"
   },
   "daily": {
-    "title": "Daily puzzle"
+    "title": "Daily puzzle",
+    "theme": "Today's theme: {theme}",
+    "status": {
+      "notStarted": "Not started",
+      "inProgress": "In progress",
+      "done": "Done ✓"
+    },
+    "play": "Play today's puzzle",
+    "continue": "Continue today's puzzle",
+    "comeBack": "Come back tomorrow for a new puzzle.",
+    "streak": "Streak",
+    "best": "Best streak",
+    "days_one": "{count} day",
+    "days_other": "{count} days",
+    "freezes_one": "{count} streak freeze ready. It covers one missed day.",
+    "freezes_other": "{count} streak freezes ready. Each covers one missed day.",
+    "prevMonth": "Previous month",
+    "nextMonth": "Next month",
+    "dayDone": "{date}, completed",
+    "dayNotDone": "{date}, not completed",
+    "catchUp": "Catch up",
+    "catchUpNote": "Play a day you missed. It earns stars but does not change your streak.",
+    "catchUpLabel": "{date}, catch up",
+    "catchUpAction": "Catch up",
+    "tomorrow": "Tomorrow's theme: {theme}"
   },
   "settings": {
-    "title": "Settings"
+    "title": "Settings",
+    "display": "Display",
+    "selection": "How to select a word",
+    "colors": "Colors",
+    "mode": {
+      "both": "Drag or tap",
+      "bothDetail": "Slide across the letters, or tap the first and last letter.",
+      "tapOnly": "Tap only",
+      "tapOnlyDetail": "Tap the first letter, then the last letter."
+    },
+    "touch": "Sound and touch",
+    "haptics": "Vibration",
+    "game": "Game",
+    "timer": "Show timer",
+    "timerHint": "Shows the time on the puzzle and the finish screen. Stars never depend on time.",
+    "about": "About",
+    "version": "Version {version}",
+    "reset": "Reset progress",
+    "resetHint": "Erases your levels, stars, streak and hints. Your settings stay.",
+    "resetButton": "Reset progress",
+    "resetTitle": "Reset your progress?",
+    "resetBody": "This erases your levels, stars, streak and hints.",
+    "resetContinue": "Continue",
+    "resetSureTitle": "Are you sure?",
+    "resetSureBody": "This cannot be undone.",
+    "resetConfirm": "Erase everything"
   },
   "game": {
     "back": "Back",
@@ -44,7 +106,13 @@
     "allFound": "All words found",
     "foundAnnounce_one": "Found {word}. {count} word left.",
     "foundAnnounce_other": "Found {word}. {count} words left.",
-    "gridLabel": "Letter grid, {size} by {size}"
+    "gridLabel": "Letter grid, {size} by {size}",
+    "hintButton_one": "Hint, {count} left",
+    "hintButton_other": "Hint, {count} left",
+    "menu": "Menu",
+    "timerLabel": "Time {time}",
+    "hintAnnounce": "Hint: a word starts at row {row}, column {col}.",
+    "hintAnnounceEnds": "Hint: a word starts at row {first} and ends at row {last}."
   },
   "difficulty": {
     "easy": "Easy",
@@ -74,12 +142,62 @@
     "time": "Time: {time}",
     "next": "Next puzzle",
     "backToPacks": "Back to packs",
-    "home": "Back to home"
+    "home": "Back to home",
+    "streak_one": "{count}-day streak",
+    "streak_other": "{count}-day streak",
+    "catchUpNote": "Caught up! This one does not change your streak.",
+    "comeBack": "Come back tomorrow for a new puzzle.",
+    "freezeUsed": "A streak freeze covered your missed day.",
+    "freezeEarned": "You earned a streak freeze.",
+    "homeDaily": "Back to home"
   },
   "resume": {
     "title": "Start a new puzzle?",
     "body": "You have a puzzle in progress. Starting a new one will replace it.",
     "keep": "Keep playing",
     "startNew": "Start new"
+  },
+  "hints": {
+    "outTitle": "Out of hints",
+    "offer": "Watch a short video for {count} more hints?",
+    "watch": "Watch video",
+    "noThanks": "No thanks",
+    "loading": "Getting the video ready…",
+    "earned": "You earned {count} more hints.",
+    "noVideo": "No video available right now. You'll get 3 free hints tomorrow.",
+    "noVideoCourtesy": "No video available right now. Here is one hint on us. You'll get 3 free hints tomorrow.",
+    "notEarned": "The video didn't finish, so no hints were added."
+  },
+  "menu": {
+    "textSize": "Letter size",
+    "textSizeNote": "A bigger letter size is used in full on your next puzzle.",
+    "theme": "Colors",
+    "restart": "Restart puzzle",
+    "restartTitle": "Restart this puzzle?",
+    "restartBody": "Your found words will be cleared.",
+    "done": "Done"
+  },
+  "textSize": {
+    "comfortable": "Comfortable",
+    "large": "Large",
+    "xlarge": "Extra Large",
+    "huge": "Huge",
+    "recommended": "Recommended"
+  },
+  "theme": {
+    "system": "Same as my phone",
+    "light": "Light",
+    "dark": "Dark",
+    "high-contrast": "High contrast"
+  },
+  "onboarding": {
+    "level": {
+      "easy": "Relaxed",
+      "easyDetail": "Smaller puzzles. Words go across and down.",
+      "medium": "Classic",
+      "mediumDetail": "Words can also go diagonally.",
+      "hard": "Challenging",
+      "hardDetail": "Bigger puzzles. Words can go in any direction, even backwards."
+    }
   }
 }

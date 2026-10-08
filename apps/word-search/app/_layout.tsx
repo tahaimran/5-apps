@@ -9,6 +9,7 @@ import { AtkinsonHyperlegible_400Regular, AtkinsonHyperlegible_700Bold } from '@
 import { ThemeProvider, useTheme } from '@shared/theme';
 import { useSettings } from '@/store/settings';
 import { useStats } from '@/store/stats';
+import { useDayRollover } from '@/store/today';
 import { fontScaleFor, palette, TOUCH_TARGET } from '@/theme/tokens';
 import { FONT_BOLD, FONT_REGULAR } from '@/ui/AppText';
 import '@/bootstrap';
@@ -17,6 +18,7 @@ void SplashScreen.preventAutoHideAsync().catch(() => undefined);
 
 function Root() {
   const { mode, colors } = useTheme();
+  useDayRollover();
   useEffect(() => useStats.getState().recordSession(), []);
   return (
     <>

@@ -1,10 +1,13 @@
 import { Redirect, router } from 'expo-router';
 import { View } from 'react-native';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
 import { replaceWithPuzzle } from '@/features/play/navigation';
 import { levelPuzzleId } from '@/domain/puzzles';
+import { dailyPackId } from '@/domain/daily';
+import { addDays } from '@/domain/dateKey';
 import { getPack } from '@/domain/packs';
 import type { CompletedResult } from '@/domain/types';
 import { useResult } from '@/store/result';
@@ -43,6 +46,23 @@ export default function Complete() {
           {t('complete.words', { count: result.wordsFound })}
           {result.level !== undefined ? ` · ${t('game.title', { pack, level: result.level })}` : ''}
         </AppText>
+        {result.isDaily && result.streakCounted && result.streak !== undefined && (
+          <View accessible accessibilityLabel={t('complete.streak', { count: result.streak })} style={{ flexDirection: 'row', alignItems: 'center', gap: spacing.sm }}>
+            <MaterialCommunityIcons name="fire" size={40} color={colors.accent} />
+            <AppText style={[type.title, { color: colors.text, fontWeight: '700' }]}>{t('complete.streak', { count: result.streak })}</AppText>
+          </View>
+        )}
+        {result.isDaily && result.streakCounted === false && (
+          <AppText style={[type.body, { color: colors.textMuted, textAlign: 'center' }]}>{t('complete.catchUpNote')}</AppText>
+        )}
+        {result.isDaily && result.streakCounted && (
+          <>
+            <AppText style={[type.bodyLarge, { color: colors.text, textAlign: 'center' }]}>{t('complete.comeBack')}</AppText>
+            <AppText style={[type.body, { color: colors.textMuted, textAlign: 'center' }]}>
+              {t('daily.tomorrow', { theme: getPack(dailyPackId(addDays(result.dateKey ?? '', 1)))?.name ?? '' })}
+            </AppText>
+          </>
+        )}
         {showTimer && <AppText style={[type.body, { color: colors.textMuted }]}>{t('complete.time', { time: formatElapsed(result.elapsedMs) })}</AppText>}
       </View>
       <View style={{ gap: spacing.md, marginTop: spacing.xl * 2 }}>

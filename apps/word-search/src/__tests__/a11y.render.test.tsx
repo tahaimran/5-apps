@@ -20,6 +20,9 @@ import Complete from '../../app/complete/[puzzleId]';
 import PackScreen from '../../app/packs/[packId]';
 import { useGame } from '@/store/game';
 import { useResult } from '@/store/result';
+import { useDaily } from '@/store/daily';
+import { HintSheet } from '@/components/HintSheet';
+import { MenuSheet } from '@/components/MenuSheet';
 import { useProgress } from '@/store/progress';
 import { levelPuzzle } from '@/domain/puzzles';
 import { useSettings } from '@/store/settings';
@@ -34,6 +37,7 @@ beforeEach(() => {
   useProgress.getState().record('animals', 'easy', 1, 3);
   useProgress.getState().record('animals', 'easy', 2, 2);
   useGame.getState().begin(levelPuzzle('birds', 'easy', 1, 8)); // Home shows the Continue card
+  useDaily.getState().complete('2026-10-07', '2026-10-07', 3);
 });
 afterEach(async () => {
   await cleanup();
@@ -46,6 +50,8 @@ const screens: [string, () => ReactElement, boolean][] = [
   ['Settings', () => <SettingsTab />, false],
   ['Tabs', () => <TabsLayout />, false],
   ['Play', () => <Play />, true],
+  ['Hint sheet', () => <HintSheet visible onClose={() => undefined} />, true],
+  ['Play menu', () => <MenuSheet visible onClose={() => undefined} />, true],
   ['Complete', () => <Complete />, true],
   ['Pack levels', () => <PackScreen />, true],
 ];

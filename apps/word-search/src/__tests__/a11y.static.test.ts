@@ -59,6 +59,9 @@ const hiddenFromScreenReader = (n: ts.JsxOpeningLikeElement) =>
 
 const INTERACTIVE = new Set(['Pressable', 'TextInput', 'Switch', 'TouchableOpacity', 'TouchableHighlight']);
 
+/** The grid and its sample preview draw letters in fixed cells, so only they cap the system font scale (plan §7.2). */
+const GRID_LETTER_FILES = ['Grid.tsx', 'SampleGrid.tsx'];
+
 describe('accessibility rules', () => {
   it('labels every Pressable, TextInput and Switch', () => {
     const bad = scan((node, _sf, report) => {
@@ -74,7 +77,7 @@ describe('accessibility rules', () => {
     const bad = scan((node, sf, report) => {
       if (ts.isJsxAttribute(node) && node.name.getText() === 'allowFontScaling') report(node, 'allowFontScaling is set');
       // Plan §7.2: only the grid letters are capped (1.4x), because the grid cell they sit in cannot grow.
-      if (ts.isJsxAttribute(node) && node.name.getText() === 'maxFontSizeMultiplier' && !sf.fileName.endsWith(path.join('components', 'Grid.tsx'))) {
+      if (ts.isJsxAttribute(node) && node.name.getText() === 'maxFontSizeMultiplier' && !GRID_LETTER_FILES.some((f) => sf.fileName.endsWith(path.join('components', f)))) {
         report(node, 'maxFontSizeMultiplier caps the system font scale');
       }
     });
