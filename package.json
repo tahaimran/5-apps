@@ -1,0 +1,5 @@
+{
+  "name": "5-apps",
+  "private": true,
+  "workspaces": ["apps/*", "packages/*"]
+}
