@@ -26,13 +26,13 @@ describe('app shell', () => {
   });
 
   it('renders every tab screen with its title', async () => {
-    for (const [Screen, key] of [[Home, 'home.title'], [Daily, 'daily.title'], [SettingsTab, 'settings.title']] as const) {
+    for (const [Screen, key] of [[Home, 'home.greeting.morning'], [Daily, 'daily.title'], [SettingsTab, 'settings.title']] as const) {
       const ui = await render(
         <ThemeProvider palette={palette} touchTarget={TOUCH_TARGET}>
           <Screen />
         </ThemeProvider>,
       );
-      expect(ui.texts()).toContain(t(key));
+      expect(ui.texts().some((x) => key.startsWith('home.greeting') ? /^Good (morning|afternoon|evening)$/.test(x) : x === t(key))).toBe(true);
     }
   });
 
