@@ -516,7 +516,7 @@ apps/word-search/
 
 ## 16. Milestones checklist (MVP in ~9 days)
 
-- [ ] **Day 1 — Setup:** scaffold app in monorepo, Expo Router, TS paths to `@shared/*`, `app.config.ts`, EAS dev build profile, install dev client on a physical Android phone; theme tokens + fonts.
+- [x] **Day 1 — Setup:** scaffold app in monorepo, Expo Router, TS paths to `@shared/*`, `app.config.ts`, EAS dev build profile, ~~install dev client on a physical Android phone~~ *(needs a device and an EAS account: not done, nothing has been run on a device)*; theme tokens + fonts *(Atkinson Hyperlegible via `@expo-google-fonts`; checked in jest and `expo export`, not seen on a device)*.
 - [ ] **Day 2 — Generator:** PRNG, placement, fill, uniqueness scan, profanity filter; unit tests (1,000 seeds × 3 difficulties, assert all words placed exactly once); 12 word list JSON files.
 - [ ] **Day 3 — Grid UI:** Skia grid, sizing logic, drag selection with direction snap, tap-tap mode, highlights, word list.
 - [ ] **Day 4 — Game loop:** autosave/resume, complete modal, stars, pack progression, Home + pack list screens.

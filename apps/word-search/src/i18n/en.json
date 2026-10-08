@@ -1,0 +1,8 @@
+{
+  "app": { "name": "Word Search" },
+  "tabs": { "play": "Play", "daily": "Daily", "settings": "Settings" },
+  "common": { "comingSoon": "This screen is coming soon." },
+  "home": { "title": "Welcome to Word Search" },
+  "daily": { "title": "Daily puzzle" },
+  "settings": { "title": "Settings" }
+}
