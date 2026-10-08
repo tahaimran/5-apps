@@ -1,0 +1,9 @@
+# Skip applies the defaults but still shows the notification step, then lands on an empty Today.
+appId: com.fiveapps.sipling
+---
+- launchApp:
+    clearState: true
+- tapOn: "Skip"
+- assertVisible: "Want a gentle nudge when it's time?"
+- tapOn: "Not now"
+- assertVisible: "Your plant is waiting for its first sip."

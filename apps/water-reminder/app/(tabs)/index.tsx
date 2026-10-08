@@ -25,6 +25,7 @@ import { useFeedback } from '@/store/feedback';
 import { preferredCup, useSettings } from '@/store/settings';
 import { useToday } from '@/store/today';
 import { useDayLogs, useWater } from '@/store/water';
+import { useMinuteTick } from '@/features/today/useMinuteTick';
 import { extraColorsFor } from '@/theme/tokens';
 import { clockTime, dayLabel, spokenVolume, volume } from '@/ui/format';
 import { ProgressRing } from '@/ui/ProgressRing';
@@ -48,6 +49,7 @@ export default function Today() {
   const meta = useMeta((s) => s.meta);
   const offerBattery = shouldOfferGuide(meta.suspectedMisses ?? 0, meta.batteryGuideOffered === true);
   useGoalCelebration();
+  const tick = useMinuteTick();
 
   const unit = goal.unit;
   const effective = summary?.effectiveMl ?? 0;
@@ -102,7 +104,7 @@ export default function Today() {
     const sameDay = first.at.toDateString() === now.toDateString();
     return { text: sameDay ? t('today.nextReminder', { time: clockTime(first.at) }) : t('today.nextReminderTomorrow', { time: clockTime(first.at) }) };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [reminders, goal.goalMl, cups, prefs.preferredCupId, logs, reached, permission?.granted, today]);
+  }, [reminders, goal.goalMl, cups, prefs.preferredCupId, logs, reached, permission?.granted, today, tick]);
 
   const note = effective === 0 ? t('today.emptyNote') : percent > 150 ? t('today.overNote') : reached ? t('today.reachedNote') : null;
   const ringLabel = t('today.ringLabel', { amount: spokenVolume(effective, unit), goal: spokenVolume(goal.goalMl, unit), percent });

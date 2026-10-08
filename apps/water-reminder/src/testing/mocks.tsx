@@ -160,6 +160,8 @@ jest.mock('react-native-google-mobile-ads', () => ({
 jest.mock('@expo/vector-icons', () => ({ MaterialCommunityIcons: () => null }));
 jest.mock('react-native-safe-area-context', () => require('react-native-safe-area-context/jest/mock').default);
 jest.mock('react-native-gesture-handler', () => ({ GestureHandlerRootView: ({ children }: { children: React.ReactNode }) => children }));
+/** `reduced: false` renders the animated paths (confetti, goal reveal timing). */
+export const mockMotion = { reduced: true };
 jest.mock('react-native-reanimated', () => {
   const React = require('react');
   const { View, ScrollView } = require('react-native');
@@ -172,7 +174,7 @@ jest.mock('react-native-reanimated', () => {
     useSharedValue: (v: unknown) => ({ value: v }),
     useAnimatedStyle: () => ({}),
     useAnimatedProps: () => ({}),
-    useReducedMotion: () => true,
+    useReducedMotion: () => mockMotion.reduced,
     withRepeat: passthrough,
     withSequence: (...v: unknown[]) => v[0],
     withTiming: passthrough,

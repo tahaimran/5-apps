@@ -149,6 +149,16 @@ describe('rescheduleReminders (F4)', () => {
   });
 });
 
+describe('a background process that outlives the day', () => {
+  it('plans from the real date, not from a stale "today" kept in memory', async () => {
+    jest.setSystemTime(new Date(2026, 9, 8, 12, 0));
+    useWater.getState().logDrink({ volumeMl: 2300 });
+    useToday.setState({ today: '2026-10-01' }); // what a task started a week ago would still hold
+    await rescheduleReminders();
+    expect(fireTimes().every((d) => d.getDate() !== 8)).toBe(true); // today is reached: nothing left for today
+  });
+});
+
 describe('snooze (plan §8.3)', () => {
   it('schedules one reminder 15 minutes later, replacing an earlier snooze', async () => {
     jest.setSystemTime(new Date(2026, 9, 8, 14, 0));

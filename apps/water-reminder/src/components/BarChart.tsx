@@ -8,7 +8,6 @@ import { extraColorsFor } from '@/theme/tokens';
 import { longDayLabel, spokenVolume, volume } from '@/ui/format';
 
 const HEIGHT = 168;
-const WEEKDAYS = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 
 export interface BarChartProps {
   days: ChartDay[];
@@ -31,6 +30,7 @@ export function BarChart({ days, goalMl, unit, variant, summary }: BarChartProps
   const top = Math.max(goalMl * 1.15, ...days.map((d) => d.effectiveMl), 1);
   const goalAt = (goalMl / top) * HEIGHT;
   const month = variant === 'month';
+  const initials = t('history.weekdayInitials').split(',');
 
   return (
     <View
@@ -76,7 +76,7 @@ export function BarChart({ days, goalMl, unit, variant, summary }: BarChartProps
       <View style={{ flexDirection: 'row', gap: month ? 2 : spacing.sm }} importantForAccessibility="no-hide-descendants">
         {days.map((d, i) => (
           <Text key={d.dayKey} style={[type.caption, { color: colors.textMuted, flex: 1, textAlign: 'center' }]} numberOfLines={1}>
-            {month ? (i % 5 === 0 ? Number(d.dayKey.slice(8)) : '') : WEEKDAYS[parseDayKey(d.dayKey).getDay()]}
+            {month ? (i % 5 === 0 ? Number(d.dayKey.slice(8)) : '') : initials[parseDayKey(d.dayKey).getDay()]}
           </Text>
         ))}
       </View>

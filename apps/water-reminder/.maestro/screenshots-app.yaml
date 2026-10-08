@@ -1,0 +1,23 @@
+# Run after restoring store/demo-backup.json (see store/SCREENSHOTS.md).
+appId: com.fiveapps.sipling
+---
+- launchApp
+- takeScreenshot: store/screenshots/01-today
+- tapOn: "Settings"
+- tapOn: "Reminders.*"
+- takeScreenshot: store/screenshots/02-reminders
+- back
+- back
+- tapOn: "Garden"
+- takeScreenshot: store/screenshots/03-garden
+- tapOn: "History"
+- tapOn: "Week"
+- takeScreenshot: store/screenshots/04-history-week
+- tapOn: "Today"
+- tapOn: "Add a different amount or drink"
+- takeScreenshot: store/screenshots/05-log-custom
+- back
+- tapOn: "Settings"
+- tapOn: "Dark"
+- tapOn: "Privacy and ads"
+- takeScreenshot: store/screenshots/06-privacy-dark

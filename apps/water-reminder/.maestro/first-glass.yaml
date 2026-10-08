@@ -1,0 +1,25 @@
+# Install → first glass in under 60 seconds (DEVELOPMENT_PLAN.md §6, KPI "first glass logged in session 1").
+# Run on a fresh install:  maestro test .maestro/first-glass.yaml
+appId: com.fiveapps.sipling
+---
+- launchApp:
+    clearState: true
+- assertVisible: "Meet your new plant."
+- tapOn: "Let's start"
+- tapOn: "Next"        # about you
+- tapOn: "Next"        # weight
+- tapOn: "Next"        # schedule
+- tapOn: "Next"        # activity
+- tapOn: "Next"        # climate
+- assertVisible: "Your daily goal"
+- tapOn: "Sounds good"
+- tapOn: "Next"        # cup (250 ml)
+- tapOn: "Next"        # reminder style (smart, normal)
+- assertVisible: "Want a gentle nudge when it's time?"
+- tapOn: "Not now"     # consent form (where required) shows here, before the first glass
+- assertVisible: "Let's water your plant for the first time."
+- tapOn: "Pour 250 ml"
+- assertVisible: "Your first sip!.*"
+- tapOn: "Go to my plant"
+- assertVisible: "Quick add"
+- assertVisible: "250 / .* ml · .*%"

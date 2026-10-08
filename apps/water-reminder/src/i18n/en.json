@@ -309,7 +309,8 @@
     "streak": "Streak",
     "bestStreak": "Best streak",
     "streakValue": "{count} days",
-    "goalLegend": "Dashed line: your goal, {goal}"
+    "goalLegend": "Dashed line: your goal, {goal}",
+    "weekdayInitials": "S,M,T,W,T,F,S"
   },
   "garden": {
     "toNext": "{have} of {need} goal days to {name}",

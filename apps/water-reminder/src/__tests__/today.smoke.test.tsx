@@ -201,6 +201,16 @@ describe('Today: reminders card (plan §5.1)', () => {
     const ui = await render(themed(<Today />));
     expect(ui.texts().some((t) => /^Next reminder 3:\d\d PM$/.test(t) || /^Next reminder \d+:\d\d (AM|PM)$/.test(t))).toBe(true);
   });
+  it('moves the next reminder forward as the day passes, without any other change', async () => {
+    useSettings.getState().setGoal({ goalMl: 2300 });
+    const ui = await render(themed(<Today />));
+    expect(ui.texts()).toContain('Next reminder 2:10 PM');
+    await act(async () => {
+      jest.setSystemTime(new Date(2026, 9, 8, 14, 20));
+      jest.advanceTimersByTime(60_000);
+    });
+    expect(ui.texts()).toContain('Next reminder 3:50 PM');
+  });
   it('says "tomorrow" once the goal is reached', async () => {
     useWater.getState().logDrink({ volumeMl: 2000, ts: at(12) });
     const ui = await render(themed(<Today />));

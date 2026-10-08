@@ -1,0 +1,3207 @@
+{
+ "app": "water-reminder",
+ "schemaVersion": 1,
+ "exportedAt": "2026-10-08T09:41:00.000Z",
+ "profile": {
+  "sex": "female",
+  "weightKg": 62,
+  "weightUnit": "kg",
+  "activity": "light",
+  "climate": "mild",
+  "mode": "standard"
+ },
+ "goal": {
+  "goalMl": 2300,
+  "source": "calculated",
+  "unit": "ml",
+  "updatedAt": 1787616000000
+ },
+ "reminders": {
+  "enabled": true,
+  "wakeMin": 420,
+  "bedMin": 1380,
+  "frequency": "smart",
+  "intervalMin": 120,
+  "style": "normal",
+  "snoozeMin": 15,
+  "skipWindowMin": 30,
+  "quietBlocks": [],
+  "activeWeekdays": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ]
+ },
+ "cups": [
+  {
+   "id": "cup-150",
+   "ml": 150,
+   "label": "small",
+   "icon": "cup-water"
+  },
+  {
+   "id": "cup-250",
+   "ml": 250,
+   "label": "glass",
+   "icon": "cup-water"
+  },
+  {
+   "id": "cup-350",
+   "ml": 350,
+   "label": "mug",
+   "icon": "coffee-outline"
+  },
+  {
+   "id": "cup-500",
+   "ml": 500,
+   "label": "bottle",
+   "icon": "bottle-tonic-outline"
+  }
+ ],
+ "beverages": [
+  {
+   "id": "water",
+   "factor": 1
+  },
+  {
+   "id": "sparkling",
+   "factor": 1
+  },
+  {
+   "id": "tea",
+   "factor": 0.9
+  },
+  {
+   "id": "milk",
+   "factor": 0.9
+  },
+  {
+   "id": "juice",
+   "factor": 0.85
+  },
+  {
+   "id": "coffee",
+   "factor": 0.8
+  }
+ ],
+ "prefs": {
+  "preferredCupId": "cup-250",
+  "largeText": false,
+  "haptics": true
+ },
+ "logs": {
+  "2026-08": [
+   {
+    "id": "2026-08-25_d00",
+    "ts": 1787643900000,
+    "dayKey": "2026-08-25",
+    "beverage": "water",
+    "volumeMl": 250,
+    "effectiveMl": 250,
+    "source": "app"
+   },
+   {
+    "id": "2026-08-25_d01",
+    "ts": 1787648400000,
+    "dayKey": "2026-08-25",
+    "beverage": "coffee",
+    "volumeMl": 250,
+    "effectiveMl": 200,
+    "source": "app"
+   },
+   {
+    "id": "2026-08-25_d02",
+    "ts": 1787653800000,
+    "dayKey": "2026-08-25",
+    "beverage": "water",
+    "volumeMl": 300,
+    "effectiveMl": 300,
+    "source": "app"
+   },
+   {
+    "id": "2026-08-26_d00",
+    "ts": 1787730300000,
+    "dayKey": "2026-08-26",
+    "beverage": "water",
+    "volumeMl": 240,
+    "effectiveMl": 240,
+    "source": "app"
+   },
+   {
+    "id": "2026-08-26_d01",
+    "ts": 1787734800000,
+    "dayKey": "2026-08-26",
+    "beverage": "coffee",
+    "volumeMl": 260,
+    "effectiveMl": 208,
+    "source": "app"
+   },
+   {
+    "id": "2026-08-26_d02",
+    "ts": 1787740200000,
+    "dayKey": "2026-08-26",
+    "beverage": "water",
+    "volumeMl": 320,
+    "effectiveMl": 320,
+    "source": "app"
+   },
+   {
+    "id": "2026-08-26_d03",
+    "ts": 1787747400000,
+    "dayKey": "2026-08-26",
+    "beverage": "water",
+    "volumeMl": 240,
+    "effectiveMl": 240,
+    "source": "app"
+   },
+   {
+    "id": "2026-08-26_d04",
+    "ts": 1787756400000,
+    "dayKey": "2026-08-26",
+    "beverage": "tea",
+    "volumeMl": 260,
+    "effectiveMl": 234,
+    "source": "app"
+   },
+   {
+    "id": "2026-08-26_d05",
+    "ts": 1787761800000,
+    "dayKey": "2026-08-26",
+    "beverage": "water",
+    "volumeMl": 340,
+    "effectiveMl": 340,
+    "source": "app"
+   },
+   {
+    "id": "2026-08-26_d06",
+    "ts": 1787769000000,
+    "dayKey": "2026-08-26",
+    "beverage": "water",
+    "volumeMl": 250,
+    "effectiveMl": 250,
+    "source": "app"
+   },
+   {
+    "id": "2026-08-26_d07",
+    "ts": 1787774400000,
+    "dayKey": "2026-08-26",
+    "beverage": "water",
+    "volumeMl": 530,
+    "effectiveMl": 530,
+    "source": "app"
+   },
+   {
+    "id": "2026-08-27_d00",
+    "ts": 1787816700000,
+    "dayKey": "2026-08-27",
+    "beverage": "water",
+    "volumeMl": 250,
+    "effectiveMl": 250,
+    "source": "app"
+   },
+   {
+    "id": "2026-08-27_d01",
+    "ts": 1787821200000,
+    "dayKey": "2026-08-27",
+    "beverage": "coffee",
+    "volumeMl": 250,
+    "effectiveMl": 200,
+    "source": "app"
+   },
+   {
+    "id": "2026-08-27_d02",
+    "ts": 1787826600000,
+    "dayKey": "2026-08-27",
+    "beverage": "water",
+    "volumeMl": 300,
+    "effectiveMl": 300,
+    "source": "app"
+   },
+   {
+    "id": "2026-08-27_d03",
+    "ts": 1787833800000,
+    "dayKey": "2026-08-27",
+    "beverage": "water",
+    "volumeMl": 250,
+    "effectiveMl": 250,
+    "source": "notification"
+   },
+   {
+    "id": "2026-08-28_d00",
+    "ts": 1787903100000,
+    "dayKey": "2026-08-28",
+    "beverage": "water",
+    "volumeMl": 260,
+    "effectiveMl": 260,
+    "source": "app"
+   },
+   {
+    "id": "2026-08-28_d01",
+    "ts": 1787907600000,
+    "dayKey": "2026-08-28",
+    "beverage": "coffee",
+    "volumeMl": 260,
+    "effectiveMl": 208,
+    "source": "app"
+   },
+   {
+    "id": "2026-08-28_d02",
+    "ts": 1787913000000,
+    "dayKey": "2026-08-28",
+    "beverage": "water",
+    "volumeMl": 300,
+    "effectiveMl": 300,
+    "source": "app"
+   },
+   {
+    "id": "2026-08-28_d03",
+    "ts": 1787920200000,
+    "dayKey": "2026-08-28",
+    "beverage": "water",
+    "volumeMl": 260,
+    "effectiveMl": 260,
+    "source": "app"
+   },
+   {
+    "id": "2026-08-28_d04",
+    "ts": 1787929200000,
+    "dayKey": "2026-08-28",
+    "beverage": "tea",
+    "volumeMl": 260,
+    "effectiveMl": 234,
+    "source": "app"
+   },
+   {
+    "id": "2026-08-28_d05",
+    "ts": 1787934600000,
+    "dayKey": "2026-08-28",
+    "beverage": "water",
+    "volumeMl": 350,
+    "effectiveMl": 350,
+    "source": "app"
+   },
+   {
+    "id": "2026-08-28_d06",
+    "ts": 1787941800000,
+    "dayKey": "2026-08-28",
+    "beverage": "water",
+    "volumeMl": 240,
+    "effectiveMl": 240,
+    "source": "app"
+   },
+   {
+    "id": "2026-08-28_d07",
+    "ts": 1787947200000,
+    "dayKey": "2026-08-28",
+    "beverage": "water",
+    "volumeMl": 530,
+    "effectiveMl": 530,
+    "source": "app"
+   },
+   {
+    "id": "2026-08-29_d00",
+    "ts": 1787989500000,
+    "dayKey": "2026-08-29",
+    "beverage": "water",
+    "volumeMl": 240,
+    "effectiveMl": 240,
+    "source": "app"
+   },
+   {
+    "id": "2026-08-29_d01",
+    "ts": 1787994000000,
+    "dayKey": "2026-08-29",
+    "beverage": "coffee",
+    "volumeMl": 250,
+    "effectiveMl": 200,
+    "source": "app"
+   },
+   {
+    "id": "2026-08-29_d02",
+    "ts": 1787999400000,
+    "dayKey": "2026-08-29",
+    "beverage": "water",
+    "volumeMl": 290,
+    "effectiveMl": 290,
+    "source": "app"
+   },
+   {
+    "id": "2026-08-29_d03",
+    "ts": 1788006600000,
+    "dayKey": "2026-08-29",
+    "beverage": "water",
+    "volumeMl": 260,
+    "effectiveMl": 260,
+    "source": "app"
+   },
+   {
+    "id": "2026-08-29_d04",
+    "ts": 1788015600000,
+    "dayKey": "2026-08-29",
+    "beverage": "tea",
+    "volumeMl": 240,
+    "effectiveMl": 216,
+    "source": "app"
+   },
+   {
+    "id": "2026-08-29_d05",
+    "ts": 1788021000000,
+    "dayKey": "2026-08-29",
+    "beverage": "water",
+    "volumeMl": 350,
+    "effectiveMl": 350,
+    "source": "app"
+   },
+   {
+    "id": "2026-08-29_d06",
+    "ts": 1788028200000,
+    "dayKey": "2026-08-29",
+    "beverage": "water",
+    "volumeMl": 270,
+    "effectiveMl": 270,
+    "source": "app"
+   },
+   {
+    "id": "2026-08-29_d07",
+    "ts": 1788033600000,
+    "dayKey": "2026-08-29",
+    "beverage": "water",
+    "volumeMl": 540,
+    "effectiveMl": 540,
+    "source": "app"
+   },
+   {
+    "id": "2026-08-30_d00",
+    "ts": 1788075900000,
+    "dayKey": "2026-08-30",
+    "beverage": "water",
+    "volumeMl": 270,
+    "effectiveMl": 270,
+    "source": "app"
+   },
+   {
+    "id": "2026-08-30_d01",
+    "ts": 1788080400000,
+    "dayKey": "2026-08-30",
+    "beverage": "coffee",
+    "volumeMl": 240,
+    "effectiveMl": 192,
+    "source": "app"
+   },
+   {
+    "id": "2026-08-30_d02",
+    "ts": 1788085800000,
+    "dayKey": "2026-08-30",
+    "beverage": "water",
+    "volumeMl": 300,
+    "effectiveMl": 300,
+    "source": "app"
+   },
+   {
+    "id": "2026-08-30_d03",
+    "ts": 1788093000000,
+    "dayKey": "2026-08-30",
+    "beverage": "water",
+    "volumeMl": 270,
+    "effectiveMl": 270,
+    "source": "notification"
+   },
+   {
+    "id": "2026-08-30_d04",
+    "ts": 1788102000000,
+    "dayKey": "2026-08-30",
+    "beverage": "tea",
+    "volumeMl": 240,
+    "effectiveMl": 216,
+    "source": "app"
+   },
+   {
+    "id": "2026-08-30_d05",
+    "ts": 1788107400000,
+    "dayKey": "2026-08-30",
+    "beverage": "water",
+    "volumeMl": 340,
+    "effectiveMl": 340,
+    "source": "app"
+   },
+   {
+    "id": "2026-08-30_d06",
+    "ts": 1788114600000,
+    "dayKey": "2026-08-30",
+    "beverage": "water",
+    "volumeMl": 270,
+    "effectiveMl": 270,
+    "source": "app"
+   },
+   {
+    "id": "2026-08-30_d07",
+    "ts": 1788120000000,
+    "dayKey": "2026-08-30",
+    "beverage": "water",
+    "volumeMl": 490,
+    "effectiveMl": 490,
+    "source": "app"
+   },
+   {
+    "id": "2026-08-31_d00",
+    "ts": 1788162300000,
+    "dayKey": "2026-08-31",
+    "beverage": "water",
+    "volumeMl": 250,
+    "effectiveMl": 250,
+    "source": "app"
+   },
+   {
+    "id": "2026-08-31_d01",
+    "ts": 1788166800000,
+    "dayKey": "2026-08-31",
+    "beverage": "coffee",
+    "volumeMl": 250,
+    "effectiveMl": 200,
+    "source": "app"
+   },
+   {
+    "id": "2026-08-31_d02",
+    "ts": 1788172200000,
+    "dayKey": "2026-08-31",
+    "beverage": "water",
+    "volumeMl": 300,
+    "effectiveMl": 300,
+    "source": "app"
+   },
+   {
+    "id": "2026-08-31_d03",
+    "ts": 1788179400000,
+    "dayKey": "2026-08-31",
+    "beverage": "water",
+    "volumeMl": 250,
+    "effectiveMl": 250,
+    "source": "app"
+   },
+   {
+    "id": "2026-08-31_d04",
+    "ts": 1788188400000,
+    "dayKey": "2026-08-31",
+    "beverage": "tea",
+    "volumeMl": 250,
+    "effectiveMl": 225,
+    "source": "app"
+   }
+  ],
+  "2026-09": [
+   {
+    "id": "2026-09-01_d00",
+    "ts": 1788248700000,
+    "dayKey": "2026-09-01",
+    "beverage": "water",
+    "volumeMl": 270,
+    "effectiveMl": 270,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-01_d01",
+    "ts": 1788253200000,
+    "dayKey": "2026-09-01",
+    "beverage": "coffee",
+    "volumeMl": 260,
+    "effectiveMl": 208,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-01_d02",
+    "ts": 1788258600000,
+    "dayKey": "2026-09-01",
+    "beverage": "water",
+    "volumeMl": 290,
+    "effectiveMl": 290,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-01_d03",
+    "ts": 1788265800000,
+    "dayKey": "2026-09-01",
+    "beverage": "water",
+    "volumeMl": 250,
+    "effectiveMl": 250,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-01_d04",
+    "ts": 1788274800000,
+    "dayKey": "2026-09-01",
+    "beverage": "tea",
+    "volumeMl": 260,
+    "effectiveMl": 234,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-01_d05",
+    "ts": 1788280200000,
+    "dayKey": "2026-09-01",
+    "beverage": "water",
+    "volumeMl": 360,
+    "effectiveMl": 360,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-01_d06",
+    "ts": 1788287400000,
+    "dayKey": "2026-09-01",
+    "beverage": "water",
+    "volumeMl": 250,
+    "effectiveMl": 250,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-01_d07",
+    "ts": 1788292800000,
+    "dayKey": "2026-09-01",
+    "beverage": "water",
+    "volumeMl": 490,
+    "effectiveMl": 490,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-02_d00",
+    "ts": 1788335100000,
+    "dayKey": "2026-09-02",
+    "beverage": "water",
+    "volumeMl": 250,
+    "effectiveMl": 250,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-02_d01",
+    "ts": 1788339600000,
+    "dayKey": "2026-09-02",
+    "beverage": "coffee",
+    "volumeMl": 240,
+    "effectiveMl": 192,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-02_d02",
+    "ts": 1788345000000,
+    "dayKey": "2026-09-02",
+    "beverage": "water",
+    "volumeMl": 320,
+    "effectiveMl": 320,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-02_d03",
+    "ts": 1788352200000,
+    "dayKey": "2026-09-02",
+    "beverage": "water",
+    "volumeMl": 240,
+    "effectiveMl": 240,
+    "source": "notification"
+   },
+   {
+    "id": "2026-09-02_d04",
+    "ts": 1788361200000,
+    "dayKey": "2026-09-02",
+    "beverage": "tea",
+    "volumeMl": 240,
+    "effectiveMl": 216,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-02_d05",
+    "ts": 1788366600000,
+    "dayKey": "2026-09-02",
+    "beverage": "water",
+    "volumeMl": 370,
+    "effectiveMl": 370,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-02_d06",
+    "ts": 1788373800000,
+    "dayKey": "2026-09-02",
+    "beverage": "water",
+    "volumeMl": 250,
+    "effectiveMl": 250,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-02_d07",
+    "ts": 1788379200000,
+    "dayKey": "2026-09-02",
+    "beverage": "water",
+    "volumeMl": 520,
+    "effectiveMl": 520,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-03_d00",
+    "ts": 1788421500000,
+    "dayKey": "2026-09-03",
+    "beverage": "water",
+    "volumeMl": 250,
+    "effectiveMl": 250,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-03_d01",
+    "ts": 1788426000000,
+    "dayKey": "2026-09-03",
+    "beverage": "coffee",
+    "volumeMl": 250,
+    "effectiveMl": 200,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-03_d02",
+    "ts": 1788431400000,
+    "dayKey": "2026-09-03",
+    "beverage": "water",
+    "volumeMl": 300,
+    "effectiveMl": 300,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-03_d03",
+    "ts": 1788438600000,
+    "dayKey": "2026-09-03",
+    "beverage": "water",
+    "volumeMl": 250,
+    "effectiveMl": 250,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-03_d04",
+    "ts": 1788447600000,
+    "dayKey": "2026-09-03",
+    "beverage": "tea",
+    "volumeMl": 250,
+    "effectiveMl": 225,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-04_d00",
+    "ts": 1788507900000,
+    "dayKey": "2026-09-04",
+    "beverage": "water",
+    "volumeMl": 250,
+    "effectiveMl": 250,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-04_d01",
+    "ts": 1788512400000,
+    "dayKey": "2026-09-04",
+    "beverage": "coffee",
+    "volumeMl": 250,
+    "effectiveMl": 200,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-04_d02",
+    "ts": 1788517800000,
+    "dayKey": "2026-09-04",
+    "beverage": "water",
+    "volumeMl": 300,
+    "effectiveMl": 300,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-05_d00",
+    "ts": 1788594300000,
+    "dayKey": "2026-09-05",
+    "beverage": "water",
+    "volumeMl": 250,
+    "effectiveMl": 250,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-05_d01",
+    "ts": 1788598800000,
+    "dayKey": "2026-09-05",
+    "beverage": "coffee",
+    "volumeMl": 250,
+    "effectiveMl": 200,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-05_d02",
+    "ts": 1788604200000,
+    "dayKey": "2026-09-05",
+    "beverage": "water",
+    "volumeMl": 300,
+    "effectiveMl": 300,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-05_d03",
+    "ts": 1788611400000,
+    "dayKey": "2026-09-05",
+    "beverage": "water",
+    "volumeMl": 250,
+    "effectiveMl": 250,
+    "source": "notification"
+   },
+   {
+    "id": "2026-09-06_d00",
+    "ts": 1788680700000,
+    "dayKey": "2026-09-06",
+    "beverage": "water",
+    "volumeMl": 250,
+    "effectiveMl": 250,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-06_d01",
+    "ts": 1788685200000,
+    "dayKey": "2026-09-06",
+    "beverage": "coffee",
+    "volumeMl": 250,
+    "effectiveMl": 200,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-06_d02",
+    "ts": 1788690600000,
+    "dayKey": "2026-09-06",
+    "beverage": "water",
+    "volumeMl": 300,
+    "effectiveMl": 300,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-07_d00",
+    "ts": 1788767100000,
+    "dayKey": "2026-09-07",
+    "beverage": "water",
+    "volumeMl": 260,
+    "effectiveMl": 260,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-07_d01",
+    "ts": 1788771600000,
+    "dayKey": "2026-09-07",
+    "beverage": "coffee",
+    "volumeMl": 250,
+    "effectiveMl": 200,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-07_d02",
+    "ts": 1788777000000,
+    "dayKey": "2026-09-07",
+    "beverage": "water",
+    "volumeMl": 310,
+    "effectiveMl": 310,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-07_d03",
+    "ts": 1788784200000,
+    "dayKey": "2026-09-07",
+    "beverage": "water",
+    "volumeMl": 240,
+    "effectiveMl": 240,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-07_d04",
+    "ts": 1788793200000,
+    "dayKey": "2026-09-07",
+    "beverage": "tea",
+    "volumeMl": 260,
+    "effectiveMl": 234,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-07_d05",
+    "ts": 1788798600000,
+    "dayKey": "2026-09-07",
+    "beverage": "water",
+    "volumeMl": 350,
+    "effectiveMl": 350,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-07_d06",
+    "ts": 1788805800000,
+    "dayKey": "2026-09-07",
+    "beverage": "water",
+    "volumeMl": 240,
+    "effectiveMl": 240,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-07_d07",
+    "ts": 1788811200000,
+    "dayKey": "2026-09-07",
+    "beverage": "water",
+    "volumeMl": 480,
+    "effectiveMl": 480,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-07_d08",
+    "ts": 1788815700000,
+    "dayKey": "2026-09-07",
+    "beverage": "water",
+    "volumeMl": 10,
+    "effectiveMl": 10,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-08_d00",
+    "ts": 1788853500000,
+    "dayKey": "2026-09-08",
+    "beverage": "water",
+    "volumeMl": 270,
+    "effectiveMl": 270,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-08_d01",
+    "ts": 1788858000000,
+    "dayKey": "2026-09-08",
+    "beverage": "coffee",
+    "volumeMl": 240,
+    "effectiveMl": 192,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-08_d02",
+    "ts": 1788863400000,
+    "dayKey": "2026-09-08",
+    "beverage": "water",
+    "volumeMl": 300,
+    "effectiveMl": 300,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-08_d03",
+    "ts": 1788870600000,
+    "dayKey": "2026-09-08",
+    "beverage": "water",
+    "volumeMl": 250,
+    "effectiveMl": 250,
+    "source": "notification"
+   },
+   {
+    "id": "2026-09-08_d04",
+    "ts": 1788879600000,
+    "dayKey": "2026-09-08",
+    "beverage": "tea",
+    "volumeMl": 270,
+    "effectiveMl": 243,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-08_d05",
+    "ts": 1788885000000,
+    "dayKey": "2026-09-08",
+    "beverage": "water",
+    "volumeMl": 350,
+    "effectiveMl": 350,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-08_d06",
+    "ts": 1788892200000,
+    "dayKey": "2026-09-08",
+    "beverage": "water",
+    "volumeMl": 250,
+    "effectiveMl": 250,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-08_d07",
+    "ts": 1788897600000,
+    "dayKey": "2026-09-08",
+    "beverage": "water",
+    "volumeMl": 550,
+    "effectiveMl": 550,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-09_d00",
+    "ts": 1788939900000,
+    "dayKey": "2026-09-09",
+    "beverage": "water",
+    "volumeMl": 260,
+    "effectiveMl": 260,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-09_d01",
+    "ts": 1788944400000,
+    "dayKey": "2026-09-09",
+    "beverage": "coffee",
+    "volumeMl": 270,
+    "effectiveMl": 216,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-09_d02",
+    "ts": 1788949800000,
+    "dayKey": "2026-09-09",
+    "beverage": "water",
+    "volumeMl": 290,
+    "effectiveMl": 290,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-09_d03",
+    "ts": 1788957000000,
+    "dayKey": "2026-09-09",
+    "beverage": "water",
+    "volumeMl": 260,
+    "effectiveMl": 260,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-09_d04",
+    "ts": 1788966000000,
+    "dayKey": "2026-09-09",
+    "beverage": "tea",
+    "volumeMl": 250,
+    "effectiveMl": 225,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-09_d05",
+    "ts": 1788971400000,
+    "dayKey": "2026-09-09",
+    "beverage": "water",
+    "volumeMl": 340,
+    "effectiveMl": 340,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-09_d06",
+    "ts": 1788978600000,
+    "dayKey": "2026-09-09",
+    "beverage": "water",
+    "volumeMl": 250,
+    "effectiveMl": 250,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-09_d07",
+    "ts": 1788984000000,
+    "dayKey": "2026-09-09",
+    "beverage": "water",
+    "volumeMl": 540,
+    "effectiveMl": 540,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-10_d00",
+    "ts": 1789026300000,
+    "dayKey": "2026-09-10",
+    "beverage": "water",
+    "volumeMl": 270,
+    "effectiveMl": 270,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-10_d01",
+    "ts": 1789030800000,
+    "dayKey": "2026-09-10",
+    "beverage": "coffee",
+    "volumeMl": 260,
+    "effectiveMl": 208,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-10_d02",
+    "ts": 1789036200000,
+    "dayKey": "2026-09-10",
+    "beverage": "water",
+    "volumeMl": 330,
+    "effectiveMl": 330,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-10_d03",
+    "ts": 1789043400000,
+    "dayKey": "2026-09-10",
+    "beverage": "water",
+    "volumeMl": 250,
+    "effectiveMl": 250,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-10_d04",
+    "ts": 1789052400000,
+    "dayKey": "2026-09-10",
+    "beverage": "tea",
+    "volumeMl": 260,
+    "effectiveMl": 234,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-10_d05",
+    "ts": 1789057800000,
+    "dayKey": "2026-09-10",
+    "beverage": "water",
+    "volumeMl": 360,
+    "effectiveMl": 360,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-10_d06",
+    "ts": 1789065000000,
+    "dayKey": "2026-09-10",
+    "beverage": "water",
+    "volumeMl": 240,
+    "effectiveMl": 240,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-10_d07",
+    "ts": 1789070400000,
+    "dayKey": "2026-09-10",
+    "beverage": "water",
+    "volumeMl": 530,
+    "effectiveMl": 530,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-11_d00",
+    "ts": 1789112700000,
+    "dayKey": "2026-09-11",
+    "beverage": "water",
+    "volumeMl": 250,
+    "effectiveMl": 250,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-11_d01",
+    "ts": 1789117200000,
+    "dayKey": "2026-09-11",
+    "beverage": "coffee",
+    "volumeMl": 250,
+    "effectiveMl": 200,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-11_d02",
+    "ts": 1789122600000,
+    "dayKey": "2026-09-11",
+    "beverage": "water",
+    "volumeMl": 300,
+    "effectiveMl": 300,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-12_d00",
+    "ts": 1789199100000,
+    "dayKey": "2026-09-12",
+    "beverage": "water",
+    "volumeMl": 260,
+    "effectiveMl": 260,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-12_d01",
+    "ts": 1789203600000,
+    "dayKey": "2026-09-12",
+    "beverage": "coffee",
+    "volumeMl": 260,
+    "effectiveMl": 208,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-12_d02",
+    "ts": 1789209000000,
+    "dayKey": "2026-09-12",
+    "beverage": "water",
+    "volumeMl": 310,
+    "effectiveMl": 310,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-12_d03",
+    "ts": 1789216200000,
+    "dayKey": "2026-09-12",
+    "beverage": "water",
+    "volumeMl": 270,
+    "effectiveMl": 270,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-12_d04",
+    "ts": 1789225200000,
+    "dayKey": "2026-09-12",
+    "beverage": "tea",
+    "volumeMl": 260,
+    "effectiveMl": 234,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-12_d05",
+    "ts": 1789230600000,
+    "dayKey": "2026-09-12",
+    "beverage": "water",
+    "volumeMl": 360,
+    "effectiveMl": 360,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-12_d06",
+    "ts": 1789237800000,
+    "dayKey": "2026-09-12",
+    "beverage": "water",
+    "volumeMl": 240,
+    "effectiveMl": 240,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-12_d07",
+    "ts": 1789243200000,
+    "dayKey": "2026-09-12",
+    "beverage": "water",
+    "volumeMl": 530,
+    "effectiveMl": 530,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-13_d00",
+    "ts": 1789285500000,
+    "dayKey": "2026-09-13",
+    "beverage": "water",
+    "volumeMl": 270,
+    "effectiveMl": 270,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-13_d01",
+    "ts": 1789290000000,
+    "dayKey": "2026-09-13",
+    "beverage": "coffee",
+    "volumeMl": 240,
+    "effectiveMl": 192,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-13_d02",
+    "ts": 1789295400000,
+    "dayKey": "2026-09-13",
+    "beverage": "water",
+    "volumeMl": 300,
+    "effectiveMl": 300,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-13_d03",
+    "ts": 1789302600000,
+    "dayKey": "2026-09-13",
+    "beverage": "water",
+    "volumeMl": 250,
+    "effectiveMl": 250,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-13_d04",
+    "ts": 1789311600000,
+    "dayKey": "2026-09-13",
+    "beverage": "tea",
+    "volumeMl": 240,
+    "effectiveMl": 216,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-13_d05",
+    "ts": 1789317000000,
+    "dayKey": "2026-09-13",
+    "beverage": "water",
+    "volumeMl": 330,
+    "effectiveMl": 330,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-13_d06",
+    "ts": 1789324200000,
+    "dayKey": "2026-09-13",
+    "beverage": "water",
+    "volumeMl": 240,
+    "effectiveMl": 240,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-13_d07",
+    "ts": 1789329600000,
+    "dayKey": "2026-09-13",
+    "beverage": "water",
+    "volumeMl": 480,
+    "effectiveMl": 480,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-13_d08",
+    "ts": 1789334100000,
+    "dayKey": "2026-09-13",
+    "beverage": "water",
+    "volumeMl": 50,
+    "effectiveMl": 50,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-14_d00",
+    "ts": 1789371900000,
+    "dayKey": "2026-09-14",
+    "beverage": "water",
+    "volumeMl": 270,
+    "effectiveMl": 270,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-14_d01",
+    "ts": 1789376400000,
+    "dayKey": "2026-09-14",
+    "beverage": "coffee",
+    "volumeMl": 250,
+    "effectiveMl": 200,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-14_d02",
+    "ts": 1789381800000,
+    "dayKey": "2026-09-14",
+    "beverage": "water",
+    "volumeMl": 300,
+    "effectiveMl": 300,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-14_d03",
+    "ts": 1789389000000,
+    "dayKey": "2026-09-14",
+    "beverage": "water",
+    "volumeMl": 270,
+    "effectiveMl": 270,
+    "source": "notification"
+   },
+   {
+    "id": "2026-09-14_d04",
+    "ts": 1789398000000,
+    "dayKey": "2026-09-14",
+    "beverage": "tea",
+    "volumeMl": 250,
+    "effectiveMl": 225,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-14_d05",
+    "ts": 1789403400000,
+    "dayKey": "2026-09-14",
+    "beverage": "water",
+    "volumeMl": 380,
+    "effectiveMl": 380,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-14_d06",
+    "ts": 1789410600000,
+    "dayKey": "2026-09-14",
+    "beverage": "water",
+    "volumeMl": 270,
+    "effectiveMl": 270,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-14_d07",
+    "ts": 1789416000000,
+    "dayKey": "2026-09-14",
+    "beverage": "water",
+    "volumeMl": 510,
+    "effectiveMl": 510,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-15_d00",
+    "ts": 1789458300000,
+    "dayKey": "2026-09-15",
+    "beverage": "water",
+    "volumeMl": 250,
+    "effectiveMl": 250,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-15_d01",
+    "ts": 1789462800000,
+    "dayKey": "2026-09-15",
+    "beverage": "coffee",
+    "volumeMl": 250,
+    "effectiveMl": 200,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-15_d02",
+    "ts": 1789468200000,
+    "dayKey": "2026-09-15",
+    "beverage": "water",
+    "volumeMl": 300,
+    "effectiveMl": 300,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-15_d03",
+    "ts": 1789475400000,
+    "dayKey": "2026-09-15",
+    "beverage": "water",
+    "volumeMl": 250,
+    "effectiveMl": 250,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-16_d00",
+    "ts": 1789544700000,
+    "dayKey": "2026-09-16",
+    "beverage": "water",
+    "volumeMl": 250,
+    "effectiveMl": 250,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-16_d01",
+    "ts": 1789549200000,
+    "dayKey": "2026-09-16",
+    "beverage": "coffee",
+    "volumeMl": 240,
+    "effectiveMl": 192,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-16_d02",
+    "ts": 1789554600000,
+    "dayKey": "2026-09-16",
+    "beverage": "water",
+    "volumeMl": 300,
+    "effectiveMl": 300,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-16_d03",
+    "ts": 1789561800000,
+    "dayKey": "2026-09-16",
+    "beverage": "water",
+    "volumeMl": 260,
+    "effectiveMl": 260,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-16_d04",
+    "ts": 1789570800000,
+    "dayKey": "2026-09-16",
+    "beverage": "tea",
+    "volumeMl": 260,
+    "effectiveMl": 234,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-16_d05",
+    "ts": 1789576200000,
+    "dayKey": "2026-09-16",
+    "beverage": "water",
+    "volumeMl": 350,
+    "effectiveMl": 350,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-16_d06",
+    "ts": 1789583400000,
+    "dayKey": "2026-09-16",
+    "beverage": "water",
+    "volumeMl": 260,
+    "effectiveMl": 260,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-16_d07",
+    "ts": 1789588800000,
+    "dayKey": "2026-09-16",
+    "beverage": "water",
+    "volumeMl": 520,
+    "effectiveMl": 520,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-17_d00",
+    "ts": 1789631100000,
+    "dayKey": "2026-09-17",
+    "beverage": "water",
+    "volumeMl": 250,
+    "effectiveMl": 250,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-17_d01",
+    "ts": 1789635600000,
+    "dayKey": "2026-09-17",
+    "beverage": "coffee",
+    "volumeMl": 250,
+    "effectiveMl": 200,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-17_d02",
+    "ts": 1789641000000,
+    "dayKey": "2026-09-17",
+    "beverage": "water",
+    "volumeMl": 300,
+    "effectiveMl": 300,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-17_d03",
+    "ts": 1789648200000,
+    "dayKey": "2026-09-17",
+    "beverage": "water",
+    "volumeMl": 250,
+    "effectiveMl": 250,
+    "source": "notification"
+   },
+   {
+    "id": "2026-09-18_d00",
+    "ts": 1789717500000,
+    "dayKey": "2026-09-18",
+    "beverage": "water",
+    "volumeMl": 260,
+    "effectiveMl": 260,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-18_d01",
+    "ts": 1789722000000,
+    "dayKey": "2026-09-18",
+    "beverage": "coffee",
+    "volumeMl": 260,
+    "effectiveMl": 208,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-18_d02",
+    "ts": 1789727400000,
+    "dayKey": "2026-09-18",
+    "beverage": "water",
+    "volumeMl": 320,
+    "effectiveMl": 320,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-18_d03",
+    "ts": 1789734600000,
+    "dayKey": "2026-09-18",
+    "beverage": "water",
+    "volumeMl": 270,
+    "effectiveMl": 270,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-18_d04",
+    "ts": 1789743600000,
+    "dayKey": "2026-09-18",
+    "beverage": "tea",
+    "volumeMl": 270,
+    "effectiveMl": 243,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-18_d05",
+    "ts": 1789749000000,
+    "dayKey": "2026-09-18",
+    "beverage": "water",
+    "volumeMl": 350,
+    "effectiveMl": 350,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-18_d06",
+    "ts": 1789756200000,
+    "dayKey": "2026-09-18",
+    "beverage": "water",
+    "volumeMl": 240,
+    "effectiveMl": 240,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-18_d07",
+    "ts": 1789761600000,
+    "dayKey": "2026-09-18",
+    "beverage": "water",
+    "volumeMl": 530,
+    "effectiveMl": 530,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-19_d00",
+    "ts": 1789803900000,
+    "dayKey": "2026-09-19",
+    "beverage": "water",
+    "volumeMl": 260,
+    "effectiveMl": 260,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-19_d01",
+    "ts": 1789808400000,
+    "dayKey": "2026-09-19",
+    "beverage": "coffee",
+    "volumeMl": 250,
+    "effectiveMl": 200,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-19_d02",
+    "ts": 1789813800000,
+    "dayKey": "2026-09-19",
+    "beverage": "water",
+    "volumeMl": 320,
+    "effectiveMl": 320,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-19_d03",
+    "ts": 1789821000000,
+    "dayKey": "2026-09-19",
+    "beverage": "water",
+    "volumeMl": 240,
+    "effectiveMl": 240,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-19_d04",
+    "ts": 1789830000000,
+    "dayKey": "2026-09-19",
+    "beverage": "tea",
+    "volumeMl": 270,
+    "effectiveMl": 243,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-19_d05",
+    "ts": 1789835400000,
+    "dayKey": "2026-09-19",
+    "beverage": "water",
+    "volumeMl": 340,
+    "effectiveMl": 340,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-19_d06",
+    "ts": 1789842600000,
+    "dayKey": "2026-09-19",
+    "beverage": "water",
+    "volumeMl": 260,
+    "effectiveMl": 260,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-19_d07",
+    "ts": 1789848000000,
+    "dayKey": "2026-09-19",
+    "beverage": "water",
+    "volumeMl": 550,
+    "effectiveMl": 550,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-20_d00",
+    "ts": 1789890300000,
+    "dayKey": "2026-09-20",
+    "beverage": "water",
+    "volumeMl": 240,
+    "effectiveMl": 240,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-20_d01",
+    "ts": 1789894800000,
+    "dayKey": "2026-09-20",
+    "beverage": "coffee",
+    "volumeMl": 270,
+    "effectiveMl": 216,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-20_d02",
+    "ts": 1789900200000,
+    "dayKey": "2026-09-20",
+    "beverage": "water",
+    "volumeMl": 320,
+    "effectiveMl": 320,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-20_d03",
+    "ts": 1789907400000,
+    "dayKey": "2026-09-20",
+    "beverage": "water",
+    "volumeMl": 250,
+    "effectiveMl": 250,
+    "source": "notification"
+   },
+   {
+    "id": "2026-09-20_d04",
+    "ts": 1789916400000,
+    "dayKey": "2026-09-20",
+    "beverage": "tea",
+    "volumeMl": 250,
+    "effectiveMl": 225,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-20_d05",
+    "ts": 1789921800000,
+    "dayKey": "2026-09-20",
+    "beverage": "water",
+    "volumeMl": 350,
+    "effectiveMl": 350,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-20_d06",
+    "ts": 1789929000000,
+    "dayKey": "2026-09-20",
+    "beverage": "water",
+    "volumeMl": 270,
+    "effectiveMl": 270,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-20_d07",
+    "ts": 1789934400000,
+    "dayKey": "2026-09-20",
+    "beverage": "water",
+    "volumeMl": 490,
+    "effectiveMl": 490,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-21_d00",
+    "ts": 1789976700000,
+    "dayKey": "2026-09-21",
+    "beverage": "water",
+    "volumeMl": 250,
+    "effectiveMl": 250,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-21_d01",
+    "ts": 1789981200000,
+    "dayKey": "2026-09-21",
+    "beverage": "coffee",
+    "volumeMl": 250,
+    "effectiveMl": 200,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-21_d02",
+    "ts": 1789986600000,
+    "dayKey": "2026-09-21",
+    "beverage": "water",
+    "volumeMl": 300,
+    "effectiveMl": 300,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-21_d03",
+    "ts": 1789993800000,
+    "dayKey": "2026-09-21",
+    "beverage": "water",
+    "volumeMl": 250,
+    "effectiveMl": 250,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-22_d00",
+    "ts": 1790063100000,
+    "dayKey": "2026-09-22",
+    "beverage": "water",
+    "volumeMl": 240,
+    "effectiveMl": 240,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-22_d01",
+    "ts": 1790067600000,
+    "dayKey": "2026-09-22",
+    "beverage": "coffee",
+    "volumeMl": 260,
+    "effectiveMl": 208,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-22_d02",
+    "ts": 1790073000000,
+    "dayKey": "2026-09-22",
+    "beverage": "water",
+    "volumeMl": 330,
+    "effectiveMl": 330,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-22_d03",
+    "ts": 1790080200000,
+    "dayKey": "2026-09-22",
+    "beverage": "water",
+    "volumeMl": 260,
+    "effectiveMl": 260,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-22_d04",
+    "ts": 1790089200000,
+    "dayKey": "2026-09-22",
+    "beverage": "tea",
+    "volumeMl": 240,
+    "effectiveMl": 216,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-22_d05",
+    "ts": 1790094600000,
+    "dayKey": "2026-09-22",
+    "beverage": "water",
+    "volumeMl": 370,
+    "effectiveMl": 370,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-22_d06",
+    "ts": 1790101800000,
+    "dayKey": "2026-09-22",
+    "beverage": "water",
+    "volumeMl": 240,
+    "effectiveMl": 240,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-22_d07",
+    "ts": 1790107200000,
+    "dayKey": "2026-09-22",
+    "beverage": "water",
+    "volumeMl": 480,
+    "effectiveMl": 480,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-23_d00",
+    "ts": 1790149500000,
+    "dayKey": "2026-09-23",
+    "beverage": "water",
+    "volumeMl": 270,
+    "effectiveMl": 270,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-23_d01",
+    "ts": 1790154000000,
+    "dayKey": "2026-09-23",
+    "beverage": "coffee",
+    "volumeMl": 260,
+    "effectiveMl": 208,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-23_d02",
+    "ts": 1790159400000,
+    "dayKey": "2026-09-23",
+    "beverage": "water",
+    "volumeMl": 290,
+    "effectiveMl": 290,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-23_d03",
+    "ts": 1790166600000,
+    "dayKey": "2026-09-23",
+    "beverage": "water",
+    "volumeMl": 250,
+    "effectiveMl": 250,
+    "source": "notification"
+   },
+   {
+    "id": "2026-09-23_d04",
+    "ts": 1790175600000,
+    "dayKey": "2026-09-23",
+    "beverage": "tea",
+    "volumeMl": 240,
+    "effectiveMl": 216,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-23_d05",
+    "ts": 1790181000000,
+    "dayKey": "2026-09-23",
+    "beverage": "water",
+    "volumeMl": 340,
+    "effectiveMl": 340,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-23_d06",
+    "ts": 1790188200000,
+    "dayKey": "2026-09-23",
+    "beverage": "water",
+    "volumeMl": 260,
+    "effectiveMl": 260,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-23_d07",
+    "ts": 1790193600000,
+    "dayKey": "2026-09-23",
+    "beverage": "water",
+    "volumeMl": 490,
+    "effectiveMl": 490,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-24_d00",
+    "ts": 1790235900000,
+    "dayKey": "2026-09-24",
+    "beverage": "water",
+    "volumeMl": 250,
+    "effectiveMl": 250,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-24_d01",
+    "ts": 1790240400000,
+    "dayKey": "2026-09-24",
+    "beverage": "coffee",
+    "volumeMl": 250,
+    "effectiveMl": 200,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-24_d02",
+    "ts": 1790245800000,
+    "dayKey": "2026-09-24",
+    "beverage": "water",
+    "volumeMl": 300,
+    "effectiveMl": 300,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-24_d03",
+    "ts": 1790253000000,
+    "dayKey": "2026-09-24",
+    "beverage": "water",
+    "volumeMl": 240,
+    "effectiveMl": 240,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-24_d04",
+    "ts": 1790262000000,
+    "dayKey": "2026-09-24",
+    "beverage": "tea",
+    "volumeMl": 260,
+    "effectiveMl": 234,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-24_d05",
+    "ts": 1790267400000,
+    "dayKey": "2026-09-24",
+    "beverage": "water",
+    "volumeMl": 370,
+    "effectiveMl": 370,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-24_d06",
+    "ts": 1790274600000,
+    "dayKey": "2026-09-24",
+    "beverage": "water",
+    "volumeMl": 260,
+    "effectiveMl": 260,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-24_d07",
+    "ts": 1790280000000,
+    "dayKey": "2026-09-24",
+    "beverage": "water",
+    "volumeMl": 490,
+    "effectiveMl": 490,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-25_d00",
+    "ts": 1790322300000,
+    "dayKey": "2026-09-25",
+    "beverage": "water",
+    "volumeMl": 250,
+    "effectiveMl": 250,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-25_d01",
+    "ts": 1790326800000,
+    "dayKey": "2026-09-25",
+    "beverage": "coffee",
+    "volumeMl": 260,
+    "effectiveMl": 208,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-25_d02",
+    "ts": 1790332200000,
+    "dayKey": "2026-09-25",
+    "beverage": "water",
+    "volumeMl": 330,
+    "effectiveMl": 330,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-25_d03",
+    "ts": 1790339400000,
+    "dayKey": "2026-09-25",
+    "beverage": "water",
+    "volumeMl": 260,
+    "effectiveMl": 260,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-25_d04",
+    "ts": 1790348400000,
+    "dayKey": "2026-09-25",
+    "beverage": "tea",
+    "volumeMl": 250,
+    "effectiveMl": 225,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-25_d05",
+    "ts": 1790353800000,
+    "dayKey": "2026-09-25",
+    "beverage": "water",
+    "volumeMl": 370,
+    "effectiveMl": 370,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-25_d06",
+    "ts": 1790361000000,
+    "dayKey": "2026-09-25",
+    "beverage": "water",
+    "volumeMl": 270,
+    "effectiveMl": 270,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-25_d07",
+    "ts": 1790366400000,
+    "dayKey": "2026-09-25",
+    "beverage": "water",
+    "volumeMl": 490,
+    "effectiveMl": 490,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-26_d00",
+    "ts": 1790408700000,
+    "dayKey": "2026-09-26",
+    "beverage": "water",
+    "volumeMl": 240,
+    "effectiveMl": 240,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-26_d01",
+    "ts": 1790413200000,
+    "dayKey": "2026-09-26",
+    "beverage": "coffee",
+    "volumeMl": 240,
+    "effectiveMl": 192,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-26_d02",
+    "ts": 1790418600000,
+    "dayKey": "2026-09-26",
+    "beverage": "water",
+    "volumeMl": 310,
+    "effectiveMl": 310,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-26_d03",
+    "ts": 1790425800000,
+    "dayKey": "2026-09-26",
+    "beverage": "water",
+    "volumeMl": 260,
+    "effectiveMl": 260,
+    "source": "notification"
+   },
+   {
+    "id": "2026-09-26_d04",
+    "ts": 1790434800000,
+    "dayKey": "2026-09-26",
+    "beverage": "tea",
+    "volumeMl": 260,
+    "effectiveMl": 234,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-26_d05",
+    "ts": 1790440200000,
+    "dayKey": "2026-09-26",
+    "beverage": "water",
+    "volumeMl": 360,
+    "effectiveMl": 360,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-26_d06",
+    "ts": 1790447400000,
+    "dayKey": "2026-09-26",
+    "beverage": "water",
+    "volumeMl": 270,
+    "effectiveMl": 270,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-26_d07",
+    "ts": 1790452800000,
+    "dayKey": "2026-09-26",
+    "beverage": "water",
+    "volumeMl": 540,
+    "effectiveMl": 540,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-27_d00",
+    "ts": 1790495100000,
+    "dayKey": "2026-09-27",
+    "beverage": "water",
+    "volumeMl": 260,
+    "effectiveMl": 260,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-27_d01",
+    "ts": 1790499600000,
+    "dayKey": "2026-09-27",
+    "beverage": "coffee",
+    "volumeMl": 250,
+    "effectiveMl": 200,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-27_d02",
+    "ts": 1790505000000,
+    "dayKey": "2026-09-27",
+    "beverage": "water",
+    "volumeMl": 320,
+    "effectiveMl": 320,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-27_d03",
+    "ts": 1790512200000,
+    "dayKey": "2026-09-27",
+    "beverage": "water",
+    "volumeMl": 270,
+    "effectiveMl": 270,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-27_d04",
+    "ts": 1790521200000,
+    "dayKey": "2026-09-27",
+    "beverage": "tea",
+    "volumeMl": 260,
+    "effectiveMl": 234,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-27_d05",
+    "ts": 1790526600000,
+    "dayKey": "2026-09-27",
+    "beverage": "water",
+    "volumeMl": 340,
+    "effectiveMl": 340,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-27_d06",
+    "ts": 1790533800000,
+    "dayKey": "2026-09-27",
+    "beverage": "water",
+    "volumeMl": 260,
+    "effectiveMl": 260,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-27_d07",
+    "ts": 1790539200000,
+    "dayKey": "2026-09-27",
+    "beverage": "water",
+    "volumeMl": 550,
+    "effectiveMl": 550,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-28_d00",
+    "ts": 1790581500000,
+    "dayKey": "2026-09-28",
+    "beverage": "water",
+    "volumeMl": 240,
+    "effectiveMl": 240,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-28_d01",
+    "ts": 1790586000000,
+    "dayKey": "2026-09-28",
+    "beverage": "coffee",
+    "volumeMl": 250,
+    "effectiveMl": 200,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-28_d02",
+    "ts": 1790591400000,
+    "dayKey": "2026-09-28",
+    "beverage": "water",
+    "volumeMl": 320,
+    "effectiveMl": 320,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-28_d03",
+    "ts": 1790598600000,
+    "dayKey": "2026-09-28",
+    "beverage": "water",
+    "volumeMl": 270,
+    "effectiveMl": 270,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-28_d04",
+    "ts": 1790607600000,
+    "dayKey": "2026-09-28",
+    "beverage": "tea",
+    "volumeMl": 270,
+    "effectiveMl": 243,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-28_d05",
+    "ts": 1790613000000,
+    "dayKey": "2026-09-28",
+    "beverage": "water",
+    "volumeMl": 350,
+    "effectiveMl": 350,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-28_d06",
+    "ts": 1790620200000,
+    "dayKey": "2026-09-28",
+    "beverage": "water",
+    "volumeMl": 240,
+    "effectiveMl": 240,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-28_d07",
+    "ts": 1790625600000,
+    "dayKey": "2026-09-28",
+    "beverage": "water",
+    "volumeMl": 530,
+    "effectiveMl": 530,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-29_d00",
+    "ts": 1790667900000,
+    "dayKey": "2026-09-29",
+    "beverage": "water",
+    "volumeMl": 270,
+    "effectiveMl": 270,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-29_d01",
+    "ts": 1790672400000,
+    "dayKey": "2026-09-29",
+    "beverage": "coffee",
+    "volumeMl": 270,
+    "effectiveMl": 216,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-29_d02",
+    "ts": 1790677800000,
+    "dayKey": "2026-09-29",
+    "beverage": "water",
+    "volumeMl": 330,
+    "effectiveMl": 330,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-29_d03",
+    "ts": 1790685000000,
+    "dayKey": "2026-09-29",
+    "beverage": "water",
+    "volumeMl": 250,
+    "effectiveMl": 250,
+    "source": "notification"
+   },
+   {
+    "id": "2026-09-29_d04",
+    "ts": 1790694000000,
+    "dayKey": "2026-09-29",
+    "beverage": "tea",
+    "volumeMl": 250,
+    "effectiveMl": 225,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-29_d05",
+    "ts": 1790699400000,
+    "dayKey": "2026-09-29",
+    "beverage": "water",
+    "volumeMl": 350,
+    "effectiveMl": 350,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-29_d06",
+    "ts": 1790706600000,
+    "dayKey": "2026-09-29",
+    "beverage": "water",
+    "volumeMl": 260,
+    "effectiveMl": 260,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-29_d07",
+    "ts": 1790712000000,
+    "dayKey": "2026-09-29",
+    "beverage": "water",
+    "volumeMl": 520,
+    "effectiveMl": 520,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-30_d00",
+    "ts": 1790754300000,
+    "dayKey": "2026-09-30",
+    "beverage": "water",
+    "volumeMl": 250,
+    "effectiveMl": 250,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-30_d01",
+    "ts": 1790758800000,
+    "dayKey": "2026-09-30",
+    "beverage": "coffee",
+    "volumeMl": 260,
+    "effectiveMl": 208,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-30_d02",
+    "ts": 1790764200000,
+    "dayKey": "2026-09-30",
+    "beverage": "water",
+    "volumeMl": 310,
+    "effectiveMl": 310,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-30_d03",
+    "ts": 1790771400000,
+    "dayKey": "2026-09-30",
+    "beverage": "water",
+    "volumeMl": 270,
+    "effectiveMl": 270,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-30_d04",
+    "ts": 1790780400000,
+    "dayKey": "2026-09-30",
+    "beverage": "tea",
+    "volumeMl": 260,
+    "effectiveMl": 234,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-30_d05",
+    "ts": 1790785800000,
+    "dayKey": "2026-09-30",
+    "beverage": "water",
+    "volumeMl": 350,
+    "effectiveMl": 350,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-30_d06",
+    "ts": 1790793000000,
+    "dayKey": "2026-09-30",
+    "beverage": "water",
+    "volumeMl": 260,
+    "effectiveMl": 260,
+    "source": "app"
+   },
+   {
+    "id": "2026-09-30_d07",
+    "ts": 1790798400000,
+    "dayKey": "2026-09-30",
+    "beverage": "water",
+    "volumeMl": 520,
+    "effectiveMl": 520,
+    "source": "app"
+   }
+  ],
+  "2026-10": [
+   {
+    "id": "2026-10-01_d00",
+    "ts": 1790840700000,
+    "dayKey": "2026-10-01",
+    "beverage": "water",
+    "volumeMl": 250,
+    "effectiveMl": 250,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-01_d01",
+    "ts": 1790845200000,
+    "dayKey": "2026-10-01",
+    "beverage": "coffee",
+    "volumeMl": 250,
+    "effectiveMl": 200,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-01_d02",
+    "ts": 1790850600000,
+    "dayKey": "2026-10-01",
+    "beverage": "water",
+    "volumeMl": 300,
+    "effectiveMl": 300,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-02_d00",
+    "ts": 1790927100000,
+    "dayKey": "2026-10-02",
+    "beverage": "water",
+    "volumeMl": 270,
+    "effectiveMl": 270,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-02_d01",
+    "ts": 1790931600000,
+    "dayKey": "2026-10-02",
+    "beverage": "coffee",
+    "volumeMl": 240,
+    "effectiveMl": 192,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-02_d02",
+    "ts": 1790937000000,
+    "dayKey": "2026-10-02",
+    "beverage": "water",
+    "volumeMl": 310,
+    "effectiveMl": 310,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-02_d03",
+    "ts": 1790944200000,
+    "dayKey": "2026-10-02",
+    "beverage": "water",
+    "volumeMl": 270,
+    "effectiveMl": 270,
+    "source": "notification"
+   },
+   {
+    "id": "2026-10-02_d04",
+    "ts": 1790953200000,
+    "dayKey": "2026-10-02",
+    "beverage": "tea",
+    "volumeMl": 250,
+    "effectiveMl": 225,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-02_d05",
+    "ts": 1790958600000,
+    "dayKey": "2026-10-02",
+    "beverage": "water",
+    "volumeMl": 370,
+    "effectiveMl": 370,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-02_d06",
+    "ts": 1790965800000,
+    "dayKey": "2026-10-02",
+    "beverage": "water",
+    "volumeMl": 240,
+    "effectiveMl": 240,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-02_d07",
+    "ts": 1790971200000,
+    "dayKey": "2026-10-02",
+    "beverage": "water",
+    "volumeMl": 550,
+    "effectiveMl": 550,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-03_d00",
+    "ts": 1791013500000,
+    "dayKey": "2026-10-03",
+    "beverage": "water",
+    "volumeMl": 260,
+    "effectiveMl": 260,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-03_d01",
+    "ts": 1791018000000,
+    "dayKey": "2026-10-03",
+    "beverage": "coffee",
+    "volumeMl": 270,
+    "effectiveMl": 216,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-03_d02",
+    "ts": 1791023400000,
+    "dayKey": "2026-10-03",
+    "beverage": "water",
+    "volumeMl": 290,
+    "effectiveMl": 290,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-03_d03",
+    "ts": 1791030600000,
+    "dayKey": "2026-10-03",
+    "beverage": "water",
+    "volumeMl": 250,
+    "effectiveMl": 250,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-03_d04",
+    "ts": 1791039600000,
+    "dayKey": "2026-10-03",
+    "beverage": "tea",
+    "volumeMl": 250,
+    "effectiveMl": 225,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-03_d05",
+    "ts": 1791045000000,
+    "dayKey": "2026-10-03",
+    "beverage": "water",
+    "volumeMl": 380,
+    "effectiveMl": 380,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-03_d06",
+    "ts": 1791052200000,
+    "dayKey": "2026-10-03",
+    "beverage": "water",
+    "volumeMl": 250,
+    "effectiveMl": 250,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-03_d07",
+    "ts": 1791057600000,
+    "dayKey": "2026-10-03",
+    "beverage": "water",
+    "volumeMl": 500,
+    "effectiveMl": 500,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-04_d00",
+    "ts": 1791099900000,
+    "dayKey": "2026-10-04",
+    "beverage": "water",
+    "volumeMl": 260,
+    "effectiveMl": 260,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-04_d01",
+    "ts": 1791104400000,
+    "dayKey": "2026-10-04",
+    "beverage": "coffee",
+    "volumeMl": 260,
+    "effectiveMl": 208,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-04_d02",
+    "ts": 1791109800000,
+    "dayKey": "2026-10-04",
+    "beverage": "water",
+    "volumeMl": 310,
+    "effectiveMl": 310,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-04_d03",
+    "ts": 1791117000000,
+    "dayKey": "2026-10-04",
+    "beverage": "water",
+    "volumeMl": 270,
+    "effectiveMl": 270,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-04_d04",
+    "ts": 1791126000000,
+    "dayKey": "2026-10-04",
+    "beverage": "tea",
+    "volumeMl": 240,
+    "effectiveMl": 216,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-04_d05",
+    "ts": 1791131400000,
+    "dayKey": "2026-10-04",
+    "beverage": "water",
+    "volumeMl": 360,
+    "effectiveMl": 360,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-04_d06",
+    "ts": 1791138600000,
+    "dayKey": "2026-10-04",
+    "beverage": "water",
+    "volumeMl": 270,
+    "effectiveMl": 270,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-04_d07",
+    "ts": 1791144000000,
+    "dayKey": "2026-10-04",
+    "beverage": "water",
+    "volumeMl": 550,
+    "effectiveMl": 550,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-05_d00",
+    "ts": 1791186300000,
+    "dayKey": "2026-10-05",
+    "beverage": "water",
+    "volumeMl": 250,
+    "effectiveMl": 250,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-05_d01",
+    "ts": 1791190800000,
+    "dayKey": "2026-10-05",
+    "beverage": "coffee",
+    "volumeMl": 270,
+    "effectiveMl": 216,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-05_d02",
+    "ts": 1791196200000,
+    "dayKey": "2026-10-05",
+    "beverage": "water",
+    "volumeMl": 310,
+    "effectiveMl": 310,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-05_d03",
+    "ts": 1791203400000,
+    "dayKey": "2026-10-05",
+    "beverage": "water",
+    "volumeMl": 270,
+    "effectiveMl": 270,
+    "source": "notification"
+   },
+   {
+    "id": "2026-10-05_d04",
+    "ts": 1791212400000,
+    "dayKey": "2026-10-05",
+    "beverage": "tea",
+    "volumeMl": 270,
+    "effectiveMl": 243,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-05_d05",
+    "ts": 1791217800000,
+    "dayKey": "2026-10-05",
+    "beverage": "water",
+    "volumeMl": 350,
+    "effectiveMl": 350,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-05_d06",
+    "ts": 1791225000000,
+    "dayKey": "2026-10-05",
+    "beverage": "water",
+    "volumeMl": 270,
+    "effectiveMl": 270,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-05_d07",
+    "ts": 1791230400000,
+    "dayKey": "2026-10-05",
+    "beverage": "water",
+    "volumeMl": 520,
+    "effectiveMl": 520,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-06_d00",
+    "ts": 1791272700000,
+    "dayKey": "2026-10-06",
+    "beverage": "water",
+    "volumeMl": 240,
+    "effectiveMl": 240,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-06_d01",
+    "ts": 1791277200000,
+    "dayKey": "2026-10-06",
+    "beverage": "coffee",
+    "volumeMl": 260,
+    "effectiveMl": 208,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-06_d02",
+    "ts": 1791282600000,
+    "dayKey": "2026-10-06",
+    "beverage": "water",
+    "volumeMl": 320,
+    "effectiveMl": 320,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-06_d03",
+    "ts": 1791289800000,
+    "dayKey": "2026-10-06",
+    "beverage": "water",
+    "volumeMl": 270,
+    "effectiveMl": 270,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-06_d04",
+    "ts": 1791298800000,
+    "dayKey": "2026-10-06",
+    "beverage": "tea",
+    "volumeMl": 250,
+    "effectiveMl": 225,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-06_d05",
+    "ts": 1791304200000,
+    "dayKey": "2026-10-06",
+    "beverage": "water",
+    "volumeMl": 350,
+    "effectiveMl": 350,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-06_d06",
+    "ts": 1791311400000,
+    "dayKey": "2026-10-06",
+    "beverage": "water",
+    "volumeMl": 270,
+    "effectiveMl": 270,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-06_d07",
+    "ts": 1791316800000,
+    "dayKey": "2026-10-06",
+    "beverage": "water",
+    "volumeMl": 480,
+    "effectiveMl": 480,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-07_d00",
+    "ts": 1791359100000,
+    "dayKey": "2026-10-07",
+    "beverage": "water",
+    "volumeMl": 270,
+    "effectiveMl": 270,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-07_d01",
+    "ts": 1791363600000,
+    "dayKey": "2026-10-07",
+    "beverage": "coffee",
+    "volumeMl": 270,
+    "effectiveMl": 216,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-07_d02",
+    "ts": 1791369000000,
+    "dayKey": "2026-10-07",
+    "beverage": "water",
+    "volumeMl": 300,
+    "effectiveMl": 300,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-07_d03",
+    "ts": 1791376200000,
+    "dayKey": "2026-10-07",
+    "beverage": "water",
+    "volumeMl": 260,
+    "effectiveMl": 260,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-07_d04",
+    "ts": 1791385200000,
+    "dayKey": "2026-10-07",
+    "beverage": "tea",
+    "volumeMl": 240,
+    "effectiveMl": 216,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-07_d05",
+    "ts": 1791390600000,
+    "dayKey": "2026-10-07",
+    "beverage": "water",
+    "volumeMl": 380,
+    "effectiveMl": 380,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-07_d06",
+    "ts": 1791397800000,
+    "dayKey": "2026-10-07",
+    "beverage": "water",
+    "volumeMl": 270,
+    "effectiveMl": 270,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-07_d07",
+    "ts": 1791403200000,
+    "dayKey": "2026-10-07",
+    "beverage": "water",
+    "volumeMl": 540,
+    "effectiveMl": 540,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-08_d00",
+    "ts": 1791445800000,
+    "dayKey": "2026-10-08",
+    "beverage": "water",
+    "volumeMl": 300,
+    "effectiveMl": 300,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-08_d01",
+    "ts": 1791450900000,
+    "dayKey": "2026-10-08",
+    "beverage": "coffee",
+    "volumeMl": 250,
+    "effectiveMl": 200,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-08_d02",
+    "ts": 1791457200000,
+    "dayKey": "2026-10-08",
+    "beverage": "water",
+    "volumeMl": 250,
+    "effectiveMl": 250,
+    "source": "app"
+   },
+   {
+    "id": "2026-10-08_d03",
+    "ts": 1791462600000,
+    "dayKey": "2026-10-08",
+    "beverage": "tea",
+    "volumeMl": 250,
+    "effectiveMl": 225,
+    "source": "notification"
+   },
+   {
+    "id": "2026-10-08_d04",
+    "ts": 1791465600000,
+    "dayKey": "2026-10-08",
+    "beverage": "water",
+    "volumeMl": 250,
+    "effectiveMl": 250,
+    "source": "app"
+   }
+  ]
+ },
+ "daySummaries": {
+  "2026-08-25": {
+   "dayKey": "2026-08-25",
+   "effectiveMl": 750,
+   "goalMl": 2300,
+   "count": 3,
+   "reached": false
+  },
+  "2026-08-26": {
+   "dayKey": "2026-08-26",
+   "effectiveMl": 2362,
+   "goalMl": 2300,
+   "count": 8,
+   "reached": true
+  },
+  "2026-08-27": {
+   "dayKey": "2026-08-27",
+   "effectiveMl": 1000,
+   "goalMl": 2300,
+   "count": 4,
+   "reached": false
+  },
+  "2026-08-28": {
+   "dayKey": "2026-08-28",
+   "effectiveMl": 2382,
+   "goalMl": 2300,
+   "count": 8,
+   "reached": true
+  },
+  "2026-08-29": {
+   "dayKey": "2026-08-29",
+   "effectiveMl": 2366,
+   "goalMl": 2300,
+   "count": 8,
+   "reached": true
+  },
+  "2026-08-30": {
+   "dayKey": "2026-08-30",
+   "effectiveMl": 2348,
+   "goalMl": 2300,
+   "count": 8,
+   "reached": true
+  },
+  "2026-08-31": {
+   "dayKey": "2026-08-31",
+   "effectiveMl": 1225,
+   "goalMl": 2300,
+   "count": 5,
+   "reached": false
+  },
+  "2026-09-01": {
+   "dayKey": "2026-09-01",
+   "effectiveMl": 2352,
+   "goalMl": 2300,
+   "count": 8,
+   "reached": true
+  },
+  "2026-09-02": {
+   "dayKey": "2026-09-02",
+   "effectiveMl": 2358,
+   "goalMl": 2300,
+   "count": 8,
+   "reached": true
+  },
+  "2026-09-03": {
+   "dayKey": "2026-09-03",
+   "effectiveMl": 1225,
+   "goalMl": 2300,
+   "count": 5,
+   "reached": false
+  },
+  "2026-09-04": {
+   "dayKey": "2026-09-04",
+   "effectiveMl": 750,
+   "goalMl": 2300,
+   "count": 3,
+   "reached": false
+  },
+  "2026-09-05": {
+   "dayKey": "2026-09-05",
+   "effectiveMl": 1000,
+   "goalMl": 2300,
+   "count": 4,
+   "reached": false
+  },
+  "2026-09-06": {
+   "dayKey": "2026-09-06",
+   "effectiveMl": 750,
+   "goalMl": 2300,
+   "count": 3,
+   "reached": false
+  },
+  "2026-09-07": {
+   "dayKey": "2026-09-07",
+   "effectiveMl": 2324,
+   "goalMl": 2300,
+   "count": 9,
+   "reached": true
+  },
+  "2026-09-08": {
+   "dayKey": "2026-09-08",
+   "effectiveMl": 2405,
+   "goalMl": 2300,
+   "count": 8,
+   "reached": true
+  },
+  "2026-09-09": {
+   "dayKey": "2026-09-09",
+   "effectiveMl": 2381,
+   "goalMl": 2300,
+   "count": 8,
+   "reached": true
+  },
+  "2026-09-10": {
+   "dayKey": "2026-09-10",
+   "effectiveMl": 2422,
+   "goalMl": 2300,
+   "count": 8,
+   "reached": true
+  },
+  "2026-09-11": {
+   "dayKey": "2026-09-11",
+   "effectiveMl": 750,
+   "goalMl": 2300,
+   "count": 3,
+   "reached": false
+  },
+  "2026-09-12": {
+   "dayKey": "2026-09-12",
+   "effectiveMl": 2412,
+   "goalMl": 2300,
+   "count": 8,
+   "reached": true
+  },
+  "2026-09-13": {
+   "dayKey": "2026-09-13",
+   "effectiveMl": 2328,
+   "goalMl": 2300,
+   "count": 9,
+   "reached": true
+  },
+  "2026-09-14": {
+   "dayKey": "2026-09-14",
+   "effectiveMl": 2425,
+   "goalMl": 2300,
+   "count": 8,
+   "reached": true
+  },
+  "2026-09-15": {
+   "dayKey": "2026-09-15",
+   "effectiveMl": 1000,
+   "goalMl": 2300,
+   "count": 4,
+   "reached": false
+  },
+  "2026-09-16": {
+   "dayKey": "2026-09-16",
+   "effectiveMl": 2366,
+   "goalMl": 2300,
+   "count": 8,
+   "reached": true
+  },
+  "2026-09-17": {
+   "dayKey": "2026-09-17",
+   "effectiveMl": 1000,
+   "goalMl": 2300,
+   "count": 4,
+   "reached": false
+  },
+  "2026-09-18": {
+   "dayKey": "2026-09-18",
+   "effectiveMl": 2421,
+   "goalMl": 2300,
+   "count": 8,
+   "reached": true
+  },
+  "2026-09-19": {
+   "dayKey": "2026-09-19",
+   "effectiveMl": 2413,
+   "goalMl": 2300,
+   "count": 8,
+   "reached": true
+  },
+  "2026-09-20": {
+   "dayKey": "2026-09-20",
+   "effectiveMl": 2361,
+   "goalMl": 2300,
+   "count": 8,
+   "reached": true
+  },
+  "2026-09-21": {
+   "dayKey": "2026-09-21",
+   "effectiveMl": 1000,
+   "goalMl": 2300,
+   "count": 4,
+   "reached": false
+  },
+  "2026-09-22": {
+   "dayKey": "2026-09-22",
+   "effectiveMl": 2344,
+   "goalMl": 2300,
+   "count": 8,
+   "reached": true
+  },
+  "2026-09-23": {
+   "dayKey": "2026-09-23",
+   "effectiveMl": 2324,
+   "goalMl": 2300,
+   "count": 8,
+   "reached": true
+  },
+  "2026-09-24": {
+   "dayKey": "2026-09-24",
+   "effectiveMl": 2344,
+   "goalMl": 2300,
+   "count": 8,
+   "reached": true
+  },
+  "2026-09-25": {
+   "dayKey": "2026-09-25",
+   "effectiveMl": 2403,
+   "goalMl": 2300,
+   "count": 8,
+   "reached": true
+  },
+  "2026-09-26": {
+   "dayKey": "2026-09-26",
+   "effectiveMl": 2406,
+   "goalMl": 2300,
+   "count": 8,
+   "reached": true
+  },
+  "2026-09-27": {
+   "dayKey": "2026-09-27",
+   "effectiveMl": 2434,
+   "goalMl": 2300,
+   "count": 8,
+   "reached": true
+  },
+  "2026-09-28": {
+   "dayKey": "2026-09-28",
+   "effectiveMl": 2393,
+   "goalMl": 2300,
+   "count": 8,
+   "reached": true
+  },
+  "2026-09-29": {
+   "dayKey": "2026-09-29",
+   "effectiveMl": 2421,
+   "goalMl": 2300,
+   "count": 8,
+   "reached": true
+  },
+  "2026-09-30": {
+   "dayKey": "2026-09-30",
+   "effectiveMl": 2402,
+   "goalMl": 2300,
+   "count": 8,
+   "reached": true
+  },
+  "2026-10-01": {
+   "dayKey": "2026-10-01",
+   "effectiveMl": 750,
+   "goalMl": 2300,
+   "count": 3,
+   "reached": false
+  },
+  "2026-10-02": {
+   "dayKey": "2026-10-02",
+   "effectiveMl": 2427,
+   "goalMl": 2300,
+   "count": 8,
+   "reached": true
+  },
+  "2026-10-03": {
+   "dayKey": "2026-10-03",
+   "effectiveMl": 2371,
+   "goalMl": 2300,
+   "count": 8,
+   "reached": true
+  },
+  "2026-10-04": {
+   "dayKey": "2026-10-04",
+   "effectiveMl": 2444,
+   "goalMl": 2300,
+   "count": 8,
+   "reached": true
+  },
+  "2026-10-05": {
+   "dayKey": "2026-10-05",
+   "effectiveMl": 2429,
+   "goalMl": 2300,
+   "count": 8,
+   "reached": true
+  },
+  "2026-10-06": {
+   "dayKey": "2026-10-06",
+   "effectiveMl": 2363,
+   "goalMl": 2300,
+   "count": 8,
+   "reached": true
+  },
+  "2026-10-07": {
+   "dayKey": "2026-10-07",
+   "effectiveMl": 2452,
+   "goalMl": 2300,
+   "count": 8,
+   "reached": true
+  },
+  "2026-10-08": {
+   "dayKey": "2026-10-08",
+   "effectiveMl": 1225,
+   "goalMl": 2300,
+   "count": 5,
+   "reached": false
+  }
+ },
+ "progress": {
+  "goalDays": 32,
+  "stage": 4,
+  "streak": 6,
+  "bestStreak": 9,
+  "streakFreezes": 1,
+  "lastEvaluatedDay": "2026-10-07",
+  "activeSkin": "classic",
+  "activeCupTheme": "classic",
+  "unlocked": [
+   "classic",
+   "skin:berry"
+  ]
+ }
+}

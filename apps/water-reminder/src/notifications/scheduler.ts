@@ -1,10 +1,10 @@
 import { cancel, getNotificationPermission, scheduleSeries, type SeriesEntry } from '@shared/notify';
 import { t } from '@shared/i18n';
+import { addDays, dayKeyFor } from '@/domain/dayKey';
 import { planReminders, planSnooze, type PlannedReminder } from '@/domain/reminderPlan';
 import type { ScheduledReminder } from '@/domain/types';
 import { preferredCup, useSettings } from '@/store/settings';
 import { db } from '@/store/storage';
-import { useToday } from '@/store/today';
 import { useWater } from '@/store/water';
 import { CATEGORY, CHANNEL_GENTLE, CHANNEL_NORMAL, setupNotifications } from './setup';
 
@@ -25,12 +25,13 @@ async function run(): Promise<void> {
   await setupNotifications();
   const { reminders, goal, cups, prefs } = useSettings.getState();
   const water = useWater.getState();
-  const today = useToday.getState().today;
+  // Not useToday: in a background task the process can outlive the day it was started on.
+  const now = new Date();
+  const today = dayKeyFor(now, reminders.wakeMin);
   const permission = await getNotificationPermission();
 
   const todayLogs = water.logsForDay(today);
-  const yesterdayLogs = water.logsForDay(shiftDay(today, -1));
-  const now = new Date();
+  const yesterdayLogs = water.logsForDay(addDays(today, -1));
   const plan = permission.granted
     ? planReminders({
         now,
@@ -55,12 +56,6 @@ async function run(): Promise<void> {
   const snooze = (db.get('scheduled') ?? []).filter((s) => s.kind === 'snooze' && s.fireAt > now.getTime());
   db.set('scheduled', [...slots, ...snooze]);
 }
-
-const shiftDay = (day: string, n: number) => {
-  const [y, m, d] = day.split('-').map(Number);
-  const date = new Date(y, m - 1, d + n);
-  return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
-};
 
 /**
  * Re-plans every pending reminder from the current data (plan §10.2): rolling horizon of one-off

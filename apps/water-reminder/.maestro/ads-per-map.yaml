@@ -1,0 +1,20 @@
+# Ads show only per the placement map (§12): none during onboarding, none before the first glass.
+# Needs a dev or preview build (test ad units). AdMob test ads carry the label "Test Ad".
+appId: com.fiveapps.sipling
+---
+- launchApp:
+    clearState: true
+- assertNotVisible:
+    text: "Test Ad"
+- tapOn: "Let's start"
+- assertNotVisible:
+    text: "Test Ad"
+- tapOn: "Skip"
+- tapOn: "Not now"
+- assertNotVisible:
+    text: "Test Ad"     # Today, before the first glass: no banner
+- tapOn: "Add 250 millilitres"
+- assertVisible: "Added 250 ml"
+- extendedWaitUntil:
+    visible: "Test Ad"  # the banner under the ring appears once a glass is logged
+    timeout: 20000

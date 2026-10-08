@@ -1,0 +1,16 @@
+appId: com.fiveapps.sipling
+---
+- launchApp:
+    clearState: true
+- takeScreenshot: store/screenshots/onboarding-welcome
+- tapOn: "Let's start"
+- tapOn: "Female"
+- tapOn: "Next"
+- takeScreenshot: store/screenshots/onboarding-weight
+- tapOn: "Next"
+- tapOn: "Next"
+- tapOn: "Lightly active (walks, standing)"
+- tapOn: "Next"
+- tapOn: "Mild"
+- tapOn: "Next"
+- takeScreenshot: store/screenshots/goal

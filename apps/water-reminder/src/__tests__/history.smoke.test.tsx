@@ -249,8 +249,11 @@ describe('accessibility', () => {
     expect(auditPressables(ui.root)).toEqual([]);
     await ui.press('Month');
     expect(auditPressables(ui.root)).toEqual([]);
-    const { entry } = log(250, 10);
-    mockParams.current = { id: entry.id };
+    let id = '';
+    await act(async () => {
+      id = log(250, 10).entry.id;
+    });
+    mockParams.current = { id };
     const edit = await render(themed(<EditEntry />, scale));
     expect(auditPressables(edit.root)).toEqual([]);
   });
