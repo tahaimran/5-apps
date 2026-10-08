@@ -13,7 +13,7 @@
 ```bash
 cd apps/word-search
 npx tsc --noEmit && (cd ../../packages/shared && npx tsc --noEmit)
-npx jest                  # 29 suites, 504 tests: domain, generator fuzz, stores, screens, ads rules, a11y, config, assets
+npx jest                  # 29 suites, 505 tests: domain, generator fuzz, stores, screens, ads rules, a11y, config, assets
 npm run test:tz           # day keys, streaks and midnight roll-over in 7 time zones (DST, half-hour offsets, southern hemisphere)
 npx expo-doctor           # 21/21
 npx expo export --platform android --output-dir /tmp/ws-export   # Metro bundle sanity (Hermes bytecode, ~4 MB)
