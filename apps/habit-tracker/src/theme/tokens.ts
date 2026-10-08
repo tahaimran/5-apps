@@ -13,7 +13,7 @@ export const palette: Partial<Record<ThemeMode, Partial<Palette>>> = {
     onPrimary: '#FFFFFF',
     success: '#1F9D61',
     accent: '#FF7A1A', // streak flame
-    danger: '#D23B3B',
+    danger: '#C73535', // darkened from the plan's #D23B3B to reach 4.5:1 on the cream background
   },
   dark: {
     background: '#0F1115',

@@ -41,6 +41,7 @@ function Root() {
         <Stack.Screen name="habit/new" options={{ presentation: 'modal' }} />
         <Stack.Screen name="habit/[id]/edit" options={{ presentation: 'modal' }} />
         <Stack.Screen name="templates" options={{ presentation: 'modal' }} />
+        <Stack.Screen name="note/[date]" options={{ presentation: 'formSheet', sheetGrabberVisible: true }} />
       </Stack>
     </>
   );

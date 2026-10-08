@@ -5,6 +5,8 @@ import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
 import { isComplete } from '@/domain/completion';
 import { elapsedSeconds, formatClock, isRunning } from '@/domain/timer';
+import { readableOn } from '@/theme/contrast';
+import { PopOnChange, StreakBadge } from './motion';
 import type { StreakResult } from '@/domain/streaks';
 import type { Entry, Habit } from '@/domain/types';
 
@@ -68,6 +70,8 @@ function HabitRowBase({
   const complete = isComplete(habit, entry, now);
   const value = entry?.value ?? 0;
   const seconds = elapsedSeconds(entry, now);
+  const fill = complete ? colors.success : habit.color;
+  const timerFill = complete && !running ? colors.success : habit.color;
 
   const detail = isCount
     ? t('today.countProgress', { value, target: habit.target, unit: habit.unit ?? '' })
@@ -153,15 +157,7 @@ function HabitRowBase({
         </View>
       </Pressable>
 
-      {streak.current > 0 && (
-        <View style={styles.streak} importantForAccessibility="no-hide-descendants">
-          <MaterialCommunityIcons name="fire" size={20} color={colors.accent} />
-          <Text style={[type.body, { color: colors.text, fontWeight: '700' }]}>
-            {streak.current}
-            {streak.unit === 'weeks' ? t('today.weekShort') : ''}
-          </Text>
-        </View>
-      )}
+      <StreakBadge streak={streak} />
 
       {isCount && (
         <View style={styles.controls}>
@@ -178,9 +174,9 @@ function HabitRowBase({
             accessibilityRole="button"
             accessibilityLabel={t('today.increase')}
             onPress={() => onAdjust(1)}
-            style={[button, { backgroundColor: complete ? colors.success : habit.color }]}
+            style={[button, { backgroundColor: fill }]}
           >
-            <MaterialCommunityIcons name={complete ? 'check' : 'plus'} size={22} color="#FFFFFF" />
+            <MaterialCommunityIcons name={complete ? 'check' : 'plus'} size={22} color={readableOn(fill)} />
           </Pressable>
         </View>
       )}
@@ -201,26 +197,28 @@ function HabitRowBase({
             accessibilityRole="button"
             accessibilityLabel={t(running ? 'timer.pause' : 'timer.start')}
             onPress={onTimerToggle}
-            style={[button, { backgroundColor: complete && !running ? colors.success : habit.color }]}
+            style={[button, { backgroundColor: timerFill }]}
           >
-            <MaterialCommunityIcons name={running ? 'pause' : complete ? 'check' : 'play'} size={22} color="#FFFFFF" />
+            <MaterialCommunityIcons name={running ? 'pause' : complete ? 'check' : 'play'} size={22} color={readableOn(timerFill)} />
           </Pressable>
         </View>
       )}
 
       {!isCount && !isTimer && (
-        <Pressable
-          accessibilityRole="checkbox"
-          accessibilityLabel={t(complete ? 'today.uncheck' : 'today.check')}
-          accessibilityState={{ checked: complete }}
-          onPress={onToggle}
-          style={[
-            button,
-            { borderWidth: 2, borderColor: complete ? colors.success : colors.border, backgroundColor: complete ? colors.success : 'transparent' },
-          ]}
-        >
-          {complete && <MaterialCommunityIcons name="check" size={26} color="#FFFFFF" />}
-        </Pressable>
+        <PopOnChange active={complete}>
+          <Pressable
+            accessibilityRole="checkbox"
+            accessibilityLabel={t(complete ? 'today.uncheck' : 'today.check')}
+            accessibilityState={{ checked: complete }}
+            onPress={onToggle}
+            style={[
+              button,
+              { borderWidth: 2, borderColor: complete ? colors.success : colors.border, backgroundColor: complete ? colors.success : 'transparent' },
+            ]}
+          >
+            {complete && <MaterialCommunityIcons name="check" size={26} color={readableOn(colors.success)} />}
+          </Pressable>
+        </PopOnChange>
       )}
     </View>
   );

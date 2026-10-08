@@ -7,6 +7,9 @@ import ReorderableList, { useReorderableDrag, type ReorderableListReorderEvent }
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
 import { templateById } from '@/data/templates';
+import { CelebrationHost } from '@/features/celebrations/CelebrationHost';
+import { useCelebrations } from '@/features/celebrations/useCelebrations';
+import { useNotes } from '@/store/notes';
 import { isComplete } from '@/domain/completion';
 import { parseDayKey, weekDays } from '@/domain/dayKey';
 import { dayProgress, type DayProgress } from '@/domain/percent';
@@ -46,6 +49,8 @@ export default function Today() {
   const weekStartsOn = useSettings((s) => s.settings.weekStartsOn);
   const { habits, habitOrder, entries, addHabit, setValue, setOrder, move, startTimer, pauseTimer, addMinutes } = useHabits();
   const feedback = useFeedback();
+  const notes = useNotes((s) => s.notes);
+  useCelebrations();
   const [selected, setSelected] = useState<DayKey>(today);
 
   // Jump back to today when the day rolls over.
@@ -130,6 +135,14 @@ export default function Today() {
           </Text>
           <Text style={[type.body, { color: colors.textMuted }]}>{longDate(today)}</Text>
         </View>
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel={t('note.today')}
+          onPress={() => router.push({ pathname: '/note/[date]', params: { date: selected } })}
+          style={{ width: touchTarget, height: touchTarget, alignItems: 'center', justifyContent: 'center' }}
+        >
+          <MaterialCommunityIcons name={notes[selected] ? 'note-text' : 'note-edit-outline'} size={24} color={colors.textMuted} />
+        </Pressable>
         {progress.total > 0 && (
           <View
             accessible
@@ -183,13 +196,32 @@ export default function Today() {
     </View>
   );
 
+  const note = notes[selected];
   const footer =
-    allDone && !isPast ? (
-      <View style={[styles.perfect, { backgroundColor: colors.surfaceAlt, borderRadius: radius.md, padding: spacing.lg, marginTop: spacing.md }]}>
-        <Text style={[type.title, { color: colors.text }]}>{t('today.allDoneTitle')}</Text>
-        <Text style={[type.body, { color: colors.textMuted }]}>{t('today.allDoneBody')}</Text>
+    list.length === 0 ? null : (
+      <View style={{ gap: spacing.md, marginTop: spacing.md }}>
+        {allDone && !isPast && (
+          <View style={[styles.perfect, { backgroundColor: colors.surfaceAlt, borderRadius: radius.md, padding: spacing.lg }]}>
+            <Text style={[type.title, { color: colors.text }]}>{t('today.allDoneTitle')}</Text>
+            <Text style={[type.body, { color: colors.textMuted }]}>{t('today.allDoneBody')}</Text>
+          </View>
+        )}
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel={`${t('note.prompt')} ${note ? note.text : t('note.empty')}`}
+          onPress={() => router.push({ pathname: '/note/[date]', params: { date: selected } })}
+          style={[styles.perfect, { backgroundColor: colors.surface, borderColor: colors.border, borderWidth: StyleSheet.hairlineWidth, borderRadius: radius.md, padding: spacing.lg, minHeight: touchTarget + 8 }]}
+        >
+          <Text style={[type.bodyLarge, { color: colors.text, fontWeight: '600' }]}>
+            {note?.mood ? ['😞', '😕', '😐', '🙂', '😄'][note.mood - 1] + ' ' : ''}
+            {t('note.prompt')}
+          </Text>
+          <Text style={[type.body, { color: colors.textMuted }]} numberOfLines={3}>
+            {note && note.text !== '' ? note.text : t('note.empty')}
+          </Text>
+        </Pressable>
       </View>
-    ) : null;
+    );
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: colors.background }} edges={['top']}>
@@ -220,6 +252,8 @@ export default function Today() {
           />
         )}
       />
+
+      <CelebrationHost />
 
       <Pressable
         accessibilityRole="button"

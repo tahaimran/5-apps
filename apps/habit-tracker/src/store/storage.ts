@@ -1,4 +1,5 @@
 import { createStore } from '@shared/storage';
+import type { CelebratedState } from '@/domain/celebrations';
 import type { DayNote, DayKey, Entry, FreezeState, Habit, HabitId, Profile, Settings, WidgetSnapshot } from '@/domain/types';
 import { migrations, SCHEMA_VERSION } from './migrations';
 
@@ -11,6 +12,7 @@ export interface HabitKeys {
   settings: Settings;
   profile: Profile;
   'widget:snapshot': WidgetSnapshot;
+  celebrated: CelebratedState;
   /** Sharded per habit to keep writes small. */
   [key: `entries:${string}`]: Record<DayKey, Entry>;
 }
