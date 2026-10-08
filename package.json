@@ -1,5 +1,11 @@
 {
   "name": "5-apps",
   "private": true,
-  "workspaces": ["apps/*", "packages/*"]
+  "workspaces": ["apps/*", "packages/*"],
+  "scripts": {
+    "typecheck": "npm run typecheck --workspaces --if-present"
+  },
+  "devDependencies": {
+    "typescript": "~5.9.0"
+  }
 }

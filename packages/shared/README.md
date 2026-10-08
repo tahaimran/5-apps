@@ -51,3 +51,14 @@ Tokens (`colors`, `spacing`, `radius`, `type`, `motion`) plus `ThemeProvider` wi
 
 ### `@shared/crosspromo`
 `<HouseAdCard />`: rotates promos for the other 4 apps (Play Store links), shown only where a native ad failed to fill.
+
+## Implementation notes
+- Import per module: `@shared/ads`, `@shared/storage`, … (TS alias from `tsconfig.base.json`; add the same alias to each app's Metro config / `babel-plugin-module-resolver` or rely on the workspace package). Run `npm run typecheck` at the repo root.
+- **Ad units:** `initAds(policy, units)` where `units = { home: { format: 'banner', unitId: process.env.EXPO_PUBLIC_ADMOB_HOME } }`. Write the `process.env.EXPO_PUBLIC_*` reference literally (Expo only inlines static references). In `__DEV__` Google test IDs are always used; in release a placement with no ID shows no ad.
+- `initAds` runs `initConsent()` itself and starts the SDK only when `canRequestAds` is true (also later, after "Privacy choices").
+- App-open ads use the single unit with `format: 'appOpen'`; the guard sees the placement `app_open`.
+- `setAdGuard` vetoes banner, native, interstitial and app-open; rewarded is user-initiated and ignores it. Rewarded ignores frequency caps.
+- `<NativeAdCard>` falls back to `<HouseAdCard>` on no-fill. Call `setCurrentApp('habit-tracker')` (from `@shared/crosspromo`) once so an app never promotes itself. Package IDs live in `crosspromo/catalog.ts` and must match each app's `android.package`.
+- i18n: `registerStrings({ en: require('./i18n/en.json') })` at startup. Shared UI strings are under the `shared.*` keys and can be overridden by the app bundle.
+- `store.exportBackup()` returns a file uri; sharing it is up to the app.
+- Each `sharedStore` key (onboarding, review, theme mode, session count) is in `SharedKeys`.

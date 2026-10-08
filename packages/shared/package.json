@@ -1,0 +1,29 @@
+{
+  "name": "@shared/core",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Code reused by all 5 apps: consent, ads, storage, onboarding, theme, i18n, review, notify, crosspromo.",
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "expo": "*",
+    "react": "*",
+    "react-native": "*"
+  },
+  "dependencies": {
+    "expo-file-system": "*",
+    "expo-haptics": "*",
+    "expo-localization": "*",
+    "expo-notifications": "*",
+    "expo-store-review": "*",
+    "react-native-google-mobile-ads": "^17.2.0",
+    "react-native-mmkv": "^4.3.2"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "expo": "^57.0.0",
+    "react": "19.3.0",
+    "react-native": "0.87.1"
+  }
+}

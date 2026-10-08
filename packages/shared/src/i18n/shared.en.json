@@ -1,0 +1,45 @@
+{
+  "shared": {
+    "onboarding": {
+      "skip": "Skip",
+      "back": "Back",
+      "next": "Next",
+      "done": "Get started",
+      "progress": "Step {current} of {total}"
+    },
+    "ads": {
+      "badge": "Ad"
+    },
+    "crosspromo": {
+      "badge": "Our apps",
+      "install": "Install",
+      "apps": {
+        "habit-tracker": {
+          "name": "Habit Tracker",
+          "tagline": "Build streaks that stick"
+        },
+        "water-reminder": {
+          "name": "Sipling",
+          "tagline": "Drink water reminders"
+        },
+        "word-search": {
+          "name": "Word Search",
+          "tagline": "Large print, easy on the eyes"
+        },
+        "trivia-quiz": {
+          "name": "Quizora",
+          "tagline": "Offline trivia for curious minds"
+        },
+        "contraction-timer": {
+          "name": "Contraction Timer",
+          "tagline": "Contractions and kick counts"
+        }
+      }
+    },
+    "notify": {
+      "allow": "Allow",
+      "notNow": "Not now",
+      "title": "Enable notifications?"
+    }
+  }
+}
