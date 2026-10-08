@@ -1,0 +1,14 @@
+# Run after importing store/demo-backup.json (see store/SCREENSHOTS.md).
+appId: com.fiveapps.habittracker
+---
+- launchApp
+- takeScreenshot: store/screenshots/01-today
+- tapOn: "Make my bed"
+- takeScreenshot: store/screenshots/02-detail
+- back
+- scrollUntilVisible:
+    element: "Study"
+- takeScreenshot: store/screenshots/03-count-timer
+- tapOn: "Settings"
+- tapOn: "Backup & restore"
+- takeScreenshot: store/screenshots/04-backup

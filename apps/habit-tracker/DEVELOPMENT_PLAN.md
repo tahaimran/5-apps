@@ -405,7 +405,7 @@ Shared imports: `@shared/ads`, `@shared/storage`, `@shared/onboarding`, `@shared
 | 4 ✅ | Habit detail + heatmap, Stats screen, day notes, dark mode, celebrations + haptics | Heatmap renders 365 days at 60fps on mid-range device |
 | 5 ✅ | Notifications (reminders, summary, nudge), Android widget with interactive check | Widget toggle reflects in app within 1s and vice-versa |
 | 6 ✅ | Onboarding flow, UMP consent, all ad placements with caps, backup/restore, in-app review | Maestro: install → first check-in ≤45s; ads show only per map |
-| 7 | QA pass, a11y pass, store assets, Play listing, internal → closed testing release | Checklist §18 complete; AAB uploaded |
+| 7 ◐ | QA pass, a11y pass, store assets, Play listing, internal → closed testing release | Checklist §18 complete; AAB uploaded |
 
 Note: new personal Play developer accounts need a 12-tester / 14-day closed test before production. Start closed testing on day 7; production launch ≈ day 21.
 
@@ -414,14 +414,14 @@ Note: new personal Play developer accounts need a 12-tester / 14-day closed test
 ## 18. QA & Play release checklist
 
 **Functional QA**
-- [ ] Streaks correct across daily / weekdays / per-week, DST change, timezone change, `dayEndsAt` 0–4, editing past days.
-- [ ] Freeze consumed only per rules; cap 2; 1 ad-earned per day.
-- [ ] Widget: add, toggle, resize, dark mode, after reboot, after app update, day rollover.
-- [ ] Notifications: permission granted/denied, reboot, X/week cancellation, nudge cancelled after completion.
-- [ ] Backup: export → uninstall → reinstall → import restores everything; corrupt/newer-version files rejected gracefully.
-- [ ] Ads: test IDs in dev; no interstitial after check-in; caps honoured; consent form in EEA (use UMP debug geography); privacy options in Settings.
-- [ ] Performance: cold start <1.5s on Pixel 4a class; no jank on Today with 30 habits.
-- [ ] Accessibility: TalkBack full flow, font scale 1.6x, contrast audit.
+- [x] Streaks correct across daily / weekdays / per-week, DST change, timezone change, `dayEndsAt` 0–4, editing past days. *(automated: `npm run test:tz` runs 7 zones; see `RELEASE.md`)*
+- [x] Freeze consumed only per rules; cap 2; 1 ad-earned per day. *(unit + store tests)*
+- [ ] Widget: add, toggle, resize, dark mode, after reboot, after app update, day rollover. *(handler, snapshot and sync are tested; the launcher checks need a device)*
+- [ ] Notifications: permission granted/denied, reboot, X/week cancellation, nudge cancelled after completion. *(planner and scheduler are tested; OS behaviour needs a device)*
+- [ ] Backup: export → uninstall → reinstall → import restores everything; corrupt/newer-version files rejected gracefully. *(round trip and rejection are tested; the reinstall step needs a device)*
+- [ ] Ads: test IDs in dev; no interstitial after check-in; caps honoured; consent form in EEA (use UMP debug geography); privacy options in Settings. *(rules are tested; needs a device)*
+- [ ] Performance: cold start <1.5s on Pixel 4a class; no jank on Today with 30 habits. *(computation budgets are tested; cold start and jank need a device)*
+- [ ] Accessibility: TalkBack full flow, font scale 1.6x, contrast audit. *(contrast, labels, 48 dp targets and 1.6× rendering are audited in tests; TalkBack needs a device)*
 
 **Play Console**
 - [ ] **Data safety:** App collects no user data itself. Declare data collected/shared by the Google Mobile Ads SDK: Device or other IDs (advertising ID), App interactions, Diagnostics, approximate location (IP-derived) — purposes: Advertising/marketing, Analytics, Fraud prevention; encrypted in transit; users can't request deletion (no account). Note "Data is not collected by the developer; backups are user-initiated files."
@@ -430,7 +430,7 @@ Note: new personal Play developer accounts need a 12-tester / 14-day closed test
 - [ ] **Target audience:** 13+ (13–15, 16–17, 18+). Not designed for children; do not opt into Families. Set `tagForUnderAgeOfConsent` handling via UMP; ads content rating max **T**.
 - [ ] **Privacy policy** URL (shared portfolio site page) covering local storage, AdMob, UMP, no developer collection.
 - [ ] **app-ads.txt** live on developer website listed in Play Console; verified in AdMob.
-- [ ] Permissions review: `POST_NOTIFICATIONS`, `RECEIVE_BOOT_COMPLETED`, `VIBRATE`, `AD_ID`; no exact-alarm, no storage permissions (SAF/share only).
-- [ ] Target API level = Play's current requirement; 16 KB page size compatible build.
-- [ ] Store listing per `ASO.md`; screenshots 1080x1920; feature graphic 1024x500.
+- [x] Permissions review: `POST_NOTIFICATIONS`, `RECEIVE_BOOT_COMPLETED`, `VIBRATE`, `AD_ID`; no exact-alarm, no storage permissions (SAF/share only). *(verified in the generated manifest)*
+- [ ] Target API level = Play's current requirement; 16 KB page size compatible build. *(target API 36 is set; the 16 KB check needs a built AAB)*
+- [ ] Store listing per `ASO.md`; screenshots 1080x1920; feature graphic 1024x500. *(icon and feature graphic done in `store/`; screenshots must be captured on a device)*
 - [ ] Pre-launch report clean; closed test (12 testers, 14 days) completed; staged rollout 20% → 50% → 100%.

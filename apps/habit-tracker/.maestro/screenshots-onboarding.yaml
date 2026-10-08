@@ -1,0 +1,10 @@
+appId: com.fiveapps.habittracker
+---
+- launchApp:
+    clearState: true
+- takeScreenshot: store/screenshots/onboarding-welcome
+- tapOn: "Let's start"
+- takeScreenshot: store/screenshots/onboarding-goals
+- tapOn: "Sleep better"
+- tapOn: "Continue"
+- takeScreenshot: store/screenshots/onboarding-starters

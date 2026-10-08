@@ -12,6 +12,14 @@ let lastCheckInAt: number | null = null;
 let lastRewardedAt: number | null = null;
 let lastExternalOpenAt: number | null = null;
 
+/** Clears the remembered moments (tests, and a fresh session). */
+export const resetAdGuardState = () => {
+  appForegroundAt = Date.now();
+  lastCheckInAt = null;
+  lastRewardedAt = null;
+  lastExternalOpenAt = null;
+};
+
 /** A launch from a notification or the widget: no app-open ad for a few seconds. */
 export const markExternalOpen = () => {
   lastExternalOpenAt = Date.now();

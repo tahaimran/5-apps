@@ -1,4 +1,5 @@
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { useRef } from 'react';
+import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
 import { parseDayKey } from '@/domain/dayKey';
@@ -15,8 +16,17 @@ export interface WeekStripProps {
 
 export function WeekStrip({ days, today, selected, progress, onSelect }: WeekStripProps) {
   const { colors, spacing, radius, type, touchTarget } = useTheme();
+  const scroll = useRef<ScrollView>(null);
+  const cell = touchTarget + spacing.xs;
   return (
-    <View style={[styles.strip, { gap: spacing.xs }]}>
+    // Each day keeps at least a 48dp touch target; on narrow phones the strip scrolls a little.
+    <ScrollView
+      ref={scroll}
+      horizontal
+      showsHorizontalScrollIndicator={false}
+      contentContainerStyle={[styles.strip, { gap: spacing.xs }]}
+      onContentSizeChange={() => scroll.current?.scrollTo({ x: Math.max(0, days.indexOf(selected) * cell - cell * 2), animated: false })}
+    >
       {days.map((day) => {
         const date = parseDayKey(day);
         const isFuture = day > today;
@@ -38,6 +48,7 @@ export function WeekStrip({ days, today, selected, progress, onSelect }: WeekStr
               styles.day,
               {
                 minHeight: touchTarget + 16,
+                minWidth: touchTarget,
                 borderRadius: radius.md,
                 backgroundColor: isSelected ? colors.primary : colors.surface,
                 borderColor: day === today ? colors.primary : colors.border,
@@ -60,12 +71,12 @@ export function WeekStrip({ days, today, selected, progress, onSelect }: WeekStr
           </Pressable>
         );
       })}
-    </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  strip: { flexDirection: 'row' },
+  strip: { flexGrow: 1 },
   day: { flex: 1, alignItems: 'center', justifyContent: 'center', borderWidth: 1 },
   dot: { width: 6, height: 6, borderRadius: 3, marginTop: 2 },
 });
