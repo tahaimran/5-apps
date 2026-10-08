@@ -109,7 +109,7 @@ Action on warnings: the emoji length warning is not a policy problem; we keep ~6
 | pregnancy week by week | 9 | 34 | P1 | Description (exact phrase ×1) |
 | pregnancy tracker weekly | 9 | 30 | P2 | Description |
 | pregnancy tracker | 48 | 63 | P3 (aspirational) | Tokens only; dominated by big brands |
-| pregnancy tracker free | 8 | 32 | P3 | Never use "free" in title; skip |
+| pregnancy tracker free | 8 | 32 | P3 | Never use "free" in title or short description (Play price rule = error in both); skip |
 | pregnancy tracker app | 9 | 41 | P3 | Tokens |
 | pregnancy birth plan template | 8 | 23 | **P1 easy win** | Description "Birth plan checklist"; v1.1 add "template" wording |
 | baby size comparison | 9 | 30 | P1 | Description ("baby's size compared to fruit") → v1.1 exact phrase |
@@ -123,7 +123,7 @@ Action on warnings: the emoji length warning is not a policy problem; we keep ~6
 | `contraction` | contraction timer · contraction tracker · contraction counter · contractions · contraction timer free |
 | `kick count` | kick counter · kick counter app · kick count · kick counting baby app · kick counter baby |
 
-Findings: "contraction tracker" and "contraction counter" are real queries not in the original set → added one natural sentence to the description. "kick count" is a standalone query, validating "Kick Count" in the title. "…free" variants exist but we never put "free" in the title.
+Findings: "contraction tracker" and "contraction counter" are real queries not in the original set → added one natural sentence to the description. "kick count" is a standalone query, validating "Kick Count" in the title. "…free" variants exist but we never put "free" in the title or short description (Applyra flags it as a price-rule ERROR in both on Google Play).
 
 ---
 

@@ -72,7 +72,7 @@ No account and no sign-up. Your progress is stored on your device.
 
 If you enjoy crosswords, word finds, letter grid puzzles or other word puzzle games for adults, give this large print word search a try. We read every review and use your feedback to make the game more comfortable for everyone.
 ```
-Keyword use in the full description (checked by hand, kept natural): "word search" ×4 (plus once in the app name), "word puzzle games" ×2, "offline" ×2, "seniors" ×1, "large print" ×2, "daily … challenge/puzzle", "letter grid", "brain", "stress relief", "for adults". No term is repeated more than about 5 times in 2,600 characters, which is well under stuffing levels.
+Keyword use in the full description (counted with a script, kept natural): "word search" ×3 (one of them inside the app name), "word puzzle games" ×2, "offline" ×2, "seniors" ×1, "large print" ×3 (one inside the app name), "letter grid" ×2, "daily … challenge/puzzle", "letter grid", "brain", "stress relief", "for adults". No term is repeated more than about 5 times in 2,600 characters, which is well under stuffing levels.
 
 ### Metadata validation (Applyra `check_metadata`, store GPLAY, 2026-10-08)
 | Field | Length | Limit | Remaining | Warnings |
@@ -83,7 +83,9 @@ Keyword use in the full description (checked by hand, kept natural): "word searc
 
 Result: **`valid: true`**, with no errors, no warnings and no policy rules triggered (price, ranking, call-to-action, kids, rival-platform). No fixes were needed.
 
-> Policy note: the in-app copy and screenshots must also avoid "free", "#1", "best" and "top" in the icon and in screenshot headlines that imply ranking. Saying "Play offline" or "Unlimited puzzles" is fine.
+> Policy note: "free" is an ERROR (price rule) on Google Play in the **short description** as well as the title, so it must stay out of both. It is allowed in the full description. Neither field above contains it.
+>
+> The in-app copy and screenshots must also avoid "free", "#1", "best" and "top" in the icon and in screenshot headlines that imply ranking. Saying "Play offline" or "Unlimited puzzles" is fine.
 
 ---
 
@@ -105,7 +107,7 @@ Result: **`valid: true`**, with no errors, no warnings and no policy rules trigg
 | daily word challenge | 18 | 47 | Full desc section header "DAILY WORD CHALLENGE" |
 | word puzzle games for adults | 14 | 49 | Full desc ("word puzzle games for adults") |
 | word puzzle games offline | 14 | 49 | Full desc (word puzzle games + offline) |
-| word puzzle games offline free | 14 | 50 | Full desc only via its words; "free" kept out of title and short desc |
+| word puzzle games offline free | 14 | 50 | Full desc only via its words; "free" is a price-rule error in the title and short desc |
 | word puzzle game for seniors | 13 | 45 | Full desc (words spread across sentences) |
 | word scramble levels | 13 | 42 | Not targeted; different game type. Consider in a v2 description only if relevant |
 | word puzzle game stress relief | 12 | 40 | Full desc ("stress relief") |
