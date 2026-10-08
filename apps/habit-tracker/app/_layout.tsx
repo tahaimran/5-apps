@@ -1,6 +1,7 @@
-import 'react-native-gesture-handler';
 import { useEffect } from 'react';
+import { StyleSheet } from 'react-native';
 import { Stack } from 'expo-router';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { StatusBar } from 'expo-status-bar';
 import { initAds } from '@shared/ads';
 import { setCurrentApp } from '@shared/crosspromo';
@@ -29,15 +30,30 @@ function Root() {
   return (
     <>
       <StatusBar style={mode === 'light' ? 'dark' : 'light'} />
-      <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: colors.background } }} />
+      <Stack
+        screenOptions={{
+          headerShown: false,
+          contentStyle: { backgroundColor: colors.background },
+          headerStyle: { backgroundColor: colors.surface },
+          headerTintColor: colors.text,
+        }}
+      >
+        <Stack.Screen name="habit/new" options={{ presentation: 'modal' }} />
+        <Stack.Screen name="habit/[id]/edit" options={{ presentation: 'modal' }} />
+        <Stack.Screen name="templates" options={{ presentation: 'modal' }} />
+      </Stack>
     </>
   );
 }
 
 export default function RootLayout() {
   return (
-    <ThemeProvider palette={palette}>
-      <Root />
-    </ThemeProvider>
+    <GestureHandlerRootView style={styles.flex}>
+      <ThemeProvider palette={palette}>
+        <Root />
+      </ThemeProvider>
+    </GestureHandlerRootView>
   );
 }
+
+const styles = StyleSheet.create({ flex: { flex: 1 } });

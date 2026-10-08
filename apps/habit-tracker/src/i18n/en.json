@@ -37,13 +37,264 @@
       "noStreak": "no streak yet",
       "day": "{date}, {done} of {total} done",
       "dayNone": "{date}"
-    }
+    },
+    "fab": "Add habit",
+    "browse": "Browse all templates",
+    "moveUp": "Move up",
+    "moveDown": "Move down",
+    "details": "Open details"
   },
   "stats": {
     "empty": "Stats appear after your first check-in."
   },
   "settings": {
     "title": "Settings",
-    "version": "Version {version}"
+    "version": "Version {version}",
+    "archive": "Archive"
+  },
+  "templates": {
+    "drink-water": {
+      "name": "Drink water",
+      "unit": "glasses"
+    },
+    "vitamins": {
+      "name": "Take vitamins"
+    },
+    "in-bed-early": {
+      "name": "In bed by 23:30"
+    },
+    "no-screens-late": {
+      "name": "No screens after 23:00"
+    },
+    "eat-fruit": {
+      "name": "Eat fruit and veg",
+      "unit": "servings"
+    },
+    "sunlight": {
+      "name": "Get morning sunlight"
+    },
+    "floss": {
+      "name": "Floss"
+    },
+    "walk-daily": {
+      "name": "Take a walk"
+    },
+    "steps": {
+      "name": "Walk 8,000 steps",
+      "unit": "steps"
+    },
+    "strength": {
+      "name": "Strength workout"
+    },
+    "run": {
+      "name": "Go for a run"
+    },
+    "pushups": {
+      "name": "Do push-ups",
+      "unit": "reps"
+    },
+    "stretch": {
+      "name": "Stretch"
+    },
+    "cycle": {
+      "name": "Ride a bike"
+    },
+    "meditate": {
+      "name": "Meditate"
+    },
+    "journal": {
+      "name": "Write in my journal"
+    },
+    "gratitude": {
+      "name": "Note one thing I am grateful for"
+    },
+    "breathe": {
+      "name": "Breathing break"
+    },
+    "outside": {
+      "name": "Spend time outside"
+    },
+    "digital-detox": {
+      "name": "Screen-free hour"
+    },
+    "call-friend": {
+      "name": "Call a friend or family"
+    },
+    "make-bed": {
+      "name": "Make my bed"
+    },
+    "plan-day": {
+      "name": "Plan my day"
+    },
+    "deep-work": {
+      "name": "Deep work block"
+    },
+    "tidy": {
+      "name": "Tidy up"
+    },
+    "inbox-zero": {
+      "name": "Clear my inbox"
+    },
+    "weekly-review": {
+      "name": "Weekly review"
+    },
+    "top-three": {
+      "name": "Pick my top 3 tasks"
+    },
+    "read": {
+      "name": "Read",
+      "unit": "pages"
+    },
+    "language": {
+      "name": "Practice a language"
+    },
+    "study": {
+      "name": "Study"
+    },
+    "podcast": {
+      "name": "Listen to a podcast"
+    },
+    "instrument": {
+      "name": "Practice an instrument"
+    },
+    "coding": {
+      "name": "Practice coding"
+    },
+    "learn-new": {
+      "name": "Learn one new thing"
+    },
+    "no-smoking": {
+      "name": "No smoking"
+    },
+    "no-alcohol": {
+      "name": "No alcohol"
+    },
+    "no-sugar": {
+      "name": "No sugary snacks"
+    },
+    "no-late-coffee": {
+      "name": "No coffee after 2pm"
+    },
+    "no-doomscroll": {
+      "name": "No doomscrolling"
+    },
+    "no-impulse-buys": {
+      "name": "No impulse buys"
+    },
+    "no-junk-food": {
+      "name": "No junk food"
+    }
+  },
+  "categories": {
+    "health": "Health",
+    "fitness": "Fitness",
+    "mind": "Mind",
+    "productivity": "Productivity",
+    "learning": "Learning",
+    "quit": "Quit",
+    "other": "Other"
+  },
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "add": "Add",
+    "delete": "Delete",
+    "discard": "Discard",
+    "keepEditing": "Keep editing",
+    "close": "Close",
+    "back": "Back"
+  },
+  "editor": {
+    "titleNew": "New habit",
+    "titleEdit": "Edit habit",
+    "fromTemplate": "Start from a template",
+    "name": "Name",
+    "namePlaceholder": "e.g. Drink water",
+    "nameRequired": "Give your habit a name.",
+    "nameTooLong": "Keep it to 40 characters.",
+    "icon": "Icon",
+    "color": "Color",
+    "colorLabel": "Color {index}",
+    "iconLabel": "Icon {name}",
+    "type": "Type",
+    "typeBoolean": "Yes / No",
+    "typeCount": "Count",
+    "typeTimer": "Timer",
+    "target": "Target",
+    "unit": "Unit",
+    "unitPlaceholder": "e.g. glasses",
+    "minutes": "Minutes",
+    "targetRange": "Enter a whole number from 1 to {max}.",
+    "schedule": "Schedule",
+    "scheduleDaily": "Daily",
+    "scheduleWeekdays": "Weekdays",
+    "schedulePerWeek": "X per week",
+    "pickDays": "Pick at least one day.",
+    "timesPerWeek": "Times per week",
+    "reminder": "Reminder",
+    "reminderToggle": "Remind me",
+    "reminderHour": "Hour",
+    "reminderMinute": "Minute",
+    "category": "Category",
+    "startDate": "Start date",
+    "earlier": "Earlier",
+    "later": "Later",
+    "discardTitle": "Discard changes?",
+    "discardBody": "Your changes to this habit won't be saved.",
+    "create": "Create habit",
+    "saveChanges": "Save changes",
+    "notFound": "This habit no longer exists."
+  },
+  "schedule": {
+    "daily": "Every day",
+    "weekdays_one": "{count} day a week",
+    "weekdays_other": "{count} days a week",
+    "perWeek": "{count}x a week"
+  },
+  "templatesScreen": {
+    "title": "Templates",
+    "search": "Search templates",
+    "searchLabel": "Search templates",
+    "empty": "No templates match \"{query}\".",
+    "addHabit": "Add habit",
+    "editFirst": "Customize first",
+    "reminderAt": "Reminder at {time}",
+    "browse": "Browse templates",
+    "target_count": "{target} {unit}",
+    "target_timer": "{target} min",
+    "target_boolean": "Once a day"
+  },
+  "detail": {
+    "currentStreak": "Current streak",
+    "bestStreak": "Best streak",
+    "days_one": "{count} day",
+    "days_other": "{count} days",
+    "weeks_one": "{count} week",
+    "weeks_other": "{count} weeks",
+    "completion": "Completion",
+    "last7": "7 days",
+    "last30": "30 days",
+    "allTime": "All time",
+    "noData": "–",
+    "edit": "Edit",
+    "archive": "Archive",
+    "unarchive": "Unarchive",
+    "delete": "Delete",
+    "archivedBanner": "This habit is archived. Its history is kept.",
+    "deleteTitle": "Delete this habit?",
+    "deleteBody": "This removes \"{name}\" and all of its history. This can't be undone.",
+    "heatmapSoon": "Your heatmap fills in as you go."
+  },
+  "archive": {
+    "title": "Archive",
+    "empty": "Nothing archived. Archived habits keep their history and show up here."
+  },
+  "timer": {
+    "start": "Start timer",
+    "pause": "Pause timer",
+    "add": "+{minutes} min",
+    "addLabel": "Add {minutes} minutes",
+    "elapsed": "{elapsed} / {target} min",
+    "running": "running"
   }
 }

@@ -19,14 +19,3 @@ export function isScheduledOn(schedule: Schedule, day: DayKey): boolean {
 export function isActiveOn(habit: Pick<Habit, 'createdAt' | 'archivedAt'>, day: DayKey): boolean {
   return day >= habit.createdAt && !habit.archivedAt;
 }
-
-export function scheduleHint(schedule: Schedule): string {
-  switch (schedule.kind) {
-    case 'daily':
-      return 'Every day';
-    case 'weekdays':
-      return `${schedule.days.length} days a week`;
-    case 'perWeek':
-      return `${schedule.times}x a week`;
-  }
-}

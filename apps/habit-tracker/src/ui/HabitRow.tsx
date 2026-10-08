@@ -1,13 +1,16 @@
-import { memo } from 'react';
+import { memo, useEffect, useState } from 'react';
 import { Pressable, StyleSheet, Text, View, type AccessibilityActionEvent } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
 import { isComplete } from '@/domain/completion';
+import { elapsedSeconds, formatClock, isRunning } from '@/domain/timer';
 import type { StreakResult } from '@/domain/streaks';
 import type { Entry, Habit } from '@/domain/types';
 
 type IconName = keyof typeof MaterialCommunityIcons.glyphMap;
+
+export const TIMER_QUICK_ADD_MINUTES = 5;
 
 export interface HabitRowProps {
   habit: Habit;
@@ -17,6 +20,14 @@ export interface HabitRowProps {
   hint?: string;
   onToggle: () => void;
   onAdjust: (delta: 1 | -1) => void;
+  onTimerToggle: () => void;
+  onAddMinutes: (minutes: number) => void;
+  /** Tap the name area. */
+  onOpen: () => void;
+  /** Long press the name area (starts a drag). */
+  onLongPress?: () => void;
+  /** Accessible alternative to dragging. */
+  onMove?: (delta: -1 | 1) => void;
 }
 
 const streakLabel = (s: StreakResult) =>
@@ -24,34 +35,66 @@ const streakLabel = (s: StreakResult) =>
     ? t('today.a11y.noStreak')
     : t(s.unit === 'weeks' ? 'today.a11y.streakWeeks' : 'today.a11y.streakDays', { count: s.current });
 
-function HabitRowBase({ habit, entry, streak, hint, onToggle, onAdjust }: HabitRowProps) {
+/** Re-renders once a second while `active`. A timer shows time from a start timestamp, not a counter. */
+function useNow(active: boolean): number {
+  const [now, setNow] = useState(Date.now());
+  useEffect(() => {
+    if (!active) return;
+    setNow(Date.now());
+    const id = setInterval(() => setNow(Date.now()), 1000);
+    return () => clearInterval(id);
+  }, [active]);
+  return active ? now : Date.now();
+}
+
+function HabitRowBase({
+  habit,
+  entry,
+  streak,
+  hint,
+  onToggle,
+  onAdjust,
+  onTimerToggle,
+  onAddMinutes,
+  onOpen,
+  onLongPress,
+  onMove,
+}: HabitRowProps) {
   const { colors, spacing, radius, type, touchTarget } = useTheme();
-  const complete = isComplete(habit, entry);
-  const value = entry?.value ?? 0;
+  const running = isRunning(entry);
+  const now = useNow(running);
   const isCount = habit.type === 'count';
+  const isTimer = habit.type === 'timer';
+  const complete = isComplete(habit, entry, now);
+  const value = entry?.value ?? 0;
+  const seconds = elapsedSeconds(entry, now);
+
+  const detail = isCount
+    ? t('today.countProgress', { value, target: habit.target, unit: habit.unit ?? '' })
+    : isTimer
+      ? t('timer.elapsed', { elapsed: formatClock(seconds), target: habit.target })
+      : undefined;
 
   const label = isCount
-    ? t('today.a11y.count', {
-        name: habit.name,
-        value,
-        target: habit.target,
-        unit: habit.unit ?? '',
-        streak: streakLabel(streak),
-      })
-    : t('today.a11y.boolean', {
-        name: habit.name,
-        state: t(complete ? 'today.a11y.done' : 'today.a11y.notDone'),
-        streak: streakLabel(streak),
-      });
+    ? t('today.a11y.count', { name: habit.name, value, target: habit.target, unit: habit.unit ?? '', streak: streakLabel(streak) })
+    : isTimer
+      ? `${t('today.a11y.boolean', { name: habit.name, state: t(complete ? 'today.a11y.done' : 'today.a11y.notDone'), streak: streakLabel(streak) })}. ${t('timer.elapsed', { elapsed: formatClock(seconds), target: habit.target })}${running ? `, ${t('timer.running')}` : ''}`
+      : t('today.a11y.boolean', { name: habit.name, state: t(complete ? 'today.a11y.done' : 'today.a11y.notDone'), streak: streakLabel(streak) });
 
   const onAction = (e: AccessibilityActionEvent) => {
     switch (e.nativeEvent.actionName) {
       case 'increment':
-        return isCount ? onAdjust(1) : !complete && onToggle();
+        return isCount ? onAdjust(1) : isTimer ? onAddMinutes(TIMER_QUICK_ADD_MINUTES) : !complete && onToggle();
       case 'decrement':
-        return isCount ? onAdjust(-1) : complete && onToggle();
+        return isCount ? onAdjust(-1) : isTimer ? onAddMinutes(-TIMER_QUICK_ADD_MINUTES) : complete && onToggle();
       case 'activate':
-        return isCount ? onAdjust(1) : onToggle();
+        return isCount ? onAdjust(1) : isTimer ? onTimerToggle() : onToggle();
+      case 'details':
+        return onOpen();
+      case 'moveUp':
+        return onMove?.(-1);
+      case 'moveDown':
+        return onMove?.(1);
     }
   };
 
@@ -68,29 +111,47 @@ function HabitRowBase({ habit, entry, streak, hint, onToggle, onAdjust }: HabitR
       accessible
       accessibilityLabel={label}
       accessibilityActions={[
-        { name: 'increment', label: t(isCount ? 'today.increase' : 'today.check') },
-        { name: 'decrement', label: t(isCount ? 'today.decrease' : 'today.uncheck') },
+        {
+          name: 'increment',
+          label: t(isCount ? 'today.increase' : isTimer ? 'timer.addLabel' : 'today.check', { minutes: TIMER_QUICK_ADD_MINUTES }),
+        },
+        {
+          name: 'decrement',
+          label: t(isCount ? 'today.decrease' : isTimer ? 'timer.addLabel' : 'today.uncheck', { minutes: -TIMER_QUICK_ADD_MINUTES }),
+        },
+        { name: 'details', label: t('today.details') },
+        ...(onMove
+          ? [
+              { name: 'moveUp', label: t('today.moveUp') },
+              { name: 'moveDown', label: t('today.moveDown') },
+            ]
+          : []),
       ]}
       onAccessibilityAction={onAction}
       style={[
         styles.row,
-        { backgroundColor: colors.surface, borderColor: colors.border, borderRadius: radius.md, padding: spacing.md, gap: spacing.md },
+        { backgroundColor: colors.surface, borderColor: colors.border, borderRadius: radius.md, padding: spacing.md, gap: spacing.sm },
       ]}
     >
-      <View style={[styles.tile, { backgroundColor: habit.color + '26', borderRadius: radius.md }]}>
-        <MaterialCommunityIcons name={habit.icon as IconName} size={24} color={habit.color} />
-      </View>
-
-      <View style={styles.body}>
-        <Text style={[type.bodyLarge, { color: colors.text, fontWeight: '600' }]} numberOfLines={2}>
-          {habit.name}
-        </Text>
-        {(hint || isCount) && (
-          <Text style={[type.caption, { color: colors.textMuted }]}>
-            {hint ?? t('today.countProgress', { value, target: habit.target, unit: habit.unit ?? '' })}
+      <Pressable
+        onPress={onOpen}
+        onLongPress={onLongPress}
+        delayLongPress={250}
+        style={[styles.main, { gap: spacing.md, minHeight: touchTarget }]}
+        importantForAccessibility="no"
+      >
+        <View style={[styles.tile, { backgroundColor: habit.color + '26', borderRadius: radius.md }]}>
+          <MaterialCommunityIcons name={habit.icon as IconName} size={24} color={habit.color} />
+        </View>
+        <View style={styles.body}>
+          <Text style={[type.bodyLarge, { color: colors.text, fontWeight: '600' }]} numberOfLines={2}>
+            {habit.name}
           </Text>
-        )}
-      </View>
+          {(hint || detail) && (
+            <Text style={[type.caption, { color: running ? colors.primary : colors.textMuted }]}>{hint ?? detail}</Text>
+          )}
+        </View>
+      </Pressable>
 
       {streak.current > 0 && (
         <View style={styles.streak} importantForAccessibility="no-hide-descendants">
@@ -102,8 +163,8 @@ function HabitRowBase({ habit, entry, streak, hint, onToggle, onAdjust }: HabitR
         </View>
       )}
 
-      {isCount ? (
-        <View style={styles.stepper}>
+      {isCount && (
+        <View style={styles.controls}>
           <Pressable
             accessibilityRole="button"
             accessibilityLabel={t('today.decrease')}
@@ -122,7 +183,32 @@ function HabitRowBase({ habit, entry, streak, hint, onToggle, onAdjust }: HabitR
             <MaterialCommunityIcons name={complete ? 'check' : 'plus'} size={22} color="#FFFFFF" />
           </Pressable>
         </View>
-      ) : (
+      )}
+
+      {isTimer && (
+        <View style={styles.controls}>
+          <Pressable
+            accessibilityRole="button"
+            accessibilityLabel={t('timer.addLabel', { minutes: TIMER_QUICK_ADD_MINUTES })}
+            onPress={() => onAddMinutes(TIMER_QUICK_ADD_MINUTES)}
+            style={[button, { width: touchTarget + 8 }]}
+          >
+            <Text style={[type.caption, { color: colors.textMuted, fontWeight: '700' }]}>
+              {t('timer.add', { minutes: TIMER_QUICK_ADD_MINUTES })}
+            </Text>
+          </Pressable>
+          <Pressable
+            accessibilityRole="button"
+            accessibilityLabel={t(running ? 'timer.pause' : 'timer.start')}
+            onPress={onTimerToggle}
+            style={[button, { backgroundColor: complete && !running ? colors.success : habit.color }]}
+          >
+            <MaterialCommunityIcons name={running ? 'pause' : complete ? 'check' : 'play'} size={22} color="#FFFFFF" />
+          </Pressable>
+        </View>
+      )}
+
+      {!isCount && !isTimer && (
         <Pressable
           accessibilityRole="checkbox"
           accessibilityLabel={t(complete ? 'today.uncheck' : 'today.check')}
@@ -144,8 +230,9 @@ export const HabitRow = memo(HabitRowBase);
 
 const styles = StyleSheet.create({
   row: { flexDirection: 'row', alignItems: 'center', borderWidth: StyleSheet.hairlineWidth },
+  main: { flex: 1, flexDirection: 'row', alignItems: 'center' },
   tile: { width: 40, height: 40, alignItems: 'center', justifyContent: 'center' },
   body: { flex: 1 },
   streak: { flexDirection: 'row', alignItems: 'center', gap: 2 },
-  stepper: { flexDirection: 'row', alignItems: 'center' },
+  controls: { flexDirection: 'row', alignItems: 'center' },
 });

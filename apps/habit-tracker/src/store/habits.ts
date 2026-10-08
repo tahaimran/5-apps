@@ -1,5 +1,8 @@
 import { create } from 'zustand';
-import type { NewHabit } from '@/data/quickAdds';
+import { applyDraft } from '@/features/habit-editor/drafts';
+import { addSeconds, pauseTimer, startTimer } from '@/domain/timer';
+import { moveInOrder } from '@/domain/reorder';
+import type { HabitDraft } from '@/domain/validate';
 import { addDays, startOfWeek } from '@/domain/dayKey';
 import { emptyFreezes, earnPerfectWeek, isPerfectWeek, planFreezes } from '@/domain/freezes';
 import type { Entries } from '@/domain/streaks';
@@ -22,7 +25,18 @@ interface HabitsState {
   habitOrder: HabitId[];
   entries: Record<HabitId, Entries>;
   freezes: FreezeState;
-  addHabit: (input: NewHabit, today: DayKey) => Habit;
+  addHabit: (draft: HabitDraft) => Habit;
+  updateHabit: (id: HabitId, draft: HabitDraft) => void;
+  /** Hides the habit from Today but keeps its history. */
+  archiveHabit: (id: HabitId, today: DayKey) => void;
+  unarchiveHabit: (id: HabitId) => void;
+  deleteHabit: (id: HabitId) => void;
+  setOrder: (order: HabitId[]) => void;
+  move: (id: HabitId, delta: -1 | 1) => void;
+  startTimer: (habitId: HabitId, day: DayKey) => void;
+  pauseTimer: (habitId: HabitId, day: DayKey) => void;
+  /** Manual minutes for a timer habit (negative to undo). */
+  addMinutes: (habitId: HabitId, day: DayKey, minutes: number) => void;
   /** Sets the value for a day. A value of 0 or less removes the entry. */
   setValue: (habitId: HabitId, day: DayKey, value: number) => void;
   /** Lazy day-close: perfect-week freeze bonus, then spend freezes on recently missed days. */
@@ -37,11 +51,21 @@ function hydrate() {
   return { habits, habitOrder, entries, freezes: db.get('freezes') ?? emptyFreezes };
 }
 
-export const useHabits = create<HabitsState>((set, get) => ({
+export const useHabits = create<HabitsState>((set, get) => {
+  /** Writes (or, for undefined / an empty stopped entry, removes) one day's entry and persists it. */
+  const writeEntry = (habitId: HabitId, day: DayKey, entry: Entry | undefined) => {
+    const next: Entries = { ...(get().entries[habitId] ?? {}) };
+    if (!entry || (entry.value <= 0 && entry.timerStartedAt === undefined && !entry.frozen)) delete next[day];
+    else next[day] = entry;
+    db.set(`entries:${habitId}`, next);
+    set({ entries: { ...get().entries, [habitId]: next } });
+  };
+
+  return {
   ...hydrate(),
 
-  addHabit: (input, today) => {
-    const habit: Habit = { ...input, id: newId(), reminders: [], createdAt: today };
+  addHabit: (draft) => {
+    const habit = applyDraft(undefined, draft, newId());
     const habits = { ...get().habits, [habit.id]: habit };
     const habitOrder = [...get().habitOrder, habit.id];
     db.set('habits', habits);
@@ -50,14 +74,61 @@ export const useHabits = create<HabitsState>((set, get) => ({
     return habit;
   },
 
-  setValue: (habitId, day, value) => {
-    const current = get().entries[habitId] ?? {};
-    const next: Entries = { ...current };
-    if (value <= 0) delete next[day];
-    else next[day] = { value, updatedAt: Date.now() } satisfies Entry;
-    db.set(`entries:${habitId}`, next);
-    set({ entries: { ...get().entries, [habitId]: next } });
+  updateHabit: (id, draft) => {
+    const current = get().habits[id];
+    if (!current) return;
+    const habits = { ...get().habits, [id]: applyDraft(current, draft, id) };
+    db.set('habits', habits);
+    set({ habits });
   },
+
+  archiveHabit: (id, today) => {
+    const current = get().habits[id];
+    if (!current) return;
+    const habits = { ...get().habits, [id]: { ...current, archivedAt: today } };
+    const habitOrder = get().habitOrder.filter((x) => x !== id);
+    db.set('habits', habits);
+    db.set('habitOrder', habitOrder);
+    set({ habits, habitOrder });
+  },
+
+  unarchiveHabit: (id) => {
+    const current = get().habits[id];
+    if (!current) return;
+    const { archivedAt: _archivedAt, ...rest } = current;
+    const habits = { ...get().habits, [id]: rest };
+    const habitOrder = get().habitOrder.includes(id) ? get().habitOrder : [...get().habitOrder, id];
+    db.set('habits', habits);
+    db.set('habitOrder', habitOrder);
+    set({ habits, habitOrder });
+  },
+
+  deleteHabit: (id) => {
+    const { [id]: _removed, ...habits } = get().habits;
+    const { [id]: _entries, ...entries } = get().entries;
+    const habitOrder = get().habitOrder.filter((x) => x !== id);
+    db.set('habits', habits);
+    db.set('habitOrder', habitOrder);
+    db.remove(`entries:${id}`);
+    set({ habits, habitOrder, entries });
+  },
+
+  setOrder: (order) => {
+    db.set('habitOrder', order);
+    set({ habitOrder: order });
+  },
+
+  move: (id, delta) => get().setOrder(moveInOrder(get().habitOrder, id, delta)),
+
+  startTimer: (habitId, day) =>
+    writeEntry(habitId, day, startTimer(get().entries[habitId]?.[day], Date.now())),
+  pauseTimer: (habitId, day) =>
+    writeEntry(habitId, day, pauseTimer(get().entries[habitId]?.[day], Date.now())),
+  addMinutes: (habitId, day, minutes) =>
+    writeEntry(habitId, day, addSeconds(get().entries[habitId]?.[day], minutes * 60, Date.now())),
+
+  setValue: (habitId, day, value) =>
+    writeEntry(habitId, day, value <= 0 ? undefined : { value, updatedAt: Date.now() }),
 
   closeDays: (today, weekStartsOn) => {
     const { habits, entries } = get();
@@ -79,4 +150,5 @@ export const useHabits = create<HabitsState>((set, get) => ({
     if (plan.freezes !== get().freezes) db.set('freezes', plan.freezes);
     set({ entries: nextEntries, freezes: plan.freezes });
   },
-}));
+};
+});
