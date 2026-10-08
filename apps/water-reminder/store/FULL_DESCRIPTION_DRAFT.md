@@ -1,4 +1,4 @@
-# Full description: draft to replace the one in ASO.md
+# Full description: draft (now also in ASO.md §1)
 
 `ASO.md §1` currently holds the **Quizora trivia** description under the Sipling heading (a copy-paste slip,
 including the "Quizora" name in the closing lines and the Applyra row counts). The title and short description

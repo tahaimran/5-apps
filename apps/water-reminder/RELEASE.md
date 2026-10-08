@@ -45,8 +45,8 @@ What the automated checks actually cover:
 4. **Privacy policy:** finish `store/privacy-policy.md`, host it, set `EXPO_PUBLIC_PRIVACY_POLICY_URL`.
 5. **app-ads.txt:** fill in `store/app-ads.txt` and host it at the root of the developer website listed in Play Console.
 6. **Play Console:** create the app, enrol in Play App Signing, add a service account for `eas submit`.
-7. **Fix ASO.md:** its "Full description" is the Quizora trivia text (see §6). Use
-   `store/FULL_DESCRIPTION_DRAFT.md` or write your own, then run Applyra `check_metadata` on it.
+7. **Check the new full description:** ASO.md now holds the Sipling description (it used to be the Quizora
+   trivia text, see §6). Run Applyra `check_metadata` on it; the old result was for the wrong text.
 
 ## 3. Build and ship
 ```bash
@@ -104,7 +104,7 @@ Note `am force-stop` also cancels the app's alarms, so it is not a valid "killed
 | Item | Where | Status |
 |---|---|---|
 | Listing title and short description | `ASO.md` (limits checked by a test) | ready |
-| Full description | `ASO.md` holds the wrong app's text; replacement in `store/FULL_DESCRIPTION_DRAFT.md` | **fix needed** |
+| Full description | `ASO.md` (Sipling text, 2,097 chars, copied from `store/FULL_DESCRIPTION_DRAFT.md`) | replaced; **Applyra check not run** |
 | Icon 512, feature graphic 1024×500 | `store/` (made by `scripts/make-assets.mjs`; the feature graphic is simpler than ASO §7) | ready, **never viewed on Play** |
 | 8 screenshots 1080×1920 | `store/SCREENSHOTS.md`, `store/demo-backup.json`, Maestro flows | **to capture on a device** |
 | Data safety | `store/DATA_SAFETY.md` | drafted, verify against Google's current AdMob guidance |
@@ -121,8 +121,8 @@ Declared permissions: `POST_NOTIFICATIONS`, `RECEIVE_BOOT_COMPLETED`, `VIBRATE`,
 
 ## 6. Decisions, deviations and known gaps
 **Found in the repo**
-- `apps/water-reminder/ASO.md` §1 "Full description" (and the Applyra table under it) is the **Quizora trivia**
-  listing, not Sipling's. Title and short description are Sipling's. Not edited; a draft replacement is in `store/`.
+- `apps/water-reminder/ASO.md` §1 "Full description" was the **Quizora trivia** listing, not Sipling's. It has been
+  replaced with the draft; the Applyra row beneath it now says the check is pending.
 - Habit Tracker's Jest run failed once (1 of 425 tests) during one full run and passed on every rerun after that;
   I did not find the cause and did not change that app.
 

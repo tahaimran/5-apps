@@ -10,7 +10,7 @@
 |---|---|---|---|
 | **Title** | `Sipling: Drink Water Reminder` | 29 | 30 |
 | **Short description** | `Water tracker & daily hydration reminder that grows a cute plant as you drink.` | 78 | 80 |
-| **Full description** | below | 3,343 (3,338 visible chars; emoji count double) | 4,000 |
+| **Full description** | below | 2097 (draft, not yet run through Applyra) | 4,000 |
 
 **Why this title:** keeps the exact-match head term **"drink water reminder"** (52 / 47, the only high-traffic
 term in the cluster) contiguous and complete, while "Sipling" gives a brandable, memorable name that is not a copy of a
@@ -24,46 +24,34 @@ daily water reminder), "reminder", plus the plant differentiator for conversion.
 ### Full description
 
 ```
-Love trivia but hate sign-ups, spotty signal and ads that pop up mid-question? Quizora is an offline trivia quiz game with 3,000+ general knowledge questions, a fresh Daily Trivia Challenge and a short "Did you know?" explanation after every answer. No account, no internet needed, just you and a good question.
+Forget to drink water? Sipling is a drink water reminder that grows a cute plant every time you drink. Set a daily water goal, get a gentle nudge only while you are awake, and log a glass with one tap. No account, no sign-up, and your data stays on your phone.
 
-★ PLAY ANYWHERE, FULLY OFFLINE
-Every question is stored on your phone. Play on the subway, on a flight or in a cabin with zero bars. Quizora never asks you to log in or connect to Facebook.
+★ REMINDERS THAT FIT YOUR DAY
+Tell Sipling when you wake up and go to bed and it spaces your reminders in between. Drank a glass already? The next reminder is skipped. Tap "Add 250 ml" right on the notification, or snooze it for a few minutes. Quiet times, days off and gentle silent reminders are one tap away.
 
-★ 12 CATEGORIES, 3,000+ QUESTIONS
-• General knowledge quiz
-• Geography quiz game: capitals, rivers, countries and flags
-• History trivia questions from ancient Rome to the space race
-• Science, nature and animal facts quiz
-• Movie trivia quiz and music trivia
-• Sports, food, literature and logic puzzles
-Each question is checked for accuracy, and we keep adding more with regular content updates.
+★ A GOAL THAT FITS YOU
+A short questionnaire about your weight, activity and climate gives you a personal daily water goal in about 30 seconds. It is a general wellness estimate, not medical advice. You can set your own goal any time and switch between ml and fl oz.
 
-★ DAILY TRIVIA CHALLENGE + STREAKS
-Ten handpicked questions every day, the same set for every player. Keep your streak alive, earn streak freezes and watch your calendar fill up. Two minutes a day keeps your brain sharp.
+★ WATCH YOUR PLANT GROW
+Every glass makes your plant happier. Reach your goal on more days to grow it from a seed to a blooming plant. Missed a day? Your plant only droops a little, it never dies.
 
-★ GAME MODES FOR EVERY MOOD
-• Classic levels: 30 levels per category, earn up to 3 stars and unlock the next level
-• Category play: pick a topic and difficulty and practice as long as you like
-• Timed Blitz: answer as many as you can in 60 seconds
-• Logic and IQ rounds: number series, patterns and riddles to boost your reasoning
+★ QUICK AND SIMPLE LOGGING
+Four cup sizes on the home screen, a custom amount with a slider, and drinks like water, sparkling water, tea, coffee, juice and milk. Each drink counts the way you set it. Made a mistake? Undo it within five seconds, or edit it later in your history.
 
-★ LEARN SOMETHING WITH EVERY ANSWER
-Right or wrong, each question ends with a quick fun fact that explains the answer. It is brain training trivia that actually teaches you something.
+★ STREAKS WITHOUT STRESS
+Build a daily streak and earn streak freezes that protect it on a busy day. Unlock new plant skins and cup themes with your streak or by watching a short ad. There is no paywall.
 
-★ LIFELINES WHEN YOU NEED THEM
-Stuck? Use 50/50 to remove two wrong answers, skip a tricky question or grab extra time.
+★ HISTORY AND CHARTS
+See each day's drinks, plus weekly and monthly charts with your goal line, averages and best day.
 
-★ DESIGNED TO BE CALM
-No ads while you answer questions. Big, readable text with adjustable size, dark mode and a relaxed mode with no timer, making it a comfortable trivia quiz for adults and seniors alike.
+★ PRIVATE AND OFFLINE
+Your water log never leaves your phone. Sipling works without internet, has dark mode and large text, and works with TalkBack. Back up your data to a file and restore it on a new phone.
 
-★ TRACK YOUR PROGRESS
-Level up from Curious to Trivia Legend. See your accuracy in every category, your best Blitz score and your longest streak.
+★ ABOUT ADS
+Sipling is supported by ads, shown in a few quiet places. Logging a drink is never blocked by an ad. You can review your ad privacy choices any time in Settings.
 
-Quizora is a trivia quiz app for teens and adults who enjoy quiz games, brain games and memory challenges. Whether you are warming up for pub quiz night, training for a family trivia night or just curious about the world, there is always one more question waiting.
+Download Sipling, pick your cup and give your plant its first sip.
 
-Quizora is supported by ads. You can review your ad privacy choices any time in Settings.
-
-Download Quizora and start today's Daily Challenge. How many can you get right?
 ```
 
 ### Applyra `check_metadata` (GPLAY) result — run 2026-10-08
@@ -72,7 +60,7 @@ Download Quizora and start today's Daily Challenge. How many can you get right?
 |---|---|---|---|
 | Title | 29 | 30 | OK, no warnings |
 | Short description | 78 | 80 | OK, no warnings |
-| Full description | 3,343 | 4,000 | 1 warning: store counts 3,343 vs 3,338 visible (emoji are multi-unit) — informational, still 657 chars of headroom. 1 info: emoji allowed in description, banned in title/icon/dev name (we use none there). |
+| Full description | 2097 | 4,000 | **Not checked**: the previous result was for the wrong text. Re-run `check_metadata` on the new description. |
 
 `valid: true` — no errors, no policy rules fired (price / ranking / call-to-action / kids). The word "free" is
 deliberately absent from all fields, even though "water reminder free app" has traffic 25; the description instead says
