@@ -11,7 +11,7 @@
 |---|---|---|
 | **Title** | `Contraction Timer & Kick Count` | 30 / 30 |
 | **Short description** | `Time contractions & spot 5-1-1 patterns. Kick counter & due date calculator` | 75 / 80 |
-| **Full description** | see §1.1 | ~3,340 / 4,000 |
+| **Full description** | see §1.1 | 3,320 / 4,000 (UTF-16, as Play counts) |
 
 Title rationale:
 - Starts with the exact-match head term **"contraction timer"** (54/63) — the single highest-value keyword we can realistically rank for.
@@ -89,7 +89,7 @@ Keyword density (natural, no stuffing): "contraction timer" ×2 (+ title), "cont
 | Run | Input | Result |
 |---|---|---|
 | 1 | Title + short + full description v1 (without the "contraction tracker / counter" sentence) | `valid: true`. Title 30/30, short 75/80, description 3,205/4,000 (Play counts UTF-16; emoji cost >1 char). **0 errors.** 1 *warning* (informational: visible 3,200 vs store-counted 3,205 because of emoji) + 1 *info* (emoji allowed in description, banned in app name). No policy rules fired (price / ranking / call-to-action / play-program / kids / rival-platform all clear). |
-| 2 | Final description (§1.1, adds "contraction tracker and contraction counter" sentence after autocomplete) | See below — re-verified; `valid: true`, 0 errors. |
+| 2 (final) | Final title + short + description (§1.1, adds "contraction tracker and contraction counter" sentence after autocomplete) | `valid: true`. Title 30/30, short 75/80, description **3,320/4,000** (680 left). **0 errors**, no policy rules fired. Same 1 non-policy warning (visible 3,315 vs store-counted 3,320 due to emoji) + 1 info (emoji OK in description). |
 
 Action on warnings: the emoji length warning is not a policy problem; we keep ~650 chars of headroom so it can never push us over 4,000. No title emoji.
 
@@ -195,7 +195,7 @@ Ordered by maternity-app volume × eCPM × competition gap:
 9. ru-RU
 10. tr-TR (then ja-JP, ko-KR, pl-PL)
 
-Localized titles (≤30 chars, verify with `check_metadata` per locale before upload; validate head terms via `run_autocomplete` in each locale):
+Localized titles (≤30 chars; lengths below verified with a Python UTF-16 count script — `check_metadata` was run on en-US only, so re-run it per locale before upload; validate head terms via `run_autocomplete` in each locale):
 | Locale | Title | Chars |
 |---|---|---|
 | es | `Contracciones y Pataditas` | 25 |
@@ -203,7 +203,7 @@ Localized titles (≤30 chars, verify with `check_metadata` per locale before up
 | de | `Wehen-Timer & Kindsbewegungen` | 29 |
 | fr | `Contractions & Mouvements Bébé` | 30 |
 | id | `Timer Kontraksi & Tendangan` | 27 |
-| hi | `संकुचन टाइमर और किक काउंटर` | 26 (UTF-16 count; re-check) |
+| hi | `संकुचन टाइमर और किक काउंटर` | 26 (UTF-16; verified by script) |
 
 Short descriptions localized by native speakers (not MT-only); week-by-week content needs medical review per locale (units: cm/kg default outside US).
 
