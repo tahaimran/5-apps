@@ -12,7 +12,10 @@ export interface StepContext {
   setValue: (value: unknown) => void;
   /** All answers so far, keyed by step key. */
   answers: Answers;
+  /** Go to the next visible step (or finish on the last one). */
   next: () => void;
+  /** Finish the flow now with the answers so far, plus an optional last patch (keyed by step). */
+  finish: (patch?: Answers) => void;
 }
 
 export interface OnboardingStep {
@@ -25,6 +28,16 @@ export interface OnboardingStep {
   render?: (ctx: StepContext) => React.ReactNode;
   /** Disable "Next" until the step has a valid answer. Default: always allowed. */
   canContinue?: (ctx: Pick<StepContext, 'value' | 'answers'>) => boolean;
+  /** Label for this step's main button instead of Next / Done. */
+  cta?: string;
+  /** Text button under the main button, e.g. "Not now". */
+  secondary?: { label: string; onPress: (ctx: StepContext) => void };
+  /** The step is left out (and not counted in the dots) while this returns true. */
+  hidden?: (answers: Answers) => boolean;
+  /** Runs when the main button is pressed, before moving on (e.g. ask for a permission). */
+  onContinue?: (ctx: StepContext) => void | Promise<void>;
+  /** Show Skip on this step. Default true. */
+  skippable?: boolean;
 }
 
 export interface OnboardingLabels {
@@ -57,9 +70,12 @@ export function OnboardingFlow({ steps, onDone, labels, allowSkip = true }: Onbo
   const haptics = useHaptics();
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState<Answers>({});
+  const [busy, setBusy] = useState(false);
 
-  const step = steps[index];
-  const isLast = index === steps.length - 1;
+  // Steps can hide themselves based on earlier answers; indexes refer to the visible list.
+  const visible = steps.filter((s) => !s.hidden?.(answers));
+  const step = visible[Math.min(index, visible.length - 1)];
+  const isLast = index >= visible.length - 1;
   const text: OnboardingLabels = {
     skip: labels?.skip ?? t('shared.onboarding.skip'),
     back: labels?.back ?? t('shared.onboarding.back'),
@@ -80,11 +96,21 @@ export function OnboardingFlow({ steps, onDone, labels, allowSkip = true }: Onbo
     if (isLast) finish(answers);
     else setIndex((i) => i + 1);
   };
+  const advance = async () => {
+    if (busy) return;
+    setBusy(true);
+    try {
+      await step.onContinue?.(ctx);
+    } finally {
+      setBusy(false);
+    }
+    next();
+  };
   const back = () => setIndex((i) => Math.max(0, i - 1));
   const setValue = (value: unknown) => setAnswers((a) => ({ ...a, [step.key]: value }));
 
   if (!step) return null;
-  const ctx: StepContext = { value: answers[step.key], setValue, answers, next };
+  const ctx: StepContext = { value: answers[step.key], setValue, answers, next, finish: (patch) => finish({ ...answers, ...patch }) };
   const allowed = step.canContinue ? step.canContinue({ value: ctx.value, answers }) : true;
   const targetStyle = { minHeight: touchTarget, minWidth: touchTarget, justifyContent: 'center' as const };
 
@@ -101,9 +127,9 @@ export function OnboardingFlow({ steps, onDone, labels, allowSkip = true }: Onbo
         <View
           style={styles.dots}
           accessible
-          accessibilityLabel={t('shared.onboarding.progress', { current: index + 1, total: steps.length })}
+          accessibilityLabel={t('shared.onboarding.progress', { current: index + 1, total: visible.length })}
         >
-          {steps.map((s, i) => (
+          {visible.map((s, i) => (
             <View
               key={s.key}
               style={[
@@ -114,7 +140,7 @@ export function OnboardingFlow({ steps, onDone, labels, allowSkip = true }: Onbo
           ))}
         </View>
         <View style={[styles.side, targetStyle, { alignItems: 'flex-end' }]}>
-          {allowSkip && !isLast && (
+          {allowSkip && step.skippable !== false && !isLast && (
             <Pressable
               accessibilityRole="button"
               accessibilityLabel={text.skip}
@@ -137,10 +163,10 @@ export function OnboardingFlow({ steps, onDone, labels, allowSkip = true }: Onbo
       <View style={{ padding: spacing.lg }}>
         <Pressable
           accessibilityRole="button"
-          accessibilityLabel={isLast ? text.done : text.next}
-          accessibilityState={{ disabled: !allowed }}
-          disabled={!allowed}
-          onPress={next}
+          accessibilityLabel={step.cta ?? (isLast ? text.done : text.next)}
+          accessibilityState={{ disabled: !allowed || busy }}
+          disabled={!allowed || busy}
+          onPress={advance}
           style={[
             styles.primary,
             {
@@ -152,9 +178,19 @@ export function OnboardingFlow({ steps, onDone, labels, allowSkip = true }: Onbo
           ]}
         >
           <Text style={[type.bodyLarge, { color: colors.onPrimary, fontWeight: '700' }]}>
-            {isLast ? text.done : text.next}
+            {step.cta ?? (isLast ? text.done : text.next)}
           </Text>
         </Pressable>
+        {step.secondary && (
+          <Pressable
+            accessibilityRole="button"
+            accessibilityLabel={step.secondary.label}
+            onPress={() => step.secondary?.onPress(ctx)}
+            style={[styles.secondary, { minHeight: touchTarget, marginTop: spacing.sm }]}
+          >
+            <Text style={[type.body, { color: colors.primary, fontWeight: '600' }]}>{step.secondary.label}</Text>
+          </Pressable>
+        )}
       </View>
     </View>
   );
@@ -167,4 +203,5 @@ const styles = StyleSheet.create({
   dots: { flexDirection: 'row', alignItems: 'center', gap: 6 },
   dot: { height: 8, borderRadius: 4 },
   primary: { alignItems: 'center', justifyContent: 'center', paddingHorizontal: 24 },
+  secondary: { alignItems: 'center', justifyContent: 'center' },
 });

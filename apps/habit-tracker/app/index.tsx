@@ -1,6 +1,8 @@
 import { Redirect } from 'expo-router';
+import { useOnboardingComplete } from '@shared/onboarding';
 
-// Onboarding (plan §6) is milestone 6; until then land on Today.
+/** First launch goes through onboarding (plan §6); it never shows again once completed. */
 export default function Index() {
-  return <Redirect href="/(tabs)" />;
+  const done = useOnboardingComplete();
+  return <Redirect href={done ? '/(tabs)' : '/onboarding'} />;
 }

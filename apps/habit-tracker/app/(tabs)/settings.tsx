@@ -4,11 +4,14 @@ import { router } from 'expo-router';
 import Constants from 'expo-constants';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { requestPinWidget } from 'react-native-android-widget';
+import { isPrivacyOptionsRequired, openPrivacyOptions } from '@shared/consent';
+import { promoPackages } from '@shared/crosspromo/catalog';
 import { t } from '@shared/i18n';
 import { ensureNotificationPermission, getNotificationPermission, type PermissionState } from '@shared/notify';
 import { useTheme, type ThemePreference } from '@shared/theme';
 import { useSettings } from '@/store/settings';
 import { Screen } from '@/ui/Screen';
+import { useFreezeReward } from '@/features/freeze/useFreezeReward';
 import { invalidateNotificationPlan, rescheduleNotifications } from '@/notifications/scheduler';
 import { WIDGET_NAME } from '@/widget/render';
 import { Field, PrimaryButton, Segmented, Stepper, TimeStepper } from '@/ui/controls';
@@ -19,6 +22,19 @@ export default function Settings() {
   const { colors, spacing, radius, type, touchTarget, preference, setPreference } = useTheme();
   const { settings, update } = useSettings();
   const [permission, setPermission] = useState<PermissionState | null>(null);
+  const [privacyRequired, setPrivacyRequired] = useState(false);
+  const freeze = useFreezeReward();
+
+  useEffect(() => {
+    isPrivacyOptionsRequired().then(setPrivacyRequired).catch(() => setPrivacyRequired(false));
+  }, []);
+
+  const rate = () => {
+    const id = promoPackages['habit-tracker'];
+    Linking.openURL(`market://details?id=${id}`).catch(() => Linking.openURL(`https://play.google.com/store/apps/details?id=${id}`));
+  };
+  // Literal env reference so Expo inlines it at build time.
+  const privacyPolicyUrl = process.env.EXPO_PUBLIC_PRIVACY_POLICY_URL;
 
   const refreshPermission = useCallback(() => {
     getNotificationPermission().then(setPermission).catch(() => undefined);
@@ -144,8 +160,21 @@ export default function Settings() {
         />
       </View>
 
+      <Field label={t('settings.freezes')}>
+        <Text style={[type.body, { color: colors.text }]}>{t('freeze.count', { count: freeze.count })}</Text>
+        <Text style={[type.caption, { color: colors.textMuted }]}>{t('freeze.body')}</Text>
+        <PrimaryButton label={t('freeze.watch')} onPress={freeze.earn} disabled={!freeze.can || freeze.busy} />
+        {freeze.blockedReason && (
+          <Text style={[type.caption, { color: colors.textMuted }]}>{t(freeze.blockedReason === 'full' ? 'freeze.full' : 'freeze.limit')}</Text>
+        )}
+      </Field>
+
       {row('widgets-outline', t('settings.addWidget'), addWidget)}
       {row('archive-outline', t('settings.archive'), () => router.push('/archive'))}
+      {row('content-save-outline', t('settings.backup'), () => router.push('/backup'))}
+      {privacyRequired && row('shield-account-outline', t('settings.privacy'), () => void openPrivacyOptions().catch(() => undefined))}
+      {row('star-outline', t('settings.rate'), rate)}
+      {privacyPolicyUrl ? row('file-document-outline', t('settings.privacyPolicy'), () => void Linking.openURL(privacyPolicyUrl)) : null}
 
       <Text style={[type.body, { color: colors.textMuted }]}>
         {t('settings.version', { version: Constants.expoConfig?.version ?? '1.0.0' })}

@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { AppState } from 'react-native';
 import * as Notifications from 'expo-notifications';
 import { router, type Href } from 'expo-router';
+import { markExternalOpen } from '@/ads/guard';
 import { useHabits } from '@/store/habits';
 import { useSettings } from '@/store/settings';
 import { db } from '@/store/storage';
@@ -51,6 +52,7 @@ export function useNotificationResponses() {
     const key = `${response.notification.request.identifier}:${response.actionIdentifier}`;
     if (handled.has(key)) return;
     handled.add(key);
+    markExternalOpen();
     const data = response.notification.request.content.data as Record<string, unknown> | undefined;
     if (response.actionIdentifier === DONE_ACTION) {
       if (completeFromNotification(data)) void refreshWidget();

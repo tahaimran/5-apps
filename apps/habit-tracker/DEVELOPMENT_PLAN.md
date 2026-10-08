@@ -404,7 +404,7 @@ Shared imports: `@shared/ads`, `@shared/storage`, `@shared/onboarding`, `@shared
 | 3 ✅ | Timer habits, habit editor, templates library (40), categories, reorder, archive | Create/edit/archive/reorder flows work end-to-end |
 | 4 ✅ | Habit detail + heatmap, Stats screen, day notes, dark mode, celebrations + haptics | Heatmap renders 365 days at 60fps on mid-range device |
 | 5 ✅ | Notifications (reminders, summary, nudge), Android widget with interactive check | Widget toggle reflects in app within 1s and vice-versa |
-| 6 | Onboarding flow, UMP consent, all ad placements with caps, backup/restore, in-app review | Maestro: install → first check-in ≤45s; ads show only per map |
+| 6 ✅ | Onboarding flow, UMP consent, all ad placements with caps, backup/restore, in-app review | Maestro: install → first check-in ≤45s; ads show only per map |
 | 7 | QA pass, a11y pass, store assets, Play listing, internal → closed testing release | Checklist §18 complete; AAB uploaded |
 
 Note: new personal Play developer accounts need a 12-tester / 14-day closed test before production. Start closed testing on day 7; production launch ≈ day 21.

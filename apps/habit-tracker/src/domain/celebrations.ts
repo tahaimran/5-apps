@@ -22,6 +22,7 @@ export interface CelebratedState {
 
 export type Celebration =
   | { kind: 'first' }
+  | { kind: 'freezeUsed' }
   | { kind: 'milestone'; habitId: HabitId; milestone: number }
   | { kind: 'perfectDay' };
 

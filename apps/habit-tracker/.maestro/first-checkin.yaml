@@ -1,0 +1,16 @@
+# Install → first check-in in under 45 seconds (DEVELOPMENT_PLAN.md §6, KPI "time to first check-in").
+# Run on a fresh install:  maestro test .maestro/first-checkin.yaml
+appId: com.fiveapps.habittracker
+---
+- launchApp:
+    clearState: true
+- assertVisible: "Small habits. Big changes."
+- tapOn: "Let's start"
+- tapOn: "Sleep better"
+- tapOn: "Continue"
+- tapOn: "In bed by 23:30"
+- tapOn: "Add habits"
+- tapOn: "No reminders"
+- assertVisible: "Done it already today? Tap to check it off."
+- tapOn: "Mark done"
+- assertVisible: "Day 1 🔥 Your streak starts now."

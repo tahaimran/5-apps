@@ -86,7 +86,12 @@
     "at": "at",
     "addWidget": "Add widget to home screen",
     "widgetHow": "Long-press your home screen, tap Widgets, then pick Habits: Today.",
-    "widgetUnsupported": "Your launcher can't add widgets from here."
+    "widgetUnsupported": "Your launcher can't add widgets from here.",
+    "backup": "Backup & restore",
+    "privacy": "Privacy choices",
+    "privacyPolicy": "Privacy policy",
+    "rate": "Rate us",
+    "freezes": "Streak freezes"
   },
   "templates": {
     "drink-water": {
@@ -373,7 +378,8 @@
     "milestoneDays_other": "{count}-day streak! 🔥 {name}",
     "milestoneWeeks_one": "{count}-week streak! 🔥 {name}",
     "milestoneWeeks_other": "{count}-week streak! 🔥 {name}",
-    "perfectDay": "Perfect day! 🔥"
+    "perfectDay": "Perfect day! 🔥",
+    "freezeUsed": "A streak freeze protected your streaks. ❄️"
   },
   "widget": {
     "header": "Today · {done}/{total}",
@@ -405,5 +411,82 @@
     "channelStreak": "Streak nudges",
     "reason": "Allow reminders so we can nudge you at the time you choose and help protect your streak.",
     "reasonTitle": "Turn on reminders?"
+  },
+  "onboarding": {
+    "welcomeTitle": "Small habits. Big changes.",
+    "welcomeBody": "Track your routine, build streaks and check off habits right from your home screen. Every feature is free.",
+    "start": "Let's start",
+    "later": "I'll set up later",
+    "goalsTitle": "What do you want to work on?",
+    "goalsBody": "Pick one or more. You can change this anytime.",
+    "continue": "Continue",
+    "goals": {
+      "fit": "Get fit",
+      "sleep": "Sleep better",
+      "productive": "Be productive",
+      "mind": "Mental wellbeing",
+      "quit": "Break a bad habit",
+      "learn": "Learn something new",
+      "healthier": "Be healthier"
+    },
+    "startersTitle": "Pick 1 to 3 habits to start",
+    "startersBody": "Starting small is the secret. You can add more later.",
+    "startersCount": "{count} of 3",
+    "startersAdd": "Add habits",
+    "reminderTitle": "When should we remind you?",
+    "reminderBody": "One gentle reminder a day. No spam.",
+    "reminderDefault": "We'll use each habit's suggested time.",
+    "morning": "Morning",
+    "afternoon": "Afternoon",
+    "evening": "Evening",
+    "custom": "Custom…",
+    "noReminders": "No reminders",
+    "permissionBody": "Allow reminders so we can nudge you at {time} and help protect your streak.",
+    "permissionAllow": "Allow reminders",
+    "permissionNotNow": "Not now",
+    "flame": "A growing streak flame"
+  },
+  "coach": {
+    "checkIt": "Done it already today? Tap to check it off.",
+    "gotIt": "Got it"
+  },
+  "widgetSheet": {
+    "title": "Add the widget to your home screen?",
+    "body": "Check off habits without opening the app.",
+    "show": "Show me how",
+    "later": "Later"
+  },
+  "backup": {
+    "title": "Backup & restore",
+    "intro": "Your data stays on this device. A backup is a file you own and can keep anywhere.",
+    "export": "Export backup",
+    "exportBody": "Save all habits, history, notes and settings as one file.",
+    "exportFailed": "Couldn't create the backup. Try again.",
+    "shareTitle": "Habit backup",
+    "import": "Import backup",
+    "importBody": "Restore from a backup file. This replaces what is on this device.",
+    "pickFailed": "Couldn't read that file.",
+    "previewTitle": "Restore this backup?",
+    "preview": "{habits} habits, {checkIns} check-ins, {notes} notes",
+    "exportedAt": "Exported {date}",
+    "replaceWarning": "This replaces your current habits and history.",
+    "restore": "Replace and restore",
+    "done": "Backup restored.",
+    "errors": {
+      "invalid": "This file is damaged or isn't a habit backup.",
+      "notBackup": "This isn't a Habits backup file.",
+      "newer": "Update the app to import this backup."
+    }
+  },
+  "freeze": {
+    "title": "Streak freezes",
+    "count": "{count} of 2 held",
+    "body": "A freeze protects your streaks on a day you miss.",
+    "watch": "▶ Watch ad: +1 freeze",
+    "earned": "Streak freeze added.",
+    "unavailable": "No reward this time. The ad may not be available, or it was closed early. Try again in a bit.",
+    "limit": "You've earned one today. Come back tomorrow.",
+    "full": "You're holding the maximum of 2.",
+    "atRisk": "Your {count}-day streak is at risk today."
   }
 }

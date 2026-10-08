@@ -5,7 +5,8 @@ import { moveInOrder } from '@/domain/reorder';
 import type { HabitDraft } from '@/domain/validate';
 import { valueAfterAction, type WidgetAction } from '@/domain/widgetSnapshot';
 import { addDays, startOfWeek } from '@/domain/dayKey';
-import { emptyFreezes, earnPerfectWeek, isPerfectWeek, planFreezes } from '@/domain/freezes';
+import { canEarnFromAd, earnFromAd, emptyFreezes, earnPerfectWeek, isPerfectWeek, planFreezes } from '@/domain/freezes';
+import type { BackupFile } from '@/domain/types';
 import type { Entries } from '@/domain/streaks';
 import type { DayKey, FreezeState, Habit, HabitId } from '@/domain/types';
 import { db } from './storage';
@@ -36,6 +37,10 @@ interface HabitsState {
   move: (id: HabitId, delta: -1 | 1) => void;
   startTimer: (habitId: HabitId, day: DayKey) => void;
   pauseTimer: (habitId: HabitId, day: DayKey) => void;
+  /** Adds a streak freeze for a watched rewarded ad (1 a day, max 2). Returns whether it was added. */
+  earnFreeze: (today: DayKey) => boolean;
+  /** Replaces all habits, entries and freezes (restore from backup). */
+  replaceAll: (backup: BackupFile) => void;
   /** A tap on the home-screen widget. Ignored when it does not apply to the habit. */
   applyWidgetAction: (action: WidgetAction, habitId: HabitId, day: DayKey) => void;
   /** Manual minutes for a timer habit (negative to undo). */
@@ -127,6 +132,29 @@ export const useHabits = create<HabitsState>((set, get) => {
     writeEntry(habitId, day, startTimer(get().entries[habitId]?.[day], Date.now())),
   pauseTimer: (habitId, day) =>
     writeEntry(habitId, day, pauseTimer(get().entries[habitId]?.[day], Date.now())),
+  earnFreeze: (today) => {
+    const current = get().freezes;
+    if (!canEarnFromAd(current, today)) return false;
+    const freezes = earnFromAd(current, today);
+    db.set('freezes', freezes);
+    set({ freezes });
+    return true;
+  },
+
+  replaceAll: (backup) => {
+    for (const id of Object.keys(get().habits)) db.remove(`entries:${id}`);
+    const habits = Object.fromEntries(backup.habits.map((h) => [h.id, h]));
+    const entries: Record<HabitId, Entries> = {};
+    for (const id of Object.keys(habits)) {
+      entries[id] = backup.entries[id] ?? {};
+      db.set(`entries:${id}`, entries[id]);
+    }
+    db.set('habits', habits);
+    db.set('habitOrder', backup.habitOrder);
+    db.set('freezes', backup.freezes);
+    set({ habits, habitOrder: backup.habitOrder, entries, freezes: backup.freezes });
+  },
+
   applyWidgetAction: (action, habitId, day) => {
     const habit = get().habits[habitId];
     if (!habit || habit.archivedAt) return;

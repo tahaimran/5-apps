@@ -65,6 +65,10 @@ export interface Profile {
   notifPermission: 'unknown' | 'granted' | 'denied';
   notifReasked: boolean;
   review: { prompted: boolean; promptedAt?: number };
+  /** The first-check-in coach-mark has been dealt with. */
+  coachDone?: boolean;
+  /** The "add the widget" sheet has been shown. */
+  widgetPromptShown?: boolean;
 }
 
 export interface WidgetItem {

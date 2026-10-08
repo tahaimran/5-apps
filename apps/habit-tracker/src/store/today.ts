@@ -3,6 +3,7 @@ import { AppState } from 'react-native';
 import { create } from 'zustand';
 import { dayKeyFor, parseDayKey } from '@/domain/dayKey';
 import type { DayKey } from '@/domain/types';
+import { useCelebration } from './celebrations';
 import { useHabits } from './habits';
 import { useSettings } from './settings';
 
@@ -52,6 +53,10 @@ export function useDayRollover() {
   }, [refresh]);
 
   useEffect(() => {
+    const used = () => useHabits.getState().freezes.log.filter((l) => l.source === 'used').length;
+    const before = used();
     closeDays(today, weekStartsOn);
+    // F6: a toast explains when a freeze was spent.
+    if (used() > before) useCelebration.getState().show({ kind: 'freezeUsed' });
   }, [today, weekStartsOn, closeDays]);
 }

@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { router } from 'expo-router';
+import { AdBanner } from '@shared/ads';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import ReorderableList, { useReorderableDrag, type ReorderableListReorderEvent } from 'react-native-reorderable-list';
@@ -9,7 +10,13 @@ import { useTheme } from '@shared/theme';
 import { templateById } from '@/data/templates';
 import { CelebrationHost } from '@/features/celebrations/CelebrationHost';
 import { useCelebrations } from '@/features/celebrations/useCelebrations';
+import { CoachMark } from '@/features/onboarding/CoachMark';
+import { WidgetPromptSheet } from '@/features/onboarding/WidgetPromptSheet';
+import { useFreezeReward } from '@/features/freeze/useFreezeReward';
+import { useCelebration } from '@/store/celebrations';
+import { useProfile } from '@/store/profile';
 import { useNotes } from '@/store/notes';
+import { hasCheckInIn } from '@/ads/guard';
 import { isComplete } from '@/domain/completion';
 import { parseDayKey, weekDays } from '@/domain/dayKey';
 import { dayProgress, type DayProgress } from '@/domain/percent';
@@ -25,7 +32,7 @@ import { useSettings } from '@/store/settings';
 import { useToday } from '@/store/today';
 import { extraColorsFor } from '@/theme/tokens';
 import { HabitRow, type HabitRowProps } from '@/ui/HabitRow';
-import { TextButton } from '@/ui/controls';
+import { PrimaryButton, TextButton } from '@/ui/controls';
 import { WeekStrip } from '@/ui/WeekStrip';
 
 /** Offered in the empty state until the user picks their own. */
@@ -52,6 +59,27 @@ export default function Today() {
   const notes = useNotes((s) => s.notes);
   useCelebrations();
   const [selected, setSelected] = useState<DayKey>(today);
+  const profile = useProfile((s) => s.profile);
+  const updateProfile = useProfile((s) => s.update);
+  const freeze = useFreezeReward();
+  const checkedInEver = hasCheckInIn(entries);
+  const [widgetSheet, setWidgetSheet] = useState(false);
+  const celebration = useCelebration((s) => s.current);
+
+  // Onboarding step 5: the coach-mark goes away with the first check-in.
+  useEffect(() => {
+    if (checkedInEver && !profile.coachDone) updateProfile({ coachDone: true });
+  }, [checkedInEver, profile.coachDone, updateProfile]);
+
+  // ...then, once the first-check-in celebration has played, offer the widget (once).
+  useEffect(() => {
+    if (celebration?.kind !== 'first' || profile.widgetPromptShown) return;
+    const timer = setTimeout(() => {
+      updateProfile({ widgetPromptShown: true });
+      setWidgetSheet(true);
+    }, 3600);
+    return () => clearTimeout(timer);
+  }, [celebration, profile.widgetPromptShown, updateProfile]);
 
   // Jump back to today when the day rolls over.
   useEffect(() => setSelected(today), [today]);
@@ -72,6 +100,18 @@ export default function Today() {
   const isPast = selected !== today;
   const allDone = progress.total > 0 && progress.done === progress.total;
   const warning = extraColorsFor(mode).warning;
+
+  const atRisk = useMemo(() => {
+    let longest = 0;
+    for (const h of list) {
+      if (h.schedule.kind === 'perWeek' || !isActiveOn(h, today) || !isScheduledOn(h.schedule, today)) continue;
+      const e = entries[h.id] ?? {};
+      if (isComplete(h, e[today])) continue;
+      longest = Math.max(longest, computeStreaks(h, e, today, weekStartsOn).current);
+    }
+    return longest;
+  }, [list, entries, today, weekStartsOn]);
+  const showCoach = !profile.coachDone && !checkedInEver && visible.length > 0 && selected === today;
 
   const toggle = useCallback(
     (habit: Habit) => {
@@ -160,6 +200,15 @@ export default function Today() {
         <WeekStrip days={days} today={today} selected={selected} progress={progressByDay} onSelect={setSelected} />
       )}
 
+      {showCoach && <CoachMark onDismiss={() => updateProfile({ coachDone: true })} />}
+
+      {atRisk >= 2 && freeze.can && !isPast && checkedInEver && (
+        <View style={[styles.riskCard, { backgroundColor: colors.surfaceAlt, borderRadius: radius.md, padding: spacing.md, gap: spacing.sm }]}>
+          <Text style={[type.body, { color: colors.text }]}>{t('freeze.atRisk', { count: atRisk })}</Text>
+          <PrimaryButton label={t('freeze.watch')} onPress={freeze.earn} disabled={freeze.busy} />
+        </View>
+      )}
+
       {isPast && (
         <View style={{ backgroundColor: warning + '26', borderRadius: radius.md, padding: spacing.md }}>
           <Text style={[type.body, { color: colors.text }]}>{t('today.editingDay', { date: longDate(selected) })}</Text>
@@ -225,6 +274,7 @@ export default function Today() {
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: colors.background }} edges={['top']}>
+      <View style={styles.flex}>
       <ReorderableList
         data={visible}
         keyExtractor={(h) => h.id}
@@ -263,6 +313,12 @@ export default function Today() {
       >
         <MaterialCommunityIcons name="plus" size={28} color={colors.onPrimary} />
       </Pressable>
+      </View>
+
+      {/* Pinned above the tab bar, below the list and the add button so they never overlap. */}
+      <AdBanner placement="today_bottom" />
+
+      <WidgetPromptSheet visible={widgetSheet} onClose={() => setWidgetSheet(false)} />
     </SafeAreaView>
   );
 }
@@ -273,5 +329,6 @@ const styles = StyleSheet.create({
   ring: { borderWidth: 4, borderRadius: 999, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 8 },
   quickAdd: { borderWidth: StyleSheet.hairlineWidth, justifyContent: 'center', paddingHorizontal: 16 },
   perfect: { gap: 4 },
+  riskCard: {},
   fab: { position: 'absolute', right: 16, bottom: 16, alignItems: 'center', justifyContent: 'center', elevation: 4 },
 });

@@ -29,6 +29,9 @@ import {
 export { defaultAdPolicy, type AdPolicy, type AdUnits, type AdUnitConfig, type AdFormat } from './policy';
 export { showInterstitial, showRewarded, isRewardedReady } from './fullscreen';
 
+/** True once any full-screen ad has been shown since launch (e.g. to hold back a review prompt). */
+export const adShownThisSession = (): boolean => adsState.fullScreenShown > 0;
+
 async function startSdk(): Promise<void> {
   if (adsState.ready || !getCanRequestAds() || !adsState.policy.adsEnabled) return;
   await MobileAds().setRequestConfiguration({

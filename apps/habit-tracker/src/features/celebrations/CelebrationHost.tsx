@@ -23,7 +23,9 @@ export function CelebrationHost() {
       ? t('celebrate.first')
       : current.kind === 'perfectDay'
         ? t('celebrate.perfectDay')
-        : t(habit?.schedule.kind === 'perWeek' ? 'celebrate.milestoneWeeks' : 'celebrate.milestoneDays', {
+        : current.kind === 'freezeUsed'
+          ? t('celebrate.freezeUsed')
+          : t(habit?.schedule.kind === 'perWeek' ? 'celebrate.milestoneWeeks' : 'celebrate.milestoneDays', {
             count: current.milestone,
             name: habit?.name ?? '',
           });
@@ -40,7 +42,7 @@ export function CelebrationHost() {
   if (!current || !message) return null;
   return (
     <View style={StyleSheet.absoluteFill} pointerEvents="none">
-      {!reduced && <Confetti key={current.id} onDone={onConfettiDone} />}
+      {!reduced && current.kind !== 'freezeUsed' && <Confetti key={current.id} onDone={onConfettiDone} />}
       <Animated.View
         key={`toast-${current.id}`}
         entering={reduced ? undefined : FadeInDown.duration(220)}

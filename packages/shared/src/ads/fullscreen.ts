@@ -102,6 +102,7 @@ function present(fullScreenAd: FullScreenAd): Promise<boolean> {
     adsState.fullScreenActive = true;
     const finish = (shown: boolean) => {
       adsState.fullScreenActive = false;
+      if (shown) adsState.fullScreenShown++;
       offClosed();
       offErr();
       notifyAds();

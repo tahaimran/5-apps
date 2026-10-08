@@ -7,6 +7,7 @@ import {
 import { dayProgress } from '@/domain/percent';
 import { computeStreaks } from '@/domain/streaks';
 import { totalCheckIns } from '@/domain/stats';
+import { scheduleReviewAfterMilestone } from '@/features/review/askForReview';
 import { useCelebration } from '@/store/celebrations';
 import { useHabits } from '@/store/habits';
 import { useSettings } from '@/store/settings';
@@ -26,6 +27,9 @@ export function useCelebrations() {
   const weekStartsOn = useSettings((s) => s.settings.weekStartsOn);
   const show = useCelebration((s) => s.show);
   const previous = useRef<CelebrationSnapshot | null>(null);
+  const cancelReview = useRef<(() => void) | null>(null);
+
+  useEffect(() => () => cancelReview.current?.(), []);
 
   useEffect(() => {
     const list = habitOrder.map((id) => habits[id]).filter((h) => h && !h.archivedAt);
@@ -51,6 +55,13 @@ export function useCelebrations() {
     const celebrated: CelebratedState = db.get('celebrated') ?? {};
     const result = detectCelebration(prev, next, celebrated);
     if (result.celebrated !== celebrated) db.set('celebrated', result.celebrated);
-    if (result.celebration) show(result.celebration);
+    if (result.celebration) {
+      show(result.celebration);
+      if (result.celebration.kind === 'milestone') {
+        const cancel = scheduleReviewAfterMilestone(result.celebration.milestone);
+        cancelReview.current?.();
+        cancelReview.current = cancel;
+      }
+    }
   }, [habits, habitOrder, entries, today, weekStartsOn, show]);
 }

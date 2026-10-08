@@ -75,16 +75,19 @@ export async function getNotificationPermission(): Promise<PermissionState> {
 }
 
 /**
- * Explains why notifications are needed (`reasonCopy`) and only then triggers the system
- * permission prompt. Returns whether notifications are allowed.
+ * Explains why notifications are needed (`reasonCopy`, or nothing for `null`) and only then
+ * triggers the system permission prompt. Returns whether notifications are allowed.
  */
-export async function ensureNotificationPermission(reasonCopy: string | PermissionReason): Promise<boolean> {
+export async function ensureNotificationPermission(reasonCopy: string | PermissionReason | null): Promise<boolean> {
   await initNotifications();
   const current = await Notifications.getPermissionsAsync();
   if (current.granted) return true;
   if (!current.canAskAgain) return false;
-  const reason = typeof reasonCopy === 'string' ? { message: reasonCopy } : reasonCopy;
-  if (!(await confirm(reason))) return false;
+  // `null`: the caller already showed its own explanation (e.g. an onboarding step).
+  if (reasonCopy !== null) {
+    const reason = typeof reasonCopy === 'string' ? { message: reasonCopy } : reasonCopy;
+    if (!(await confirm(reason))) return false;
+  }
   return (await Notifications.requestPermissionsAsync()).granted;
 }
 

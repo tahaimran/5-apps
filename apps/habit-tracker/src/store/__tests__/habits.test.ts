@@ -187,3 +187,14 @@ describe('timers', () => {
   });
 });
 
+describe('streak freeze reward', () => {
+  it('grants one per day, up to two, and persists', () => {
+    const store = boot();
+    expect(store.getState().earnFreeze(TODAY)).toBe(true);
+    expect(store.getState().earnFreeze(TODAY)).toBe(false); // same day
+    expect(store.getState().earnFreeze('2026-10-09' as DayKey)).toBe(true);
+    expect(store.getState().earnFreeze('2026-10-10' as DayKey)).toBe(false); // full
+    expect(boot().getState().freezes.count).toBe(2);
+  });
+});
+

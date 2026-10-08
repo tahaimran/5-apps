@@ -1,0 +1,16 @@
+# Ads show only per the placement map (§12): none during onboarding, none before the first check-in.
+appId: com.fiveapps.habittracker
+---
+- launchApp:
+    clearState: true
+- assertNotVisible:
+    text: "Test Ad"
+- tapOn: "Let's start"
+- assertNotVisible:
+    text: "Test Ad"
+- tapOn: "I'll set up later"
+- tapOn: "Add Make my bed"
+- assertNotVisible:
+    text: "Test Ad"
+- tapOn: "Mark done"
+- assertVisible: "Day 1 🔥 Your streak starts now."

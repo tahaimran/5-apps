@@ -17,6 +17,8 @@ export const adsState = {
   interstitialActions: 0,
   /** True while an interstitial/rewarded/app-open ad is on screen. */
   fullScreenActive: false,
+  /** Full-screen ads (interstitial, rewarded, app open) shown since launch. */
+  fullScreenShown: 0,
   guard: null as ((placement: string) => boolean) | null,
 };
 
