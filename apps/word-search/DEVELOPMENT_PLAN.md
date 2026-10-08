@@ -518,7 +518,7 @@ apps/word-search/
 
 - [x] **Day 1 — Setup:** scaffold app in monorepo, Expo Router, TS paths to `@shared/*`, `app.config.ts`, EAS dev build profile, ~~install dev client on a physical Android phone~~ *(needs a device and an EAS account: not done, nothing has been run on a device)*; theme tokens + fonts *(Atkinson Hyperlegible via `@expo-google-fonts`; checked in jest and `expo export`, not seen on a device)*.
 - [x] **Day 2 — Generator:** PRNG, placement, fill, uniqueness scan, profanity filter; unit tests (1,000 seeds × 3 difficulties, assert all words placed exactly once); 12 word list JSON files *(12 packs of 130–145 words each; speed measured only on this CI machine, not on a Moto G)*.
-- [ ] **Day 3 — Grid UI:** Skia grid, sizing logic, drag selection with direction snap, tap-tap mode, highlights, word list.
+- [x] **Day 3 — Grid UI:** ~~Skia grid~~ *(react-native-svg strokes under view-drawn letters instead of Skia, which the plan allows; letters are plain views so fonts and TalkBack work)*, sizing logic, drag selection with direction snap, tap-tap mode, highlights, word list *(gestures are driven by fakes in jest; how the drag feels on a phone, the stroke animation and the TalkBack cell buttons are untested on a device)*.
 - [ ] **Day 4 — Game loop:** autosave/resume, complete modal, stars, pack progression, Home + pack list screens.
 - [ ] **Day 5 — Daily + hints:** daily seeding, calendar, streaks/freezes, hint system, settings screen (text size, themes, modes).
 - [ ] **Day 6 — Onboarding + a11y:** onboarding screens and tutorial puzzle, TalkBack labels, reduce motion, font-scale tests.

@@ -103,7 +103,7 @@ jest.mock('react-native-safe-area-context', () => require('react-native-safe-are
  * react-native-gesture-handler stand-in. `Gesture.Pan()/Tap()` record their callbacks so tests can
  * drive a drag or a tap by calling `mockGestures.pan.onBegin(...)` etc.
  */
-type Handlers = Record<string, ((e: unknown) => void) | undefined>;
+type Handlers = Record<string, ((e: unknown, success?: boolean) => void) | undefined>;
 export const mockGestures: { pan: Handlers; tap: Handlers } = { pan: {}, tap: {} };
 jest.mock('react-native-gesture-handler', () => {
   const React = require('react');
@@ -112,7 +112,7 @@ jest.mock('react-native-gesture-handler', () => {
     mockGestures[target] = handlers;
     const api: Record<string, unknown> = {};
     for (const name of ['onBegin', 'onStart', 'onUpdate', 'onEnd', 'onFinalize']) {
-      api[name] = (fn: (e: unknown) => void) => {
+      api[name] = (fn: (e: unknown, success?: boolean) => void) => {
         handlers[name] = fn;
         return api;
       };

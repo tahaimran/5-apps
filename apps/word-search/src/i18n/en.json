@@ -1,8 +1,40 @@
 {
-  "app": { "name": "Word Search" },
-  "tabs": { "play": "Play", "daily": "Daily", "settings": "Settings" },
-  "common": { "comingSoon": "This screen is coming soon." },
-  "home": { "title": "Welcome to Word Search" },
-  "daily": { "title": "Daily puzzle" },
-  "settings": { "title": "Settings" }
+  "app": {
+    "name": "Word Search"
+  },
+  "tabs": {
+    "play": "Play",
+    "daily": "Daily",
+    "settings": "Settings"
+  },
+  "common": {
+    "comingSoon": "This screen is coming soon."
+  },
+  "home": {
+    "title": "Welcome to Word Search"
+  },
+  "daily": {
+    "title": "Daily puzzle"
+  },
+  "settings": {
+    "title": "Settings"
+  },
+  "game": {
+    "back": "Back",
+    "title": "{pack} · Level {level}",
+    "dailyTitle": "Daily puzzle · {date}",
+    "tutorialTitle": "Your first puzzle",
+    "loading": "Getting your puzzle ready",
+    "loadError": "This puzzle couldn't open. Please try another one.",
+    "cellLabel": "Row {row}, column {col}, letter {letter}",
+    "cellLabelFound": "Row {row}, column {col}, letter {letter}, in a found word",
+    "wordFound": "{word}, found",
+    "wordNotFound": "{word}, not found",
+    "wordsLeft_one": "{count} word left",
+    "wordsLeft_other": "{count} words left",
+    "allFound": "All words found",
+    "foundAnnounce_one": "Found {word}. {count} word left.",
+    "foundAnnounce_other": "Found {word}. {count} words left.",
+    "gridLabel": "Letter grid, {size} by {size}"
+  }
 }
