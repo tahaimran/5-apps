@@ -3,10 +3,12 @@ import { StyleSheet } from 'react-native';
 import { Stack } from 'expo-router';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { StatusBar } from 'expo-status-bar';
+import { useAppOpenAd } from '@shared/ads';
 import { useOnboardingComplete } from '@shared/onboarding';
 import { ThemeProvider, useTheme } from '@shared/theme';
 import { startAds } from '@/ads/start';
-import { useAdGuard } from '@/ads/guard';
+import { adContext, useAdGuard } from '@/ads/guard';
+import { adAllowed } from '@/domain/adRules';
 import { CelebrationHost } from '@/features/celebrations/CelebrationHost';
 import { useNotificationResponses, useReminderSync } from '@/notifications/sync';
 import { useMeta } from '@/store/meta';
@@ -23,6 +25,8 @@ function Root() {
   const onboardingDone = useOnboardingComplete();
   useDayRollover();
   useAdGuard();
+  // Warm starts only (the hook never fires on a cold start) and never after a reminder tap (plan §12).
+  useAppOpenAd(() => adAllowed('app_open_warm', adContext()));
   useReminderSync();
   useNotificationResponses();
   useEffect(() => useMeta.getState().recordLaunch(), []);
@@ -39,6 +43,7 @@ function Root() {
       <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: colors.background } }}>
         <Stack.Screen name="onboarding" options={{ gestureEnabled: false }} />
         <Stack.Screen name="log-custom" options={{ presentation: 'modal' }} />
+        <Stack.Screen name="edit-entry/[id]" options={{ presentation: 'modal' }} />
       </Stack>
       <CelebrationHost />
     </>

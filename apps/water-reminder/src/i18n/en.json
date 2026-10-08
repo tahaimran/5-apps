@@ -235,5 +235,48 @@
   },
   "settings": {
     "title": "Settings"
+  },
+  "edit": {
+    "title": "Edit drink",
+    "missing": "This drink was not found. It may have been deleted.",
+    "delete": "Delete this drink",
+    "deleteTitle": "Delete this drink?",
+    "deleteBody": "{amount} will be removed from your day."
+  },
+  "history": {
+    "day": "Day",
+    "week": "Week",
+    "month": "Month",
+    "segments": "Show by",
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "previousDay": "Previous day",
+    "nextDay": "Next day",
+    "previousWeek": "Previous week",
+    "nextWeek": "Next week",
+    "previousMonth": "Previous month",
+    "nextMonth": "Next month",
+    "dayTotal": "{amount} of {goal}",
+    "empty": "No drinks logged this day",
+    "emptyFuture": "This day has not happened yet",
+    "editEntry": "Edit {time}, {beverage}, {amount}",
+    "deleteEntry": "Delete the drink at {time}",
+    "deleteTitle": "Delete this drink?",
+    "deleteBody": "{amount} will be removed from your day.",
+    "counted": "counts as {amount}",
+    "average": "Average",
+    "best": "Best day",
+    "goalDays": "Goal days",
+    "goalDaysValue": "{reached} of {elapsed}",
+    "noBest": "None yet",
+    "weekRange": "{from} – {to}",
+    "chartDay": "{day}: {amount}, goal reached",
+    "chartDayBelow": "{day}: {amount}",
+    "chartDayFuture": "{day}: not yet",
+    "chartMonth": "{month} chart. Average {average}, best day {best}, goal reached on {reached} of {elapsed} days",
+    "streak": "Streak",
+    "bestStreak": "Best streak",
+    "streakValue": "{count} days",
+    "goalLegend": "Dashed line: your goal, {goal}"
   }
 }

@@ -570,7 +570,7 @@ apps/water-reminder/
 - [x] **Day 2** — Onboarding flow (11 steps, copy, animations for goal reveal), consent wiring, permission step, first-glass moment.
 - [x] **Day 3** — Today screen: ring, plant (static stages + mood), quick-add, custom log sheet, undo, haptics. Banner placement.
 - [x] **Day 4** — Notification scheduler (rolling horizon), categories/actions, auto-skip, snooze, background task, killed-app action test on 3 devices.
-- [ ] **Day 5** — History (day list, edit/delete, week/month charts), native ad card, interstitial w/ caps, app-open warm-start logic.
+- [x] **Day 5** — History (day list, edit/delete, week/month charts), native ad card, interstitial w/ caps, app-open warm-start logic.
 - [ ] **Day 6** — Garden (stages, streak, freezes, rewarded unlocks), settings screens, battery guide, dark mode, a11y pass.
 - [ ] **Day 7** — QA (checklist §18), Maestro flows, store assets (ASO.md), privacy policy, Data safety, production AAB → internal testing → closed test.
 - [ ] **+1 week** — v1.1: widget, modes, skins shop, review prompt; Play production rollout 20% → 100%.
