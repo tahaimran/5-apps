@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { AccessibilityInfo, AppState, Pressable, ScrollView, StyleSheet, useWindowDimensions, View } from 'react-native';
 import { router, useLocalSearchParams } from 'expo-router';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { BigButton } from '@/ui/BigButton';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
@@ -10,9 +11,10 @@ import { unfoundWords } from '@/domain/game';
 import { hintsAvailable, HINT_RING_MS, refreshWallet } from '@/domain/hints';
 import { cellSizeFor, effectiveGridSize } from '@/domain/gridSize';
 import { getPack } from '@/domain/packs';
-import { levelPuzzle, parsePuzzleId, tutorialPuzzle } from '@/domain/puzzles';
+import { levelPuzzle, parsePuzzleId, TUTORIAL_ID, tutorialPuzzle } from '@/domain/puzzles';
 import type { Cell } from '@/domain/selection';
-import type { Puzzle } from '@/domain/types';
+import type { Puzzle, SavedGame } from '@/domain/types';
+import { CoachFinger, CoachText } from '@/components/CoachMark';
 import { ElapsedTimer } from '@/components/ElapsedTimer';
 import { Grid } from '@/components/Grid';
 import { HintSheet } from '@/components/HintSheet';
@@ -25,10 +27,17 @@ import { useToday } from '@/store/today';
 import { useSettings } from '@/store/settings';
 import { AppText } from '@/ui/AppText';
 import { formatDay } from '@/ui/format';
+import { Toast } from '@/ui/Toast';
 import { useScreenReader } from '@/ui/useScreenReader';
+import { cellCenter } from '@/domain/selection';
+import { wordCells } from '@/domain/generator';
+import { foundCount } from '@/domain/game';
+import { markTutorialDone } from '@/features/onboarding/finish';
 
 /** Plan §5.3: the celebration beat before the Complete screen. */
 export const CELEBRATION_MS = 600;
+/** Plan §6: "Skip tutorial" appears after 10 seconds. */
+export const TUTORIAL_SKIP_MS = 10_000;
 
 const titleOf = (puzzle: Puzzle): string => {
   const parsed = parsePuzzleId(puzzle.id);
@@ -52,6 +61,15 @@ function buildPuzzle(id: string, textSize: Parameters<typeof effectiveGridSize>[
   throw new Error(`Cannot build ${id}`);
 }
 
+/** The finger of the tutorial slides along CAT (plan §6 screen 5). */
+function TutorialFinger({ game, cellSize }: { game: SavedGame; cellSize: number }) {
+  const cat = game.puzzle.words.find((w) => w.word === 'CAT');
+  if (!cat) return null;
+  const span = wordCells(cat, game.puzzle.size);
+  const at = (n: number) => cellCenter({ row: Math.floor(n / game.puzzle.size), col: n % game.puzzle.size }, cellSize);
+  return <CoachFinger from={at(span[0])} to={at(span[span.length - 1])} />;
+}
+
 export default function Play() {
   const { puzzleId: rawId } = useLocalSearchParams<{ puzzleId: string }>();
   const puzzleId = String(rawId);
@@ -65,6 +83,10 @@ export default function Play() {
   const [celebrating, setCelebrating] = useState(false);
   const [sheet, setSheet] = useState<'none' | 'refill' | 'menu'>('none');
   const [ring, setRing] = useState<Cell[]>([]);
+  const isTutorial = puzzleId === TUTORIAL_ID;
+  const [touched, setTouched] = useState(false);
+  const [toast, setToast] = useState<string | null>(null);
+  const [canSkip, setCanSkip] = useState(false);
   const ringTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const today = useToday((s) => s.today);
   const wallet = useHints((s) => s.wallet);
@@ -80,6 +102,7 @@ export default function Play() {
     const timer = setTimeout(() => {
       try {
         useGame.getState().begin(buildPuzzle(puzzleId, useSettings.getState().settings.textSize, width));
+        if (puzzleId === TUTORIAL_ID) useHints.getState().tutorialBonus(); // plan §8.5: the tutorial grants 1 bonus hint
       } catch {
         setFailed(true);
       }
@@ -116,6 +139,7 @@ export default function Play() {
       AccessibilityInfo.announceForAccessibility(t('game.foundAnnounce', { word: out.result.word.word, count: left }));
       if (!out.complete) {
         feedback.success();
+        if (isTutorial && foundCount(out.game) === 1) setToast(t('tutorial.found'));
         return;
       }
       feedback.complete();
@@ -128,8 +152,20 @@ export default function Play() {
         if (result && mounted.current) router.replace({ pathname: '/complete/[puzzleId]', params: { puzzleId: result.puzzleId } });
       }, CELEBRATION_MS);
     },
-    [feedback],
+    [feedback, isTutorial],
   );
+
+  useEffect(() => {
+    if (!isTutorial) return;
+    const timer = setTimeout(() => setCanSkip(true), TUTORIAL_SKIP_MS);
+    return () => clearTimeout(timer);
+  }, [isTutorial]);
+
+  useEffect(() => {
+    if (!toast) return;
+    const timer = setTimeout(() => setToast(null), 4000);
+    return () => clearTimeout(timer);
+  }, [toast]);
 
   useEffect(
     () => () => {
@@ -156,6 +192,12 @@ export default function Play() {
     );
     if (ringTimer.current) clearTimeout(ringTimer.current);
     ringTimer.current = setTimeout(() => setRing([]), HINT_RING_MS);
+  };
+
+  const skipTutorial = () => {
+    useGame.getState().discard();
+    markTutorialDone();
+    router.replace('/(tabs)');
   };
 
   const cellSize = game ? cellSizeFor(game.puzzle.size, width) : 0;
@@ -205,6 +247,8 @@ export default function Play() {
         <View accessible accessibilityLabel={t('game.loading')} style={{ alignSelf: 'center', width: width - 32, height: width - 32, backgroundColor: colors.surfaceAlt, borderRadius: 12, marginTop: spacing.md }} />
       ) : (
         <ScrollView contentContainerStyle={{ alignItems: 'center', padding: spacing.lg, gap: spacing.lg }}>
+          {isTutorial && !touched && foundCount(game) === 0 && <CoachText />}
+          <View>
           <Grid
             game={game}
             cellSize={cellSize}
@@ -212,9 +256,16 @@ export default function Play() {
             mode={settings.selectionMode}
             screenReader={screenReader}
             onSelect={celebrating ? () => undefined : onSelect}
-            onSelectionStart={feedback.select}
+            onSelectionStart={() => {
+              setTouched(true);
+              feedback.select();
+            }}
             hintCells={ring}
           />
+          {isTutorial && !touched && foundCount(game) === 0 && <TutorialFinger game={game} cellSize={cellSize} />}
+          </View>
+          {toast && <View style={{ alignSelf: 'stretch' }}><Toast message={toast} /></View>}
+          {isTutorial && canSkip && <BigButton variant="secondary" label={t('tutorial.skip')} onPress={skipTutorial} />}
           <View style={{ alignSelf: 'stretch' }}>
             <WordList words={game.puzzle.words} textSize={settings.textSize} />
           </View>

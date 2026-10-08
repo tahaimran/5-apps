@@ -4,8 +4,8 @@ import { adPolicy, adUnits } from '@/ads.config';
 let started: Promise<void> | null = null;
 
 /**
- * Runs consent (UMP) and then starts the ads SDK. Called once: after the notification step of
- * onboarding (plan §6 step 10) on a first run, or at launch when onboarding is already done.
+ * Runs consent (UMP) and then starts the ads SDK. Called once: right after the setup screens on a
+ * first run (plan §6 screen 4, before the first puzzle), or at launch when setup is already done.
  * Never throws; ads are optional.
  */
 export function startAds(): Promise<void> {

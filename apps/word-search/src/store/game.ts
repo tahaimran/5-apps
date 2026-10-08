@@ -95,6 +95,8 @@ export const useGame = create<GameState>((set, get) => ({
       useProgress.getState().record(parsed.packId, parsed.difficulty, parsed.level, stars);
     }
     useStats.getState().recordPuzzle(game);
+    // Finishing the tutorial ends onboarding (plan §6): from now on the app opens on Home.
+    if (parsed?.kind === 'tutorial') db.set('onboarding.tutorialDone', true);
     let streak: number | undefined;
     let streakCounted: boolean | undefined;
     if (parsed?.kind === 'daily' && parsed.dateKey) {

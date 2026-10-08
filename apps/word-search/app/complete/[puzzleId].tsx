@@ -5,10 +5,10 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
 import { replaceWithPuzzle } from '@/features/play/navigation';
+import { DEFAULT_PACK, getPack } from '@/domain/packs';
 import { levelPuzzleId } from '@/domain/puzzles';
 import { dailyPackId } from '@/domain/daily';
 import { addDays } from '@/domain/dateKey';
-import { getPack } from '@/domain/packs';
 import type { CompletedResult } from '@/domain/types';
 import { useResult } from '@/store/result';
 import { useSettings } from '@/store/settings';
@@ -30,22 +30,25 @@ export const nextPuzzleId = (r: CompletedResult): string | null =>
 export default function Complete() {
   const result = useResult((s) => s.last);
   const showTimer = useSettings((s) => s.settings.showTimer);
+  const difficulty = useSettings((s) => s.settings.difficulty);
   const { colors, spacing, type } = useTheme();
   if (!result) return <Redirect href="/(tabs)" />;
-  const next = nextPuzzleId(result);
+  const next = result.isTutorial ? levelPuzzleId(DEFAULT_PACK, difficulty, 1) : nextPuzzleId(result);
   const pack = getPack(result.packId)?.name ?? '';
   const leave = () => router.replace('/(tabs)');
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: colors.background, padding: spacing.lg, justifyContent: 'center' }}>
       <View style={{ alignItems: 'center', gap: spacing.lg }}>
         <AppText accessibilityRole="header" style={[type.display, { color: colors.text, fontWeight: '700', textAlign: 'center' }]}>
-          {t('complete.title')}
+          {result.isTutorial ? t('tutorial.wonderful') : t('complete.title')}
         </AppText>
-        <StarRow stars={result.stars} size={48} />
-        <AppText style={[type.bodyLarge, { color: colors.textMuted, textAlign: 'center' }]}>
-          {t('complete.words', { count: result.wordsFound })}
-          {result.level !== undefined ? ` · ${t('game.title', { pack, level: result.level })}` : ''}
-        </AppText>
+        {!result.isTutorial && <StarRow stars={result.stars} size={48} />}
+        {!result.isTutorial && (
+          <AppText style={[type.bodyLarge, { color: colors.textMuted, textAlign: 'center' }]}>
+            {t('complete.words', { count: result.wordsFound })}
+            {result.level !== undefined ? ` · ${t('game.title', { pack, level: result.level })}` : ''}
+          </AppText>
+        )}
         {result.isDaily && result.streakCounted && result.streak !== undefined && (
           <View accessible accessibilityLabel={t('complete.streak', { count: result.streak })} style={{ flexDirection: 'row', alignItems: 'center', gap: spacing.sm }}>
             <MaterialCommunityIcons name="fire" size={40} color={colors.accent} />
@@ -68,8 +71,8 @@ export default function Complete() {
       <View style={{ gap: spacing.md, marginTop: spacing.xl * 2 }}>
         {next ? (
           <>
-            <BigButton tall label={t('complete.next')} onPress={() => replaceWithPuzzle(next)} />
-            <BigButton variant="secondary" label={t('complete.backToPacks')} onPress={leave} />
+            <BigButton tall label={result.isTutorial ? t('tutorial.next') : t('complete.next')} onPress={() => replaceWithPuzzle(next)} />
+            <BigButton variant="secondary" label={result.isTutorial ? t('complete.home') : t('complete.backToPacks')} onPress={leave} />
           </>
         ) : (
           <BigButton tall label={t('complete.home')} onPress={leave} />

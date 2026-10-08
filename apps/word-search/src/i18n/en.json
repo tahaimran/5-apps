@@ -182,7 +182,8 @@
     "large": "Large",
     "xlarge": "Extra Large",
     "huge": "Huge",
-    "recommended": "Recommended"
+    "recommended": "Recommended",
+    "sample": "Sample letters, {size}"
   },
   "theme": {
     "system": "Same as my phone",
@@ -198,6 +199,25 @@
       "mediumDetail": "Words can also go diagonally.",
       "hard": "Challenging",
       "hardDetail": "Bigger puzzles. Words can go in any direction, even backwards."
-    }
+    },
+    "welcomeTitle": "Welcome to Word Search",
+    "welcomeBody": "Big, clear letters. No timers. Play anytime, even without internet.",
+    "begin": "Let's begin",
+    "sizeTitle": "Choose a comfortable letter size",
+    "sizeBody": "Pick the size you can read easily. You can change it later in Settings.",
+    "highContrast": "High-contrast colors",
+    "sizeNote": "The sample above shows the size you pick.",
+    "continue": "Continue",
+    "levelTitle": "How would you like to play?",
+    "levelFooter": "Not sure? Start with Relaxed — you can switch anytime.",
+    "startFirst": "Start my first puzzle"
+  },
+  "tutorial": {
+    "coach": "Slide your finger across C-A-T to find the word. Or tap C, then tap T.",
+    "found": "You found it! Find the other 3 words.",
+    "skip": "Skip tutorial",
+    "wonderful": "Wonderful! You're all set.",
+    "next": "Play the next puzzle",
+    "finger": "Showing how to slide a finger across the word CAT"
   }
 }

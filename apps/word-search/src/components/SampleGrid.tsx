@@ -16,7 +16,7 @@ export function SampleGrid({ textSize }: { textSize: TextSize }) {
   return (
     <View
       accessible
-      accessibilityLabel={t(`textSize.${textSize}`)}
+      accessibilityLabel={t('textSize.sample', { size: t(`textSize.${textSize}`) })}
       style={{ alignSelf: 'center', borderWidth: 1, borderColor: g.gridBorder, borderRadius: 12, overflow: 'hidden', backgroundColor: g.gridCell }}
     >
       {SAMPLE.map((row) => (

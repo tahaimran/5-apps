@@ -24,6 +24,7 @@ function Root() {
     <>
       <StatusBar style={mode === 'light' ? 'dark' : 'light'} />
       <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: colors.background } }}>
+        <Stack.Screen name="onboarding" options={{ gestureEnabled: false }} />
         <Stack.Screen name="complete/[puzzleId]" options={{ presentation: 'modal', gestureEnabled: false }} />
       </Stack>
     </>
