@@ -74,6 +74,20 @@ describe('Play screen (milestone 3)', () => {
     expect(ui.texts()).toContain(`${puzzle.words.length} words left`);
   });
 
+  it('stops the page from scrolling while a finger is on the grid', async () => {
+    const ui = await loaded('animals:easy:1');
+    const scroller = () => ui.root.findAll((n) => typeof n.props.scrollEnabled === 'boolean' && typeof n.type === 'string')[0];
+    const grid = ui.root.findAll((n) => typeof n.props.onTouchStart === 'function' && typeof n.type === 'string')[0];
+    expect(scroller().props.scrollEnabled).toBe(true);
+    await act(async () => grid.props.onTouchStart({}));
+    expect(scroller().props.scrollEnabled).toBe(false);
+    await act(async () => grid.props.onTouchEnd({}));
+    expect(scroller().props.scrollEnabled).toBe(true);
+    await act(async () => grid.props.onTouchStart({}));
+    await act(async () => grid.props.onTouchCancel({}));
+    expect(scroller().props.scrollEnabled).toBe(true);
+  });
+
   it('goes back with the back button', async () => {
     const ui = await loaded('animals:easy:1');
     await ui.press('Back');

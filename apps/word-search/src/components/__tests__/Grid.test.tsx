@@ -275,3 +275,15 @@ describe('WordList', () => {
     expect(ui.texts()).toContain('All words found');
   });
 });
+
+describe('grid size on big screens', () => {
+  it('caps the grid at 560dp so a tablet does not get giant cells', () => {
+    const { MAX_GRID_EDGE } = require('@/domain/gridSize') as typeof import('@/domain/gridSize');
+    expect(MAX_GRID_EDGE).toBe(560);
+    for (const width of [600, 800, 1280]) {
+      for (const size of [6, 8, 10, 12]) expect(cellSizeFor(size, width) * size).toBeLessThanOrEqual(MAX_GRID_EDGE);
+    }
+    expect(cellSizeFor(8, 360)).toBe(41); // phones still fill the width
+    expect(effectiveGridSize('hard', 'comfortable', 1280)).toBe(12);
+  });
+});

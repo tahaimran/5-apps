@@ -87,6 +87,8 @@ export default function Play() {
   const [ring, setRing] = useState<Cell[]>([]);
   const isTutorial = puzzleId === TUTORIAL_ID;
   const [touched, setTouched] = useState(false);
+  // A finger on the grid must select letters, not scroll the page (the page only scrolls when it overflows).
+  const [gridTouched, setGridTouched] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
   const [canSkip, setCanSkip] = useState(false);
   const ringTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -248,9 +250,9 @@ export default function Play() {
       ) : !game ? (
         <View accessible accessibilityLabel={t('game.loading')} style={{ alignSelf: 'center', width: width - 32, height: width - 32, backgroundColor: colors.surfaceAlt, borderRadius: 12, marginTop: spacing.md }} />
       ) : (
-        <ScrollView contentContainerStyle={{ alignItems: 'center', padding: spacing.lg, gap: spacing.lg }}>
+        <ScrollView scrollEnabled={!gridTouched} contentContainerStyle={{ alignItems: 'center', padding: spacing.lg, gap: spacing.lg }}>
           {isTutorial && !touched && foundCount(game) === 0 && <CoachText />}
-          <View>
+          <View onTouchStart={() => setGridTouched(true)} onTouchEnd={() => setGridTouched(false)} onTouchCancel={() => setGridTouched(false)}>
           <Grid
             game={game}
             cellSize={cellSize}
