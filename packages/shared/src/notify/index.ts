@@ -9,6 +9,10 @@ export interface ChannelConfig {
   name: string;
   importance?: Notifications.AndroidImportance;
   description?: string;
+  /** File name of a bundled sound (expo-notifications `sounds` plugin option), or `null` for silent. */
+  sound?: string | null;
+  vibrationPattern?: number[];
+  lockscreenVisibility?: Notifications.AndroidNotificationVisibility;
 }
 
 export type NotificationContent = Notifications.NotificationContentInput;
@@ -45,6 +49,9 @@ export async function initNotifications(
         name: c.name,
         description: c.description,
         importance: c.importance ?? Notifications.AndroidImportance.DEFAULT,
+        ...(c.sound !== undefined && { sound: c.sound }),
+        ...(c.vibrationPattern && { vibrationPattern: c.vibrationPattern }),
+        ...(c.lockscreenVisibility !== undefined && { lockscreenVisibility: c.lockscreenVisibility }),
       });
     }
   }

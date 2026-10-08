@@ -61,6 +61,20 @@ describe('initNotifications', () => {
     expect(mockN.channel).toHaveBeenCalledWith('summary', expect.objectContaining({ importance: 2, description: 'Daily' }));
     expect(mockN.handler).toHaveBeenCalledTimes(1);
   });
+  it('passes a channel sound, vibration pattern and lock-screen visibility through, including a silent channel', async () => {
+    withOS('android');
+    await load().initNotifications([
+      { id: 'loud', name: 'Loud', sound: 'drop.wav', vibrationPattern: [0, 120, 80, 120], lockscreenVisibility: 1 },
+      { id: 'quiet', name: 'Quiet', sound: null },
+      { id: 'plain', name: 'Plain' },
+    ]);
+    expect(mockN.channel).toHaveBeenCalledWith('loud', expect.objectContaining({ sound: 'drop.wav', vibrationPattern: [0, 120, 80, 120], lockscreenVisibility: 1 }));
+    expect(mockN.channel).toHaveBeenCalledWith('quiet', expect.objectContaining({ sound: null }));
+    const plain = mockN.channel.mock.calls.find((c) => c[0] === 'plain')?.[1] as Record<string, unknown>;
+    expect('sound' in plain).toBe(false);
+    expect('vibrationPattern' in plain).toBe(false);
+    expect('lockscreenVisibility' in plain).toBe(false);
+  });
   it('defaults to one "reminders" channel with default importance', async () => {
     withOS('android');
     await load().initNotifications();

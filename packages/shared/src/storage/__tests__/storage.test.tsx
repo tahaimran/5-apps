@@ -72,6 +72,15 @@ describe('get / set / remove', () => {
     s.remove('name');
     expect(s.get('name')).toBeUndefined();
   });
+  it('lists the stored keys without the internal version key', () => {
+    const s = createStore<Data & Record<string, unknown>>('s', 1);
+    expect(s.keys()).toEqual([]);
+    s.set('count', 1);
+    s.set('name', 'x');
+    expect(s.keys().sort()).toEqual(['count', 'name']);
+    s.remove('count');
+    expect(s.keys()).toEqual(['name']);
+  });
   it('persists across a new store instance (an app restart)', () => {
     createStore<Data>('s', 1).set('count', 9);
     expect(createStore<Data>('s', 1).get('count')).toBe(9);

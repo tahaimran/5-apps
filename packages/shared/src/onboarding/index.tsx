@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { sharedStore } from '../storage';
 import { t } from '../i18n';
@@ -16,6 +16,11 @@ export interface StepContext {
   next: () => void;
   /** Finish the flow now with the answers so far, plus an optional last patch (keyed by step). */
   finish: (patch?: Answers) => void;
+  /**
+   * Jump to the step with this key. `patch` is merged into the answers first, so it can also
+   * hide steps (via `hidden`) before the jump resolves the target's position.
+   */
+  jumpTo: (key: string, patch?: Answers) => void;
 }
 
 export interface OnboardingStep {
@@ -47,9 +52,25 @@ export interface OnboardingLabels {
   done: string;
 }
 
+/** Where the flow is, for resuming it after the app was killed mid-way. */
+export interface OnboardingProgress {
+  /** Index into the currently visible steps. */
+  index: number;
+  answers: Answers;
+}
+
 export interface OnboardingFlowProps {
   steps: OnboardingStep[];
   onDone: (answers: Answers) => void;
+  /** Start from saved progress instead of the first step. */
+  initial?: OnboardingProgress;
+  /** Called whenever the step or the answers change, so the app can persist them. */
+  onProgress?: (progress: OnboardingProgress) => void;
+  /**
+   * Replaces what the header's Skip does (default: finish with the answers so far). Use it to
+   * apply defaults but still pass through steps that must not be skipped, e.g. a permission step.
+   */
+  onSkip?: (ctx: Pick<StepContext, 'answers' | 'jumpTo' | 'finish'>) => void;
   /** Override the default (translatable) button labels. */
   labels?: Partial<OnboardingLabels>;
   /** Show Skip in the header. Default true. */
@@ -65,12 +86,17 @@ export function useOnboardingComplete(): boolean {
   return completedAt > 0;
 }
 
-export function OnboardingFlow({ steps, onDone, labels, allowSkip = true }: OnboardingFlowProps) {
+export function OnboardingFlow({ steps, onDone, labels, allowSkip = true, initial, onProgress, onSkip }: OnboardingFlowProps) {
   const { colors, spacing, radius, type, touchTarget } = useTheme();
   const haptics = useHaptics();
-  const [index, setIndex] = useState(0);
-  const [answers, setAnswers] = useState<Answers>({});
+  const [index, setIndex] = useState(initial?.index ?? 0);
+  const [answers, setAnswers] = useState<Answers>(initial?.answers ?? {});
   const [busy, setBusy] = useState(false);
+
+  useEffect(() => {
+    onProgress?.({ index, answers });
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- report changes of the flow state only
+  }, [index, answers]);
 
   // Steps can hide themselves based on earlier answers; indexes refer to the visible list.
   const visible = steps.filter((s) => !s.hidden?.(answers));
@@ -108,9 +134,17 @@ export function OnboardingFlow({ steps, onDone, labels, allowSkip = true }: Onbo
   };
   const back = () => setIndex((i) => Math.max(0, i - 1));
   const setValue = (value: unknown) => setAnswers((a) => ({ ...a, [step.key]: value }));
+  const jumpTo = (key: string, patch?: Answers) => {
+    const nextAnswers = patch ? { ...answers, ...patch } : answers;
+    const target = steps.filter((s) => !s.hidden?.(nextAnswers)).findIndex((s) => s.key === key);
+    if (target < 0) return;
+    setAnswers(nextAnswers);
+    setIndex(target);
+  };
 
   if (!step) return null;
-  const ctx: StepContext = { value: answers[step.key], setValue, answers, next, finish: (patch) => finish({ ...answers, ...patch }) };
+  const finishWith = (patch?: Answers) => finish({ ...answers, ...patch });
+  const ctx: StepContext = { value: answers[step.key], setValue, answers, next, finish: finishWith, jumpTo };
   const allowed = step.canContinue ? step.canContinue({ value: ctx.value, answers }) : true;
   const targetStyle = { minHeight: touchTarget, minWidth: touchTarget, justifyContent: 'center' as const };
 
@@ -144,7 +178,7 @@ export function OnboardingFlow({ steps, onDone, labels, allowSkip = true }: Onbo
             <Pressable
               accessibilityRole="button"
               accessibilityLabel={text.skip}
-              onPress={() => finish(answers)}
+              onPress={() => (onSkip ? onSkip({ answers, jumpTo, finish: finishWith }) : finish(answers))}
               style={targetStyle}
             >
               <Text style={[type.body, { color: colors.textMuted }]}>{text.skip}</Text>

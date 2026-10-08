@@ -398,3 +398,63 @@ describe('accessibility', () => {
     expect(style.minHeight).toBeGreaterThanOrEqual(52);
   });
 });
+
+describe('resume, jumps and custom skip', () => {
+  it('starts from saved progress and reports every change', async () => {
+    const onProgress = jest.fn();
+    const f = await start(steps3, { initial: { index: 1, answers: { one: 'kept' } }, onProgress });
+    expect(f.texts()).toContain('Step two');
+    expect(onProgress).toHaveBeenLastCalledWith({ index: 1, answers: { one: 'kept' } });
+    await f.press('Next');
+    expect(onProgress).toHaveBeenLastCalledWith({ index: 2, answers: { one: 'kept' } });
+    await f.press('Back');
+    expect(onProgress).toHaveBeenLastCalledWith({ index: 1, answers: { one: 'kept' } });
+  });
+  it('clamps a saved index that is past the end', async () => {
+    const f = await start(steps3, { initial: { index: 9, answers: {} } });
+    expect(f.texts()).toContain('Step three');
+  });
+  it('lets a step jump to another one, merging a patch that can hide steps in between', async () => {
+    const steps: OnboardingStep[] = [
+      { key: 'a', title: 'A', secondary: { label: 'Skip ahead', onPress: (ctx) => ctx.jumpTo('d', { shortcut: true }) } },
+      { key: 'b', title: 'B', hidden: (answers) => answers.shortcut === true },
+      { key: 'c', title: 'C', hidden: (answers) => answers.shortcut === true },
+      { key: 'd', title: 'D' },
+    ];
+    const f = await start(steps);
+    expect(progress(f)).toBe('Step 1 of 4');
+    await f.press('Skip ahead');
+    expect(f.texts()).toContain('"D"');
+    expect(progress(f)).toBe('Step 2 of 2');
+    await f.press('Get started');
+    expect(f.onDone).toHaveBeenCalledWith({ shortcut: true });
+  });
+  it('ignores a jump to a step that does not exist or is hidden', async () => {
+    const f = await start([
+      { key: 'a', title: 'A', secondary: { label: 'Nowhere', onPress: (ctx) => ctx.jumpTo('zzz') } },
+      { key: 'b', title: 'B' },
+    ]);
+    await f.press('Nowhere');
+    expect(f.texts()).toContain('"A"');
+  });
+  it('runs a custom Skip instead of finishing, e.g. to still show a permission step', async () => {
+    const onSkip = jest.fn((ctx: { jumpTo: (k: string, p?: Record<string, unknown>) => void }) => ctx.jumpTo('three', { skipped: true }));
+    const steps: OnboardingStep[] = [
+      { key: 'one', title: 'Step one' },
+      { key: 'two', title: 'Step two', hidden: (a) => a.skipped === true },
+      { key: 'three', title: 'Step three' },
+    ];
+    const f = await start(steps, { onSkip });
+    await f.press('Skip');
+    expect(onSkip).toHaveBeenCalledTimes(1);
+    expect(f.onDone).not.toHaveBeenCalled();
+    expect(f.texts()).toContain('Step three');
+    await f.press('Get started');
+    expect(f.onDone).toHaveBeenCalledWith({ skipped: true });
+  });
+  it('lets the custom Skip finish the flow itself', async () => {
+    const f = await start(steps3, { onSkip: (ctx) => ctx.finish({ chosen: 1 }) });
+    await f.press('Skip');
+    expect(f.onDone).toHaveBeenCalledWith({ chosen: 1 });
+  });
+});

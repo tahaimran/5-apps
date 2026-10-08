@@ -6,7 +6,10 @@ import React from 'react';
 
 type Disk = Map<string, Map<string, string | number>>;
 export const mockDisk: Disk = new Map();
-export const resetDisk = () => mockDisk.clear();
+/** Empties every store in place (stores keep their handle to the same map). */
+export const resetDisk = () => {
+  for (const m of mockDisk.values()) m.clear();
+};
 
 jest.mock('react-native-mmkv', () => ({
   createMMKV: ({ id }: { id: string }) => {
@@ -39,12 +42,19 @@ jest.mock('expo-localization', () => ({
 }));
 jest.mock('expo-store-review', () => ({ isAvailableAsync: async () => false, requestReview: jest.fn() }));
 export const mockLastNotificationResponse: { current: unknown } = { current: null };
+/** What the fake system says about the notification permission and what the user answers. */
+export const mockNotif = { granted: false, canAskAgain: true, answer: true };
+export const resetNotifMock = () => Object.assign(mockNotif, { granted: false, canAskAgain: true, answer: true });
 
 jest.mock('expo-notifications', () => ({
   AndroidImportance: { DEFAULT: 3, LOW: 2, HIGH: 4 },
   DEFAULT_ACTION_IDENTIFIER: 'default',
-  getPermissionsAsync: async () => ({ granted: false, canAskAgain: true }),
-  requestPermissionsAsync: async () => ({ granted: true }),
+  getPermissionsAsync: async () => ({ granted: mockNotif.granted, canAskAgain: mockNotif.canAskAgain }),
+  requestPermissionsAsync: async () => {
+    mockNotif.granted = mockNotif.answer;
+    mockNotif.canAskAgain = mockNotif.answer;
+    return { granted: mockNotif.answer };
+  },
   setNotificationCategoryAsync: async () => undefined,
   setNotificationChannelAsync: async () => undefined,
   setNotificationHandler: () => undefined,

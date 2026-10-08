@@ -10,6 +10,8 @@ export interface Store<T> {
   get<K extends keyof T>(key: K): T[K] | undefined;
   set<K extends keyof T>(key: K, value: T[K]): void;
   remove<K extends keyof T>(key: K): void;
+  /** Every key currently stored (for sharded keys such as `logs:2026-10`). */
+  keys(): string[];
   /** Subscribe to any change in this store. Returns an unsubscribe function. */
   subscribe(listener: () => void): () => void;
   useStored<K extends keyof T>(key: K, fallback: T[K]): [T[K], (v: T[K]) => void];
@@ -89,6 +91,8 @@ export function createStore<T extends object>(
     notify();
   };
 
+  const keys = () => mmkv.getAllKeys().filter((k) => k !== VERSION_KEY);
+
   const subscribe = (listener: () => void) => {
     listeners.add(listener);
     return () => {
@@ -137,7 +141,7 @@ export function createStore<T extends object>(
     notify();
   };
 
-  return { get, set, remove, subscribe, useStored, exportBackup, importBackup };
+  return { get, set, remove, keys, subscribe, useStored, exportBackup, importBackup };
 }
 
 /** Keys used by the shared modules themselves (onboarding, review, ads, theme, crosspromo). */

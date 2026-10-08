@@ -1,4 +1,173 @@
 {
-  "app": { "name": "Sipling" },
-  "common": { "cancel": "Cancel", "save": "Save", "delete": "Delete", "back": "Back", "close": "Close", "ok": "OK" }
+  "app": {
+    "name": "Sipling"
+  },
+  "common": {
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "back": "Back",
+    "close": "Close",
+    "ok": "OK",
+    "earlier": "Earlier",
+    "later": "Later",
+    "next": "Next",
+    "done": "Done",
+    "off": "Off",
+    "on": "On",
+    "loading": "Loading"
+  },
+  "units": {
+    "ml": "ml",
+    "floz": "fl oz",
+    "kg": "kg",
+    "lb": "lb",
+    "amount": "{value} {unit}",
+    "glasses": "{count} glasses"
+  },
+  "cups": {
+    "small": "Small glass",
+    "glass": "Glass",
+    "mug": "Mug",
+    "bottle": "Bottle",
+    "custom": "Custom"
+  },
+  "beverages": {
+    "water": "Water",
+    "sparkling": "Sparkling",
+    "tea": "Tea",
+    "coffee": "Coffee",
+    "juice": "Juice",
+    "milk": "Milk",
+    "soda": "Soda"
+  },
+  "plant": {
+    "label": "Your plant is a {stage} and looks {mood}",
+    "stages": {
+      "0": "seed",
+      "1": "sprout",
+      "2": "seedling",
+      "3": "young plant",
+      "4": "blooming plant",
+      "5": "tree of life"
+    },
+    "stageNames": {
+      "0": "Seed",
+      "1": "Sprout",
+      "2": "Seedling",
+      "3": "Young plant",
+      "4": "Blooming",
+      "5": "Tree of Life"
+    },
+    "moods": {
+      "thirsty": "thirsty",
+      "ok": "okay",
+      "happy": "happy",
+      "sparkle": "sparkling with joy"
+    }
+  },
+  "onboarding": {
+    "progressNote": "Step {current} of {total}",
+    "welcomeTitle": "Meet your new plant.",
+    "welcomeBody": "Drink water, and watch it grow. Let's set a goal that fits you — it takes 30 seconds.",
+    "start": "Let's start",
+    "knowGoal": "I already know my goal",
+    "aboutTitle": "How should we calculate your goal?",
+    "aboutHelper": "Optional. Used only for the calculation, stored on your phone.",
+    "sex": {
+      "female": "Female",
+      "male": "Male",
+      "unspecified": "Prefer not to say"
+    },
+    "weightTitle": "What's your weight?",
+    "weightHelper": "Used only to estimate your daily goal.",
+    "weightUnit": "Weight unit",
+    "weightLess": "Less weight",
+    "weightMore": "More weight",
+    "weightLess5": "Minus 5",
+    "weightMore5": "Plus 5",
+    "weightValue": "Weight",
+    "scheduleTitle": "When does your day start and end?",
+    "scheduleHelper": "We'll only remind you in between. Your day resets when you wake up.",
+    "wake": "Wake up",
+    "bed": "Bedtime",
+    "activityTitle": "How active are you on a typical day?",
+    "activity": {
+      "sedentary": "Mostly sitting",
+      "light": "Lightly active (walks, standing)",
+      "active": "Active (workouts 3–5×/week)",
+      "very_active": "Very active (daily training or physical job)"
+    },
+    "activityShort": {
+      "sedentary": "Mostly sitting",
+      "light": "Lightly active",
+      "active": "Active",
+      "very_active": "Very active"
+    },
+    "climateTitle": "What's the weather usually like where you are?",
+    "climateHelper": "No location needed — just pick what feels right.",
+    "climate": {
+      "cool": "Cool",
+      "mild": "Mild",
+      "warm": "Warm",
+      "hot": "Hot or humid"
+    },
+    "climateShort": {
+      "cool": "Cool",
+      "mild": "Mild",
+      "warm": "Warm",
+      "hot": "Hot"
+    },
+    "goalRowBase": "Body weight {weight} → {amount}",
+    "goalRowActivity": "{label} → {amount}",
+    "goalRowClimate": "{label} climate → {amount}",
+    "goalRowSex": "Male → {amount}",
+    "goalIs": "Your daily goal",
+    "goalApprox": "About {count} glasses",
+    "goalSounds": "Sounds good",
+    "goalAdjust": "Adjust",
+    "goalLess": "Lower goal",
+    "goalMore": "Higher goal",
+    "goalFootnote": "A general wellness estimate, not medical advice. Ask a professional if you have a health condition.",
+    "goalStepperLabel": "Daily goal",
+    "knownGoalTitle": "What's your daily goal?",
+    "knownGoalHelper": "You can change it any time in Settings.",
+    "cupTitle": "What do you usually drink from?",
+    "customCup": "Custom size",
+    "cupLess": "Smaller cup",
+    "cupMore": "Larger cup",
+    "remindersTitle": "How often should we nudge you?",
+    "freq": {
+      "interval60": "Every hour",
+      "interval120": "Every 2 hours",
+      "smart": "Smart (we'll space them for your goal)"
+    },
+    "recommended": "Recommended",
+    "styleHeading": "Style",
+    "style": {
+      "gentle": "Gentle (silent banner)",
+      "normal": "Normal (sound)"
+    },
+    "permissionTitle": "Want a gentle nudge when it's time?",
+    "permissionBody": "We'll send about {count} reminders between {start} and {end}. You can log right from the notification.",
+    "previewTitle": "💧 Time for a sip!",
+    "previewBody": "Your plant is a little thirsty.",
+    "previewSnooze": "Snooze",
+    "previewAdd": "+{amount}",
+    "previewLabel": "Example of a reminder with a button to log a drink and a snooze button",
+    "turnOn": "Turn on reminders",
+    "notNow": "Not now",
+    "deniedNote": "No problem — you can turn them on anytime in Settings.",
+    "firstGlassTitle": "Let's water your plant for the first time.",
+    "firstGlassTap": "Tap the cup to pour your first glass.",
+    "pour": "Pour {amount}",
+    "firstSip": "Your first sip! {drunk} down, {left} to go.",
+    "toPlant": "Go to my plant"
+  },
+  "tabs": {
+    "index": "Today",
+    "today": "Today",
+    "history": "History",
+    "garden": "Garden"
+  }
 }
