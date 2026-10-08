@@ -26,8 +26,33 @@ jest.mock('react-native-mmkv', () => ({
   },
 }));
 
-jest.mock('expo-file-system', () => ({ File: class {}, Paths: {} }));
-jest.mock('expo-sharing', () => ({ shareAsync: jest.fn(async () => undefined) }));
+/** The fake file system and share sheet: what was written, what the picker returns. */
+export const mockFiles = new Map<string, string>();
+export const mockPicker: { result: 'canceled' | 'throws' | string } = { result: 'canceled' };
+export const mockShare = jest.fn(async (_uri: string, _opts?: unknown) => undefined);
+jest.mock('expo-file-system', () => ({
+  Paths: { cache: 'file:///cache' },
+  File: class {
+    uri: string;
+    constructor(dir: string, name?: string) {
+      this.uri = name ? `${dir}/${name}` : dir;
+    }
+    create() {}
+    write(text: string) {
+      mockFiles.set(this.uri, text);
+    }
+    async text() {
+      return mockFiles.get(this.uri) ?? '';
+    }
+    static async pickFileAsync() {
+      if (mockPicker.result === 'canceled') return { canceled: true };
+      if (mockPicker.result === 'throws') throw new Error('picker failed');
+      mockFiles.set('file:///picked.json', mockPicker.result);
+      return { canceled: false, result: new this('file:///picked.json') };
+    }
+  },
+}));
+jest.mock('expo-sharing', () => ({ shareAsync: (uri: string, opts?: unknown) => mockShare(uri, opts) }));
 jest.mock('expo-constants', () => ({ __esModule: true, default: { expoConfig: { version: '1.0.0' } } }));
 jest.mock('expo-haptics', () => ({
   impactAsync: jest.fn(),
@@ -94,7 +119,12 @@ jest.mock('expo-background-task', () => ({
   registerTaskAsync: jest.fn(async () => undefined),
   BackgroundTaskResult: { Success: 1, Failed: 2 },
 }));
-jest.mock('expo-device', () => ({ manufacturer: 'Google' }));
+export const mockDevice: { manufacturer: string | null } = { manufacturer: 'Google' };
+jest.mock('expo-device', () => ({
+  get manufacturer() {
+    return mockDevice.manufacturer;
+  },
+}));
 jest.mock('expo-intent-launcher', () => ({ startActivityAsync: jest.fn(async () => ({})) }));
 jest.mock('react-native-svg', () => {
   const React = require('react');

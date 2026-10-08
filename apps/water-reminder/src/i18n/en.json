@@ -221,7 +221,11 @@
     "logTitle": "Today's log",
     "seeAll": "See all",
     "entry": "{time}, {beverage}, {amount}",
-    "countsAs": "counts as {amount}"
+    "countsAs": "counts as {amount}",
+    "lateTitle": "Reminders arriving late?",
+    "lateBody": "Some phones stop apps in the background. Three quick steps usually fix it.",
+    "lateShow": "Show me",
+    "lateDismiss": "Not now"
   },
   "logCustom": {
     "title": "Add a drink",
@@ -234,7 +238,35 @@
     "sliderValue": "{amount}"
   },
   "settings": {
-    "title": "Settings"
+    "title": "Settings",
+    "goal": "Daily goal",
+    "goalNow": "Your goal",
+    "goalManual": "Set by you",
+    "goalCalculated": "Calculated for you",
+    "recalc": "Calculate again",
+    "calculated": "Calculated: {amount}",
+    "useCalculated": "Use this goal",
+    "units": "Units",
+    "wake": "Wake up",
+    "bed": "Bedtime",
+    "scheduleHint": "Your day starts two hours before wake-up ({wake}), so a late drink still counts for the day before.",
+    "reminders": "Reminders",
+    "remindersOn": "{count} a day",
+    "cups": "Cups",
+    "beverages": "Drinks and how they count",
+    "appearance": "Appearance",
+    "themeSystem": "System",
+    "themeLight": "Light",
+    "themeDark": "Dark",
+    "largeText": "Large text",
+    "largeTextHint": "Makes text 20% bigger on top of your system font size.",
+    "haptics": "Vibration feedback",
+    "privacy": "Privacy and ads",
+    "battery": "Battery and late reminders",
+    "backup": "Backup and restore",
+    "rate": "Rate Sipling",
+    "privacyPolicy": "Privacy policy",
+    "version": "Version {version}"
   },
   "edit": {
     "title": "Edit drink",
@@ -278,5 +310,163 @@
     "bestStreak": "Best streak",
     "streakValue": "{count} days",
     "goalLegend": "Dashed line: your goal, {goal}"
+  },
+  "garden": {
+    "toNext": "{have} of {need} goal days to {name}",
+    "fullyGrown": "Your plant is fully grown. Keep it happy!",
+    "goalDays": "{count} goal days so far",
+    "freezes": "Streak freezes",
+    "freezeTitle": "Keep your streak",
+    "freezeBody": "A streak freeze covers one missed day automatically. Watch a short ad to earn one (one a day, two at most).",
+    "watchFreeze": "Watch an ad for a streak freeze",
+    "freezeFull": "You already hold two streak freezes.",
+    "freezeToday": "You earned a streak freeze today. Come back tomorrow for another.",
+    "earned": "Done! Your reward is in your garden.",
+    "adUnavailable": "Ad not available, try later.",
+    "unlockLimit": "That is enough unlocks for today. Come back tomorrow.",
+    "skinsTitle": "Plant skins",
+    "cupsTitle": "Cup themes",
+    "using": "In use",
+    "use": "Tap to use",
+    "watchToUnlock": "Watch ad to unlock",
+    "reachStreak": "Reach a {days}-day streak",
+    "unlocksLeft": "{count} ad unlocks left today",
+    "skins": {
+      "classic": "Clay",
+      "sky": "Sky",
+      "berry": "Berry",
+      "sunny": "Sunny",
+      "mint": "Mint",
+      "night": "Night"
+    },
+    "cups": {
+      "classic": "Ocean",
+      "leaf": "Leaf",
+      "peach": "Peach",
+      "lilac": "Lilac",
+      "sun": "Sun",
+      "rose": "Rose"
+    }
+  },
+  "reminders": {
+    "enabled": "Drink reminders",
+    "summary": "About {count} reminders a day, from {first} to {last}",
+    "none": "No reminders fit with these settings",
+    "fixedInterval": "At a fixed interval",
+    "every": "Every {minutes} min",
+    "minutes": "{minutes} min",
+    "styleHint": "The gentle style shows a silent banner. The sound and vibration are set by Android for each channel.",
+    "snooze": "Snooze for",
+    "skipWindow": "Skip a reminder if I drank within",
+    "skipHint": "If you log a drink up to this long before a reminder, that reminder is skipped.",
+    "days": "Remind me on",
+    "weekday": {
+      "0": "Sun",
+      "1": "Mon",
+      "2": "Tue",
+      "3": "Wed",
+      "4": "Thu",
+      "5": "Fri",
+      "6": "Sat"
+    },
+    "quiet": "Quiet times",
+    "quietHint": "No reminders during these hours, for example a lunch meeting.",
+    "quietFrom": "Quiet from",
+    "quietTo": "Quiet until",
+    "addQuiet": "Add a quiet time",
+    "remove": "Remove",
+    "removeQuiet": "Remove the quiet time from {from} to {to}"
+  },
+  "cupsScreen": {
+    "intro": "The four quick-add cups on Today. The preferred cup is the one behind the button on reminders.",
+    "preferred": "Preferred cup",
+    "makePreferred": "Make preferred",
+    "reset": "Reset cups"
+  },
+  "beveragesScreen": {
+    "intro": "How much of each drink counts towards your goal. Water counts fully; others are a conservative default you can change.",
+    "less": "Count {name} less",
+    "more": "Count {name} more",
+    "example": "250 ml of {name} counts as {counted} ml",
+    "reset": "Reset to defaults"
+  },
+  "privacy": {
+    "onDevice": "Your drinks, goal and settings stay on this phone. Sipling has no account and no server.",
+    "ads": "Sipling shows ads to stay free. Ads use your advertising ID; where the law asks, you choose what is allowed.",
+    "choices": "Privacy choices"
+  },
+  "backup": {
+    "title": "Backup and restore",
+    "intro": "Save your drinks, goal, settings and plant to a file, and bring them back on a new phone. The file only goes where you send it.",
+    "export": "Export a backup",
+    "exportBody": "Creates a file you can save to Drive or send to yourself.",
+    "import": "Restore from a backup",
+    "importBody": "Pick a Sipling backup file. You will see what is in it before anything changes.",
+    "shareTitle": "Sipling backup",
+    "exportFailed": "Could not create the backup. Please try again.",
+    "pickFailed": "Could not read that file.",
+    "errors": {
+      "invalid": "That file is damaged or is not a Sipling backup.",
+      "notBackup": "That file is not a Sipling backup.",
+      "newer": "This backup is from a newer version. Update Sipling to import it."
+    },
+    "previewTitle": "Restore this backup?",
+    "preview": "{drinks} drinks on {days} days, {goalDays} goal days",
+    "exportedAt": "Saved on {date}",
+    "replaceWarning": "Everything now in Sipling will be replaced.",
+    "restore": "Restore",
+    "done": "Restored. Welcome back!"
+  },
+  "battery": {
+    "intro": "Some phones stop apps in the background, so reminders can arrive late or not at all. Three steps usually fix it. Sipling never changes these settings for you.",
+    "open": "Open battery settings",
+    "more": "More about your phone (dontkillmyapp.com)",
+    "note": "Reminders are approximate: Android may deliver them a few minutes late to save battery.",
+    "vendor": {
+      "samsung": "Samsung",
+      "xiaomi": "Xiaomi, Redmi and POCO",
+      "huawei": "Huawei and Honor",
+      "oneplus": "OnePlus",
+      "oppo": "Oppo, Vivo and Realme",
+      "google": "Google Pixel",
+      "other": "Your phone"
+    },
+    "steps": {
+      "samsung": {
+        "1": "Open Settings, then Battery and device care, then Battery.",
+        "2": "Tap Background usage limits and remove Sipling from Sleeping apps and Deep sleeping apps.",
+        "3": "Add Sipling to Never sleeping apps."
+      },
+      "xiaomi": {
+        "1": "Open Settings, then Apps, then Manage apps, then Sipling.",
+        "2": "Turn on Autostart.",
+        "3": "Open Battery saver and choose No restrictions."
+      },
+      "huawei": {
+        "1": "Open Settings, then Battery, then App launch.",
+        "2": "Find Sipling and switch to Manage manually.",
+        "3": "Turn on Auto-launch, Secondary launch and Run in background."
+      },
+      "oneplus": {
+        "1": "Open Settings, then Battery, then Battery optimization.",
+        "2": "Find Sipling and choose Don't optimize.",
+        "3": "In the app's info page, allow Auto-launch if you see it."
+      },
+      "oppo": {
+        "1": "Open Settings, then Battery, then App battery management.",
+        "2": "Choose Sipling and allow Background activity.",
+        "3": "Turn on Auto-launch for Sipling in the app's info page."
+      },
+      "google": {
+        "1": "Open Settings, then Apps, then Sipling, then App battery usage.",
+        "2": "Choose Unrestricted or Optimized.",
+        "3": "Make sure Notifications are on for Sipling."
+      },
+      "other": {
+        "1": "Open Settings, then Battery, then Battery optimization.",
+        "2": "Find Sipling and choose Don't optimize.",
+        "3": "Look for an Autostart or Background activity switch for Sipling and turn it on."
+      }
+    }
   }
 }

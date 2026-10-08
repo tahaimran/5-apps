@@ -17,7 +17,9 @@ import { formatAmount, percentOf } from '@/domain/units';
 import { CupChip } from '@/features/today/CupChip';
 import { StreakChip } from '@/features/today/StreakChip';
 import { useGoalCelebration } from '@/features/today/useGoalCelebration';
+import { shouldOfferGuide } from '@/domain/misses';
 import { requestReminderPermission, useNotificationPermission } from '@/notifications/permission';
+import { useMeta } from '@/store/meta';
 import { useCelebration } from '@/store/celebrations';
 import { useFeedback } from '@/store/feedback';
 import { preferredCup, useSettings } from '@/store/settings';
@@ -43,6 +45,8 @@ export default function Today() {
   const freezeNotice = useWater((s) => s.freezeNotice);
   const logs = useDayLogs(today);
   const { permission, refresh } = useNotificationPermission();
+  const meta = useMeta((s) => s.meta);
+  const offerBattery = shouldOfferGuide(meta.suspectedMisses ?? 0, meta.batteryGuideOffered === true);
   useGoalCelebration();
 
   const unit = goal.unit;
@@ -138,6 +142,21 @@ export default function Today() {
               label={permission.canAskAgain ? t('today.turnOn') : t('today.openSettings')}
               onPress={() => void requestReminderPermission().then(refresh)}
             />
+          </View>
+        )}
+
+        {offerBattery && !showOffCard && (
+          <View style={{ backgroundColor: colors.surface, borderRadius: radius.md, padding: spacing.lg, gap: spacing.sm }}>
+            <Text style={[type.bodyLarge, { color: colors.text, fontWeight: '700' }]}>{t('today.lateTitle')}</Text>
+            <Text style={[type.body, { color: colors.text }]}>{t('today.lateBody')}</Text>
+            <PrimaryButton
+              label={t('today.lateShow')}
+              onPress={() => {
+                useMeta.getState().update({ batteryGuideOffered: true });
+                router.push('/settings/battery-guide');
+              }}
+            />
+            <TextButton label={t('today.lateDismiss')} onPress={() => useMeta.getState().update({ batteryGuideOffered: true })} />
           </View>
         )}
 

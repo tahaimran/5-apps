@@ -13,9 +13,10 @@ import { formatClock } from '@/domain/dayKey';
 import { defaultCups, DEFAULT_BED_MIN, DEFAULT_GOAL_ML, DEFAULT_WAKE_MIN, defaultReminders } from '@/domain/defaults';
 import { GOAL_MAX_ML, GOAL_MIN_ML } from '@/domain/goal';
 import type { Activity, Climate, Sex } from '@/domain/types';
-import { formatAmount, kgToLb, lbToKg } from '@/domain/units';
+import { formatAmount } from '@/domain/units';
 import { useWater } from '@/store/water';
-import { Chip, MinuteStepper, OptionCard, Segmented, Stepper, TextButton } from '@/ui/controls';
+import { WeightInput, type Weight } from '@/features/profile/WeightInput';
+import { Chip, MinuteStepper, OptionCard, Stepper } from '@/ui/controls';
 import { applyOnboardingAnswers } from './finish';
 import {
   calculatedGoal,
@@ -24,7 +25,6 @@ import {
   profileFrom,
   resolveAnswers,
   weightKgOf,
-  WEIGHT_RANGE,
   type OnboardingAnswers,
 } from './answers';
 import { GoalReveal } from './GoalReveal';
@@ -54,37 +54,10 @@ function AboutStep({ ctx }: { ctx: StepContext }) {
 function WeightStep({ ctx }: { ctx: StepContext }) {
   const { colors, type, spacing } = useTheme();
   const { unit } = weightKgOf(answersOf(ctx), defaultWeightUnit());
-  const current = (ctx.value as { unit: 'kg' | 'lb'; value: number } | undefined) ?? { unit, value: DEFAULT_WEIGHT[unit] };
-  const range = WEIGHT_RANGE[current.unit];
-  const set = (value: number) => ctx.setValue({ unit: current.unit, value: Math.min(range.max, Math.max(range.min, value)) });
-  const switchUnit = (next: 'kg' | 'lb') => {
-    if (next === current.unit) return;
-    ctx.setValue({ unit: next, value: next === 'lb' ? kgToLb(current.value) : Math.round(lbToKg(current.value)) });
-  };
+  const current = (ctx.value as Weight | undefined) ?? { unit, value: DEFAULT_WEIGHT[unit] };
   return (
     <View style={{ gap: spacing.lg }}>
-      <Segmented<'kg' | 'lb'>
-        value={current.unit}
-        onChange={switchUnit}
-        options={[
-          { value: 'kg', label: t('units.kg') },
-          { value: 'lb', label: t('units.lb') },
-        ]}
-      />
-      <View style={{ flexDirection: 'row', alignItems: 'center', gap: spacing.sm, flexWrap: 'wrap' }}>
-        <TextButton label={t('onboarding.weightLess5')} onPress={() => set(current.value - 5)} />
-        <Stepper
-          value={current.value}
-          min={range.min}
-          max={range.max}
-          label={t('onboarding.weightValue')}
-          format={(v) => `${v} ${t(`units.${current.unit}`)}`}
-          onChange={set}
-          decreaseLabel={t('onboarding.weightLess')}
-          increaseLabel={t('onboarding.weightMore')}
-        />
-        <TextButton label={t('onboarding.weightMore5')} onPress={() => set(current.value + 5)} />
-      </View>
+      <WeightInput weight={current} onChange={ctx.setValue} />
       <Text style={[type.body, { color: colors.textMuted }]}>{t('onboarding.weightHelper')}</Text>
     </View>
   );
