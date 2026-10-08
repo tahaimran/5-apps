@@ -3,17 +3,17 @@
 Five offline Android apps built with **Expo (React Native)**. They have no backend, no login and no server database. Everything is stored on the device.
 The goal: **$10,000/month from AdMob**, with downloads coming from ASO (organic Play Store search).
 
-| # | App | Folder | Audience | Primary keyword (Applyra traffic / difficulty) | Launch order |
+| # | Store title (validated with Applyra check_metadata) | Folder | Audience | Primary keyword (Applyra traffic / difficulty) | Launch order |
 |---|-----|--------|----------|-----------------------------------------------|--------------|
-| 1 | Habit Tracker | [`apps/habit-tracker`](apps/habit-tracker) | Young adults, students, self-improvement | `habit tracker free` **39 / 18** | 1st |
-| 2 | Drink Water Reminder | [`apps/water-reminder`](apps/water-reminder) | Women, weight-loss, office workers | `drink water reminder` 52 / 47, `water reminder app` 25 / 27 | 2nd |
-| 3 | Word Search (Large Print) | [`apps/word-search`](apps/word-search) | Adults 45+, seniors | `word search` 79 / 70, `word search for seniors` 9 / 36 | 3rd |
-| 4 | Trivia Quiz Offline | [`apps/trivia-quiz`](apps/trivia-quiz) | Teens 13+ to adults | `trivia quiz` 44 / 57, `iq boost quiz` 34 / 30 | 4th |
-| 5 | Contraction Timer & Kick Counter | [`apps/contraction-timer`](apps/contraction-timer) | Pregnant women & partners | `contraction timer` 54 / 63, `baby kick counter` 25 / 51 | 5th |
+| 1 | **Habit Tracker: Streak & Widget** | [`apps/habit-tracker`](apps/habit-tracker) | Young adults, students, self-improvement | `habit tracker free` **39 / 18** | 1st |
+| 2 | **Sipling: Drink Water Reminder** | [`apps/water-reminder`](apps/water-reminder) | Women, weight-loss, office workers | `drink water reminder` 52 / 47, `water reminder app` 25 / 27 | 2nd |
+| 3 | **Word Search: Large Print Easy** | [`apps/word-search`](apps/word-search) | Adults 45+, seniors | `word search` 79 / 70, `word search for seniors` 9 / 36 | 3rd |
+| 4 | **Quizora: Trivia Quiz Offline** | [`apps/trivia-quiz`](apps/trivia-quiz) | Teens 13+ to adults | `trivia quiz` 44 / 57, `iq boost quiz` 34 / 30 | 4th |
+| 5 | **Contraction Timer & Kick Count** | [`apps/contraction-timer`](apps/contraction-timer) | Pregnant women & partners | `contraction timer` 54 / 63, `baby kick counter` 25 / 51 | 5th |
 
 Each app folder contains:
 - `DEVELOPMENT_PLAN.md`: features, every screen, the onboarding flow with real copy, design system, data model, ad placement map, milestones, and release checklist.
-- `ASO.md`: title, short and full description, keywords, competitors, screenshot storyboard, localization, and the iteration plan.
+- `ASO.md`: title, short and full description (none of them uses the word "free" in the title or short description; Google Play rejects both), keywords, competitors, screenshot storyboard, localization, and the iteration plan.
 
 Portfolio-wide docs:
 - [`docs/RESEARCH.md`](docs/RESEARCH.md): the Applyra data behind every choice, plus the ideas that were rejected and why.
