@@ -5,8 +5,39 @@
     "settings": "Settings"
   },
   "today": {
+    "greeting": {
+      "morning": "Good morning, let's go",
+      "afternoon": "Good afternoon, keep going",
+      "evening": "Good evening, finish strong"
+    },
     "emptyTitle": "No habits yet",
-    "emptyBody": "Pick one from templates to get started."
+    "emptyBody": "Pick one to start. You can add more anytime.",
+    "quickAdd": "Add {name}",
+    "allDoneTitle": "Perfect day! 🔥",
+    "allDoneBody": "Everything checked off. See you tomorrow.",
+    "restDay": "Nothing scheduled today. Enjoy the rest.",
+    "editingDay": "Editing {date}",
+    "ringLabel": "{done} of {total} habits done",
+    "perWeek": "{done}/{times} this week",
+    "countProgress": "{value}/{target} {unit}",
+    "increase": "Add one",
+    "decrease": "Remove one",
+    "check": "Mark done",
+    "uncheck": "Mark not done",
+    "weekShort": "w",
+    "a11y": {
+      "boolean": "{name}, {state}, {streak}",
+      "count": "{name}, {value} of {target} {unit}, {streak}",
+      "done": "done",
+      "notDone": "not done",
+      "streakDays_one": "streak {count} day",
+      "streakDays_other": "streak {count} days",
+      "streakWeeks_one": "streak {count} week",
+      "streakWeeks_other": "streak {count} weeks",
+      "noStreak": "no streak yet",
+      "day": "{date}, {done} of {total} done",
+      "dayNone": "{date}"
+    }
   },
   "stats": {
     "empty": "Stats appear after your first check-in."

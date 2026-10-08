@@ -400,7 +400,7 @@ Shared imports: `@shared/ads`, `@shared/storage`, `@shared/onboarding`, `@shared
 | Day | Deliverables | Done when |
 |---|---|---|
 | 1 ✅ | Scaffold app in monorepo, Expo Router tabs, `@shared/theme` tokens, MMKV stores + migrations, domain types; EAS dev build with ads + widget plugins compiling | Dev build installs on device; unit test harness green |
-| 2 | Domain logic: day keys, schedules, streaks, freezes, completion % with full tests; Today screen with yes/no + count habits | ≥40 streak/schedule tests pass; check-in persists across kill |
+| 2 ✅ | Domain logic: day keys, schedules, streaks, freezes, completion % with full tests; Today screen with yes/no + count habits | ≥40 streak/schedule tests pass; check-in persists across kill |
 | 3 | Timer habits, habit editor, templates library (40), categories, reorder, archive | Create/edit/archive/reorder flows work end-to-end |
 | 4 | Habit detail + heatmap, Stats screen, day notes, dark mode, celebrations + haptics | Heatmap renders 365 days at 60fps on mid-range device |
 | 5 | Notifications (reminders, summary, nudge), Android widget with interactive check | Widget toggle reflects in app within 1s and vice-versa |

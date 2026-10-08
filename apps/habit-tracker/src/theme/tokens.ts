@@ -60,3 +60,5 @@ export const habitColors = {
 } as const;
 
 export type HabitColorName = keyof typeof habitColors;
+
+export const extraColorsFor = (mode: ThemeMode) => extraColors[mode === 'light' ? 'light' : 'dark'];
