@@ -18,6 +18,7 @@ Each app folder contains:
 Portfolio-wide docs:
 - [`docs/RESEARCH.md`](docs/RESEARCH.md): the Applyra data behind every choice, plus the ideas that were rejected and why.
 - [`docs/ADMOB_PLAYBOOK.md`](docs/ADMOB_PLAYBOOK.md): ad formats, placements, frequency caps, consent, mediation, and policy.
+- [`docs/PREBUILD_CHECKS.md`](docs/PREBUILD_CHECKS.md): verification done before any code (listing checks, competitor data, tooling).
 - [`docs/WORKFLOW.md`](docs/WORKFLOW.md): which Claude model to use, how to save tokens, and how to automate builds and launches with EAS.
 - [`packages/shared`](packages/shared): the shared code contract (ads, storage, onboarding, theme, consent) that all 5 apps reuse.
 - [`CLAUDE.md`](CLAUDE.md): rules that keep AI-generated code consistent across apps.

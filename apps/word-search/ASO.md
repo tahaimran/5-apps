@@ -131,14 +131,14 @@ Result: **`valid: true`**, with no errors, no warnings and no policy rules trigg
 
 | App | Publisher | Keyword cluster | Strengths | Gap we exploit |
 |---|---|---|---|---|
-| Word Search - Word Puzzle Game | playvalve | word search (head) | Huge install base, polished | Small letters, aggressive ads, aimed at a general audience |
-| Word Search Explorer | playsimple | word search, travel themes | Travel themes, strong UA budget | Coins and timers; busy interface |
+| Word Search - Word Puzzle Game | Bluetile (com.playvalve.wsjourney) | word search (head) | Huge install base, polished | Small letters, aggressive ads, aimed at a general audience |
+| Word Search Explorer | PlaySimple Games | word search, travel themes | Travel themes, strong UA budget | Coins and timers; busy interface |
 | Wordscapes Search | PeopleFun | word search, brand | Brand trust | Online-heavy, flashy, focused on events |
-| Word Search | mobilegame | word search | Simple and classic | Dated look, not accessible |
-| Word Search Quest | (various) | word search | Level quest structure | Small grids on dense screens |
-| Infinite Word Search Puzzles | (various) | word search, infinite | Unlimited puzzles | No accessibility focus |
-| Vita Word Search for Seniors | Vita Studio | word search for seniors | Owns the senior niche; large letters | Limited themes and daily features; we compete with more packs, daily streaks and high-contrast mode |
-| Senior word search | tellmewow | word search for seniors | Very simple | Basic visuals, ad-heavy |
+| Word Search | Italic Games (com.mobilegame.wordsearch) | word search | Simple and classic | Dated look, not accessible |
+| Word Search Quest - Puzzles | com.blackout.word | word search | Level quest structure | Small grids on dense screens |
+| Infinite Word Search Puzzles | com.randomlogicgames.wordsearch | word search, infinite | Unlimited puzzles | No accessibility focus |
+| Vita Word Search for Seniors | com.vitastudio.wordsearch (publisher name unverified) | word search for seniors | Owns the senior niche; large letters | Limited themes and daily features; we compete with more packs, daily streaks and high-contrast mode |
+| Senior word search | com.tellmewow.senior.word.search | word search for seniors | Very simple | Basic visuals, ad-heavy |
 | Senior Word Game | (various) | word game for seniors | Ranks for the senior word game cluster | Not a dedicated word search |
 
 Action: add Vita, tellmewow and playvalve as competitors in Applyra after publishing (`add_competitor`) and track their ranks on our keywords.
