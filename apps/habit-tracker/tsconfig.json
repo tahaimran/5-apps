@@ -1,0 +1,12 @@
+{
+  "extends": "../../packages/shared/tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "types": ["jest"],
+    "paths": {
+      "@shared/*": ["../../packages/shared/src/*"],
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"]
+}

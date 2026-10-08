@@ -1,11 +1,18 @@
 {
   "name": "5-apps",
   "private": true,
-  "workspaces": ["apps/*", "packages/*"],
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
     "typecheck": "npm run typecheck --workspaces --if-present"
   },
   "devDependencies": {
-    "typescript": "~5.9.0"
+    "expo": "^57.0.0",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "react-native": "0.86.3",
+    "typescript": "~6.0.3"
   }
 }

@@ -1,0 +1,18 @@
+{
+  "tabs": {
+    "today": "Today",
+    "stats": "Stats",
+    "settings": "Settings"
+  },
+  "today": {
+    "emptyTitle": "No habits yet",
+    "emptyBody": "Pick one from templates to get started."
+  },
+  "stats": {
+    "empty": "Stats appear after your first check-in."
+  },
+  "settings": {
+    "title": "Settings",
+    "version": "Version {version}"
+  }
+}

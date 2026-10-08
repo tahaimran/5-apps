@@ -4,8 +4,7 @@
     "strict": true,
     "noEmit": true,
     "resolveJsonModule": true,
-    "baseUrl": ".",
-    "paths": { "@shared/*": ["src/*"] }
+    "paths": { "@shared/*": ["./src/*"] }
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.json"]
 }
