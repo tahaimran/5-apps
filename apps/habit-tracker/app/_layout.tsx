@@ -4,23 +4,22 @@ import { Stack } from 'expo-router';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { StatusBar } from 'expo-status-bar';
 import { initAds } from '@shared/ads';
-import { setCurrentApp } from '@shared/crosspromo';
-import { registerStrings } from '@shared/i18n';
 import { useOnboardingComplete } from '@shared/onboarding';
 import { ThemeProvider, useTheme } from '@shared/theme';
 import { adPolicy, adUnits } from '@/ads.config';
-import en from '@/i18n/en.json';
+import { useNotificationResponses, useNotificationSync } from '@/notifications/sync';
 import { useDayRollover } from '@/store/today';
+import { startWidgetSync } from '@/widget/sync';
 import { palette } from '@/theme/tokens';
-import '@/store/storage';
-
-registerStrings({ en });
-setCurrentApp('habit-tracker');
+import '@/bootstrap';
 
 function Root() {
   const { mode, colors } = useTheme();
   const onboardingDone = useOnboardingComplete();
   useDayRollover();
+  useNotificationSync();
+  useNotificationResponses();
+  useEffect(() => startWidgetSync(), []);
 
   // Consent (UMP) and ads start only after onboarding, i.e. after the first-value moment (plan §6).
   useEffect(() => {

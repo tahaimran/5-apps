@@ -63,6 +63,17 @@ const confirm = (reason: PermissionReason) =>
     );
   });
 
+export interface PermissionState {
+  granted: boolean;
+  /** False once the user has refused for good; only system settings can change it then. */
+  canAskAgain: boolean;
+}
+
+export async function getNotificationPermission(): Promise<PermissionState> {
+  const p = await Notifications.getPermissionsAsync();
+  return { granted: p.granted, canAskAgain: p.canAskAgain };
+}
+
 /**
  * Explains why notifications are needed (`reasonCopy`) and only then triggers the system
  * permission prompt. Returns whether notifications are allowed.

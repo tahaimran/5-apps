@@ -11,7 +11,7 @@ import { addDays, daysBetween, parseDayKey } from '@/domain/dayKey';
 import type { DayKey, Schedule, Weekday } from '@/domain/types';
 import { COUNT_MAX, NAME_MAX, TIMER_MAX_MINUTES, validateDraft, type HabitDraft } from '@/domain/validate';
 import { habitColors } from '@/theme/tokens';
-import { Chip, Field, PrimaryButton, Segmented, Stepper, TextField } from '@/ui/controls';
+import { Chip, Field, PrimaryButton, Segmented, Stepper, TextField, TimeStepper } from '@/ui/controls';
 
 export interface HabitFormProps {
   initial: HabitDraft;
@@ -28,8 +28,6 @@ const MAX_DAYS_BACK = 365;
 
 const weekdayName = (d: Weekday) =>
   new Date(2026, 9, 4 + d).toLocaleDateString(undefined, { weekday: 'short' }); // 2026-10-04 is a Sunday
-
-const pad = (n: number) => String(n).padStart(2, '0');
 
 export function HabitForm({ initial, today, submitLabel, onSubmit, header }: HabitFormProps) {
   const { colors, spacing, radius, type, touchTarget } = useTheme();
@@ -70,8 +68,8 @@ export function HabitForm({ initial, today, submitLabel, onSubmit, header }: Hab
     patch({ schedule: { kind: 'weekdays', days } });
   };
 
-  const [hour, minute] = (draft.reminderTime ?? '08:00').split(':').map(Number);
-  const setReminder = (h: number, m: number) => patch({ reminderTime: `${pad(h)}:${pad(m)}` });
+  const lastReminder = useRef('08:00');
+  if (draft.reminderTime !== null) lastReminder.current = draft.reminderTime;
 
   const nameError = touched && errors.name ? t(errors.name === 'required' ? 'editor.nameRequired' : 'editor.nameTooLong') : undefined;
   const targetMax = draft.type === 'timer' ? TIMER_MAX_MINUTES : COUNT_MAX;
@@ -243,35 +241,12 @@ export function HabitForm({ initial, today, submitLabel, onSubmit, header }: Hab
             <Switch
               accessibilityLabel={t('editor.reminderToggle')}
               value={draft.reminderTime !== null}
-              onValueChange={(on) => patch({ reminderTime: on ? `${pad(hour)}:${pad(minute)}` : null })}
+              onValueChange={(on) => patch({ reminderTime: on ? lastReminder.current : null })}
               trackColor={{ true: colors.primary, false: colors.border }}
             />
           </View>
           {draft.reminderTime !== null && (
-            <View style={styles.row}>
-              <Stepper
-                value={hour}
-                min={0}
-                max={23}
-                label={t('editor.reminderHour')}
-                format={pad}
-                onChange={(h) => setReminder(h, minute)}
-                decreaseLabel={t('editor.earlier')}
-                increaseLabel={t('editor.later')}
-              />
-              <Text style={[type.bodyLarge, { color: colors.text }]}>:</Text>
-              <Stepper
-                value={minute}
-                min={0}
-                max={45}
-                step={15}
-                label={t('editor.reminderMinute')}
-                format={pad}
-                onChange={(m) => setReminder(hour, m)}
-                decreaseLabel={t('editor.earlier')}
-                increaseLabel={t('editor.later')}
-              />
-            </View>
+            <TimeStepper value={draft.reminderTime} onChange={(reminderTime) => patch({ reminderTime })} label={t('editor.reminder')} />
           )}
         </Field>
 

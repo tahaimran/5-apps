@@ -75,7 +75,18 @@
     "dayEndsAt": "Day ends at",
     "dayEndsHint": "A check-in before this hour counts for the previous day.",
     "haptics": "Haptic feedback",
-    "hour": "{hour}:00"
+    "hour": "{hour}:00",
+    "reminders": "Reminders",
+    "remindersOff": "Reminders are off. Enable in system settings.",
+    "openSystemSettings": "Open system settings",
+    "enableReminders": "Allow reminders",
+    "remindersOn": "Reminders are on",
+    "dailySummary": "Daily summary",
+    "eveningNudge": "Evening streak nudge",
+    "at": "at",
+    "addWidget": "Add widget to home screen",
+    "widgetHow": "Long-press your home screen, tap Widgets, then pick Habits: Today.",
+    "widgetUnsupported": "Your launcher can't add widgets from here."
   },
   "templates": {
     "drink-water": {
@@ -363,5 +374,36 @@
     "milestoneWeeks_one": "{count}-week streak! 🔥 {name}",
     "milestoneWeeks_other": "{count}-week streak! 🔥 {name}",
     "perfectDay": "Perfect day! 🔥"
+  },
+  "widget": {
+    "header": "Today · {done}/{total}",
+    "allDone": "All done today 🔥",
+    "empty": "Add your first habit",
+    "more": "+{count} more",
+    "open": "Open",
+    "add": "Add one",
+    "toggle": "Mark {name} done",
+    "toggleUndo": "Mark {name} not done",
+    "plus": "Add one to {name}",
+    "count": "{value}/{target}"
+  },
+  "notify": {
+    "habitTitle": "{name}",
+    "habitBody": "Time to check in.",
+    "habitProgress": "{value} of {target} {unit} so far",
+    "summaryTitle": "Today's habits",
+    "summaryBody_one": "You have {count} habit left today. You've got this.",
+    "summaryBody_other": "You have {count} habits left today. You've got this.",
+    "nudgeTitle": "Keep your streak alive",
+    "nudgeBody_one": "🔥 Your {count}-day streak ends at midnight. One tap keeps it alive.",
+    "nudgeBody_other": "🔥 Your {count}-day streak ends at midnight. One tap keeps it alive.",
+    "reengageTitle": "We saved your spot",
+    "reengageBody": "Your habits are waiting. Check in whenever you're ready.",
+    "done": "Done ✓",
+    "channelReminders": "Habit reminders",
+    "channelSummary": "Daily summary",
+    "channelStreak": "Streak nudges",
+    "reason": "Allow reminders so we can nudge you at the time you choose and help protect your streak.",
+    "reasonTitle": "Turn on reminders?"
   }
 }

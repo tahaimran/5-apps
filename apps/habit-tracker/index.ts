@@ -1,4 +1,6 @@
 import 'react-native-gesture-handler';
+import './src/bootstrap';
+import './src/notifications/backgroundTask';
 import { registerWidgetTaskHandler } from 'react-native-android-widget';
 import { widgetTaskHandler } from './src/widget/widgetTaskHandler';
 

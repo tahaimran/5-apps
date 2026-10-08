@@ -13,6 +13,8 @@ export interface HabitKeys {
   profile: Profile;
   'widget:snapshot': WidgetSnapshot;
   celebrated: CelebratedState;
+  /** When the app was last opened (ms). */
+  lastOpenAt: number;
   /** Sharded per habit to keep writes small. */
   [key: `entries:${string}`]: Record<DayKey, Entry>;
 }

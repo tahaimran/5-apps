@@ -3,6 +3,7 @@ import { applyDraft } from '@/features/habit-editor/drafts';
 import { addSeconds, pauseTimer, startTimer } from '@/domain/timer';
 import { moveInOrder } from '@/domain/reorder';
 import type { HabitDraft } from '@/domain/validate';
+import { valueAfterAction, type WidgetAction } from '@/domain/widgetSnapshot';
 import { addDays, startOfWeek } from '@/domain/dayKey';
 import { emptyFreezes, earnPerfectWeek, isPerfectWeek, planFreezes } from '@/domain/freezes';
 import type { Entries } from '@/domain/streaks';
@@ -35,6 +36,8 @@ interface HabitsState {
   move: (id: HabitId, delta: -1 | 1) => void;
   startTimer: (habitId: HabitId, day: DayKey) => void;
   pauseTimer: (habitId: HabitId, day: DayKey) => void;
+  /** A tap on the home-screen widget. Ignored when it does not apply to the habit. */
+  applyWidgetAction: (action: WidgetAction, habitId: HabitId, day: DayKey) => void;
   /** Manual minutes for a timer habit (negative to undo). */
   addMinutes: (habitId: HabitId, day: DayKey, minutes: number) => void;
   /** Sets the value for a day. A value of 0 or less removes the entry. */
@@ -124,6 +127,12 @@ export const useHabits = create<HabitsState>((set, get) => {
     writeEntry(habitId, day, startTimer(get().entries[habitId]?.[day], Date.now())),
   pauseTimer: (habitId, day) =>
     writeEntry(habitId, day, pauseTimer(get().entries[habitId]?.[day], Date.now())),
+  applyWidgetAction: (action, habitId, day) => {
+    const habit = get().habits[habitId];
+    if (!habit || habit.archivedAt) return;
+    const value = valueAfterAction(habit, get().entries[habitId]?.[day], action);
+    if (value !== null) get().setValue(habitId, day, value);
+  },
   addMinutes: (habitId, day, minutes) =>
     writeEntry(habitId, day, addSeconds(get().entries[habitId]?.[day], minutes * 60, Date.now())),
 

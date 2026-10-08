@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import { Pressable, StyleSheet, Text, TextInput, View, type KeyboardTypeOptions } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
 
 export function Field({ label, error, children }: { label: string; error?: string; children: ReactNode }) {
@@ -216,3 +217,36 @@ const styles = StyleSheet.create({
   segment: { flex: 1, alignItems: 'center', justifyContent: 'center' },
   stepper: { flexDirection: 'row', alignItems: 'center', borderWidth: 1, alignSelf: 'flex-start' },
 });
+
+/** Hour and minute (15-minute steps) as "HH:mm". */
+export function TimeStepper({ value, onChange, label }: { value: string; onChange: (hhmm: string) => void; label: string }) {
+  const { colors, type } = useTheme();
+  const [hour, minute] = value.split(':').map(Number);
+  const pad = (n: number) => String(n).padStart(2, '0');
+  return (
+    <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }} accessibilityLabel={`${label} ${value}`}>
+      <Stepper
+        value={hour}
+        min={0}
+        max={23}
+        label={label}
+        format={pad}
+        onChange={(h) => onChange(`${pad(h)}:${pad(minute)}`)}
+        decreaseLabel={t('editor.earlier')}
+        increaseLabel={t('editor.later')}
+      />
+      <Text style={[type.bodyLarge, { color: colors.text }]}>:</Text>
+      <Stepper
+        value={minute}
+        min={0}
+        max={45}
+        step={15}
+        label={label}
+        format={pad}
+        onChange={(m) => onChange(`${pad(hour)}:${pad(m)}`)}
+        decreaseLabel={t('editor.earlier')}
+        increaseLabel={t('editor.later')}
+      />
+    </View>
+  );
+}
