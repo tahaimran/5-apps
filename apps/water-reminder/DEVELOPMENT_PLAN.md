@@ -169,7 +169,7 @@ Xiaomi "Autostart + No restrictions", Huawei, OnePlus, Oppo/Vivo, Pixel). Button
 
 ## 6. Onboarding (exact copy)
 
-Built on `@shared/onboarding` (step container, progress dots, Back/Skip header, `useOnboardingState()`).
+Built on `@shared/onboarding` (`<OnboardingFlow steps={[...]} onDone={...} />`: progress dots, Back, Skip, custom input steps; persists `onboarding.completedAt`).
 Progress dots on all steps; "Skip" top-right on every step uses the listed default. Target: ≤ 60 s.
 
 | # | Screen | Copy & controls | Default if skipped |
@@ -184,11 +184,11 @@ Progress dots on all steps; "Skip" top-right on every step uses the listed defau
 | 7 | Cup size | **"What do you usually drink from?"** / 4 cups: "Small glass 150 ml", "Glass 250 ml", "Mug 350 ml", "Bottle 500 ml" + "Custom" | 250 ml |
 | 8 | Reminder style | **"How often should we nudge you?"** / "Every hour" · "Every 2 hours" · "Smart (we'll space them for your goal)" (recommended badge) / style: "Gentle (silent banner)" · "Normal (sound)" | Smart, Normal |
 | 9 | Notification permission (in context) | Mock notification preview showing "💧 Time for a sip! [+250 ml] [Snooze]". **"Want a gentle nudge when it's time?"** / "We'll send about 9 reminders between 7:00 and 23:00. You can log right from the notification." / **"Turn on reminders"** → system `POST_NOTIFICATIONS` dialog (Android 13+) / "Not now". On deny: "No problem — you can turn them on anytime in Settings." | Not now |
-| 10 | Consent (UMP) | Not a custom screen. `@shared/consent.gatherConsent()` runs **after step 9 and before step 11**, so the first ad request can happen on Home. Only shows the Google form where required (EEA/UK/CH, US states). | — |
+| 10 | Consent (UMP) | Not a custom screen. `@shared/consent` `initConsent()` runs **after step 9 and before step 11**, so the first ad request can happen on Home. Only shows the Google form where required (EEA/UK/CH, US states). | — |
 | 11 | First glass (first-value moment) | Plant seed in pot. **"Let's water your plant for the first time."** / big 250 ml cup button pulsing / on tap: water pour animation, success haptic, seed sprouts, copy **"Your first sip! 250 ml down, 2,050 ml to go."** / Button **"Go to my plant"** → Today. | If skipped: lands on Today empty state |
 
 **Skip behaviour:** "Skip" on any step applies defaults for that step and remaining steps, still shows the permission
-(step 9) and consent (step 10), then lands on Today. Completion flag `onboarding.completed=true` set on reaching Today.
+(step 9) and consent (step 10), then lands on Today. `onDone` fires on reaching Today and `@shared/onboarding` persists `onboarding.completedAt`.
 Back button preserves selections. If app is killed mid-flow, resume at last step.
 
 **Analytics-free:** we track funnel only via local counters (no analytics SDK in v1; Firebase Analytics optional v1.1
@@ -198,7 +198,7 @@ behind consent, see §16).
 
 ## 7. Design system
 
-Use `@shared/theme` (`createTheme(tokens)`, `useTheme()`); app supplies tokens below.
+Use `@shared/theme` (`ThemeProvider` with light / dark / high-contrast modes, tokens `colors/spacing/radius/type/motion`, `useHaptics()`); the app supplies the palette and font scale below.
 
 ### 7.1 Palette
 | Token | Light | Dark | Use |
@@ -327,8 +327,8 @@ Effective ml = `round(volume × factor)`. Charts show effective; entry rows show
 
 ## 9. Local data model
 
-Storage via `@shared/storage` (`createStore(namespace)` wrapping MMKV; `get/set/subscribe`, JSON helpers,
-`useStoredValue(key)` hook). Namespace: `water`. Schema versioned for migrations.
+Storage via `@shared/storage`: `createStore<WaterStore>('water', 1, migrations)` (MMKV), typed `store.get/set`,
+`useStored(key, fallback)` hook, `exportBackup()/importBackup()` (used by v2.0 export). Schema versioned for migrations.
 
 | Key | Type | Notes |
 |---|---|---|
@@ -343,7 +343,7 @@ Storage via `@shared/storage` (`createStore(namespace)` wrapping MMKV; `get/set/
 | `water.progress` | `PlantProgress` | streak, goal-days, unlocked items |
 | `water.scheduled` | `ScheduledReminder[]` | ids of pending notifications |
 | `water.meta` | `AppMeta` | review prompt, ad counters, launches |
-| `onboarding.completed` | `boolean` | owned by `@shared/onboarding` |
+| `onboarding.completedAt` | `number` | owned by `@shared/onboarding` |
 
 ```ts
 type Unit = 'ml' | 'floz';
@@ -388,7 +388,7 @@ Writes: logging appends to the month shard, updates `daySummaries[dayKey]`, then
 
 ## 10. Notifications in depth
 
-**Library:** `expo-notifications` (+ `expo-task-manager` for background action handling).
+**Library:** `@shared/notify` (`ensureNotificationPermission(reasonCopy)`, `scheduleSeries(...)`, `cancel(id)`, channels on init) on top of `expo-notifications`, plus direct `expo-notifications` calls only for categories/actions and `expo-task-manager` for background action handling (extend `@shared/notify` if a generic helper emerges).
 
 ### 10.1 Channel & categories
 ```ts
@@ -458,13 +458,15 @@ Category is re-registered when preferred cup changes so the button label stays c
 
 ## 12. AdMob placement map
 
-All via `@shared/ads`. No ad request before `@shared/consent` resolves `canRequestAds`. Test IDs in dev builds.
+All via `@shared/ads` (`initAds(policy, units)` after `initConsent()`); caps configured in `apps/water-reminder/src/ads.config.ts`. No ad request before `initConsent()` resolves `canRequestAds`. Unit IDs from `EXPO_PUBLIC_ADMOB_<PLACEMENT>`, `TestIds` in `__DEV__`.
+App-open uses `useAppOpenAd(canShow)`, where `canShow` returns false for cold start, first 3 launches, notification/widget/deep-link launches. `setAdGuard(p => !celebrationPlaying && !onboardingActive)` vetoes full-screen ads during the goal-reached animation and onboarding.
+If the native ad does not fill, `<HouseAdCard />` from `@shared/crosspromo` takes the slot.
 
 | Format | Placement id | Screen / trigger | Frequency cap | Never show |
 |---|---|---|---|---|
 | Adaptive banner | `home_under_ring` | Today, under progress ring (`<AdBanner placement="home_under_ring" />`, anchored adaptive) | always while Today visible; refresh by AdMob (60 s) | during onboarding; in first session before first glass logged; over the plant |
 | Native | `history_list` | History, after 3rd entry / under chart (`<NativeAdCard placement="history_list" />`) | 1 per screen view | in empty state; in Settings |
-| Rewarded | `garden_unlock_skin` | Garden → "Watch ad to unlock" skin/cup theme (`showRewarded('garden_unlock_skin')`) | user-initiated; max 10/day | never auto-triggered |
+| Rewarded | `garden_unlock_skin` | Garden → "Watch ad to unlock" skin/cup theme (`showRewarded('garden_unlock_skin')` → unlock only if `{ rewarded: true }`) | user-initiated; max 10/day | never auto-triggered |
 | Rewarded | `streak_freeze` | Garden / streak-broken sheet "Keep your streak" | user-initiated; max 1 freeze earned/day | — |
 | Interstitial | `history_exit` | Leaving History/stats after ≥ 20 s of viewing (`showInterstitial('history_exit')`) | ≥ 3 min since last full-screen ad; ≤ 1 per session; ≤ 4/day | right after a log; after notification launch; first 2 sessions; mid-onboarding; when goal-reached celebration is playing |
 | App open | `app_open_warm` | Warm start (background → foreground after ≥ 4 h away) | ≤ 1 per 4 h; shares 3-min full-screen cooldown | cold start; first 3 launches; **when opened from a reminder notification tap or widget/deep link**; when returning from rewarded ad / system permission dialog |
@@ -487,7 +489,7 @@ week 4. `app-ads.txt` on portfolio domain lists `google.com, pub-XXXX, DIRECT, f
 4. **Weekly recap** (local notification Sunday 18:00): "This week: 5/7 goal days, 14.2 L 💧" → opens History.
 5. **Comeback**: after 2 missed days, one friendly reminder; never more than one re-engagement push per 3 days.
 
-**In-app review (`expo-store-review`)**
+**In-app review (`@shared/review` `maybeAskForReview('goal_reached')`, wraps `expo-store-review`)**
 - Trigger after the goal-reached celebration finishes, when: ≥ 3 goal days total, install ≥ 3 days ago, no crash this
   session, not launched from notification, and `reviewPrompted < 3` with ≥ 60 days between prompts.
 - Pre-prompt sheet (optional): "Is Sipling helping you drink more?" 👍 → native review; 👎 → feedback email.
@@ -502,6 +504,7 @@ week 4. `app-ads.txt` on portfolio domain lists `google.com, pub-XXXX, DIRECT, f
 | Framework | Expo SDK (latest), React Native New Architecture, TypeScript strict |
 | Routing | Expo Router (typed routes) |
 | Storage | react-native-mmkv via `@shared/storage` |
+| i18n | `@shared/i18n` (`t()`, `useLocale()`), strings in `src/i18n/en.json` |
 | State | Zustand store hydrated from MMKV (small) |
 | Notifications | expo-notifications, expo-task-manager, expo-background-task |
 | Animations | react-native-reanimated, lottie-react-native (plant), expo-haptics |
@@ -527,12 +530,12 @@ apps/water-reminder/
 │  ├─ log-custom.tsx, edit-entry/[id].tsx
 │  └─ settings/index.tsx, reminders.tsx, goal.tsx, beverages.tsx, battery-guide.tsx, privacy.tsx
 ├─ src/
+│  ├─ ads.config.ts             # placement caps/never-show rules for @shared/ads
 │  ├─ core/                     # pure TS, 100% unit-tested
 │  │  ├─ goal.ts  schedule.ts  dayKey.ts  streak.ts  hydration.ts  units.ts
 │  ├─ data/                     # store.ts (keys, migrations), logs.ts, summaries.ts
 │  ├─ notifications/            # channels.ts, categories.ts, scheduler.ts, handlers.ts, backgroundTask.ts
 │  ├─ widget/                   # WaterWidget.tsx, taskHandler.ts, bridge.ts
-│  ├─ ads/placements.ts         # placement ids + caps config consumed by @shared/ads
 │  ├─ components/               # ProgressRing, Plant, CupChip, BarChart, StreakChip, EmptyState
 │  ├─ i18n/en.json …
 │  └─ theme/tokens.ts
@@ -563,16 +566,14 @@ apps/water-reminder/
 
 ## 17. Milestones (MVP ~7 days)
 
-| Day | Deliverables |
-|---|---|
-| 1 | App scaffold in monorepo, `app.config.ts`, EAS dev build with ads + notifications plugins, theme tokens, MMKV store + migrations, `core/` (goal, schedule, dayKey, hydration) with unit tests. |
-| 2 | Onboarding flow (11 steps, copy, animations for goal reveal), consent wiring, permission step, first-glass moment. |
-| 3 | Today screen: ring, plant (static stages + mood), quick-add, custom log sheet, undo, haptics. Banner placement. |
-| 4 | Notification scheduler (rolling horizon), categories/actions, auto-skip, snooze, background task, killed-app action test on 3 devices. |
-| 5 | History (day list, edit/delete, week/month charts), native ad card, interstitial w/ caps, app-open warm-start logic. |
-| 6 | Garden (stages, streak, freezes, rewarded unlocks), settings screens, battery guide, dark mode, a11y pass. |
-| 7 | QA (checklist §18), Maestro flows, store assets (ASO.md), privacy policy, Data safety, production AAB → internal testing → closed test. |
-| +1 wk | v1.1: widget, modes, skins shop, review prompt; Play production rollout 20% → 100%. |
+- [ ] **Day 1** — App scaffold in monorepo, `app.config.ts`, EAS dev build with ads + notifications plugins, theme tokens, MMKV store + migrations, `core/` (goal, schedule, dayKey, hydration) with unit tests.
+- [ ] **Day 2** — Onboarding flow (11 steps, copy, animations for goal reveal), consent wiring, permission step, first-glass moment.
+- [ ] **Day 3** — Today screen: ring, plant (static stages + mood), quick-add, custom log sheet, undo, haptics. Banner placement.
+- [ ] **Day 4** — Notification scheduler (rolling horizon), categories/actions, auto-skip, snooze, background task, killed-app action test on 3 devices.
+- [ ] **Day 5** — History (day list, edit/delete, week/month charts), native ad card, interstitial w/ caps, app-open warm-start logic.
+- [ ] **Day 6** — Garden (stages, streak, freezes, rewarded unlocks), settings screens, battery guide, dark mode, a11y pass.
+- [ ] **Day 7** — QA (checklist §18), Maestro flows, store assets (ASO.md), privacy policy, Data safety, production AAB → internal testing → closed test.
+- [ ] **+1 week** — v1.1: widget, modes, skins shop, review prompt; Play production rollout 20% → 100%.
 
 ---
 
