@@ -3,10 +3,10 @@ import { Pressable, StyleSheet, Text, View } from 'react-native';
 import Animated, { useAnimatedStyle, useReducedMotion, useSharedValue, withRepeat, withSequence, withTiming } from 'react-native-reanimated';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { t } from '@shared/i18n';
-import { ensureNotificationPermission } from '@shared/notify';
 import type { OnboardingStep, StepContext } from '@shared/onboarding';
 import { useHaptics, useTheme } from '@shared/theme';
 import { startAds } from '@/ads/start';
+import { askPermissionSilently } from '@/notifications/permission';
 import { Plant } from '@/components/Plant';
 import { reminderCount } from '@/domain/schedule';
 import { formatClock } from '@/domain/dayKey';
@@ -276,8 +276,8 @@ function PermissionStep({ ctx }: { ctx: StepContext }) {
         <Text style={[type.bodyLarge, { color: colors.text, fontWeight: '700' }]}>{t('onboarding.previewTitle')}</Text>
         <Text style={[type.body, { color: colors.textMuted }]}>{t('onboarding.previewBody')}</Text>
         <View style={{ flexDirection: 'row', gap: spacing.sm, minHeight: touchTarget - 8 }}>
-          <Text style={[type.body, action, { color: colors.primary, fontWeight: '700' }]}>{t('onboarding.previewAdd', { amount: ml(cupMl) })}</Text>
-          <Text style={[type.body, action, { color: colors.primary, fontWeight: '700' }]}>{t('onboarding.previewSnooze')}</Text>
+          <Text style={[type.body, action, { color: colors.primary, fontWeight: '700' }]}>{t('notify.addCup', { amount: ml(cupMl) })}</Text>
+          <Text style={[type.body, action, { color: colors.primary, fontWeight: '700' }]}>{t('notify.snooze', { minutes: 15 })}</Text>
         </View>
       </View>
       <Text style={[type.bodyLarge, { color: colors.text, fontWeight: '700' }]}>{t('onboarding.permissionTitle')}</Text>
@@ -399,7 +399,7 @@ export function buildSteps(): OnboardingStep[] {
       cta: t('onboarding.turnOn'),
       skippable: false,
       onContinue: async (ctx) => {
-        const granted = await ensureNotificationPermission(null).catch(() => false);
+        const granted = await askPermissionSilently();
         ctx.setValue(granted ? 'granted' : 'denied');
         await startAds();
       },

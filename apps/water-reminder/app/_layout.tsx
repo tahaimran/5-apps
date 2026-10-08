@@ -8,6 +8,7 @@ import { ThemeProvider, useTheme } from '@shared/theme';
 import { startAds } from '@/ads/start';
 import { useAdGuard } from '@/ads/guard';
 import { CelebrationHost } from '@/features/celebrations/CelebrationHost';
+import { useNotificationResponses, useReminderSync } from '@/notifications/sync';
 import { useMeta } from '@/store/meta';
 import { useSettings } from '@/store/settings';
 import { useDayRollover } from '@/store/today';
@@ -22,6 +23,8 @@ function Root() {
   const onboardingDone = useOnboardingComplete();
   useDayRollover();
   useAdGuard();
+  useReminderSync();
+  useNotificationResponses();
   useEffect(() => useMeta.getState().recordLaunch(), []);
 
   // On later launches consent and ads start right away; on the first run onboarding starts them

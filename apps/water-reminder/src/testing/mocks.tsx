@@ -44,26 +44,49 @@ jest.mock('expo-store-review', () => ({ isAvailableAsync: async () => false, req
 export const mockLastNotificationResponse: { current: unknown } = { current: null };
 /** What the fake system says about the notification permission and what the user answers. */
 export const mockNotif = { granted: false, canAskAgain: true, answer: true };
-export const resetNotifMock = () => Object.assign(mockNotif, { granted: false, canAskAgain: true, answer: true });
+
+/** Everything the fake notification system holds, for assertions. */
+export const mockNotifState = {
+  pending: new Map<string, { identifier: string; content: Record<string, unknown>; trigger: Record<string, unknown> }>(),
+  categories: new Map<string, { identifier: string; buttonTitle: string }[]>(),
+  channels: new Map<string, Record<string, unknown>>(),
+  dismissed: [] as string[],
+  scheduleCalls: 0,
+};
+export const resetNotifMock = () => {
+  Object.assign(mockNotif, { granted: false, canAskAgain: true, answer: true });
+  mockNotifState.pending.clear();
+  mockNotifState.categories.clear();
+  mockNotifState.channels.clear();
+  mockNotifState.dismissed.length = 0;
+  mockNotifState.scheduleCalls = 0;
+};
 
 jest.mock('expo-notifications', () => ({
   AndroidImportance: { DEFAULT: 3, LOW: 2, HIGH: 4 },
-  DEFAULT_ACTION_IDENTIFIER: 'default',
+  AndroidNotificationVisibility: { PUBLIC: 1 },
+  DEFAULT_ACTION_IDENTIFIER: 'expo.modules.notifications.actions.DEFAULT',
+  BackgroundNotificationTaskResult: { NewData: 0, NoData: 1, Failed: 2 },
   getPermissionsAsync: async () => ({ granted: mockNotif.granted, canAskAgain: mockNotif.canAskAgain }),
   requestPermissionsAsync: async () => {
     mockNotif.granted = mockNotif.answer;
     mockNotif.canAskAgain = mockNotif.answer;
     return { granted: mockNotif.answer };
   },
-  setNotificationCategoryAsync: async () => undefined,
-  setNotificationChannelAsync: async () => undefined,
+  setNotificationCategoryAsync: async (id: string, actions: { identifier: string; buttonTitle: string }[]) => void mockNotifState.categories.set(id, actions),
+  setNotificationChannelAsync: async (id: string, c: Record<string, unknown>) => void mockNotifState.channels.set(id, c),
   setNotificationHandler: () => undefined,
-  getAllScheduledNotificationsAsync: async () => [],
-  cancelScheduledNotificationAsync: async () => undefined,
-  scheduleNotificationAsync: async () => 'id',
-  dismissNotificationAsync: async () => undefined,
+  getAllScheduledNotificationsAsync: async () => [...mockNotifState.pending.values()],
+  cancelScheduledNotificationAsync: async (id: string) => void mockNotifState.pending.delete(id),
+  cancelAllScheduledNotificationsAsync: async () => mockNotifState.pending.clear(),
+  scheduleNotificationAsync: async (req: { identifier: string; content: Record<string, unknown>; trigger: Record<string, unknown> }) => {
+    mockNotifState.scheduleCalls++;
+    mockNotifState.pending.set(req.identifier, req);
+    return req.identifier;
+  },
+  dismissNotificationAsync: async (id: string) => void mockNotifState.dismissed.push(id),
   useLastNotificationResponse: () => mockLastNotificationResponse.current,
-  registerTaskAsync: async () => null,
+  registerTaskAsync: jest.fn(async () => null),
   SchedulableTriggerInputTypes: { DATE: 'date', DAILY: 'daily' },
 }));
 jest.mock('expo-task-manager', () => ({ defineTask: jest.fn() }));
@@ -134,6 +157,7 @@ jest.mock('react-native-reanimated', () => {
 
 export const mockRouter = {
   push: jest.fn(),
+  navigate: jest.fn(),
   replace: jest.fn(),
   back: jest.fn(),
   dismissAll: jest.fn(),

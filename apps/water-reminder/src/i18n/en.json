@@ -154,8 +154,6 @@
     "permissionBody": "We'll send about {count} reminders between {start} and {end}. You can log right from the notification.",
     "previewTitle": "💧 Time for a sip!",
     "previewBody": "Your plant is a little thirsty.",
-    "previewSnooze": "Snooze",
-    "previewAdd": "+{amount}",
     "previewLabel": "Example of a reminder with a button to log a drink and a snooze button",
     "turnOn": "Turn on reminders",
     "notNow": "Not now",
@@ -178,7 +176,25 @@
   },
   "notify": {
     "reasonTitle": "Turn on reminders?",
-    "reason": "Sipling sends a gentle nudge when it is time to drink, and skips it when you already did. You can log from the notification."
+    "reason": "Sipling sends a gentle nudge when it is time to drink, and skips it when you already did. You can log from the notification.",
+    "channelNormal": "Water reminders",
+    "channelGentle": "Gentle reminders",
+    "title": "💧 Time for a sip!",
+    "addCup": "Add {amount}",
+    "snooze": "Snooze {minutes} min",
+    "snoozeBody": "Your plant is still waiting for a sip.",
+    "missesTitle": "🌱 Your plant misses you",
+    "missesBody": "Open Sipling and give it a drink whenever you are ready.",
+    "messages": {
+      "0": "Sip o'clock 💧",
+      "1": "Your plant is a little thirsty.",
+      "2": "Quick glass before your next task?",
+      "3": "A small sip now keeps the day flowing.",
+      "4": "Water break? Your plant says thanks.",
+      "5": "Time to top up your glass.",
+      "6": "Take a moment, take a sip.",
+      "7": "Your plant would love a drink with you."
+    }
   },
   "today": {
     "settings": "Settings",

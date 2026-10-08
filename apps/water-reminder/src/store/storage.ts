@@ -30,6 +30,8 @@ export interface WaterKeys {
   meta: AppMeta;
   /** Where an interrupted onboarding resumes: the visible-step index and the answers so far. */
   'onboarding:resume': { index: number; answers: Record<string, unknown> };
+  /** `<id>:<action>:<date>` of the last notification action that was carried out. */
+  handledResponse: string;
   /** Last time the app was in the foreground (ms). */
   lastOpenAt: number;
   /** Month-sharded drink logs, `logs:YYYY-MM`, to keep reads and writes small. */

@@ -112,6 +112,9 @@ export interface AppMeta {
   lastInterstitialAt?: number;
   lastAppOpenAdAt?: number;
   sessionsSinceInterstitial: number;
+  /** Reminders the OS dropped without firing (plan §10.5); two of them offer the battery guide. */
+  suspectedMisses?: number;
+  batteryGuideOffered?: boolean;
 }
 
 /**
