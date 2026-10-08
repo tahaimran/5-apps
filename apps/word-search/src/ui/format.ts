@@ -16,3 +16,6 @@ export const formatMonth = (monthKey: string): string => {
 };
 /** Short weekday names starting on Sunday ("Sun" … "Sat"). */
 export const weekdayNames = (): string[] => Array.from({ length: 7 }, (_, i) => new Date(2023, 0, 1 + i).toLocaleDateString(undefined, { weekday: 'short' }));
+
+/** "9:00 AM" in the device language. */
+export const formatTime = (hour: number, minute: number): string => new Date(2023, 0, 1, hour, minute).toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit' });

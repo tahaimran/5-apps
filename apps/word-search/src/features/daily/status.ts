@@ -8,8 +8,4 @@ export function todayStatus(daily: DailyState, current: SavedGame | null, today:
   return 'notStarted';
 }
 
-/** The id to open for a day: the one in progress if there is one, else a new one at the preferred difficulty. */
-export function dailyIdToOpen(current: SavedGame | null, dateKey: DateKey, difficulty: 'easy' | 'medium' | 'hard'): string {
-  if (current?.puzzle.id.startsWith(`daily:${dateKey}:`)) return current.puzzle.id;
-  return dailyPuzzleId(dateKey, difficulty);
-}
+export { dailyIdToOpen } from '@/features/play/dailyOpen';

@@ -6,15 +6,14 @@
 > Jest, `tsc`, `expo-doctor`, `expo export` and `expo prebuild` in a Linux container. Every item that needs a
 > phone, an account or a store is **open**.
 >
-> **Scope:** this build covers plan milestones 1 to 7 (Day 1 to Day 7 of `DEVELOPMENT_PLAN.md` §16). Milestone 8
-> (daily reminder, review prompt, sounds, privacy policy page) and milestone 9 (store listing, release build)
-> are **not built**; see §6 for the full list of what is missing.
+> **Scope:** this build covers plan milestones 1 to 8 (Day 1 to Day 8 of `DEVELOPMENT_PLAN.md` §16). Milestone 9
+> (store listing, Data safety, screenshots, release build) is **not built**; see §6 for the full list of what is missing.
 
 ## 1. Verified in the repo (automated, repeatable)
 ```bash
 cd apps/word-search
 npx tsc --noEmit && (cd ../../packages/shared && npx tsc --noEmit)
-npx jest                  # 26 suites, 422 tests: domain, generator fuzz, stores, screens, ads rules, a11y, config, assets
+npx jest                  # 29 suites, 504 tests: domain, generator fuzz, stores, screens, ads rules, a11y, config, assets
 npm run test:tz           # day keys, streaks and midnight roll-over in 7 time zones (DST, half-hour offsets, southern hemisphere)
 npx expo-doctor           # 21/21
 npx expo export --platform android --output-dir /tmp/ws-export   # Metro bundle sanity (Hermes bytecode, ~4 MB)
@@ -33,7 +32,11 @@ What the automated checks actually cover:
 | Game loop | autosave after every found word, resume with the same grid, elapsed time, finish → stars, level, stats, "Start a new puzzle?" prompt, celebration beat, leaving during it (`game.test.ts`, `loop.test.tsx`) |
 | Daily puzzle | same puzzle for the same date, difficulty and grid size; theme rotation over a year; streak, freezes (earn at 7, max 2), catch-up days, clock set back, midnight during a puzzle (`daily.test.ts`, `daily.hints.test.tsx`, `qa.tz.test.ts`) |
 | Hints | 3 free a day, reset at local midnight, shortest word first, last letter on the second hint, +2 for a finished video (max 10 held), one courtesy hint a day without a video, tutorial bonus (`hints.test.ts`, `daily.hints.test.tsx`) |
-| Settings | text size, selection mode, theme, vibration, preferred difficulty, timer, two-step reset that keeps settings (`daily.hints.test.tsx`) |
+| Settings | text size, selection mode, theme, vibration, sounds, preferred difficulty, timer, two-step reset that keeps settings (`daily.hints.test.tsx`); reminder switch with the permission flow, time stepper, refused and blocked permission, Rate, Send feedback (only with a contact email), privacy summary (`reminder.test.tsx`) |
+| Daily reminder | one reminder a day for the next 7 days at the chosen time, today's skipped once the daily is done or its time has passed, rotating copy with that day's theme, re-planned when the time changes, cancelled when off or without permission, channel "Daily puzzle" with no sound override, tap opens that day's puzzle once and not before the tutorial is done (`reminder.test.ts`, `reminder.test.tsx`) |
+| Reminder pre-prompt | shown after the first daily completion or the 3rd real puzzle, never after the tutorial or when already on, "Not now" asks again once after 7 days then never, the system permission is requested only after "Yes, remind me" (`reminder.test.tsx`) |
+| Review prompt | every condition of plan §12 as a pure function, and wired to the Complete screen after the celebration; it skips that cycle's interstitial and is never shown together with the reminder sheet (`reminder.test.ts`, `reminder.test.tsx`, `ads.integration.test.tsx`) |
+| Sounds | chime and arpeggio at 60% volume, silent when off, player reused, set-up once, never throws (`sounds.test.ts`) |
 | Onboarding | every screen, Skip, defaults, font-scale ≥ 1.3 preselects Extra Large, resume after a kill, consent before the tutorial, tutorial coach mark, "You found it!", Skip tutorial after 10 s, where the app opens (`onboarding.test.tsx`) |
 | Ads rules | every row of plan §11 "never show when" as a pure function with reasons (`adRules.test.ts`), then against the real `@shared/ads` with a fake AdMob SDK: consent before the SDK starts, PG rating, banners only on Home / pack list / Daily, never on the game, Complete or Settings screens, interstitial every 3rd puzzle with 90 s gap and 6 an hour, skipped for daily and first-session puzzles, rewarded only when earned, app-open only on a warm start after 4 minutes away and 4 hours apart, not during a puzzle (`ads.integration.test.tsx`) |
 | Accessibility | every screen at font scale 1.3 and 2.0 in light, dark and high contrast, and the play screen at all four text sizes: labels on every Pressable, 56 dp targets (grid cells are the plan's 44 dp and are checked separately); static scan for hard-coded copy, missing labels, and anything that turns off font scaling (`a11y.render.test.tsx`, `a11y.static.test.ts`) |
@@ -52,7 +55,7 @@ What the automated checks actually cover:
    (`.env.example` lists the variables). Add them as EAS environment variables (`eas env:create`), never in git. Register
    your own phone as a test device in AdMob. Set the maximum ad content rating to G or PG and block gambling and dating
    categories in the AdMob console (plan §11); the app also asks for PG in code.
-4. **Privacy policy:** write and host one, then set `EXPO_PUBLIC_PRIVACY_POLICY_URL` (Settings shows the link only when it is set).
+4. **Privacy policy:** complete `store/privacy-policy.md` (developer name, contact, ad partners), host it, then set `EXPO_PUBLIC_PRIVACY_POLICY_URL` (Settings shows the link only when it is set). Also set `EXPO_PUBLIC_CONTACT_EMAIL` for the "Send feedback" row (hidden without it).
 5. **app-ads.txt:** host it at the root of the developer website listed in Play Console.
 6. **Play Console:** create the app, enrol in Play App Signing, add a service account for `eas submit`.
 7. **Fonts and licence:** Atkinson Hyperlegible comes from `@expo-google-fonts/atkinson-hyperlegible` (SIL Open Font License).
@@ -97,7 +100,16 @@ placement, whether it would show now and why not, with the counters.
 | Reduce motion | no finger animation in the tutorial, no stroke animation; everything else still works | open |
 | Look | every screen in light, dark and high contrast looks right; the icon, adaptive icon and monochrome icon in a launcher; the feature graphic; Home pack cards are 120 dp tall | open |
 | Navigation | Back from the game returns to where it started; the Complete screen is a modal; Android system Back during the celebration | open |
-| Reset | "Reset progress" asks twice and keeps the settings | open |
+| Reset | "Reset progress" asks twice and keeps the settings (including the reminder and sounds) | open |
+| Reminders | after "Yes, remind me" the Android 13+ permission dialog appears and a reminder arrives at the chosen time; channel "Daily puzzle" exists with default importance and the phone's default sound | open |
+| Reminders | tapping a reminder opens that day's puzzle (app killed, in the background and open); the ad rules treat it as an external open | open |
+| Reminders | no reminder today after today's daily puzzle is done; none outside the chosen time; one a day only; after 7 days of never opening the app they stop | open |
+| Reminders | Doze (`adb shell dumpsys deviceidle force-idle`), a reboot (`adb reboot`), a time-zone change and a clock change: pending reminders still fire or are re-planned on next open | open |
+| Reminders | permission refused, then refused for good: the messages show and "Open phone settings" opens the right page; revoking it later in system settings stops the reminders without a crash | open |
+| Reminders | reminders on a Samsung, a Xiaomi and a Pixel (OEM battery managers may delay or drop them; the app has no battery guide) | open |
+| Sounds | the chime and arpeggio are pleasant and not too loud at 60%; they follow the phone's silent mode (whether `playsInSilentMode: false` is enough on Android is unconfirmed); other music keeps playing; Settings → Sounds turns them off | open |
+| Review | the system review dialog appears after a 3-star finish once the conditions hold (Play requires an installed-from-Play build to show it), never with a reminder prompt, never within 60 s of an ad | open |
+| Privacy | the in-app privacy summary reads well at large text; the hosted policy URL opens from Settings | open |
 | Performance | cold start; generating a 12×12 puzzle takes under 50 ms on a Moto G-class phone (the plan's target); scrolling the pack level list after hundreds of levels | open |
 | Size and native libs | AAB size; 16 KB page-size alignment of the native libs (mmkv, reanimated, worklets, svg, gesture handler, ads) with `zipalign -c -P 16 -v 4 app.aab` | open |
 | Devices | the plan's three devices: low-end Android 10, mid Android 13, a tablet | open |
@@ -116,22 +128,24 @@ Only the graphics exist so far. Everything else in the plan's §17 "Play Console
 | Full description | `ASO.md` (Word Search text, 2,608 chars, Applyra `check_metadata` valid on 2026-10-08) | ready, **claims need aligning with what is built** |
 | Icon 512, feature graphic 1024×500 | `store/` (made by `scripts/make-assets.mjs`) | made, **never viewed on Play** |
 | 8 screenshots 1080×1920 | — | **to capture on a device** |
-| Data safety, content rating, privacy policy, app-ads.txt | — | **not written** |
+| Privacy policy | `store/privacy-policy.md` | **draft** with placeholders; needs the developer's details and hosting |
+| Data safety, content rating, app-ads.txt | — | **not written** |
 | Permissions | `app.config.ts` + `src/__tests__/config.test.ts`; merged manifest checked with `expo prebuild` | done |
 | Target API | 36 (checked by test: ≥ 35) | done |
 
-Declared permissions: `VIBRATE`, `AD_ID`, plus `INTERNET`, `ACCESS_NETWORK_STATE`, `WAKE_LOCK` from the ads library.
+Declared permissions: `POST_NOTIFICATIONS`, `RECEIVE_BOOT_COMPLETED`, `VIBRATE`, `AD_ID`, plus `INTERNET`, `ACCESS_NETWORK_STATE`, `WAKE_LOCK` from the ads library.
 Blocked: `SCHEDULE_EXACT_ALARM`, `USE_EXACT_ALARM`, `REQUEST_IGNORE_BATTERY_OPTIMIZATIONS`, storage, `SYSTEM_ALERT_WINDOW`.
-`POST_NOTIFICATIONS` and `RECEIVE_BOOT_COMPLETED` are added when the reminder (milestone 8) is built.
+`expo-audio` adds `RECORD_AUDIO`, `FOREGROUND_SERVICE` and `FOREGROUND_SERVICE_MEDIA_PLAYBACK` to the manifest even with its
+microphone option off (found with `expo prebuild`); all three are blocked in `app.config.ts` and a test checks it. `MODIFY_AUDIO_SETTINGS`
+(normal, no prompt) remains.
 
 ## 6. Decisions, deviations and known gaps
 **Found in the repo**
 - `ASO.md` of this app had no text from another app (a test now guards that, after the Sipling file once held the Quizora
-  listing). It does describe features that are **not built yet**, so the listing would be wrong if shipped today:
-  "Gentle sounds" (no sound yet), "An optional reminder can let you know when today's puzzle is ready" (no reminder yet),
-  and pack names that do not exist as packs: *Garden*, *Kitchen*, *Movies*, *Everyday Life* (the 12 packs are Animals,
-  Birds, Food, Baking, Travel, Cities, Nature, Holidays, Seasons, Hobbies, Music, Home & Family). Either build milestone 8 and
-  rename packs, or edit the listing.
+  listing). Its sound and reminder claims are now true (milestone 8), but it still names packs that do not exist:
+  *Garden*, *Kitchen*, *Movies*, *Everyday Life* (the 12 packs are Animals, Birds, Food, Baking, Travel, Cities, Nature,
+  Holidays, Seasons, Hobbies, Music, Home & Family). **ASO claims** to fix before shipping: edit the listing or rename or add
+  packs. "Gentle sounds and light vibration you can turn off" matches the Settings switches (Sounds, Vibration).
 - The commit for milestone 4 (`e54106a`) was pushed with one failing test (the app-shell test still expected the old Home
   title); it was fixed in the next commit (`8aa1d56`). The pre-commit script I used did not stop on a Jest failure; it does now.
 - Habit Tracker's Jest run failed once (1 of 425 tests, `screens.smoke`) during one full run after my shared change and
@@ -147,7 +161,7 @@ never imports the AdMob SDK.
 - Logic is in `src/domain` (the plan's folder tree says `src/game`) and the screens' helpers in `src/features`. Storage keys in
   the `ws` MMKV store have no `ws.` prefix (the store id is the prefix); `onboarding.resume` and `onboarding.tutorialDone` are
   additions. The theme mode is owned by `@shared/theme` and the onboarding flag by `@shared/onboarding`, so `Settings` has no
-  `theme` field. `Settings` also has no `sounds` or `reminder` fields yet (milestone 8).
+  `theme` field. `Settings` has `sounds` and `reminder` (enabled, hour, minute); the reminder pre-prompt's memory is `reminderPrompt` and the review gating is `review` (plan §9 `ws.review`).
 - Grid drawn with `react-native-svg` strokes under letters drawn as views, not Skia (the plan allows either). Gestures use
   `react-native-gesture-handler` Pan raced with Tap on one surface; with TalkBack on, cells become labelled buttons.
 - `InteractionManager.runAfterInteractions` is deprecated in React Native 0.86, so the play screen builds the puzzle in a
@@ -166,16 +180,27 @@ never imports the AdMob SDK.
 - Starting a puzzle while another is in progress asks first (one save slot); the plan did not say.
 - The tutorial counts as a completed puzzle in the stats and for "level 2" in the first-session ad rule, but not for the
   "every 3 puzzles" interstitial count.
-- App-open ads: "not on returning from a notification tap" is wired (deep-link events) but there are no notifications yet.
+- **The reminder is not one repeating DAILY trigger** (plan §10) but a week of one-off notifications planned on every app
+  open, on foreground, on a day change and after each daily puzzle. That is what lets each day name its theme and lets
+  today's be skipped once the daily is done. The cost: a player who never opens the app gets at most 7 days of reminders and
+  then none. It uses no exact alarms.
+- The reminder time is chosen with plus and minus buttons (hours by 1, minutes by 15), not a clock dial or wheel.
+- Tapping a reminder routes through Home to the daily puzzle of the notification's date (an old notification opens that past day
+  as a catch-up); the plan's `/play/daily-<dateKey>` path does not exist in this app's route scheme.
+- The review prompt is requested through `@shared/review` with its own gating switched down to one positive event, because the
+  plan's rules (sessions, puzzles, 3 stars or a streak milestone, 60 s after an ad, 30 days, 3 prompts) are checked in the app
+  (`src/domain/reviewRules.ts`) first. `@shared/review` also keeps its own 30-day timer.
+- "Rate the app" opens `market://details?id=…` with the web page as fallback; "Send feedback" opens the mail app with the
+  version and Android version prefilled (the device model is not included: no `expo-device`).
 
-**Not built (plan items outside milestones 1 to 7, or skipped)**
-- Daily reminder, its pre-prompt, notification channel and deep link (F11, §10); in-app review prompt; sounds (`expo-audio`);
-  "Send feedback" and "Rate the app" rows; privacy policy page; the Help screen (§5.7); `analytics/events.ts`.
+**Not built (plan items outside milestones 1 to 8, or skipped)**
+- The Help screen (§5.7); `analytics/events.ts` (the plan defaults to no analytics SDK); a battery or reminder-troubleshooting
+  guide (Sipling has one; Word Search does not).
 - Retention loops of §12: gentle-return message, pack badges, word collections, milestone modals, streak restore (v1.1).
 - Everything marked v1.1 or later: word definitions, extra packs, stats screen, relax sound pack, seasonal events, hidden
   phrases, tablet two-pane layout, localization, mediation adapters.
-- The Settings options "highlight start letter on hint" and the reminder time; the `Stats` fields beyond counts are stored
-  but not shown anywhere.
+- The Settings option "highlight start letter on hint" (the hint always rings the first letter); the `Stats` fields beyond counts
+  are stored but not shown anywhere.
 - Maestro flows and store/Play Console drafts (milestone 9).
 
 **Behaviour you may want to change**

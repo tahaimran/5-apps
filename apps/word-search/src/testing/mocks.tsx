@@ -26,7 +26,7 @@ jest.mock('react-native-mmkv', () => ({
   },
 }));
 jest.mock('expo-file-system', () => ({ Paths: { cache: 'file:///cache' }, File: class {} }));
-jest.mock('expo-constants', () => ({ __esModule: true, default: { expoConfig: { version: '1.0.0' } } }));
+jest.mock('expo-constants', () => ({ __esModule: true, default: { expoConfig: { version: '1.0.0', android: { package: 'com.fiveapps.wordsearchlarge' } } } }));
 jest.mock('expo-linking', () => ({ openURL: jest.fn(async () => undefined) }));
 jest.mock('expo-haptics', () => ({
   impactAsync: jest.fn(),
@@ -39,11 +39,64 @@ jest.mock('expo-localization', () => ({
   getLocales: () => [{ languageCode: 'en', languageTag: 'en-US', textDirection: 'ltr' }],
   useLocales: () => [{ languageCode: 'en', languageTag: 'en-US', textDirection: 'ltr' }],
 }));
-jest.mock('expo-store-review', () => ({ isAvailableAsync: async () => false, requestReview: jest.fn() }));
+/** The system review prompt: `available` is what the phone says, `request` records that it was shown. */
+export const mockReview = { available: false, request: jest.fn(async () => undefined) };
+jest.mock('expo-store-review', () => ({ isAvailableAsync: async () => mockReview.available, requestReview: () => mockReview.request() }));
 jest.mock('expo-font', () => ({ useFonts: () => [true, null] }));
 jest.mock('expo-splash-screen', () => ({ preventAutoHideAsync: async () => undefined, hideAsync: async () => undefined }));
 jest.mock('expo-status-bar', () => ({ StatusBar: () => null }));
 jest.mock('@expo-google-fonts/atkinson-hyperlegible', () => ({ AtkinsonHyperlegible_400Regular: 1, AtkinsonHyperlegible_700Bold: 2 }));
+
+/** What the fake system says about the notification permission, what the user answers, and what is scheduled. */
+export const mockNotif = { granted: false, canAskAgain: true, answer: true, keepAsking: false };
+export const mockNotifState = {
+  pending: new Map<string, { identifier: string; content: Record<string, unknown>; trigger: Record<string, unknown> }>(),
+  channels: new Map<string, Record<string, unknown>>(),
+};
+export const mockLastNotificationResponse: { current: unknown } = { current: null };
+export const resetNotifMock = () => {
+  Object.assign(mockNotif, { granted: false, canAskAgain: true, answer: true, keepAsking: false });
+  mockReview.available = false;
+  mockReview.request.mockClear();
+  mockAudio.players.length = 0;
+  mockAudio.failCreate = false;
+  mockNotifState.pending.clear();
+  mockNotifState.channels.clear();
+  mockLastNotificationResponse.current = null;
+};
+jest.mock('expo-notifications', () => ({
+  AndroidImportance: { DEFAULT: 3, LOW: 2, HIGH: 4 },
+  AndroidNotificationVisibility: { PUBLIC: 1 },
+  DEFAULT_ACTION_IDENTIFIER: 'expo.modules.notifications.actions.DEFAULT',
+  getPermissionsAsync: async () => ({ granted: mockNotif.granted, canAskAgain: mockNotif.canAskAgain }),
+  requestPermissionsAsync: async () => {
+    mockNotif.granted = mockNotif.answer;
+    mockNotif.canAskAgain = mockNotif.answer || mockNotif.keepAsking;
+    return { granted: mockNotif.answer };
+  },
+  setNotificationChannelAsync: async (id: string, c: Record<string, unknown>) => void mockNotifState.channels.set(id, c),
+  setNotificationHandler: () => undefined,
+  getAllScheduledNotificationsAsync: async () => [...mockNotifState.pending.values()],
+  cancelScheduledNotificationAsync: async (id: string) => void mockNotifState.pending.delete(id),
+  scheduleNotificationAsync: async (req: { identifier: string; content: Record<string, unknown>; trigger: Record<string, unknown> }) => {
+    mockNotifState.pending.set(req.identifier, req);
+    return req.identifier;
+  },
+  useLastNotificationResponse: () => mockLastNotificationResponse.current,
+  SchedulableTriggerInputTypes: { DATE: 'date', DAILY: 'daily' },
+}));
+
+/** The game sounds: one fake player per source, remembering what it was asked to do. */
+export const mockAudio = { players: [] as { source: unknown; volume: number; play: jest.Mock; seekTo: jest.Mock }[], mode: jest.fn(async () => undefined), failCreate: false };
+jest.mock('expo-audio', () => ({
+  createAudioPlayer: (source: unknown) => {
+    if (mockAudio.failCreate) throw new Error('no audio');
+    const p = { source, volume: 1, play: jest.fn(), seekTo: jest.fn(async () => undefined) };
+    mockAudio.players.push(p);
+    return p;
+  },
+  setAudioModeAsync: (...a: unknown[]) => (mockAudio.mode as unknown as (...x: unknown[]) => Promise<void>)(...a),
+}));
 
 /** Everything the fake ads SDK was asked to do, for assertions. */
 export const mockAds = {

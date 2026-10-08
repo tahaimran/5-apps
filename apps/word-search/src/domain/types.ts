@@ -6,12 +6,35 @@ export type SelectionMode = 'both' | 'tapOnly';
 /** `YYYY-MM-DD` in device local time. */
 export type DateKey = string;
 
+export interface ReminderSettings {
+  enabled: boolean;
+  hour: number;
+  minute: number;
+}
+
+/** The pre-prompt's memory (plan §10): asked at most twice, the second time 7 days after the first. */
+export interface ReminderPrompt {
+  askCount: number;
+  askedAt: number;
+  /** Real puzzles finished since install (the tutorial does not count). */
+  completions: number;
+}
+
+/** In-app review gating (plan §9 `ws.review`). */
+export interface ReviewState {
+  lastPromptAt?: number;
+  promptCount: number;
+  positiveMoments: number;
+}
+
 export interface Settings {
   textSize: TextSize;
   difficulty: Difficulty;
   selectionMode: SelectionMode;
   haptics: boolean;
   showTimer: boolean;
+  sounds: boolean;
+  reminder: ReminderSettings;
 }
 
 export interface PlacedWord {

@@ -27,14 +27,14 @@ describe('RELEASE.md', () => {
   });
 
   it('says what is not built, so nobody mistakes this for a finished app', () => {
-    expect(doc).toMatch(/milestones? 8/i);
-    for (const word of ['reminder', 'sounds', 'review prompt', 'Help screen', 'Data safety']) expect(doc.toLowerCase()).toContain(word.toLowerCase());
+    expect(doc).toMatch(/milestone 9/i);
+    for (const word of ['Help screen', 'Data safety', 'screenshots', 'release build']) expect(doc.toLowerCase()).toContain(word.toLowerCase());
     expect(doc).toMatch(/\*\*not built\*\*|Not built/);
   });
 
   it('flags the store text that describes features that are not built', () => {
     expect(doc).toContain('ASO claims');
-    for (const word of ['Gentle sounds', 'Garden', 'Kitchen', 'Movies', 'Everyday Life']) expect(doc).toContain(word);
+    for (const word of ['Garden', 'Kitchen', 'Movies', 'Everyday Life']) expect(doc).toContain(word);
   });
 
   it('tells the truth about the failing commit and the flaky shared run', () => {
@@ -50,6 +50,11 @@ describe('RELEASE.md', () => {
     expect(doc).not.toMatch(/__[A-Z]+__/);
   });
 
+  it('keeps the notification checks that only a phone can do open', () => {
+    for (const word of ['Doze', 'reboot', 'Samsung', 'Xiaomi', 'silent mode', 'review dialog']) expect(doc).toContain(word);
+    expect(doc).toContain('not one repeating DAILY trigger');
+  });
+
   it('names the time-zone script that exists', () => {
     expect(doc).toContain('npm run test:tz');
     expect(pkg.scripts['test:tz']).toContain('TZ=');
@@ -63,10 +68,10 @@ describe('plan checklist (§16)', () => {
     expect(lines).toHaveLength(10);
   });
 
-  it('ticks days 1 to 7 only, and notes inline what a device is still needed for', () => {
+  it('ticks days 1 to 8 only, and notes inline what a device is still needed for', () => {
     for (const line of lines) {
       const day = Number(/Day (\d+)/.exec(line)![1]);
-      if (day <= 7) {
+      if (day <= 8) {
         expect(line.startsWith('- [x]')).toBe(true);
         // every ticked line carries an honest note about what was only checked in jest, or needs a device or account
         expect(line).toMatch(/device|jest|not (?:done|seen|added|untested)|never|account/i);

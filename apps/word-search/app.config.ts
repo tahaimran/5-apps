@@ -22,8 +22,8 @@ const config: ExpoConfig = {
       backgroundColor: '#1F5FAF',
     },
     // The ads SDK adds INTERNET, WAKE_LOCK and ACCESS_NETWORK_STATE. POST_NOTIFICATIONS and
-    // RECEIVE_BOOT_COMPLETED join this list when the daily reminder ships (plan milestone 8).
-    permissions: ['VIBRATE', 'com.google.android.gms.permission.AD_ID'],
+    // RECEIVE_BOOT_COMPLETED are for the daily reminder (it survives a reboot). No exact alarms.
+    permissions: ['POST_NOTIFICATIONS', 'RECEIVE_BOOT_COMPLETED', 'VIBRATE', 'com.google.android.gms.permission.AD_ID'],
     blockedPermissions: [
       'android.permission.READ_EXTERNAL_STORAGE',
       'android.permission.WRITE_EXTERNAL_STORAGE',
@@ -31,6 +31,10 @@ const config: ExpoConfig = {
       'android.permission.SCHEDULE_EXACT_ALARM',
       'android.permission.USE_EXACT_ALARM',
       'android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS',
+      // expo-audio adds these even with the microphone option off; two short sounds need none of them.
+      'android.permission.RECORD_AUDIO',
+      'android.permission.FOREGROUND_SERVICE',
+      'android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK',
     ],
   },
   plugins: [
@@ -39,6 +43,9 @@ const config: ExpoConfig = {
       'react-native-google-mobile-ads',
       { androidAppId: process.env.EXPO_PUBLIC_ADMOB_ANDROID_APP_ID ?? TEST_ANDROID_APP_ID },
     ],
+    ['expo-notifications', { color: '#1F5FAF' }],
+    // Plays two short game sounds only: no recording, so no microphone permission.
+    ['expo-audio', { microphonePermission: false }],
     [
       'expo-splash-screen',
       {

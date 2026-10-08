@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react';
 import { Redirect, router } from 'expo-router';
 import { View } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -5,6 +6,14 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
 import { showInterstitial } from '@shared/ads';
+import { maybeAskForReview } from '@shared/review';
+import { ReminderSheet } from '@/components/ReminderSheet';
+import { shouldAskReminder } from '@/domain/reminder';
+import { reviewEligible } from '@/domain/reviewRules';
+import { useAds } from '@/store/ads';
+import { useReminderPrompt } from '@/store/reminder';
+import { useReview } from '@/store/review';
+import { useStats } from '@/store/stats';
 import { useAdScreen } from '@/ads/guard';
 import { replaceWithPuzzle } from '@/features/play/navigation';
 import { DEFAULT_PACK, getPack } from '@/domain/packs';
@@ -17,6 +26,9 @@ import { useSettings } from '@/store/settings';
 import { AppText } from '@/ui/AppText';
 import { BigButton } from '@/ui/BigButton';
 import { StarRow } from '@/ui/StarRow';
+
+/** A beat after the celebration before any prompt appears, so the stars are seen first. */
+export const REVIEW_DELAY_MS = 800;
 
 /** `m:ss` for the optional timer. */
 export const formatElapsed = (ms: number): string => {
@@ -32,6 +44,35 @@ export const nextPuzzleId = (r: CompletedResult): string | null =>
 export default function Complete() {
   const result = useResult((s) => s.last);
   useAdScreen('complete');
+  const [reminderOpen, setReminderOpen] = useState(false);
+  const reviewAsked = useRef(false);
+  const puzzleId = result?.puzzleId;
+  // After the celebration (plan §10, §12): the reminder pre-prompt, or else the store review, never both and never for the tutorial.
+  useEffect(() => {
+    const r = useResult.getState().last;
+    if (!r || r.isTutorial) return;
+    const timer = setTimeout(() => {
+      const now = Date.now();
+      const dailyJustCompleted = r.isDaily && r.streakCounted === true;
+      if (shouldAskReminder({ prompt: useReminderPrompt.getState().prompt, reminderEnabled: useSettings.getState().settings.reminder.enabled, now, dailyJustCompleted, tutorial: false })) {
+        useReminderPrompt.getState().recordAsk(now);
+        setReminderOpen(true);
+        return;
+      }
+      const stats = useStats.getState().stats;
+      if (reviewEligible({ review: useReview.getState().review, sessions: stats.sessions, puzzlesCompleted: stats.puzzlesCompleted, stars: r.stars, streak: r.streak, streakCounted: r.streakCounted, now, lastFullScreenAt: useAds.getState().lastFullScreenAt, tutorial: false })) {
+        // The rules above are the app's; the shared call only does the system prompt.
+        void maybeAskForReview('puzzle_complete', { minPositiveEvents: 1, minDaysSinceInstall: 0, minDaysBetweenAsks: 30 })
+          .then((asked) => {
+            if (!asked) return;
+            useReview.getState().recordPrompt(now);
+            reviewAsked.current = true; // skip the interstitial this cycle
+          })
+          .catch(() => undefined);
+      }
+    }, REVIEW_DELAY_MS);
+    return () => clearTimeout(timer);
+  }, [puzzleId]);
   const showTimer = useSettings((s) => s.settings.showTimer);
   const difficulty = useSettings((s) => s.settings.difficulty);
   const { colors, spacing, type } = useTheme();
@@ -41,7 +82,7 @@ export default function Complete() {
   // The interstitial slot of plan §11: after "Next puzzle" is tapped, before the next puzzle loads.
   // The app rules and @shared/ads decide; if no ad is ready it is skipped at once, never waited for.
   const goNext = async (id: string) => {
-    if (!result.isTutorial) await showInterstitial('level_complete').catch(() => false);
+    if (!result.isTutorial && !reviewAsked.current) await showInterstitial('level_complete').catch(() => false);
     replaceWithPuzzle(id);
   };
   const leave = () => router.replace('/(tabs)');
@@ -87,6 +128,7 @@ export default function Complete() {
           <BigButton tall label={t('complete.home')} onPress={leave} />
         )}
       </View>
+      <ReminderSheet visible={reminderOpen} onClose={() => setReminderOpen(false)} />
     </SafeAreaView>
   );
 }

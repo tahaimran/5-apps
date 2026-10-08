@@ -12,6 +12,7 @@ import { ThemeProvider, useTheme } from '@shared/theme';
 import { adContext, useAdGuard } from '@/ads/guard';
 import { startAds } from '@/ads/start';
 import { adAllowed } from '@/domain/adRules';
+import { useNotificationResponses, useReminderSync } from '@/notifications/reminder';
 import { useSettings } from '@/store/settings';
 import { useStats } from '@/store/stats';
 import { useDayRollover } from '@/store/today';
@@ -32,12 +33,15 @@ function Root() {
     if (setupDone) void startAds();
   }, [setupDone]);
   useDayRollover();
+  useReminderSync();
+  useNotificationResponses();
   useEffect(() => useStats.getState().recordSession(), []);
   return (
     <>
       <StatusBar style={mode === 'light' ? 'dark' : 'light'} />
       <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: colors.background } }}>
         <Stack.Screen name="onboarding" options={{ gestureEnabled: false }} />
+        <Stack.Screen name="privacy" options={{ presentation: 'modal' }} />
         <Stack.Screen name="complete/[puzzleId]" options={{ presentation: 'modal', gestureEnabled: false }} />
       </Stack>
     </>

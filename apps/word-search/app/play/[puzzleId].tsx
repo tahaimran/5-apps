@@ -30,6 +30,7 @@ import { formatDay } from '@/ui/format';
 import { Toast } from '@/ui/Toast';
 import { useScreenReader } from '@/ui/useScreenReader';
 import { useAdScreen } from '@/ads/guard';
+import { playSound } from '@/audio/sounds';
 import { cellCenter } from '@/domain/selection';
 import { wordCells } from '@/domain/generator';
 import { foundCount } from '@/domain/game';
@@ -143,10 +144,12 @@ export default function Play() {
       AccessibilityInfo.announceForAccessibility(t('game.foundAnnounce', { word: out.result.word.word, count: left }));
       if (!out.complete) {
         feedback.success();
+        playSound('found');
         if (isTutorial && foundCount(out.game) === 1) setToast(t('tutorial.found'));
         return;
       }
       feedback.complete();
+      playSound('complete');
       if (finishing.current) return;
       finishing.current = true;
       setCelebrating(true);

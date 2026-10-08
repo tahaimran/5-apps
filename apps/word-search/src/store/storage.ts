@@ -4,6 +4,8 @@ import type {
   DailyState,
   HintWallet,
   OnboardingResume,
+  ReminderPrompt,
+  ReviewState,
   PackId,
   PackProgress,
   SavedGame,
@@ -25,6 +27,10 @@ export interface WsKeys {
   hints: HintWallet;
   stats: Stats;
   ads: AdCounters;
+  reminderPrompt: ReminderPrompt;
+  /** Identifier of the last notification tap that was acted on, so one tap is handled once. */
+  handledResponse: string;
+  review: ReviewState;
   /** Where an interrupted onboarding resumes: the visible-step index and the answers so far. */
   'onboarding.resume': OnboardingResume;
   /** The tutorial puzzle was finished, or its "Skip tutorial" link was used. */

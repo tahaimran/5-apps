@@ -93,7 +93,16 @@
     "privacyNote": "Your progress stays on this phone. There is no account. Ads are served by Google AdMob.",
     "privacyChoices": "Privacy choices",
     "privacyPolicy": "Privacy policy",
-    "adDebug": "Ad rules (development builds only)"
+    "adDebug": "Ad rules (development builds only)",
+    "sounds": "Sounds",
+    "reminderSection": "Daily reminder",
+    "reminderSwitch": "Remind me every day",
+    "reminderTime": "Reminder time: {time}",
+    "rate": "Rate the app",
+    "feedback": "Send feedback",
+    "feedbackSubject": "Word Search feedback",
+    "feedbackBody": "Hello,\n\n\n\n---\nApp version: {version}\nAndroid: {android}",
+    "privacyInfo": "How your data is handled"
   },
   "game": {
     "back": "Back",
@@ -232,5 +241,40 @@
     "blocked": "Blocked",
     "counters": "Counters",
     "back": "Back"
+  },
+  "reminder": {
+    "channel": "Daily puzzle",
+    "channelDescription": "One gentle reminder a day, at the time you choose.",
+    "copy": {
+      "0": "Your daily puzzle is ready ☕ — today's theme: {theme}",
+      "1": "A new word search is waiting for you.",
+      "2": "Time for a calm moment? Today's theme: {theme}",
+      "3": "Today's puzzle is ready whenever you are."
+    },
+    "promptTitle": "Want a reminder for tomorrow's puzzle?",
+    "promptBody": "We'll send one gentle reminder a day. You can turn it off anytime.",
+    "timeLabel": "{time}",
+    "chooseTime": "Choose time",
+    "yes": "Yes, remind me",
+    "notNow": "Not now",
+    "denied": "Notifications are off, so no reminder was set. You can try again in Settings.",
+    "blocked": "Notifications are turned off for this app in your phone's settings.",
+    "openSettings": "Open phone settings",
+    "on": "Reminder is on at {time}.",
+    "hour": "Hour",
+    "minute": "Minutes",
+    "hourUp": "Later hour",
+    "hourDown": "Earlier hour",
+    "minuteUp": "Later minutes",
+    "minuteDown": "Earlier minutes",
+    "set": "Set this time"
+  },
+  "privacy": {
+    "title": "How your data is handled",
+    "onDevice": "Your progress, settings and streak are stored only on this phone. There is no account and no server.",
+    "ads": "The app is supported by ads from Google AdMob. AdMob may use your phone's advertising ID. Where the law requires it, you are asked for your choice first, and you can change it later under Settings, Privacy choices.",
+    "notifications": "The daily reminder is a notification made on your phone. It is off until you turn it on, and nothing about it is sent anywhere.",
+    "noAccount": "The app does not ask for your name, email, location, contacts or photos.",
+    "choices": "You can erase your progress at any time in Settings, Reset progress, or by uninstalling the app."
   }
 }

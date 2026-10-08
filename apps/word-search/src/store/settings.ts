@@ -11,7 +11,10 @@ interface SettingsState {
 }
 
 /** Merges stored values over the defaults so a key added in a later version is never undefined. */
-const load = (): Settings => ({ ...defaultSettings, ...db.get('settings') });
+const load = (): Settings => {
+  const stored = db.get('settings');
+  return { ...defaultSettings, ...stored, reminder: { ...defaultSettings.reminder, ...stored?.reminder } };
+};
 
 /** Display and play preferences (`ws.settings`). The theme mode lives in @shared/theme. */
 export const useSettings = create<SettingsState>((set, get) => ({

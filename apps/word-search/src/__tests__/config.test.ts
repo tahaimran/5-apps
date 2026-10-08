@@ -9,7 +9,7 @@ const pluginOptions = (name: string) => (config.plugins ?? []).find((p) => Array
 
 describe('Android permissions', () => {
   it('declares only what the built features need', () => {
-    expect([...permissions].sort()).toEqual(['VIBRATE', 'com.google.android.gms.permission.AD_ID'].sort());
+    expect([...permissions].sort()).toEqual(['POST_NOTIFICATIONS', 'RECEIVE_BOOT_COMPLETED', 'VIBRATE', 'com.google.android.gms.permission.AD_ID'].sort());
   });
   it('blocks exact alarms, battery-optimization prompts, storage and overlays that libraries could add', () => {
     for (const p of [
@@ -43,7 +43,7 @@ describe('store-facing config', () => {
     expect(build.android.compileSdkVersion).toBeGreaterThanOrEqual(build.android.targetSdkVersion);
   });
   it('registers the native plugins the built features need', () => {
-    for (const name of ['expo-router', 'react-native-google-mobile-ads', 'expo-splash-screen']) expect(plugins).toContain(name);
+    for (const name of ['expo-router', 'react-native-google-mobile-ads', 'expo-notifications', 'expo-audio', 'expo-splash-screen']) expect(plugins).toContain(name);
   });
   it('uses a test AdMob app id until a real one is set in EAS', () => {
     const ads = pluginOptions('react-native-google-mobile-ads')![1] as { androidAppId: string };
@@ -57,6 +57,23 @@ describe('store-facing config', () => {
     }
     expect(config.icon).toBeTruthy();
     expect(config.android?.adaptiveIcon?.foregroundImage).toBeTruthy();
+  });
+});
+
+describe('audio and reminder config', () => {
+  it('asks for no microphone permission for the two game sounds', () => {
+    const audio = pluginOptions('expo-audio')![1] as { microphonePermission: boolean };
+    expect(audio.microphonePermission).toBe(false);
+  });
+  it('bundles the two sounds', () => {
+    for (const f of ['found.wav', 'complete.wav']) expect(require('fs').existsSync(require('path').resolve(__dirname, '../../assets/sounds', f))).toBe(true);
+  });
+  it('blocks the microphone and foreground-service permissions the audio library adds on its own', () => {
+    for (const p of ['RECORD_AUDIO', 'FOREGROUND_SERVICE', 'FOREGROUND_SERVICE_MEDIA_PLAYBACK']) expect(blocked).toContain(`android.permission.${p}`);
+  });
+  it('uses no exact alarms: the reminder is an ordinary scheduled notification', () => {
+    expect(permissions).not.toContain('SCHEDULE_EXACT_ALARM');
+    expect(blocked).toContain('android.permission.SCHEDULE_EXACT_ALARM');
   });
 });
 

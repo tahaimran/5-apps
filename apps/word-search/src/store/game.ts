@@ -8,6 +8,7 @@ import type { CompletedResult, Puzzle, SavedGame } from '@/domain/types';
 import { useAds } from './ads';
 import { useDaily } from './daily';
 import { useProgress } from './progress';
+import { useReminderPrompt } from './reminder';
 import { useResult } from './result';
 import { useStats } from './stats';
 import { db } from './storage';
@@ -96,7 +97,10 @@ export const useGame = create<GameState>((set, get) => ({
       useProgress.getState().record(parsed.packId, parsed.difficulty, parsed.level, stars);
     }
     useStats.getState().recordPuzzle(game);
-    if (parsed?.kind !== 'tutorial') useAds.getState().recordPuzzle(); // counts toward "every 3 puzzles"
+    if (parsed?.kind !== 'tutorial') {
+      useAds.getState().recordPuzzle(); // counts toward "every 3 puzzles"
+      useReminderPrompt.getState().recordCompletion(); // counts toward the reminder pre-prompt
+    }
     // Finishing the tutorial ends onboarding (plan §6): from now on the app opens on Home.
     if (parsed?.kind === 'tutorial') db.set('onboarding.tutorialDone', true);
     let streak: number | undefined;

@@ -19,6 +19,10 @@ import Play from '../../app/play/[puzzleId]';
 import Complete from '../../app/complete/[puzzleId]';
 import Onboarding from '../../app/onboarding';
 import DebugAds from '../../app/debug-ads';
+import Privacy from '../../app/privacy';
+import { ReminderSheet } from '@/components/ReminderSheet';
+import { TimeStepper } from '@/components/TimeStepper';
+import { useSettings as useSettingsStore } from '@/store/settings';
 import PackScreen from '../../app/packs/[packId]';
 import { useGame } from '@/store/game';
 import { useResult } from '@/store/result';
@@ -40,6 +44,7 @@ beforeEach(() => {
   useProgress.getState().record('animals', 'easy', 2, 2);
   useGame.getState().begin(levelPuzzle('birds', 'easy', 1, 8)); // Home shows the Continue card
   useDaily.getState().complete('2026-10-07', '2026-10-07', 3);
+  useSettingsStore.getState().update({ reminder: { enabled: true, hour: 9, minute: 0 } }); // Settings shows the time stepper
 });
 afterEach(async () => {
   await cleanup();
@@ -56,6 +61,9 @@ const screens: [string, () => ReactElement, boolean][] = [
   ['Play menu', () => <MenuSheet visible onClose={() => undefined} />, true],
   ['Complete', () => <Complete />, true],
   ['Ad rules (debug)', () => <DebugAds />, true],
+  ['Privacy', () => <Privacy />, true],
+  ['Reminder pre-prompt', () => <ReminderSheet visible onClose={() => undefined} />, true],
+  ['Time stepper', () => <TimeStepper hour={9} minute={0} onChange={() => undefined} />, true],
   ['Pack levels', () => <PackScreen />, true],
 ];
 

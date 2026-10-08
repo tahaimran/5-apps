@@ -12,7 +12,7 @@ import { AppState } from 'react-native';
 import { ThemeProvider } from '@shared/theme';
 import { adsState } from '@shared/ads/state';
 import { sharedStore } from '@shared/storage';
-import { mockParams, mockRouter } from '@/testing/mocks';
+import { mockParams, mockReview, mockRouter } from '@/testing/mocks';
 import '@/bootstrap';
 import { installAdGuard } from '@/ads/guard';
 import { startAds } from '@/ads/start';
@@ -27,7 +27,8 @@ import { useStats } from '@/store/stats';
 import { db } from '@/store/storage';
 import { palette, TOUCH_TARGET } from '@/theme/tokens';
 import RootLayout from '../../app/_layout';
-import Complete from '../../app/complete/[puzzleId]';
+import Complete, { REVIEW_DELAY_MS } from '../../app/complete/[puzzleId]';
+import { useSettings } from '@/store/settings';
 import DailyTab from '../../app/(tabs)/daily';
 import Home from '../../app/(tabs)/index';
 import PackScreen from '../../app/packs/[packId]';
@@ -269,6 +270,23 @@ describe('interstitial after "Next puzzle" (plan §11)', () => {
     const third = await next(result(), 3);
     await tapNext(third);
     expect(shown('interstitial')).toHaveLength(2);
+  });
+
+  it('skips the interstitial in the cycle where the store review was requested (plan §12)', async () => {
+    mockReview.available = true;
+    useSettings.getState().update({ reminder: { enabled: true, hour: 9, minute: 0 } });
+    sharedStore.set('install.firstOpenAt', 0);
+    const ui = await next(result({ stars: 3 }), 3);
+    useStats.setState({ stats: { ...useStats.getState().stats, sessions: 3, puzzlesCompleted: 12 } });
+    await act(async () => {
+      jest.advanceTimersByTime(REVIEW_DELAY_MS + 10);
+    });
+    await flush();
+    expect(mockReview.request).toHaveBeenCalledTimes(1);
+    await tapNext(ui);
+    expect(shown('interstitial')).toHaveLength(0);
+    expect(mockRouter.replace).toHaveBeenCalledWith(nextUrl);
+    expect(useAds.getState().counters.levelsSinceInterstitial).toBe(3); // still due next time
   });
 
   it('allows at most 6 an hour', async () => {

@@ -1,4 +1,4 @@
-import type { AdCounters, DailyState, HintWallet, PackProgress, Settings, Stats } from './types';
+import type { AdCounters, DailyState, HintWallet, PackProgress, ReminderPrompt, ReviewState, Settings, Stats } from './types';
 
 export const FREE_HINTS_PER_DAY = 3;
 
@@ -8,7 +8,12 @@ export const defaultSettings: Settings = {
   selectionMode: 'both',
   haptics: true,
   showTimer: false,
+  sounds: true,
+  reminder: { enabled: false, hour: 9, minute: 0 },
 };
+
+export const defaultReminderPrompt = (): ReminderPrompt => ({ askCount: 0, askedAt: 0, completions: 0 });
+export const defaultReview = (): ReviewState => ({ promptCount: 0, positiveMoments: 0 });
 
 export const defaultPackProgress = (): PackProgress => ({
   easy: { currentLevel: 1, stars: {} },
