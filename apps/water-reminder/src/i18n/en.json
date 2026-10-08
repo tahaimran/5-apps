@@ -23,7 +23,9 @@
     "kg": "kg",
     "lb": "lb",
     "amount": "{value} {unit}",
-    "glasses": "{count} glasses"
+    "glasses": "{count} glasses",
+    "mlLong": "millilitres",
+    "flozLong": "fluid ounces"
   },
   "cups": {
     "small": "Small glass",
@@ -169,5 +171,53 @@
     "today": "Today",
     "history": "History",
     "garden": "Garden"
+  },
+  "celebrate": {
+    "goal": "Goal reached! 🎉",
+    "freezeUsed": "A streak freeze kept your streak alive."
+  },
+  "notify": {
+    "reasonTitle": "Turn on reminders?",
+    "reason": "Sipling sends a gentle nudge when it is time to drink, and skips it when you already did. You can log from the notification."
+  },
+  "today": {
+    "settings": "Settings",
+    "streak": "{count} day streak",
+    "streakFlame": "Streak: {count}",
+    "emptyNote": "Your plant is waiting for its first sip.",
+    "reachedNote": "Goal reached! Your plant is blooming.",
+    "overNote": "Great job! No need to overdo it.",
+    "ringText": "{amount} / {goal} {unit}",
+    "ringPercent": "{percent}%",
+    "ringLabel": "{amount} of {goal}, {percent} percent",
+    "nextReminder": "Next reminder {time}",
+    "nextReminderTomorrow": "Next reminder tomorrow, {time}",
+    "remindersOff": "Reminders are off",
+    "remindersOffBody": "Turn them on to get a nudge when it is time to drink.",
+    "turnOn": "Turn on",
+    "openSettings": "Open settings",
+    "quickAdd": "Quick add",
+    "addCup": "Add {amount}",
+    "other": "Other",
+    "otherLabel": "Add a different amount or drink",
+    "added": "Added {amount}",
+    "undo": "Undo",
+    "logTitle": "Today's log",
+    "seeAll": "See all",
+    "entry": "{time}, {beverage}, {amount}",
+    "countsAs": "counts as {amount}"
+  },
+  "logCustom": {
+    "title": "Add a drink",
+    "beverage": "Drink",
+    "amount": "Amount",
+    "amountInput": "Amount in {unit}",
+    "time": "Time",
+    "add": "Add",
+    "counts": "{beverage} {amount} → counts as {effective}",
+    "sliderValue": "{amount}"
+  },
+  "settings": {
+    "title": "Settings"
   }
 }

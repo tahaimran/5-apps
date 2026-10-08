@@ -1,3 +1,4 @@
+import { useEffect, useMemo } from 'react';
 import { create } from 'zustand';
 import { dayKeyFor, monthKeyOf } from '@/domain/dayKey';
 import { defaultProgress } from '@/domain/defaults';
@@ -199,3 +200,13 @@ useSettings.subscribe((s) => {
     useWater.getState().recomputeToday();
   }
 });
+
+/** The logs of one day, kept in sync with the store (loads the month on first use). */
+export function useDayLogs(day: DayKey): LogEntry[] {
+  const month = monthKeyOf(day);
+  const list = useWater((s) => s.months[month]);
+  useEffect(() => {
+    if (!list) useWater.getState().loadMonth(month);
+  }, [list, month]);
+  return useMemo(() => (list ?? []).filter((l) => l.dayKey === day), [list, day]);
+}

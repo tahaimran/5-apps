@@ -219,8 +219,19 @@ const styles = StyleSheet.create({
   card: { flexDirection: 'row', alignItems: 'center', borderWidth: 1 },
 });
 
-/** A time of day in minutes from midnight, as hour and minute (15-minute steps) steppers. */
-export function MinuteStepper({ value, onChange, label }: { value: number; onChange: (minute: number) => void; label: string }) {
+/** A time of day in minutes from midnight, as hour and minute steppers. */
+export function MinuteStepper({
+  value,
+  onChange,
+  label,
+  minuteStep = 15,
+}: {
+  value: number;
+  onChange: (minute: number) => void;
+  label: string;
+  /** Granularity of the minute stepper: 15 for schedules, 5 for the time of a drink. */
+  minuteStep?: 5 | 15;
+}) {
   const { colors, type } = useTheme();
   const hour = Math.floor(value / 60);
   const minute = value % 60;
@@ -241,8 +252,8 @@ export function MinuteStepper({ value, onChange, label }: { value: number; onCha
       <Stepper
         value={minute}
         min={0}
-        max={45}
-        step={15}
+        max={60 - minuteStep}
+        step={minuteStep}
         label={label}
         format={pad}
         onChange={(m) => onChange(hour * 60 + m)}

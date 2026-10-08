@@ -109,15 +109,16 @@ jest.mock('react-native-safe-area-context', () => require('react-native-safe-are
 jest.mock('react-native-gesture-handler', () => ({ GestureHandlerRootView: ({ children }: { children: React.ReactNode }) => children }));
 jest.mock('react-native-reanimated', () => {
   const React = require('react');
-  const { View } = require('react-native');
+  const { View, ScrollView } = require('react-native');
   const passthrough = (v: unknown) => v;
-  const Animated = { View, createAnimatedComponent: passthrough };
+  const Animated = { View, ScrollView, createAnimatedComponent: passthrough };
   return {
     __esModule: true,
     default: Animated,
     ...Animated,
     useSharedValue: (v: unknown) => ({ value: v }),
     useAnimatedStyle: () => ({}),
+    useAnimatedProps: () => ({}),
     useReducedMotion: () => true,
     withRepeat: passthrough,
     withSequence: (...v: unknown[]) => v[0],

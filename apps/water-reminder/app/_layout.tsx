@@ -6,6 +6,8 @@ import { StatusBar } from 'expo-status-bar';
 import { useOnboardingComplete } from '@shared/onboarding';
 import { ThemeProvider, useTheme } from '@shared/theme';
 import { startAds } from '@/ads/start';
+import { useAdGuard } from '@/ads/guard';
+import { CelebrationHost } from '@/features/celebrations/CelebrationHost';
 import { useMeta } from '@/store/meta';
 import { useSettings } from '@/store/settings';
 import { useDayRollover } from '@/store/today';
@@ -19,6 +21,7 @@ function Root() {
   const { mode, colors } = useTheme();
   const onboardingDone = useOnboardingComplete();
   useDayRollover();
+  useAdGuard();
   useEffect(() => useMeta.getState().recordLaunch(), []);
 
   // On later launches consent and ads start right away; on the first run onboarding starts them
@@ -32,7 +35,9 @@ function Root() {
       <StatusBar style={mode === 'light' ? 'dark' : 'light'} />
       <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: colors.background } }}>
         <Stack.Screen name="onboarding" options={{ gestureEnabled: false }} />
+        <Stack.Screen name="log-custom" options={{ presentation: 'modal' }} />
       </Stack>
+      <CelebrationHost />
     </>
   );
 }
