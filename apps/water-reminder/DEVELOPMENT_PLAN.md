@@ -566,7 +566,7 @@ apps/water-reminder/
 
 ## 17. Milestones (MVP ~7 days)
 
-- [ ] **Day 1** — App scaffold in monorepo, `app.config.ts`, EAS dev build with ads + notifications plugins, theme tokens, MMKV store + migrations, `core/` (goal, schedule, dayKey, hydration) with unit tests.
+- [x] **Day 1** — App scaffold in monorepo, `app.config.ts`, EAS dev build with ads + notifications plugins, theme tokens, MMKV store + migrations, `core/` (goal, schedule, dayKey, hydration) with unit tests.
 - [ ] **Day 2** — Onboarding flow (11 steps, copy, animations for goal reveal), consent wiring, permission step, first-glass moment.
 - [ ] **Day 3** — Today screen: ring, plant (static stages + mood), quick-add, custom log sheet, undo, haptics. Banner placement.
 - [ ] **Day 4** — Notification scheduler (rolling horizon), categories/actions, auto-skip, snooze, background task, killed-app action test on 3 devices.

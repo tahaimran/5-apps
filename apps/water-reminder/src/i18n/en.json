@@ -1,0 +1,4 @@
+{
+  "app": { "name": "Sipling" },
+  "common": { "cancel": "Cancel", "save": "Save", "delete": "Delete", "back": "Back", "close": "Close", "ok": "OK" }
+}
