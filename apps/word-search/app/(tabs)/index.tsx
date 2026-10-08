@@ -13,7 +13,9 @@ import { useGame } from '@/store/game';
 import { trackOf, useProgress } from '@/store/progress';
 import { useSettings } from '@/store/settings';
 import { useToday } from '@/store/today';
+import { useAdScreen } from '@/ads/guard';
 import { AppText } from '@/ui/AppText';
+import { BannerSlot } from '@/ui/BannerSlot';
 import { BigButton } from '@/ui/BigButton';
 import { PackCard } from '@/ui/PackCard';
 import { formatLongDay } from '@/ui/format';
@@ -23,6 +25,7 @@ import { StreakChip } from '@/ui/StreakChip';
 /** Plan §5.1: greeting, the puzzle in progress, and the packs. */
 export default function Home() {
   const { colors, spacing, radius, type } = useTheme();
+  useAdScreen('home');
   const current = useGame((s) => s.current);
   const packs = useProgress((s) => s.packs);
   const difficulty = useSettings((s) => s.settings.difficulty);
@@ -33,7 +36,7 @@ export default function Home() {
   const greeting = t(`home.greeting.${partOfDay(new Date().getHours())}`);
   const inProgress = current ? getPack(current.puzzle.packId) : undefined;
   return (
-    <Screen>
+    <Screen footer={<BannerSlot placement="home_banner" />}>
       <AppText accessibilityRole="header" style={[type.headline, { color: colors.text, fontWeight: '700' }]}>{greeting}</AppText>
       <StreakChip streak={streak} />
       {current && (

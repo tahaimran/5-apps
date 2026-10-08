@@ -4,6 +4,8 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
+import { showInterstitial } from '@shared/ads';
+import { useAdScreen } from '@/ads/guard';
 import { replaceWithPuzzle } from '@/features/play/navigation';
 import { DEFAULT_PACK, getPack } from '@/domain/packs';
 import { levelPuzzleId } from '@/domain/puzzles';
@@ -29,12 +31,19 @@ export const nextPuzzleId = (r: CompletedResult): string | null =>
 /** Plan §5.4: "Well done!", stars, words found, and the next step. A modal, so Back returns to where the puzzle was started. */
 export default function Complete() {
   const result = useResult((s) => s.last);
+  useAdScreen('complete');
   const showTimer = useSettings((s) => s.settings.showTimer);
   const difficulty = useSettings((s) => s.settings.difficulty);
   const { colors, spacing, type } = useTheme();
   if (!result) return <Redirect href="/(tabs)" />;
   const next = result.isTutorial ? levelPuzzleId(DEFAULT_PACK, difficulty, 1) : nextPuzzleId(result);
   const pack = getPack(result.packId)?.name ?? '';
+  // The interstitial slot of plan §11: after "Next puzzle" is tapped, before the next puzzle loads.
+  // The app rules and @shared/ads decide; if no ad is ready it is skipped at once, never waited for.
+  const goNext = async (id: string) => {
+    if (!result.isTutorial) await showInterstitial('level_complete').catch(() => false);
+    replaceWithPuzzle(id);
+  };
   const leave = () => router.replace('/(tabs)');
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: colors.background, padding: spacing.lg, justifyContent: 'center' }}>
@@ -71,7 +80,7 @@ export default function Complete() {
       <View style={{ gap: spacing.md, marginTop: spacing.xl * 2 }}>
         {next ? (
           <>
-            <BigButton tall label={result.isTutorial ? t('tutorial.next') : t('complete.next')} onPress={() => replaceWithPuzzle(next)} />
+            <BigButton tall label={result.isTutorial ? t('tutorial.next') : t('complete.next')} onPress={() => void goNext(next)} />
             <BigButton variant="secondary" label={result.isTutorial ? t('complete.home') : t('complete.backToPacks')} onPress={leave} />
           </>
         ) : (

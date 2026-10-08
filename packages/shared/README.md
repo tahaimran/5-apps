@@ -21,6 +21,9 @@ showInterstitial(placement: string): Promise<boolean>  // respects caps; returns
 showRewarded(placement: string): Promise<{ rewarded: boolean }>
 useAppOpenAd(canShow: () => boolean)                   // hook for warm-start app-open ads
 setAdGuard(fn: (placement: string) => boolean)         // app-level veto (e.g. active contraction session)
+onFullScreenAdShown(listener: (kind: 'interstitial' | 'rewarded' | 'appOpen') => void): () => void
+                                                       // fires when a full-screen ad was really shown and closed; lets an app keep "90 s since any full-screen ad" rules exact
+MaxAdContentRating                                     // re-exported so apps set `maxAdContentRating` without importing the SDK
 ```
 `AdPolicy` defaults are in `docs/ADMOB_PLAYBOOK.md §3`. Unit IDs come from `EXPO_PUBLIC_ADMOB_<PLACEMENT>`; in `__DEV__` it falls back to `TestIds`.
 

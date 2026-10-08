@@ -1,5 +1,8 @@
+import './mocks';
 import { defaultDaily, defaultHints, defaultSettings, defaultStats } from '@/domain/defaults';
 import { dateKeyFor } from '@/domain/dateKey';
+import { defaultAdCounters } from '@/domain/defaults';
+import { useAds } from '@/store/ads';
 import { useDaily } from '@/store/daily';
 import { useGame } from '@/store/game';
 import { useHints } from '@/store/hints';
@@ -22,4 +25,5 @@ export function resetApp(now: Date = new Date()) {
   useDaily.setState({ daily: defaultDaily() });
   useHints.setState({ wallet: defaultHints(today) });
   useToday.setState({ today });
+  useAds.setState({ counters: defaultAdCounters(), lastFullScreenAt: 0, lastRewardedAt: 0, screen: 'other', lastExternalOpenAt: 0 });
 }

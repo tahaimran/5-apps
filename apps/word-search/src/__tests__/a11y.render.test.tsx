@@ -18,6 +18,7 @@ import TabsLayout from '../../app/(tabs)/_layout';
 import Play from '../../app/play/[puzzleId]';
 import Complete from '../../app/complete/[puzzleId]';
 import Onboarding from '../../app/onboarding';
+import DebugAds from '../../app/debug-ads';
 import PackScreen from '../../app/packs/[packId]';
 import { useGame } from '@/store/game';
 import { useResult } from '@/store/result';
@@ -54,6 +55,7 @@ const screens: [string, () => ReactElement, boolean][] = [
   ['Hint sheet', () => <HintSheet visible onClose={() => undefined} />, true],
   ['Play menu', () => <MenuSheet visible onClose={() => undefined} />, true],
   ['Complete', () => <Complete />, true],
+  ['Ad rules (debug)', () => <DebugAds />, true],
   ['Pack levels', () => <PackScreen />, true],
 ];
 

@@ -92,8 +92,24 @@ export function preloadAll() {
   loadAppOpen();
 }
 
+export type FullScreenKind = 'interstitial' | 'rewarded' | 'appOpen';
+
+const shownListeners = new Set<(kind: FullScreenKind) => void>();
+
+/**
+ * Called each time a full-screen ad was really shown and closed (not for ads that failed to show).
+ * Apps use it to keep their own cross-format rules exact, such as "90 s since any full-screen ad".
+ * Returns an unsubscribe function.
+ */
+export function onFullScreenAdShown(listener: (kind: FullScreenKind) => void): () => void {
+  shownListeners.add(listener);
+  return () => {
+    shownListeners.delete(listener);
+  };
+}
+
 /** Resolves true when the ad was shown and then closed, false on any failure. */
-function present(fullScreenAd: FullScreenAd): Promise<boolean> {
+function present(fullScreenAd: FullScreenAd, kind: FullScreenKind): Promise<boolean> {
   const ad = fullScreenAd as {
     addAdEventListener(type: AdEventType, listener: () => void): () => void;
     show(): Promise<void>;
@@ -102,7 +118,16 @@ function present(fullScreenAd: FullScreenAd): Promise<boolean> {
     adsState.fullScreenActive = true;
     const finish = (shown: boolean) => {
       adsState.fullScreenActive = false;
-      if (shown) adsState.fullScreenShown++;
+      if (shown) {
+        adsState.fullScreenShown++;
+        for (const listener of [...shownListeners]) {
+          try {
+            listener(kind);
+          } catch {
+            // a faulty listener must not break ad delivery
+          }
+        }
+      }
       offClosed();
       offErr();
       notifyAds();
@@ -137,7 +162,7 @@ export async function showInterstitial(placement: string): Promise<boolean> {
   const ad = slot.ad;
   slot.ad = null;
   slot.loaded = false;
-  const shown = await present(ad);
+  const shown = await present(ad, 'interstitial');
   // Only an ad that really appeared counts toward the caps; the gap is measured from when it closed.
   if (shown) {
     adsState.interstitialsShown++;
@@ -174,7 +199,7 @@ export async function showRewarded(placement: string): Promise<{ rewarded: boole
   const offReward = ad.addAdEventListener(RewardedAdEventType.EARNED_REWARD, () => {
     rewarded = true;
   });
-  await present(ad);
+  await present(ad, 'rewarded');
   offReward();
   loadRewarded(placement);
   return { rewarded };
@@ -195,7 +220,7 @@ export async function maybeShowAppOpen(placementGuard = 'app_open'): Promise<boo
   }
   const ad = appOpen.ad;
   appOpen = { ad: null, loaded: false, loading: false };
-  const shown = await present(ad);
+  const shown = await present(ad, 'appOpen');
   loadAppOpen();
   return shown;
 }

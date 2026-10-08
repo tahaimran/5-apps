@@ -1,5 +1,4 @@
-import { MaxAdContentRating } from 'react-native-google-mobile-ads';
-import type { AdPolicy, AdUnits } from '@shared/ads';
+import { MaxAdContentRating, type AdPolicy, type AdUnits } from '@shared/ads';
 
 /**
  * Placement map from DEVELOPMENT_PLAN.md §11. Keep the `process.env.EXPO_PUBLIC_*` references

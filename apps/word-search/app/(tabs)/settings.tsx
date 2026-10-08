@@ -1,7 +1,11 @@
-import { View } from 'react-native';
+import { useEffect, useState } from 'react';
+import { Linking, View } from 'react-native';
+import { router } from 'expo-router';
+import { isPrivacyOptionsRequired, openPrivacyOptions } from '@shared/consent';
 import Constants from 'expo-constants';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
+import { useAdScreen } from '@/ads/guard';
 import { TextSizePicker } from '@/components/TextSizePicker';
 import { ThemePicker } from '@/components/ThemePicker';
 import { confirmReset } from '@/features/settings/reset';
@@ -21,6 +25,13 @@ export default function Settings() {
   const { colors, spacing, type } = useTheme();
   const settings = useSettings((s) => s.settings);
   const update = useSettings((s) => s.update);
+  useAdScreen('settings');
+  const [privacyRequired, setPrivacyRequired] = useState(false);
+  useEffect(() => {
+    isPrivacyOptionsRequired().then(setPrivacyRequired).catch(() => setPrivacyRequired(false));
+  }, []);
+  // Literal env reference so Expo inlines it at build time.
+  const policyUrl = process.env.EXPO_PUBLIC_PRIVACY_POLICY_URL;
   const section = (key: string) => (
     <AppText accessibilityRole="header" style={[type.title, { color: colors.text, fontWeight: '700', marginTop: spacing.lg }]}>
       {t(key)}
@@ -52,10 +63,17 @@ export default function Settings() {
       </View>
       <SwitchRow label={t('settings.timer')} hint={t('settings.timerHint')} value={settings.showTimer} onChange={(showTimer) => update({ showTimer })} />
 
+      {section('settings.privacy')}
+      <AppText style={[type.body, { color: colors.textMuted }]}>{t('settings.privacyNote')}</AppText>
+      {privacyRequired && <BigButton variant="secondary" label={t('settings.privacyChoices')} onPress={() => void openPrivacyOptions().catch(() => undefined)} />}
+      {policyUrl ? <BigButton variant="secondary" label={t('settings.privacyPolicy')} onPress={() => void Linking.openURL(policyUrl)} /> : null}
+
       {section('settings.about')}
       <View style={{ minHeight: 64, justifyContent: 'center' }}>
         <AppText style={[type.bodyLarge, { color: colors.textMuted }]}>{t('settings.version', { version: Constants.expoConfig?.version ?? '' })}</AppText>
       </View>
+
+      {__DEV__ && <BigButton variant="secondary" label={t('settings.adDebug')} onPress={() => router.push('/debug-ads')} />}
 
       {section('settings.reset')}
       <AppText style={[type.body, { color: colors.textMuted }]}>{t('settings.resetHint')}</AppText>

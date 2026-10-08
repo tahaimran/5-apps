@@ -29,6 +29,7 @@ import { AppText } from '@/ui/AppText';
 import { formatDay } from '@/ui/format';
 import { Toast } from '@/ui/Toast';
 import { useScreenReader } from '@/ui/useScreenReader';
+import { useAdScreen } from '@/ads/guard';
 import { cellCenter } from '@/domain/selection';
 import { wordCells } from '@/domain/generator';
 import { foundCount } from '@/domain/game';
@@ -73,6 +74,7 @@ function TutorialFinger({ game, cellSize }: { game: SavedGame; cellSize: number 
 export default function Play() {
   const { puzzleId: rawId } = useLocalSearchParams<{ puzzleId: string }>();
   const puzzleId = String(rawId);
+  useAdScreen('play'); // never an ad on this screen (plan §11)
   const { colors, spacing, type, touchTarget } = useTheme();
   const { width } = useWindowDimensions();
   const settings = useSettings((s) => s.settings);

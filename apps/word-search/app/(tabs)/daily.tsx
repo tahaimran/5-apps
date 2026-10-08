@@ -13,7 +13,9 @@ import { useDaily } from '@/store/daily';
 import { useGame } from '@/store/game';
 import { useSettings } from '@/store/settings';
 import { useToday } from '@/store/today';
+import { useAdScreen } from '@/ads/guard';
 import { AppText } from '@/ui/AppText';
+import { BannerSlot } from '@/ui/BannerSlot';
 import { BigButton } from '@/ui/BigButton';
 import { formatDay, formatLongDay } from '@/ui/format';
 import { Screen } from '@/ui/Screen';
@@ -21,6 +23,7 @@ import { Screen } from '@/ui/Screen';
 /** Plan §5.5: today's puzzle, the month, the streak, and past days to catch up on. */
 export default function DailyTab() {
   const { colors, spacing, radius, type, touchTarget } = useTheme();
+  useAdScreen('daily');
   const today = useToday((s) => s.today);
   const daily = useDaily((s) => s.daily);
   const current = useGame((s) => s.current);
@@ -41,7 +44,7 @@ export default function DailyTab() {
     </Pressable>
   );
   return (
-    <Screen>
+    <Screen footer={<BannerSlot placement="packs_banner" />}>
       <AppText accessibilityRole="header" style={[type.headline, { color: colors.text, fontWeight: '700' }]}>{t('daily.title')}</AppText>
       <View style={{ padding: spacing.lg, borderRadius: radius.lg, backgroundColor: colors.surface, borderWidth: 2, borderColor: colors.primary, gap: spacing.sm }}>
         <AppText style={[type.title, { color: colors.text, fontWeight: '700' }]}>{formatLongDay(today)}</AppText>

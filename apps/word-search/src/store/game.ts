@@ -5,6 +5,7 @@ import { parsePuzzleId } from '@/domain/puzzles';
 import { starsFor } from '@/domain/scoring';
 import type { Cell } from '@/domain/selection';
 import type { CompletedResult, Puzzle, SavedGame } from '@/domain/types';
+import { useAds } from './ads';
 import { useDaily } from './daily';
 import { useProgress } from './progress';
 import { useResult } from './result';
@@ -95,6 +96,7 @@ export const useGame = create<GameState>((set, get) => ({
       useProgress.getState().record(parsed.packId, parsed.difficulty, parsed.level, stars);
     }
     useStats.getState().recordPuzzle(game);
+    if (parsed?.kind !== 'tutorial') useAds.getState().recordPuzzle(); // counts toward "every 3 puzzles"
     // Finishing the tutorial ends onboarding (plan §6): from now on the app opens on Home.
     if (parsed?.kind === 'tutorial') db.set('onboarding.tutorialDone', true);
     let streak: number | undefined;

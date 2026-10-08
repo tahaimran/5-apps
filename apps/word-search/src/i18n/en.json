@@ -88,7 +88,12 @@
     "resetContinue": "Continue",
     "resetSureTitle": "Are you sure?",
     "resetSureBody": "This cannot be undone.",
-    "resetConfirm": "Erase everything"
+    "resetConfirm": "Erase everything",
+    "privacy": "Privacy",
+    "privacyNote": "Your progress stays on this phone. There is no account. Ads are served by Google AdMob.",
+    "privacyChoices": "Privacy choices",
+    "privacyPolicy": "Privacy policy",
+    "adDebug": "Ad rules (development builds only)"
   },
   "game": {
     "back": "Back",
@@ -219,5 +224,13 @@
     "wonderful": "Wonderful! You're all set.",
     "next": "Play the next puzzle",
     "finger": "Showing how to slide a finger across the word CAT"
+  },
+  "adDebug": {
+    "title": "Ad rules",
+    "intro": "What each placement would do right now. This screen only exists in development builds.",
+    "allowed": "Allowed",
+    "blocked": "Blocked",
+    "counters": "Counters",
+    "back": "Back"
   }
 }

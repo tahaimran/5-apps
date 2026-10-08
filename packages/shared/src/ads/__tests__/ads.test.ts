@@ -551,3 +551,55 @@ describe('maybeShowAppOpen', () => {
     expect(m.ads.adShownThisSession()).toBe(true);
   });
 });
+
+describe('onFullScreenAdShown', () => {
+  it('reports each full-screen ad that was really shown, by kind, and stops after unsubscribe', async () => {
+    const m = load();
+    await start(m);
+    const seen: string[] = [];
+    const off = m.full.onFullScreenAdShown((kind) => seen.push(kind));
+    loadInterstitial();
+    const a = m.ads.showInterstitial('level_end');
+    await jest.advanceTimersByTimeAsync(0);
+    adsOf('interstitial')[0].emit('closed');
+    await a;
+    adsOf('rewarded')[0].emit('rewarded_loaded');
+    const r = m.ads.showRewarded('hint');
+    await jest.advanceTimersByTimeAsync(0);
+    adsOf('rewarded')[0].emit('closed');
+    await r;
+    adsOf('appOpen')[0].emit('loaded');
+    const o = m.full.maybeShowAppOpen();
+    await jest.advanceTimersByTimeAsync(0);
+    adsOf('appOpen')[0].emit('closed');
+    await o;
+    expect(seen).toEqual(['interstitial', 'rewarded', 'appOpen']);
+    off();
+    adsOf('interstitial')[1].emit('loaded');
+    const again = m.ads.showInterstitial('after_edit');
+    await jest.advanceTimersByTimeAsync(0);
+    adsOf('interstitial').find((x) => x.showCalls === 1 && x !== adsOf('interstitial')[0])!.emit('closed');
+    await again;
+    expect(seen).toHaveLength(3);
+  });
+
+  it('does not report an ad that failed to show, and survives a listener that throws', async () => {
+    const m = load();
+    await start(m);
+    const seen: string[] = [];
+    m.full.onFullScreenAdShown(() => {
+      throw new Error('bad listener');
+    });
+    m.full.onFullScreenAdShown((kind) => seen.push(kind));
+    loadInterstitial();
+    adsOf('interstitial')[0].failShow = true;
+    expect(await m.ads.showInterstitial('level_end')).toBe(false);
+    expect(seen).toEqual([]);
+    loadInterstitial(1);
+    const p = m.ads.showInterstitial('after_edit');
+    await jest.advanceTimersByTimeAsync(0);
+    adsOf('interstitial')[1].emit('closed');
+    expect(await p).toBe(true);
+    expect(seen).toEqual(['interstitial']);
+  });
+});

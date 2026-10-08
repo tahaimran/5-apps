@@ -10,7 +10,9 @@ import { getPack } from '@/domain/packs';
 import type { Difficulty } from '@/domain/types';
 import { trackOf, useProgress } from '@/store/progress';
 import { useSettings } from '@/store/settings';
+import { useAdScreen } from '@/ads/guard';
 import { AppText } from '@/ui/AppText';
+import { BannerSlot } from '@/ui/BannerSlot';
 import { BigButton } from '@/ui/BigButton';
 import { StarRow } from '@/ui/StarRow';
 
@@ -20,6 +22,7 @@ const DIFFICULTIES: Difficulty[] = ['easy', 'medium', 'hard'];
 export default function PackScreen() {
   const { packId } = useLocalSearchParams<{ packId: string }>();
   const pack = getPack(String(packId));
+  useAdScreen('packs');
   const { colors, spacing, radius, type, touchTarget } = useTheme();
   const difficulty = useSettings((s) => s.settings.difficulty);
   const update = useSettings((s) => s.update);
@@ -103,6 +106,7 @@ export default function PackScreen() {
           );
         }}
       />
+      <BannerSlot placement="packs_banner" />
     </SafeAreaView>
   );
 }

@@ -7,7 +7,7 @@ import { useProgress } from '@/store/progress';
 import { useResult } from '@/store/result';
 import { useStats } from '@/store/stats';
 
-/** Erases levels, stars, streaks, hints, stats and the puzzle in progress. Settings and onboarding stay. */
+/** Erases levels, stars, streaks, hints, stats and the puzzle in progress. Settings, onboarding and the ad frequency counters stay. */
 export function resetProgress(): void {
   useGame.getState().discard();
   useProgress.getState().reset();
