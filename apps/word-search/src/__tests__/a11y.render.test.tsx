@@ -16,6 +16,12 @@ import Daily from '../../app/(tabs)/daily';
 import SettingsTab from '../../app/(tabs)/settings';
 import TabsLayout from '../../app/(tabs)/_layout';
 import Play from '../../app/play/[puzzleId]';
+import Complete from '../../app/complete/[puzzleId]';
+import PackScreen from '../../app/packs/[packId]';
+import { useGame } from '@/store/game';
+import { useResult } from '@/store/result';
+import { useProgress } from '@/store/progress';
+import { levelPuzzle } from '@/domain/puzzles';
 import { useSettings } from '@/store/settings';
 import { fontScaleFor, palette, TEXT_SIZES, TOUCH_TARGET } from '@/theme/tokens';
 
@@ -23,7 +29,11 @@ const themed = (el: ReactElement, scale: number) => <ThemeProvider palette={pale
 
 beforeEach(() => {
   resetApp();
-  mockParams.current = { puzzleId: 'animals:easy:1' };
+  mockParams.current = { puzzleId: 'animals:easy:1', packId: 'animals' };
+  useResult.getState().set({ puzzleId: 'animals:easy:3', packId: 'animals', difficulty: 'easy', level: 3, isDaily: false, isTutorial: false, stars: 2, wordsFound: 7, elapsedMs: 5000, hintsUsed: 1 });
+  useProgress.getState().record('animals', 'easy', 1, 3);
+  useProgress.getState().record('animals', 'easy', 2, 2);
+  useGame.getState().begin(levelPuzzle('birds', 'easy', 1, 8)); // Home shows the Continue card
 });
 afterEach(async () => {
   await cleanup();
@@ -36,6 +46,8 @@ const screens: [string, () => ReactElement, boolean][] = [
   ['Settings', () => <SettingsTab />, false],
   ['Tabs', () => <TabsLayout />, false],
   ['Play', () => <Play />, true],
+  ['Complete', () => <Complete />, true],
+  ['Pack levels', () => <PackScreen />, true],
 ];
 
 describe.each([1.3, 2])('font scale %s', (scale) => {

@@ -1,0 +1,60 @@
+import { Redirect, router } from 'expo-router';
+import { View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { t } from '@shared/i18n';
+import { useTheme } from '@shared/theme';
+import { replaceWithPuzzle } from '@/features/play/navigation';
+import { levelPuzzleId } from '@/domain/puzzles';
+import { getPack } from '@/domain/packs';
+import type { CompletedResult } from '@/domain/types';
+import { useResult } from '@/store/result';
+import { useSettings } from '@/store/settings';
+import { AppText } from '@/ui/AppText';
+import { BigButton } from '@/ui/BigButton';
+import { StarRow } from '@/ui/StarRow';
+
+/** `m:ss` for the optional timer. */
+export const formatElapsed = (ms: number): string => {
+  const total = Math.max(0, Math.round(ms / 1000));
+  return `${Math.floor(total / 60)}:${String(total % 60).padStart(2, '0')}`;
+};
+
+/** Where "Next puzzle" goes: the next level of the pack at the same difficulty. */
+export const nextPuzzleId = (r: CompletedResult): string | null =>
+  r.level !== undefined ? levelPuzzleId(r.packId, r.difficulty, r.level + 1) : null;
+
+/** Plan §5.4: "Well done!", stars, words found, and the next step. A modal, so Back returns to where the puzzle was started. */
+export default function Complete() {
+  const result = useResult((s) => s.last);
+  const showTimer = useSettings((s) => s.settings.showTimer);
+  const { colors, spacing, type } = useTheme();
+  if (!result) return <Redirect href="/(tabs)" />;
+  const next = nextPuzzleId(result);
+  const pack = getPack(result.packId)?.name ?? '';
+  const leave = () => router.replace('/(tabs)');
+  return (
+    <SafeAreaView style={{ flex: 1, backgroundColor: colors.background, padding: spacing.lg, justifyContent: 'center' }}>
+      <View style={{ alignItems: 'center', gap: spacing.lg }}>
+        <AppText accessibilityRole="header" style={[type.display, { color: colors.text, fontWeight: '700', textAlign: 'center' }]}>
+          {t('complete.title')}
+        </AppText>
+        <StarRow stars={result.stars} size={48} />
+        <AppText style={[type.bodyLarge, { color: colors.textMuted, textAlign: 'center' }]}>
+          {t('complete.words', { count: result.wordsFound })}
+          {result.level !== undefined ? ` · ${t('game.title', { pack, level: result.level })}` : ''}
+        </AppText>
+        {showTimer && <AppText style={[type.body, { color: colors.textMuted }]}>{t('complete.time', { time: formatElapsed(result.elapsedMs) })}</AppText>}
+      </View>
+      <View style={{ gap: spacing.md, marginTop: spacing.xl * 2 }}>
+        {next ? (
+          <>
+            <BigButton tall label={t('complete.next')} onPress={() => replaceWithPuzzle(next)} />
+            <BigButton variant="secondary" label={t('complete.backToPacks')} onPress={leave} />
+          </>
+        ) : (
+          <BigButton tall label={t('complete.home')} onPress={leave} />
+        )}
+      </View>
+    </SafeAreaView>
+  );
+}

@@ -8,6 +8,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { AtkinsonHyperlegible_400Regular, AtkinsonHyperlegible_700Bold } from '@expo-google-fonts/atkinson-hyperlegible';
 import { ThemeProvider, useTheme } from '@shared/theme';
 import { useSettings } from '@/store/settings';
+import { useStats } from '@/store/stats';
 import { fontScaleFor, palette, TOUCH_TARGET } from '@/theme/tokens';
 import { FONT_BOLD, FONT_REGULAR } from '@/ui/AppText';
 import '@/bootstrap';
@@ -16,10 +17,13 @@ void SplashScreen.preventAutoHideAsync().catch(() => undefined);
 
 function Root() {
   const { mode, colors } = useTheme();
+  useEffect(() => useStats.getState().recordSession(), []);
   return (
     <>
       <StatusBar style={mode === 'light' ? 'dark' : 'light'} />
-      <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: colors.background } }} />
+      <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: colors.background } }}>
+        <Stack.Screen name="complete/[puzzleId]" options={{ presentation: 'modal', gestureEnabled: false }} />
+      </Stack>
     </>
   );
 }

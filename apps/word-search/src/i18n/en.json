@@ -11,7 +11,16 @@
     "comingSoon": "This screen is coming soon."
   },
   "home": {
-    "title": "Welcome to Word Search"
+    "title": "Welcome to Word Search",
+    "greeting": {
+      "morning": "Good morning",
+      "afternoon": "Good afternoon",
+      "evening": "Good evening"
+    },
+    "continue": "Continue",
+    "progress": "{found} of {total} words found",
+    "packs": "Word packs",
+    "packLabel": "{name}, Level {level}"
   },
   "daily": {
     "title": "Daily puzzle"
@@ -36,5 +45,41 @@
     "foundAnnounce_one": "Found {word}. {count} word left.",
     "foundAnnounce_other": "Found {word}. {count} words left.",
     "gridLabel": "Letter grid, {size} by {size}"
+  },
+  "difficulty": {
+    "easy": "Easy",
+    "medium": "Medium",
+    "hard": "Hard"
+  },
+  "stars": {
+    "label_one": "{count} star out of 3",
+    "label_other": "{count} stars out of 3"
+  },
+  "packs": {
+    "level": "Level {level}",
+    "play": "Play",
+    "playHint": "Starts level {level}",
+    "nextUp": "Next up",
+    "nextUpLabel": "Level {level}, next up",
+    "replayLabel_one": "Level {level}, {count} star, play again",
+    "replayLabel_other": "Level {level}, {count} stars, play again",
+    "errorTitle": "Pack unavailable",
+    "error": "This pack couldn't open. Please try another pack.",
+    "backToPacks": "Back to packs"
+  },
+  "complete": {
+    "title": "Well done!",
+    "words_one": "{count} word found",
+    "words_other": "{count} words found",
+    "time": "Time: {time}",
+    "next": "Next puzzle",
+    "backToPacks": "Back to packs",
+    "home": "Back to home"
+  },
+  "resume": {
+    "title": "Start a new puzzle?",
+    "body": "You have a puzzle in progress. Starting a new one will replace it.",
+    "keep": "Keep playing",
+    "startNew": "Start new"
   }
 }
