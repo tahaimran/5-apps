@@ -25,6 +25,7 @@ export const defaultSettings: Settings = {
   rule: RULE_PRESETS['511'],
   patternAlerts: true,
   partnerMode: false,
+  units: 'metric',
   haptics: true,
   clock24h: false,
   kickTarget: KICK_TARGET_LIMITS.default,

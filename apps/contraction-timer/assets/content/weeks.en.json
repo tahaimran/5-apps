@@ -1,0 +1,529 @@
+[
+ {
+  "week": 4,
+  "size": "poppy seed",
+  "lengthCm": 0.1,
+  "weightG": 0,
+  "measure": "crown-rump",
+  "bullets": [
+   "Many people have not realised they are pregnant yet.",
+   "A tiny ball of cells is settling into the lining of the womb.",
+   "Hormone levels are rising, and a home test may start to show a result."
+  ],
+  "askProvider": "Ask when to book your first appointment and who to contact with questions."
+ },
+ {
+  "week": 5,
+  "size": "sesame seed",
+  "lengthCm": 0.3,
+  "weightG": 0,
+  "measure": "crown-rump",
+  "bullets": [
+   "The first layers of your baby's body are forming.",
+   "A very early heart and the beginnings of the brain and spine are taking shape.",
+   "Tiredness and sore breasts are common for many people."
+  ],
+  "askProvider": "Ask which supplements, medicines and foods are fine to keep taking or to avoid."
+ },
+ {
+  "week": 6,
+  "size": "lentil",
+  "lengthCm": 0.6,
+  "weightG": 0,
+  "measure": "crown-rump",
+  "bullets": [
+   "A heartbeat may be seen on an early scan around now.",
+   "Queasiness, a keen sense of smell and tiredness are common for many people.",
+   "Your baby is growing quickly, even though you may not look pregnant yet."
+  ],
+  "askProvider": "Ask what to do if the queasiness makes it hard to eat or drink."
+ },
+ {
+  "week": 7,
+  "size": "blueberry",
+  "lengthCm": 1.3,
+  "weightG": 0,
+  "measure": "crown-rump",
+  "bullets": [
+   "Tiny buds that will become arms and legs are appearing.",
+   "Your baby's face is starting to form.",
+   "Many people feel tired, queasy or emotional. This is very common."
+  ],
+  "askProvider": "Ask what appointments and tests to expect over the next few weeks."
+ },
+ {
+  "week": 8,
+  "size": "raspberry",
+  "lengthCm": 1.6,
+  "weightG": 1,
+  "measure": "crown-rump",
+  "bullets": [
+   "Fingers and toes are starting to form.",
+   "Your baby is already making small movements, far too small to feel.",
+   "Many people need more rest. Short naps can help."
+  ],
+  "askProvider": "Ask which scans and checks are offered, and roughly when."
+ },
+ {
+  "week": 9,
+  "size": "cherry",
+  "lengthCm": 2.3,
+  "weightG": 2,
+  "measure": "crown-rump",
+  "bullets": [
+   "Your baby's major organs are developing.",
+   "Tiny ears and eyelids are forming.",
+   "Mood changes are common, and so is feeling worn out."
+  ],
+  "askProvider": "Ask what you can do about symptoms that bother you, such as heartburn or headaches.",
+  "emoji": "🍒"
+ },
+ {
+  "week": 10,
+  "size": "strawberry",
+  "lengthCm": 3.1,
+  "weightG": 4,
+  "measure": "crown-rump",
+  "bullets": [
+   "Your baby's vital organs are in place and carry on growing.",
+   "Little hands can bend at the wrists.",
+   "Many people notice their waist and clothes feeling different."
+  ],
+  "askProvider": "Ask what to do if you have bleeding, strong pain or anything that worries you.",
+  "emoji": "🍓"
+ },
+ {
+  "week": 11,
+  "size": "fig",
+  "lengthCm": 4.1,
+  "weightG": 7,
+  "measure": "crown-rump",
+  "bullets": [
+   "Your baby is moving about, still too small for you to feel.",
+   "Fingernails and tiny tooth buds are forming.",
+   "You may notice more energy soon, though everyone is different."
+  ],
+  "askProvider": "Ask about the screening tests that are offered and what each one looks for."
+ },
+ {
+  "week": 12,
+  "size": "lime",
+  "lengthCm": 5.4,
+  "weightG": 14,
+  "measure": "crown-rump",
+  "bullets": [
+   "Your baby's reflexes are developing.",
+   "Their kidneys are starting to work.",
+   "The first three months are almost over, and many people feel a little better."
+  ],
+  "askProvider": "Ask when to expect your results and who will share them with you."
+ },
+ {
+  "week": 13,
+  "size": "lemon",
+  "lengthCm": 7.4,
+  "weightG": 23,
+  "measure": "crown-rump",
+  "bullets": [
+   "Your baby can curl their fingers and may suck a thumb.",
+   "Their body is catching up with their head in size.",
+   "Many people notice more energy as the second trimester begins."
+  ],
+  "askProvider": "Ask whether there is anything to change in your work, exercise or travel plans.",
+  "emoji": "🍋"
+ },
+ {
+  "week": 14,
+  "size": "peach",
+  "lengthCm": 8.7,
+  "weightG": 43,
+  "measure": "crown-rump",
+  "bullets": [
+   "Your baby can make small facial movements.",
+   "Fine hair, called lanugo, is starting to grow.",
+   "Appetite often returns, and queasiness often eases."
+  ],
+  "askProvider": "Ask what a healthy amount of weight gain is for you.",
+  "emoji": "🍑"
+ },
+ {
+  "week": 15,
+  "size": "apple",
+  "lengthCm": 10.1,
+  "weightG": 70,
+  "measure": "crown-rump",
+  "bullets": [
+   "Your baby's bones are getting harder.",
+   "Your baby may be able to sense light through closed eyelids.",
+   "You might notice a nosebleed or stuffy nose. Hormones can cause both."
+  ],
+  "askProvider": "Ask which routine checks, such as blood pressure and urine tests, will happen at each visit.",
+  "emoji": "🍎"
+ },
+ {
+  "week": 16,
+  "size": "avocado",
+  "lengthCm": 11.6,
+  "weightG": 100,
+  "measure": "crown-rump",
+  "bullets": [
+   "Your baby's legs are growing longer than their arms.",
+   "Some people feel the first flutters now or in the next few weeks, a feeling often called quickening.",
+   "Back aches and round-ligament twinges are common as your womb grows."
+  ],
+  "askProvider": "Ask when your detailed scan is, and what it checks.",
+  "emoji": "🥑"
+ },
+ {
+  "week": 17,
+  "size": "pear",
+  "lengthCm": 13,
+  "weightG": 140,
+  "measure": "crown-rump",
+  "bullets": [
+   "Your baby is building a layer of fat under the skin.",
+   "Their skeleton is changing from soft cartilage to bone.",
+   "Your appetite may be bigger than before."
+  ],
+  "askProvider": "Ask which exercises are comfortable and safe for you.",
+  "emoji": "🍐"
+ },
+ {
+  "week": 18,
+  "size": "bell pepper",
+  "lengthCm": 14.2,
+  "weightG": 190,
+  "measure": "crown-rump",
+  "bullets": [
+   "Your baby may yawn and hiccup. You cannot feel hiccups yet.",
+   "Their ears are in position and starting to pick up sounds.",
+   "Dizziness when standing up quickly is common. Rising slowly helps."
+  ],
+  "askProvider": "Ask what to do if you feel dizzy, faint or very breathless."
+ },
+ {
+  "week": 19,
+  "size": "mango",
+  "lengthCm": 15.3,
+  "weightG": 240,
+  "measure": "crown-rump",
+  "bullets": [
+   "A protective coating called vernix is covering your baby's skin.",
+   "Their senses of touch, taste, sight and hearing are developing.",
+   "Leg cramps are common at night for many people."
+  ],
+  "askProvider": "Ask about your anatomy scan, and whether you can bring someone with you.",
+  "emoji": "🥭"
+ },
+ {
+  "week": 20,
+  "size": "banana",
+  "lengthCm": 25.6,
+  "weightG": 300,
+  "measure": "head-to-heel",
+  "bullets": [
+   "You are about halfway there.",
+   "From now, length is measured from head to heel, so the number jumps.",
+   "Many people feel movement more clearly each week."
+  ],
+  "askProvider": "Ask how to tell your baby's usual pattern of movement as it develops.",
+  "emoji": "🍌"
+ },
+ {
+  "week": 21,
+  "size": "carrot",
+  "lengthCm": 26.7,
+  "weightG": 360,
+  "measure": "head-to-heel",
+  "bullets": [
+   "Your baby moves a lot, and you may feel it as kicks, rolls or flutters.",
+   "They swallow small amounts of fluid and practise digesting.",
+   "Your skin, hair and nails may change a little."
+  ],
+  "askProvider": "Ask which kinds of pain or tightening are normal at this stage.",
+  "emoji": "🥕"
+ },
+ {
+  "week": 22,
+  "size": "papaya",
+  "lengthCm": 27.8,
+  "weightG": 430,
+  "measure": "head-to-heel",
+  "bullets": [
+   "Your baby's eyebrows and eyelids are fully formed.",
+   "They can hear your voice and other sounds, though muffled.",
+   "Swollen feet and ankles are common by the end of the day."
+  ],
+  "askProvider": "Ask when swelling is something to mention straight away."
+ },
+ {
+  "week": 23,
+  "size": "grapefruit",
+  "lengthCm": 28.9,
+  "weightG": 500,
+  "measure": "head-to-heel",
+  "bullets": [
+   "Your baby's skin is wrinkled and will fill out as they gain fat.",
+   "They respond to loud noises and may move when startled.",
+   "Some people have occasional practice tightenings of the womb."
+  ],
+  "askProvider": "Ask how to tell practice tightenings from something you should report."
+ },
+ {
+  "week": 24,
+  "size": "ear of corn",
+  "lengthCm": 30,
+  "weightG": 600,
+  "measure": "head-to-heel",
+  "bullets": [
+   "Your baby's lungs are developing the branches that will carry air.",
+   "Their sleep and wake times are becoming more regular.",
+   "Itchy skin and stretch marks are common."
+  ],
+  "askProvider": "Ask whether you will be offered a test for gestational diabetes, and when.",
+  "emoji": "🌽"
+ },
+ {
+  "week": 25,
+  "size": "cauliflower",
+  "lengthCm": 34.6,
+  "weightG": 660,
+  "measure": "head-to-heel",
+  "bullets": [
+   "Your baby's hands are developed enough to grasp.",
+   "Their hair is growing and may have colour.",
+   "Heartburn and trouble sleeping are common for many people."
+  ],
+  "askProvider": "Ask what helps with sleep and heartburn in pregnancy."
+ },
+ {
+  "week": 26,
+  "size": "head of lettuce",
+  "lengthCm": 35.6,
+  "weightG": 760,
+  "measure": "head-to-heel",
+  "bullets": [
+   "Your baby's eyes begin to open.",
+   "They are practising breathing movements with amniotic fluid.",
+   "Your back may ache more as your bump grows."
+  ],
+  "askProvider": "Ask about the vaccines offered in pregnancy and when.",
+  "emoji": "🥬"
+ },
+ {
+  "week": 27,
+  "size": "head of broccoli",
+  "lengthCm": 36.6,
+  "weightG": 875,
+  "measure": "head-to-heel",
+  "bullets": [
+   "Your baby is moving through regular cycles of sleep and activity.",
+   "Their brain is growing quickly.",
+   "Many people feel more tired again as the third trimester nears."
+  ],
+  "askProvider": "Ask how you will be asked to keep track of your baby's movements."
+ },
+ {
+  "week": 28,
+  "size": "eggplant",
+  "lengthCm": 37.6,
+  "weightG": 1005,
+  "measure": "head-to-heel",
+  "bullets": [
+   "The third trimester begins.",
+   "Your baby can blink and respond to light.",
+   "Your provider may ask you to keep track of your baby's movements. This app has a kick counter for that."
+  ],
+  "askProvider": "Ask how many movements, over what time, your provider wants you to watch for, and who to call if they feel different."
+ },
+ {
+  "week": 29,
+  "size": "butternut squash",
+  "lengthCm": 38.6,
+  "weightG": 1153,
+  "measure": "head-to-heel",
+  "bullets": [
+   "Your baby's muscles and lungs keep maturing.",
+   "They have less room to move, so movements may feel different.",
+   "Heartburn, breathlessness and a sore back are common."
+  ],
+  "askProvider": "Ask what a usual pattern of movement means for you and when to call."
+ },
+ {
+  "week": 30,
+  "size": "cabbage",
+  "lengthCm": 39.9,
+  "weightG": 1319,
+  "measure": "head-to-heel",
+  "bullets": [
+   "Your baby's brain is making many new connections.",
+   "They are gaining weight steadily.",
+   "You may feel clumsy or get tired more easily. Rest when you can."
+  ],
+  "askProvider": "Ask what to do if your waters break, and what to do if you have bleeding."
+ },
+ {
+  "week": 31,
+  "size": "coconut",
+  "lengthCm": 41.1,
+  "weightG": 1502,
+  "measure": "head-to-heel",
+  "bullets": [
+   "Your baby can turn their head from side to side.",
+   "Their senses are working well.",
+   "Many people need the toilet more often as the baby presses on the bladder."
+  ],
+  "askProvider": "Ask which signs mean you should call, and which number to use day or night.",
+  "emoji": "🥥"
+ },
+ {
+  "week": 32,
+  "size": "squash",
+  "lengthCm": 42.4,
+  "weightG": 1702,
+  "measure": "head-to-heel",
+  "bullets": [
+   "Your baby's toenails and fingernails are fully formed.",
+   "They practise breathing and may have hiccups you can feel.",
+   "Braxton Hicks practice tightenings may become more noticeable."
+  ],
+  "askProvider": "Ask how to tell practice tightenings from the real thing."
+ },
+ {
+  "week": 33,
+  "size": "pineapple",
+  "lengthCm": 43.7,
+  "weightG": 1918,
+  "measure": "head-to-heel",
+  "bullets": [
+   "Your baby's bones are hardening, except the skull, which stays soft for birth.",
+   "Their immune system is developing.",
+   "Sleep can be hard. Pillows between the knees help many people."
+  ],
+  "askProvider": "Ask what your birth plan options are, and who to share your plan with.",
+  "emoji": "🍍"
+ },
+ {
+  "week": 34,
+  "size": "cantaloupe",
+  "lengthCm": 45,
+  "weightG": 2146,
+  "measure": "head-to-heel",
+  "bullets": [
+   "Your baby's lungs and nervous system keep maturing.",
+   "Many babies settle into a head-down position around now or in the next weeks.",
+   "It can be a good time to start packing a hospital bag."
+  ],
+  "askProvider": "Ask what pattern of contractions, such as 5-1-1, your provider wants you to watch for before calling, and the number to call.",
+  "emoji": "🍈"
+ },
+ {
+  "week": 35,
+  "size": "honeydew melon",
+  "lengthCm": 46.2,
+  "weightG": 2383,
+  "measure": "head-to-heel",
+  "bullets": [
+   "Your baby is putting on weight quickly and has less room to move.",
+   "Their kidneys are working and their liver is developing.",
+   "You may feel pressure low in your pelvis and need to pass urine often."
+  ],
+  "askProvider": "Ask when and where you should go if you think labor might be starting.",
+  "emoji": "🍈"
+ },
+ {
+  "week": 36,
+  "size": "head of romaine lettuce",
+  "lengthCm": 47.4,
+  "weightG": 2622,
+  "measure": "head-to-heel",
+  "bullets": [
+   "Your baby may be getting into position for birth.",
+   "Your appointments may now be more frequent.",
+   "Many people feel tired and impatient. This is normal."
+  ],
+  "askProvider": "Ask what to bring, and whether your partner can come to appointments and the birth.",
+  "emoji": "🥬"
+ },
+ {
+  "week": 37,
+  "size": "bunch of Swiss chard",
+  "lengthCm": 48.6,
+  "weightG": 2859,
+  "measure": "head-to-heel",
+  "bullets": [
+   "Many babies are born between now and 42 weeks.",
+   "Your baby can grasp firmly and practises sucking.",
+   "Practice tightenings may get stronger and more frequent."
+  ],
+  "askProvider": "Ask what your provider wants you to do if your baby moves less than usual."
+ },
+ {
+  "week": 38,
+  "size": "leek",
+  "lengthCm": 49.8,
+  "weightG": 3083,
+  "measure": "head-to-heel",
+  "bullets": [
+   "Your baby's organs are ready for life outside, and they keep growing.",
+   "They may drop lower into your pelvis.",
+   "Many people feel excited, nervous and ready for it to be over all at once."
+  ],
+  "askProvider": "Ask who to call first when contractions start, and when to leave for the hospital or birth center."
+ },
+ {
+  "week": 39,
+  "size": "mini watermelon",
+  "lengthCm": 50.7,
+  "weightG": 3288,
+  "measure": "head-to-heel",
+  "bullets": [
+   "Your baby's brain and lungs are still developing.",
+   "The practice tightenings may feel different from earlier ones.",
+   "Rest, eat well and keep your bag and phone numbers ready."
+  ],
+  "askProvider": "Ask what happens if your baby has not arrived by your due date."
+ },
+ {
+  "week": 40,
+  "size": "small pumpkin",
+  "lengthCm": 51.2,
+  "weightG": 3462,
+  "measure": "head-to-heel",
+  "bullets": [
+   "This is your estimated due date week. Only a few babies arrive on the day itself.",
+   "Your baby is about the size they will be at birth, give or take.",
+   "Your provider will talk with you about what to expect from here."
+  ],
+  "askProvider": "Ask when you will be seen next and what the plan is if you go past your due date.",
+  "emoji": "🎃"
+ },
+ {
+  "week": 41,
+  "size": "watermelon",
+  "lengthCm": 51.7,
+  "weightG": 3597,
+  "measure": "head-to-heel",
+  "bullets": [
+   "Many people go past their due date. It is common, especially with a first baby.",
+   "Your provider may offer extra checks and talk about next steps.",
+   "Keep resting, and keep tracking your baby's movements."
+  ],
+  "askProvider": "Ask what extra checks are offered, and what the options are if labor does not start by itself.",
+  "emoji": "🍉"
+ },
+ {
+  "week": 42,
+  "size": "watermelon",
+  "lengthCm": 52,
+  "weightG": 3700,
+  "measure": "head-to-heel",
+  "bullets": [
+   "Past your due date, your provider will guide next steps.",
+   "You may be seen more often, with extra checks.",
+   "Contact your provider any time you feel unsure or worried."
+  ],
+  "askProvider": "Ask what the plan is for the next few days, and who to call at any hour.",
+  "emoji": "🍉"
+ }
+]

@@ -1,0 +1,172 @@
+{
+ "hospitalBag": [
+  {
+   "group": "mom",
+   "items": [
+    "Photo ID and insurance or health card",
+    "Your birth plan and provider's phone numbers",
+    "Comfortable loose clothes to go home in",
+    "Nightgown or a big T-shirt",
+    "Warm socks and slippers",
+    "Toiletries, lip balm and hair ties",
+    "Maternity pads and comfortable underwear",
+    "Nursing bra or comfortable top",
+    "Phone charger with a long cable",
+    "Snacks and a water bottle",
+    "Pillow from home"
+   ]
+  },
+  {
+   "group": "partner",
+   "items": [
+    "Photo ID and any papers you need",
+    "Change of clothes and something to sleep in",
+    "Toiletries",
+    "Phone charger",
+    "Snacks and drinks",
+    "Cash or a card for parking and food",
+    "Camera or phone for photos",
+    "Car seat installed and checked"
+   ]
+  },
+  {
+   "group": "baby",
+   "items": [
+    "Going-home outfit (a couple of sizes)",
+    "Soft blanket",
+    "Hat",
+    "Newborn nappies/diapers and wipes",
+    "Approved car seat",
+    "Muslin cloths or burp cloths"
+   ]
+  }
+ ],
+ "birthPlan": [
+  {
+   "group": "support",
+   "items": [
+    "Who I would like with me",
+    "Who I would like to make decisions with me if plans change",
+    "Whether I want visitors in the first hours"
+   ]
+  },
+  {
+   "group": "environment",
+   "items": [
+    "Lighting: dim, or as it is",
+    "Music or quiet",
+    "Moving around, a ball, a bath or shower if offered",
+    "Positions I would like to try"
+   ]
+  },
+  {
+   "group": "pain",
+   "items": [
+    "Pain relief I would like to try first",
+    "Pain relief I would rather not be offered",
+    "Questions to ask about each option"
+   ]
+  },
+  {
+   "group": "birth",
+   "items": [
+    "Who I would like to cut the cord, if offered",
+    "Cord clamping: ask about the options",
+    "Being told what is happening before it is done",
+    "What I would like if a caesarean (C-section) is needed"
+   ]
+  },
+  {
+   "group": "after",
+   "items": [
+    "Skin-to-skin contact straight after birth, if all is well",
+    "How I plan to feed my baby, and who to ask for help",
+    "Rooming in with my baby",
+    "Photos, and who to tell first"
+   ]
+  }
+ ],
+ "templates": [
+  {
+   "id": "csection",
+   "checklist": "hospitalBag",
+   "groups": [
+    {
+     "group": "mom",
+     "items": [
+      "High-waisted underwear that clears a scar",
+      "Loose dress or pyjamas that do not rub the wound",
+      "Extra pads",
+      "Long phone charger cable",
+      "Lip balm and a small pillow to hold against your tummy"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "nicu",
+   "checklist": "hospitalBag",
+   "groups": [
+    {
+     "group": "mom",
+     "items": [
+      "Breast pump and bottles, if you plan to pump",
+      "Comfortable front-opening tops",
+      "Notebook for questions and names of staff",
+      "Headphones and a book"
+     ]
+    },
+    {
+     "group": "partner",
+     "items": [
+      "Photo of your baby for your wallet or phone",
+      "Change for parking and coffee",
+      "A list of people to update"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "twins",
+   "checklist": "hospitalBag",
+   "groups": [
+    {
+     "group": "baby",
+     "items": [
+      "Two going-home outfits",
+      "Two car seats",
+      "Extra nappies/diapers and wipes",
+      "Two hats and two blankets"
+     ]
+    },
+    {
+     "group": "partner",
+     "items": [
+      "Extra snacks and a longer stay's clothes"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "birthCenter",
+   "checklist": "birthPlan",
+   "groups": [
+    {
+     "group": "environment",
+     "items": [
+      "What the birth center provides and what to bring",
+      "Birth pool, if available: what I would like",
+      "Which room I will be in and who will be with me"
+     ]
+    },
+    {
+     "group": "birth",
+     "items": [
+      "When we would be moved to hospital, and how",
+      "The person I will call first when labor starts"
+     ]
+    }
+   ]
+  }
+ ]
+}

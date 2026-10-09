@@ -169,8 +169,8 @@ export function summaryFacts(input: SummaryInput, tr: Translate = defaultT): Sum
 /** How many recent contractions the text version lists (the PDF lists them all). */
 export const TEXT_ROW_LIMIT = 30;
 
-/** Plan §11: the plain-text summary (`buildTextSummary(session, profile)`). */
-export function buildTextSummary(input: SummaryInput, tr: Translate = defaultT): string {
+/** Plan §11: the plain-text summary (`buildTextSummary(session, profile)`). `extra` (the birth plan, plan F14) goes before the footer. */
+export function buildTextSummary(input: SummaryInput, tr: Translate = defaultT, extra?: string): string {
   const f = summaryFacts(input, tr);
   const lines: string[] = [f.title];
   if (f.pregnancy) lines.push(f.pregnancy);
@@ -186,6 +186,7 @@ export function buildTextSummary(input: SummaryInput, tr: Translate = defaultT):
     lines.push('', tr('summary.notesHeader'));
     for (const n of f.notes) lines.push(`  ${n.time} · ${n.note}`);
   }
+  if (extra) lines.push('', extra);
   lines.push('', f.footer);
   return lines.join('\n');
 }

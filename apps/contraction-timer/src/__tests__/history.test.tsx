@@ -7,6 +7,7 @@ import { ThemeProvider } from '@shared/theme';
 import '@/bootstrap';
 import { RULE_PRESETS } from '@/domain/defaults';
 import { cleanPdfCache, PDF_KEEP_MS, rememberPdf } from '@/export/pdfCache';
+import { useChecklists } from '@/store/checklists';
 import { useProfile } from '@/store/profile';
 import { useSessions } from '@/store/sessions';
 import { useSettings } from '@/store/settings';
@@ -260,6 +261,24 @@ describe('Share summary (plan F8, F9)', () => {
     await ui.press('Share as PDF');
     expect(ui.texts()).toContain('Sharing files is not available on this phone. You can still share the text.');
     expect(ui.byLabel('Share as text')).toHaveLength(1);
+  });
+
+  it('adds the birth plan to the text, before the footer, only when asked and only when something is ticked (plan F14)', async () => {
+    const share = jest.spyOn(Share, 'share').mockResolvedValue({ action: 'sharedAction' });
+    let ui = await render(wrap(<ShareSummary />));
+    expect(ui.byLabel('Include my birth plan in the text')).toHaveLength(0);
+    await cleanup();
+    const plan = useChecklists.getState().ensure('birthPlan');
+    useChecklists.getState().toggle('birthPlan', plan.items[0].id);
+    ui = await render(wrap(<ShareSummary />));
+    await ui.press('Share as text');
+    expect(share.mock.calls[0][0].message).not.toContain('My birth plan');
+    const toggle = ui.root.findAll((n) => n.props.accessibilityLabel === 'Include my birth plan in the text' && typeof n.props.onValueChange === 'function')[0];
+    await act(async () => toggle.props.onValueChange(true));
+    await ui.press('Share as text');
+    const message = share.mock.calls[1][0].message!;
+    expect(message).toContain('My birth plan');
+    expect(message.indexOf('My birth plan')).toBeLessThan(message.indexOf('Recorded with Contraction Timer.'));
   });
 
   it('works for a session that is still open (the hour is up to now)', async () => {

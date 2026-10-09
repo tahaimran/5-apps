@@ -85,6 +85,8 @@ export interface Settings {
   rule: PatternRule;
   patternAlerts: boolean;
   partnerMode: boolean;
+  /** Sizes in the week cards: centimetres and grams, or inches and pounds. Starts from the phone's region. */
+  units: 'metric' | 'imperial';
   haptics: boolean;
   clock24h: boolean;
   kickTarget: number;

@@ -9,6 +9,7 @@ import { useAdGuard } from '@/ads/guard';
 import { useSessionMaintenance } from '@/features/timer/maintenance';
 import { cleanPdfCache } from '@/export/pdfCache';
 import { useKickReminderSync } from '@/notifications/kickReminder';
+import { useWeeklyCardSync } from '@/notifications/weekly';
 import { useNotificationResponses } from '@/notifications/responses';
 import { installSessionNotifier } from '@/notifications/sessionOpen';
 import { useMeta } from '@/store/meta';
@@ -22,6 +23,7 @@ function Root() {
   useAdGuard();
   useSessionMaintenance();
   useKickReminderSync();
+  useWeeklyCardSync();
   useNotificationResponses();
   useEffect(() => installSessionNotifier(), []);
   useEffect(() => {

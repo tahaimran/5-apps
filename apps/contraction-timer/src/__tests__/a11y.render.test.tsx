@@ -22,6 +22,12 @@ import ShareSummary from '../../app/modals/share-summary';
 import KickHistory from '../../app/(tabs)/kicks/history';
 import { KickReminderSheet } from '@/components/KickReminderSheet';
 import { useKicks } from '@/store/kicks';
+import DueDate from '../../app/(tabs)/pregnancy/due-date';
+import Week from '../../app/(tabs)/pregnancy/week/[n]';
+import HospitalBag from '../../app/(tabs)/pregnancy/hospital-bag';
+import BirthPlan from '../../app/(tabs)/pregnancy/birth-plan';
+import { useProfile } from '@/store/profile';
+import { useChecklists } from '@/store/checklists';
 import { RowEditor } from '@/features/history/RowEditor';
 import { useSessions } from '@/store/sessions';
 
@@ -34,6 +40,7 @@ const themed = (el: ReactElement, scale: number) => (
 beforeEach(() => {
   resetApp();
   useKicks.setState({ active: null, history: [] });
+  useChecklists.setState({ lists: {} });
 });
 afterEach(async () => {
   await cleanup();
@@ -54,6 +61,11 @@ const screens: [string, () => ReactElement, (() => void) | null][] = [
   ['Kick history', () => <KickHistory />, () => { useKicks.getState().start(Date.now() - 900_000); for (let i = 1; i <= 10; i++) useKicks.getState().tap(Date.now() - 900_000 + i * 20_000); useKicks.getState().finish(Date.now()); }],
   ['Kick reminder sheet', () => <KickReminderSheet visible onClose={() => undefined} />, null],
   ['My Pregnancy', () => <PregnancyHome />, null],
+  ['My Pregnancy (due date set)', () => <PregnancyHome />, () => useProfile.getState().setDue({ mode: 'edd', date: '2026-12-01' })],
+  ['Due date calculator', () => <DueDate />, null],
+  ['Week card', () => <Week />, () => { mockParams.current = { n: '34' }; }],
+  ['Hospital bag', () => <HospitalBag />, null],
+  ['Birth plan', () => <BirthPlan />, null],
   ['More', () => <MoreHome />, null],
   ['Tabs', () => <TabsLayout />, null],
 ];

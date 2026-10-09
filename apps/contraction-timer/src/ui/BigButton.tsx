@@ -11,16 +11,18 @@ export interface BigButtonProps {
   tall?: boolean;
   disabled?: boolean;
   accessibilityHint?: string;
+  /** What a screen reader says when it must differ from the visible text (several "Add" buttons on one screen). */
+  accessibilityLabel?: string;
   style?: StyleProp<ViewStyle>;
 }
 
-export function BigButton({ label, onPress, variant = 'primary', tall, disabled, accessibilityHint, style }: BigButtonProps) {
+export function BigButton({ label, onPress, variant = 'primary', tall, disabled, accessibilityHint, accessibilityLabel, style }: BigButtonProps) {
   const { colors, radius, type, touchTarget } = useTheme();
   const primary = variant === 'primary';
   return (
     <Pressable
       accessibilityRole="button"
-      accessibilityLabel={label}
+      accessibilityLabel={accessibilityLabel ?? label}
       accessibilityHint={accessibilityHint}
       accessibilityState={{ disabled: !!disabled }}
       disabled={disabled}

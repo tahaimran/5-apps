@@ -52,3 +52,14 @@ export const msUntilMidnight = (now: Date): number => {
 };
 
 export const isDateKey = (v: unknown): v is DateKey => typeof v === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(v);
+
+/** The same day of the month `n` months later or earlier; a day that does not exist (31 Jan + 1 month) becomes the last day of that month. */
+export const addMonths = (key: DateKey, n: number): DateKey => {
+  const [y, m, d] = parts(key);
+  const target = new Date(Date.UTC(y, m - 1 + n, 1));
+  const year = target.getUTCFullYear();
+  const month = target.getUTCMonth() + 1;
+  return `${year}-${pad(month)}-${pad(Math.min(d, daysInMonth(year, month)))}`;
+};
+
+export const addYears = (key: DateKey, n: number): DateKey => addMonths(key, n * 12);

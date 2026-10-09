@@ -1,5 +1,7 @@
+import { getLocales } from 'expo-localization';
 import { create } from 'zustand';
 import { defaultSettings } from '@/domain/defaults';
+import { unitsForRegion } from '@/domain/weeks';
 import type { Settings } from '@/domain/types';
 import { db } from './storage';
 
@@ -12,7 +14,9 @@ interface SettingsState {
 /** Merges stored values over the defaults so a key added in a later version is never undefined. */
 const load = (): Settings => {
   const stored = db.get('settings');
-  return { ...defaultSettings, ...stored, kickReminder: { ...defaultSettings.kickReminder, ...stored?.kickReminder } };
+  // The first time, sizes follow the phone's region (US and UK: inches and pounds); the person can change it in Settings.
+  const units = stored?.units ?? unitsForRegion(getLocales()[0]?.measurementSystem);
+  return { ...defaultSettings, ...stored, units, kickReminder: { ...defaultSettings.kickReminder, ...stored?.kickReminder } };
 };
 
 /** Preferences (`ct.settings`). The theme mode lives in @shared/theme. */

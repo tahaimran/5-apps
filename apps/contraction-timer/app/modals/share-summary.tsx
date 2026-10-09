@@ -6,10 +6,13 @@ import { buildPdfHtml } from '@/domain/pdf';
 import { profileEdd } from '@/domain/dueDate';
 import { buildTextSummary } from '@/domain/summary';
 import { sharePdf, shareText } from '@/export/share';
+import { planText } from '@/features/checklists/ChecklistScreen';
+import { useChecklists } from '@/store/checklists';
 import { useProfile } from '@/store/profile';
 import { useSessions } from '@/store/sessions';
 import { useSettings } from '@/store/settings';
 import { usePdfTheme } from '@/store/unlocks';
+import { SwitchRow } from '@/ui/SwitchRow';
 import { AppText } from '@/ui/AppText';
 import { BigButton } from '@/ui/BigButton';
 import { Screen } from '@/ui/Screen';
@@ -26,9 +29,12 @@ export default function ShareSummary() {
   const pdfTheme = usePdfTheme();
   const [message, setMessage] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
+  const [withPlan, setWithPlan] = useState(false);
+  const plan = useChecklists((s) => s.lists.birthPlan);
+  const hasPlan = !!plan && plan.items.some((i) => i.checked);
 
   const input = useMemo(() => (session ? { session, edd: profileEdd(profile), clock24h, now: Date.now() } : null), [session, profile, clock24h]);
-  const text = useMemo(() => (input ? buildTextSummary(input) : ''), [input]);
+  const text = useMemo(() => (input ? buildTextSummary(input, undefined, withPlan && hasPlan ? planText('birthPlan') : undefined) : ''), [input, withPlan, hasPlan]);
 
   if (!session || !input) {
     return (
@@ -41,7 +47,7 @@ export default function ShareSummary() {
 
   const onText = async () => {
     // The time of the summary is read when the button is pressed, not when the screen opened.
-    const fresh = buildTextSummary({ ...input, now: Date.now() });
+    const fresh = buildTextSummary({ ...input, now: Date.now() }, undefined, withPlan && hasPlan ? planText('birthPlan') : undefined);
     if (!(await shareText(fresh))) setMessage(t('share.textFailed'));
   };
   const onPdf = async () => {
@@ -56,6 +62,7 @@ export default function ShareSummary() {
     <Screen>
       <ScreenHeader title={t('share.title')} onBack={() => router.back()} />
       <AppText style={[type.bodyLarge, { color: colors.textMuted }]}>{t('share.intro')}</AppText>
+      {hasPlan ? <SwitchRow label={t('lists.includePlan')} value={withPlan} onChange={setWithPlan} /> : null}
       <BigButton tall label={t('share.text')} onPress={() => void onText()} />
       <BigButton tall label={t('share.pdf')} disabled={busy} onPress={() => void onPdf()} />
       <AppText style={[type.body, { color: colors.textMuted }]}>{t('share.themeLabel', { name: t(`pdfTheme.${pdfTheme.id}`) })}</AppText>
