@@ -1,0 +1,43 @@
+import { useEffect } from 'react';
+import { StyleSheet } from 'react-native';
+import { Stack } from 'expo-router';
+import * as SplashScreen from 'expo-splash-screen';
+import { StatusBar } from 'expo-status-bar';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { ThemeProvider, useTheme } from '@shared/theme';
+import { useAdGuard } from '@/ads/guard';
+import { useMeta } from '@/store/meta';
+import { FONT_SCALE, palette, TOUCH_TARGET } from '@/theme/tokens';
+import '@/bootstrap';
+
+void SplashScreen.preventAutoHideAsync().catch(() => undefined);
+
+function Root() {
+  const { mode, colors } = useTheme();
+  useAdGuard();
+  useEffect(() => {
+    useMeta.getState().recordLaunch();
+    void SplashScreen.hideAsync().catch(() => undefined);
+  }, []);
+  return (
+    <>
+      {/* Light content on the dark and night themes, dark content on the light one. */}
+      <StatusBar style={mode === 'light' ? 'dark' : 'light'} />
+      <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: colors.background } }}>
+        <Stack.Screen name="onboarding" options={{ gestureEnabled: false }} />
+      </Stack>
+    </>
+  );
+}
+
+export default function RootLayout() {
+  return (
+    <GestureHandlerRootView style={styles.flex}>
+      <ThemeProvider palette={palette} fontScale={FONT_SCALE} touchTarget={TOUCH_TARGET}>
+        <Root />
+      </ThemeProvider>
+    </GestureHandlerRootView>
+  );
+}
+
+const styles = StyleSheet.create({ flex: { flex: 1 } });

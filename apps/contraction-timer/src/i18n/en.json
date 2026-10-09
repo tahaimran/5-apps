@@ -1,0 +1,40 @@
+{
+  "app": {
+    "name": "Contraction Timer",
+    "storeName": "Contraction Timer & Kick Count"
+  },
+  "tabs": {
+    "timer": "Timer",
+    "kicks": "Kicks",
+    "pregnancy": "My Pregnancy",
+    "more": "More"
+  },
+  "common": {
+    "close": "Close",
+    "done": "Done",
+    "cancel": "Cancel",
+    "back": "Back",
+    "on": "On",
+    "off": "Off",
+    "save": "Save",
+    "delete": "Delete",
+    "continue": "Continue",
+    "dismiss": "Dismiss",
+    "undo": "Undo",
+    "ok": "OK",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "timer": {
+    "title": "Timer"
+  },
+  "kicks": {
+    "title": "Kicks"
+  },
+  "pregnancy": {
+    "title": "My Pregnancy"
+  },
+  "more": {
+    "title": "More"
+  }
+}

@@ -531,3 +531,19 @@ apps/contraction-timer/
 - [ ] Sensitive-events: no ads near content about loss; week content reviewed by a qualified midwife (credit in About) before launch.
 - [ ] Store listing disclaimer line; no "free/#1/best/top/new" in title; screenshots show real UI.
 - [ ] Release: internal → closed (≥ 12 testers, 14 days if required) → production staged rollout 20% → 100% after crash-free ≥ 99.5%.
+
+---
+
+## 19. Build status (one line per milestone of §17; ticked only for what was built and checked in the repo)
+
+Everything below was checked with `tsc`, Jest, `expo-doctor` and `expo export` in a Linux container. **Nothing has run on a device**: anything marked "device" or "account" still needs a phone or a Play/AdMob account. See `RELEASE.md`.
+
+- [x] **Day 1** — Scaffold, theme with night mode, storage, Expo Router tabs, EAS dev profile. Not done: installing an EAS dev build on a phone (needs an Expo account and a device); the ads SDK is wired but the guard refuses every ad until Day 8.
+- [ ] **Day 2** — Timer core.
+- [ ] **Day 3** — Stats, pattern detection, banner, intensity chips, idle guards.
+- [ ] **Day 4** — History, summary, PDF, sharing.
+- [ ] **Day 5** — Kick counter, history, reminder.
+- [ ] **Day 6** — Due date, week-by-week content, My Pregnancy, checklists.
+- [ ] **Day 7** — Onboarding, partner mode, disclaimer, More, delete all data.
+- [ ] **Day 8** — Ads placements and guard, rewarded unlocks, consent, accessibility pass.
+- [ ] **Day 9** — QA matrix, Maestro, store assets, privacy policy, Data safety, Health declaration, testing tracks. **Not built (release prep, out of scope for this build).**
