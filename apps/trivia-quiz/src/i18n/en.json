@@ -217,7 +217,54 @@
     "categoryLine": "{percent}% of {answered}"
   },
   "settings": {
-    "title": "Settings"
+    "title": "Settings",
+    "soundSection": "Sound and touch",
+    "sound": "Sound effects",
+    "haptics": "Vibration feedback",
+    "displaySection": "Display",
+    "textSize": "Text size",
+    "size": {
+      "small": "Small",
+      "medium": "Medium",
+      "large": "Large",
+      "xlarge": "Extra large"
+    },
+    "sizeNote": "This also follows your phone's font size setting.",
+    "theme": "Theme",
+    "themes": {
+      "system": "Same as phone",
+      "light": "Light",
+      "dark": "Dark"
+    },
+    "playSection": "Playing",
+    "relaxed": "Relaxed mode",
+    "relaxedHint": "No timer. You still earn XP, at 80%.",
+    "reminderSection": "Daily reminder",
+    "reminderSwitch": "Remind me every day",
+    "reminderHint": "One friendly nudge a day for the Daily Challenge. Nothing else.",
+    "reminderTime": "Reminder time: {time}",
+    "privacy": "Privacy",
+    "privacyNote": "Your progress stays on this phone. Ads come from Google AdMob.",
+    "privacyInfo": "How Quizora uses data",
+    "privacyChoices": "Privacy choices (ads)",
+    "privacyPolicy": "Privacy policy",
+    "about": "About",
+    "version": "Version {version}",
+    "bank": "Questions: bank v{version}",
+    "rate": "Rate Quizora",
+    "feedback": "Send feedback",
+    "feedbackSubject": "Quizora feedback",
+    "feedbackBody": "App version {version}, Android {android}.",
+    "adDebug": "Ad rules (development)",
+    "reset": "Reset progress",
+    "resetHint": "Erases levels, stars, XP, streak and stats. Settings stay.",
+    "resetButton": "Reset progress",
+    "resetTitle": "Reset progress?",
+    "resetBody": "This erases your levels, stars, XP, streak and stats on this phone.",
+    "resetContinue": "Continue",
+    "resetSureTitle": "Are you sure?",
+    "resetSureBody": "This cannot be undone.",
+    "resetConfirm": "Erase everything"
   },
   "onboarding": {
     "welcomeTitle": "Test what you know. Learn what you don't.",
@@ -298,5 +345,13 @@
     "blocked": "blocked",
     "counters": "Counters",
     "back": "Back"
+  },
+  "privacy": {
+    "title": "How Quizora uses data",
+    "onDevice": "Your progress, stars, streak, XP and settings are saved only on this phone. There are no accounts and no servers. Uninstalling the app, or Settings, Reset progress, erases it.",
+    "ads": "Quizora is free because it shows ads from Google AdMob. Google and its ad partners may use your advertising ID, approximate location from your IP address, and app activity to show and measure ads. Rewarded videos are always your choice.",
+    "notifications": "The optional daily reminder is created on your phone. Nothing is sent to us.",
+    "noAccount": "We do not collect your name, email, contacts, photos, microphone or precise location. Quizora is for ages 13 and up.",
+    "choices": "Where the law asks for it, Quizora asks for your consent before showing ads, and you can change it any time in Settings, Privacy choices."
   }
 }
