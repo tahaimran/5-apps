@@ -454,6 +454,19 @@ Data sources: Play Console (retention cohorts, vitals, acquisition), AdMob (ARPD
 | **D9** | Store assets (ASO.md), privacy policy, Data safety, IARC, internal testing track, app-ads.txt, production EAS build | Internal test release live; closed-testing started |
 | D10–D23 | Closed testing (≥12 testers × 14 days, required for new personal dev accounts), fix bugs, OTA content fixes | Production access granted → staged rollout 20% → 100% |
 
+### Milestone checklist (tick when done; a note says what a phone, an account or a store is still needed for)
+
+- [x] **D1 — Scaffold:** app in the monorepo, Expo Router tabs, theme tokens, storage keys, ads plugin with test IDs, test harness. *(~~dev build runs on a device and a banner test ad shows on Home~~: not done, it needs a device and an EAS account; nothing has been run on a device. The tabs are placeholders until D3–D7; Home shows the banner slot only, no ad request is made yet.)*
+- [ ] **D2 — Engine and content:** prng, selector, scoring, streak, daily seed, lifelines, Jest tests; content validate/dedupe scripts; question bank.
+- [ ] **D3 — Quiz and results:** quiz screen (timer, answer states, explanation, lifelines), Results screen.
+- [ ] **D4 — Modes:** Classic map with stars and unlocks, Timed Blitz, Daily Challenge with result and share image.
+- [ ] **D5 — Onboarding and reminders:** O1–O7 on `@shared/onboarding`, consent, notifications.
+- [ ] **D6 — Ads:** all placements, caps, rewarded flows, native results card, app-open warm start.
+- [ ] **D7 — Stats, Settings, content check:** Stats and Settings screens, bank manifest, validator at 0 errors.
+- [ ] **D8 — Polish:** sounds and haptics, dark mode, accessibility, reduce motion, review prompt, RELEASE.md.
+- [ ] **D9 — Release prep:** store assets, privacy policy, Data safety, IARC, internal testing track, production build. *(not started)*
+- [ ] **D10–D23 — Closed testing and bug bash.** *(not started)*
+
 ---
 
 ## 18. QA & Play release checklist

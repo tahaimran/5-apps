@@ -1,0 +1,19 @@
+{
+  "app": { "name": "Quizora" },
+  "common": {
+    "close": "Close",
+    "done": "Done",
+    "cancel": "Cancel",
+    "on": "On",
+    "off": "Off",
+    "back": "Back"
+  },
+  "tabs": { "home": "Home", "play": "Play", "stats": "Stats", "settings": "Settings" },
+  "home": {
+    "title": "Home",
+    "soon": "Quizora is being built. Your Daily Challenge will appear here."
+  },
+  "play": { "title": "Play" },
+  "stats": { "title": "Stats" },
+  "settings": { "title": "Settings" }
+}
