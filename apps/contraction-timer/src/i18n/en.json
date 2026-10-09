@@ -115,5 +115,50 @@
       "10": "November",
       "11": "December"
     }
+  },
+  "stats": {
+    "countTitle": "Last hour",
+    "countValue": "{n} timed",
+    "lengthTitle": "Average length",
+    "intervalTitle": "How often",
+    "intervalValue": "every {time}",
+    "none": "—",
+    "tapHint": "Tap to see what this means",
+    "explainCount": "How many contractions you timed in the last 60 minutes. Very short taps, under 10 seconds, are left out because they are most likely a mis-tap.",
+    "explainLength": "The average time from the start to the end of each contraction in the last hour.",
+    "explainInterval": "The average time from the start of one contraction to the start of the next, over the last hour. A gap of more than 30 minutes is left out.",
+    "label": "{title}: {value}"
+  },
+  "last": {
+    "title": "Last contraction",
+    "length": "Length",
+    "gap": "Since the one before",
+    "gapNote": "start to start",
+    "none": "Nothing timed yet. Tap Start when the next one begins.",
+    "strengthTitle": "How strong was it? (optional)",
+    "label": "Last contraction, {length} long, {gap} after the one before",
+    "labelFirst": "Last contraction, {length} long"
+  },
+  "intensity": {
+    "mild": "Mild",
+    "moderate": "Moderate",
+    "strong": "Strong"
+  },
+  "pattern": {
+    "banner": "Your last hour matches the {rule} pattern your provider mentioned. It may be time to call them.",
+    "bannerCustom": "Your recent contractions match the pattern you set in the app. It may be time to call your provider.",
+    "share": "Share summary",
+    "dismiss": "Dismiss"
+  },
+  "notifications": {
+    "channel": {
+      "timing": "Timing",
+      "timingDescription": "A gentle note if a timing session is left open",
+      "kick": "Kick count reminder",
+      "kickDescription": "Your daily reminder to count kicks",
+      "weekly": "Weekly size card",
+      "weeklyDescription": "Once a week, how big your baby is"
+    },
+    "sessionOpen": "Still timing? Your session is open. Tap to review or end it."
   }
 }

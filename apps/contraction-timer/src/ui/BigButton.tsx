@@ -31,14 +31,15 @@ export function BigButton({ label, onPress, variant = 'primary', tall, disabled,
           minHeight: tall ? Math.max(touchTarget, 64) : touchTarget,
           borderRadius: radius.md + 2,
           backgroundColor: primary ? colors.primary : 'transparent',
-          borderColor: colors.primary,
-          borderWidth: primary ? 0 : 2,
+          // The outline is the text color, not the fill: night's dark red fill alone would vanish on black.
+          borderColor: colors.text,
+          borderWidth: 2,
           opacity: disabled ? 0.5 : 1,
         },
         style,
       ]}
     >
-      <AppText style={[type.bodyLarge, { color: primary ? colors.onPrimary : colors.primary, fontWeight: '700' }]}>{label}</AppText>
+      <AppText style={[type.bodyLarge, { color: primary ? colors.onPrimary : colors.text, fontWeight: '700' }]}>{label}</AppText>
     </Pressable>
   );
 }

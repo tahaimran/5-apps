@@ -3,8 +3,12 @@ import { AccessibilityInfo, Pressable, View } from 'react-native';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
 import { clockSetBack, elapsedOf, idleStatus, isLongRunning } from '@/domain/session';
-import { openContraction } from '@/domain/stats';
+import { evaluatePattern, bannerVisible } from '@/domain/pattern';
+import { lastContraction, openContraction, windowStats } from '@/domain/stats';
 import { timerHaptics } from '@/features/timer/haptics';
+import { LastContractionCard } from '@/features/timer/LastContractionCard';
+import { PatternBanner } from '@/features/timer/PatternBanner';
+import { StatsStrip } from '@/features/timer/StatsStrip';
 import { TimerButton } from '@/features/timer/TimerButton';
 import { TimerHeader } from '@/features/timer/TimerHeader';
 import { useKeepAwakeWhile } from '@/features/timer/useKeepAwake';
@@ -28,10 +32,22 @@ export default function TimerScreen() {
   const app = useAppColors();
   const active = useSessions((s) => s.active);
   const partner = useSettings((s) => s.settings.partnerMode);
+  const rule = useSettings((s) => s.settings.rule);
+  const patternAlerts = useSettings((s) => s.settings.patternAlerts);
   const firstBaby = useProfile((s) => s.profile.firstBaby);
   const focused = useFocused();
   const now = useNow(!!active);
   const open = active ? openContraction(active.contractions) : null;
+
+  // Recomputed every second while visible (plan F4); the pattern is also checked at every tick so the banner can
+  // appear without a tap (the window moves) and so the episode bookkeeping is saved.
+  const second = Math.floor(now / 1000);
+  useEffect(() => {
+    if (!active || !patternAlerts || !focused) return;
+    if (useSessions.getState().evaluate(Date.now())) timerHaptics.banner();
+  }, [second, active, patternAlerts, focused]);
+  const matchesNow = !!active && patternAlerts && evaluatePattern(rule, active.contractions, now).matches;
+  const showBanner = !!active && matchesNow && bannerVisible(active.pattern, matchesNow);
 
   const [toast, setToast] = useState<string | null>(null);
   const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -140,6 +156,16 @@ export default function TimerScreen() {
           <AppText style={[type.bodyLarge, { color: colors.text, textDecorationLine: 'underline' }]}>{t('timer.howThisWorks')}</AppText>
         </Pressable>
       ) : null}
+
+      {active && !partner ? (
+        <>
+          <StatsStrip stats={windowStats(active.contractions, now)} />
+          <LastContractionCard last={lastContraction(active.contractions)} now={now} onTag={(id, level) => useSessions.getState().setIntensity(active.id, id, level)} />
+        </>
+      ) : null}
+
+      {/* Under the button, so it can never move the button while a thumb is on its way to it. */}
+      {showBanner ? <PatternBanner rule={rule} onDismiss={() => useSessions.getState().dismissPattern()} /> : null}
 
       {toast ? <Toast message={toast} /> : null}
 

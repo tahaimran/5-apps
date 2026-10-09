@@ -7,6 +7,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { ThemeProvider, useTheme } from '@shared/theme';
 import { useAdGuard } from '@/ads/guard';
 import { useSessionMaintenance } from '@/features/timer/maintenance';
+import { installSessionNotifier } from '@/notifications/sessionOpen';
 import { useMeta } from '@/store/meta';
 import { FONT_SCALE, palette, TOUCH_TARGET } from '@/theme/tokens';
 import '@/bootstrap';
@@ -17,6 +18,7 @@ function Root() {
   const { mode, colors } = useTheme();
   useAdGuard();
   useSessionMaintenance();
+  useEffect(() => installSessionNotifier(), []);
   useEffect(() => {
     useMeta.getState().recordLaunch();
     void SplashScreen.hideAsync().catch(() => undefined);

@@ -7,6 +7,8 @@ import { ThemeProvider } from '@shared/theme';
 import '@/bootstrap';
 import { IDLE_PROMPT_MS } from '@/domain/session';
 import { reloadSessionsFromDisk, useSessions } from '@/store/sessions';
+import { series, sessionOf, MINUTE, SECOND } from '@/testing/fixtures';
+import { RULE_PRESETS } from '@/domain/defaults';
 import { useSettings } from '@/store/settings';
 import { FONT_SCALE, palette, TOUCH_TARGET } from '@/theme/tokens';
 import TimerScreen from '../../app/(tabs)/timer/index';
@@ -23,6 +25,7 @@ beforeEach(() => {
   jest.useFakeTimers({ now: NOW, doNotFake: ['nextTick', 'setImmediate'] });
   resetApp();
   (Haptics.impactAsync as jest.Mock).mockClear();
+  (Haptics.notificationAsync as jest.Mock).mockClear();
 });
 afterEach(async () => {
   await cleanup();
@@ -173,5 +176,120 @@ describe('the Timer screen', () => {
     expect(mockKeepAwake.active.has('timer')).toBe(true);
     await act(async () => void useSessions.getState().endActive());
     expect(mockKeepAwake.active.size).toBe(0);
+  });
+});
+
+describe('live stats, last contraction and strength chips (plan F2, F4)', () => {
+  const rest = async (ui: Awaited<ReturnType<typeof render>>, ms: number) => advance(ms);
+
+  it('shows the last hour once a contraction is timed: count, average length and how often', async () => {
+    const ui = await render(wrap());
+    for (let i = 0; i < 3; i++) {
+      await ui.press('Start contraction');
+      await rest(ui, 60_000);
+      await ui.press(/^Stop contraction/);
+      await rest(ui, 4 * 60_000);
+    }
+    expect(ui.texts()).toContain('3 timed');
+    expect(ui.texts()).toContain('1m');
+    expect(ui.texts()).toContain('every 5m');
+    expect(ui.byLabel('Average length: 1m')).toHaveLength(1);
+  });
+
+  it('shows no numbers it does not have: dashes before a second contraction', async () => {
+    const ui = await render(wrap());
+    await ui.press('Start contraction');
+    await rest(ui, 50_000);
+    await ui.press(/^Stop contraction/);
+    expect(ui.byLabel('How often: —')).toHaveLength(1);
+  });
+
+  it('offers Mild, Moderate and Strong for 8 seconds after a stop, and the next Start works while they show', async () => {
+    const ui = await render(wrap());
+    await ui.press('Start contraction');
+    await rest(ui, 40_000);
+    await ui.press(/^Stop contraction/);
+    expect(ui.byLabel('Strong')).toHaveLength(1);
+    await ui.press('Strong');
+    expect(useSessions.getState().active!.contractions[0].intensity).toBe('strong');
+    await rest(ui, 1000);
+    await ui.press('Start contraction'); // not blocked by the chips
+    expect(useSessions.getState().active!.contractions).toHaveLength(2);
+    await ui.press(/^Stop contraction/).catch(() => undefined);
+    await rest(ui, 9000);
+    expect(ui.byLabel('Strong')).toHaveLength(0);
+  });
+
+  it('a second tap on the chosen chip clears the tag', async () => {
+    const ui = await render(wrap());
+    await ui.press('Start contraction');
+    await rest(ui, 40_000);
+    await ui.press(/^Stop contraction/);
+    await ui.press('Mild');
+    await ui.press('Mild');
+    expect(useSessions.getState().active!.contractions[0].intensity).toBeUndefined();
+  });
+
+  it('opens an explanation for a stat tile', async () => {
+    const ui = await render(wrap());
+    await ui.press('Start contraction');
+    await rest(ui, 40_000);
+    await ui.press(/^Stop contraction/);
+    await ui.press(/^Average length/);
+    expect(ui.texts().some((x) => x.startsWith('The average time from the start to the end'))).toBe(true);
+  });
+});
+
+describe('the pattern banner (plan §5.1, F5)', () => {
+  const now = () => Date.now();
+  const load = async (ui: Awaited<ReturnType<typeof render>> | null = null) => {
+    const cs = series(now(), 11, 5 * MINUTE, 60 * SECOND, 5 * MINUTE);
+    await act(async () => void useSessions.setState({ active: sessionOf(cs, { ruleAtStart: RULE_PRESETS['511'] }) }));
+    void ui;
+  };
+
+  it('appears once, softly, with the plan wording, and vibrates once', async () => {
+    const ui = await render(wrap());
+    await load();
+    await advance(1100);
+    expect(ui.texts()).toContain('Your last hour matches the 5-1-1 pattern your provider mentioned. It may be time to call them.');
+    expect(Haptics.notificationAsync).toHaveBeenCalledTimes(1);
+    await advance(5000);
+    expect(Haptics.notificationAsync).toHaveBeenCalledTimes(1);
+    expect(ui.byLabel('Dismiss')).toHaveLength(1);
+  });
+
+  it('stays dismissed within the episode', async () => {
+    const ui = await render(wrap());
+    await load();
+    await advance(1100);
+    await ui.press('Dismiss');
+    await advance(5000);
+    expect(ui.texts().some((x) => x.startsWith('Your last hour matches'))).toBe(false);
+  });
+
+  it('is off when pattern alerts are switched off, and says nothing then', async () => {
+    useSettings.getState().update({ patternAlerts: false });
+    const ui = await render(wrap());
+    await load();
+    await advance(2000);
+    expect(ui.texts().some((x) => x.startsWith('Your last hour matches'))).toBe(false);
+    expect(Haptics.notificationAsync).not.toHaveBeenCalled();
+  });
+
+  it('names a different preset, and uses its own words for a custom rule', async () => {
+    useSettings.getState().update({ rule: { preset: 'custom', intervalMaxMin: 5, durationMinSec: 60, sustainMin: 60 } });
+    const ui = await render(wrap());
+    await load();
+    await advance(1100);
+    expect(ui.texts()).toContain('Your recent contractions match the pattern you set in the app. It may be time to call your provider.');
+  });
+
+  it('never sits above the button: it renders after it, so it cannot move the button under a thumb', async () => {
+    const ui = await render(wrap());
+    await load();
+    await advance(1100);
+    const labels = ui.root.findAll((n) => typeof n.props.accessibilityLabel === 'string' && typeof n.type === 'string').map((n) => n.props.accessibilityLabel as string);
+    expect(labels.findIndex((l) => l.startsWith('Stop contraction') || l === 'Start contraction')).toBeLessThan(labels.indexOf('Dismiss'));
   });
 });

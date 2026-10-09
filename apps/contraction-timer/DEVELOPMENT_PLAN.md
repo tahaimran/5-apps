@@ -540,7 +540,7 @@ Everything below was checked with `tsc`, Jest, `expo-doctor` and `expo export` i
 
 - [x] **Day 1** — Scaffold, theme with night mode, storage, Expo Router tabs, EAS dev profile. Not done: installing an EAS dev build on a phone (needs an Expo account and a device); the ads SDK is wired but the guard refuses every ad until Day 8.
 - [x] **Day 2** — Timer core: one store that writes `activeSession` to MMKV on every tap, wall-clock elapsed, 220dp button with breathing ring, haptics, keep-awake, kill/resume tested in Jest (the store is rebuilt from the fake disk). Device still needed: a real kill (`adb shell am kill`) and reboot, haptic feel, keep-awake, the 600 ms long press, scroll lock under a real thumb.
-- [ ] **Day 3** — Stats, pattern detection, banner, intensity chips, idle guards.
+- [x] **Day 3** — Stats and the configurable pattern rule as pure functions (fixtures for a 5-1-1 match, near misses, an irregular run, mis-taps, 4-1-1, 3-1-1, custom), live stats strip and last-contraction card, strength chips for 8 s, the once-per-episode banner (re-arms after 30 min), long-contraction line, idle prompt/auto-end, "session left open" note (only when notification permission already exists). Differs from the plan: the pattern also needs the newest contraction to be recent (see RELEASE.md). Device still needed: how the banner, chips and strip look and feel on a phone; the left-open note arriving.
 - [ ] **Day 4** — History, summary, PDF, sharing.
 - [ ] **Day 5** — Kick counter, history, reminder.
 - [ ] **Day 6** — Due date, week-by-week content, My Pregnancy, checklists.

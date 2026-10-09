@@ -24,11 +24,11 @@ export function OptionCard({ label, detail, selected, onPress, accessibilityHint
         padding: spacing.md,
         borderRadius: radius.lg,
         borderWidth: selected ? 3 : 1,
-        borderColor: selected ? colors.primary : colors.border,
+        borderColor: selected ? colors.text : colors.border,
         backgroundColor: colors.surface,
       }}
     >
-      <MaterialCommunityIcons name={selected ? 'radiobox-marked' : 'radiobox-blank'} size={28} color={selected ? colors.primary : colors.textMuted} />
+      <MaterialCommunityIcons name={selected ? 'radiobox-marked' : 'radiobox-blank'} size={28} color={selected ? colors.text : colors.textMuted} />
       <View style={{ flex: 1 }}>
         <AppText style={[type.bodyLarge, { color: colors.text, fontWeight: '700' }]}>{label}</AppText>
         {detail ? <AppText style={[type.body, { color: colors.textMuted }]}>{detail}</AppText> : null}

@@ -16,7 +16,7 @@ export function SwitchRow({ label, value, onChange, hint }: { label: string; val
           value={value}
           onValueChange={onChange}
           trackColor={{ true: colors.primary, false: colors.border }}
-          thumbColor={value ? colors.onPrimary : colors.surface}
+          thumbColor={value ? colors.onPrimary : colors.textMuted}
           style={{ minWidth: 56, minHeight: 48 }}
         />
       </View>
