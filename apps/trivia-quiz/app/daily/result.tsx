@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { View } from 'react-native';
 import { captureRef } from 'react-native-view-shot';
 import { Redirect, router } from 'expo-router';
@@ -7,7 +7,11 @@ import { ScrollView } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
+import { ReminderSheet } from '@/components/ReminderSheet';
 import { ShareCard } from '@/components/ShareCard';
+import { shouldReask } from '@/domain/reminder';
+import { useSettings } from '@/store/settings';
+import { db } from '@/store/storage';
 import { lastSevenDays, playedToday } from '@/domain/daily';
 import { effectiveStreak } from '@/domain/streak';
 import { shareDaily, shareText } from '@/features/play/share';
@@ -31,6 +35,17 @@ export default function DailyResult() {
   const streakState = useStreak((s) => s.value);
   const last = useResult((s) => s.last);
   const cardRef = useRef<View>(null);
+  const reminderOn = useSettings((s) => s.settings.reminder.enabled);
+  const [askOpen, setAskOpen] = useState(false);
+  const reached = last?.mode === 'daily' && last.streakCounted === true ? last.streak ?? 0 : 0;
+  // Plan §6 O7: "Not now" is offered once more, after the first 3-day streak.
+  useEffect(() => {
+    const ask = db.get('reminderAsk') ?? { declinedAt: 0, reaskedAt: 0 };
+    if (shouldReask({ reminderEnabled: reminderOn, declinedAt: ask.declinedAt, reaskedAt: ask.reaskedAt, streak: reached })) {
+      db.set('reminderAsk', { ...ask, reaskedAt: Date.now() });
+      setAskOpen(true);
+    }
+  }, [reached, reminderOn]);
   if (!playedToday(daily, today)) return <Redirect href="/(tabs)" />;
 
   const streak = effectiveStreak(streakState, today);
@@ -82,6 +97,7 @@ export default function DailyResult() {
           <BigButton variant="secondary" label={t('results.home')} onPress={() => router.replace('/(tabs)')} />
         </View>
       </ScrollView>
+      <ReminderSheet visible={askOpen} onClose={() => setAskOpen(false)} />
     </SafeAreaView>
   );
 }

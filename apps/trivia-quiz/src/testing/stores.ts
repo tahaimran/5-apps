@@ -4,7 +4,7 @@ import { resetSounds } from '@/audio/sounds';
 import { setBankForTests } from '@/content/bank';
 import { dateKeyFor } from '@/domain/dateKey';
 import { defaultAdCounters, defaultDaily, defaultProfile, defaultReview, defaultSettings, defaultStats, defaultStreak } from '@/domain/defaults';
-import { resetDisk, resetNotifMock } from './mocks';
+import { mockRouter, resetAdsMock, resetDisk, resetNotifMock } from './mocks';
 import { useRound } from '@/store/round';
 import { useResult } from '@/store/result';
 import { useSettings } from '@/store/settings';
@@ -28,5 +28,7 @@ export function resetApp(now: Date = new Date()) {
   useResult.setState({ last: null });
   useToday.setState({ today: dateKeyFor(now) });
   resetNotifMock();
+  for (const fn of Object.values(mockRouter)) if (typeof (fn as jest.Mock).mockClear === 'function') (fn as jest.Mock).mockClear();
+  resetAdsMock();
   resetSounds();
 }

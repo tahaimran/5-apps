@@ -22,6 +22,9 @@ export const mockSdk = {
   consent: {
     canRequestAds: false,
     required: false,
+    /** The UMP status `requestInfoUpdate` reports: 'REQUIRED' | 'NOT_REQUIRED' | 'OBTAINED' | 'UNKNOWN'. */
+    status: 'NOT_REQUIRED',
+    infoUpdateFails: false,
     gatherFails: false,
     infoFails: false,
     gather: jest.fn(),
@@ -35,7 +38,7 @@ export const resetAds = () => {
   mockAds.length = 0;
   mockSdk.initialize.mockClear();
   mockSdk.setRequestConfiguration.mockClear();
-  Object.assign(mockSdk.consent, { canRequestAds: false, required: false, gatherFails: false, infoFails: false });
+  Object.assign(mockSdk.consent, { canRequestAds: false, required: false, gatherFails: false, infoFails: false, status: 'NOT_REQUIRED', infoUpdateFails: false });
   mockSdk.consent.gather.mockClear();
   mockSdk.consent.info.mockClear();
   mockSdk.consent.privacyForm.mockClear();
@@ -99,7 +102,12 @@ jest.mock('react-native-google-mobile-ads', () => {
     NativeMediaView: () => null,
     useNativeAd: () => mockSdk.native.current,
     AdsConsentPrivacyOptionsRequirementStatus: { REQUIRED: 'REQUIRED', NOT_REQUIRED: 'NOT_REQUIRED', UNKNOWN: 'UNKNOWN' },
+    AdsConsentStatus: { UNKNOWN: 'UNKNOWN', REQUIRED: 'REQUIRED', NOT_REQUIRED: 'NOT_REQUIRED', OBTAINED: 'OBTAINED' },
     AdsConsent: {
+      requestInfoUpdate: async () => {
+        if (mockSdk.consent.infoUpdateFails) throw new Error('no network');
+        return { status: mockSdk.consent.status, canRequestAds: mockSdk.consent.canRequestAds };
+      },
       gatherConsent: async () => {
         mockSdk.consent.gather();
         if (mockSdk.consent.gatherFails) throw new Error('UMP failed');

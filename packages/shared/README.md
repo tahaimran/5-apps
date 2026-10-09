@@ -9,6 +9,7 @@ Workspace name: `@shared/*` via npm workspaces plus a TS path alias (`"@shared/*
 ```ts
 initConsent(): Promise<{ canRequestAds: boolean }>   // Google UMP: request info update → show form if required
 openPrivacyOptions(): Promise<void>                    // Settings → "Privacy choices"
+isConsentFormRequired(): Promise<boolean>              // true when UMP will show a form here (status REQUIRED); asks without showing anything, never rejects, false when offline. Lets an app show its own pre-screen only where a form follows.
 ```
 Must run before `MobileAds().initialize()`.
 

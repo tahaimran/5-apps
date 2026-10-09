@@ -124,6 +124,11 @@ export function commitRound(id: string, s: RoundState, elapsedMs: number, now: n
     }
   }
 
+  if (warmup) {
+    db.set('onboarding.warmupDone', true);
+    db.set('onboarding.warmupScore', sum.correct);
+  }
+
   // XP and the player level.
   const baseXp = warmup
     ? XP_WARMUP

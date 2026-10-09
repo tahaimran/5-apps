@@ -110,11 +110,17 @@ jest.mock('expo-audio', () => ({
 export const mockAds = {
   /** Keys of the ad types the SDK "has loaded". */
   consent: { canRequestAds: false },
+  /** What `requestInfoUpdate` reports: 'REQUIRED' makes the app show its consent pre-screen. */
+  consentStatus: 'NOT_REQUIRED' as string,
+  /** Times the consent form flow (`gatherConsent`) ran. */
+  gathered: 0,
   initialized: 0,
   requestConfig: null as unknown,
 };
 export const resetAdsMock = () => {
   mockAds.consent = { canRequestAds: false };
+  mockAds.consentStatus = 'NOT_REQUIRED';
+  mockAds.gathered = 0;
   mockAds.initialized = 0;
   mockAds.requestConfig = null;
 };
@@ -130,11 +136,16 @@ jest.mock('react-native-google-mobile-ads', () => ({
     },
   }),
   AdsConsent: {
-    gatherConsent: async () => mockAds.consent,
+    requestInfoUpdate: async () => ({ status: mockAds.consentStatus, canRequestAds: mockAds.consent.canRequestAds }),
+    gatherConsent: async () => {
+      mockAds.gathered++;
+      return mockAds.consent;
+    },
     getConsentInfo: async () => ({ canRequestAds: mockAds.consent.canRequestAds, privacyOptionsRequirementStatus: 'NOT_REQUIRED' }),
     showPrivacyOptionsForm: async () => mockAds.consent,
   },
   AdsConsentPrivacyOptionsRequirementStatus: { REQUIRED: 'REQUIRED' },
+  AdsConsentStatus: { UNKNOWN: 'UNKNOWN', REQUIRED: 'REQUIRED', NOT_REQUIRED: 'NOT_REQUIRED', OBTAINED: 'OBTAINED' },
   BannerAd: () => null,
   BannerAdSize: { LARGE_ANCHORED_ADAPTIVE_BANNER: 'x' },
   NativeAdView: () => null,

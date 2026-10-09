@@ -35,6 +35,7 @@ export default function Home() {
   const profile = useProfile((s) => s.value);
   const classic = useClassic((s) => s.value);
   const blitzBest = useStats((s) => s.value.blitzBest);
+  const [coachDone, setCoachDone] = db.useStored('coachDone', true);
   const card = dailyCard(daily, streak, today, new Date(now));
   const progress = levelProgress(profile.xp);
   const bank = getBank();
@@ -58,6 +59,13 @@ export default function Home() {
         <ProgressBar fraction={progress.fraction} />
         <AppText variant="caption" style={{ color: colors.textMuted }}>{t('home.xp', { into: progress.into, need: progress.need })}</AppText>
       </View>
+
+      {!coachDone && card.state === 'notPlayed' && (
+        <View accessible accessibilityLiveRegion="polite" style={{ gap: spacing.sm, padding: spacing.md, borderRadius: radius.lg, borderWidth: 2, borderColor: colors.primary, backgroundColor: colors.surface }}>
+          <AppText variant="body" style={{ fontWeight: '700' }}>{t('coach.title')}</AppText>
+          <BigButton variant="secondary" label={t('coach.gotIt')} onPress={() => setCoachDone(true)} />
+        </View>
+      )}
 
       {card.atRisk && (
         <View accessible accessibilityLiveRegion="polite" style={{ flexDirection: 'row', alignItems: 'center', gap: spacing.sm, padding: spacing.md, borderRadius: radius.lg, borderWidth: 2, borderColor: amber, backgroundColor: colors.surface }}>

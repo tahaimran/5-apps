@@ -16,6 +16,7 @@ import { answer, isBlitz, lifelineLeft, next, tick, useLifeline } from '@/domain
 import { commitRound } from '@/features/play/commit';
 import { useRoundClock } from '@/features/play/useRoundClock';
 import { useFeedback } from '@/store/feedback';
+import { logFunnel } from '@/store/funnel';
 import { useRound } from '@/store/round';
 import { AppText } from '@/ui/AppText';
 import { BigButton } from '@/ui/BigButton';
@@ -82,6 +83,7 @@ export default function Quiz() {
   const lastCorrect = live ? round.correct : null;
   useEffect(() => {
     if (!live || answered === 0 || round.phase === 'question') return;
+    if (round.config.mode === 'warmup') logFunnel(`onb_warmup_q${Math.min(answered, 3)}`);
     if (lastCorrect) {
       playSound('correct');
       feedback.success();

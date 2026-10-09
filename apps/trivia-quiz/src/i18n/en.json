@@ -216,5 +216,62 @@
   },
   "settings": {
     "title": "Settings"
+  },
+  "onboarding": {
+    "welcomeTitle": "Test what you know. Learn what you don't.",
+    "welcomeBody": "3,000+ trivia questions. Works offline. No sign-up.",
+    "letsPlay": "Let's play",
+    "skipIntro": "I've played before - skip intro",
+    "categoriesTitle": "What are you into?",
+    "categoriesBody": "Pick at least 3. You can change this anytime.",
+    "pickedCount": "{count} of {need} picked",
+    "pickedEnough": "{count} picked",
+    "continue": "Continue",
+    "difficultyTitle": "How tough should we go?",
+    "difficultyDetail": {
+      "1": "Warm and friendly",
+      "2": "A real challenge",
+      "3": "Trivia night champion"
+    },
+    "difficultyFooter": "We'll adapt as you play.",
+    "startWarmup": "Start warm-up",
+    "result": {
+      "perfect": "Perfect start! 🧠",
+      "natural": "Nice! You're a natural.",
+      "start": "Everyone starts somewhere."
+    },
+    "resultBody": "+30 XP. Play today's Daily Challenge to start your streak.",
+    "consentTitle": "Ads keep Quizora free",
+    "consentBody": "Quizora is free thanks to a few ads. Next, choose how ads can use your data.",
+    "ok": "OK",
+    "reminderTitle": "Keep your streak alive",
+    "reminderBody": "Get one friendly nudge a day for the Daily Challenge. Nothing else.",
+    "remindMe": "Remind me",
+    "notNow": "Not now"
+  },
+  "reminder": {
+    "channel": "Daily Challenge",
+    "channelDescription": "One reminder a day for the Daily Challenge",
+    "copy": {
+      "0": "Today's 10 questions are ready. Ready to play?",
+      "1": "2 minutes, 10 questions. Ready?",
+      "2": "A fresh Daily Challenge is waiting for you.",
+      "3": "How many of today's 10 can you get right?"
+    },
+    "streakCopy": "Today's 10 questions are ready. Keep your {count}-day streak!",
+    "atRisk": "Your {count}-day streak ends at midnight.",
+    "comeback3": "Your next round of trivia is waiting.",
+    "comeback7": "Missed you! Come back for a quick Daily Challenge.",
+    "denied": "Notifications stay off. You can turn the reminder on later in Settings.",
+    "blocked": "Notifications are blocked for Quizora. Open your phone settings to allow them.",
+    "openSettings": "Open phone settings",
+    "hourDown": "One hour earlier",
+    "hourUp": "One hour later",
+    "minuteDown": "15 minutes earlier",
+    "minuteUp": "15 minutes later"
+  },
+  "coach": {
+    "title": "Your first Daily Challenge is ready",
+    "gotIt": "Got it"
   }
 }

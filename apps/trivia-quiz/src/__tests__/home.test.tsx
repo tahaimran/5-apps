@@ -133,6 +133,20 @@ describe('Daily entry and result', () => {
     expect(text).toContain('+105 XP');
   });
 
+  it('offers the reminder once more after the first 3-day streak, and never a second time', async () => {
+    const { db } = require('@/store/storage');
+    db.set('reminderAsk', { declinedAt: 5, reaskedAt: 0 });
+    useDaily.setState({ value: recordDaily({ lastPlayedDate: null, lastScore: 0, history: [] }, today(), 8) });
+    useStreak.setState({ value: { ...playedStreak(2), current: 3, lastDate: today() } });
+    useResult.setState({ last: { id: 'x', mode: 'daily', date: today(), correct: 8, total: 10, score: 1, stars: 2, failedByHearts: false, accuracy: 0.8, elapsedMs: 1, relaxed: false, xp: 110, baseXp: 110, doubled: false, levelBefore: 1, levelAfter: 1, newBest: false, nextLevel: null, streak: 3, streakCounted: true } });
+    let r = await render(<DailyResult />);
+    expect(r.texts().join(' ')).toContain('Keep your streak alive');
+    expect(db.get('reminderAsk').reaskedAt).toBeGreaterThan(0);
+    await cleanup();
+    r = await render(<DailyResult />);
+    expect(r.texts().join(' ')).not.toContain('Keep your streak alive');
+  });
+
   it('goes home when the Daily is not played', async () => {
     const r = await render(<DailyResult />);
     expect(r.root.findAll((n) => (n.type as unknown) === 'Redirect').map((n) => n.props.href)).toEqual(['/(tabs)']);

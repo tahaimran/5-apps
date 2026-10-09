@@ -7,6 +7,8 @@ import { StatusBar } from 'expo-status-bar';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { Inter_400Regular, Inter_500Medium, Inter_600SemiBold, Inter_700Bold } from '@expo-google-fonts/inter';
 import { ThemeProvider, useTheme } from '@shared/theme';
+import { useNotificationResponses, useReminderSync } from '@/notifications/reminder';
+import { useStats } from '@/store/stores';
 import { useDayRollover } from '@/store/today';
 import { useSettings } from '@/store/settings';
 import { palette, TOUCH_TARGET } from '@/theme/tokens';
@@ -18,10 +20,22 @@ void SplashScreen.preventAutoHideAsync().catch(() => undefined);
 function Root() {
   const { mode, colors } = useTheme();
   useDayRollover();
+  useReminderSync();
+  useNotificationResponses();
+  // One more cold start, counted once per process.
+  useEffect(() => {
+    const stats = useStats.getState();
+    stats.update({ sessions: stats.value.sessions + 1 });
+  }, []);
   return (
     <>
       <StatusBar style={mode === 'light' ? 'dark' : 'light'} />
-      <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: colors.background } }} />
+      <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: colors.background } }}>
+        <Stack.Screen name="(onboarding)/welcome" options={{ gestureEnabled: false }} />
+        <Stack.Screen name="(onboarding)/warmup-result" options={{ gestureEnabled: false }} />
+        <Stack.Screen name="quiz/[sessionId]" options={{ presentation: 'fullScreenModal', gestureEnabled: false }} />
+        <Stack.Screen name="results/[sessionId]" options={{ gestureEnabled: false }} />
+      </Stack>
     </>
   );
 }

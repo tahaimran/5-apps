@@ -1,4 +1,4 @@
-import { AdsConsent, AdsConsentPrivacyOptionsRequirementStatus } from 'react-native-google-mobile-ads';
+import { AdsConsent, AdsConsentPrivacyOptionsRequirementStatus, AdsConsentStatus } from 'react-native-google-mobile-ads';
 
 let canRequestAds = false;
 let initPromise: Promise<{ canRequestAds: boolean }> | null = null;
@@ -31,6 +31,20 @@ export function initConsent(): Promise<{ canRequestAds: boolean }> {
     return { canRequestAds };
   })();
   return initPromise;
+}
+
+/**
+ * True when Google UMP will show a consent form in this region (status REQUIRED): it asks for the
+ * status without showing anything, so an app can show its own short pre-screen only where a form follows.
+ * Never rejects; offline or unknown counts as "not required" (the form flow decides again at `initConsent`).
+ */
+export async function isConsentFormRequired(): Promise<boolean> {
+  try {
+    const info = await AdsConsent.requestInfoUpdate();
+    return info.status === AdsConsentStatus.REQUIRED;
+  } catch {
+    return false;
+  }
 }
 
 /** Settings → "Privacy choices". Re-evaluates `canRequestAds` afterwards. */

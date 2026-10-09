@@ -98,3 +98,22 @@ describe('onConsentChange', () => {
     expect(listener).not.toHaveBeenCalled();
   });
 });
+
+describe('isConsentFormRequired', () => {
+  it('is true only when UMP reports that consent is required, and shows no form while asking', async () => {
+    const consent = load();
+    mockSdk.consent.status = 'REQUIRED';
+    await expect(consent.isConsentFormRequired()).resolves.toBe(true);
+    expect(mockSdk.consent.gather).not.toHaveBeenCalled();
+    for (const status of ['NOT_REQUIRED', 'OBTAINED', 'UNKNOWN']) {
+      mockSdk.consent.status = status;
+      await expect(consent.isConsentFormRequired()).resolves.toBe(false);
+    }
+  });
+  it('is false and never rejects when the status cannot be fetched (offline)', async () => {
+    const consent = load();
+    mockSdk.consent.status = 'REQUIRED';
+    mockSdk.consent.infoUpdateFails = true;
+    await expect(consent.isConsentFormRequired()).resolves.toBe(false);
+  });
+});
