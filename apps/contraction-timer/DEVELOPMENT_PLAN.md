@@ -539,7 +539,7 @@ apps/contraction-timer/
 Everything below was checked with `tsc`, Jest, `expo-doctor` and `expo export` in a Linux container. **Nothing has run on a device**: anything marked "device" or "account" still needs a phone or a Play/AdMob account. See `RELEASE.md`.
 
 - [x] **Day 1** — Scaffold, theme with night mode, storage, Expo Router tabs, EAS dev profile. Not done: installing an EAS dev build on a phone (needs an Expo account and a device); the ads SDK is wired but the guard refuses every ad until Day 8.
-- [ ] **Day 2** — Timer core.
+- [x] **Day 2** — Timer core: one store that writes `activeSession` to MMKV on every tap, wall-clock elapsed, 220dp button with breathing ring, haptics, keep-awake, kill/resume tested in Jest (the store is rebuilt from the fake disk). Device still needed: a real kill (`adb shell am kill`) and reboot, haptic feel, keep-awake, the 600 ms long press, scroll lock under a real thumb.
 - [ ] **Day 3** — Stats, pattern detection, banner, intensity chips, idle guards.
 - [ ] **Day 4** — History, summary, PDF, sharing.
 - [ ] **Day 5** — Kick counter, history, reminder.

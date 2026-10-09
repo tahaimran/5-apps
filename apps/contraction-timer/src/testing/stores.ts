@@ -3,6 +3,7 @@ import { defaultMeta, defaultProfile, defaultSettings } from '@/domain/defaults'
 import { dateKeyFor } from '@/domain/dateKey';
 import { useMeta } from '@/store/meta';
 import { useProfile } from '@/store/profile';
+import { useSessions } from '@/store/sessions';
 import { useSettings } from '@/store/settings';
 import { useToday } from '@/store/today';
 import { resetDisk, resetNotifMock } from './mocks';
@@ -13,6 +14,7 @@ export function resetApp(now: Date = new Date()) {
   useSettings.setState({ settings: defaultSettings });
   useProfile.setState({ profile: defaultProfile() });
   useMeta.setState({ meta: defaultMeta(now.getTime()) });
+  useSessions.setState({ active: null, index: [], archived: {}, restored: false });
   useToday.setState({ today: dateKeyFor(now) });
   resetNotifMock();
 }

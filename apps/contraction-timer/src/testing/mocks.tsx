@@ -41,6 +41,12 @@ jest.mock('expo-localization', () => ({
 }));
 /** The system review prompt: `available` is what the phone says, `request` records that it was shown. */
 export const mockReview = { available: false, request: jest.fn(async () => undefined) };
+/** Which keep-awake tags are active right now. */
+export const mockKeepAwake = { active: new Set<string>() };
+jest.mock('expo-keep-awake', () => ({
+  activateKeepAwakeAsync: async (tag = 'default') => void mockKeepAwake.active.add(tag),
+  deactivateKeepAwake: async (tag = 'default') => void mockKeepAwake.active.delete(tag),
+}));
 jest.mock('expo-store-review', () => ({ isAvailableAsync: async () => mockReview.available, requestReview: () => mockReview.request() }));
 jest.mock('expo-splash-screen', () => ({ preventAutoHideAsync: async () => undefined, hideAsync: async () => undefined }));
 jest.mock('expo-status-bar', () => ({ StatusBar: () => null }));
@@ -56,6 +62,7 @@ export const resetNotifMock = () => {
   Object.assign(mockNotif, { granted: false, canAskAgain: true, answer: true, keepAsking: false });
   mockReview.available = false;
   mockReview.request.mockClear();
+  mockKeepAwake.active.clear();
   mockNotifState.pending.clear();
   mockNotifState.channels.clear();
   mockLastNotificationResponse.current = null;
@@ -184,7 +191,7 @@ jest.mock('react-native-reanimated', () => {
     withSpring: passthrough,
     withDelay: (_d: unknown, v: unknown) => v,
     runOnJS: (f: unknown) => f,
-    Easing: { out: passthrough, quad: passthrough },
+    Easing: { out: passthrough, quad: passthrough, inOut: passthrough, ease: 1 },
   };
 });
 

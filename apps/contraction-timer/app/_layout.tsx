@@ -6,6 +6,7 @@ import { StatusBar } from 'expo-status-bar';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { ThemeProvider, useTheme } from '@shared/theme';
 import { useAdGuard } from '@/ads/guard';
+import { useSessionMaintenance } from '@/features/timer/maintenance';
 import { useMeta } from '@/store/meta';
 import { FONT_SCALE, palette, TOUCH_TARGET } from '@/theme/tokens';
 import '@/bootstrap';
@@ -15,6 +16,7 @@ void SplashScreen.preventAutoHideAsync().catch(() => undefined);
 function Root() {
   const { mode, colors } = useTheme();
   useAdGuard();
+  useSessionMaintenance();
   useEffect(() => {
     useMeta.getState().recordLaunch();
     void SplashScreen.hideAsync().catch(() => undefined);
