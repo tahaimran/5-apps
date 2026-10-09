@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { router } from 'expo-router';
 import { AccessibilityInfo, Pressable, View } from 'react-native';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
@@ -165,7 +166,7 @@ export default function TimerScreen() {
       ) : null}
 
       {/* Under the button, so it can never move the button while a thumb is on its way to it. */}
-      {showBanner ? <PatternBanner rule={rule} onDismiss={() => useSessions.getState().dismissPattern()} /> : null}
+      {showBanner ? <PatternBanner rule={rule} onShare={() => router.push({ pathname: '/modals/share-summary', params: { id: active.id } })} onDismiss={() => useSessions.getState().dismissPattern()} /> : null}
 
       {toast ? <Toast message={toast} /> : null}
 

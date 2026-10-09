@@ -101,3 +101,16 @@ export function dominantIntensity(cs: readonly Contraction[]): 'mild' | 'moderat
   if (counts.strong >= counts.moderate && counts.strong >= counts.mild) return 'strong';
   return counts.moderate >= counts.mild ? 'moderate' : 'mild';
 }
+
+export interface SessionStats {
+  /** Contractions that count (finished, not ignored). */
+  count: number;
+  avgDurationMs: number | null;
+  avgIntervalMs: number | null;
+}
+
+/** The whole session, not only the last hour (the history list and the detail header). */
+export function sessionStats(cs: readonly Contraction[]): SessionStats {
+  const list = countable(cs);
+  return { count: list.length, avgDurationMs: mean(list.map((c) => durationOf(c) as number)), avgIntervalMs: mean(intervalsOf(list)) };
+}

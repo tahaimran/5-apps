@@ -2,7 +2,8 @@
  * Every screen, rendered for real, has labelled controls with 56dp touch targets at the system font
  * scales the QA checklist names (1.3x, 2.0x), in every color mode (light, dark, night).
  */
-import { resetApp } from '@/testing/stores';
+import { mockParams } from '@/testing/mocks';
+import { resetApp, seedSession } from '@/testing/stores';
 import { auditPressables, cleanup, flush, isPressable, render } from '@/testing/ui';
 import { act } from 'react';
 import type { ReactElement } from 'react';
@@ -15,6 +16,10 @@ import KicksHome from '../../app/(tabs)/kicks/index';
 import PregnancyHome from '../../app/(tabs)/pregnancy/index';
 import MoreHome from '../../app/(tabs)/more/index';
 import TabsLayout from '../../app/(tabs)/_layout';
+import History from '../../app/(tabs)/timer/history';
+import SessionDetail from '../../app/(tabs)/timer/session/[id]';
+import ShareSummary from '../../app/modals/share-summary';
+import { RowEditor } from '@/features/history/RowEditor';
 import { useSessions } from '@/store/sessions';
 
 const themed = (el: ReactElement, scale: number) => (
@@ -33,6 +38,10 @@ afterEach(async () => {
 const screens: [string, () => ReactElement, (() => void) | null][] = [
   ['Timer', () => <TimerHome />, null],
   ['Timer (contraction running)', () => <TimerHome />, () => void useSessions.getState().tap(Date.now() - 42_000)],
+  ['History', () => <History />, () => void seedSession('s1', 3_600_000)],
+  ['Session detail', () => <SessionDetail />, () => { seedSession('s1', 3_600_000); mockParams.current = { id: 's1' }; }],
+  ['Row editor', () => <RowEditor sessionId="s1" target={{ mode: 'add', startedAt: Date.now() - 600_000 }} onClose={() => undefined} onDeleted={() => undefined} />, () => void seedSession('s1', 3_600_000)],
+  ['Share summary', () => <ShareSummary />, () => { seedSession('s1', 3_600_000); mockParams.current = { id: 's1' }; }],
   ['Kicks', () => <KicksHome />, null],
   ['My Pregnancy', () => <PregnancyHome />, null],
   ['More', () => <MoreHome />, null],

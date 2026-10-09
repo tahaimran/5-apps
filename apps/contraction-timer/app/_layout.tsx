@@ -7,6 +7,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { ThemeProvider, useTheme } from '@shared/theme';
 import { useAdGuard } from '@/ads/guard';
 import { useSessionMaintenance } from '@/features/timer/maintenance';
+import { cleanPdfCache } from '@/export/pdfCache';
 import { installSessionNotifier } from '@/notifications/sessionOpen';
 import { useMeta } from '@/store/meta';
 import { FONT_SCALE, palette, TOUCH_TARGET } from '@/theme/tokens';
@@ -21,6 +22,7 @@ function Root() {
   useEffect(() => installSessionNotifier(), []);
   useEffect(() => {
     useMeta.getState().recordLaunch();
+    cleanPdfCache();
     void SplashScreen.hideAsync().catch(() => undefined);
   }, []);
   return (
@@ -29,6 +31,7 @@ function Root() {
       <StatusBar style={mode === 'light' ? 'dark' : 'light'} />
       <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: colors.background } }}>
         <Stack.Screen name="onboarding" options={{ gestureEnabled: false }} />
+        <Stack.Screen name="modals/share-summary" options={{ presentation: 'modal' }} />
       </Stack>
     </>
   );

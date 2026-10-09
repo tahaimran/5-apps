@@ -25,7 +25,37 @@ jest.mock('react-native-mmkv', () => ({
     };
   },
 }));
-jest.mock('expo-file-system', () => ({ Paths: { cache: 'file:///cache' }, File: class {} }));
+/** Files the app deleted from the cache, and which uris "exist". */
+export const mockFiles = { deleted: [] as string[], missing: new Set<string>(), failDelete: false };
+jest.mock('expo-file-system', () => ({
+  Paths: { cache: 'file:///cache' },
+  File: class {
+    uri: string;
+    constructor(uri: string) {
+      this.uri = uri;
+    }
+    get exists() {
+      return !mockFiles.missing.has(this.uri);
+    }
+    delete() {
+      if (mockFiles.failDelete) throw new Error('cannot delete');
+      mockFiles.deleted.push(this.uri);
+    }
+  },
+}));
+/** The PDF made by expo-print and what the share sheet was given. */
+export const mockShare = { printed: [] as { html: string }[], shared: [] as { uri: string; options: Record<string, unknown> }[], available: true, failPrint: false, text: [] as { message?: string; title?: string }[] };
+jest.mock('expo-print', () => ({
+  printToFileAsync: async (o: { html: string }) => {
+    if (mockShare.failPrint) throw new Error('print failed');
+    mockShare.printed.push(o);
+    return { uri: `file:///cache/Print/summary-${mockShare.printed.length}.pdf` };
+  },
+}));
+jest.mock('expo-sharing', () => ({
+  isAvailableAsync: async () => mockShare.available,
+  shareAsync: async (uri: string, options: Record<string, unknown>) => void mockShare.shared.push({ uri, options }),
+}));
 jest.mock('expo-constants', () => ({ __esModule: true, default: { expoConfig: { version: '1.0.0', android: { package: 'com.fiveapps.contractiontimer' } } } }));
 jest.mock('expo-linking', () => ({ openURL: jest.fn(async () => undefined) }));
 jest.mock('expo-haptics', () => ({
@@ -63,6 +93,9 @@ export const resetNotifMock = () => {
   mockReview.available = false;
   mockReview.request.mockClear();
   mockKeepAwake.active.clear();
+  Object.assign(mockFiles, { deleted: [], failDelete: false });
+  mockFiles.missing.clear();
+  Object.assign(mockShare, { printed: [], shared: [], available: true, failPrint: false, text: [] });
   mockNotifState.pending.clear();
   mockNotifState.channels.clear();
   mockLastNotificationResponse.current = null;

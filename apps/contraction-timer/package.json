@@ -8,7 +8,7 @@
     "android": "expo run:android",
     "typecheck": "tsc --noEmit",
     "test": "jest",
-    "test:tz": "for z in America/New_York Europe/London Australia/Lord_Howe Asia/Calcutta Pacific/Auckland America/Sao_Paulo UTC; do TZ=$z jest src/domain/__tests__/tz || exit 1; done",
+    "test:tz": "for z in America/New_York Europe/London Australia/Lord_Howe Asia/Calcutta Pacific/Auckland America/Sao_Paulo UTC; do TZ=$z jest src/domain/__tests__/tz src/domain/__tests__/summary src/domain/__tests__/dueDate || exit 1; done",
     "check": "bash scripts/check.sh"
   },
   "dependencies": {
