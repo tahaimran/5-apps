@@ -11,6 +11,7 @@ import type { DayKey } from '@/domain/types';
 import { draftFromTemplate } from '@/features/habit-editor/drafts';
 import { useCelebration } from '@/store/celebrations';
 import { useHabits } from '@/store/habits';
+import { useToday } from '@/store/today';
 import { palette } from '@/theme/tokens';
 
 const TODAY = '2026-10-08' as DayKey;
@@ -28,6 +29,8 @@ beforeEach(() => {
   resetApp();
   mockRouter.push.mockClear();
   jest.useFakeTimers({ now: new Date(2026, 9, 8, 9, 0, 0), doNotFake: ['nextTick', 'setImmediate'] });
+  // The today store read the real clock at import, before the fake one existed.
+  useToday.setState({ today: TODAY });
 });
 afterEach(async () => {
   await cleanup();

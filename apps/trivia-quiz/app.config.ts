@@ -60,6 +60,8 @@ const config: ExpoConfig = {
     ['expo-build-properties', { android: { compileSdkVersion: 36, targetSdkVersion: 36 } }],
   ],
   experiments: { typedRoutes: true },
+  owner: 'tuahaimran',
+  extra: { eas: { projectId: '29cfc21a-1af5-4d4d-b98d-b4618c04fc6a' } },
 };
 
 export default config;

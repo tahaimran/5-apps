@@ -1,5 +1,16 @@
 # CLAUDE.md — rules for AI coding sessions in this repo
 
+## Project status (update when it changes)
+- Default branch: `main` (renamed from `Main`). Branch from it and PR back into it.
+  The old `claude/*` build branches are merged and can be ignored.
+- Built: shared package + all 5 apps (habit-tracker, water-reminder, word-search,
+  trivia-quiz, contraction-timer). Milestones are ticked in each app's DEVELOPMENT_PLAN.md.
+- Verified on `main` (2026-10-09): tsc clean, expo-doctor 21/21, all jest tests pass in every package.
+- EAS: all 5 apps linked to Expo account `tuahaimran` (owner + projectId in each `app.config.ts`);
+  first `preview` APKs built 2026-10-09. Keystores are EAS-managed. Build from the app folder.
+- Next: each app's `WHATS_LEFT.md` is the remaining-work checklist (device testing, real AdMob IDs
+  in EAS, privacy policy hosting, Play Console forms, screenshots, closed testing).
+
 ## What this repo is
 An npm-workspaces monorepo of 5 Expo (React Native, TypeScript) Android apps monetized only by AdMob.
 There is no backend, no auth and no remote database. All data lives on the device (MMKV), and content is either bundled or generated locally.

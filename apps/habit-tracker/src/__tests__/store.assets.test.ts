@@ -47,7 +47,7 @@ describe('listing text (ASO.md)', () => {
     expect(row('Short description').toLowerCase()).not.toContain('free');
   });
   it('has a full description under 4000 characters', () => {
-    const block = aso.match(/### 1\.1 Full description\s+```\n([\s\S]*?)\n```/)?.[1] ?? '';
+    const block = aso.match(/### 1\.1 Full description\s+```\r?\n([\s\S]*?)\r?\n```/)?.[1] ?? '';
     expect(block.length).toBeGreaterThan(500);
     expect(block.length).toBeLessThanOrEqual(4000);
   });

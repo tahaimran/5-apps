@@ -58,7 +58,7 @@ describe('listing text (ASO.md)', () => {
 
 describe('full description draft (replaces the misfiled one in ASO.md)', () => {
   const draft = read('store/FULL_DESCRIPTION_DRAFT.md');
-  const block = draft.match(/```\n([\s\S]*?)\n```/)?.[1] ?? '';
+  const block = draft.match(/```\r?\n([\s\S]*?)\r?\n```/)?.[1] ?? '';
   it('fits the Play limit and names the right app', () => {
     expect(block.length).toBeGreaterThan(500);
     expect(block.length).toBeLessThanOrEqual(4000);

@@ -77,7 +77,7 @@ describe('accessibility rules', () => {
     const bad = scan((node, sf, report) => {
       if (ts.isJsxAttribute(node) && node.name.getText() === 'allowFontScaling') report(node, 'allowFontScaling is set');
       // Plan §7.2: only the grid letters are capped (1.4x), because the grid cell they sit in cannot grow.
-      if (ts.isJsxAttribute(node) && node.name.getText() === 'maxFontSizeMultiplier' && !GRID_LETTER_FILES.some((f) => sf.fileName.endsWith(path.join('components', f)))) {
+      if (ts.isJsxAttribute(node) && node.name.getText() === 'maxFontSizeMultiplier' && !GRID_LETTER_FILES.some((f) => sf.fileName.replace(/\\/g, '/').endsWith(`components/${f}`))) {
         report(node, 'maxFontSizeMultiplier caps the system font scale');
       }
     });
