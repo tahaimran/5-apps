@@ -1,5 +1,7 @@
 {
-  "app": { "name": "Quizora" },
+  "app": {
+    "name": "Quizora"
+  },
   "common": {
     "close": "Close",
     "done": "Done",
@@ -8,12 +10,211 @@
     "off": "Off",
     "back": "Back"
   },
-  "tabs": { "home": "Home", "play": "Play", "stats": "Stats", "settings": "Settings" },
-  "home": {
-    "title": "Home",
-    "soon": "Quizora is being built. Your Daily Challenge will appear here."
+  "tabs": {
+    "home": "Home",
+    "play": "Play",
+    "stats": "Stats",
+    "settings": "Settings"
   },
-  "play": { "title": "Play" },
-  "stats": { "title": "Stats" },
-  "settings": { "title": "Settings" }
+  "categories": {
+    "general": "General Knowledge",
+    "geography": "Geography",
+    "history": "History",
+    "science": "Science",
+    "movies": "Movies",
+    "music": "Music",
+    "sports": "Sports",
+    "animals": "Animals",
+    "food": "Food",
+    "literature": "Literature",
+    "logic": "Logic & IQ",
+    "flags": "Flags"
+  },
+  "difficulty": {
+    "1": "Easy",
+    "2": "Medium",
+    "3": "Hard"
+  },
+  "titles": {
+    "curious": "Curious",
+    "quizzer": "Quizzer",
+    "brainiac": "Brainiac",
+    "scholar": "Scholar",
+    "legend": "Trivia Legend"
+  },
+  "stars": {
+    "label_one": "{count} star out of 3",
+    "label_other": "{count} stars out of 3"
+  },
+  "modes": {
+    "classic": "Classic levels",
+    "classicDetail": "30 levels in every category. Earn stars to unlock the next.",
+    "classicLabel": "Classic levels. 30 levels in every category.",
+    "classicStars": "{count} stars earned",
+    "category": "Category play",
+    "categoryDetail": "Pick a topic and a difficulty and practice.",
+    "categoryLabel": "Category play. Pick a topic and a difficulty.",
+    "blitz": "Timed Blitz",
+    "blitzDetail": "60 seconds",
+    "blitzDescription": "Answer as many as you can in 60 seconds.",
+    "blitzLabel": "Timed Blitz. Answer as many as you can in 60 seconds.",
+    "blitzBest": "Best: {count}"
+  },
+  "home": {
+    "title": "Quizora",
+    "level": "Level {level} · {title}",
+    "levelLabel": "Level {level}, {title}. {into} of {need} experience points.",
+    "xp": "{into} / {need} XP",
+    "streak_one": "{count}-day streak",
+    "streak_other": "{count}-day streak",
+    "streakLabel_one": "{count} day streak",
+    "streakLabel_other": "{count} day streak",
+    "atRisk": "Your {count}-day streak ends at midnight. Play today's challenge to keep it.",
+    "dailyOverline": "{date}",
+    "dailyTitle": "Daily Challenge",
+    "dailyMeta": "10 questions · about 2 minutes",
+    "dailyStart": "Start your streak today.",
+    "dailyKeep": "Keep your {count}-day streak going.",
+    "dailyPlay": "Play today's challenge",
+    "dailyScore": "Today: {score} out of 10",
+    "dailyBack": "Come back in {hours}h {minutes}m for a new one.",
+    "dailyResult": "See today's result",
+    "continue": "Continue",
+    "continueCard": "{category}, level {level}",
+    "continuePlay": "Play level"
+  },
+  "play": {
+    "title": "Play"
+  },
+  "classic": {
+    "title": "Classic levels",
+    "intro": "Pick a category. Get one star on a level to unlock the next.",
+    "complete": "{percent}% complete",
+    "tileLabel": "{category}. {percent}% complete.",
+    "levelName": "Level {level}",
+    "levelLabel": "Level {level}, {difficulty}, {stars} stars",
+    "levelLocked": "Level {level}, locked",
+    "getStar": "Get 1 star on level {level} first",
+    "hearts": "3 hearts"
+  },
+  "category": {
+    "title": "Category play",
+    "accuracy": "{percent}% right",
+    "noGames": "Not played yet",
+    "difficulty": "Difficulty",
+    "exhausted": "You have seen about 90% of these. We will mix in your oldest questions.",
+    "start": "Start round"
+  },
+  "quiz": {
+    "answerLabel": "Answer {letter}, {text}",
+    "correctSuffix": ", correct",
+    "wrongSuffix": ", wrong",
+    "removedSuffix": ", removed by 50/50",
+    "quit": "Quit round",
+    "quitTitle": "Quit round?",
+    "quitBody": "Progress for this round will be lost.",
+    "quitConfirm": "Quit",
+    "keepPlaying": "Keep playing",
+    "paused": "Paused",
+    "resume": "Resume",
+    "progress": "{n} / {total}",
+    "progressLabel": "Question {n} of {total}",
+    "blitzCount": "{count} right",
+    "heartsLabel": "{count} hearts left",
+    "scoreLabel": "Score {score}",
+    "timeLeft": "About {seconds} seconds left",
+    "warmupProgress": "Warm-up · {n} of {total}",
+    "lifeline": {
+      "fifty": "50/50",
+      "skip": "Skip",
+      "time": "+Time"
+    },
+    "lifelineLeft": "{name}, {count} left",
+    "lifelineUsed": "{name}, used",
+    "lifelineOffer": "{name}. Watch a short video for one more",
+    "verdict": {
+      "correct": "Correct!",
+      "wrong": "Not quite",
+      "timeout": "Time's up!"
+    },
+    "verdictSpoken": {
+      "correct": "Correct",
+      "wrong": "Wrong. The answer is {answer}",
+      "timeout": "Time's up. The answer is {answer}"
+    },
+    "theAnswer": "The answer is {answer}.",
+    "didYouKnow": "Did you know?",
+    "source": "Source: {domain}",
+    "report": "Report this question",
+    "reportSubject": "Quizora question {id}",
+    "reportBody": "Question {id} (revision {rev}) has a problem:",
+    "next": "Next",
+    "seeResults": "See results"
+  },
+  "results": {
+    "levelDone": "Level complete!",
+    "roundDone": "Round complete!",
+    "blitzTitle": "Time's up!",
+    "soClose": "So close!",
+    "outOfHearts": "Out of hearts",
+    "heartsBody": "Hard levels have 3 hearts. Try the level again.",
+    "needToPass": "{correct} out of {total}. You need {need} to pass.",
+    "levelN": "Level {level}",
+    "scoreLabel": "{correct} right out of {total}",
+    "blitzScoreLabel": "{count} right answers",
+    "newBest": "New best score!",
+    "newBestBlitz": "New Blitz best!",
+    "points": "Points",
+    "xp": "XP earned",
+    "doubled": "doubled",
+    "accuracy": "Accuracy",
+    "time": "Time",
+    "relaxedNote": "Relaxed mode: no timer, XP x0.8.",
+    "levelUp": "Level up! You are level {level}.",
+    "nextLevelXp": "{into} / {need} XP toward level {level}",
+    "nextLevel": "Next level",
+    "replay": "Replay",
+    "playAgain": "Play again",
+    "home": "Home"
+  },
+  "daily": {
+    "done": "Daily Challenge done!",
+    "alreadyPlayed": "Today's challenge",
+    "scoreLabel": "{score} right out of 10",
+    "freezeUsed": "A streak freeze covered your missed day.",
+    "freezeEarned": "You earned a streak freeze. It covers one missed day.",
+    "timeZoneNote": "Your time zone changed a moment ago, so this day was not added to your streak. Tomorrow counts as usual.",
+    "staleNote": "The day changed while you played, so this did not count toward today's streak.",
+    "xp": "+{xp} XP",
+    "freezes_one": "{count} streak freeze held",
+    "freezes_other": "{count} streak freezes held",
+    "weekLabel": "The last 7 days",
+    "dayPlayed": "{day}: played, {score} out of 10",
+    "dayMissed": "{day}: not played",
+    "share": "Share",
+    "playLevel": "Play a level while you are here"
+  },
+  "share": {
+    "cardTitle": "Quizora Daily · {date}",
+    "cardFooter": "Trivia that works offline",
+    "text": "Quizora Daily · {date} · {score}/10",
+    "textStreak": "Quizora Daily · {date} · {score}/10 🔥{streak}",
+    "dialogTitle": "Share your Daily Challenge"
+  },
+  "stats": {
+    "title": "Stats",
+    "empty": "Play a round to see your stats.",
+    "answered": "Questions answered",
+    "accuracy": "Accuracy",
+    "bestStreak": "Best streak",
+    "blitzBest": "Blitz best",
+    "rounds": "Rounds played",
+    "totalXp": "Total XP",
+    "byCategory": "Accuracy by category",
+    "noAnswers": "No answers yet",
+    "categoryLine": "{percent}% of {answered}"
+  },
+  "settings": {
+    "title": "Settings"
+  }
 }

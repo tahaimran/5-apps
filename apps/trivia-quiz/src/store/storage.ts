@@ -21,6 +21,8 @@ export interface TqKeys {
   settings: Settings;
   'progress.classic': Partial<Record<CategoryId, ClassicProgress>>;
   seen: Record<string, SeenEntry>;
+  /** The Classic level played last, for Home's "Continue" card. */
+  'classic.last': { category: CategoryId; level: number };
   daily: DailyState;
   streak: StreakState;
   stats: Stats;

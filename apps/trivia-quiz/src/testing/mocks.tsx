@@ -28,10 +28,12 @@ jest.mock('react-native-mmkv', () => ({
 jest.mock('expo-file-system', () => ({ Paths: { cache: 'file:///cache' }, File: class {} }));
 jest.mock('expo-constants', () => ({ __esModule: true, default: { expoConfig: { version: '1.0.0', android: { package: 'com.fiveapps.quizora' } } } }));
 jest.mock('expo-linking', () => ({ openURL: jest.fn(async () => undefined) }));
+/** What the fake haptics were asked to do. */
+export const mockHaptics = { impact: jest.fn(), selection: jest.fn(), notification: jest.fn() };
 jest.mock('expo-haptics', () => ({
-  impactAsync: jest.fn(),
-  selectionAsync: jest.fn(),
-  notificationAsync: jest.fn(),
+  impactAsync: (...a: unknown[]) => mockHaptics.impact(...a),
+  selectionAsync: (...a: unknown[]) => mockHaptics.selection(...a),
+  notificationAsync: (...a: unknown[]) => mockHaptics.notification(...a),
   ImpactFeedbackStyle: { Light: 'light', Medium: 'medium' },
   NotificationFeedbackType: { Success: 'success', Warning: 'warning', Error: 'error' },
 }));

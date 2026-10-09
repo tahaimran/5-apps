@@ -1,4 +1,6 @@
-import type { ReactElement } from 'react';
+import React, { type ReactElement } from 'react';
+import { ThemeProvider } from '@shared/theme';
+import { palette, TOUCH_TARGET } from '@/theme/tokens';
 import { act } from 'react';
 import TestRenderer, { type ReactTestInstance } from 'react-test-renderer';
 
@@ -36,10 +38,21 @@ const flatText = (node: ReactTestInstance): string => {
   return parts.join('');
 };
 
-export async function render(element: ReactElement): Promise<Rendered> {
+export interface RenderOptions {
+  /** The text-size multiplier given to the theme (1 by default). */
+  fontScale?: number;
+}
+
+/** Renders inside the app's ThemeProvider, like the root layout does. */
+export async function render(element: ReactElement, options: RenderOptions = {}): Promise<Rendered> {
+  const wrap = (el: ReactElement) => (
+    <ThemeProvider palette={palette} fontScale={options.fontScale ?? 1} touchTarget={TOUCH_TARGET}>
+      {el}
+    </ThemeProvider>
+  );
   let renderer!: TestRenderer.ReactTestRenderer;
   await act(async () => {
-    renderer = TestRenderer.create(element);
+    renderer = TestRenderer.create(wrap(element));
   });
   mounted.push(renderer);
   const root = renderer.root;
@@ -65,7 +78,7 @@ export async function render(element: ReactElement): Promise<Rendered> {
     },
     update: async (next) => {
       await act(async () => {
-        renderer.update(next);
+        renderer.update(wrap(next));
       });
     },
     unmount: () => renderer.unmount(),
