@@ -63,3 +63,6 @@ export function dayMonth(key: string): string {
 
 /** A due date as `12 November 2026`. */
 export const fullDate = (key: string): string => `${dayMonth(key)} ${key.slice(0, 4)}`;
+
+/** A time of day (a reminder time) as `8:00 PM` or `20:00`. */
+export const timeOfDay = (hour: number, minute: number, clock24h: boolean): string => clockTime(new Date(2023, 0, 1, hour, minute).getTime(), clock24h);

@@ -59,7 +59,36 @@
     "stopped": "Contraction stopped, {time}"
   },
   "kicks": {
-    "title": "Kicks"
+    "title": "Kicks",
+    "start": "Start counting",
+    "startLabel": "Start counting movements",
+    "tip": "Find a comfortable spot. Tap once for each movement. Movements within a second of each other count as one.",
+    "startedTip": "Tap Start whenever you're ready to count.",
+    "tapForEach": "Tap for each movement",
+    "countLabel": "Count a movement. {n} of {target} so far",
+    "target": "of {target}",
+    "elapsed": "{time} so far",
+    "undo": "Undo last movement",
+    "end": "End",
+    "endLabel": "End and save this count",
+    "doneTitle": "{n} movements in {min} min. Nicely done.",
+    "save": "Save",
+    "saved": "Saved",
+    "softLimit": "It's been 2 hours. If you've noticed fewer movements than usual, contact your provider today.",
+    "hardClosed": "This count ended after 3 hours and was saved.",
+    "reminderOff": "Daily reminder: Off",
+    "reminderOn": "Daily reminder: {time}",
+    "reminderChip": "{state}. Tap to change",
+    "history": "History",
+    "historyTitle": "Kick history",
+    "historyEmpty": "No counts yet. When you save one, it will be kept here, only on this phone.",
+    "row": "{date} · {count} movements in {min} min",
+    "rowShort": "{date} · {count} of {target} movements, ended after {min} min",
+    "rowLabel": "{date}, {count} movements in {min} minutes",
+    "rowShortLabel": "{date}, {count} of {target} movements, ended after {min} minutes",
+    "sparkTitle": "Minutes to reach {target}",
+    "sparkLabel": "Minutes to reach the target over your last {n} counts: from {first} to {last}",
+    "sparkOne": "Minutes to reach the target: {first}"
   },
   "pregnancy": {
     "title": "My Pregnancy"
@@ -290,5 +319,23 @@
     "floral": "Soft Floral",
     "contrast": "High-contrast print",
     "compact": "Compact one-page"
+  },
+  "reminder": {
+    "title": "Daily kick reminder",
+    "body": "We can send one quiet reminder a day at the time you choose. You can turn it off whenever you like.",
+    "time": "Reminder time",
+    "turnOn": "Turn on",
+    "turnOff": "Turn off",
+    "notNow": "Not now",
+    "denied": "No problem. You can turn reminders on later in More.",
+    "blocked": "Notifications are turned off for this app in your phone's settings.",
+    "openSettings": "Open phone settings",
+    "hourLess": "One hour earlier",
+    "hourMore": "One hour later",
+    "minuteLess": "Fifteen minutes earlier",
+    "minuteMore": "Fifteen minutes later",
+    "hourStep": "1 h",
+    "minuteStep": "15 min",
+    "notificationBody": "Time for your kick count? Find a comfy spot and tap Start."
   }
 }

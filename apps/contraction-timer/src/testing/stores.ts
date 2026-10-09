@@ -5,6 +5,7 @@ import { defaultMeta, defaultProfile, defaultSettings } from '@/domain/defaults'
 import { dateKeyFor } from '@/domain/dateKey';
 import { useMeta } from '@/store/meta';
 import { useProfile } from '@/store/profile';
+import { useKicks } from '@/store/kicks';
 import { useSessions } from '@/store/sessions';
 import { useSettings } from '@/store/settings';
 import { useToday } from '@/store/today';
@@ -17,6 +18,7 @@ export function resetApp(now: Date = new Date()) {
   useProfile.setState({ profile: defaultProfile() });
   useMeta.setState({ meta: defaultMeta(now.getTime()) });
   useSessions.setState({ active: null, index: [], archived: {}, restored: false });
+  useKicks.setState({ active: null, history: [] });
   useToday.setState({ today: dateKeyFor(now) });
   resetNotifMock();
 }

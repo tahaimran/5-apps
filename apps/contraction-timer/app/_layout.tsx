@@ -8,6 +8,8 @@ import { ThemeProvider, useTheme } from '@shared/theme';
 import { useAdGuard } from '@/ads/guard';
 import { useSessionMaintenance } from '@/features/timer/maintenance';
 import { cleanPdfCache } from '@/export/pdfCache';
+import { useKickReminderSync } from '@/notifications/kickReminder';
+import { useNotificationResponses } from '@/notifications/responses';
 import { installSessionNotifier } from '@/notifications/sessionOpen';
 import { useMeta } from '@/store/meta';
 import { FONT_SCALE, palette, TOUCH_TARGET } from '@/theme/tokens';
@@ -19,6 +21,8 @@ function Root() {
   const { mode, colors } = useTheme();
   useAdGuard();
   useSessionMaintenance();
+  useKickReminderSync();
+  useNotificationResponses();
   useEffect(() => installSessionNotifier(), []);
   useEffect(() => {
     useMeta.getState().recordLaunch();

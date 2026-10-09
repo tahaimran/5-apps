@@ -19,6 +19,9 @@ import TabsLayout from '../../app/(tabs)/_layout';
 import History from '../../app/(tabs)/timer/history';
 import SessionDetail from '../../app/(tabs)/timer/session/[id]';
 import ShareSummary from '../../app/modals/share-summary';
+import KickHistory from '../../app/(tabs)/kicks/history';
+import { KickReminderSheet } from '@/components/KickReminderSheet';
+import { useKicks } from '@/store/kicks';
 import { RowEditor } from '@/features/history/RowEditor';
 import { useSessions } from '@/store/sessions';
 
@@ -28,7 +31,10 @@ const themed = (el: ReactElement, scale: number) => (
   </ThemeProvider>
 );
 
-beforeEach(() => resetApp());
+beforeEach(() => {
+  resetApp();
+  useKicks.setState({ active: null, history: [] });
+});
 afterEach(async () => {
   await cleanup();
   sharedStore.remove('theme.mode');
@@ -43,6 +49,10 @@ const screens: [string, () => ReactElement, (() => void) | null][] = [
   ['Row editor', () => <RowEditor sessionId="s1" target={{ mode: 'add', startedAt: Date.now() - 600_000 }} onClose={() => undefined} onDeleted={() => undefined} />, () => void seedSession('s1', 3_600_000)],
   ['Share summary', () => <ShareSummary />, () => { seedSession('s1', 3_600_000); mockParams.current = { id: 's1' }; }],
   ['Kicks', () => <KicksHome />, null],
+  ['Kicks (counting)', () => <KicksHome />, () => { useKicks.getState().start(Date.now() - 60_000); useKicks.getState().tap(Date.now() - 30_000); }],
+  ['Kicks (target reached)', () => <KicksHome />, () => { useKicks.getState().start(Date.now() - 600_000); for (let i = 1; i <= 10; i++) useKicks.getState().tap(Date.now() - 600_000 + i * 20_000); }],
+  ['Kick history', () => <KickHistory />, () => { useKicks.getState().start(Date.now() - 900_000); for (let i = 1; i <= 10; i++) useKicks.getState().tap(Date.now() - 900_000 + i * 20_000); useKicks.getState().finish(Date.now()); }],
+  ['Kick reminder sheet', () => <KickReminderSheet visible onClose={() => undefined} />, null],
   ['My Pregnancy', () => <PregnancyHome />, null],
   ['More', () => <MoreHome />, null],
   ['Tabs', () => <TabsLayout />, null],
