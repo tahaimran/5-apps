@@ -17,14 +17,18 @@ const config: ExpoConfig = {
     // Keep in sync with promoPackages['contraction-timer'] in packages/shared/src/crosspromo/catalog.ts.
     package: 'com.fiveapps.contractiontimer',
     versionCode: 1,
+    // Health entries are kept on the phone only. Android's automatic backup would copy them to the person's Google account
+    // (and onto a new phone), which is a transfer the app's "nothing leaves the phone" promise does not cover, so it is off.
+    allowBackup: false,
     adaptiveIcon: {
       foregroundImage: './assets/adaptive-icon-foreground.png',
       monochromeImage: './assets/adaptive-icon-monochrome.png',
       backgroundColor: '#FBF7F4',
     },
     // POST_NOTIFICATIONS: the optional kick reminder (asked for only when the person turns it on).
-    // VIBRATE: haptics. AD_ID: declared for AdMob. The ads SDK and expo-keep-awake add INTERNET,
-    // ACCESS_NETWORK_STATE and WAKE_LOCK. No exact alarms: the kick reminder is an inexact daily trigger.
+    // VIBRATE: haptics. AD_ID: declared for AdMob. The ads SDK adds INTERNET, ACCESS_NETWORK_STATE and WAKE_LOCK, and
+    // expo-notifications adds RECEIVE_BOOT_COMPLETED so the daily reminder survives a reboot; expo-keep-awake adds none.
+    // No exact alarms: the kick reminder is an inexact daily trigger.
     permissions: ['POST_NOTIFICATIONS', 'VIBRATE', 'com.google.android.gms.permission.AD_ID'],
     blockedPermissions: [
       'android.permission.READ_EXTERNAL_STORAGE',

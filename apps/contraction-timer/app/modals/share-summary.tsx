@@ -66,6 +66,7 @@ export default function ShareSummary() {
       <BigButton tall label={t('share.text')} onPress={() => void onText()} />
       <BigButton tall label={t('share.pdf')} disabled={busy} onPress={() => void onPdf()} />
       <AppText style={[type.body, { color: colors.textMuted }]}>{t('share.themeLabel', { name: t(`pdfTheme.${pdfTheme.id}`) })}</AppText>
+      <BigButton variant="secondary" label={t('pdfThemeScreen.more')} onPress={() => router.push('/modals/pdf-theme')} />
       {message ? <Toast message={message} /> : null}
       <AppText accessibilityRole="header" style={[type.title, { color: colors.text, fontWeight: '700', marginTop: spacing.md }]}>{t('share.preview')}</AppText>
       <AppText selectable style={[type.body, { color: colors.text, padding: spacing.md, borderRadius: radius.md, borderWidth: 1, borderColor: colors.border, backgroundColor: colors.surface, fontFamily: undefined }]}>

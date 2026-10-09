@@ -228,6 +228,7 @@ jest.mock('react-native-reanimated', () => {
   };
 });
 
+export const mockPath: { current: string } = { current: '/timer' };
 export const mockRouter = {
   push: jest.fn(),
   navigate: jest.fn(),
@@ -247,6 +248,7 @@ jest.mock('expo-router', () => {
     Redirect: ({ href }: { href: string }) => React.createElement('Redirect', { href }),
     useLocalSearchParams: () => mockParams.current,
     useFocusEffect: (cb: () => void | (() => void)) => React.useEffect(cb, []),
+    usePathname: () => mockPath.current,
     useNavigation: () => ({ addListener: () => () => undefined, dispatch: jest.fn() }),
   };
 });

@@ -3,14 +3,17 @@ import { router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
+import { useAdScreen } from '@/ads/guard';
 import { SessionCard } from '@/features/history/SessionCard';
 import { useSessions } from '@/store/sessions';
 import { AppText } from '@/ui/AppText';
+import { BannerSlot } from '@/ui/BannerSlot';
 import { ScreenHeader } from '@/ui/ScreenHeader';
 
 /** Plan §5.2: every session on this phone, newest first; the one being timed (if any) is on top. */
 export default function History() {
   const { colors, spacing, radius, type } = useTheme();
+  useAdScreen('timerHistory');
   const active = useSessions((s) => s.active);
   const index = useSessions((s) => s.index);
   const archived = useSessions((s) => s.archived);
@@ -29,6 +32,7 @@ export default function History() {
         }
         renderItem={({ item }) => <SessionCard session={item.s} active={item.open} onPress={() => router.push({ pathname: '/timer/session/[id]', params: { id: item.s.id } })} />}
       />
+      <BannerSlot placement="history_banner" />
     </SafeAreaView>
   );
 }

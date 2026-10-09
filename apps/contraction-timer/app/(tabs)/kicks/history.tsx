@@ -2,10 +2,12 @@ import { FlatList, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
+import { useAdScreen } from '@/ads/guard';
 import { Sparkline } from '@/components/Sparkline';
 import { describeMinutes, isComplete, timeToTarget } from '@/domain/kicks';
 import { useKicks } from '@/store/kicks';
 import { AppText } from '@/ui/AppText';
+import { BannerSlot } from '@/ui/BannerSlot';
 import { shortDate } from '@/ui/format';
 import { ScreenHeader } from '@/ui/ScreenHeader';
 
@@ -15,6 +17,7 @@ export const SPARK_COUNTS = 14;
 /** Plan §5.3: the saved counts, newest first, with a line of how long each took to reach the target. */
 export default function KickHistory() {
   const { colors, spacing, radius, type } = useTheme();
+  useAdScreen('kickHistory');
   const history = useKicks((s) => s.history);
   const done = history.filter(isComplete).slice(0, SPARK_COUNTS).reverse();
   const minutes = done.map((s) => describeMinutes(timeToTarget(s) ?? 0));
@@ -60,6 +63,7 @@ export default function KickHistory() {
           );
         }}
       />
+      <BannerSlot placement="history_banner" />
     </SafeAreaView>
   );
 }

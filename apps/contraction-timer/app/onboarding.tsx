@@ -4,6 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { OnboardingFlow } from '@shared/onboarding';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
+import { useAdScreen } from '@/ads/guard';
 import { startAds } from '@/ads/start';
 import { applyOnboardingAnswers, clearOnboardingResume } from '@/features/onboarding/finish';
 import { buildSteps } from '@/features/onboarding/steps';
@@ -11,6 +12,7 @@ import { db } from '@/store/storage';
 
 export default function Onboarding() {
   const { colors } = useTheme();
+  useAdScreen('onboarding');
   const skipped = useRef(false);
   const steps = useMemo(
     () =>

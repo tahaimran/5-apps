@@ -6,12 +6,14 @@ import { useTheme } from '@shared/theme';
 import { checklistText, groupsOf, progressOf } from '@/domain/checklists';
 import type { ChecklistId } from '@/domain/types';
 import { shareText } from '@/export/share';
+import { useAdScreen } from '@/ads/guard';
 import { recordPositiveMoment } from '@/features/review/ask';
 import { useChecklist } from '@/hooks/useChecklist';
 import { useChecklists } from '@/store/checklists';
 import { AppText } from '@/ui/AppText';
 import { BigButton } from '@/ui/BigButton';
 import { IconButton } from '@/ui/IconButton';
+import { Templates } from './Templates';
 import { Screen } from '@/ui/Screen';
 import { ScreenHeader } from '@/ui/ScreenHeader';
 import type { ReactNode } from 'react';
@@ -26,6 +28,7 @@ export const planText = (id: ChecklistId, list = useChecklists.getState().lists[
  */
 export function ChecklistScreen({ id, title, intro, progressText, share, footer, banner }: { id: ChecklistId; title: string; intro: string; progressText: (p: ReturnType<typeof progressOf>) => string; share?: boolean; footer?: ReactNode; banner?: ReactNode }) {
   const { colors, spacing, radius, type } = useTheme();
+  useAdScreen('checklist');
   const list = useChecklist(id);
   const [editing, setEditing] = useState(false);
   const [drafts, setDrafts] = useState<Record<string, string>>({});
@@ -104,6 +107,7 @@ export function ChecklistScreen({ id, title, intro, progressText, share, footer,
       ))}
 
       {share ? <BigButton tall label={t('lists.shareText')} onPress={() => void shareText(planText(id, list))} /> : null}
+      <Templates id={id} />
       {footer}
     </Screen>
   );

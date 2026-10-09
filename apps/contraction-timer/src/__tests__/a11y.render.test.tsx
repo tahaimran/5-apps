@@ -35,6 +35,8 @@ import DisclaimerScreen from '../../app/(tabs)/more/disclaimer';
 import AlertRule from '../../app/modals/alert-rule';
 import Onboarding from '../../app/onboarding';
 import { useSettings } from '@/store/settings';
+import PdfTheme from '../../app/modals/pdf-theme';
+import DebugAds from '../../app/debug-ads';
 import { RowEditor } from '@/features/history/RowEditor';
 import { useSessions } from '@/store/sessions';
 
@@ -63,6 +65,8 @@ const screens: [string, () => ReactElement, (() => void) | null][] = [
   ['History', () => <History />, () => void seedSession('s1', 3_600_000)],
   ['Session detail', () => <SessionDetail />, () => { seedSession('s1', 3_600_000); mockParams.current = { id: 's1' }; }],
   ['Row editor', () => <RowEditor sessionId="s1" target={{ mode: 'add', startedAt: Date.now() - 600_000 }} onClose={() => undefined} onDeleted={() => undefined} />, () => void seedSession('s1', 3_600_000)],
+  ['PDF look picker', () => <PdfTheme />, null],
+  ['Ad rules (debug)', () => <DebugAds />, null],
   ['Share summary', () => <ShareSummary />, () => { seedSession('s1', 3_600_000); mockParams.current = { id: 's1' }; }],
   ['Kicks', () => <KicksHome />, null],
   ['Kicks (counting)', () => <KicksHome />, () => { useKicks.getState().start(Date.now() - 60_000); useKicks.getState().tap(Date.now() - 30_000); }],

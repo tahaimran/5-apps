@@ -7,6 +7,7 @@ import { SECOND } from '@/domain/defaults';
 import { intervalFor, isIgnored, sessionStats } from '@/domain/stats';
 import { sessionStart } from '@/domain/session';
 import type { ContractionSession } from '@/domain/types';
+import { useAdScreen } from '@/ads/guard';
 import { RowEditor, type EditorTarget } from '@/features/history/RowEditor';
 import { useSessions } from '@/store/sessions';
 import { useSettings } from '@/store/settings';
@@ -22,6 +23,7 @@ export const UNDO_DELETE_MS = 5 * SECOND;
 export default function SessionDetail() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const { colors, spacing, radius, type } = useTheme();
+  useAdScreen('session');
   const clock24h = useSettings((s) => s.settings.clock24h);
   const session = useSessions((s) => (s.active?.id === id ? s.active : (s.archived[id] ?? null)));
   const isOpen = useSessions((s) => s.active?.id === id);

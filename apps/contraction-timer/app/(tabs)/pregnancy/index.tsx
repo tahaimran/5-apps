@@ -2,23 +2,28 @@ import { FlatList, Pressable, View } from 'react-native';
 import { router } from 'expo-router';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { NativeAdCard } from '@shared/ads';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
+import { useAdScreen } from '@/ads/guard';
+import { withAdSlots, type ListItem } from '@/domain/adSlots';
 import { progressOf } from '@/domain/checklists';
 import { currentCardWeek, orderedCards, weekCard, type WeekCard } from '@/domain/weeks';
 import { useChecklist } from '@/hooks/useChecklist';
 import { usePregnancy } from '@/hooks/usePregnancy';
 import { AppText } from '@/ui/AppText';
+import { BannerSlot } from '@/ui/BannerSlot';
 import { BigButton } from '@/ui/BigButton';
 
 /** Plan §5.4: where you are, the tools, and the week-by-week cards with the current week pinned first. */
 export default function Pregnancy() {
   const { colors, spacing, radius, type } = useTheme();
+  const adsReady = useAdScreen('weeks');
   const { gestation, shown } = usePregnancy();
   const bag = progressOf(useChecklist('hospitalBag'));
   const plan = progressOf(useChecklist('birthPlan'));
   const currentWeek = shown ? currentCardWeek(shown.weeks) : null;
-  const cards = orderedCards(shown?.weeks ?? null);
+  const cards = withAdSlots(orderedCards(shown?.weeks ?? null));
 
   const row = (icon: 'calendar-heart' | 'bag-suitcase-outline' | 'clipboard-list-outline', label: string, detail: string | null, path: string) => (
     <Pressable
@@ -84,12 +89,16 @@ export default function Pregnancy() {
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: colors.background }} edges={['top']}>
-      <FlatList<WeekCard>
+      <FlatList<ListItem<WeekCard>>
         data={cards}
-        keyExtractor={(c) => String(c.week)}
+        extraData={adsReady}
+        keyExtractor={(c) => (c.kind === 'ad' ? c.key : String(c.card.week))}
         ListHeaderComponent={header}
         contentContainerStyle={{ padding: spacing.xl - 4, gap: spacing.sm }}
-        renderItem={({ item }) => {
+        renderItem={({ item: entry }) => {
+          // The native card is labelled "Ad" by the shared layer, and falls back to nothing (or a house card) when there is no fill.
+          if (entry.kind === 'ad') return adsReady ? <NativeAdCard placement="week_native" /> : null;
+          const item = entry.card;
           const isCurrent = item.week === currentWeek;
           return (
             <Pressable
@@ -107,6 +116,7 @@ export default function Pregnancy() {
           );
         }}
       />
+      <BannerSlot placement="week_banner" />
     </SafeAreaView>
   );
 }

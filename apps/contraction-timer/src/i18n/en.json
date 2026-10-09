@@ -605,5 +605,33 @@
     "version": "Version {version}",
     "body": "A calm contraction timer, kick counter and due date tool. It works offline, with no account.",
     "local": "Your data stays on this phone."
+  },
+  "unlock": {
+    "watch": "Watch a short video to unlock this look forever",
+    "watchTemplate": "Watch a short video to add {name}",
+    "watchLabel": "Watch a short video to unlock {name} forever",
+    "blocked": "Available after your session",
+    "failed": "No video is available right now. Please try again later.",
+    "unlocked": "{name} unlocked",
+    "free": "Free",
+    "locked": "Locked",
+    "inUse": "In use",
+    "use": "Use this look",
+    "addList": "Add to my list",
+    "added": "Added to your list",
+    "open": "Unlocked"
+  },
+  "pdfThemeScreen": {
+    "title": "PDF look",
+    "intro": "The Clean look is always free. The others are yours for good once you have watched one short video.",
+    "more": "More PDF looks"
+  },
+  "adDebug": {
+    "title": "Ad rules",
+    "intro": "Development builds only. For each ad place: would it show right now, and if not, why not. The numbers below are what the rules are reading.",
+    "allowed": "would show",
+    "blocked": "blocked",
+    "counters": "What the rules read",
+    "back": "Back"
   }
 }

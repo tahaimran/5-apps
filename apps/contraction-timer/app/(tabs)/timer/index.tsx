@@ -7,6 +7,7 @@ import { ThemeProvider, useTheme } from '@shared/theme';
 import { clockSetBack, elapsedOf, idleStatus, isLongRunning } from '@/domain/session';
 import { evaluatePattern, bannerVisible } from '@/domain/pattern';
 import { lastContraction, openContraction, windowStats } from '@/domain/stats';
+import { useAdScreen } from '@/ads/guard';
 import { timerHaptics } from '@/features/timer/haptics';
 import { LastContractionCard } from '@/features/timer/LastContractionCard';
 import { PatternBanner } from '@/features/timer/PatternBanner';
@@ -38,6 +39,7 @@ export const resetDisclaimerSheetForTests = () => {
 
 function TimerContent() {
   const { colors, spacing, type, radius } = useTheme();
+  useAdScreen('timer');
   const app = useAppColors();
   const active = useSessions((s) => s.active);
   const partner = useSettings((s) => s.settings.partnerMode);

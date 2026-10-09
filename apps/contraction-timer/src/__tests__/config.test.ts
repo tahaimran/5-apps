@@ -25,6 +25,9 @@ describe('Android permissions', () => {
     const all = permissions.join(' ');
     for (const word of ['RECORD_AUDIO', 'CAMERA', 'LOCATION', 'CONTACTS', 'SMS', 'PHONE']) expect(all).not.toContain(word);
   });
+  it('turns Android automatic backup off, so health entries are never copied to a Google account', () => {
+    expect(config.android?.allowBackup).toBe(false);
+  });
   it('uses no exact alarms: the kick reminder is an ordinary daily notification', () => {
     expect(permissions).not.toContain('SCHEDULE_EXACT_ALARM');
     expect(blocked).toContain('android.permission.SCHEDULE_EXACT_ALARM');

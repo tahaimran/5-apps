@@ -3,6 +3,7 @@ import { Pressable, View } from 'react-native';
 import { router } from 'expo-router';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
+import { useAdScreen } from '@/ads/guard';
 import { KickReminderSheet } from '@/components/KickReminderSheet';
 import { dateKeyFor } from '@/domain/dateKey';
 import { elapsedKick, isComplete, softLimitReached, timeToTarget } from '@/domain/kicks';
@@ -28,6 +29,7 @@ const TOAST_MS = 5000;
 /** Plan §5.3 and F10: count movements up to the target, see how long it took, and keep the history. */
 export default function Kicks() {
   const { colors, spacing, radius, type } = useTheme();
+  useAdScreen('kicks');
   const app = useAppColors();
   const active = useKicks((s) => s.active);
   const settings = useSettings((s) => s.settings);

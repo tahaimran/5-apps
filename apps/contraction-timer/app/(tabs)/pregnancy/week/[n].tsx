@@ -1,10 +1,14 @@
 import { View } from 'react-native';
-import { useLocalSearchParams } from 'expo-router';
+import { useCallback } from 'react';
+import { useFocusEffect, useLocalSearchParams } from 'expo-router';
 import { t } from '@shared/i18n';
+import { useAdScreen } from '@/ads/guard';
+import { offerWeekCloseInterstitial } from '@/ads/weekClose';
 import { useTheme } from '@shared/theme';
 import { lengthText, weekCard, weightText } from '@/domain/weeks';
 import { useSettings } from '@/store/settings';
 import { AppText } from '@/ui/AppText';
+import { BannerSlot } from '@/ui/BannerSlot';
 import { Screen } from '@/ui/Screen';
 import { ScreenHeader } from '@/ui/ScreenHeader';
 
@@ -13,6 +17,16 @@ export default function WeekArticle() {
   const { n } = useLocalSearchParams<{ n: string }>();
   const { colors, spacing, radius, type } = useTheme();
   const units = useSettings((s) => s.settings.units);
+  useAdScreen('weekArticle');
+  // Plan §12: closing the article (Back) after a read is the one place an interstitial can appear; the rules decide.
+  useFocusEffect(
+    useCallback(() => {
+      const openedAt = Date.now();
+      return () => {
+        void offerWeekCloseInterstitial(Date.now() - openedAt);
+      };
+    }, []),
+  );
   const week = Number(n);
   const card = Number.isInteger(week) ? weekCard(week) : null;
   if (!card) {
@@ -25,7 +39,7 @@ export default function WeekArticle() {
   }
   const length = lengthText(card.lengthCm, units);
   return (
-    <Screen>
+    <Screen footer={<BannerSlot placement="week_banner" />}>
       <ScreenHeader title={t('week.title', { n: card.week })} />
       {/* The picture is a large emoji or a dot: decoration only, so it is hidden from a screen reader. */}
       <View accessible={false} importantForAccessibility="no-hide-descendants" style={{ alignSelf: 'center', width: 140, height: 140, borderRadius: 70, borderWidth: 3, borderColor: colors.text, backgroundColor: colors.surface, alignItems: 'center', justifyContent: 'center' }}>
