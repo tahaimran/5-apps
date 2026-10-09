@@ -26,7 +26,7 @@ describe('lifelines on the question screen', () => {
     const r = await open(startCategory('science', 2));
     await r.press(/^50\/50, 1 left$/);
     expect(r.byLabel(/, removed by 50\/50$/)).toHaveLength(2);
-    expect(r.byLabel('50/50, used')).toHaveLength(1);
+    expect(r.byLabel(/^50\/50\. Watch a short video for one more$/)).toHaveLength(1); // used up: a video is on offer
     const s = useRound.getState().state!;
     expect(s.removed).not.toContain(s.current.correctIndex);
   });
@@ -170,7 +170,7 @@ describe('the Daily on the question screen', () => {
     const r = await open(startDaily());
     expect(r.byLabel(/^Skip, 1 left$/)).toHaveLength(1);
     await r.press(/^Skip, 1 left$/);
-    expect(r.byLabel('Skip, used')).toHaveLength(1);
+    expect(r.byLabel('Skip, used')).toHaveLength(1); // no video offer in the Daily
     expect(r.byLabel(/^(50\/50|\+Time)/)).toHaveLength(0);
   });
 });

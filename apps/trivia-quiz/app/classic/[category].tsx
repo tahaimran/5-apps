@@ -12,6 +12,7 @@ import { defaultClassic } from '@/domain/defaults';
 import { openRound } from '@/features/play/navigation';
 import { startClassic } from '@/features/play/start';
 import { useClassic } from '@/store/stores';
+import { useAdScreen } from '@/ads/guard';
 import { AppText } from '@/ui/AppText';
 import { BannerSlot } from '@/ui/BannerSlot';
 import { BigButton } from '@/ui/BigButton';
@@ -32,6 +33,7 @@ function usePulse() {
 
 /** One category's 30 levels as a vertical path (plan §5): locked, current (pulsing) and completed (stars). */
 export default function ClassicMap() {
+  useAdScreen('classic');
   const { category } = useLocalSearchParams<{ category: string }>();
   const { colors, spacing, radius } = useTheme();
   const progressAll = useClassic((s) => s.value);

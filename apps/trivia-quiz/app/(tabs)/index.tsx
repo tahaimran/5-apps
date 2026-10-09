@@ -11,9 +11,13 @@ import { levelProgress, titleFor } from '@/domain/scoring';
 import { dailyCard, formatCountdown } from '@/features/home/status';
 import { openRound } from '@/features/play/navigation';
 import { startBlitz, startClassic } from '@/features/play/start';
-import { useToday } from '@/store/today';
+import { useState } from 'react';
+import { canRestoreStreak, restoreStreak } from '@/domain/streak';
+import { watchRewarded } from '@/features/ads/rewarded';
+import { currentDateKey, useToday } from '@/store/today';
 import { useClassic, useDaily, useProfile, useStats, useStreak } from '@/store/stores';
 import { db } from '@/store/storage';
+import { useAdScreen } from '@/ads/guard';
 import { AppText } from '@/ui/AppText';
 import { BannerSlot } from '@/ui/BannerSlot';
 import { BigButton } from '@/ui/BigButton';
@@ -27,6 +31,7 @@ import { extraColors } from '@/theme/tokens';
 
 /** Plan §5 Home: level bar, Daily Challenge hero card, Continue Classic, mode grid, banner. */
 export default function Home() {
+  useAdScreen('home');
   const { colors, spacing, radius, mode } = useTheme();
   const today = useToday((s) => s.today);
   const now = useNow();
@@ -36,6 +41,8 @@ export default function Home() {
   const classic = useClassic((s) => s.value);
   const blitzBest = useStats((s) => s.value.blitzBest);
   const [coachDone, setCoachDone] = db.useStored('coachDone', true);
+  const [restoreNote, setRestoreNote] = useState<string | null>(null);
+  const [restoring, setRestoring] = useState(false);
   const card = dailyCard(daily, streak, today, new Date(now));
   const progress = levelProgress(profile.xp);
   const bank = getBank();
@@ -64,6 +71,30 @@ export default function Home() {
         <View accessible accessibilityLiveRegion="polite" style={{ gap: spacing.sm, padding: spacing.md, borderRadius: radius.lg, borderWidth: 2, borderColor: colors.primary, backgroundColor: colors.surface }}>
           <AppText variant="body" style={{ fontWeight: '700' }}>{t('coach.title')}</AppText>
           <BigButton variant="secondary" label={t('coach.gotIt')} onPress={() => setCoachDone(true)} />
+        </View>
+      )}
+
+      {(canRestoreStreak(streak, today) || restoreNote !== null) && (
+        <View style={{ gap: spacing.sm, padding: spacing.md, borderRadius: radius.lg, borderWidth: 2, borderColor: amber, backgroundColor: colors.surface }}>
+          <AppText variant="h2">{t('ads.restoreTitle')}</AppText>
+          <AppText variant="body">{t('ads.restoreBody', { count: streak.current })}</AppText>
+          {restoreNote && <AppText accessibilityLiveRegion="polite" variant="body" style={{ fontWeight: '700' }}>{restoreNote}</AppText>}
+          <BigButton
+            label={t('ads.restore')}
+            disabled={restoring}
+            onPress={() => {
+              void (async () => {
+                setRestoring(true);
+                setRestoreNote(null);
+                const outcome = await watchRewarded('streak_restore');
+                setRestoring(false);
+                if (outcome === 'granted') {
+                  useStreak.getState().set(restoreStreak(useStreak.getState().value, currentDateKey()));
+                  setRestoreNote(t('ads.restoreDone'));
+                } else if (outcome !== 'busy') setRestoreNote(t(outcome === 'unavailable' ? 'ads.unavailable' : 'ads.notEarned'));
+              })();
+            }}
+          />
         </View>
       )}
 

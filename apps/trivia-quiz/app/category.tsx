@@ -11,6 +11,7 @@ import type { CategoryId, Difficulty } from '@/domain/types';
 import { openRound } from '@/features/play/navigation';
 import { startCategory } from '@/features/play/start';
 import { useProfile, useSeen, useStats } from '@/store/stores';
+import { useAdScreen } from '@/ads/guard';
 import { AppText } from '@/ui/AppText';
 import { BannerSlot } from '@/ui/BannerSlot';
 import { BigButton } from '@/ui/BigButton';
@@ -19,6 +20,7 @@ import { Tile } from '@/ui/Tile';
 
 /** Category play (plan F3): 12 tiles with accuracy, a difficulty control, and Start. */
 export default function CategoryPicker() {
+  useAdScreen('classic');
   const { colors, spacing, radius, touchTarget } = useTheme();
   const profile = useProfile((s) => s.value);
   const stats = useStats((s) => s.value);

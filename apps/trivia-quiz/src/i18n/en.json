@@ -175,7 +175,9 @@
     "nextLevel": "Next level",
     "replay": "Replay",
     "playAgain": "Play again",
-    "home": "Home"
+    "home": "Home",
+    "doubleXp": "Double XP (watch video)",
+    "doubleXpHint": "Watch a short video to double the XP from this round"
   },
   "daily": {
     "done": "Daily Challenge done!",
@@ -273,5 +275,28 @@
   "coach": {
     "title": "Your first Daily Challenge is ready",
     "gotIt": "Got it"
+  },
+  "ads": {
+    "unavailable": "Not available right now",
+    "notEarned": "The video was closed before the end, so nothing was added.",
+    "watch": "Watch video",
+    "noThanks": "No thanks",
+    "endLevel": "End level",
+    "lifelineTitle": "Out of {name}?",
+    "lifelineBody": "Watch a short video for one more {name}.",
+    "heartTitle": "Out of hearts",
+    "heartBody": "Watch a short video to continue this level with 1 heart.",
+    "restoreTitle": "Restore your streak?",
+    "restoreBody": "You missed one day. Watch a short video to bring back your {count}-day streak.",
+    "restore": "Restore streak",
+    "restoreDone": "Your streak is back. Play today's Daily Challenge to keep it."
+  },
+  "adDebug": {
+    "title": "Ad rules (development)",
+    "intro": "Whether each ad placement would show right now, and why not. Only in development builds.",
+    "allowed": "would show",
+    "blocked": "blocked",
+    "counters": "Counters",
+    "back": "Back"
   }
 }

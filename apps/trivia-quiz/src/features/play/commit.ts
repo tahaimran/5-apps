@@ -10,6 +10,7 @@ import { levelFromXp, xpFor, XP_WARMUP } from '@/domain/scoring';
 import { completeDailyStreak } from '@/domain/streak';
 import type { CategoryId, DateKey, Difficulty, RoundMode, Stars } from '@/domain/types';
 import { getBank } from '@/content/bank';
+import { useAds } from '@/store/ads';
 import { useResult } from '@/store/result';
 import { db } from '@/store/storage';
 import { useClassic, useDaily, useProfile, useSeen, useStats, useStreak } from '@/store/stores';
@@ -124,6 +125,7 @@ export function commitRound(id: string, s: RoundState, elapsedMs: number, now: n
     }
   }
 
+  if (!warmup) useAds.getState().recordRound();
   if (warmup) {
     db.set('onboarding.warmupDone', true);
     db.set('onboarding.warmupScore', sum.correct);
@@ -171,4 +173,24 @@ export function commitRound(id: string, s: RoundState, elapsedMs: number, now: n
   };
   useResult.getState().set(result);
   return result;
+}
+
+/**
+ * Double XP (plan §8, §12): an earned video doubles the round's XP once, at most 3 a day. The extra XP is
+ * the round's base XP again; the result and the player level are updated.
+ */
+export function applyDoubleXp(): RoundResult | null {
+  const r = useResult.getState().last;
+  if (!r || r.doubled) return r;
+  const today = currentDateKey();
+  const stats = useStats.getState().value;
+  const used = stats.doubleXpToday.date === today ? stats.doubleXpToday.count : 0;
+  useStats.getState().update({ doubleXpToday: { date: today, count: used + 1 } });
+  const profile = useProfile.getState().value;
+  const xp = profile.xp + r.baseXp;
+  const levelAfter = levelFromXp(xp);
+  useProfile.getState().update({ xp, level: levelAfter });
+  const next: RoundResult = { ...r, xp: r.baseXp * 2, doubled: true, levelAfter };
+  useResult.getState().set(next);
+  return next;
 }

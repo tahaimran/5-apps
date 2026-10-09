@@ -6,17 +6,21 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Pressable } from 'react-native';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
+import { useAdScreen } from '@/ads/guard';
 import { playSound } from '@/audio/sounds';
 import { AnswerButton, type AnswerState } from '@/components/AnswerButton';
 import { ExplanationPanel } from '@/components/ExplanationPanel';
 import { LifelineBar } from '@/components/LifelineBar';
 import { TimerRing } from '@/components/TimerRing';
+import { rewardedDecision } from '@/domain/adRules';
 import { allowanceFor, LIFELINES, type LifelineKind } from '@/domain/lifelines';
-import { answer, isBlitz, lifelineLeft, next, tick, useLifeline } from '@/domain/round';
+import { answer, canContinueWithHeart, canOfferRewarded, continueWithHeart, grantRewardedLifeline, isBlitz, lifelineLeft, next, tick, useLifeline } from '@/domain/round';
+import { isWatchingAd, watchRewarded } from '@/features/ads/rewarded';
 import { commitRound } from '@/features/play/commit';
 import { useRoundClock } from '@/features/play/useRoundClock';
 import { useFeedback } from '@/store/feedback';
 import { logFunnel } from '@/store/funnel';
+import { lifelineVideosToday, useAds } from '@/store/ads';
 import { useRound } from '@/store/round';
 import { AppText } from '@/ui/AppText';
 import { BigButton } from '@/ui/BigButton';
@@ -39,6 +43,10 @@ export default function Quiz() {
   const apply = useRound((s) => s.apply);
   const [paused, setPaused] = useState(false);
   const [quitOpen, setQuitOpen] = useState(false);
+  const [offer, setOffer] = useState<LifelineKind | 'heart' | null>(null);
+  const [offerNote, setOfferNote] = useState<string | null>(null);
+  const [adBusy, setAdBusy] = useState(false);
+  useAdScreen('quiz');
   const committed = useRef(false);
 
   const live = round !== null && sid === sessionId;
@@ -48,7 +56,7 @@ export default function Quiz() {
   // Pause when the app goes to the background (plan §5: "Paused — Resume").
   useEffect(() => {
     const sub = AppState.addEventListener('change', (state) => {
-      if (state === 'background' && useRound.getState().state?.msLeft != null) setPaused(true);
+      if (state === 'background' && !isWatchingAd() && useRound.getState().state?.msLeft != null) setPaused(true);
     });
     return () => sub.remove();
   }, []);
@@ -62,7 +70,7 @@ export default function Quiz() {
     return () => sub.remove();
   }, [isWarmup]);
 
-  const running = live && round.phase === 'question' && !paused && !quitOpen;
+  const running = live && round.phase === 'question' && !paused && !quitOpen && offer === null;
   const onTick = useCallback(
     (delta: number) => {
       const before = useRound.getState().state;
@@ -127,6 +135,44 @@ export default function Quiz() {
   };
   const verdict = round.correct ? 'correct' : round.timedOut ? 'timeout' : 'wrong';
   const last = !blitz && round.queue.length === 0 && !round.outOfHearts ? true : round.outOfHearts;
+  const rewardedOk = (placement: 'lifeline' | 'extra_life') =>
+    rewardedDecision(placement, { today: '', screen: 'quiz', onboardingDone: true, lifelineVideosToday: lifelineVideosToday(), doubleXpToday: 0, heartContinueUsed: round.heartContinueUsed }).allowed;
+  const offerFor: Record<LifelineKind, boolean> = {
+    fifty: canOfferRewarded(round, 'fifty') && rewardedOk('lifeline'),
+    skip: canOfferRewarded(round, 'skip') && rewardedOk('lifeline'),
+    time: canOfferRewarded(round, 'time') && rewardedOk('lifeline'),
+  };
+  const openOffer = (kind: LifelineKind | 'heart') => {
+    setOfferNote(null);
+    setOffer(kind);
+  };
+  const closeOffer = () => {
+    setOffer(null);
+    setOfferNote(null);
+  };
+  const watch = async () => {
+    if (adBusy || offer === null) return;
+    setAdBusy(true);
+    setOfferNote(null);
+    const outcome = await watchRewarded(offer === 'heart' ? 'extra_life' : 'lifeline');
+    setAdBusy(false);
+    if (outcome === 'granted') {
+      if (offer === 'heart') {
+        apply((s) => next(continueWithHeart(s)));
+      } else {
+        apply((s) => grantRewardedLifeline(s, offer));
+        useAds.getState().recordLifelineVideo();
+      }
+      closeOffer();
+    } else if (outcome !== 'busy') {
+      setOfferNote(t(outcome === 'unavailable' ? 'ads.unavailable' : 'ads.notEarned'));
+    }
+  };
+  // Hearts ran out: one rewarded continue per level attempt, else the level ends.
+  const onNext = () => {
+    if (canContinueWithHeart(round) && rewardedOk('extra_life')) openOffer('heart');
+    else apply(next);
+  };
   const quit = () => {
     setQuitOpen(false);
     useRound.getState().clear();
@@ -179,10 +225,10 @@ export default function Quiz() {
           {round.phase === 'question' && round.lastPoints > 0 && null}
           {round.phase === 'question' ? (
             LIFELINES.some((k) => shown[k]) && (
-              <LifelineBar counts={round.lifelines} enabled={enabled} shown={shown} onUse={(kind: LifelineKind) => apply((s) => useLifeline(s, kind))} />
+              <LifelineBar counts={round.lifelines} enabled={enabled} shown={shown} offer={offerFor} onUse={(kind: LifelineKind) => apply((s) => useLifeline(s, kind))} onOffer={openOffer} />
             )
           ) : (
-            <ExplanationPanel verdict={verdict} question={cur.question} correctText={cur.options[cur.correctIndex]} last={last} onNext={() => apply(next)} />
+            <ExplanationPanel verdict={verdict} question={cur.question} correctText={cur.options[cur.correctIndex]} last={last} onNext={onNext} />
           )}
         </View>
       </View>
@@ -193,6 +239,22 @@ export default function Quiz() {
           <BigButton tall label={t('quiz.resume')} onPress={() => setPaused(false)} />
         </View>
       )}
+
+      <Sheet visible={offer !== null} onClose={closeOffer}>
+        <AppText variant="h1" accessibilityRole="header">{offer === 'heart' ? t('ads.heartTitle') : t('ads.lifelineTitle', { name: offer ? t(`quiz.lifeline.${offer}`) : '' })}</AppText>
+        <AppText variant="body" style={{ color: colors.textMuted }}>{offer === 'heart' ? t('ads.heartBody') : t('ads.lifelineBody', { name: offer ? t(`quiz.lifeline.${offer}`) : '' })}</AppText>
+        {offerNote && <AppText accessibilityLiveRegion="polite" variant="body" style={{ fontWeight: '700' }}>{offerNote}</AppText>}
+        <BigButton tall label={t('ads.watch')} onPress={() => void watch()} disabled={adBusy} />
+        <BigButton
+          variant="secondary"
+          label={offer === 'heart' ? t('ads.endLevel') : t('ads.noThanks')}
+          onPress={() => {
+            const heart = offer === 'heart';
+            closeOffer();
+            if (heart) apply(next);
+          }}
+        />
+      </Sheet>
 
       <Sheet visible={quitOpen} onClose={() => setQuitOpen(false)}>
         <AppText variant="h1" accessibilityRole="header">{t('quiz.quitTitle')}</AppText>

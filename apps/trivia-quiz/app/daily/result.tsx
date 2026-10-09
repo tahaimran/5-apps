@@ -18,6 +18,7 @@ import { shareDaily, shareText } from '@/features/play/share';
 import { useResult } from '@/store/result';
 import { useToday } from '@/store/today';
 import { useDaily, useStreak } from '@/store/stores';
+import { useAdScreen } from '@/ads/guard';
 import { AppText } from '@/ui/AppText';
 import { BigButton } from '@/ui/BigButton';
 import { formatDay, weekdayNames } from '@/ui/format';
@@ -29,6 +30,7 @@ import { extraColors } from '@/theme/tokens';
  * kind is shown here (plan §12: the streak moment is protected).
  */
 export default function DailyResult() {
+  useAdScreen('dailyResult');
   const { colors, spacing, radius, mode } = useTheme();
   const today = useToday((s) => s.today);
   const daily = useDaily((s) => s.value);

@@ -9,12 +9,14 @@ import { CATEGORY_LIST } from '@/domain/categories';
 import { openRound } from '@/features/play/navigation';
 import { startBlitz } from '@/features/play/start';
 import { useClassic, useStats } from '@/store/stores';
+import { useAdScreen } from '@/ads/guard';
 import { AppText } from '@/ui/AppText';
 import { BannerSlot } from '@/ui/BannerSlot';
 import { Screen } from '@/ui/Screen';
 
 /** Plan §5 Modes: one card per mode with a line about it and the personal best. v1.1 modes are hidden, not "coming soon". */
 export default function Play() {
+  useAdScreen('play');
   const { colors, spacing, radius } = useTheme();
   const classic = useClassic((s) => s.value);
   const best = useStats((s) => s.value.blitzBest);

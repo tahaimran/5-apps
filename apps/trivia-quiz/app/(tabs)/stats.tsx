@@ -4,6 +4,7 @@ import { useTheme } from '@shared/theme';
 import { CATEGORIES } from '@/domain/categories';
 import { levelProgress, titleFor } from '@/domain/scoring';
 import { useDaily, useProfile, useStats, useStreak } from '@/store/stores';
+import { useAdScreen } from '@/ads/guard';
 import { AppText } from '@/ui/AppText';
 import { BannerSlot } from '@/ui/BannerSlot';
 import { ProgressBar } from '@/ui/ProgressBar';
@@ -62,6 +63,7 @@ export function StatsContent() {
 }
 
 export default function Stats() {
+  useAdScreen('stats');
   return (
     <Screen footer={<BannerSlot placement="menu" />}>
       <AppText variant="h1" accessibilityRole="header">{t('stats.title')}</AppText>

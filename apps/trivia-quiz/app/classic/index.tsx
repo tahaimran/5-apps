@@ -6,6 +6,7 @@ import { getBank } from '@/content/bank';
 import { CATEGORIES } from '@/domain/categories';
 import { classicCompletion, levelCount } from '@/domain/classic';
 import { useClassic } from '@/store/stores';
+import { useAdScreen } from '@/ads/guard';
 import { AppText } from '@/ui/AppText';
 import { BannerSlot } from '@/ui/BannerSlot';
 import { BigButton } from '@/ui/BigButton';
@@ -14,6 +15,7 @@ import { Tile } from '@/ui/Tile';
 
 /** Pick a category to open its level map (plan §4: `classic/[category]`). */
 export default function ClassicCategories() {
+  useAdScreen('classic');
   const { spacing } = useTheme();
   const progress = useClassic((s) => s.value);
   const bank = getBank();

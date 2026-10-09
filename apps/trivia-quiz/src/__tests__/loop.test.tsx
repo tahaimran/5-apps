@@ -123,7 +123,10 @@ describe('Classic levels', () => {
     mockParams.current = { sessionId: id };
     const r = await render(<Quiz />);
     expect(r.byLabel('3 hearts left')).toHaveLength(1);
-    await playRound(r, ['wrong', 'wrong', 'wrong']);
+    await playRound(r, ['wrong', 'wrong']);
+    await r.press(wrongLabel());
+    await r.press('See results'); // out of hearts: the continue offer opens first
+    await r.press('End level');
     expect(useResult.getState().last).toMatchObject({ failedByHearts: true, stars: 0 });
   });
 });

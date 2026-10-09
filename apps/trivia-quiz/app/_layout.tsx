@@ -6,7 +6,14 @@ import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { Inter_400Regular, Inter_500Medium, Inter_600SemiBold, Inter_700Bold } from '@expo-google-fonts/inter';
+import { useAppOpenAd } from '@shared/ads';
+import { useOnboardingComplete } from '@shared/onboarding';
 import { ThemeProvider, useTheme } from '@shared/theme';
+import { adContext, useAdGuard } from '@/ads/guard';
+import { startAds } from '@/ads/start';
+import { adAllowed } from '@/domain/adRules';
+import { useAds } from '@/store/ads';
+import { db } from '@/store/storage';
 import { useNotificationResponses, useReminderSync } from '@/notifications/reminder';
 import { useStats } from '@/store/stores';
 import { useDayRollover } from '@/store/today';
@@ -19,9 +26,18 @@ void SplashScreen.preventAutoHideAsync().catch(() => undefined);
 
 function Root() {
   const { mode, colors } = useTheme();
+  const [onboardingDone] = db.useStored('onboarding.done', false);
+  const setupDone = useOnboardingComplete();
+  useAdGuard();
+  // Warm starts only (the hook never fires on a cold start); the rules also keep it off the question screen.
+  useAppOpenAd(() => adAllowed('app_open', adContext()));
+  // Consent and ads start after the first value on a first run (app/(onboarding)/warmup-result.tsx), and at launch afterwards.
+  useEffect(() => {
+    if (setupDone && onboardingDone) void startAds();
+  }, [setupDone, onboardingDone]);
   useDayRollover();
   useReminderSync();
-  useNotificationResponses();
+  useNotificationResponses(() => useAds.getState().markExternalOpen());
   // One more cold start, counted once per process.
   useEffect(() => {
     const stats = useStats.getState();
@@ -35,6 +51,7 @@ function Root() {
         <Stack.Screen name="(onboarding)/warmup-result" options={{ gestureEnabled: false }} />
         <Stack.Screen name="quiz/[sessionId]" options={{ presentation: 'fullScreenModal', gestureEnabled: false }} />
         <Stack.Screen name="results/[sessionId]" options={{ gestureEnabled: false }} />
+        <Stack.Screen name="debug-ads" options={{ presentation: 'modal' }} />
       </Stack>
     </>
   );

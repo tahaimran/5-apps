@@ -1,10 +1,19 @@
+import { useState } from 'react';
 import { View } from 'react-native';
 import { Redirect, useLocalSearchParams } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ScrollView } from 'react-native';
+import { NativeAdCard, showInterstitial } from '@shared/ads';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
+import { useAdScreen } from '@/ads/guard';
+import { rewardedDecision } from '@/domain/adRules';
 import { levelProgress, titleFor } from '@/domain/scoring';
+import { watchRewarded } from '@/features/ads/rewarded';
+import { applyDoubleXp } from '@/features/play/commit';
+import { useReviewPrompt } from '@/features/play/useReviewPrompt';
+import { currentDateKey } from '@/store/today';
+import { useStats } from '@/store/stores';
 import { goHome, replaceWithRound } from '@/features/play/navigation';
 import { startAgain } from '@/features/play/replay';
 import { useResult } from '@/store/result';
@@ -25,6 +34,11 @@ export default function Results() {
   const r = useResult((s) => s.last);
   const { colors, spacing, radius } = useTheme();
   const xp = useProfile((s) => s.value.xp);
+  const doubleXpStats = useStats((s) => s.value.doubleXpToday);
+  const [busy, setBusy] = useState(false);
+  const [adNote, setAdNote] = useState<string | null>(null);
+  useAdScreen('results');
+  const reviewShown = useReviewPrompt(r);
   if (!r || r.id !== sessionId) return <Redirect href="/(tabs)" />;
 
   const blitz = r.mode === 'blitz';
@@ -32,7 +46,31 @@ export default function Results() {
   const failed = classic && r.stars === 0;
   const title = blitz ? t('results.blitzTitle') : r.failedByHearts ? t('results.outOfHearts') : failed ? t('results.soClose') : classic ? t('results.levelDone') : t('results.roundDone');
   const progress = levelProgress(xp);
-  const again = (next: boolean) => replaceWithRound(startAgain(r, next));
+  // The interstitial slot of plan §12: when leaving Results for the next round or Home. The app rules and
+  // @shared/ads decide; if no ad is ready it is skipped at once, never waited for, and never right after
+  // the review prompt.
+  const leave = async (go: () => void) => {
+    if (busy) return;
+    setBusy(true);
+    try {
+      if (!reviewShown.current) await showInterstitial('round_end').catch(() => false);
+    } finally {
+      setBusy(false);
+    }
+    go();
+  };
+  const again = (next: boolean) => void leave(() => void replaceWithRound(startAgain(r, next)));
+  const used = doubleXpStats.date === currentDateKey() ? doubleXpStats.count : 0;
+  const canDouble = rewardedDecision('double_xp', { today: currentDateKey(), screen: 'results', onboardingDone: true, lifelineVideosToday: 0, doubleXpToday: used, correct: r.correct, alreadyDoubled: r.doubled }).allowed;
+  const doubleXp = async () => {
+    if (busy) return;
+    setBusy(true);
+    setAdNote(null);
+    const outcome = await watchRewarded('double_xp');
+    setBusy(false);
+    if (outcome === 'granted') applyDoubleXp();
+    else if (outcome !== 'busy') setAdNote(t(outcome === 'unavailable' ? 'ads.unavailable' : 'ads.notEarned'));
+  };
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: colors.background }}>
@@ -73,7 +111,12 @@ export default function Results() {
           {classic && r.nextLevel !== null && <BigButton tall label={t('results.nextLevel')} onPress={() => again(true)} />}
           {(blitz || r.mode === 'category' || (classic && r.nextLevel === null)) && <BigButton tall label={t('results.playAgain')} onPress={() => again(false)} />}
           {classic && r.nextLevel !== null && <BigButton variant="secondary" label={t('results.replay')} onPress={() => again(false)} />}
-          <BigButton variant="secondary" label={t('results.home')} onPress={goHome} />
+          {canDouble && <BigButton variant="secondary" label={t('results.doubleXp')} accessibilityHint={t('results.doubleXpHint')} onPress={() => void doubleXp()} />}
+          {adNote && <AppText accessibilityLiveRegion="polite" variant="body" style={{ textAlign: 'center', color: colors.textMuted }}>{adNote}</AppText>}
+          <BigButton variant="secondary" label={t('results.home')} onPress={() => void leave(goHome)} />
+        </View>
+        <View style={{ width: '100%' }}>
+          <NativeAdCard placement="results_native" />
         </View>
       </ScrollView>
     </SafeAreaView>

@@ -4,6 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { OnboardingFlow } from '@shared/onboarding';
 import { isConsentFormRequired } from '@shared/consent';
 import { useTheme } from '@shared/theme';
+import { useAdScreen } from '@/ads/guard';
 import { startAds } from '@/ads/start';
 import { markOnboardingDone } from '@/features/onboarding/finish';
 import { buildFinishSteps } from '@/features/onboarding/steps';
@@ -16,6 +17,7 @@ import { db } from '@/store/storage';
  * consent is asked after the first value and before the first ad request) and the reminder ask.
  */
 export default function WarmupResult() {
+  useAdScreen('onboarding');
   const { colors } = useTheme();
   const [required, setRequired] = useState<boolean | null>(null);
   useEffect(() => {

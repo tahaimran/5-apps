@@ -3,6 +3,7 @@ import { router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { OnboardingFlow } from '@shared/onboarding';
 import { useTheme } from '@shared/theme';
+import { useAdScreen } from '@/ads/guard';
 import { applyOnboardingAnswers, clearOnboardingResume, skipWarmup } from '@/features/onboarding/finish';
 import { buildSetupSteps } from '@/features/onboarding/steps';
 import { replaceWithRound } from '@/features/play/navigation';
@@ -15,6 +16,7 @@ import { logFunnel } from '@/store/funnel';
  * (O4); "skip intro" goes straight to the closing screens. Killed mid-way, it resumes at the same screen.
  */
 export default function Welcome() {
+  useAdScreen('onboarding');
   const { colors } = useTheme();
   const steps = useMemo(() => buildSetupSteps(), []);
   const initial = useMemo(() => db.get('onboarding.resume'), []);
