@@ -1,0 +1,1421 @@
+[
+{
+"q": "How many strings does a standard violin have?",
+"a": [
+"Four",
+"Five",
+"Six",
+"Three"
+],
+"d": 1,
+"x": "The four strings are tuned in perfect fifths: G, D, A and E.",
+"tags": [
+"instruments"
+]
+},
+{
+"q": "Who composed the famous piano piece known as the Moonlight Sonata?",
+"a": [
+"Beethoven",
+"Chopin",
+"Mozart",
+"Schubert"
+],
+"d": 1,
+"x": "The nickname came after his death, when a critic compared the first movement to moonlight on Lake Lucerne.",
+"tags": [
+"classical"
+]
+},
+{
+"q": "Which band recorded the 1968 single \"Hey Jude\"?",
+"a": [
+"The Beatles",
+"The Rolling Stones",
+"The Kinks",
+"The Who"
+],
+"d": 1,
+"x": "At over seven minutes, it was unusually long for a pop single in 1968.",
+"tags": [
+"rock"
+]
+},
+{
+"q": "How many keys does a standard modern piano have?",
+"a": [
+"88",
+"76",
+"92",
+"64"
+],
+"d": 1,
+"x": "It has 52 white keys and 36 black keys, spanning just over seven octaves.",
+"tags": [
+"instruments"
+]
+},
+{
+"q": "Which singer is nicknamed the King of Rock and Roll?",
+"a": [
+"Elvis Presley",
+"Chuck Berry",
+"Buddy Holly",
+"Jerry Lee Lewis"
+],
+"d": 1,
+"x": "He made his first recordings for Sun Records in Memphis in 1954.",
+"tags": [
+"rock"
+]
+},
+{
+"q": "Which Michael Jackson album, released in 1982, includes \"Billie Jean\" and \"Beat It\"?",
+"a": [
+"Thriller",
+"Bad",
+"Off the Wall",
+"Dangerous"
+],
+"d": 1,
+"x": "Its title-track video ran about 14 minutes and featured a spoken part by horror star Vincent Price.",
+"tags": [
+"pop",
+"albums"
+]
+},
+{
+"q": "Which Italian composer wrote The Four Seasons?",
+"a": [
+"Antonio Vivaldi",
+"Arcangelo Corelli",
+"George Frideric Handel",
+"Tomaso Albinoni"
+],
+"d": 1,
+"x": "The four violin concertos were published in 1725, each paired with a sonnet describing its season.",
+"tags": [
+"classical"
+]
+},
+{
+"q": "How many strings does a standard guitar have?",
+"a": [
+"Six",
+"Four",
+"Eight",
+"Twelve"
+],
+"d": 1,
+"x": "The six strings are tuned E, A, D, G, B, E from lowest to highest.",
+"tags": [
+"instruments"
+]
+},
+{
+"q": "Freddie Mercury was the lead singer of which band?",
+"a": [
+"Queen",
+"Genesis",
+"Journey",
+"Foreigner"
+],
+"d": 1,
+"x": "Their 1975 song Bohemian Rhapsody blends ballad, opera and hard rock in a single six-minute track.",
+"tags": [
+"rock"
+]
+},
+{
+"q": "What does the Italian musical term \"forte\" mean?",
+"a": [
+"Loud",
+"Soft",
+"Fast",
+"Slow"
+],
+"d": 1,
+"x": "The piano's full name, pianoforte, means \"soft-loud\" because it can play both quietly and loudly.",
+"tags": [
+"terms"
+]
+},
+{
+"q": "In which US city was Motown Records founded in 1959?",
+"a": [
+"Detroit",
+"Memphis",
+"Chicago",
+"Nashville"
+],
+"d": 1,
+"x": "The name is short for \"Motor Town\", a nickname for Detroit, the center of the car industry.",
+"tags": [
+"soul"
+]
+},
+{
+"q": "Which composer wrote the opera The Magic Flute?",
+"a": [
+"Mozart",
+"Haydn",
+"Rossini",
+"Verdi"
+],
+"d": 1,
+"x": "It premiered in Vienna in 1791, only about two months before his death.",
+"tags": [
+"opera",
+"classical"
+]
+},
+{
+"q": "In which year was the Woodstock music festival held?",
+"a": [
+"1969",
+"1967",
+"1971",
+"1965"
+],
+"d": 1,
+"x": "It was billed as \"3 Days of Peace and Music\" and drew roughly 400,000 people to a dairy farm.",
+"tags": [
+"festivals"
+]
+},
+{
+"q": "Which instrument does the famous musician Yo-Yo Ma play?",
+"a": [
+"Cello",
+"Violin",
+"Viola",
+"Double bass"
+],
+"d": 1,
+"x": "He began performing as a child prodigy and has won many Grammy Awards.",
+"tags": [
+"classical"
+]
+},
+{
+"q": "Which Swedish group sang \"Dancing Queen\" and \"Mamma Mia\"?",
+"a": [
+"ABBA",
+"Roxette",
+"Ace of Base",
+"Europe"
+],
+"d": 1,
+"x": "The group's name is made from the first letters of its four members' first names.",
+"tags": [
+"pop"
+]
+},
+{
+"q": "Which singer, known as the Queen of Pop, recorded \"Like a Prayer\"?",
+"a": [
+"Madonna",
+"Cher",
+"Cyndi Lauper",
+"Janet Jackson"
+],
+"d": 1,
+"x": "The song was released in 1989 and its video caused a big stir at the time.",
+"tags": [
+"pop"
+]
+},
+{
+"q": "Which Beethoven symphony ends with the famous \"Ode to Joy\" chorus?",
+"a": [
+"The Ninth",
+"The Fifth",
+"The Third",
+"The Seventh"
+],
+"d": 1,
+"x": "It was the first major symphony to include voices, and its theme later became the anthem of the European Union.",
+"tags": [
+"classical"
+]
+},
+{
+"q": "Which English city were The Beatles from?",
+"a": [
+"Liverpool",
+"Manchester",
+"London",
+"Birmingham"
+],
+"d": 1,
+"x": "The band formed there in 1960 and sharpened its live act during long stints in Hamburg clubs.",
+"tags": [
+"rock"
+]
+},
+{
+"q": "Antonio Stradivari is most famous for making which instrument?",
+"a": [
+"Violins",
+"Pianos",
+"Flutes",
+"Harps"
+],
+"d": 1,
+"x": "His instruments from Cremona, Italy, are among the most valuable in the world.",
+"tags": [
+"instruments"
+]
+},
+{
+"q": "Which musical features the song \"Memory\"?",
+"a": [
+"Cats",
+"Evita",
+"Chess",
+"Starlight Express"
+],
+"d": 1,
+"x": "The show is based on T. S. Eliot's poetry collection Old Possum's Book of Practical Cats.",
+"tags": [
+"musicals"
+]
+},
+{
+"q": "Who composed the musical The Phantom of the Opera?",
+"a": [
+"Andrew Lloyd Webber",
+"Stephen Sondheim",
+"Richard Rodgers",
+"Cole Porter"
+],
+"d": 1,
+"x": "It opened in London in 1986 and became one of the longest-running shows in Broadway history.",
+"tags": [
+"musicals"
+]
+},
+{
+"q": "Which brass instrument has the lowest pitch in a standard orchestra?",
+"a": [
+"Tuba",
+"Trombone",
+"French horn",
+"Euphonium"
+],
+"d": 1,
+"x": "If its coiled tubing were straightened, it would stretch about 18 feet.",
+"tags": [
+"instruments"
+]
+},
+{
+"q": "Which music genre is said to have been born in New Orleans?",
+"a": [
+"Jazz",
+"Country",
+"Bluegrass",
+"Grunge"
+],
+"d": 1,
+"x": "It grew from blues, ragtime and brass band traditions around the start of the 20th century.",
+"tags": [
+"jazz",
+"genres"
+]
+},
+{
+"q": "Which music genre did Bob Marley bring to a worldwide audience?",
+"a": [
+"Reggae",
+"Calypso",
+"Salsa",
+"Funk"
+],
+"d": 1,
+"x": "Reggae emerged in Jamaica in the late 1960s, growing out of ska and rocksteady.",
+"tags": [
+"genres"
+]
+},
+{
+"q": "Which jazz trumpeter was nicknamed \"Satchmo\"?",
+"a": [
+"Louis Armstrong",
+"Duke Ellington",
+"Miles Davis",
+"Count Basie"
+],
+"d": 1,
+"x": "Born in New Orleans, he recorded \"What a Wonderful World\" in 1967.",
+"tags": [
+"jazz"
+]
+},
+{
+"q": "How many musicians play in a string quartet?",
+"a": [
+"Four",
+"Three",
+"Five",
+"Six"
+],
+"d": 1,
+"x": "A standard quartet has two violins, a viola and a cello.",
+"tags": [
+"classical"
+]
+},
+{
+"q": "Which band recorded \"Stairway to Heaven\"?",
+"a": [
+"Led Zeppelin",
+"Deep Purple",
+"Black Sabbath",
+"Pink Floyd"
+],
+"d": 1,
+"x": "It appears on the band's untitled fourth album from 1971 and builds from soft folk to a loud rock finale.",
+"tags": [
+"rock"
+]
+},
+{
+"q": "Which band released the 1973 album The Dark Side of the Moon?",
+"a": [
+"Pink Floyd",
+"Genesis",
+"Yes",
+"Supertramp"
+],
+"d": 1,
+"x": "Its cover, a prism splitting white light into a rainbow, is one of rock's best-known images.",
+"tags": [
+"albums",
+"rock"
+]
+},
+{
+"q": "What does an orchestra conductor typically hold to guide the musicians?",
+"a": [
+"A baton",
+"A tuning fork",
+"A metronome",
+"A bow"
+],
+"d": 1,
+"x": "In 1687 the composer Lully reportedly died after accidentally striking his foot with a heavy conducting staff.",
+"tags": [
+"classical"
+]
+},
+{
+"q": "Which country is the dance and music style tango most associated with?",
+"a": [
+"Argentina",
+"Spain",
+"Brazil",
+"Cuba"
+],
+"d": 1,
+"x": "Tango emerged in the late 1800s in the port districts around Buenos Aires and Montevideo.",
+"tags": [
+"genres"
+]
+},
+{
+"q": "In which city is Carnegie Hall located?",
+"a": [
+"New York City",
+"Boston",
+"Chicago",
+"Philadelphia"
+],
+"d": 1,
+"x": "The hall opened in 1891, and Tchaikovsky conducted during its first week of concerts.",
+"tags": [
+"venues"
+]
+},
+{
+"q": "In which Italian city is the famous opera house La Scala?",
+"a": [
+"Milan",
+"Rome",
+"Venice",
+"Naples"
+],
+"d": 1,
+"x": "Teatro alla Scala opened in 1778 and premiered works by Verdi and Puccini.",
+"tags": [
+"opera",
+"venues"
+]
+},
+{
+"q": "Who sang \"I Will Always Love You\" for the 1992 film The Bodyguard?",
+"a": [
+"Whitney Houston",
+"Mariah Carey",
+"Celine Dion",
+"Diana Ross"
+],
+"d": 1,
+"x": "The song was written by Dolly Parton, who first recorded it in 1973.",
+"tags": [
+"pop"
+]
+},
+{
+"q": "Which rock singer is nicknamed \"The Boss\"?",
+"a": [
+"Bruce Springsteen",
+"Billy Joel",
+"Bon Jovi",
+"Tom Petty"
+],
+"d": 1,
+"x": "His 1975 album Born to Run turned him into a major star.",
+"tags": [
+"rock"
+]
+},
+{
+"q": "Hip hop is widely said to have begun in which New York City borough?",
+"a": [
+"The Bronx",
+"Brooklyn",
+"Queens",
+"Manhattan"
+],
+"d": 1,
+"x": "DJ Kool Herc's 1973 back-to-school party in the Bronx is often cited as the birthplace of the genre.",
+"tags": [
+"hiphop",
+"genres"
+]
+},
+{
+"q": "How many letter names are used for the natural notes in Western music?",
+"a": [
+"Seven",
+"Eight",
+"Twelve",
+"Five"
+],
+"d": 1,
+"x": "The letters run A to G, then start over again an octave higher.",
+"tags": [
+"theory"
+]
+},
+{
+"q": "Which Disney film features the song \"Hakuna Matata\"?",
+"a": [
+"The Lion King",
+"Aladdin",
+"Tarzan",
+"Pocahontas"
+],
+"d": 1,
+"x": "The phrase is Swahili for \"no worries\", and the songs were written by Elton John and Tim Rice.",
+"tags": [
+"musicals",
+"film"
+]
+},
+{
+"q": "Which Tchaikovsky ballet includes the Dance of the Sugar Plum Fairy?",
+"a": [
+"The Nutcracker",
+"Swan Lake",
+"Giselle",
+"Coppelia"
+],
+"d": 1,
+"x": "It premiered in St. Petersburg in 1892 and later became a Christmas tradition worldwide.",
+"tags": [
+"classical",
+"ballet"
+]
+},
+{
+"q": "Which member of The Beatles played the drums?",
+"a": [
+"Ringo Starr",
+"George Harrison",
+"Paul McCartney",
+"John Lennon"
+],
+"d": 1,
+"x": "He joined the band in 1962 and sang lead on \"Yellow Submarine\".",
+"tags": [
+"rock"
+]
+},
+{
+"q": "In which country is the Glastonbury Festival held?",
+"a": [
+"England",
+"Scotland",
+"Ireland",
+"Wales"
+],
+"d": 1,
+"x": "It is held on farmland in Somerset and has taken place since 1970.",
+"tags": [
+"festivals"
+]
+},
+{
+"q": "What term describes singing without any instrumental accompaniment?",
+"a": [
+"A cappella",
+"Legato",
+"Vibrato",
+"Crescendo"
+],
+"d": 1,
+"x": "The Italian phrase means \"in the manner of the chapel\".",
+"tags": [
+"terms"
+]
+},
+{
+"q": "In music, what does the Italian term \"allegro\" mean?",
+"a": [
+"Fast and lively",
+"Slow and stately",
+"Soft and gentle",
+"Loud and heavy"
+],
+"d": 1,
+"x": "It comes from an Italian word meaning \"cheerful\" or \"merry\".",
+"tags": [
+"terms"
+]
+},
+{
+"q": "Although it is made of brass, the saxophone belongs to which instrument family?",
+"a": [
+"Woodwind",
+"Brass",
+"Percussion",
+"Strings"
+],
+"d": 1,
+"x": "Invented in the 1840s, it makes sound with a single reed, like a clarinet.",
+"tags": [
+"instruments"
+]
+},
+{
+"q": "Which singer recorded the 1967 hit \"Respect\"?",
+"a": [
+"Aretha Franklin",
+"Diana Ross",
+"Tina Turner",
+"Gladys Knight"
+],
+"d": 1,
+"x": "Otis Redding wrote and first recorded it; her version earned her the title Queen of Soul.",
+"tags": [
+"soul"
+]
+},
+{
+"q": "Which band recorded \"Smells Like Teen Spirit\"?",
+"a": [
+"Nirvana",
+"Pearl Jam",
+"Soundgarden",
+"Alice in Chains"
+],
+"d": 1,
+"x": "The 1991 song helped push grunge from Seattle into the mainstream.",
+"tags": [
+"rock"
+]
+},
+{
+"q": "Which instrument is the guitar hero Jimi Hendrix famous for playing?",
+"a": [
+"Electric guitar",
+"Bass guitar",
+"Electric organ",
+"Banjo"
+],
+"d": 1,
+"x": "He was left-handed and played right-handed guitars turned upside down and restrung.",
+"tags": [
+"rock"
+]
+},
+{
+"q": "Which is the largest and lowest-pitched bowed string instrument in the orchestra?",
+"a": [
+"Double bass",
+"Cello",
+"Viola",
+"Violin"
+],
+"d": 1,
+"x": "It is also called the contrabass, and jazz players often pluck it instead of using a bow.",
+"tags": [
+"instruments"
+]
+},
+{
+"q": "Which Austrian composer was nicknamed the \"Waltz King\"?",
+"a": [
+"Johann Strauss II",
+"Franz Lehar",
+"Franz Schubert",
+"Joseph Lanner"
+],
+"d": 1,
+"x": "He wrote The Blue Danube in 1867, which became Vienna's unofficial anthem.",
+"tags": [
+"classical"
+]
+},
+{
+"q": "Who sang the 1984 hit \"Purple Rain\"?",
+"a": [
+"Prince",
+"Stevie Wonder",
+"Lionel Richie",
+"Rick James"
+],
+"d": 1,
+"x": "The title song came from an album and a film of the same name, both released in 1984.",
+"tags": [
+"pop"
+]
+},
+{
+"q": "Which musical features the song \"Tomorrow\", sung by an orphan girl?",
+"a": [
+"Annie",
+"Oliver!",
+"Matilda",
+"Les Miserables"
+],
+"d": 1,
+"x": "It reached Broadway in 1977 and was based on the comic strip Little Orphan Annie.",
+"tags": [
+"musicals"
+]
+},
+{
+"q": "Which 1978 movie musical starred John Travolta and Olivia Newton-John?",
+"a": [
+"Grease",
+"Fame",
+"Footloose",
+"Hair"
+],
+"d": 1,
+"x": "It was adapted from a 1971 stage musical set in a 1950s high school.",
+"tags": [
+"musicals",
+"film"
+]
+},
+{
+"q": "Who composed the music for the musical West Side Story?",
+"a": [
+"Leonard Bernstein",
+"Aaron Copland",
+"George Gershwin",
+"Cole Porter"
+],
+"d": 1,
+"x": "The 1957 show moves Romeo and Juliet to New York; Stephen Sondheim wrote the lyrics.",
+"tags": [
+"musicals"
+]
+},
+{
+"q": "What is the highest standard female singing voice type?",
+"a": [
+"Soprano",
+"Alto",
+"Mezzo-soprano",
+"Contralto"
+],
+"d": 1,
+"x": "The word comes from the Italian \"sopra\", meaning above.",
+"tags": [
+"theory"
+]
+},
+{
+"q": "What is the lowest standard male singing voice type?",
+"a": [
+"Bass",
+"Tenor",
+"Baritone",
+"Countertenor"
+],
+"d": 1,
+"x": "Choirs usually divide voices into soprano, alto, tenor and bass, known as SATB.",
+"tags": [
+"theory"
+]
+},
+{
+"q": "How many black keys are there in one octave of a piano?",
+"a": [
+"Five",
+"Seven",
+"Ten",
+"Twelve"
+],
+"d": 1,
+"x": "They come in groups of two and three, which helps players find their place on the keyboard.",
+"tags": [
+"theory",
+"instruments"
+]
+},
+{
+"q": "Which Tennessee city is nicknamed Music City and is home to the Grand Ole Opry?",
+"a": [
+"Nashville",
+"Memphis",
+"Knoxville",
+"Chattanooga"
+],
+"d": 1,
+"x": "The Opry began in 1925 as a weekly radio barn dance and became country music's best-known stage.",
+"tags": [
+"country",
+"venues"
+]
+},
+{
+"q": "Which Welsh singer had a 1965 hit with \"It's Not Unusual\"?",
+"a": [
+"Tom Jones",
+"Engelbert Humperdinck",
+"Cliff Richard",
+"Dusty Springfield"
+],
+"d": 1,
+"x": "He was born Thomas Woodward in Pontypridd, Wales.",
+"tags": [
+"pop"
+]
+},
+{
+"q": "Which Australian band released the 1980 album Back in Black?",
+"a": [
+"AC/DC",
+"INXS",
+"Men at Work",
+"Midnight Oil"
+],
+"d": 1,
+"x": "The album was a tribute to their former singer Bon Scott, and Brian Johnson took over on vocals.",
+"tags": [
+"rock",
+"albums"
+]
+},
+{
+"q": "Which duo recorded \"Bridge over Troubled Water\"?",
+"a": [
+"Simon and Garfunkel",
+"Hall and Oates",
+"The Everly Brothers",
+"Sonny and Cher"
+],
+"d": 1,
+"x": "The title song of their 1970 album featured Art Garfunkel on the lead vocal.",
+"tags": [
+"folk",
+"pop"
+]
+},
+{
+"q": "Who wrote \"Blowin' in the Wind\"?",
+"a": [
+"Bob Dylan",
+"Neil Young",
+"Leonard Cohen",
+"Joni Mitchell"
+],
+"d": 1,
+"x": "Peter, Paul and Mary took their cover to the top of the charts in 1963.",
+"tags": [
+"folk"
+]
+},
+{
+"q": "Which Beatles album cover shows the band walking across a zebra crossing?",
+"a": [
+"Abbey Road",
+"Revolver",
+"Help!",
+"Let It Be"
+],
+"d": 1,
+"x": "It was recorded at EMI Studios in London, which was later renamed after the album.",
+"tags": [
+"albums",
+"rock"
+]
+},
+{
+"q": "Who was the lead singer of The Rolling Stones in their 1960s heyday?",
+"a": [
+"Mick Jagger",
+"Keith Richards",
+"Roger Daltrey",
+"Ray Davies"
+],
+"d": 1,
+"x": "The band formed in London in 1962, with Jagger and Richards as its main songwriting team.",
+"tags": [
+"rock"
+]
+},
+{
+"q": "Who sang \"Rocket Man\" and \"Tiny Dancer\"?",
+"a": [
+"Elton John",
+"Billy Joel",
+"David Bowie",
+"Rod Stewart"
+],
+"d": 1,
+"x": "Most of his famous lyrics were written by his partner Bernie Taupin.",
+"tags": [
+"pop"
+]
+},
+{
+"q": "Sting was the lead singer and bassist of which band?",
+"a": [
+"The Police",
+"Dire Straits",
+"Duran Duran",
+"The Cure"
+],
+"d": 1,
+"x": "With Andy Summers and Stewart Copeland, the trio released \"Every Breath You Take\" in 1983.",
+"tags": [
+"rock"
+]
+},
+{
+"q": "Which Motown girl group featured Diana Ross as lead singer?",
+"a": [
+"The Supremes",
+"The Ronettes",
+"The Shirelles",
+"Destiny's Child"
+],
+"d": 1,
+"x": "They were Motown's most successful act of the 1960s, with hits like \"Baby Love\".",
+"tags": [
+"soul"
+]
+},
+{
+"q": "The robot-helmeted electronic duo Daft Punk came from which country?",
+"a": [
+"France",
+"Germany",
+"Sweden",
+"Belgium"
+],
+"d": 1,
+"x": "Their 2001 album Discovery blended house music with disco and pop.",
+"tags": [
+"electronic"
+]
+},
+{
+"q": "Which British girl group had a 1996 debut hit with \"Wannabe\"?",
+"a": [
+"Spice Girls",
+"All Saints",
+"Girls Aloud",
+"Atomic Kitten"
+],
+"d": 1,
+"x": "The five members were known as Scary, Sporty, Baby, Ginger and Posh.",
+"tags": [
+"pop"
+]
+},
+{
+"q": "Which Disney film features the song \"Let It Go\"?",
+"a": [
+"Frozen",
+"Tangled",
+"Brave",
+"Enchanted"
+],
+"d": 1,
+"x": "The song won the Oscar for Best Original Song at the 2014 ceremony.",
+"tags": [
+"film",
+"musicals"
+]
+},
+{
+"q": "Which Disney film features the song \"Under the Sea\"?",
+"a": [
+"The Little Mermaid",
+"The Jungle Book",
+"Aladdin",
+"Hercules"
+],
+"d": 1,
+"x": "Composer Alan Menken and lyricist Howard Ashman won an Oscar for the song in 1990.",
+"tags": [
+"film",
+"musicals"
+]
+},
+{
+"q": "Which musical follows Eliza Doolittle, a flower seller taught to speak properly?",
+"a": [
+"My Fair Lady",
+"Oliver!",
+"Mary Poppins",
+"Gigi"
+],
+"d": 1,
+"x": "It is based on George Bernard Shaw's play Pygmalion, with songs by Lerner and Loewe.",
+"tags": [
+"musicals"
+]
+},
+{
+"q": "Which musical features the songs \"I Dreamed a Dream\" and \"One Day More\"?",
+"a": [
+"Les Miserables",
+"Miss Saigon",
+"Evita",
+"Chess"
+],
+"d": 1,
+"x": "It is based on Victor Hugo's 1862 novel and opened in London in 1985.",
+"tags": [
+"musicals"
+]
+},
+{
+"q": "Which US state is most closely associated with the ukulele?",
+"a": [
+"Hawaii",
+"Florida",
+"Texas",
+"California"
+],
+"d": 1,
+"x": "Portuguese immigrants brought small guitar-like instruments to Hawaii in the 1880s, and these evolved into the ukulele.",
+"tags": [
+"instruments"
+]
+},
+{
+"q": "Who sang the 1998 debut hit \"...Baby One More Time\"?",
+"a": [
+"Britney Spears",
+"Christina Aguilera",
+"Mandy Moore",
+"Jessica Simpson"
+],
+"d": 1,
+"x": "The song was written and produced by the Swedish songwriter Max Martin.",
+"tags": [
+"pop"
+]
+},
+{
+"q": "Who wrote and sang the 1973 song \"Piano Man\"?",
+"a": [
+"Billy Joel",
+"Elton John",
+"Barry Manilow",
+"Bruce Hornsby"
+],
+"d": 1,
+"x": "It drew on his time playing piano in a Los Angeles lounge bar early in his career.",
+"tags": [
+"pop"
+]
+},
+{
+"q": "Which country star was known as \"The Man in Black\"?",
+"a": [
+"Johnny Cash",
+"Willie Nelson",
+"Hank Williams",
+"Waylon Jennings"
+],
+"d": 1,
+"x": "He often performed in black clothes and sang hits like \"Ring of Fire\".",
+"tags": [
+"country"
+]
+},
+{
+"q": "Which country star wrote and recorded the song \"9 to 5\"?",
+"a": [
+"Dolly Parton",
+"Loretta Lynn",
+"Tammy Wynette",
+"Reba McEntire"
+],
+"d": 1,
+"x": "She wrote it for the 1980 film of the same name, in which she also starred.",
+"tags": [
+"country"
+]
+},
+{
+"q": "Which crooner was nicknamed \"Ol' Blue Eyes\"?",
+"a": [
+"Frank Sinatra",
+"Dean Martin",
+"Bing Crosby",
+"Tony Bennett"
+],
+"d": 1,
+"x": "His signature song \"My Way\" has English lyrics by Paul Anka, written in 1969.",
+"tags": [
+"pop",
+"jazz"
+]
+},
+{
+"q": "Which keyboard instrument uses pipes and is common in large churches and concert halls?",
+"a": [
+"The organ",
+"The harpsichord",
+"The accordion",
+"The celesta"
+],
+"d": 1,
+"x": "Air is blown through its pipes, and the player uses several keyboards plus a pedalboard.",
+"tags": [
+"instruments"
+]
+},
+{
+"q": "Which passionate guitar-and-dance tradition comes from Andalusia in Spain?",
+"a": [
+"Flamenco",
+"Fado",
+"Tango",
+"Polka"
+],
+"d": 1,
+"x": "UNESCO added flamenco to its list of intangible cultural heritage in 2010.",
+"tags": [
+"genres"
+]
+},
+{
+"q": "Which country is the home of mariachi bands?",
+"a": [
+"Mexico",
+"Spain",
+"Cuba",
+"Colombia"
+],
+"d": 1,
+"x": "Mariachi ensembles of violins, trumpets and guitars grew out of the western state of Jalisco.",
+"tags": [
+"genres"
+]
+},
+{
+"q": "Which British band recorded \"Wonderwall\"?",
+"a": [
+"Oasis",
+"Blur",
+"Pulp",
+"Suede"
+],
+"d": 1,
+"x": "The Manchester band's song appeared on their 1995 album, and the Gallagher brothers led the group.",
+"tags": [
+"rock"
+]
+},
+{
+"q": "Which band recorded \"Hotel California\"?",
+"a": [
+"Eagles",
+"Fleetwood Mac",
+"Steely Dan",
+"Chicago"
+],
+"d": 1,
+"x": "The 1976 song ends with a guitar duel between Don Felder and Joe Walsh.",
+"tags": [
+"rock"
+]
+},
+{
+"q": "Which New Jersey band had a 1986 hit with \"Livin' on a Prayer\"?",
+"a": [
+"Bon Jovi",
+"Aerosmith",
+"Kiss",
+"Journey"
+],
+"d": 1,
+"x": "The song uses a talk box effect on guitar and comes from the album Slippery When Wet.",
+"tags": [
+"rock"
+]
+},
+{
+"q": "Which singer had a worldwide hit with \"Rolling in the Deep\" in 2010?",
+"a": [
+"Adele",
+"Amy Winehouse",
+"Duffy",
+"Lily Allen"
+],
+"d": 1,
+"x": "It was the lead single from her album 21, co-written with producer Paul Epworth.",
+"tags": [
+"pop"
+]
+},
+{
+"q": "Which singer's 2008 hit was \"Poker Face\"?",
+"a": [
+"Lady Gaga",
+"Katy Perry",
+"Pink",
+"Rihanna"
+],
+"d": 1,
+"x": "It came from her debut album, The Fame.",
+"tags": [
+"pop"
+]
+},
+{
+"q": "Which rapper won an Oscar for the song \"Lose Yourself\"?",
+"a": [
+"Eminem",
+"Jay-Z",
+"Dr. Dre",
+"50 Cent"
+],
+"d": 1,
+"x": "The song came from the film 8 Mile and was the first rap song to win Best Original Song.",
+"tags": [
+"hiphop",
+"film"
+]
+},
+{
+"q": "Which girl group did Beyonce belong to before going solo?",
+"a": [
+"Destiny's Child",
+"TLC",
+"En Vogue",
+"Pussycat Dolls"
+],
+"d": 1,
+"x": "Beyonce, Kelly Rowland and Michelle Williams scored hits like \"Survivor\" in the early 2000s.",
+"tags": [
+"pop"
+]
+},
+{
+"q": "Which former Beatle wrote and sang \"Imagine\" in 1971?",
+"a": [
+"John Lennon",
+"Paul McCartney",
+"George Harrison",
+"Ringo Starr"
+],
+"d": 1,
+"x": "The song was the title track of his second solo album and features a gentle piano melody.",
+"tags": [
+"rock"
+]
+},
+{
+"q": "The snare, kick drum and hi-hat are all parts of what?",
+"a": [
+"A drum kit",
+"A xylophone",
+"A steel band",
+"A gamelan"
+],
+"d": 1,
+"x": "Modern drum kits took shape in the early 1900s, when jazz drummers combined several drums for one player.",
+"tags": [
+"instruments"
+]
+},
+{
+"q": "Which clef is used for higher notes and is also called the G clef?",
+"a": [
+"Treble clef",
+"Bass clef",
+"Alto clef",
+"Tenor clef"
+],
+"d": 1,
+"x": "Its curl circles the second line of the staff, marking the note G above middle C.",
+"tags": [
+"theory"
+]
+},
+{
+"q": "What is the musical term for the speed of a piece of music?",
+"a": [
+"Tempo",
+"Pitch",
+"Timbre",
+"Rhythm"
+],
+"d": 1,
+"x": "The word is Italian for \"time\", and it is often measured in beats per minute.",
+"tags": [
+"terms"
+]
+},
+{
+"q": "What musical term describes how loud or soft the music is?",
+"a": [
+"Dynamics",
+"Melody",
+"Texture",
+"Pitch"
+],
+"d": 1,
+"x": "Composers mark them with symbols such as p for soft, f for loud and mf for moderately loud.",
+"tags": [
+"terms"
+]
+},
+{
+"q": "Who was the lead singer of the Irish band U2 in its 1980s heyday?",
+"a": [
+"Bono",
+"The Edge",
+"Bob Geldof",
+"Van Morrison"
+],
+"d": 1,
+"x": "The band formed in Dublin in 1976 and broke through with the album War in 1983.",
+"tags": [
+"rock"
+]
+},
+{
+"q": "Highland bagpipes are most strongly associated with which country?",
+"a": [
+"Scotland",
+"Wales",
+"Norway",
+"Italy"
+],
+"d": 1,
+"x": "The Great Highland bagpipe has a melody pipe called a chanter plus three drone pipes.",
+"tags": [
+"instruments"
+]
+},
+{
+"q": "Timpani belong to which instrument family?",
+"a": [
+"Percussion",
+"Brass",
+"Woodwind",
+"Strings"
+],
+"d": 1,
+"x": "Also called kettledrums, they can be tuned to specific pitches using a pedal mechanism.",
+"tags": [
+"instruments"
+]
+},
+{
+"q": "Which brass instrument changes pitch by moving a sliding tube?",
+"a": [
+"Trombone",
+"Trumpet",
+"Tuba",
+"French horn"
+],
+"d": 1,
+"x": "Its Italian name means \"large trumpet\".",
+"tags": [
+"instruments"
+]
+},
+{
+"q": "In which Austrian city was Mozart born in 1756?",
+"a": [
+"Salzburg",
+"Vienna",
+"Linz",
+"Graz"
+],
+"d": 1,
+"x": "Salzburg still honors him with an annual Mozart Week and a famous summer festival.",
+"tags": [
+"classical"
+]
+},
+{
+"q": "What does a metronome help a musician keep?",
+"a": [
+"A steady tempo",
+"Correct pitch",
+"Loud dynamics",
+"Clear harmony"
+],
+"d": 1,
+"x": "Beethoven was one of the first major composers to mark metronome speeds on his scores.",
+"tags": [
+"terms",
+"instruments"
+]
+},
+{
+"q": "Which composer wrote the piano piece \"Fur Elise\"?",
+"a": [
+"Beethoven",
+"Schubert",
+"Liszt",
+"Brahms"
+],
+"d": 1,
+"x": "It was not published until 1867, about 40 years after his death.",
+"tags": [
+"classical"
+]
+},
+{
+"q": "Which instrument family does the French horn belong to?",
+"a": [
+"Brass",
+"Woodwind",
+"Percussion",
+"Strings"
+],
+"d": 1,
+"x": "Despite its coiled shape, the tubing would stretch to about 12 feet if straightened.",
+"tags": [
+"instruments"
+]
+}
+]

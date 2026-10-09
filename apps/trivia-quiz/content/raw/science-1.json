@@ -1,0 +1,1366 @@
+[
+{
+"q": "What is the chemical symbol for gold?",
+"a": [
+"Au",
+"Ag",
+"Gd",
+"Go"
+],
+"d": 1,
+"x": "Au comes from the Latin word aurum, meaning gold. Silver's symbol, Ag, comes from the Latin argentum.",
+"tags": [
+"chemistry"
+]
+},
+{
+"q": "Which planet is closest to the Sun?",
+"a": [
+"Mercury",
+"Venus",
+"Mars",
+"Earth"
+],
+"d": 1,
+"x": "Mercury orbits the Sun in just 88 Earth days, the shortest year of any planet.",
+"tags": [
+"astronomy"
+]
+},
+{
+"q": "Which gas do plants absorb from the air for photosynthesis?",
+"a": [
+"Carbon dioxide",
+"Oxygen",
+"Nitrogen",
+"Hydrogen"
+],
+"d": 1,
+"x": "Plants use sunlight to turn carbon dioxide and water into sugar, releasing oxygen as a by-product.",
+"tags": [
+"biology"
+]
+},
+{
+"q": "What is the hardest naturally occurring substance?",
+"a": [
+"Diamond",
+"Quartz",
+"Granite",
+"Steel"
+],
+"d": 1,
+"x": "Diamond is a form of pure carbon whose atoms are locked in a rigid crystal lattice. It scores 10 on the Mohs scale.",
+"tags": [
+"chemistry"
+]
+},
+{
+"q": "How many bones are in the adult human body?",
+"a": [
+"206",
+"212",
+"186",
+"256"
+],
+"d": 1,
+"x": "Babies are born with about 300 bones, and many of them fuse together as the child grows.",
+"tags": [
+"human body"
+]
+},
+{
+"q": "What is the chemical formula for water?",
+"a": [
+"H2O",
+"H2O2",
+"HO",
+"H2"
+],
+"d": 1,
+"x": "Each water molecule has two hydrogen atoms bonded to one oxygen atom. Adding a second oxygen gives hydrogen peroxide.",
+"tags": [
+"chemistry"
+]
+},
+{
+"q": "What force pulls objects toward the center of the Earth?",
+"a": [
+"Gravity",
+"Magnetism",
+"Friction",
+"Inertia"
+],
+"d": 1,
+"x": "On Earth's surface, gravity makes falling objects accelerate at about 9.8 meters per second every second.",
+"tags": [
+"physics"
+]
+},
+{
+"q": "At sea level, at what temperature does water boil in degrees Celsius?",
+"a": [
+"100",
+"90",
+"110",
+"150"
+],
+"d": 1,
+"x": "Water boils at lower temperatures at high altitude because the air pressure is lower, which is why cooking takes longer on mountains.",
+"tags": [
+"chemistry"
+]
+},
+{
+"q": "Which planet is known as the Red Planet?",
+"a": [
+"Mars",
+"Mercury",
+"Jupiter",
+"Venus"
+],
+"d": 1,
+"x": "Mars looks red because its soil is rich in iron oxide, which is essentially rust.",
+"tags": [
+"astronomy"
+]
+},
+{
+"q": "Which gas makes up most of Earth's atmosphere?",
+"a": [
+"Nitrogen",
+"Oxygen",
+"Carbon dioxide",
+"Hydrogen"
+],
+"d": 1,
+"x": "Nitrogen is about 78 percent of the air we breathe, while oxygen is only about 21 percent.",
+"tags": [
+"earth science"
+]
+},
+{
+"q": "What is the process by which plants make their own food using sunlight?",
+"a": [
+"Photosynthesis",
+"Respiration",
+"Digestion",
+"Fermentation"
+],
+"d": 1,
+"x": "Photosynthesis takes place mainly in leaves, inside tiny structures called chloroplasts.",
+"tags": [
+"biology"
+]
+},
+{
+"q": "What is the SI unit of electric current?",
+"a": [
+"Ampere",
+"Volt",
+"Watt",
+"Ohm"
+],
+"d": 1,
+"x": "The ampere is named after the French physicist Andre-Marie Ampere, a founder of the study of electromagnetism.",
+"tags": [
+"units"
+]
+},
+{
+"q": "Which blood cells carry oxygen around the body?",
+"a": [
+"Red blood cells",
+"White blood cells",
+"Platelets",
+"Plasma cells"
+],
+"d": 1,
+"x": "Red blood cells contain hemoglobin, an iron-rich protein that also gives blood its red color.",
+"tags": [
+"human body"
+]
+},
+{
+"q": "What is the chemical symbol for sodium?",
+"a": [
+"Na",
+"So",
+"Sd",
+"S"
+],
+"d": 1,
+"x": "Na comes from natrium, the Latin name for sodium compounds. Sodium is a soft metal that reacts violently with water.",
+"tags": [
+"chemistry"
+]
+},
+{
+"q": "What is Earth's only natural satellite?",
+"a": [
+"The Moon",
+"Phobos",
+"Titan",
+"Europa"
+],
+"d": 1,
+"x": "The Moon is slowly drifting away from Earth at about 3.8 centimeters per year.",
+"tags": [
+"astronomy"
+]
+},
+{
+"q": "Which scientist is famously linked with a falling apple and the law of universal gravitation?",
+"a": [
+"Isaac Newton",
+"Albert Einstein",
+"Johannes Kepler",
+"Robert Hooke"
+],
+"d": 1,
+"x": "Newton published his law of universal gravitation in 1687 in his book Principia.",
+"tags": [
+"scientists"
+]
+},
+{
+"q": "About how fast does light travel in a vacuum?",
+"a": [
+"300,000 km/s",
+"30,000 km/s",
+"3,000 km/s",
+"3,000,000 km/s"
+],
+"d": 1,
+"x": "Light covers about 300,000 kilometers every second, fast enough to circle Earth about 7.5 times in one second.",
+"tags": [
+"physics"
+]
+},
+{
+"q": "At what temperature in degrees Celsius does water freeze at sea level?",
+"a": [
+"0",
+"10",
+"-10",
+"32"
+],
+"d": 1,
+"x": "Water expands when it freezes, which is why ice floats and why pipes can burst in winter.",
+"tags": [
+"chemistry"
+]
+},
+{
+"q": "Which gas do humans need to breathe in to survive?",
+"a": [
+"Oxygen",
+"Helium",
+"Methane",
+"Argon"
+],
+"d": 1,
+"x": "Our cells use oxygen to release energy from food, a process called cellular respiration.",
+"tags": [
+"human body"
+]
+},
+{
+"q": "What is the scientific study of living things called?",
+"a": [
+"Biology",
+"Geology",
+"Physics",
+"Astronomy"
+],
+"d": 1,
+"x": "The word biology comes from the Greek words bios (life) and logos (study).",
+"tags": [
+"biology"
+]
+},
+{
+"q": "Which planet is best known for its spectacular rings?",
+"a": [
+"Saturn",
+"Mars",
+"Mercury",
+"Earth"
+],
+"d": 1,
+"x": "Saturn's rings are made mostly of chunks of water ice, ranging from dust grains to boulders.",
+"tags": [
+"astronomy"
+]
+},
+{
+"q": "What kind of animal is a dolphin?",
+"a": [
+"Mammal",
+"Fish",
+"Reptile",
+"Amphibian"
+],
+"d": 1,
+"x": "Dolphins breathe air through a blowhole and nurse their young with milk, like all mammals.",
+"tags": [
+"biology"
+]
+},
+{
+"q": "What do bees collect from flowers to make honey?",
+"a": [
+"Nectar",
+"Pollen",
+"Sap",
+"Water"
+],
+"d": 1,
+"x": "A bee must visit about two million flowers to make one pound of honey.",
+"tags": [
+"biology"
+]
+},
+{
+"q": "Which part of a plant absorbs water from the soil?",
+"a": [
+"Roots",
+"Leaves",
+"Flowers",
+"Stem"
+],
+"d": 1,
+"x": "Tiny root hairs greatly increase the surface area available for taking in water and minerals.",
+"tags": [
+"biology"
+]
+},
+{
+"q": "What is the common name for sodium chloride?",
+"a": [
+"Table salt",
+"Baking soda",
+"Sugar",
+"Bleach"
+],
+"d": 1,
+"x": "Salt is so valuable in history that the word salary is thought to come from the Latin word for salt.",
+"tags": [
+"chemistry"
+]
+},
+{
+"q": "Which vitamin does your skin make when exposed to sunlight?",
+"a": [
+"Vitamin D",
+"Vitamin A",
+"Vitamin K",
+"Vitamin B12"
+],
+"d": 1,
+"x": "Vitamin D helps the body absorb calcium for strong bones and teeth.",
+"tags": [
+"human body"
+]
+},
+{
+"q": "How many legs does an insect have?",
+"a": [
+"Six",
+"Four",
+"Eight",
+"Ten"
+],
+"d": 1,
+"x": "All adult insects have six legs and three body parts: head, thorax and abdomen.",
+"tags": [
+"biology"
+]
+},
+{
+"q": "How many colors are traditionally listed in a rainbow?",
+"a": [
+"Seven",
+"Five",
+"Six",
+"Nine"
+],
+"d": 1,
+"x": "Newton chose seven colors, red to violet, partly because he linked them to the seven notes of the musical scale.",
+"tags": [
+"physics"
+]
+},
+{
+"q": "What is the tiny, dense center of an atom called?",
+"a": [
+"Nucleus",
+"Electron",
+"Orbit",
+"Membrane"
+],
+"d": 1,
+"x": "The nucleus holds nearly all of an atom's mass, yet it is about 100,000 times smaller than the whole atom.",
+"tags": [
+"chemistry"
+]
+},
+{
+"q": "Which pair of organs filters waste from the blood to make urine?",
+"a": [
+"Kidneys",
+"Lungs",
+"Intestines",
+"Ovaries"
+],
+"d": 1,
+"x": "Your kidneys filter about 180 liters of blood plasma every day.",
+"tags": [
+"human body"
+]
+},
+{
+"q": "What sound follows a flash of lightning?",
+"a": [
+"Thunder",
+"Echo",
+"Static",
+"Thrum"
+],
+"d": 1,
+"x": "Thunder is caused by the air being heated so fast that it expands explosively. Light travels faster than sound, so you see lightning first.",
+"tags": [
+"earth science"
+]
+},
+{
+"q": "Which metal is liquid at room temperature?",
+"a": [
+"Mercury",
+"Iron",
+"Copper",
+"Aluminum"
+],
+"d": 1,
+"x": "Mercury's symbol, Hg, comes from the Latin hydrargyrum, meaning liquid silver.",
+"tags": [
+"chemistry"
+]
+},
+{
+"q": "Counting outward from the Sun, which planet is third?",
+"a": [
+"Earth",
+"Mars",
+"Venus",
+"Jupiter"
+],
+"d": 1,
+"x": "Earth sits in the so-called habitable zone, where temperatures allow liquid water on the surface.",
+"tags": [
+"astronomy"
+]
+},
+{
+"q": "What do we call animals that eat only plants?",
+"a": [
+"Herbivores",
+"Carnivores",
+"Omnivores",
+"Scavengers"
+],
+"d": 1,
+"x": "Cows, rabbits and elephants are herbivores. Many have specialized stomachs to break down tough plant material.",
+"tags": [
+"biology"
+]
+},
+{
+"q": "What is the chemical symbol for oxygen?",
+"a": [
+"O",
+"Ox",
+"Og",
+"Oy"
+],
+"d": 1,
+"x": "Oxygen makes up about 21 percent of Earth's atmosphere and nearly half of the mass of Earth's crust.",
+"tags": [
+"chemistry"
+]
+},
+{
+"q": "Which force slows down a book sliding across a table?",
+"a": [
+"Friction",
+"Gravity",
+"Magnetism",
+"Buoyancy"
+],
+"d": 1,
+"x": "Friction turns some of the sliding object's motion energy into heat, which is why rubbing your hands together warms them.",
+"tags": [
+"physics"
+]
+},
+{
+"q": "Which scientist wrote On the Origin of Species?",
+"a": [
+"Charles Darwin",
+"Gregor Mendel",
+"Louis Pasteur",
+"Carl Linnaeus"
+],
+"d": 1,
+"x": "Darwin published the book in 1859 after developing his ideas on natural selection for over twenty years.",
+"tags": [
+"scientists"
+]
+},
+{
+"q": "Which instrument is used to see distant stars and planets more clearly?",
+"a": [
+"Telescope",
+"Microscope",
+"Periscope",
+"Stethoscope"
+],
+"d": 1,
+"x": "Galileo's improved telescopes in 1609 and 1610 let him see the Moon's craters and the moons of Jupiter.",
+"tags": [
+"astronomy"
+]
+},
+{
+"q": "What does the abbreviation DNA stand for?",
+"a": [
+"Deoxyribonucleic acid",
+"Dinitrogen acid",
+"Dynamic nuclear atom",
+"Dioxide nucleic acid"
+],
+"d": 1,
+"x": "DNA carries the genetic instructions for building and running living things, coiled into a double helix.",
+"tags": [
+"biology"
+]
+},
+{
+"q": "In computing, what does CPU stand for?",
+"a": [
+"Central Processing Unit",
+"Central Power Unit",
+"Computer Primary Unit",
+"Core Program Utility"
+],
+"d": 1,
+"x": "The CPU is often called the brain of the computer because it carries out program instructions.",
+"tags": [
+"technology"
+]
+},
+{
+"q": "What are the smallest units of digital information, the 0s and 1s, called?",
+"a": [
+"Bits",
+"Bytes",
+"Pixels",
+"Bauds"
+],
+"d": 1,
+"x": "The word bit is short for binary digit. Eight bits make up one byte.",
+"tags": [
+"technology"
+]
+},
+{
+"q": "Which type of rock forms when molten lava or magma cools and hardens?",
+"a": [
+"Igneous",
+"Sedimentary",
+"Metamorphic",
+"Fossilized"
+],
+"d": 1,
+"x": "Granite and basalt are both igneous rocks. The name comes from the Latin word for fire.",
+"tags": [
+"earth science"
+]
+},
+{
+"q": "What is the name for molten rock beneath Earth's surface?",
+"a": [
+"Magma",
+"Lava",
+"Basalt",
+"Granite"
+],
+"d": 1,
+"x": "Magma is called lava once it erupts onto the surface.",
+"tags": [
+"earth science"
+]
+},
+{
+"q": "What is the name of the thin, rocky outer layer of the Earth?",
+"a": [
+"Crust",
+"Mantle",
+"Core",
+"Atmosphere"
+],
+"d": 1,
+"x": "The crust is only 5 to 70 km thick, thinner relative to Earth than the skin of an apple is to the fruit.",
+"tags": [
+"earth science"
+]
+},
+{
+"q": "What is mainly responsible for the ocean tides on Earth?",
+"a": [
+"The Moon's gravity",
+"Earth's rotation",
+"Ocean winds",
+"The Sun's heat"
+],
+"d": 1,
+"x": "The Moon's gravity pulls on the oceans, creating two tidal bulges. Most coasts see two high tides a day.",
+"tags": [
+"earth science"
+]
+},
+{
+"q": "What is the longest bone in the human body?",
+"a": [
+"Femur",
+"Tibia",
+"Humerus",
+"Spine"
+],
+"d": 1,
+"x": "The femur, or thigh bone, makes up about a quarter of a person's height.",
+"tags": [
+"human body"
+]
+},
+{
+"q": "What is the chemical symbol for iron?",
+"a": [
+"Fe",
+"Ir",
+"In",
+"I"
+],
+"d": 1,
+"x": "Fe comes from ferrum, the Latin word for iron. Iron is the most common element on Earth by mass.",
+"tags": [
+"chemistry"
+]
+},
+{
+"q": "Roughly how many days does the Earth take to orbit the Sun once?",
+"a": [
+"365",
+"300",
+"420",
+"730"
+],
+"d": 1,
+"x": "Because the orbit takes about 365.25 days, we add a leap day to the calendar roughly every four years.",
+"tags": [
+"astronomy"
+]
+},
+{
+"q": "Which planet has the hottest surface in the solar system?",
+"a": [
+"Venus",
+"Mercury",
+"Mars",
+"Jupiter"
+],
+"d": 1,
+"x": "Venus is hotter than Mercury, at about 465 C, because its thick carbon dioxide atmosphere traps heat.",
+"tags": [
+"astronomy"
+]
+},
+{
+"q": "What is the SI unit of force?",
+"a": [
+"Newton",
+"Joule",
+"Pascal",
+"Watt"
+],
+"d": 1,
+"x": "One newton is about the weight of a small apple on Earth's surface.",
+"tags": [
+"units"
+]
+},
+{
+"q": "What is a young frog with a tail and gills called?",
+"a": [
+"Tadpole",
+"Larva grub",
+"Fry",
+"Cub"
+],
+"d": 1,
+"x": "A tadpole gradually grows legs, loses its tail and develops lungs in a process called metamorphosis.",
+"tags": [
+"biology"
+]
+},
+{
+"q": "What is it called when liquid water turns into water vapor?",
+"a": [
+"Evaporation",
+"Condensation",
+"Freezing",
+"Melting"
+],
+"d": 1,
+"x": "Evaporation from oceans, lakes and plants drives the water cycle that eventually returns as rain and snow.",
+"tags": [
+"earth science"
+]
+},
+{
+"q": "What is it called when water vapor cools and turns into liquid droplets?",
+"a": [
+"Condensation",
+"Evaporation",
+"Sublimation",
+"Erosion"
+],
+"d": 1,
+"x": "Clouds form when water vapor condenses onto tiny dust particles in the air.",
+"tags": [
+"earth science"
+]
+},
+{
+"q": "What does a seismograph record?",
+"a": [
+"Earthquake tremors",
+"Wind speed",
+"Air pressure",
+"Ocean tides"
+],
+"d": 1,
+"x": "Modern seismographs can detect earthquakes happening on the opposite side of the planet.",
+"tags": [
+"earth science"
+]
+},
+{
+"q": "What does a barometer measure?",
+"a": [
+"Air pressure",
+"Humidity",
+"Rainfall",
+"Wind speed"
+],
+"d": 1,
+"x": "Falling air pressure often signals approaching storms, while rising pressure usually means fair weather.",
+"tags": [
+"earth science"
+]
+},
+{
+"q": "Which pair of organs do we use to breathe?",
+"a": [
+"Lungs",
+"Kidneys",
+"Ribs",
+"Tonsils"
+],
+"d": 1,
+"x": "Your lungs contain around 300 million tiny air sacs called alveoli, where oxygen enters the blood.",
+"tags": [
+"human body"
+]
+},
+{
+"q": "About how long does the Earth take to rotate once on its axis?",
+"a": [
+"24 hours",
+"12 hours",
+"7 days",
+"365 days"
+],
+"d": 1,
+"x": "Earth's spin gives us day and night. At the equator, the ground moves at roughly 1,670 km/h.",
+"tags": [
+"astronomy"
+]
+},
+{
+"q": "What is a recognizable pattern of stars in the night sky called?",
+"a": [
+"Constellation",
+"Galaxy",
+"Nebula",
+"Asteroid"
+],
+"d": 1,
+"x": "Astronomers recognize 88 official constellations, including Orion and Ursa Major.",
+"tags": [
+"astronomy"
+]
+},
+{
+"q": "Which part of a cell is known as its powerhouse?",
+"a": [
+"Mitochondria",
+"Nucleus",
+"Ribosome",
+"Cell wall"
+],
+"d": 1,
+"x": "Mitochondria convert food into ATP, the usable energy molecule of the cell. They have their own small set of DNA.",
+"tags": [
+"biology"
+]
+},
+{
+"q": "What green pigment in leaves captures sunlight for photosynthesis?",
+"a": [
+"Chlorophyll",
+"Carotene",
+"Melanin",
+"Keratin"
+],
+"d": 1,
+"x": "Leaves turn red and orange in autumn when chlorophyll breaks down and other pigments show through.",
+"tags": [
+"biology"
+]
+},
+{
+"q": "Which scientist won Nobel Prizes in both Physics and Chemistry?",
+"a": [
+"Marie Curie",
+"Rosalind Franklin",
+"Lise Meitner",
+"Dorothy Hodgkin"
+],
+"d": 1,
+"x": "Curie won the Physics prize in 1903 and the Chemistry prize in 1911, and is the only person honored in two different sciences.",
+"tags": [
+"scientists"
+]
+},
+{
+"q": "What is the largest animal on Earth?",
+"a": [
+"Blue whale",
+"African elephant",
+"Great white shark",
+"Giraffe"
+],
+"d": 1,
+"x": "A blue whale's heart is about the size of a small car, and its tongue can weigh as much as an elephant.",
+"tags": [
+"biology"
+]
+},
+{
+"q": "Which is the fastest land animal?",
+"a": [
+"Cheetah",
+"Lion",
+"Greyhound",
+"Horse"
+],
+"d": 1,
+"x": "A cheetah can reach about 100 km/h in short bursts, accelerating faster than most sports cars.",
+"tags": [
+"biology"
+]
+},
+{
+"q": "Among the eight planets, which one is farthest from the Sun?",
+"a": [
+"Neptune",
+"Uranus",
+"Saturn",
+"Pluto"
+],
+"d": 1,
+"x": "Neptune takes about 165 Earth years to orbit the Sun once.",
+"tags": [
+"astronomy"
+]
+},
+{
+"q": "Who invented the World Wide Web?",
+"a": [
+"Tim Berners-Lee",
+"Bill Gates",
+"Steve Jobs",
+"Alan Turing"
+],
+"d": 1,
+"x": "Berners-Lee proposed the web in 1989 while working at the research lab CERN in Switzerland.",
+"tags": [
+"technology"
+]
+},
+{
+"q": "Which element is the lightest in the universe?",
+"a": [
+"Hydrogen",
+"Helium",
+"Lithium",
+"Oxygen"
+],
+"d": 1,
+"x": "Hydrogen is also the most abundant element in the universe and the main fuel of stars.",
+"tags": [
+"chemistry"
+]
+},
+{
+"q": "What word describes animals that are mainly active at night?",
+"a": [
+"Nocturnal",
+"Diurnal",
+"Dormant",
+"Migratory"
+],
+"d": 1,
+"x": "Owls, bats and many mice are nocturnal, with senses adapted for darkness.",
+"tags": [
+"biology"
+]
+},
+{
+"q": "Which state of matter has a fixed volume but no fixed shape?",
+"a": [
+"Liquid",
+"Solid",
+"Gas",
+"Plasma"
+],
+"d": 1,
+"x": "A liquid takes the shape of its container, but you cannot easily squeeze it into a smaller volume.",
+"tags": [
+"physics"
+]
+},
+{
+"q": "What do paleontologists study?",
+"a": [
+"Fossils",
+"Volcanoes",
+"Weather",
+"Rivers"
+],
+"d": 1,
+"x": "Paleontologists piece together the history of life from fossils, some of them hundreds of millions of years old.",
+"tags": [
+"earth science"
+]
+},
+{
+"q": "What object passes between the Sun and the Earth during a solar eclipse?",
+"a": [
+"The Moon",
+"Mars",
+"Venus",
+"A comet"
+],
+"d": 1,
+"x": "By coincidence, the Sun is about 400 times wider than the Moon and also about 400 times farther away, so they look the same size.",
+"tags": [
+"astronomy"
+]
+},
+{
+"q": "How many teeth does a typical adult human have, including wisdom teeth?",
+"a": [
+"32",
+"28",
+"36",
+"24"
+],
+"d": 1,
+"x": "Children have 20 baby teeth, which are replaced by permanent teeth.",
+"tags": [
+"human body"
+]
+},
+{
+"q": "Which gas is used to fill party balloons so they float?",
+"a": [
+"Helium",
+"Oxygen",
+"Carbon dioxide",
+"Nitrogen"
+],
+"d": 1,
+"x": "Helium is lighter than air. It was first detected in the Sun in 1868, before it was found on Earth.",
+"tags": [
+"chemistry"
+]
+},
+{
+"q": "What does a magnetic compass needle point toward?",
+"a": [
+"Earth's magnetic north",
+"The North Star",
+"The Sun",
+"The nearest ocean"
+],
+"d": 1,
+"x": "Earth's liquid iron core generates a magnetic field that the needle aligns with.",
+"tags": [
+"physics"
+]
+},
+{
+"q": "Which vitamin, found in oranges and lemons, helps prevent scurvy?",
+"a": [
+"Vitamin C",
+"Vitamin D",
+"Vitamin A",
+"Vitamin E"
+],
+"d": 1,
+"x": "Sailors on long voyages once suffered terribly from scurvy until citrus fruit was added to their diet.",
+"tags": [
+"human body"
+]
+},
+{
+"q": "What is the SI base unit of mass?",
+"a": [
+"Kilogram",
+"Gram",
+"Pound",
+"Newton"
+],
+"d": 1,
+"x": "The kilogram is the only SI base unit with a prefix in its name.",
+"tags": [
+"units"
+]
+},
+{
+"q": "Which natural disaster is the Richter scale used to measure?",
+"a": [
+"Earthquake",
+"Hurricane",
+"Tornado",
+"Tsunami"
+],
+"d": 1,
+"x": "Charles Richter developed his scale in 1935. Today scientists mostly use a related moment magnitude scale.",
+"tags": [
+"earth science"
+]
+},
+{
+"q": "What was the name of the first artificial satellite launched into orbit in 1957?",
+"a": [
+"Sputnik 1",
+"Explorer 1",
+"Vostok 1",
+"Apollo 1"
+],
+"d": 1,
+"x": "Sputnik 1 was about the size of a beach ball and beeped radio signals for three weeks.",
+"tags": [
+"space"
+]
+},
+{
+"q": "What is the process called by which a caterpillar changes into a butterfly?",
+"a": [
+"Metamorphosis",
+"Migration",
+"Hibernation",
+"Photosynthesis"
+],
+"d": 1,
+"x": "Inside the chrysalis, the caterpillar's body is largely broken down and rebuilt into the adult butterfly.",
+"tags": [
+"biology"
+]
+},
+{
+"q": "How many legs does a spider have?",
+"a": [
+"Eight",
+"Six",
+"Ten",
+"Twelve"
+],
+"d": 1,
+"x": "Spiders are arachnids, not insects. They also have two body parts instead of three.",
+"tags": [
+"biology"
+]
+},
+{
+"q": "What is the layer of gases surrounding the Earth called?",
+"a": [
+"Atmosphere",
+"Biosphere",
+"Lithosphere",
+"Hydrosphere"
+],
+"d": 1,
+"x": "Most of the atmosphere's mass sits within the lowest 16 km, the layer where weather happens.",
+"tags": [
+"earth science"
+]
+},
+{
+"q": "What is the scientific study of weather called?",
+"a": [
+"Meteorology",
+"Geology",
+"Cartography",
+"Seismology"
+],
+"d": 1,
+"x": "Meteorology has nothing to do with meteors. The name comes from a Greek word for things high in the sky.",
+"tags": [
+"earth science"
+]
+},
+{
+"q": "Which organ controls the body's thoughts, memory and movement?",
+"a": [
+"Brain",
+"Stomach",
+"Spleen",
+"Pancreas"
+],
+"d": 1,
+"x": "The human brain has roughly 86 billion nerve cells, called neurons.",
+"tags": [
+"human body"
+]
+},
+{
+"q": "What energy source do solar panels convert into electricity?",
+"a": [
+"Sunlight",
+"Wind",
+"Heat from coal",
+"Ocean waves"
+],
+"d": 1,
+"x": "Solar cells use the photovoltaic effect, in which light knocks electrons loose in a semiconductor, usually silicon.",
+"tags": [
+"technology"
+]
+},
+{
+"q": "Which group of animals is the only one with feathers?",
+"a": [
+"Birds",
+"Bats",
+"Reptiles",
+"Insects"
+],
+"d": 1,
+"x": "Feathers help birds fly, stay warm and attract mates. Their closest living relatives are the crocodiles.",
+"tags": [
+"biology"
+]
+},
+{
+"q": "What is the name of the famous space telescope launched in 1990?",
+"a": [
+"Hubble Space Telescope",
+"Kepler Telescope",
+"Spitzer Telescope",
+"Galileo Telescope"
+],
+"d": 1,
+"x": "Hubble orbits about 540 km above Earth, above the blurring effect of the atmosphere.",
+"tags": [
+"space"
+]
+},
+{
+"q": "A ramp is an example of which simple machine?",
+"a": [
+"Inclined plane",
+"Lever",
+"Pulley",
+"Wedge"
+],
+"d": 1,
+"x": "An inclined plane lets you lift a heavy load with less force over a longer distance.",
+"tags": [
+"physics"
+]
+},
+{
+"q": "What is the huge explosion of a dying massive star called?",
+"a": [
+"Supernova",
+"Eclipse",
+"Solar flare",
+"Meteor shower"
+],
+"d": 1,
+"x": "A supernova can briefly outshine an entire galaxy and scatters heavy elements like iron into space.",
+"tags": [
+"astronomy"
+]
+},
+{
+"q": "What is the basic building block of all living things?",
+"a": [
+"Cell",
+"Atom",
+"Organ",
+"Molecule"
+],
+"d": 1,
+"x": "The human body contains roughly 30 trillion cells of about 200 different types.",
+"tags": [
+"biology"
+]
+},
+{
+"q": "What is the hardest natural substance on Earth?",
+"a": [
+"Diamond",
+"Quartz",
+"Topaz",
+"Marble"
+],
+"d": 1,
+"x": "Diamond is pure carbon whose atoms are packed in a very strong crystal structure."
+},
+{
+"q": "Which part of the eye changes the size of the pupil?",
+"a": [
+"Iris",
+"Retina",
+"Cornea",
+"Lens"
+],
+"d": 1,
+"x": "The colored iris has tiny muscles that open or close the pupil to control light."
+},
+{
+"q": "What type of scientist studies rocks and the structure of the Earth?",
+"a": [
+"Geologist",
+"Botanist",
+"Chemist",
+"Zoologist"
+],
+"d": 1,
+"x": "Geologists read rock layers to learn how Earth has changed over millions of years."
+},
+{
+"q": "Which planet is famous for its bright rings of ice and rock?",
+"a": [
+"Saturn",
+"Mars",
+"Venus",
+"Mercury"
+],
+"d": 1,
+"x": "Saturn's rings are mostly water ice and stretch far wider than the planet itself."
+},
+{
+"q": "What is the force that slows things down when surfaces rub together?",
+"a": [
+"Friction",
+"Gravity",
+"Magnetism",
+"Buoyancy"
+],
+"d": 1,
+"x": "Friction turns movement into heat, which is why rubbing your hands warms them."
+},
+{
+"q": "What state of matter is steam?",
+"a": [
+"Gas",
+"Liquid",
+"Solid",
+"Plasma"
+],
+"d": 1,
+"x": "Steam is water that has been heated until it becomes a gas."
+},
+{
+"q": "What is the process of water turning into vapor called?",
+"a": [
+"Evaporation",
+"Condensation",
+"Freezing",
+"Melting"
+],
+"d": 1,
+"x": "Heat from the Sun makes water evaporate from oceans, lakes and puddles."
+},
+{
+"q": "What is a sudden shaking of the ground called?",
+"a": [
+"Earthquake",
+"Tsunami",
+"Eruption",
+"Avalanche"
+],
+"d": 1,
+"x": "Earthquakes happen when blocks of Earth's crust slip along a fault."
+},
+{
+"q": "Which vitamin can our skin make with the help of sunlight?",
+"a": [
+"Vitamin D",
+"Vitamin C",
+"Vitamin A",
+"Vitamin B12"
+],
+"d": 1,
+"x": "Vitamin D helps the body absorb calcium for strong bones."
+},
+{
+"q": "Which tool lets you see things too small for the naked eye?",
+"a": [
+"Microscope",
+"Telescope",
+"Periscope",
+"Stethoscope"
+],
+"d": 1,
+"x": "Microscopes let scientists study cells and tiny organisms."
+},
+{
+"q": "Which tool is used to look at distant stars and planets?",
+"a": [
+"Telescope",
+"Microscope",
+"Barometer",
+"Compass"
+],
+"d": 1,
+"x": "Galileo used an early telescope to see the moons of Jupiter."
+},
+{
+"q": "What is frozen water called?",
+"a": [
+"Ice",
+"Steam",
+"Fog",
+"Dew"
+],
+"d": 1,
+"x": "Water freezes into ice at 0 degrees Celsius."
+}
+]

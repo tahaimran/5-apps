@@ -1,0 +1,1451 @@
+[
+{
+"q": "Who wrote the tragedy Romeo and Juliet?",
+"a": [
+"William Shakespeare",
+"Christopher Marlowe",
+"Ben Jonson",
+"John Webster"
+],
+"d": 1,
+"x": "The play was probably written in the mid-1590s and is based on an earlier Italian tale. It is set in Verona.",
+"tags": [
+"shakespeare"
+]
+},
+{
+"q": "Who wrote the novel Pride and Prejudice?",
+"a": [
+"Jane Austen",
+"Charlotte Bronte",
+"George Eliot",
+"Mary Shelley"
+],
+"d": 1,
+"x": "Published in 1813, it was first issued anonymously, credited only to 'the Author of Sense and Sensibility'.",
+"tags": [
+"novel",
+"english"
+]
+},
+{
+"q": "Which author created the detective Sherlock Holmes?",
+"a": [
+"Arthur Conan Doyle",
+"Agatha Christie",
+"Edgar Allan Poe",
+"Wilkie Collins"
+],
+"d": 1,
+"x": "Doyle was a physician. He based Holmes partly on Joseph Bell, a doctor known for his sharp powers of deduction.",
+"tags": [
+"detective"
+]
+},
+{
+"q": "Who is the author of the Harry Potter series?",
+"a": [
+"J. K. Rowling",
+"Suzanne Collins",
+"Stephenie Meyer",
+"Philip Pullman"
+],
+"d": 1,
+"x": "Rowling reportedly conceived the idea for Harry while on a delayed train from Manchester to London in 1990.",
+"tags": [
+"fantasy",
+"children"
+]
+},
+{
+"q": "Who wrote The Hobbit?",
+"a": [
+"J. R. R. Tolkien",
+"C. S. Lewis",
+"Roald Dahl",
+"T. H. White"
+],
+"d": 1,
+"x": "Published in 1937, it began as a story Tolkien told his children. He reportedly scribbled its first line on an exam paper.",
+"tags": [
+"fantasy"
+]
+},
+{
+"q": "In Moby-Dick, what is the name of the captain obsessed with the white whale?",
+"a": [
+"Ahab",
+"Nemo",
+"Hook",
+"Smollett"
+],
+"d": 1,
+"x": "Captain Ahab commands the whaling ship Pequod. He lost a leg to the whale on an earlier voyage.",
+"tags": [
+"novel",
+"american"
+]
+},
+{
+"q": "Who wrote A Christmas Carol?",
+"a": [
+"Charles Dickens",
+"William Thackeray",
+"Thomas Hardy",
+"Anthony Trollope"
+],
+"d": 1,
+"x": "Dickens wrote this ghost story in just a few weeks in 1843, and it was published that December.",
+"tags": [
+"dickens"
+]
+},
+{
+"q": "In Alice's Adventures in Wonderland, what does Alice follow down the hole?",
+"a": [
+"The White Rabbit",
+"The Cheshire Cat",
+"The Mad Hatter",
+"The Dormouse"
+],
+"d": 1,
+"x": "The rabbit pulls a pocket watch from his waistcoat and says he is late. Alice follows out of curiosity.",
+"tags": [
+"children"
+]
+},
+{
+"q": "Who wrote The Great Gatsby?",
+"a": [
+"F. Scott Fitzgerald",
+"Ernest Hemingway",
+"John Steinbeck",
+"William Faulkner"
+],
+"d": 1,
+"x": "The novel was published in 1925. It is set on Long Island during the Jazz Age.",
+"tags": [
+"novel",
+"american"
+]
+},
+{
+"q": "Who wrote To Kill a Mockingbird?",
+"a": [
+"Harper Lee",
+"Carson McCullers",
+"Flannery O'Connor",
+"Eudora Welty"
+],
+"d": 1,
+"x": "It appeared in 1960 and won the 1961 Pulitzer Prize for Fiction. Lee drew on her childhood in Alabama.",
+"tags": [
+"novel",
+"american"
+]
+},
+{
+"q": "Who wrote the dystopian novel 1984?",
+"a": [
+"George Orwell",
+"Aldous Huxley",
+"H. G. Wells",
+"Ray Bradbury"
+],
+"d": 1,
+"x": "Published in 1949, it introduced phrases like Big Brother and Newspeak into everyday language.",
+"tags": [
+"dystopia"
+]
+},
+{
+"q": "In Animal Farm, what kind of animal is the leader Napoleon?",
+"a": [
+"A pig",
+"A horse",
+"A dog",
+"A goat"
+],
+"d": 1,
+"x": "Orwell's 1945 fable satirizes the Russian Revolution. Napoleon is a boar who seizes control of the farm.",
+"tags": [
+"novel",
+"allegory"
+]
+},
+{
+"q": "Who wrote The Lion, the Witch and the Wardrobe?",
+"a": [
+"C. S. Lewis",
+"J. R. R. Tolkien",
+"Roald Dahl",
+"E. Nesbit"
+],
+"d": 1,
+"x": "Lewis and Tolkien were friends and belonged to the same Oxford writing group, the Inklings.",
+"tags": [
+"fantasy",
+"children"
+]
+},
+{
+"q": "Which Spanish author wrote Don Quixote?",
+"a": [
+"Miguel de Cervantes",
+"Lope de Vega",
+"Pedro Calderon",
+"Federico Garcia Lorca"
+],
+"d": 1,
+"x": "Part one appeared in 1605 and part two in 1615. It is often called the first modern novel.",
+"tags": [
+"spanish",
+"novel"
+]
+},
+{
+"q": "Which Italian poet wrote The Divine Comedy?",
+"a": [
+"Dante Alighieri",
+"Petrarch",
+"Boccaccio",
+"Virgil"
+],
+"d": 1,
+"x": "Dante completed it around 1320, and its three parts are Inferno, Purgatorio and Paradiso.",
+"tags": [
+"poetry",
+"italian"
+]
+},
+{
+"q": "Which ancient Greek poet is traditionally credited with composing the Odyssey?",
+"a": [
+"Homer",
+"Hesiod",
+"Sophocles",
+"Virgil"
+],
+"d": 1,
+"x": "Tradition says Homer was blind, but little is known about him. Scholars still debate whether one poet composed both the Iliad and the Odyssey.",
+"tags": [
+"greek",
+"epic"
+]
+},
+{
+"q": "In Shakespeare's Hamlet, Hamlet is the prince of which country?",
+"a": [
+"Denmark",
+"Norway",
+"Sweden",
+"Scotland"
+],
+"d": 1,
+"x": "The play is set at Elsinore castle. Shakespeare based the story on an old Danish legend about Amleth.",
+"tags": [
+"shakespeare"
+]
+},
+{
+"q": "Which Shakespeare play features the moneylender Shylock?",
+"a": [
+"The Merchant of Venice",
+"Othello",
+"The Tempest",
+"Twelfth Night"
+],
+"d": 1,
+"x": "Shylock demands a pound of flesh as payment for an unpaid loan. The famous courtroom scene follows.",
+"tags": [
+"shakespeare"
+]
+},
+{
+"q": "Who wrote Frankenstein?",
+"a": [
+"Mary Shelley",
+"Emily Bronte",
+"Jane Austen",
+"Ann Radcliffe"
+],
+"d": 1,
+"x": "Shelley began the story at age 18 during a rainy summer holiday in Switzerland, after a ghost-story challenge among friends.",
+"tags": [
+"gothic",
+"science fiction"
+]
+},
+{
+"q": "Which author wrote the vampire novel Dracula?",
+"a": [
+"Bram Stoker",
+"Sheridan Le Fanu",
+"Robert Louis Stevenson",
+"Oscar Wilde"
+],
+"d": 1,
+"x": "Stoker's novel was published in 1897. Its Transylvanian count helped shape nearly every vampire story since.",
+"tags": [
+"gothic"
+]
+},
+{
+"q": "Who wrote Little Women?",
+"a": [
+"Louisa May Alcott",
+"Harriet Beecher Stowe",
+"Emily Dickinson",
+"L. M. Montgomery"
+],
+"d": 1,
+"x": "Alcott based the four March sisters on herself and her own sisters. The book came out in 1868.",
+"tags": [
+"novel",
+"american"
+]
+},
+{
+"q": "Which author wrote The Adventures of Tom Sawyer?",
+"a": [
+"Mark Twain",
+"Herman Melville",
+"Nathaniel Hawthorne",
+"Jack London"
+],
+"d": 1,
+"x": "Published in 1876, it draws on Twain's boyhood in Hannibal, Missouri, on the Mississippi River.",
+"tags": [
+"american",
+"children"
+]
+},
+{
+"q": "In Oliver Twist, what does Oliver famously ask for more of?",
+"a": [
+"Gruel",
+"Bread",
+"Cheese",
+"Milk"
+],
+"d": 1,
+"x": "His request, 'Please, sir, I want some more,' shocks the workhouse master. It is one of the best-known scenes in Dickens.",
+"tags": [
+"dickens"
+]
+},
+{
+"q": "Who wrote The Wonderful Wizard of Oz?",
+"a": [
+"L. Frank Baum",
+"Edgar Rice Burroughs",
+"Lewis Carroll",
+"E. B. White"
+],
+"d": 1,
+"x": "The book was published in 1900. Baum went on to write thirteen more Oz books.",
+"tags": [
+"children",
+"fantasy"
+]
+},
+{
+"q": "Who wrote Charlie and the Chocolate Factory?",
+"a": [
+"Roald Dahl",
+"Dr. Seuss",
+"Enid Blyton",
+"Michael Bond"
+],
+"d": 1,
+"x": "Dahl was a former fighter pilot. The book was published in 1964 and has been filmed twice.",
+"tags": [
+"children"
+]
+},
+{
+"q": "Which children's author wrote The Cat in the Hat?",
+"a": [
+"Dr. Seuss",
+"Maurice Sendak",
+"Eric Carle",
+"Shel Silverstein"
+],
+"d": 1,
+"x": "Seuss wrote it in 1957 using only a limited list of simple words, as a livelier alternative to dull school readers.",
+"tags": [
+"children"
+]
+},
+{
+"q": "Who wrote Winnie-the-Pooh?",
+"a": [
+"A. A. Milne",
+"Kenneth Grahame",
+"Beatrix Potter",
+"Hugh Lofting"
+],
+"d": 1,
+"x": "Milne named the bear after his son's teddy, and a real Canadian bear named Winnipeg also inspired the name.",
+"tags": [
+"children"
+]
+},
+{
+"q": "Which Scottish author created Peter Pan?",
+"a": [
+"J. M. Barrie",
+"Robert Louis Stevenson",
+"Walter Scott",
+"Arthur Conan Doyle"
+],
+"d": 1,
+"x": "Peter Pan first appeared in a 1904 play. Barrie left the rights to Great Ormond Street Hospital in London.",
+"tags": [
+"children",
+"fantasy"
+]
+},
+{
+"q": "How many dwarfs live with Snow White in the classic fairy tale?",
+"a": [
+"Seven",
+"Five",
+"Nine",
+"Twelve"
+],
+"d": 1,
+"x": "The Brothers Grimm gave the dwarfs no names. Names such as Doc and Grumpy came from the 1937 Disney film.",
+"tags": [
+"fairy tale"
+]
+},
+{
+"q": "What does Cinderella lose as she flees the ball in the classic tale?",
+"a": [
+"A glass slipper",
+"A golden ring",
+"A silver comb",
+"A velvet glove"
+],
+"d": 1,
+"x": "The glass slipper comes from Charles Perrault's 1697 version. In the Grimm version, the slipper is gold.",
+"tags": [
+"fairy tale"
+]
+},
+{
+"q": "Which Danish author wrote The Ugly Duckling and The Emperor's New Clothes?",
+"a": [
+"Hans Christian Andersen",
+"Jacob Grimm",
+"Charles Perrault",
+"Carlo Collodi"
+],
+"d": 1,
+"x": "Andersen published his first fairy tales in 1835. Many of his stories, including The Little Mermaid, were original creations.",
+"tags": [
+"fairy tale"
+]
+},
+{
+"q": "Which Greek hero spends ten years trying to get home after the Trojan War?",
+"a": [
+"Odysseus",
+"Achilles",
+"Hector",
+"Agamemnon"
+],
+"d": 1,
+"x": "His long voyage is the subject of Homer's Odyssey. He is also known by his Roman name, Ulysses.",
+"tags": [
+"myth",
+"epic"
+]
+},
+{
+"q": "In Greek mythology, who is the king of the gods?",
+"a": [
+"Zeus",
+"Poseidon",
+"Hades",
+"Apollo"
+],
+"d": 1,
+"x": "Zeus rules from Mount Olympus and wields the thunderbolt. His Roman counterpart is Jupiter.",
+"tags": [
+"myth"
+]
+},
+{
+"q": "Which legendary British king ruled from Camelot with his Knights of the Round Table?",
+"a": [
+"King Arthur",
+"King Alfred",
+"Richard the Lionheart",
+"King Cnut"
+],
+"d": 1,
+"x": "The round table was said to remove any rank among the knights. Arthur's sword Excalibur is also part of the legend.",
+"tags": [
+"legend"
+]
+},
+{
+"q": "Who wrote The Catcher in the Rye?",
+"a": [
+"J. D. Salinger",
+"Jack Kerouac",
+"Kurt Vonnegut",
+"Truman Capote"
+],
+"d": 1,
+"x": "Published in 1951, it is narrated by the restless teenager Holden Caulfield. Salinger later withdrew from public life.",
+"tags": [
+"novel",
+"american"
+]
+},
+{
+"q": "Who wrote the novella Of Mice and Men?",
+"a": [
+"John Steinbeck",
+"Ernest Hemingway",
+"Sinclair Lewis",
+"Theodore Dreiser"
+],
+"d": 1,
+"x": "Steinbeck took the title from a poem by Robert Burns. The story follows two migrant workers in California.",
+"tags": [
+"american"
+]
+},
+{
+"q": "Which French author wrote Les Miserables?",
+"a": [
+"Victor Hugo",
+"Alexandre Dumas",
+"Emile Zola",
+"Gustave Flaubert"
+],
+"d": 1,
+"x": "Hugo finished the huge novel in exile in 1862. It follows the ex-convict Jean Valjean.",
+"tags": [
+"french",
+"novel"
+]
+},
+{
+"q": "Who wrote The Three Musketeers?",
+"a": [
+"Alexandre Dumas",
+"Victor Hugo",
+"Jules Verne",
+"Honore de Balzac"
+],
+"d": 1,
+"x": "Dumas serialized it in 1844. Fittingly, the hero d'Artagnan is not one of the three musketeers at first.",
+"tags": [
+"french",
+"adventure"
+]
+},
+{
+"q": "Which Russian author wrote War and Peace?",
+"a": [
+"Leo Tolstoy",
+"Fyodor Dostoevsky",
+"Anton Chekhov",
+"Ivan Turgenev"
+],
+"d": 1,
+"x": "The novel is set during Napoleon's invasion of Russia. First published in installments in the 1860s, it runs well over a thousand pages.",
+"tags": [
+"russian",
+"novel"
+]
+},
+{
+"q": "Who wrote Crime and Punishment?",
+"a": [
+"Fyodor Dostoevsky",
+"Leo Tolstoy",
+"Nikolai Gogol",
+"Boris Pasternak"
+],
+"d": 1,
+"x": "Published in 1866, it follows a poor student in St. Petersburg who commits a murder and wrestles with his guilt.",
+"tags": [
+"russian",
+"novel"
+]
+},
+{
+"q": "Which French author wrote Around the World in Eighty Days?",
+"a": [
+"Jules Verne",
+"Victor Hugo",
+"Alexandre Dumas",
+"Gustave Flaubert"
+],
+"d": 1,
+"x": "Verne's 1872 adventure follows Phileas Fogg on a wager. Verne is often called a father of science fiction.",
+"tags": [
+"french",
+"adventure"
+]
+},
+{
+"q": "Who wrote the pirate adventure Treasure Island?",
+"a": [
+"Robert Louis Stevenson",
+"Daniel Defoe",
+"Rudyard Kipling",
+"Joseph Conrad"
+],
+"d": 1,
+"x": "Stevenson began the story by drawing a map of an island for his stepson. It introduced the one-legged pirate Long John Silver.",
+"tags": [
+"adventure"
+]
+},
+{
+"q": "Who wrote the novel Jane Eyre?",
+"a": [
+"Charlotte Bronte",
+"Elizabeth Gaskell",
+"Anne Bronte",
+"George Eliot"
+],
+"d": 1,
+"x": "It was published in 1847 under the pen name Currer Bell. The tale was an immediate success.",
+"tags": [
+"novel",
+"english"
+]
+},
+{
+"q": "Who wrote Wuthering Heights?",
+"a": [
+"Emily Bronte",
+"Charlotte Bronte",
+"Jane Austen",
+"Mary Shelley"
+],
+"d": 1,
+"x": "Her only novel appeared in 1847 under the pen name Ellis Bell. Emily died the following year.",
+"tags": [
+"novel",
+"gothic"
+]
+},
+{
+"q": "In The Lord of the Rings, which hobbit carries the One Ring to Mount Doom?",
+"a": [
+"Frodo Baggins",
+"Bilbo Baggins",
+"Samwise Gamgee",
+"Peregrin Took"
+],
+"d": 1,
+"x": "Frodo is Bilbo's nephew and heir. His loyal friend Sam accompanies him on the final stretch.",
+"tags": [
+"fantasy"
+]
+},
+{
+"q": "In Harry Potter, what is the name of the school of witchcraft and wizardry Harry attends?",
+"a": [
+"Hogwarts",
+"Beauxbatons",
+"Durmstrang",
+"Ilvermorny"
+],
+"d": 1,
+"x": "Hogwarts is divided into four houses: Gryffindor, Hufflepuff, Ravenclaw and Slytherin.",
+"tags": [
+"fantasy"
+]
+},
+{
+"q": "Which Irish-born author wrote Gulliver's Travels?",
+"a": [
+"Jonathan Swift",
+"Daniel Defoe",
+"Henry Fielding",
+"Laurence Sterne"
+],
+"d": 1,
+"x": "Published in 1726, this satire was a sharp attack on the politics and society of Swift's day, not simply a children's book.",
+"tags": [
+"satire"
+]
+},
+{
+"q": "Which English author wrote Robinson Crusoe?",
+"a": [
+"Daniel Defoe",
+"Jonathan Swift",
+"Samuel Richardson",
+"John Bunyan"
+],
+"d": 1,
+"x": "Published in 1719, it is often considered one of the first English novels. It was inspired partly by a real castaway, Alexander Selkirk.",
+"tags": [
+"novel",
+"adventure"
+]
+},
+{
+"q": "Which British author wrote The Jungle Book?",
+"a": [
+"Rudyard Kipling",
+"Edward Lear",
+"Kenneth Grahame",
+"H. Rider Haggard"
+],
+"d": 1,
+"x": "Kipling was born in India. The 1894 stories follow Mowgli, a boy raised by wolves, alongside Baloo and Bagheera.",
+"tags": [
+"children"
+]
+},
+{
+"q": "Who wrote The Little Prince?",
+"a": [
+"Antoine de Saint-Exupery",
+"Jules Verne",
+"Albert Camus",
+"Jean-Paul Sartre"
+],
+"d": 1,
+"x": "The author was also an aviator. His 1943 story, often translated into hundreds of languages, begins with a pilot stranded in the desert.",
+"tags": [
+"french",
+"children"
+]
+},
+{
+"q": "Who wrote The Hunger Games?",
+"a": [
+"Suzanne Collins",
+"Veronica Roth",
+"Stephenie Meyer",
+"Lois Lowry"
+],
+"d": 1,
+"x": "Published in 2008, the book is set in Panem. Collins said she was inspired in part by the Greek myth of Theseus and the Minotaur.",
+"tags": [
+"dystopia",
+"young adult"
+]
+},
+{
+"q": "In Macbeth, what supernatural trio prophesies that Macbeth will be king?",
+"a": [
+"Three witches",
+"Three ghosts",
+"Three fairies",
+"Three gravediggers"
+],
+"d": 1,
+"x": "The witches meet Macbeth and Banquo on a heath. Their predictions set the tragedy in motion.",
+"tags": [
+"shakespeare"
+]
+},
+{
+"q": "Which American writer penned the poem The Raven?",
+"a": [
+"Edgar Allan Poe",
+"Walt Whitman",
+"Robert Frost",
+"Henry Wadsworth Longfellow"
+],
+"d": 1,
+"x": "Poe published it in 1845. Its refrain, 'Nevermore,' is spoken by the bird.",
+"tags": [
+"poetry",
+"american"
+]
+},
+{
+"q": "Which English poet wrote 'I Wandered Lonely as a Cloud'?",
+"a": [
+"William Wordsworth",
+"John Keats",
+"Percy Bysshe Shelley",
+"Lord Byron"
+],
+"d": 1,
+"x": "The poem, often called 'Daffodils', was inspired by a walk Wordsworth took with his sister Dorothy in the Lake District.",
+"tags": [
+"poetry"
+]
+},
+{
+"q": "What syllable pattern does a traditional haiku follow?",
+"a": [
+"5-7-5",
+"7-5-7",
+"5-5-7",
+"4-6-4"
+],
+"d": 1,
+"x": "The haiku is a Japanese form. English haiku often keep the 5-7-5 pattern, though in Japanese it counts sounds rather than syllables.",
+"tags": [
+"poetry",
+"form"
+]
+},
+{
+"q": "How many lines does a sonnet traditionally have?",
+"a": [
+"14",
+"12",
+"16",
+"10"
+],
+"d": 1,
+"x": "Shakespeare wrote 154 sonnets. The Italian and English forms arrange the 14 lines differently.",
+"tags": [
+"poetry",
+"form"
+]
+},
+{
+"q": "Which ancient Greek epic poem tells of the wrath of Achilles during the Trojan War?",
+"a": [
+"The Iliad",
+"The Odyssey",
+"The Aeneid",
+"Metamorphoses"
+],
+"d": 1,
+"x": "The poem opens with the word 'wrath.' It covers only a few weeks near the end of the ten-year war.",
+"tags": [
+"epic",
+"greek"
+]
+},
+{
+"q": "Who wrote The Diary of a Young Girl, a famous account of hiding during World War II?",
+"a": [
+"Anne Frank",
+"Helen Keller",
+"Ruth Bader",
+"Marie Curie"
+],
+"d": 1,
+"x": "Anne wrote the diary in hiding in Amsterdam. Her father Otto, the only survivor of the family, had it published in 1947.",
+"tags": [
+"memoir"
+]
+},
+{
+"q": "Which Brazilian author wrote The Alchemist?",
+"a": [
+"Paulo Coelho",
+"Jorge Amado",
+"Machado de Assis",
+"Mario Vargas Llosa"
+],
+"d": 1,
+"x": "Published in 1988, the story of the shepherd Santiago became one of the most translated books by a living author.",
+"tags": [
+"novel"
+]
+},
+{
+"q": "Which Dr. Seuss character tries to steal Christmas from the Whos of Whoville?",
+"a": [
+"The Grinch",
+"The Lorax",
+"Horton",
+"Sam-I-Am"
+],
+"d": 1,
+"x": "How the Grinch Stole Christmas! appeared in 1957. The Grinch's heart is said to be two sizes too small.",
+"tags": [
+"children"
+]
+},
+{
+"q": "What is the name of the great lion who rules Narnia?",
+"a": [
+"Aslan",
+"Simba",
+"Mufasa",
+"Elrond"
+],
+"d": 1,
+"x": "Aslan is the Narnian creator and king. His name is the Turkish word for lion.",
+"tags": [
+"fantasy"
+]
+},
+{
+"q": "In which Jane Austen novel do Elinor and Marianne Dashwood appear?",
+"a": [
+"Sense and Sensibility",
+"Persuasion",
+"Mansfield Park",
+"Northanger Abbey"
+],
+"d": 1,
+"x": "Austen's first published novel appeared in 1811. Elinor represents sense and Marianne sensibility.",
+"tags": [
+"novel",
+"english"
+]
+},
+{
+"q": "What is the name of the sport Harry Potter plays on a broomstick?",
+"a": [
+"Quidditch",
+"Quodpot",
+"Wizard Chess",
+"Snargaluff"
+],
+"d": 1,
+"x": "A Quidditch team has seven players, and catching the Golden Snitch ends the match and earns 150 points.",
+"tags": [
+"fantasy"
+]
+},
+{
+"q": "In the fairy tale Rapunzel, what does she let down from her tower?",
+"a": [
+"Her hair",
+"A rope",
+"A ladder",
+"A silk scarf"
+],
+"d": 1,
+"x": "The Brothers Grimm included the tale in their 1812 collection. The name Rapunzel refers to a leafy plant, rampion.",
+"tags": [
+"fairy tale"
+]
+},
+{
+"q": "In which Shakespeare play does the line 'To be, or not to be' appear?",
+"a": [
+"Hamlet",
+"Macbeth",
+"Othello",
+"King Lear"
+],
+"d": 1,
+"x": "It begins Hamlet's famous soliloquy in Act 3. It is perhaps the most quoted line in English drama.",
+"tags": [
+"shakespeare",
+"quotation"
+]
+},
+{
+"q": "Who wrote The Old Man and the Sea?",
+"a": [
+"Ernest Hemingway",
+"John Steinbeck",
+"William Faulkner",
+"Sinclair Lewis"
+],
+"d": 1,
+"x": "The novella won the 1953 Pulitzer Prize for Fiction. Hemingway received the Nobel Prize the following year.",
+"tags": [
+"novel",
+"american"
+]
+},
+{
+"q": "Who wrote Fahrenheit 451, a novel about a future where books are burned?",
+"a": [
+"Ray Bradbury",
+"Isaac Asimov",
+"Arthur C. Clarke",
+"Philip K. Dick"
+],
+"d": 1,
+"x": "The title refers to the temperature at which book paper is said to catch fire. Bradbury wrote it in the basement of a library.",
+"tags": [
+"science fiction",
+"dystopia"
+]
+},
+{
+"q": "Which Canadian author wrote The Handmaid's Tale?",
+"a": [
+"Margaret Atwood",
+"Alice Munro",
+"Margaret Laurence",
+"L. M. Montgomery"
+],
+"d": 1,
+"x": "The dystopian novel appeared in 1985 and is set in the Republic of Gilead. Atwood wrote much of it in West Berlin.",
+"tags": [
+"dystopia"
+]
+},
+{
+"q": "Who wrote the 1932 dystopian novel Brave New World?",
+"a": [
+"Aldous Huxley",
+"George Orwell",
+"Evelyn Waugh",
+"E. M. Forster"
+],
+"d": 1,
+"x": "The title comes from a line in Shakespeare's The Tempest. Huxley's novel imagines a society controlled by pleasure and conditioning.",
+"tags": [
+"dystopia"
+]
+},
+{
+"q": "Who wrote the science fiction novel The War of the Worlds?",
+"a": [
+"H. G. Wells",
+"Jules Verne",
+"Arthur C. Clarke",
+"Isaac Asimov"
+],
+"d": 1,
+"x": "Published in 1898, it describes a Martian invasion of England. A 1938 radio dramatization famously alarmed some listeners.",
+"tags": [
+"science fiction"
+]
+},
+{
+"q": "What is the name of Captain Nemo's submarine in Twenty Thousand Leagues Under the Sea?",
+"a": [
+"The Nautilus",
+"The Hunley",
+"The Albatross",
+"The Argonaut"
+],
+"d": 1,
+"x": "Verne's 1870 novel imagined an electric-powered submarine. A league is a distance unit, so the title is a distance traveled, not a depth.",
+"tags": [
+"science fiction"
+]
+},
+{
+"q": "Who wrote The Call of the Wild, a novel about a sled dog named Buck?",
+"a": [
+"Jack London",
+"Mark Twain",
+"James Fenimore Cooper",
+"Zane Grey"
+],
+"d": 1,
+"x": "Set during the Klondike Gold Rush, the 1903 novel drew on London's own time in Canada's Yukon.",
+"tags": [
+"adventure",
+"american"
+]
+},
+{
+"q": "Which Mark Twain character travels down the Mississippi on a raft with the runaway Jim?",
+"a": [
+"Huckleberry Finn",
+"Tom Sawyer",
+"Pudd'nhead Wilson",
+"Hank Morgan"
+],
+"d": 1,
+"x": "Huckleberry Finn was published in 1884 and is told in Huck's own dialect, a bold choice for its time.",
+"tags": [
+"american",
+"novel"
+]
+},
+{
+"q": "Who is Sherlock Holmes's loyal friend and chronicler?",
+"a": [
+"Dr. John Watson",
+"Inspector Lestrade",
+"Mycroft Holmes",
+"Professor Moriarty"
+],
+"d": 1,
+"x": "Watson narrates most of the Holmes stories. He is an army doctor wounded in Afghanistan.",
+"tags": [
+"detective",
+"character"
+]
+},
+{
+"q": "Who is the villainous pirate captain in Peter Pan?",
+"a": [
+"Captain Hook",
+"Long John Silver",
+"Captain Ahab",
+"Blackbeard"
+],
+"d": 1,
+"x": "Hook lost his hand to Peter, who fed it to a crocodile. The croc enjoyed the taste and now follows Hook everywhere.",
+"tags": [
+"children",
+"character"
+]
+},
+{
+"q": "Which Canadian author wrote Anne of Green Gables?",
+"a": [
+"L. M. Montgomery",
+"Margaret Atwood",
+"Alice Munro",
+"Laura Ingalls Wilder"
+],
+"d": 1,
+"x": "Published in 1908, it is set on Prince Edward Island. Anne is an orphan mistakenly sent to an older brother and sister.",
+"tags": [
+"children",
+"novel"
+]
+},
+{
+"q": "Who wrote the horse story Black Beauty?",
+"a": [
+"Anna Sewell",
+"Enid Blyton",
+"Marguerite Henry",
+"Beatrix Potter"
+],
+"d": 1,
+"x": "Sewell wrote it in 1877 from her sickbed, as a plea for kinder treatment of horses. She died a few months after it was published.",
+"tags": [
+"children"
+]
+},
+{
+"q": "Who wrote The Secret Garden?",
+"a": [
+"Frances Hodgson Burnett",
+"Louisa May Alcott",
+"Elizabeth Gaskell",
+"E. Nesbit"
+],
+"d": 1,
+"x": "Published in 1911, it follows Mary Lennox, a lonely orphan who finds a hidden walled garden in Yorkshire.",
+"tags": [
+"children"
+]
+},
+{
+"q": "Which author and illustrator created Where the Wild Things Are?",
+"a": [
+"Maurice Sendak",
+"Eric Carle",
+"Dr. Seuss",
+"Chris Van Allsburg"
+],
+"d": 1,
+"x": "The 1963 picture book follows a boy named Max. It won the Caldecott Medal in 1964.",
+"tags": [
+"children"
+]
+},
+{
+"q": "Who wrote The Very Hungry Caterpillar?",
+"a": [
+"Eric Carle",
+"Maurice Sendak",
+"Mo Willems",
+"Leo Lionni"
+],
+"d": 1,
+"x": "The 1969 book has holes punched through its pages to show where the caterpillar has eaten.",
+"tags": [
+"children"
+]
+},
+{
+"q": "In Roald Dahl's story, what does BFG stand for?",
+"a": [
+"Big Friendly Giant",
+"Big Funny Giant",
+"Brave Fearless Giant",
+"Brilliant Fairy Gnome"
+],
+"d": 1,
+"x": "Dahl published The BFG in 1982. The giant blows dreams into children's bedrooms through a trumpet.",
+"tags": [
+"children"
+]
+},
+{
+"q": "Who wrote the picture book The Giving Tree?",
+"a": [
+"Shel Silverstein",
+"Dr. Seuss",
+"Maurice Sendak",
+"Roald Dahl"
+],
+"d": 1,
+"x": "Published in 1964, it tells of a tree that gives everything it has to a boy. Silverstein also wrote Where the Sidewalk Ends.",
+"tags": [
+"children"
+]
+},
+{
+"q": "Which English poet wrote the epic Paradise Lost?",
+"a": [
+"John Milton",
+"John Donne",
+"Edmund Spenser",
+"Alexander Pope"
+],
+"d": 1,
+"x": "Milton was blind when he dictated the poem, which was first published in 1667. It retells the story of Adam and Eve.",
+"tags": [
+"poetry",
+"epic"
+]
+},
+{
+"q": "Which medieval English author wrote The Canterbury Tales?",
+"a": [
+"Geoffrey Chaucer",
+"William Langland",
+"John Gower",
+"Thomas Malory"
+],
+"d": 1,
+"x": "Chaucer wrote it in the late 1300s in Middle English. It has pilgrims telling stories on the road to Canterbury.",
+"tags": [
+"poetry",
+"medieval"
+]
+},
+{
+"q": "In the Old English epic Beowulf, which monster does the hero fight first?",
+"a": [
+"Grendel",
+"Smaug",
+"Fafnir",
+"Cerberus"
+],
+"d": 1,
+"x": "Grendel attacks the hall of King Hrothgar. Beowulf later fights Grendel's mother and a dragon.",
+"tags": [
+"epic",
+"medieval"
+]
+},
+{
+"q": "Who wrote The Picture of Dorian Gray?",
+"a": [
+"Oscar Wilde",
+"George Bernard Shaw",
+"Bram Stoker",
+"Thomas Hardy"
+],
+"d": 1,
+"x": "Published in 1890, it was Wilde's only novel. Its title character stays young while his portrait ages.",
+"tags": [
+"novel",
+"gothic"
+]
+},
+{
+"q": "Which crime writer wrote Murder on the Orient Express?",
+"a": [
+"Agatha Christie",
+"Dorothy L. Sayers",
+"Ngaio Marsh",
+"Daphne du Maurier"
+],
+"d": 1,
+"x": "Christie published it in 1934, and its detective is Hercule Poirot. She is among the best-selling novelists in history.",
+"tags": [
+"detective"
+]
+},
+{
+"q": "Who wrote the thriller The Da Vinci Code?",
+"a": [
+"Dan Brown",
+"John Grisham",
+"Stephen King",
+"Tom Clancy"
+],
+"d": 1,
+"x": "Brown's 2003 novel opens with a murder in the Louvre. It sparked a boom of conspiracy-themed thrillers.",
+"tags": [
+"thriller"
+]
+},
+{
+"q": "Who wrote the Civil War novel Gone with the Wind?",
+"a": [
+"Margaret Mitchell",
+"Harper Lee",
+"Pearl S. Buck",
+"Zora Neale Hurston"
+],
+"d": 1,
+"x": "Published in 1936, it won the Pulitzer Prize the next year. It was Mitchell's only novel published in her lifetime.",
+"tags": [
+"novel",
+"american"
+]
+},
+{
+"q": "Who wrote Lord of the Flies?",
+"a": [
+"William Golding",
+"George Orwell",
+"Graham Greene",
+"Evelyn Waugh"
+],
+"d": 1,
+"x": "Published in 1954, it follows a group of schoolboys stranded on an island. Golding received the Nobel Prize in 1983.",
+"tags": [
+"novel",
+"english"
+]
+},
+{
+"q": "Who wrote Alice's Adventures in Wonderland?",
+"a": [
+"Lewis Carroll",
+"J. M. Barrie",
+"Edward Lear",
+"Kenneth Grahame"
+],
+"d": 1,
+"x": "Lewis Carroll was the pen name of the Oxford mathematician Charles Dodgson. He first told the story on a boat trip in 1862.",
+"tags": [
+"children"
+]
+},
+{
+"q": "Who wrote and illustrated The Tale of Peter Rabbit?",
+"a": [
+"Beatrix Potter",
+"Enid Blyton",
+"Kate Greenaway",
+"Judith Kerr"
+],
+"d": 1,
+"x": "Potter first told the story in a letter to a sick child in 1893. She self-published it in 1901 before a publisher took it on.",
+"tags": [
+"children"
+]
+},
+{
+"q": "In Charlotte's Web, what kind of animal is Charlotte?",
+"a": [
+"A spider",
+"A goose",
+"A sheep",
+"A rat"
+],
+"d": 1,
+"x": "Charlotte saves the pig Wilbur by weaving words into her web. E. B. White published the book in 1952.",
+"tags": [
+"children"
+]
+},
+{
+"q": "Who wrote the novel The Kite Runner?",
+"a": [
+"Khaled Hosseini",
+"Salman Rushdie",
+"Rohinton Mistry",
+"Orhan Pamuk"
+],
+"d": 1,
+"x": "Published in 2003, it was Hosseini's debut. The story is set in Afghanistan and later in California.",
+"tags": [
+"novel"
+]
+},
+{
+"q": "Who wrote the adventure novel Life of Pi?",
+"a": [
+"Yann Martel",
+"Salman Rushdie",
+"Michael Ondaatje",
+"Rohinton Mistry"
+],
+"d": 1,
+"x": "The 2001 novel won the Booker Prize in 2002. It tells of a boy stranded in a lifeboat with a Bengal tiger.",
+"tags": [
+"novel"
+]
+},
+{
+"q": "In Franz Kafka's The Metamorphosis, what does Gregor Samsa turn into?",
+"a": [
+"A giant insect",
+"A wolf",
+"A rat",
+"A bird"
+],
+"d": 1,
+"x": "Kafka's 1915 novella opens with Gregor waking to find the change. Kafka insisted the insect never be drawn on the cover.",
+"tags": [
+"german",
+"novella"
+]
+},
+{
+"q": "In which Shakespeare play does the mischievous sprite Puck appear?",
+"a": [
+"A Midsummer Night's Dream",
+"The Tempest",
+"Much Ado About Nothing",
+"As You Like It"
+],
+"d": 1,
+"x": "Puck, also called Robin Goodfellow, serves the fairy king Oberon. His mistake with a love potion drives the plot.",
+"tags": [
+"shakespeare"
+]
+},
+{
+"q": "Which storyteller in One Thousand and One Nights tells tales to delay her execution?",
+"a": [
+"Scheherazade",
+"Aladdin",
+"Sinbad",
+"Ali Baba"
+],
+"d": 1,
+"x": "She keeps the king curious by stopping each night on a cliffhanger. After 1,001 nights he spares her.",
+"tags": [
+"arabic",
+"myth"
+]
+},
+{
+"q": "Which dragon guards the treasure of the Lonely Mountain in The Hobbit?",
+"a": [
+"Smaug",
+"Glaurung",
+"Ancalagon",
+"Fafnir"
+],
+"d": 1,
+"x": "Smaug is killed by Bard the Bowman, who spots a bare patch in the dragon's armor. The Lonely Mountain is also called Erebor.",
+"tags": [
+"fantasy"
+]
+},
+{
+"q": "Which Wonderland character famously shouts 'Off with her head!'?",
+"a": [
+"The Queen of Hearts",
+"The Mad Hatter",
+"The Duchess",
+"The Red Queen"
+],
+"d": 1,
+"x": "The Queen of Hearts is rarely actually seen carrying out her executions. The Red Queen is a different character from the sequel.",
+"tags": [
+"children",
+"quotation"
+]
+}
+]

@@ -1,0 +1,1390 @@
+[
+{
+"q": "About how fast does sound travel through air at room temperature?",
+"a": [
+"343 m/s",
+"34 m/s",
+"3,430 m/s",
+"300,000 m/s"
+],
+"d": 2,
+"x": "Sound travels at about 343 meters per second at 20 C, which is why you hear thunder several seconds after seeing lightning.",
+"tags": [
+"physics"
+]
+},
+{
+"q": "What is the atomic number of carbon?",
+"a": [
+"6",
+"8",
+"12",
+"4"
+],
+"d": 2,
+"x": "Carbon has six protons. Its ability to form four bonds makes it the backbone of all known life.",
+"tags": [
+"chemistry"
+]
+},
+{
+"q": "Which gas makes up most of the thin atmosphere of Mars?",
+"a": [
+"Carbon dioxide",
+"Nitrogen",
+"Oxygen",
+"Methane"
+],
+"d": 2,
+"x": "About 95 percent of Mars's atmosphere is carbon dioxide, but the air is so thin that pressure is under 1 percent of Earth's.",
+"tags": [
+"astronomy"
+]
+},
+{
+"q": "Which element has the chemical symbol K?",
+"a": [
+"Potassium",
+"Krypton",
+"Calcium",
+"Kelvin"
+],
+"d": 2,
+"x": "K comes from kalium, the Latin form of an Arabic word for plant ashes, the original source of potassium compounds.",
+"tags": [
+"chemistry"
+]
+},
+{
+"q": "Who published the Sun-centered model of the solar system in 1543?",
+"a": [
+"Nicolaus Copernicus",
+"Galileo Galilei",
+"Tycho Brahe",
+"Johannes Kepler"
+],
+"d": 2,
+"x": "Copernicus's book On the Revolutions of the Heavenly Spheres was published in the year he died.",
+"tags": [
+"scientists"
+]
+},
+{
+"q": "What is the pH of pure water at 25 C?",
+"a": [
+"7",
+"1",
+"10",
+"14"
+],
+"d": 2,
+"x": "A pH of 7 is neutral. Lower values are acidic and higher values are basic.",
+"tags": [
+"chemistry"
+]
+},
+{
+"q": "Which part of a plant cell carries out photosynthesis?",
+"a": [
+"Chloroplast",
+"Vacuole",
+"Mitochondrion",
+"Nucleus"
+],
+"d": 2,
+"x": "Chloroplasts are thought to descend from free-living bacteria that were engulfed by an ancient cell.",
+"tags": [
+"biology"
+]
+},
+{
+"q": "What is the SI unit of energy?",
+"a": [
+"Joule",
+"Watt",
+"Newton",
+"Pascal"
+],
+"d": 2,
+"x": "The joule is named after English physicist James Prescott Joule. One joule is roughly the energy needed to lift an apple one meter.",
+"tags": [
+"units"
+]
+},
+{
+"q": "What are the blood vessels that carry blood away from the heart called?",
+"a": [
+"Arteries",
+"Veins",
+"Capillaries",
+"Ventricles"
+],
+"d": 2,
+"x": "Arteries have thick, elastic walls to handle the high pressure of each heartbeat.",
+"tags": [
+"human body"
+]
+},
+{
+"q": "Which planet has a day that is longer than its year?",
+"a": [
+"Venus",
+"Mercury",
+"Mars",
+"Neptune"
+],
+"d": 2,
+"x": "Venus takes about 243 Earth days to rotate once but only about 225 days to orbit the Sun. It also spins backward.",
+"tags": [
+"astronomy"
+]
+},
+{
+"q": "Who created the first widely accepted periodic table in 1869?",
+"a": [
+"Dmitri Mendeleev",
+"Antoine Lavoisier",
+"John Dalton",
+"Niels Bohr"
+],
+"d": 2,
+"x": "Mendeleev left gaps for undiscovered elements and correctly predicted the properties of gallium and germanium.",
+"tags": [
+"scientists"
+]
+},
+{
+"q": "Which part of the brain is mainly responsible for balance and coordination?",
+"a": [
+"Cerebellum",
+"Cerebrum",
+"Hypothalamus",
+"Medulla"
+],
+"d": 2,
+"x": "The cerebellum is only about a tenth of the brain's volume but holds more than half of its neurons.",
+"tags": [
+"human body"
+]
+},
+{
+"q": "Which hormone, made in the pancreas, lowers blood sugar?",
+"a": [
+"Insulin",
+"Adrenaline",
+"Thyroxine",
+"Cortisol"
+],
+"d": 2,
+"x": "People with type 1 diabetes cannot make enough insulin and must replace it, as first done in 1922.",
+"tags": [
+"human body"
+]
+},
+{
+"q": "What is the most abundant metal in Earth's crust?",
+"a": [
+"Aluminum",
+"Iron",
+"Copper",
+"Zinc"
+],
+"d": 2,
+"x": "Aluminum was once more valuable than gold because it was so hard to extract, until an electrolysis method was found in 1886.",
+"tags": [
+"earth science"
+]
+},
+{
+"q": "Which scale ranks minerals by hardness from 1 to 10?",
+"a": [
+"Mohs scale",
+"Richter scale",
+"Beaufort scale",
+"Kelvin scale"
+],
+"d": 2,
+"x": "Friedrich Mohs created the scale in 1812. A fingernail scratches talc, but only a diamond scratches a diamond.",
+"tags": [
+"earth science"
+]
+},
+{
+"q": "In which layer of the atmosphere is the ozone layer found?",
+"a": [
+"Stratosphere",
+"Troposphere",
+"Mesosphere",
+"Exosphere"
+],
+"d": 2,
+"x": "The ozone layer absorbs most of the Sun's harmful ultraviolet radiation.",
+"tags": [
+"earth science"
+]
+},
+{
+"q": "Who discovered the four largest moons of Jupiter in 1610?",
+"a": [
+"Galileo Galilei",
+"Isaac Newton",
+"Edmond Halley",
+"Christiaan Huygens"
+],
+"d": 2,
+"x": "These moons, Io, Europa, Ganymede and Callisto, are still called the Galilean moons.",
+"tags": [
+"scientists"
+]
+},
+{
+"q": "Which element has the chemical symbol Pb?",
+"a": [
+"Lead",
+"Platinum",
+"Phosphorus",
+"Palladium"
+],
+"d": 2,
+"x": "Pb comes from plumbum, the Latin word for lead, which is also the root of the word plumber.",
+"tags": [
+"chemistry"
+]
+},
+{
+"q": "What type of chemical bond involves atoms sharing pairs of electrons?",
+"a": [
+"Covalent bond",
+"Ionic bond",
+"Hydrogen bond",
+"Metallic bond"
+],
+"d": 2,
+"x": "The two hydrogen atoms in an H2 molecule are held together by a single shared pair of electrons.",
+"tags": [
+"chemistry"
+]
+},
+{
+"q": "What is the SI unit of frequency?",
+"a": [
+"Hertz",
+"Decibel",
+"Tesla",
+"Lumen"
+],
+"d": 2,
+"x": "One hertz is one cycle per second. It is named after Heinrich Hertz, who first proved the existence of radio waves.",
+"tags": [
+"units"
+]
+},
+{
+"q": "What does a Geiger counter detect?",
+"a": [
+"Ionizing radiation",
+"Magnetic fields",
+"Sound waves",
+"Seismic activity"
+],
+"d": 2,
+"x": "A Geiger counter clicks each time a particle of radiation ionizes the gas inside its tube.",
+"tags": [
+"technology"
+]
+},
+{
+"q": "Which monk is known as the father of modern genetics for his experiments on pea plants?",
+"a": [
+"Gregor Mendel",
+"Charles Darwin",
+"Thomas Hunt Morgan",
+"Francis Crick"
+],
+"d": 2,
+"x": "Mendel worked in the 1860s, but his findings on inheritance were largely ignored until around 1900.",
+"tags": [
+"scientists"
+]
+},
+{
+"q": "A deficiency of which nutrient can cause night blindness?",
+"a": [
+"Vitamin A",
+"Vitamin B12",
+"Vitamin K",
+"Vitamin C"
+],
+"d": 2,
+"x": "Vitamin A is needed to make rhodopsin, the pigment in the eye that works in dim light. Carrots and sweet potatoes are good sources.",
+"tags": [
+"human body"
+]
+},
+{
+"q": "What is the main component of natural gas?",
+"a": [
+"Methane",
+"Propane",
+"Butane",
+"Ethanol"
+],
+"d": 2,
+"x": "Methane has one carbon atom and four hydrogen atoms (CH4). Natural gas has no smell, so a harmless odor is added for safety.",
+"tags": [
+"chemistry"
+]
+},
+{
+"q": "What is the common name for sodium bicarbonate?",
+"a": [
+"Baking soda",
+"Washing soda",
+"Table salt",
+"Lye"
+],
+"d": 2,
+"x": "Baking soda releases carbon dioxide when it reacts with acid, which makes cakes and breads rise.",
+"tags": [
+"chemistry"
+]
+},
+{
+"q": "What does a light-year measure?",
+"a": [
+"Distance",
+"Time",
+"Brightness",
+"Speed"
+],
+"d": 2,
+"x": "A light-year is the distance light travels in one year, about 9.46 trillion kilometers.",
+"tags": [
+"astronomy"
+]
+},
+{
+"q": "Which scientist discovered the electron in 1897?",
+"a": [
+"J.J. Thomson",
+"Ernest Rutherford",
+"James Chadwick",
+"Max Planck"
+],
+"d": 2,
+"x": "Thomson's cathode ray experiments showed that atoms contain smaller, negatively charged particles.",
+"tags": [
+"scientists"
+]
+},
+{
+"q": "How many chromosomes are in a typical human body cell?",
+"a": [
+"46",
+"23",
+"48",
+"52"
+],
+"d": 2,
+"x": "We inherit 23 chromosomes from each parent, making 23 pairs in total.",
+"tags": [
+"biology"
+]
+},
+{
+"q": "Which layer at the back of the eye detects light and sends signals to the brain?",
+"a": [
+"Retina",
+"Cornea",
+"Iris",
+"Lens"
+],
+"d": 2,
+"x": "The retina holds about 120 million rod cells for dim light and about 6 million cone cells for color.",
+"tags": [
+"human body"
+]
+},
+{
+"q": "What is absolute zero on the Celsius scale?",
+"a": [
+"-273.15 C",
+"-100 C",
+"-373.15 C",
+"-459.67 C"
+],
+"d": 2,
+"x": "At absolute zero, 0 kelvin, particles have the lowest possible energy. Nothing in nature has been cooled to exactly that point.",
+"tags": [
+"physics"
+]
+},
+{
+"q": "Which planet spins on its side, with an axial tilt of about 98 degrees?",
+"a": [
+"Uranus",
+"Neptune",
+"Saturn",
+"Mars"
+],
+"d": 2,
+"x": "Uranus's odd tilt means each pole gets about 42 years of continuous sunlight followed by 42 years of darkness.",
+"tags": [
+"astronomy"
+]
+},
+{
+"q": "What type of wave is sound in air?",
+"a": [
+"Longitudinal wave",
+"Transverse wave",
+"Electromagnetic wave",
+"Surface wave"
+],
+"d": 2,
+"x": "In a longitudinal wave, particles vibrate back and forth along the direction the wave travels. Sound cannot travel through a vacuum.",
+"tags": [
+"physics"
+]
+},
+{
+"q": "Which element has the chemical symbol Sn?",
+"a": [
+"Tin",
+"Sodium",
+"Silicon",
+"Selenium"
+],
+"d": 2,
+"x": "Sn comes from stannum, the Latin word for tin. Tin mixed with copper makes bronze.",
+"tags": [
+"chemistry"
+]
+},
+{
+"q": "Which organ produces bile to help digest fats?",
+"a": [
+"Liver",
+"Gallbladder",
+"Pancreas",
+"Spleen"
+],
+"d": 2,
+"x": "The liver makes bile, and the gallbladder stores and concentrates it. The liver also has a remarkable ability to regrow.",
+"tags": [
+"human body"
+]
+},
+{
+"q": "On which planet is Olympus Mons, the tallest known volcano in the solar system?",
+"a": [
+"Mars",
+"Venus",
+"Earth",
+"Jupiter"
+],
+"d": 2,
+"x": "Olympus Mons is about 22 km tall, roughly two and a half times the height of Mount Everest above sea level.",
+"tags": [
+"astronomy"
+]
+},
+{
+"q": "What is the scientific study of earthquakes called?",
+"a": [
+"Seismology",
+"Volcanology",
+"Meteorology",
+"Hydrology"
+],
+"d": 2,
+"x": "Seismologists also use earthquake waves to map Earth's interior, which is how the liquid outer core was discovered.",
+"tags": [
+"earth science"
+]
+},
+{
+"q": "Which scale is used to classify hurricanes by wind speed?",
+"a": [
+"Saffir-Simpson scale",
+"Fujita scale",
+"Beaufort scale",
+"Richter scale"
+],
+"d": 2,
+"x": "The Saffir-Simpson scale has five categories, and Category 5 means sustained winds of at least 157 mph.",
+"tags": [
+"earth science"
+]
+},
+{
+"q": "Which element makes up pure diamonds and graphite?",
+"a": [
+"Carbon",
+"Silicon",
+"Boron",
+"Sulfur"
+],
+"d": 2,
+"x": "Diamond and graphite differ only in how their carbon atoms are arranged. Graphite is soft enough to write with.",
+"tags": [
+"chemistry"
+]
+},
+{
+"q": "What instrument measures wind speed?",
+"a": [
+"Anemometer",
+"Hygrometer",
+"Pyrometer",
+"Altimeter"
+],
+"d": 2,
+"x": "Most anemometers use spinning cups. The first one was described by Leon Battista Alberti around 1450.",
+"tags": [
+"earth science"
+]
+},
+{
+"q": "Which English physician described the circulation of blood in 1628?",
+"a": [
+"William Harvey",
+"Edward Jenner",
+"Joseph Lister",
+"Andreas Vesalius"
+],
+"d": 2,
+"x": "Harvey showed that the heart pumps blood in a loop around the body, overturning ideas that dated back to ancient Greece.",
+"tags": [
+"scientists"
+]
+},
+{
+"q": "Which large spiral galaxy is the nearest major galaxy to the Milky Way?",
+"a": [
+"Andromeda",
+"Triangulum",
+"Whirlpool",
+"Sombrero"
+],
+"d": 2,
+"x": "Andromeda is about 2.5 million light-years away and is moving toward us. It is expected to merge with the Milky Way in billions of years.",
+"tags": [
+"astronomy"
+]
+},
+{
+"q": "Which Apollo mission made the first crewed Moon landing?",
+"a": [
+"Apollo 11",
+"Apollo 8",
+"Apollo 13",
+"Apollo 17"
+],
+"d": 2,
+"x": "Apollo 11 landed in July 1969, and the astronauts spent about 21 hours on the surface.",
+"tags": [
+"space"
+]
+},
+{
+"q": "What is the SI unit of electrical resistance?",
+"a": [
+"Ohm",
+"Volt",
+"Ampere",
+"Farad"
+],
+"d": 2,
+"x": "The ohm is named after Georg Ohm, who showed that current is proportional to voltage in a conductor.",
+"tags": [
+"units"
+]
+},
+{
+"q": "What are the two main metals in Earth's core?",
+"a": [
+"Iron and nickel",
+"Copper and zinc",
+"Lead and tin",
+"Aluminum and silver"
+],
+"d": 2,
+"x": "The solid inner core is about as hot as the surface of the Sun, around 5,000 to 6,000 C.",
+"tags": [
+"earth science"
+]
+},
+{
+"q": "Which noble gas has the chemical symbol Ar?",
+"a": [
+"Argon",
+"Arsenic",
+"Aluminum",
+"Americium"
+],
+"d": 2,
+"x": "Argon makes up almost 1 percent of Earth's air. Its name comes from the Greek word for lazy, because it barely reacts.",
+"tags": [
+"chemistry"
+]
+},
+{
+"q": "In computing, what does RAM stand for?",
+"a": [
+"Random Access Memory",
+"Read Active Module",
+"Rapid Application Memory",
+"Remote Access Mode"
+],
+"d": 2,
+"x": "RAM is a computer's short-term working memory, and its contents are lost when the power is switched off.",
+"tags": [
+"technology"
+]
+},
+{
+"q": "Who is often called the first computer programmer for her notes on the Analytical Engine?",
+"a": [
+"Ada Lovelace",
+"Grace Hopper",
+"Hedy Lamarr",
+"Mary Somerville"
+],
+"d": 2,
+"x": "In 1843 Lovelace published an algorithm meant for Charles Babbage's machine, which was never completed in his lifetime.",
+"tags": [
+"technology"
+]
+},
+{
+"q": "How many bits are in one byte?",
+"a": [
+"8",
+"4",
+"16",
+"10"
+],
+"d": 2,
+"x": "A single byte can represent 256 different values, enough for one letter in the ASCII character set.",
+"tags": [
+"technology"
+]
+},
+{
+"q": "What is the chemical formula of ozone?",
+"a": [
+"O3",
+"O2",
+"O4",
+"CO2"
+],
+"d": 2,
+"x": "Ozone is made of three oxygen atoms. Near the ground it is a pollutant, but high up it shields us from ultraviolet light.",
+"tags": [
+"chemistry"
+]
+},
+{
+"q": "In which cell structures are proteins assembled?",
+"a": [
+"Ribosomes",
+"Lysosomes",
+"Golgi bodies",
+"Centrioles"
+],
+"d": 2,
+"x": "Ribosomes read messenger RNA and link amino acids together in the correct order. A human cell can contain millions of them.",
+"tags": [
+"biology"
+]
+},
+{
+"q": "What is the largest artery in the human body?",
+"a": [
+"Aorta",
+"Carotid artery",
+"Femoral artery",
+"Pulmonary artery"
+],
+"d": 2,
+"x": "The aorta is about as wide as a garden hose and carries oxygen-rich blood from the heart to the body.",
+"tags": [
+"human body"
+]
+},
+{
+"q": "Which component of blood is most important for clotting?",
+"a": [
+"Platelets",
+"Red blood cells",
+"Plasma proteins",
+"Hemoglobin"
+],
+"d": 2,
+"x": "Platelets are tiny cell fragments that stick together at a wound to form a plug.",
+"tags": [
+"human body"
+]
+},
+{
+"q": "Which star is the closest to our Sun?",
+"a": [
+"Proxima Centauri",
+"Sirius",
+"Alpha Draconis",
+"Barnard's Star"
+],
+"d": 2,
+"x": "Proxima Centauri is about 4.2 light-years away, so light from it takes over four years to reach us.",
+"tags": [
+"astronomy"
+]
+},
+{
+"q": "Marble is an example of which type of rock?",
+"a": [
+"Metamorphic",
+"Igneous",
+"Sedimentary",
+"Volcanic"
+],
+"d": 2,
+"x": "Marble forms when limestone is changed by intense heat and pressure deep in the Earth.",
+"tags": [
+"earth science"
+]
+},
+{
+"q": "Which physicist is known for the uncertainty principle of quantum mechanics?",
+"a": [
+"Werner Heisenberg",
+"Erwin Schrodinger",
+"Max Born",
+"Paul Dirac"
+],
+"d": 2,
+"x": "Heisenberg's 1927 principle says you cannot know both the exact position and the exact momentum of a particle at the same time.",
+"tags": [
+"scientists"
+]
+},
+{
+"q": "What is the bending of light as it passes from air into water called?",
+"a": [
+"Refraction",
+"Reflection",
+"Diffraction",
+"Absorption"
+],
+"d": 2,
+"x": "Refraction is why a straw in a glass of water appears bent and why lenses can focus light.",
+"tags": [
+"physics"
+]
+},
+{
+"q": "Which isotope is used to date ancient organic remains up to about 50,000 years old?",
+"a": [
+"Carbon-14",
+"Uranium-238",
+"Potassium-40",
+"Iodine-131"
+],
+"d": 2,
+"x": "Carbon-14 has a half-life of about 5,730 years, so after roughly 50,000 years too little remains to measure accurately.",
+"tags": [
+"chemistry"
+]
+},
+{
+"q": "The thyroid and adrenal glands belong to which body system?",
+"a": [
+"Endocrine system",
+"Lymphatic system",
+"Digestive system",
+"Nervous system"
+],
+"d": 2,
+"x": "Endocrine glands release hormones directly into the bloodstream to regulate growth, metabolism and mood.",
+"tags": [
+"human body"
+]
+},
+{
+"q": "What is it called when a solid turns directly into a gas without becoming a liquid?",
+"a": [
+"Sublimation",
+"Deposition",
+"Evaporation",
+"Condensation"
+],
+"d": 2,
+"x": "Dry ice, which is solid carbon dioxide, sublimes at room pressure, which is why it leaves no puddle.",
+"tags": [
+"chemistry"
+]
+},
+{
+"q": "Which nonmetal element is liquid at room temperature?",
+"a": [
+"Bromine",
+"Chlorine",
+"Iodine",
+"Sulfur"
+],
+"d": 2,
+"x": "Bromine and mercury are the only two elements that are liquid at room temperature and normal pressure. Bromine is a reddish-brown liquid with a sharp smell.",
+"tags": [
+"chemistry"
+]
+},
+{
+"q": "What is the hardest substance in the human body?",
+"a": [
+"Tooth enamel",
+"Bone",
+"Fingernail",
+"Cartilage"
+],
+"d": 2,
+"x": "Enamel is about 96 percent mineral. It cannot regrow because it contains no living cells.",
+"tags": [
+"human body"
+]
+},
+{
+"q": "Which French physicist discovered radioactivity in 1896?",
+"a": [
+"Henri Becquerel",
+"Pierre Curie",
+"Louis Pasteur",
+"Andre Ampere"
+],
+"d": 2,
+"x": "Becquerel noticed that uranium salts fogged photographic plates even without light. He shared the 1903 Nobel Prize with the Curies.",
+"tags": [
+"scientists"
+]
+},
+{
+"q": "Which planet is the least dense, with an average density lower than water?",
+"a": [
+"Saturn",
+"Jupiter",
+"Neptune",
+"Uranus"
+],
+"d": 2,
+"x": "Saturn's average density is about 0.69 g/cm3, so in theory it would float in a bathtub big enough to hold it.",
+"tags": [
+"astronomy"
+]
+},
+{
+"q": "What is the SI base unit of temperature?",
+"a": [
+"Kelvin",
+"Celsius",
+"Fahrenheit",
+"Rankine"
+],
+"d": 2,
+"x": "The kelvin scale starts at absolute zero, so it has no negative values.",
+"tags": [
+"units"
+]
+},
+{
+"q": "Which gas gives rotten eggs their smell?",
+"a": [
+"Hydrogen sulfide",
+"Ammonia",
+"Methane",
+"Chlorine"
+],
+"d": 2,
+"x": "Humans can smell hydrogen sulfide at extremely low concentrations, but at high levels it dulls the sense of smell and is toxic.",
+"tags": [
+"chemistry"
+]
+},
+{
+"q": "Which type of galaxy is the Milky Way?",
+"a": [
+"Barred spiral",
+"Elliptical",
+"Irregular",
+"Lenticular"
+],
+"d": 2,
+"x": "The Milky Way has a bar of stars across its center, and the Sun lies in one of its spiral arms.",
+"tags": [
+"astronomy"
+]
+},
+{
+"q": "What was the name of the supercontinent that existed about 300 million years ago?",
+"a": [
+"Pangaea",
+"Gondwana",
+"Laurasia",
+"Rodinia"
+],
+"d": 2,
+"x": "Pangaea began to break apart about 200 million years ago, and the pieces slowly drifted into today's continents.",
+"tags": [
+"earth science"
+]
+},
+{
+"q": "Who proposed the theory of continental drift in 1912?",
+"a": [
+"Alfred Wegener",
+"Charles Lyell",
+"James Hutton",
+"Harry Hess"
+],
+"d": 2,
+"x": "Wegener was dismissed for decades because he could not explain the mechanism, but plate tectonics later proved him right.",
+"tags": [
+"scientists"
+]
+},
+{
+"q": "Which layer of the Earth is made of liquid metal?",
+"a": [
+"Outer core",
+"Mantle",
+"Inner core",
+"Crust"
+],
+"d": 2,
+"x": "Swirling motion in the liquid outer core generates Earth's magnetic field.",
+"tags": [
+"earth science"
+]
+},
+{
+"q": "Which instrument measures the amount of moisture in the air?",
+"a": [
+"Hygrometer",
+"Barometer",
+"Anemometer",
+"Seismograph"
+],
+"d": 2,
+"x": "The hair hygrometer works because human hair gets slightly longer in humid air.",
+"tags": [
+"earth science"
+]
+},
+{
+"q": "What primarily causes the seasons on Earth?",
+"a": [
+"Earth's axial tilt",
+"Distance from the Sun",
+"Solar flares",
+"The Moon's orbit"
+],
+"d": 2,
+"x": "Earth is actually closest to the Sun in early January, during winter in the Northern Hemisphere.",
+"tags": [
+"earth science"
+]
+},
+{
+"q": "Which scientist discovered the neutron in 1932?",
+"a": [
+"James Chadwick",
+"Niels Bohr",
+"Enrico Fermi",
+"Marie Curie"
+],
+"d": 2,
+"x": "Chadwick won the 1935 Nobel Prize in Physics. Neutrons became the key to nuclear fission.",
+"tags": [
+"scientists"
+]
+},
+{
+"q": "What is the SI unit of pressure?",
+"a": [
+"Pascal",
+"Bar",
+"Torr",
+"Newton"
+],
+"d": 2,
+"x": "One pascal is a very small pressure, about the weight of a sheet of paper lying flat on a table.",
+"tags": [
+"units"
+]
+},
+{
+"q": "What is the process of cell division that produces two identical body cells?",
+"a": [
+"Mitosis",
+"Meiosis",
+"Osmosis",
+"Diffusion"
+],
+"d": 2,
+"x": "Mitosis is how you grow and heal wounds, while meiosis is the special division that makes sex cells.",
+"tags": [
+"biology"
+]
+},
+{
+"q": "Which blood type is considered the universal red cell donor?",
+"a": [
+"O negative",
+"AB positive",
+"A positive",
+"B negative"
+],
+"d": 2,
+"x": "O negative red cells lack the A, B and Rh markers, so they can usually be given to anyone in an emergency.",
+"tags": [
+"human body"
+]
+},
+{
+"q": "What is the visible surface layer of the Sun called?",
+"a": [
+"Photosphere",
+"Corona",
+"Chromosphere",
+"Core"
+],
+"d": 2,
+"x": "The photosphere is about 5,500 C. The corona, the Sun's outer atmosphere, is paradoxically millions of degrees hotter.",
+"tags": [
+"astronomy"
+]
+},
+{
+"q": "What type of star is our Sun?",
+"a": [
+"Yellow dwarf",
+"Red giant",
+"White dwarf",
+"Neutron star"
+],
+"d": 2,
+"x": "Our Sun is a main-sequence star that is about 4.6 billion years old, roughly halfway through its lifetime.",
+"tags": [
+"astronomy"
+]
+},
+{
+"q": "Which gas is the second most abundant in Earth's atmosphere?",
+"a": [
+"Oxygen",
+"Argon",
+"Carbon dioxide",
+"Water vapor"
+],
+"d": 2,
+"x": "Early Earth had almost no free oxygen. It built up after bacteria began photosynthesizing more than 2 billion years ago.",
+"tags": [
+"earth science"
+]
+},
+{
+"q": "What name is given to the tendency of an object to resist changes in its motion?",
+"a": [
+"Inertia",
+"Momentum",
+"Torque",
+"Friction"
+],
+"d": 2,
+"x": "Inertia is why passengers lurch forward when a car brakes suddenly. Newton's first law describes it.",
+"tags": [
+"physics"
+]
+},
+{
+"q": "What does the abbreviation LED stand for?",
+"a": [
+"Light-Emitting Diode",
+"Low-Energy Display",
+"Linear Electric Device",
+"Laser Emission Dial"
+],
+"d": 2,
+"x": "LEDs turn electricity into light far more efficiently than old incandescent bulbs, which waste most of their energy as heat.",
+"tags": [
+"technology"
+]
+},
+{
+"q": "What does HTTP stand for in web addresses?",
+"a": [
+"Hypertext Transfer Protocol",
+"High Tech Transfer Program",
+"Hyperlink Text Terminal Process",
+"Host Transmission Type Protocol"
+],
+"d": 2,
+"x": "HTTP defines how browsers request pages from servers. The secure version, HTTPS, encrypts the connection.",
+"tags": [
+"technology"
+]
+},
+{
+"q": "Which astronomer discovered the three laws of planetary motion?",
+"a": [
+"Johannes Kepler",
+"Tycho Brahe",
+"Edmond Halley",
+"Pierre-Simon Laplace"
+],
+"d": 2,
+"x": "Kepler's first law showed that planets move in ellipses, not perfect circles. He built his laws from Brahe's precise observations.",
+"tags": [
+"scientists"
+]
+},
+{
+"q": "Which molecule carries genetic instructions from DNA to the ribosomes?",
+"a": [
+"Messenger RNA",
+"Transfer RNA",
+"Ribosomal DNA",
+"Adenosine"
+],
+"d": 2,
+"x": "Messenger RNA, or mRNA, is the copy of a gene that ribosomes read to build a protein.",
+"tags": [
+"biology"
+]
+},
+{
+"q": "Which mineral is the main component of bones and teeth?",
+"a": [
+"Calcium",
+"Iron",
+"Sodium",
+"Potassium"
+],
+"d": 2,
+"x": "About 99 percent of the calcium in your body is stored in your bones and teeth.",
+"tags": [
+"human body"
+]
+},
+{
+"q": "What is the process by which plants release water vapor from their leaves?",
+"a": [
+"Transpiration",
+"Respiration",
+"Germination",
+"Pollination"
+],
+"d": 2,
+"x": "A large tree can release hundreds of liters of water into the air on a hot day through tiny leaf pores called stomata.",
+"tags": [
+"biology"
+]
+},
+{
+"q": "In which organ does most nutrient absorption take place?",
+"a": [
+"Small intestine",
+"Stomach",
+"Large intestine",
+"Esophagus"
+],
+"d": 2,
+"x": "The small intestine is about 6 meters long, and its folded lining gives it a surface area of roughly a tennis court.",
+"tags": [
+"human body"
+]
+},
+{
+"q": "Around which planet does the moon Europa orbit?",
+"a": [
+"Jupiter",
+"Saturn",
+"Neptune",
+"Mars"
+],
+"d": 2,
+"x": "Europa has an ice shell covering a salty ocean that may hold twice as much water as all of Earth's oceans.",
+"tags": [
+"astronomy"
+]
+},
+{
+"q": "What is the SI unit of power?",
+"a": [
+"Watt",
+"Joule",
+"Newton",
+"Hertz"
+],
+"d": 2,
+"x": "One watt equals one joule per second. The unit honors James Watt, who improved the steam engine.",
+"tags": [
+"units"
+]
+},
+{
+"q": "Which two scientists proposed the double helix structure of DNA in 1953?",
+"a": [
+"Watson and Crick",
+"Hershey and Chase",
+"Meselson and Stahl",
+"Avery and McCarty"
+],
+"d": 2,
+"x": "Their model drew on X-ray images made by Rosalind Franklin and Maurice Wilkins's group.",
+"tags": [
+"scientists"
+]
+},
+{
+"q": "What is the largest object in the asteroid belt between Mars and Jupiter?",
+"a": [
+"Ceres",
+"Vesta",
+"Pallas",
+"Eros"
+],
+"d": 2,
+"x": "Ceres is about 940 km across and holds roughly a third of the belt's total mass.",
+"tags": [
+"astronomy"
+]
+},
+{
+"q": "Which type of cloud is thin, wispy and found high in the sky?",
+"a": [
+"Cirrus",
+"Cumulus",
+"Stratus",
+"Nimbus"
+],
+"d": 2,
+"x": "Cirrus clouds are made of ice crystals and often appear before a change in the weather.",
+"tags": [
+"earth science"
+]
+},
+{
+"q": "What is the Sun's thin outer atmosphere, visible during a total solar eclipse, called?",
+"a": [
+"Corona",
+"Photosphere",
+"Core",
+"Chromosphere"
+],
+"d": 2,
+"x": "The corona is over a million degrees, far hotter than the Sun's surface, and scientists are still studying why.",
+"tags": [
+"astronomy"
+]
+},
+{
+"q": "A magnifying glass uses what kind of lens?",
+"a": [
+"Convex lens",
+"Concave lens",
+"Prism",
+"Flat mirror"
+],
+"d": 2,
+"x": "A convex lens is thicker in the middle and bends light rays together to a focus.",
+"tags": [
+"physics"
+]
+},
+{
+"q": "Which protein in red blood cells carries oxygen?",
+"a": [
+"Hemoglobin",
+"Collagen",
+"Keratin",
+"Myosin"
+],
+"d": 2,
+"x": "Each hemoglobin molecule can bind four oxygen molecules, and it contains iron.",
+"tags": [
+"human body"
+]
+},
+{
+"q": "What form of energy does a moving object have?",
+"a": [
+"Kinetic energy",
+"Potential energy",
+"Thermal energy",
+"Chemical energy"
+],
+"d": 2,
+"x": "Kinetic energy equals one half of mass times speed squared, so doubling speed quadruples it.",
+"tags": [
+"physics"
+]
+},
+{
+"q": "What is the region around Earth dominated by its magnetic field called?",
+"a": [
+"Magnetosphere",
+"Ionosphere",
+"Heliosphere",
+"Exosphere"
+],
+"d": 2,
+"x": "The magnetosphere deflects most of the solar wind and is why we see auroras near the poles.",
+"tags": [
+"earth science"
+]
+},
+{
+"q": "What is the chemical formula for table salt?",
+"a": [
+"NaCl",
+"KCl",
+"NaOH",
+"CaCl2"
+],
+"d": 2,
+"x": "Table salt is sodium chloride, made of sodium and chlorine."
+},
+{
+"q": "Which particle in an atom has a negative electric charge?",
+"a": [
+"Electron",
+"Proton",
+"Neutron",
+"Photon"
+],
+"d": 2,
+"x": "Electrons carry a negative charge, protons a positive one, and neutrons none."
+},
+{
+"q": "Which scientist formulated the three laws of motion?",
+"a": [
+"Isaac Newton",
+"Galileo Galilei",
+"Johannes Kepler",
+"Robert Hooke"
+],
+"d": 2,
+"x": "Newton published his laws of motion in 1687 in the Principia."
+},
+{
+"q": "What is the pH of pure water at room temperature?",
+"a": [
+"7",
+"1",
+"14",
+"0"
+],
+"d": 2,
+"x": "A pH of 7 is neutral, below 7 is acidic and above 7 is basic."
+}
+]

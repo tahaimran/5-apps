@@ -1,0 +1,1433 @@
+[
+{
+"q": "Which Summer Olympics, scheduled for Berlin, were cancelled because of World War I?",
+"a": [
+"1916",
+"1912",
+"1920",
+"1914"
+],
+"d": 3,
+"x": "Berlin had been awarded the 1916 Games, but they were never held. The next Games took place in Antwerp in 1920.",
+"tags": [
+"olympics"
+]
+},
+{
+"q": "Which Italian resort hosted the 1956 Winter Olympics?",
+"a": [
+"Cortina d'Ampezzo",
+"Bormio",
+"Cervinia",
+"Sestriere"
+],
+"d": 3,
+"x": "These were the first Winter Games to be televised, with the broadcast reaching several European countries.",
+"tags": [
+"olympics",
+"winter sports"
+]
+},
+{
+"q": "Which Austrian city hosted the Winter Olympics in both 1964 and 1976?",
+"a": [
+"Innsbruck",
+"Salzburg",
+"Vienna",
+"Graz"
+],
+"d": 3,
+"x": "Innsbruck stepped in to host the 1976 Games after Denver withdrew, and so became a two-time host city.",
+"tags": [
+"olympics",
+"winter sports"
+]
+},
+{
+"q": "Which Ukrainian pole vaulter was the first to clear 6 meters, in 1985?",
+"a": [
+"Sergey Bubka",
+"Thierry Vigneron",
+"Maksim Tarasov",
+"Okkert Brits"
+],
+"d": 3,
+"x": "Bubka cleared 6.00 m in Paris in 1985. He went on to break the world record 35 times during his career.",
+"tags": [
+"athletics"
+]
+},
+{
+"q": "Which American sprinter won three gold medals at the 1960 Rome Olympics after overcoming childhood polio?",
+"a": [
+"Wilma Rudolph",
+"Wyomia Tyus",
+"Betty Robinson",
+"Evelyn Ashford"
+],
+"d": 3,
+"x": "Rudolph won the 100 m, 200 m and 4x100 m relay. Italian crowds nicknamed her 'La Gazzella Nera', the Black Gazelle.",
+"tags": [
+"athletics",
+"olympics"
+]
+},
+{
+"q": "Which Belgian cyclist, nicknamed 'The Cannibal', won the Tour de France five times?",
+"a": [
+"Eddy Merckx",
+"Lucien Van Impe",
+"Rik Van Looy",
+"Freddy Maertens"
+],
+"d": 3,
+"x": "Merckx won his Tours between 1969 and 1974. In 1969 he took the overall, points and mountains classifications in the same year.",
+"tags": [
+"cycling"
+]
+},
+{
+"q": "On which German circuit did Niki Lauda suffer his near-fatal Formula One crash in 1976?",
+"a": [
+"Nurburgring",
+"Hockenheim",
+"Monza",
+"Spa-Francorchamps"
+],
+"d": 3,
+"x": "Lauda returned to racing just six weeks later. He went on to win the world title in 1977 and again in 1984.",
+"tags": [
+"motor racing"
+]
+},
+{
+"q": "Which English racecourse hosts the Grand National steeplechase?",
+"a": [
+"Aintree",
+"Cheltenham",
+"Epsom",
+"Ascot"
+],
+"d": 3,
+"x": "The race has been run over fences at Aintree near Liverpool since 1839. Its fences, such as Becher's Brook, are famous.",
+"tags": [
+"horse racing"
+]
+},
+{
+"q": "Who in 1875 became the first person to swim the English Channel without artificial aid?",
+"a": [
+"Matthew Webb",
+"Gertrude Ederle",
+"Johnny Weissmuller",
+"Thomas Burgess"
+],
+"d": 3,
+"x": "Captain Webb took nearly 22 hours to swim from Dover to Calais. He was said to have used a breaststroke and was greased in porpoise oil.",
+"tags": [
+"swimming"
+]
+},
+{
+"q": "Which Frenchman scored 13 goals at the 1958 World Cup?",
+"a": [
+"Just Fontaine",
+"Raymond Kopa",
+"Michel Platini",
+"Jean-Pierre Papin"
+],
+"d": 3,
+"x": "Fontaine scored his 13 goals in only six matches, and France finished third. Brazil, with 17-year-old Pele, won the title.",
+"tags": [
+"soccer",
+"world cup"
+]
+},
+{
+"q": "Which country won the 1992 European Championship in soccer after joining the tournament late as a replacement?",
+"a": [
+"Denmark",
+"Sweden",
+"Germany",
+"Netherlands"
+],
+"d": 3,
+"x": "Denmark replaced Yugoslavia, which was excluded, just ten days before the tournament and beat Germany 2-0 in the final.",
+"tags": [
+"soccer"
+]
+},
+{
+"q": "In which year was the first Wimbledon Championship played?",
+"a": [
+"1877",
+"1860",
+"1895",
+"1905"
+],
+"d": 3,
+"x": "Only the men's singles was held in 1877, with 22 players. Spencer Gore won the first title.",
+"tags": [
+"tennis"
+]
+},
+{
+"q": "Which team won the first modern World Series in 1903?",
+"a": [
+"Boston Americans",
+"Pittsburgh Pirates",
+"New York Giants",
+"Chicago Cubs"
+],
+"d": 3,
+"x": "The Boston Americans, who later became the Red Sox, beat the Pittsburgh Pirates five games to three in a best-of-nine series.",
+"tags": [
+"baseball"
+]
+},
+{
+"q": "Which England captain devised the controversial 'Bodyline' tactics on the 1932-33 tour of Australia?",
+"a": [
+"Douglas Jardine",
+"Len Hutton",
+"Wally Hammond",
+"Percy Chapman"
+],
+"d": 3,
+"x": "Bodyline involved fast bowlers aiming at the batter's body. It caused such anger that the laws of cricket were later changed.",
+"tags": [
+"cricket"
+]
+},
+{
+"q": "How many consecutive baseball games did Cal Ripken Jr. play between 1982 and 1998?",
+"a": [
+"2,632",
+"2,130",
+"3,001",
+"1,998"
+],
+"d": 3,
+"x": "Ripken passed Lou Gehrig's long-standing mark of 2,130 games on September 6, 1995. He was nicknamed 'the Iron Man'.",
+"tags": [
+"baseball"
+]
+},
+{
+"q": "At which Melbourne stadium is the AFL Grand Final traditionally played?",
+"a": [
+"Melbourne Cricket Ground",
+"Docklands Stadium",
+"Adelaide Oval",
+"Optus Stadium"
+],
+"d": 3,
+"x": "The MCG holds more than 90,000 spectators. It also hosted the 1956 Summer Olympics.",
+"tags": [
+"australian rules"
+]
+},
+{
+"q": "Which sport is played with a stick called a hurley and a ball called a sliotar?",
+"a": [
+"Hurling",
+"Shinty",
+"Lacrosse",
+"Field hockey"
+],
+"d": 3,
+"x": "Hurling is an ancient Gaelic game, among the fastest field sports in the world. A sliotar is a leather ball with a raised seam.",
+"tags": [
+"hurling"
+]
+},
+{
+"q": "Which sport was invented in 1895 in Holyoke, Massachusetts, as a gentler alternative to basketball?",
+"a": [
+"Volleyball",
+"Handball",
+"Netball",
+"Softball"
+],
+"d": 3,
+"x": "William G. Morgan originally called it 'mintonette'. A visitor suggested the name volleyball because players 'volley' the ball.",
+"tags": [
+"volleyball"
+]
+},
+{
+"q": "What is the highest score that can be checked out with three darts in a single turn?",
+"a": [
+"170",
+"180",
+"160",
+"200"
+],
+"d": 3,
+"x": "The checkout is two treble 20s followed by a bullseye. A 3-dart finish must end on a double or the bullseye.",
+"tags": [
+"darts"
+]
+},
+{
+"q": "Which club owns Lord's Cricket Ground and was the long-time guardian of cricket's Laws?",
+"a": [
+"Marylebone Cricket Club",
+"Surrey County Cricket Club",
+"Yorkshire County Cricket Club",
+"Hampshire Cricket Board"
+],
+"d": 3,
+"x": "The MCC, founded in 1787, wrote the first Laws of Cricket in 1788. Lord's is in north London and is called the 'Home of Cricket'.",
+"tags": [
+"cricket"
+]
+},
+{
+"q": "Which American heavyweight boxer retired undefeated in 1956 with a record of 49 wins and no losses?",
+"a": [
+"Rocky Marciano",
+"Joe Louis",
+"Gene Tunney",
+"Jack Dempsey"
+],
+"d": 3,
+"x": "Marciano knocked out 43 of his opponents. He died in a plane crash in 1969, the day before his 46th birthday.",
+"tags": [
+"boxing"
+]
+},
+{
+"q": "In which country was the 1975 'Thrilla' fight between Muhammad Ali and Joe Frazier held?",
+"a": [
+"Philippines",
+"Zaire",
+"United States",
+"Japan"
+],
+"d": 3,
+"x": "The bout in Manila was the third and final fight between the pair. Frazier's corner stopped the fight before the 15th round.",
+"tags": [
+"boxing"
+]
+},
+{
+"q": "The Paralympic movement grew from games held in 1948 at a hospital in which country?",
+"a": [
+"England",
+"Germany",
+"Netherlands",
+"Canada"
+],
+"d": 3,
+"x": "Dr Ludwig Guttmann organized archery for wartime injured at Stoke Mandeville Hospital. The first official Paralympics took place in Rome in 1960.",
+"tags": [
+"olympics"
+]
+},
+{
+"q": "In which event did Bob Beamon leap 8.90 m at the 1968 Mexico City Olympics?",
+"a": [
+"Long jump",
+"Triple jump",
+"High jump",
+"Pole vault"
+],
+"d": 3,
+"x": "Beamon beat the previous world mark by 55 cm, helped by the thin air of Mexico City. It was so far that officials had to measure it by hand with a tape.",
+"tags": [
+"athletics",
+"olympics"
+]
+},
+{
+"q": "The marathon distance of 26 miles 385 yards was set at the Olympics in which city?",
+"a": [
+"London",
+"Athens",
+"Stockholm",
+"Paris"
+],
+"d": 3,
+"x": "The 1908 course ran from Windsor Castle to the stadium so that the royal family could watch from the start.",
+"tags": [
+"athletics",
+"olympics"
+]
+},
+{
+"q": "Which sport is part of modern pentathlon alongside fencing, swimming, shooting and running?",
+"a": [
+"Horse riding",
+"Cycling",
+"Archery",
+"Rowing"
+],
+"d": 3,
+"x": "The modern pentathlon was devised by Pierre de Coubertin, inspired by the skills of a 19th-century cavalry officer.",
+"tags": [
+"olympics"
+]
+},
+{
+"q": "How much does a men's Olympic hammer weigh?",
+"a": [
+"7.26 kg",
+"5 kg",
+"9 kg",
+"6.25 kg"
+],
+"d": 3,
+"x": "The hammer is a metal ball on a steel wire. It weighs the same as the men's shot put, 16 pounds.",
+"tags": [
+"athletics"
+]
+},
+{
+"q": "Which Rio stadium hosted the 1950 World Cup match in which Uruguay stunned Brazil?",
+"a": [
+"Maracana",
+"Morumbi",
+"Mineirao",
+"Pacaembu"
+],
+"d": 3,
+"x": "Well over 150,000 spectators watched Uruguay win 2-1. The defeat is remembered in Brazil as the 'Maracanazo'.",
+"tags": [
+"soccer",
+"world cup"
+]
+},
+{
+"q": "Which Hungarian forward starred for the 'Magical Magyars' and later for Real Madrid?",
+"a": [
+"Ferenc Puskas",
+"Sandor Kocsis",
+"Nandor Hidegkuti",
+"Zoltan Czibor"
+],
+"d": 3,
+"x": "Puskas scored four goals in the 1960 European Cup final for Real Madrid. He was nicknamed 'the Galloping Major'.",
+"tags": [
+"soccer"
+]
+},
+{
+"q": "Which Portuguese star was top scorer at the 1966 World Cup with nine goals?",
+"a": [
+"Eusebio",
+"Mario Coluna",
+"Luis Figo",
+"Jose Torres"
+],
+"d": 3,
+"x": "Eusebio scored four goals in a quarter-final comeback against North Korea. He was nicknamed 'the Black Panther'.",
+"tags": [
+"soccer",
+"world cup"
+]
+},
+{
+"q": "Who scored two headed goals for France in the 1998 World Cup final?",
+"a": [
+"Zinedine Zidane",
+"Thierry Henry",
+"Emmanuel Petit",
+"Youri Djorkaeff"
+],
+"d": 3,
+"x": "Zidane's goals both came from corner kicks in the first half. France led 2-0 at the interval and Petit added a third.",
+"tags": [
+"soccer",
+"world cup"
+]
+},
+{
+"q": "Which trophy did Brazil keep permanently after winning a third World Cup in 1970?",
+"a": [
+"Jules Rimet Trophy",
+"FIFA World Cup Trophy",
+"Henri Delaunay Cup",
+"Copa America Cup"
+],
+"d": 3,
+"x": "The original trophy was later stolen in Brazil in 1983 and never recovered. FIFA introduced a new trophy for 1974.",
+"tags": [
+"soccer",
+"world cup"
+]
+},
+{
+"q": "How wide is a standard soccer goal between the posts?",
+"a": [
+"8 yards",
+"6 yards",
+"10 yards",
+"7 yards"
+],
+"d": 3,
+"x": "That is 7.32 meters. The crossbar stands 8 feet (2.44 m) above the ground.",
+"tags": [
+"soccer",
+"rules"
+]
+},
+{
+"q": "Which Grand Slam tournament was the first to become an open event, in 1968?",
+"a": [
+"French Open",
+"Wimbledon",
+"US Open",
+"Australian Open"
+],
+"d": 3,
+"x": "Open tennis allowed professionals to compete in the major tournaments alongside amateurs. Ken Rosewall won the first men's open title.",
+"tags": [
+"tennis"
+]
+},
+{
+"q": "Which American teenager known as 'Little Mo' won the first women's calendar-year Grand Slam, in 1953?",
+"a": [
+"Maureen Connolly",
+"Althea Gibson",
+"Helen Wills Moody",
+"Doris Hart"
+],
+"d": 3,
+"x": "Connolly's career ended at 19 after a horse-riding accident. Her tennis was admired for its accuracy.",
+"tags": [
+"tennis"
+]
+},
+{
+"q": "Who in 1938 became the first man to win all four Grand Slam tennis titles in a single year?",
+"a": [
+"Don Budge",
+"Fred Perry",
+"Bill Tilden",
+"Jack Crawford"
+],
+"d": 3,
+"x": "The American's feat was unmatched until Rod Laver repeated it in 1962. Budge's backhand was regarded as one of the best of all time.",
+"tags": [
+"tennis"
+]
+},
+{
+"q": "Which former champion lost to Billie Jean King in the 1973 'Battle of the Sexes' tennis match?",
+"a": [
+"Bobby Riggs",
+"Jack Kramer",
+"Pancho Gonzales",
+"Rod Laver"
+],
+"d": 3,
+"x": "King won in straight sets in front of about 30,000 fans at the Houston Astrodome and an estimated 90 million TV viewers.",
+"tags": [
+"tennis"
+]
+},
+{
+"q": "The Davis Cup in tennis is named after which American player who donated the trophy?",
+"a": [
+"Dwight Davis",
+"Bill Tilden",
+"Richard Sears",
+"Henry Slocum"
+],
+"d": 3,
+"x": "Davis, a Harvard student, designed the competition in 1900 and later became US Secretary of War.",
+"tags": [
+"tennis"
+]
+},
+{
+"q": "Which amateur golfer won the four major tournaments of his era in 1930 and co-founded Augusta National?",
+"a": [
+"Bobby Jones",
+"Walter Hagen",
+"Gene Sarazen",
+"Ben Hogan"
+],
+"d": 3,
+"x": "Jones retired from competition at just 28, after winning the 'Grand Slam' of that time. He was a lawyer by profession.",
+"tags": [
+"golf"
+]
+},
+{
+"q": "Which Spanish golfer won the Open Championship in 1979, 1984 and 1988?",
+"a": [
+"Seve Ballesteros",
+"Jose Maria Olazabal",
+"Sergio Garcia",
+"Miguel Angel Jimenez"
+],
+"d": 3,
+"x": "Ballesteros was known for his creative shot-making from trouble. He also won the Masters twice, in 1980 and 1983.",
+"tags": [
+"golf"
+]
+},
+{
+"q": "Which South African golfer, nicknamed 'The Black Knight', won nine major championships?",
+"a": [
+"Gary Player",
+"Ernie Els",
+"Bobby Locke",
+"Retief Goosen"
+],
+"d": 3,
+"x": "Player was famous for wearing black on the course and for his fitness. He was one of the first golfers to travel the globe to play.",
+"tags": [
+"golf"
+]
+},
+{
+"q": "What is the diameter of a golf hole?",
+"a": [
+"4.25 inches",
+"3.5 inches",
+"5 inches",
+"6 inches"
+],
+"d": 3,
+"x": "That is 108 mm. The size was standardized by the Royal and Ancient Golf Club in 1891, based on a piece of drainage pipe used at Musselburgh.",
+"tags": [
+"golf",
+"rules"
+]
+},
+{
+"q": "Which Scottish course hosted the first Open Championship in 1860?",
+"a": [
+"Prestwick",
+"St Andrews",
+"Muirfield",
+"Carnoustie"
+],
+"d": 3,
+"x": "Willie Park Sr. won the first Open, played over three rounds of a 12-hole course, with eight players competing.",
+"tags": [
+"golf"
+]
+},
+{
+"q": "Which England batsman was bowled by Shane Warne's famous 'Ball of the Century' in 1993?",
+"a": [
+"Mike Gatting",
+"Graham Gooch",
+"David Gower",
+"Alec Stewart"
+],
+"d": 3,
+"x": "Warne's first ball in Ashes cricket spun sharply from outside leg stump to hit off stump at Old Trafford.",
+"tags": [
+"cricket"
+]
+},
+{
+"q": "Which West Indian all-rounder hit six sixes in one over in a 1968 first-class match?",
+"a": [
+"Garfield Sobers",
+"Viv Richards",
+"Clive Lloyd",
+"Brian Lara"
+],
+"d": 3,
+"x": "Sobers hit all six off Glamorgan's Malcolm Nash at Swansea, in the first instance in first-class cricket.",
+"tags": [
+"cricket"
+]
+},
+{
+"q": "Which two countries played the first Test match, in 1877?",
+"a": [
+"Australia and England",
+"England and India",
+"Australia and South Africa",
+"England and New Zealand"
+],
+"d": 3,
+"x": "The match was played in Melbourne, and Australia won by 45 runs. Charles Bannerman scored the first Test century.",
+"tags": [
+"cricket"
+]
+},
+{
+"q": "In which Indian city is the Eden Gardens cricket ground?",
+"a": [
+"Kolkata",
+"Mumbai",
+"Chennai",
+"Delhi"
+],
+"d": 3,
+"x": "Eden Gardens opened in 1864 and is one of the largest cricket stadiums in the world. It hosted the 1987 and 1996 World Cup semi-finals.",
+"tags": [
+"cricket"
+]
+},
+{
+"q": "The name 'the Ashes' came from a mock obituary of English cricket in which 1882 publication?",
+"a": [
+"The Sporting Times",
+"The Times",
+"The Morning Post",
+"Punch"
+],
+"d": 3,
+"x": "The notice said English cricket had died and the body would be cremated and the ashes taken to Australia.",
+"tags": [
+"cricket"
+]
+},
+{
+"q": "At which English school, according to legend, did William Webb Ellis first run with the ball in 1823?",
+"a": [
+"Rugby School",
+"Eton College",
+"Harrow School",
+"Winchester College"
+],
+"d": 3,
+"x": "The legend is widely considered a myth, but it gave the sport its name and the Rugby World Cup its trophy.",
+"tags": [
+"rugby"
+]
+},
+{
+"q": "What were the first basketball goals, nailed to a gym balcony in 1891, made from?",
+"a": [
+"Peach baskets",
+"Wooden buckets",
+"Metal rings",
+"Wicker hoops"
+],
+"d": 3,
+"x": "Each time a ball went in, someone had to climb up and retrieve it, until the bottoms were cut out of the baskets.",
+"tags": [
+"basketball"
+]
+},
+{
+"q": "In which NBA season was the three-point line first introduced?",
+"a": [
+"1979-80",
+"1969-70",
+"1984-85",
+"1989-90"
+],
+"d": 3,
+"x": "The ABA had used the three-point shot earlier, in the 1960s. The NBA adopted it after absorbing several ABA teams.",
+"tags": [
+"basketball"
+]
+},
+{
+"q": "Which NBA star was famous for the 'skyhook' shot?",
+"a": [
+"Kareem Abdul-Jabbar",
+"Bill Walton",
+"Hakeem Olajuwon",
+"Moses Malone"
+],
+"d": 3,
+"x": "Abdul-Jabbar was originally named Lew Alcindor and won six NBA championships. The skyhook was nearly impossible to block.",
+"tags": [
+"basketball"
+]
+},
+{
+"q": "How many games long was Joe DiMaggio's 1941 hitting streak?",
+"a": [
+"56",
+"44",
+"61",
+"49"
+],
+"d": 3,
+"x": "DiMaggio hit safely in 56 straight games for the Yankees. Many see it as baseball's most unbreakable feat.",
+"tags": [
+"baseball"
+]
+},
+{
+"q": "In which small New York town is the National Baseball Hall of Fame located?",
+"a": [
+"Cooperstown",
+"Saratoga Springs",
+"Woodstock",
+"Ithaca"
+],
+"d": 3,
+"x": "A myth claims Abner Doubleday invented baseball in Cooperstown in 1839. The Hall of Fame opened there in 1939.",
+"tags": [
+"baseball"
+]
+},
+{
+"q": "Which Yankees pitcher threw a perfect game in the 1956 World Series?",
+"a": [
+"Don Larsen",
+"Whitey Ford",
+"Yogi Berra",
+"Allie Reynolds"
+],
+"d": 3,
+"x": "Larsen retired all 27 batters faced in Game 5 against the Brooklyn Dodgers. Yogi Berra famously jumped into his arms.",
+"tags": [
+"baseball"
+]
+},
+{
+"q": "Which team won the first Super Bowl, in January 1967?",
+"a": [
+"Green Bay Packers",
+"Kansas City Chiefs",
+"Dallas Cowboys",
+"Baltimore Colts"
+],
+"d": 3,
+"x": "The Packers beat the Chiefs 35-10 in the Los Angeles Memorial Coliseum. The game was then called the AFL-NFL World Championship.",
+"tags": [
+"american football"
+]
+},
+{
+"q": "Which NFL team completed a perfect 17-0 season in 1972?",
+"a": [
+"Miami Dolphins",
+"Pittsburgh Steelers",
+"Oakland Raiders",
+"Minnesota Vikings"
+],
+"d": 3,
+"x": "The Dolphins went on to win Super Bowl VII. They remain the only NFL team to finish a full season without a loss or tie.",
+"tags": [
+"american football"
+]
+},
+{
+"q": "The Stanley Cup was donated by Lord Stanley, who held which office in Canada?",
+"a": [
+"Governor General",
+"Prime Minister",
+"Chief Justice",
+"Lieutenant Governor"
+],
+"d": 3,
+"x": "Lord Stanley of Preston bought the original bowl for about 10 guineas in 1892.",
+"tags": [
+"ice hockey"
+]
+},
+{
+"q": "Which defenseman scored the famous 'flying' Stanley Cup-winning goal in 1970?",
+"a": [
+"Bobby Orr",
+"Ray Bourque",
+"Brad Park",
+"Paul Coffey"
+],
+"d": 3,
+"x": "Orr's overtime goal for the Boston Bruins against St. Louis was captured in a photo of him airborne after being tripped.",
+"tags": [
+"ice hockey"
+]
+},
+{
+"q": "Which Norwegian figure skater won Olympic gold in 1928, 1932 and 1936 and became a film star?",
+"a": [
+"Sonja Henie",
+"Katarina Witt",
+"Tenley Albright",
+"Dorothy Hamill"
+],
+"d": 3,
+"x": "Henie introduced short skirts and white boots to figure skating. She later starred in Hollywood musicals.",
+"tags": [
+"winter sports",
+"olympics"
+]
+},
+{
+"q": "Which French skier won all three alpine events at the 1968 Winter Olympics in Grenoble?",
+"a": [
+"Jean-Claude Killy",
+"Toni Sailer",
+"Franz Klammer",
+"Ingemar Stenmark"
+],
+"d": 3,
+"x": "Killy won the downhill, giant slalom and slalom. The slalom was marred by a dispute after rival Karl Schranz was disqualified.",
+"tags": [
+"winter sports",
+"olympics"
+]
+},
+{
+"q": "Which Austrian won the dramatic 1976 Olympic downhill, in a run famous for its near-crash?",
+"a": [
+"Franz Klammer",
+"Karl Schranz",
+"Toni Sailer",
+"Hermann Maier"
+],
+"d": 3,
+"x": "Klammer raced the course on the edge of control and won by just 0.33 seconds before a home crowd.",
+"tags": [
+"winter sports",
+"olympics"
+]
+},
+{
+"q": "Which US state hosts the Iditarod sled dog race each year?",
+"a": [
+"Alaska",
+"Montana",
+"Minnesota",
+"Wyoming"
+],
+"d": 3,
+"x": "The race of over 1,000 miles commemorates a 1925 serum run to Nome, where dog teams carried medicine to fight a diphtheria outbreak.",
+"tags": [
+"winter sports"
+]
+},
+{
+"q": "Which British circuit hosted the first Formula One World Championship race in 1950?",
+"a": [
+"Silverstone",
+"Brands Hatch",
+"Donington Park",
+"Goodwood"
+],
+"d": 3,
+"x": "King George VI attended the race, which was won by Italian driver Giuseppe Farina in an Alfa Romeo.",
+"tags": [
+"motor racing"
+]
+},
+{
+"q": "Which Scottish driver won the Formula One world titles in 1963 and 1965?",
+"a": [
+"Jim Clark",
+"Jackie Stewart",
+"Graham Hill",
+"John Surtees"
+],
+"d": 3,
+"x": "Clark drove for Lotus and won the Indianapolis 500 in 1965. He died in a Formula Two race in 1968.",
+"tags": [
+"motor racing"
+]
+},
+{
+"q": "Which Frenchman nicknamed 'The Professor' won four Formula One world titles?",
+"a": [
+"Alain Prost",
+"Jacques Laffite",
+"Rene Arnoux",
+"Didier Pironi"
+],
+"d": 3,
+"x": "Prost won his titles between 1985 and 1993, and had a famous rivalry with teammate Ayrton Senna.",
+"tags": [
+"motor racing"
+]
+},
+{
+"q": "Which British driver won the Monaco Grand Prix, the Indianapolis 500 and the 24 Hours of Le Mans?",
+"a": [
+"Graham Hill",
+"Stirling Moss",
+"Mike Hawthorn",
+"Nigel Mansell"
+],
+"d": 3,
+"x": "The trio of races is known as the Triple Crown of Motorsport. Hill won Indy in 1966 and Le Mans in 1972.",
+"tags": [
+"motor racing"
+]
+},
+{
+"q": "Which heavyweight boxer was nicknamed 'Smokin' Joe'?",
+"a": [
+"Joe Frazier",
+"Joe Louis",
+"Joe Calzaghe",
+"Joe Walcott"
+],
+"d": 3,
+"x": "Frazier won Olympic gold in 1964 and beat Ali in 1971 in the 'Fight of the Century'. He won on points after 15 rounds.",
+"tags": [
+"boxing"
+]
+},
+{
+"q": "Which British rower won gold at five consecutive Olympics from 1984 to 2000?",
+"a": [
+"Steve Redgrave",
+"Matthew Pinsent",
+"Ben Hunt-Davis",
+"James Cracknell"
+],
+"d": 3,
+"x": "Redgrave won his fifth gold in Sydney in the coxless four. He had been diagnosed with diabetes in 1997.",
+"tags": [
+"rowing",
+"olympics"
+]
+},
+{
+"q": "How many apparatus events are there in men's artistic gymnastics?",
+"a": [
+"Six",
+"Four",
+"Five",
+"Eight"
+],
+"d": 3,
+"x": "They are floor, pommel horse, rings, vault, parallel bars and horizontal bar. Women compete on four apparatus.",
+"tags": [
+"gymnastics"
+]
+},
+{
+"q": "How wide is a gymnastics balance beam?",
+"a": [
+"10 cm",
+"8 cm",
+"15 cm",
+"20 cm"
+],
+"d": 3,
+"x": "That is only about 4 inches. The beam is 5 meters long and stands 125 cm above the floor.",
+"tags": [
+"gymnastics",
+"rules"
+]
+},
+{
+"q": "Which Greek runner won the first Olympic marathon in 1896?",
+"a": [
+"Spyridon Louis",
+"Charilaos Vasilakos",
+"Dimitrios Vikelas",
+"Gyula Kellner"
+],
+"d": 3,
+"x": "Louis's win thrilled the home crowd in Athens. He was a water carrier, and his victory was the Games' greatest moment for Greece.",
+"tags": [
+"athletics",
+"olympics"
+]
+},
+{
+"q": "In which year BC are the first recorded ancient Olympic Games traditionally dated?",
+"a": [
+"776 BC",
+"1200 BC",
+"490 BC",
+"332 BC"
+],
+"d": 3,
+"x": "The Games were held at Olympia every four years for more than a thousand years, until about AD 393.",
+"tags": [
+"olympics"
+]
+},
+{
+"q": "Which Kenyan runner won the 1500 m at the 1968 Olympics in Mexico City?",
+"a": [
+"Kipchoge Keino",
+"Mike Boit",
+"Henry Rono",
+"Wilson Kipketer"
+],
+"d": 3,
+"x": "Keino ran at high altitude and beat favorite Jim Ryun by a huge margin. He later helped inspire generations of Kenyan runners.",
+"tags": [
+"athletics",
+"olympics"
+]
+},
+{
+"q": "Which Scottish runner, subject of the film 'Chariots of Fire', won 400 m gold at the 1924 Paris Olympics?",
+"a": [
+"Eric Liddell",
+"Harold Abrahams",
+"Douglas Lowe",
+"Arnold Jackson"
+],
+"d": 3,
+"x": "Liddell refused to run the 100 m because the heats were on a Sunday. He later became a missionary in China.",
+"tags": [
+"athletics",
+"olympics"
+]
+},
+{
+"q": "Which Dutch athlete won four gold medals at the 1948 London Olympics?",
+"a": [
+"Fanny Blankers-Koen",
+"Ria Stalman",
+"Sifan Hassan",
+"Marjan Olyslager"
+],
+"d": 3,
+"x": "The mother of two won the 100 m, 200 m, 80 m hurdles and 4x100 m relay, earning the nickname 'the Flying Housewife'.",
+"tags": [
+"athletics",
+"olympics"
+]
+},
+{
+"q": "Which city hosted the 1948 'Austerity Games', the first Olympics after World War II?",
+"a": [
+"London",
+"Helsinki",
+"Stockholm",
+"Amsterdam"
+],
+"d": 3,
+"x": "Rationing was still in force, so athletes were housed in military camps and colleges rather than a purpose-built village.",
+"tags": [
+"olympics"
+]
+},
+{
+"q": "Which country won the Olympic field hockey gold at six consecutive Games from 1928 to 1956?",
+"a": [
+"India",
+"Pakistan",
+"Netherlands",
+"Germany"
+],
+"d": 3,
+"x": "India won with a total goal difference of 178 to 7 across the six tournaments. Dhyan Chand was its star.",
+"tags": [
+"hockey",
+"olympics"
+]
+},
+{
+"q": "Which Asian nation reached the World Cup semi-finals in 2002 as co-host?",
+"a": [
+"South Korea",
+"Japan",
+"China",
+"Saudi Arabia"
+],
+"d": 3,
+"x": "The Koreans beat Italy and Spain on the way, before losing to Germany in the semi-finals and finishing fourth.",
+"tags": [
+"soccer",
+"world cup"
+]
+},
+{
+"q": "Which African nation became the first to reach a World Cup quarter-final, in 1990?",
+"a": [
+"Cameroon",
+"Senegal",
+"Ghana",
+"Nigeria"
+],
+"d": 3,
+"x": "Cameroon, led by veteran Roger Milla, lost to England 3-2 after extra time in the quarter-final. Milla celebrated his goals with a corner-flag dance.",
+"tags": [
+"soccer",
+"world cup"
+]
+},
+{
+"q": "Which club won the first five European Cups, from 1956 to 1960?",
+"a": [
+"Real Madrid",
+"Benfica",
+"AC Milan",
+"Ajax"
+],
+"d": 3,
+"x": "Real Madrid, led by Alfredo Di Stefano and Ferenc Puskas, beat Eintracht Frankfurt 7-3 in the 1960 final at Hampden Park.",
+"tags": [
+"soccer"
+]
+},
+{
+"q": "Which Scottish club became the first British team to win the European Cup, in 1967?",
+"a": [
+"Celtic",
+"Rangers",
+"Aberdeen",
+"Hearts"
+],
+"d": 3,
+"x": "Celtic beat Inter Milan 2-1 in Lisbon, with a team all born within about 30 miles of Glasgow. They became known as the 'Lisbon Lions'.",
+"tags": [
+"soccer"
+]
+},
+{
+"q": "What is the oldest national football competition in the world, founded in 1871?",
+"a": [
+"The FA Cup",
+"The Scottish Cup",
+"Copa del Rey",
+"Coppa Italia"
+],
+"d": 3,
+"x": "The first final in 1872 was won by Wanderers, who beat the Royal Engineers 1-0 at the Kennington Oval.",
+"tags": [
+"soccer"
+]
+},
+{
+"q": "Antonin Panenka chipped a famous penalty to win the Euro 1976 final for which country?",
+"a": [
+"Czechoslovakia",
+"Yugoslavia",
+"Hungary",
+"Poland"
+],
+"d": 3,
+"x": "The penalty beat West Germany's goalkeeper Sepp Maier in the first-ever European Championship final to be decided by a shootout.",
+"tags": [
+"soccer"
+]
+},
+{
+"q": "Which Italian defensive system, meaning 'door-bolt', became famous in the 1960s?",
+"a": [
+"Catenaccio",
+"Tiki-taka",
+"Gegenpressing",
+"Total Football"
+],
+"d": 3,
+"x": "Inter Milan coach Helenio Herrera used it to win two European Cups. It focused on a strong, organized defense and quick counter-attacks.",
+"tags": [
+"soccer"
+]
+},
+{
+"q": "Which ancient Chinese ball game is recognized by FIFA as an early form of football?",
+"a": [
+"Cuju",
+"Pok-ta-pok",
+"Kemari",
+"Harpastum"
+],
+"d": 3,
+"x": "Cuju, which means 'kick ball', was played during the Han dynasty more than 2,000 years ago, with players aiming a ball into a net.",
+"tags": [
+"soccer"
+]
+},
+{
+"q": "Which English club, founded in 1857, is recognized as the world's oldest football club?",
+"a": [
+"Sheffield FC",
+"Notts County",
+"Stoke City",
+"Hallam FC"
+],
+"d": 3,
+"x": "Sheffield FC wrote the Sheffield Rules, which influenced the modern game, including the introduction of corner kicks and heading the ball.",
+"tags": [
+"soccer"
+]
+},
+{
+"q": "Which team beat the 'Magical Magyars' of Hungary in the 1954 World Cup final?",
+"a": [
+"West Germany",
+"Brazil",
+"Austria",
+"Uruguay"
+],
+"d": 3,
+"x": "Hungary had been unbeaten for four years. West Germany came back from 2-0 down to win 3-2 in what is called the 'Miracle of Bern'.",
+"tags": [
+"soccer",
+"world cup"
+]
+},
+{
+"q": "In cricket, a googly is a deceptive delivery bowled by which type of bowler?",
+"a": [
+"Wrist spinner",
+"Fast bowler",
+"Medium pacer",
+"Off-spin bowler"
+],
+"d": 3,
+"x": "It looks like a normal leg break but turns the other way. It was invented by English bowler Bernard Bosanquet around 1900, so it is also called a 'bosie'.",
+"tags": [
+"cricket"
+]
+},
+{
+"q": "Which bearded Victorian is regarded as cricket's first superstar?",
+"a": [
+"W. G. Grace",
+"Ranjitsinhji",
+"Jack Hobbs",
+"Wilfred Rhodes"
+],
+"d": 3,
+"x": "Grace played first-class cricket for 44 years and was also a doctor. His beard made him one of the most recognizable Britons of his time.",
+"tags": [
+"cricket"
+]
+},
+{
+"q": "How many hurdles must athletes clear in the 400 m hurdles?",
+"a": [
+"10",
+"8",
+"12",
+"6"
+],
+"d": 3,
+"x": "The hurdles are spaced 35 meters apart. Each is 91.4 cm high for men and 76.2 cm for women.",
+"tags": [
+"athletics",
+"rules"
+]
+},
+{
+"q": "Which American won four gold medals at the 1984 Los Angeles Olympics, matching Jesse Owens's feat?",
+"a": [
+"Carl Lewis",
+"Edwin Moses",
+"Michael Johnson",
+"Calvin Smith"
+],
+"d": 3,
+"x": "Lewis won the 100 m, 200 m, long jump and 4x100 m relay, the same four events as Owens in 1936.",
+"tags": [
+"athletics",
+"olympics"
+]
+},
+{
+"q": "Which Finnish runner won both the 5,000 m and 10,000 m at the 1972 and 1976 Olympics?",
+"a": [
+"Lasse Viren",
+"Paavo Nurmi",
+"Juha Vaatainen",
+"Pekka Vasala"
+],
+"d": 3,
+"x": "Viren fell in the 10,000 m in 1972 but still got up to win with a world record. He repeated the double four years later.",
+"tags": [
+"athletics",
+"olympics"
+]
+},
+{
+"q": "How many teams took part in the first World Cup in 1930?",
+"a": [
+"13",
+"16",
+"8",
+"24"
+],
+"d": 3,
+"x": "Only four European teams made the long sea voyage to Uruguay: Belgium, France, Romania and Yugoslavia.",
+"tags": [
+"soccer",
+"world cup"
+]
+},
+{
+"q": "The Cresta Run, near St. Moritz, is a famous course for which sport?",
+"a": [
+"Skeleton",
+"Bobsleigh",
+"Luge",
+"Ski jumping"
+],
+"d": 3,
+"x": "Riders slide headfirst on a small sled down a natural ice channel. The run was first built in the 1880s by British visitors.",
+"tags": [
+"winter sports"
+]
+},
+{
+"q": "In which Canadian city was the first recorded indoor ice hockey game played in 1875?",
+"a": [
+"Montreal",
+"Toronto",
+"Halifax",
+"Winnipeg"
+],
+"d": 3,
+"x": "The game took place at the Victoria Skating Rink. It used a wooden puck rather than a ball to prevent it from hitting spectators.",
+"tags": [
+"ice hockey"
+]
+},
+{
+"q": "Which American became the first Black man to win the Wimbledon singles title, in 1975?",
+"a": [
+"Arthur Ashe",
+"Yannick Noah",
+"Stan Smith",
+"Jimmy Connors"
+],
+"d": 3,
+"x": "Ashe stunned the heavily favored Jimmy Connors in the final. He had also won the US Open in 1968.",
+"tags": [
+"tennis"
+]
+},
+{
+"q": "In which country did 17-year-old Pele win his first World Cup in 1958?",
+"a": [
+"Sweden",
+"Switzerland",
+"Chile",
+"Mexico"
+],
+"d": 3,
+"x": "Pele scored twice in the final as Brazil beat the hosts Sweden 5-2. He became the youngest scorer in a World Cup final.",
+"tags": [
+"soccer",
+"world cup"
+]
+},
+{
+"q": "Which method, named after two statisticians, is used to set targets in rain-affected limited-overs cricket?",
+"a": [
+"Duckworth-Lewis",
+"Bradman-Hobbs",
+"Bosanquet-Grace",
+"Wisden-Lord"
+],
+"d": 3,
+"x": "Tony Lewis and Frank Duckworth devised the system, first used in international cricket in 1997.",
+"tags": [
+"cricket"
+]
+},
+{
+"q": "Which Scottish sprinter won the 100 m at the 1980 Moscow Olympics?",
+"a": [
+"Allan Wells",
+"Linford Christie",
+"Don Quarrie",
+"Ian Stewart"
+],
+"d": 3,
+"x": "Wells won the 100 m by a hair over Cuba's Silvio Leonard. He later said he was inspired by his wife, who coached him.",
+"tags": [
+"athletics",
+"olympics"
+]
+}
+]

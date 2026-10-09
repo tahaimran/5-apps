@@ -1,0 +1,1402 @@
+[
+{
+"q": "Who invented the World Wide Web in 1989?",
+"a": [
+"Tim Berners-Lee",
+"Vint Cerf",
+"Bill Gates",
+"Steve Wozniak"
+],
+"d": 2,
+"x": "Berners-Lee worked at CERN and chose not to patent the Web, so anyone could build on it for free.",
+"tags": [
+"tech"
+]
+},
+{
+"q": "In which year was the first iPhone released to the public?",
+"a": [
+"2007",
+"2005",
+"2009",
+"2010"
+],
+"d": 2,
+"x": "It went on sale on June 29, 2007, and people lined up for days outside stores.",
+"tags": [
+"tech"
+]
+},
+{
+"q": "What does RAM stand for in computing?",
+"a": [
+"Random Access Memory",
+"Rapid Access Module",
+"Read And Modify",
+"Remote Access Memory"
+],
+"d": 2,
+"x": "RAM holds the data your computer is using right now and is wiped when the power goes off.",
+"tags": [
+"tech"
+]
+},
+{
+"q": "What does LED stand for?",
+"a": [
+"Light Emitting Diode",
+"Laser Emitting Display",
+"Linear Electric Diode",
+"Light Energy Device"
+],
+"d": 2,
+"x": "LEDs use far less energy than old incandescent bulbs and can last for tens of thousands of hours.",
+"tags": [
+"tech"
+]
+},
+{
+"q": "Which early graphical web browser, released in 1993, helped make the internet popular?",
+"a": [
+"Mosaic",
+"Netscape",
+"Opera",
+"Firefox"
+],
+"d": 2,
+"x": "Mosaic was the first browser to show images inline with text, and its creators went on to build Netscape.",
+"tags": [
+"tech"
+]
+},
+{
+"q": "Which Swedish inventor created dynamite and left money in his will for annual prizes?",
+"a": [
+"Alfred Nobel",
+"Anders Celsius",
+"Carl Linnaeus",
+"Gustaf Dalen"
+],
+"d": 2,
+"x": "Nobel patented dynamite in 1867; his will created the Nobel Prizes, first awarded in 1901.",
+"tags": [
+"inventions"
+]
+},
+{
+"q": "Which German engineer built the Patent-Motorwagen, often called the first practical automobile, in 1885?",
+"a": [
+"Karl Benz",
+"Henry Ford",
+"Rudolf Diesel",
+"Ferdinand Porsche"
+],
+"d": 2,
+"x": "His wife Bertha Benz made the first long-distance car trip in 1888 to prove the invention's worth.",
+"tags": [
+"inventions"
+]
+},
+{
+"q": "What was the name of the first artificial satellite, launched in 1957?",
+"a": [
+"Sputnik 1",
+"Explorer 1",
+"Vostok 1",
+"Telstar"
+],
+"d": 2,
+"x": "Sputnik was about the size of a beach ball and beeped radio signals for three weeks.",
+"tags": [
+"space"
+]
+},
+{
+"q": "The prefix 'tele-' in words like telephone and television means what?",
+"a": [
+"Far away",
+"Sound",
+"Picture",
+"Voice"
+],
+"d": 2,
+"x": "It comes from Greek, and the same prefix appears in telescope, telegram, and telepathy.",
+"tags": [
+"language"
+]
+},
+{
+"q": "A word spelled the same but pronounced differently, like 'lead' (to guide) and 'lead' (a metal), is called what?",
+"a": [
+"Heteronym",
+"Homophone",
+"Synonym",
+"Oxymoron"
+],
+"d": 2,
+"x": "English has many of these, such as 'tear' and 'wind'.",
+"tags": [
+"language"
+]
+},
+{
+"q": "What is a phrase like 'deafening silence' or 'jumbo shrimp' called?",
+"a": [
+"Oxymoron",
+"Paradox",
+"Pun",
+"Simile"
+],
+"d": 2,
+"x": "The word comes from Greek terms for 'sharp' and 'dull', which is itself an oxymoron.",
+"tags": [
+"language"
+]
+},
+{
+"q": "Which figure of speech compares two things using 'like' or 'as'?",
+"a": [
+"Simile",
+"Metaphor",
+"Hyperbole",
+"Irony"
+],
+"d": 2,
+"x": "A metaphor makes the same kind of comparison but without using 'like' or 'as'.",
+"tags": [
+"language"
+]
+},
+{
+"q": "Which language has the most native speakers in the world?",
+"a": [
+"Mandarin Chinese",
+"English",
+"Spanish",
+"Hindi"
+],
+"d": 2,
+"x": "English has the most total speakers when second-language speakers are counted, but Mandarin leads for native speakers.",
+"tags": [
+"language"
+]
+},
+{
+"q": "What is the study of the origin and history of words called?",
+"a": [
+"Etymology",
+"Entomology",
+"Ethology",
+"Etiquette"
+],
+"d": 2,
+"x": "Entomology, which sounds similar, is the study of insects.",
+"tags": [
+"language"
+]
+},
+{
+"q": "The word 'alphabet' is built from the first two letters of which language's alphabet?",
+"a": [
+"Greek",
+"Latin",
+"Hebrew",
+"Arabic"
+],
+"d": 2,
+"x": "The Greek letters alpha and beta were themselves borrowed from Phoenician letters meaning 'ox' and 'house'.",
+"tags": [
+"language"
+]
+},
+{
+"q": "What is the fear of heights called?",
+"a": [
+"Acrophobia",
+"Claustrophobia",
+"Agoraphobia",
+"Arachnophobia"
+],
+"d": 2,
+"x": "Acrophobia comes from the Greek word 'akron', meaning 'peak' or 'edge'.",
+"tags": [
+"language"
+]
+},
+{
+"q": "Which Japanese word, meaning 'empty orchestra', names the pastime of singing along to backing tracks?",
+"a": [
+"Karaoke",
+"Kabuki",
+"Anime",
+"Haiku"
+],
+"d": 2,
+"x": "Karaoke was popularized in Japan in the 1970s and is now enjoyed worldwide.",
+"tags": [
+"culture"
+]
+},
+{
+"q": "Which Indian festival is known as the festival of colors?",
+"a": [
+"Holi",
+"Diwali",
+"Navratri",
+"Pongal"
+],
+"d": 2,
+"x": "Participants throw colored powder at each other to celebrate the arrival of spring.",
+"tags": [
+"holidays"
+]
+},
+{
+"q": "On what date is Groundhog Day observed in North America?",
+"a": [
+"February 2",
+"January 20",
+"March 1",
+"February 14"
+],
+"d": 2,
+"x": "According to tradition, if the groundhog sees its shadow, winter will last six more weeks.",
+"tags": [
+"holidays"
+]
+},
+{
+"q": "On which date is Pi Day celebrated?",
+"a": [
+"March 14",
+"April 22",
+"June 28",
+"December 3"
+],
+"d": 2,
+"x": "The date 3/14 matches the first digits of pi, 3.14, and the day is also Albert Einstein's birthday.",
+"tags": [
+"holidays"
+]
+},
+{
+"q": "Black Friday, a major shopping day in the US, comes right after which holiday?",
+"a": [
+"Thanksgiving",
+"Halloween",
+"Labor Day",
+"Independence Day"
+],
+"d": 2,
+"x": "The name was used by Philadelphia police in the 1960s to describe the heavy traffic on that day.",
+"tags": [
+"holidays"
+]
+},
+{
+"q": "What does IPO stand for in business?",
+"a": [
+"Initial public offering",
+"Internal profit order",
+"International payment option",
+"Investment portfolio overview"
+],
+"d": 2,
+"x": "An IPO is when a private company first sells shares to the public on a stock exchange.",
+"tags": [
+"business"
+]
+},
+{
+"q": "What does GDP stand for in economics?",
+"a": [
+"Gross domestic product",
+"General deposit plan",
+"Global debt percentage",
+"Government dividend payment"
+],
+"d": 2,
+"x": "GDP measures the total value of goods and services a country produces in a given period.",
+"tags": [
+"money"
+]
+},
+{
+"q": "What do economists call a general rise in prices over time?",
+"a": [
+"Inflation",
+"Deflation",
+"Recession",
+"Depreciation"
+],
+"d": 2,
+"x": "At 3 percent inflation, something that costs $100 now would cost about $103 a year later.",
+"tags": [
+"money"
+]
+},
+{
+"q": "Which stock exchange is located on Wall Street in New York City?",
+"a": [
+"New York Stock Exchange",
+"London Stock Exchange",
+"Tokyo Stock Exchange",
+"Toronto Stock Exchange"
+],
+"d": 2,
+"x": "Wall Street got its name from a wall built by Dutch settlers in the 1600s.",
+"tags": [
+"money"
+]
+},
+{
+"q": "Which Swedish company was founded by Ingvar Kamprad?",
+"a": [
+"IKEA",
+"H&M",
+"Volvo",
+"Spotify"
+],
+"d": 2,
+"x": "The name IKEA combines his initials with the first letters of his family farm, Elmtaryd, and village, Agunnaryd.",
+"tags": [
+"business"
+]
+},
+{
+"q": "Which company was founded in 1998 by Larry Page and Sergey Brin?",
+"a": [
+"Google",
+"Yahoo",
+"Amazon",
+"eBay"
+],
+"d": 2,
+"x": "The name is a play on 'googol', the number 1 followed by 100 zeros.",
+"tags": [
+"business"
+]
+},
+{
+"q": "The yen is the official currency of which country?",
+"a": [
+"Japan",
+"China",
+"South Korea",
+"Thailand"
+],
+"d": 2,
+"x": "The word yen means 'round object' in Japanese, and the currency has been in use since 1871.",
+"tags": [
+"money"
+]
+},
+{
+"q": "Bitcoin was introduced in 2008 by a person or group using which pseudonym?",
+"a": [
+"Satoshi Nakamoto",
+"Hiroshi Nakamura",
+"Takashi Matsumoto",
+"Kenji Yamamoto"
+],
+"d": 2,
+"x": "The real identity behind the name has never been confirmed.",
+"tags": [
+"money"
+]
+},
+{
+"q": "Which animal is used as a symbol of a rising stock market?",
+"a": [
+"Bull",
+"Bear",
+"Wolf",
+"Eagle"
+],
+"d": 2,
+"x": "A bull thrusts its horns upward while a bear swipes downward, which is the usual explanation for the terms.",
+"tags": [
+"money"
+]
+},
+{
+"q": "What does LLC stand for in a company name?",
+"a": [
+"Limited liability company",
+"Limited labor council",
+"Licensed local corporation",
+"Legal liability contract"
+],
+"d": 2,
+"x": "The structure protects owners' personal assets from most business debts.",
+"tags": [
+"business"
+]
+},
+{
+"q": "A balance sheet lists a company's assets, its liabilities, and what else?",
+"a": [
+"Equity",
+"Revenue",
+"Taxes",
+"Dividends"
+],
+"d": 2,
+"x": "The sheet always balances because assets equal liabilities plus equity.",
+"tags": [
+"business"
+]
+},
+{
+"q": "Scurvy, once common among sailors on long voyages, is caused by a lack of which nutrient?",
+"a": [
+"Vitamin C",
+"Vitamin D",
+"Vitamin A",
+"Vitamin K"
+],
+"d": 2,
+"x": "Scurvy once killed many sailors on long voyages until citrus fruit was added to their diet.",
+"tags": [
+"health"
+]
+},
+{
+"q": "Which organ produces insulin?",
+"a": [
+"Pancreas",
+"Liver",
+"Kidney",
+"Spleen"
+],
+"d": 2,
+"x": "Insulin was first used to treat diabetes in 1922.",
+"tags": [
+"health"
+]
+},
+{
+"q": "What is the largest organ of the human body?",
+"a": [
+"Skin",
+"Liver",
+"Lung",
+"Intestine"
+],
+"d": 2,
+"x": "An adult's skin covers around 20 square feet and renews itself roughly every month.",
+"tags": [
+"health"
+]
+},
+{
+"q": "What does BMI stand for?",
+"a": [
+"Body Mass Index",
+"Basic Muscle Index",
+"Body Metabolic Intake",
+"Bone Mass Indicator"
+],
+"d": 2,
+"x": "It is calculated from weight and height and is only a rough screening tool.",
+"tags": [
+"health"
+]
+},
+{
+"q": "Which blood type is considered the universal donor for red blood cells?",
+"a": [
+"O negative",
+"AB positive",
+"A negative",
+"B positive"
+],
+"d": 2,
+"x": "O negative red cells lack the markers that can trigger a reaction, so they are used in emergencies.",
+"tags": [
+"health"
+]
+},
+{
+"q": "How many chambers does the human heart have?",
+"a": [
+"Four",
+"Two",
+"Three",
+"Six"
+],
+"d": 2,
+"x": "It has two upper atria and two lower ventricles.",
+"tags": [
+"health"
+]
+},
+{
+"q": "Which hormone, released in the dark, is nicknamed the sleep hormone?",
+"a": [
+"Melatonin",
+"Adrenaline",
+"Insulin",
+"Cortisol"
+],
+"d": 2,
+"x": "Bright screens at night can reduce melatonin levels and make it harder to fall asleep.",
+"tags": [
+"health"
+]
+},
+{
+"q": "Which colored part of the eye adjusts the size of the pupil?",
+"a": [
+"Iris",
+"Retina",
+"Cornea",
+"Lens"
+],
+"d": 2,
+"x": "Iris is Greek for 'rainbow', a nod to its range of colors.",
+"tags": [
+"health"
+]
+},
+{
+"q": "Which ancient Greek physician is often called the father of medicine?",
+"a": [
+"Hippocrates",
+"Galen",
+"Aristotle",
+"Socrates"
+],
+"d": 2,
+"x": "Doctors have traditionally taken an oath tied to his name, promising to act in the interest of patients.",
+"tags": [
+"health"
+]
+},
+{
+"q": "Which planet in our solar system rotates on its side?",
+"a": [
+"Uranus",
+"Neptune",
+"Saturn",
+"Mars"
+],
+"d": 2,
+"x": "Uranus is tilted about 98 degrees, so its poles take turns pointing at the Sun during its 84-year orbit.",
+"tags": [
+"space"
+]
+},
+{
+"q": "Which NASA mission carried the first humans to land on the Moon?",
+"a": [
+"Apollo 11",
+"Apollo 13",
+"Gemini 8",
+"Apollo 8"
+],
+"d": 2,
+"x": "The crew was Neil Armstrong, Buzz Aldrin, and Michael Collins, who stayed in lunar orbit.",
+"tags": [
+"space"
+]
+},
+{
+"q": "Who became the first human in space in 1961?",
+"a": [
+"Yuri Gagarin",
+"Alan Shepard",
+"John Glenn",
+"Valentina Tereshkova"
+],
+"d": 2,
+"x": "His flight aboard Vostok 1 lasted 108 minutes and made one orbit of Earth.",
+"tags": [
+"space"
+]
+},
+{
+"q": "Which space telescope, launched in 1990, is named after an American astronomer?",
+"a": [
+"Hubble",
+"Kepler",
+"Spitzer",
+"Chandra"
+],
+"d": 2,
+"x": "Its early images were blurry because of a flaw in its mirror, which astronauts fixed in 1993.",
+"tags": [
+"space"
+]
+},
+{
+"q": "In which constellation is Polaris, the North Star, found?",
+"a": [
+"Ursa Minor",
+"Ursa Major",
+"Orion",
+"Cassiopeia"
+],
+"d": 2,
+"x": "Polaris sits at the end of the Little Dipper's handle and stays nearly fixed in the northern sky.",
+"tags": [
+"space"
+]
+},
+{
+"q": "About how long does sunlight take to reach Earth?",
+"a": [
+"About 8 minutes",
+"About 8 seconds",
+"About 1 hour",
+"About 1 day"
+],
+"d": 2,
+"x": "The Sun is about 93 million miles away, and light covers it in roughly eight minutes and twenty seconds.",
+"tags": [
+"space"
+]
+},
+{
+"q": "Which Renaissance artist painted the ceiling of the Sistine Chapel?",
+"a": [
+"Michelangelo",
+"Raphael",
+"Donatello",
+"Botticelli"
+],
+"d": 2,
+"x": "Michelangelo painted it between 1508 and 1512, mostly while standing, not lying on his back.",
+"tags": [
+"art"
+]
+},
+{
+"q": "Which ancient Greek scholar is famous for shouting 'Eureka!' in a bathtub?",
+"a": [
+"Archimedes",
+"Pythagoras",
+"Euclid",
+"Plato"
+],
+"d": 2,
+"x": "The story goes that he realized how to measure an object's volume by how much water it displaced.",
+"tags": [
+"people"
+]
+},
+{
+"q": "Which Polish-born scientist won Nobel Prizes in both Physics and Chemistry?",
+"a": [
+"Marie Curie",
+"Lise Meitner",
+"Rosalind Franklin",
+"Dorothy Hodgkin"
+],
+"d": 2,
+"x": "She remains the only person to win Nobel Prizes in two different sciences.",
+"tags": [
+"people"
+]
+},
+{
+"q": "Who was the first woman to fly solo across the Atlantic Ocean?",
+"a": [
+"Amelia Earhart",
+"Bessie Coleman",
+"Jacqueline Cochran",
+"Harriet Quimby"
+],
+"d": 2,
+"x": "She made the flight in May 1932 and received a Distinguished Flying Cross for it.",
+"tags": [
+"people"
+]
+},
+{
+"q": "Which British mathematician helped break Germany's Enigma code in World War II?",
+"a": [
+"Alan Turing",
+"Charles Babbage",
+"John von Neumann",
+"Claude Shannon"
+],
+"d": 2,
+"x": "His ideas laid the foundation for modern computer science, and the Turing Award is named after him.",
+"tags": [
+"people"
+]
+},
+{
+"q": "Which English mathematician designed the Analytical Engine, a mechanical general-purpose computer, in the 1830s?",
+"a": [
+"Charles Babbage",
+"Alan Turing",
+"Blaise Pascal",
+"George Boole"
+],
+"d": 2,
+"x": "The machine was never fully built in his lifetime, but its design included a memory and a processor.",
+"tags": [
+"inventions"
+]
+},
+{
+"q": "Who is often regarded as the world's first computer programmer?",
+"a": [
+"Ada Lovelace",
+"Grace Hopper",
+"Hedy Lamarr",
+"Margaret Hamilton"
+],
+"d": 2,
+"x": "In 1843 she published an algorithm intended for Babbage's Analytical Engine.",
+"tags": [
+"people"
+]
+},
+{
+"q": "Which Italian physicist invented the first electric battery around 1800?",
+"a": [
+"Alessandro Volta",
+"Luigi Galvani",
+"Enrico Fermi",
+"Galileo Galilei"
+],
+"d": 2,
+"x": "The unit of electric potential, the volt, is named in his honor.",
+"tags": [
+"inventions"
+]
+},
+{
+"q": "A melted candy bar in an engineer's pocket in the 1940s led to the invention of which appliance?",
+"a": [
+"Microwave oven",
+"Toaster",
+"Dishwasher",
+"Blender"
+],
+"d": 2,
+"x": "Percy Spencer was testing radar equipment when he noticed the snack melting, and Raytheon soon sold the first microwave ovens.",
+"tags": [
+"inventions"
+]
+},
+{
+"q": "Velcro was inspired by the seed pods of which plant?",
+"a": [
+"Burdock",
+"Pine cone",
+"Maple tree",
+"Dandelion"
+],
+"d": 2,
+"x": "Swiss engineer George de Mestral noticed burrs stuck to his dog's fur after a walk in the 1940s.",
+"tags": [
+"inventions"
+]
+},
+{
+"q": "Who developed the first successful smallpox vaccine in 1796?",
+"a": [
+"Edward Jenner",
+"Louis Pasteur",
+"Jonas Salk",
+"Robert Koch"
+],
+"d": 2,
+"x": "The word 'vaccine' comes from the Latin 'vacca', meaning cow, because Jenner used cowpox material.",
+"tags": [
+"health"
+]
+},
+{
+"q": "Sticky notes were invented at which company?",
+"a": [
+"3M",
+"Kodak",
+"Xerox",
+"IBM"
+],
+"d": 2,
+"x": "Post-it Notes grew out of a weak adhesive discovered by Spencer Silver, with Art Fry finding a use for it as a bookmark.",
+"tags": [
+"inventions"
+]
+},
+{
+"q": "Which Hungarian professor invented a famous twisting cube puzzle in 1974?",
+"a": [
+"Erno Rubik",
+"Bela Bartok",
+"Laszlo Biro",
+"Anyos Jedlik"
+],
+"d": 2,
+"x": "He originally built it as a teaching tool to help students understand three-dimensional movement.",
+"tags": [
+"inventions"
+]
+},
+{
+"q": "Which Spanish architect designed the Sagrada Familia church in Barcelona?",
+"a": [
+"Antoni Gaudi",
+"Pablo Picasso",
+"Salvador Dali",
+"Santiago Calatrava"
+],
+"d": 2,
+"x": "Construction began in 1882, and the church is still being completed more than 140 years later.",
+"tags": [
+"landmarks"
+]
+},
+{
+"q": "In which Brazilian city does the Christ the Redeemer statue stand?",
+"a": [
+"Rio de Janeiro",
+"Sao Paulo",
+"Brasilia",
+"Salvador"
+],
+"d": 2,
+"x": "The statue stands 98 feet tall on top of Corcovado mountain and opened in 1931.",
+"tags": [
+"landmarks"
+]
+},
+{
+"q": "The glass pyramid entrance designed by I. M. Pei belongs to which Paris museum?",
+"a": [
+"The Louvre",
+"Musee d'Orsay",
+"Centre Pompidou",
+"Orangerie"
+],
+"d": 2,
+"x": "The pyramid opened in 1989 and was controversial at first because of its modern look beside the old palace.",
+"tags": [
+"landmarks"
+]
+},
+{
+"q": "Which bridge links San Francisco to Marin County across the bay's entrance?",
+"a": [
+"Golden Gate Bridge",
+"Brooklyn Bridge",
+"Bay Bridge",
+"Tower Bridge"
+],
+"d": 2,
+"x": "Its color is officially called International Orange, and it was the longest suspension bridge in the world when it opened in 1937.",
+"tags": [
+"landmarks"
+]
+},
+{
+"q": "Which London bridge, opened in 1894, is often mistaken for London Bridge?",
+"a": [
+"Tower Bridge",
+"Westminster Bridge",
+"Millennium Bridge",
+"Waterloo Bridge"
+],
+"d": 2,
+"x": "Its central sections lift so tall ships can pass through on the Thames.",
+"tags": [
+"landmarks"
+]
+},
+{
+"q": "The famous Leaning Tower stands in which Italian city?",
+"a": [
+"Pisa",
+"Florence",
+"Rome",
+"Venice"
+],
+"d": 2,
+"x": "It began to lean during construction in the 1100s because the soil beneath it was too soft.",
+"tags": [
+"landmarks"
+]
+},
+{
+"q": "Which civilization built the mountaintop city of Machu Picchu?",
+"a": [
+"Inca",
+"Aztec",
+"Maya",
+"Olmec"
+],
+"d": 2,
+"x": "It was likely built in the 1400s as an estate for an Inca emperor and was unknown to the outside world until 1911.",
+"tags": [
+"landmarks"
+]
+},
+{
+"q": "In which country is the New Year's celebration called Hogmanay observed?",
+"a": [
+"Scotland",
+"Ireland",
+"Wales",
+"England"
+],
+"d": 2,
+"x": "Traditions include 'first-footing', where the first visitor of the new year brings small gifts.",
+"tags": [
+"holidays"
+]
+},
+{
+"q": "Cinco de Mayo commemorates a military victory in which country?",
+"a": [
+"Mexico",
+"Spain",
+"Peru",
+"Argentina"
+],
+"d": 2,
+"x": "It marks the 1862 Battle of Puebla and is celebrated more widely in the US than in most of Mexico.",
+"tags": [
+"holidays"
+]
+},
+{
+"q": "According to a popular superstition, breaking a mirror brings how many years of bad luck?",
+"a": [
+"Seven",
+"Five",
+"Three",
+"Ten"
+],
+"d": 2,
+"x": "The belief goes back to the ancient Romans, who thought life renewed itself in seven-year cycles.",
+"tags": [
+"culture"
+]
+},
+{
+"q": "Which red flower is a symbol of remembrance in many Commonwealth countries each November?",
+"a": [
+"Poppy",
+"Rose",
+"Tulip",
+"Carnation"
+],
+"d": 2,
+"x": "The poppy became a symbol after wild poppies bloomed on battlefields in Europe after World War I.",
+"tags": [
+"holidays"
+]
+},
+{
+"q": "International Women's Day is observed on which date?",
+"a": [
+"March 8",
+"February 14",
+"April 22",
+"May 1"
+],
+"d": 2,
+"x": "The day has been marked since the early 1900s and is a public holiday in many countries.",
+"tags": [
+"holidays"
+]
+},
+{
+"q": "What does SMS stand for?",
+"a": [
+"Short Message Service",
+"Simple Mail System",
+"Smart Mobile Signal",
+"Sent Message Status"
+],
+"d": 2,
+"x": "The first text message was sent in December 1992.",
+"tags": [
+"tech"
+]
+},
+{
+"q": "What does URL stand for?",
+"a": [
+"Uniform Resource Locator",
+"Universal Reference Link",
+"Unified Resource Library",
+"Uniform Routing Layer"
+],
+"d": 2,
+"x": "A URL tells your browser where to find a page and how to retrieve it.",
+"tags": [
+"tech"
+]
+},
+{
+"q": "What does QR stand for in QR code?",
+"a": [
+"Quick Response",
+"Quality Reader",
+"Quantum Record",
+"Query Result"
+],
+"d": 2,
+"x": "A Japanese company invented QR codes in 1994 to track car parts, and they were designed to be read quickly.",
+"tags": [
+"tech"
+]
+},
+{
+"q": "What does JPEG stand for?",
+"a": [
+"Joint Photographic Experts Group",
+"Java Picture Encoding Graphics",
+"Joint Pixel Export Gateway",
+"Just Photo Editing Group"
+],
+"d": 2,
+"x": "It names the committee that created the image compression standard in the early 1990s.",
+"tags": [
+"tech"
+]
+},
+{
+"q": "Which company released the Walkman, its first portable cassette player, in 1979?",
+"a": [
+"Sony",
+"Panasonic",
+"Philips",
+"Toshiba"
+],
+"d": 2,
+"x": "The first Walkman was a hit, helping change how people listened to music on the go.",
+"tags": [
+"tech"
+]
+},
+{
+"q": "What does the Latin phrase 'carpe diem' mean?",
+"a": [
+"Seize the day",
+"Time flies",
+"Know thyself",
+"Live and let live"
+],
+"d": 2,
+"x": "It comes from a poem by the Roman poet Horace written around 23 BC.",
+"tags": [
+"language"
+]
+},
+{
+"q": "Which emergency phone number works across the entire European Union?",
+"a": [
+"112",
+"911",
+"999",
+"000"
+],
+"d": 2,
+"x": "112 also works from most mobile phones around the world, even without a SIM card in some regions.",
+"tags": [
+"everyday"
+]
+},
+{
+"q": "The invitation abbreviation RSVP comes from a French phrase meaning what?",
+"a": [
+"Please reply",
+"Come early",
+"Bring a gift",
+"Dress formally"
+],
+"d": 2,
+"x": "The full phrase is 'repondez s'il vous plait'.",
+"tags": [
+"language"
+]
+},
+{
+"q": "How many items are in a baker's dozen?",
+"a": [
+"13",
+"12",
+"14",
+"11"
+],
+"d": 2,
+"x": "The extra roll was originally added by bakers to avoid penalties for selling underweight bread.",
+"tags": [
+"culture"
+]
+},
+{
+"q": "Which wedding anniversary is traditionally associated with gold?",
+"a": [
+"50th",
+"25th",
+"40th",
+"60th"
+],
+"d": 2,
+"x": "The 25th anniversary is silver, and the 60th is diamond.",
+"tags": [
+"culture"
+]
+},
+{
+"q": "In the phrase 'four score and seven years ago', how many years is a score?",
+"a": [
+"Twenty",
+"Ten",
+"Twelve",
+"Thirty"
+],
+"d": 2,
+"x": "Lincoln began the Gettysburg Address this way, meaning 87 years.",
+"tags": [
+"language"
+]
+},
+{
+"q": "Which month is named in honor of Julius Caesar?",
+"a": [
+"July",
+"August",
+"June",
+"March"
+],
+"d": 2,
+"x": "August was later named after the first Roman emperor, Augustus.",
+"tags": [
+"calendar"
+]
+},
+{
+"q": "In 12-hour time, what does 'AM' stand for?",
+"a": [
+"Ante meridiem",
+"After midnight",
+"Always morning",
+"Alpha meridian"
+],
+"d": 2,
+"x": "It is Latin for 'before midday', and PM means 'post meridiem', or 'after midday'.",
+"tags": [
+"language"
+]
+},
+{
+"q": "Which number is considered especially lucky in Chinese culture because it sounds like 'prosperity'?",
+"a": [
+"Eight",
+"Four",
+"Seven",
+"Nine"
+],
+"d": 2,
+"x": "The 2008 Beijing Olympics opened on 8/8/08 at 8:08 p.m.",
+"tags": [
+"culture"
+]
+},
+{
+"q": "Which art movement is Claude Monet's 'Impression, Sunrise' associated with?",
+"a": [
+"Impressionism",
+"Cubism",
+"Surrealism",
+"Fauvism"
+],
+"d": 2,
+"x": "A critic mockingly used the painting's title to name the whole movement.",
+"tags": [
+"art"
+]
+},
+{
+"q": "The word 'kindergarten', meaning 'children's garden', comes from which language?",
+"a": [
+"German",
+"Dutch",
+"Swedish",
+"Yiddish"
+],
+"d": 2,
+"x": "Friedrich Froebel opened the first kindergarten in Germany in 1837.",
+"tags": [
+"language"
+]
+},
+{
+"q": "What is a person who collects stamps called?",
+"a": [
+"Philatelist",
+"Numismatist",
+"Deltiologist",
+"Vexillologist"
+],
+"d": 2,
+"x": "A numismatist collects coins, and a deltiologist collects postcards.",
+"tags": [
+"culture"
+]
+},
+{
+"q": "Which artist created the pop art works 'Campbell's Soup Cans'?",
+"a": [
+"Andy Warhol",
+"Roy Lichtenstein",
+"Jackson Pollock",
+"Keith Haring"
+],
+"d": 2,
+"x": "He first showed the 32 canvases in 1962, one for each soup flavor then sold.",
+"tags": [
+"art"
+]
+},
+{
+"q": "Which Spanish artist painted the anti-war mural 'Guernica'?",
+"a": [
+"Pablo Picasso",
+"Salvador Dali",
+"Joan Miro",
+"Francisco Goya"
+],
+"d": 2,
+"x": "The black, white, and gray painting is more than 25 feet wide.",
+"tags": [
+"art"
+]
+},
+{
+"q": "Which Founding Father of the United States invented the lightning rod?",
+"a": [
+"Benjamin Franklin",
+"Thomas Jefferson",
+"George Washington",
+"John Adams"
+],
+"d": 2,
+"x": "Franklin proposed it in the 1750s after studying electricity, and it protected buildings from fire.",
+"tags": [
+"inventions"
+]
+},
+{
+"q": "Which businessman introduced the moving assembly line for cars in 1913?",
+"a": [
+"Henry Ford",
+"Karl Benz",
+"Walter Chrysler",
+"Louis Chevrolet"
+],
+"d": 2,
+"x": "The assembly line cut the time to build a Model T from over 12 hours to about 90 minutes.",
+"tags": [
+"business"
+]
+},
+{
+"q": "What does the German word 'Volkswagen' mean in English?",
+"a": [
+"People's car",
+"Fast wagon",
+"Iron horse",
+"Family cart"
+],
+"d": 2,
+"x": "The company was created in 1937 to build an affordable car for ordinary families.",
+"tags": [
+"language"
+]
+},
+{
+"q": "Who created the Linux kernel in 1991?",
+"a": [
+"Linus Torvalds",
+"Richard Stallman",
+"Dennis Ritchie",
+"Ken Thompson"
+],
+"d": 2,
+"x": "He began it as a hobby project while a student in Finland; today Linux powers Android and most servers.",
+"tags": [
+"tech"
+]
+},
+{
+"q": "What is the name of the NASA rover that landed on Mars in 2021?",
+"a": [
+"Perseverance",
+"Curiosity",
+"Opportunity",
+"Spirit"
+],
+"d": 2,
+"x": "It carried a small helicopter, Ingenuity, which made the first powered flight on another planet.",
+"tags": [
+"space"
+]
+},
+{
+"q": "How many moons does Mars have?",
+"a": [
+"Two",
+"One",
+"Three",
+"Four"
+],
+"d": 2,
+"x": "Phobos and Deimos are small and lumpy and may be captured asteroids.",
+"tags": [
+"space"
+]
+},
+{
+"q": "Which comet returns to Earth's skies about every 76 years?",
+"a": [
+"Halley's Comet",
+"Hale-Bopp",
+"Hyakutake",
+"Encke"
+],
+"d": 2,
+"x": "Edmond Halley correctly predicted its return after studying earlier sightings.",
+"tags": [
+"space"
+]
+},
+{
+"q": "Which blood vessels carry blood away from the heart?",
+"a": [
+"Arteries",
+"Veins",
+"Capillaries",
+"Venules"
+],
+"d": 2,
+"x": "Arteries have thick, elastic walls to handle the pressure of each heartbeat.",
+"tags": [
+"health"
+]
+},
+{
+"q": "What is the typical resting heart rate range for a healthy adult?",
+"a": [
+"60 to 100 beats per minute",
+"30 to 45 beats per minute",
+"110 to 140 beats per minute",
+"150 to 180 beats per minute"
+],
+"d": 2,
+"x": "Very fit athletes can have a resting heart rate below 60.",
+"tags": [
+"health"
+]
+}
+]

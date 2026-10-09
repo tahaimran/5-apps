@@ -1,0 +1,115 @@
+{
+  "version": "1.0.0",
+  "locale": "en",
+  "total": 3600,
+  "categories": {
+    "general": {
+      "count": 300,
+      "byDifficulty": {
+        "1": 100,
+        "2": 100,
+        "3": 100
+      },
+      "sha256": "f8c9803ff11257941178073de8f81951598e6563021bf56f807d74a2612925f3"
+    },
+    "geography": {
+      "count": 300,
+      "byDifficulty": {
+        "1": 100,
+        "2": 100,
+        "3": 100
+      },
+      "sha256": "d880dd56e798c244cdceccd154ba2233b0943a36af79befe83546ab1399645ce"
+    },
+    "history": {
+      "count": 300,
+      "byDifficulty": {
+        "1": 100,
+        "2": 100,
+        "3": 100
+      },
+      "sha256": "7a7bb50282027fdcc0eb3c7337bf2467676b8b266b89d2b76d294a6361642d37"
+    },
+    "science": {
+      "count": 300,
+      "byDifficulty": {
+        "1": 100,
+        "2": 100,
+        "3": 100
+      },
+      "sha256": "544f398414d9b4e2b3777b47afa839e95cb05e186900aee81e3a8e939c294b53"
+    },
+    "movies": {
+      "count": 300,
+      "byDifficulty": {
+        "1": 100,
+        "2": 100,
+        "3": 100
+      },
+      "sha256": "66389717746ff1261761bd855f222b2f92c56400478e418c7b2208350cf6cf40"
+    },
+    "music": {
+      "count": 300,
+      "byDifficulty": {
+        "1": 100,
+        "2": 100,
+        "3": 100
+      },
+      "sha256": "80e2f4143450d9dcbf428e223d118528d0b23259c0024559075d21a3a6b5ca52"
+    },
+    "sports": {
+      "count": 300,
+      "byDifficulty": {
+        "1": 100,
+        "2": 100,
+        "3": 100
+      },
+      "sha256": "60d48f852276b62b5e5edb803b0dc1276d685f9dea832a7d6b07761e988e8886"
+    },
+    "animals": {
+      "count": 300,
+      "byDifficulty": {
+        "1": 100,
+        "2": 100,
+        "3": 100
+      },
+      "sha256": "eb86ded33b1a0d89a04ba7d36642544cc5baa8bacf337db9b0e8dc5afe95ce7b"
+    },
+    "food": {
+      "count": 300,
+      "byDifficulty": {
+        "1": 100,
+        "2": 100,
+        "3": 100
+      },
+      "sha256": "1b280cab8ae087fdd0d7e057151a00549e3b5ff161bbe1875afda8a124043633"
+    },
+    "literature": {
+      "count": 300,
+      "byDifficulty": {
+        "1": 100,
+        "2": 100,
+        "3": 100
+      },
+      "sha256": "3e198b74530ef6aacde25686f8e1c4d157904591b66dd65023bd48dce9e14973"
+    },
+    "logic": {
+      "count": 300,
+      "byDifficulty": {
+        "1": 100,
+        "2": 100,
+        "3": 100
+      },
+      "sha256": "1010abfb93d1863384acd947e4e432a843fdb72b2e9b37bdc6e140857bd09469"
+    },
+    "flags": {
+      "count": 300,
+      "byDifficulty": {
+        "1": 100,
+        "2": 100,
+        "3": 100
+      },
+      "sha256": "53c0a8ba601a1be787479ecec5b577bc72365c9047754e5561cf17cc4785517e"
+    }
+  }
+}

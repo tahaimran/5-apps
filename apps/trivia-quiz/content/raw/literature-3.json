@@ -1,0 +1,1473 @@
+[
+{
+"q": "Which Japanese court lady wrote The Tale of Genji in the early 11th century?",
+"a": [
+"Murasaki Shikibu",
+"Sei Shonagon",
+"Lady Nijo",
+"Ono no Komachi"
+],
+"d": 3,
+"x": "The Tale of Genji is often called the world's first novel. Sei Shonagon, her contemporary, wrote The Pillow Book.",
+"tags": [
+"japanese",
+"novel"
+]
+},
+{
+"q": "Which Persian poet composed the epic Shahnameh, the 'Book of Kings'?",
+"a": [
+"Ferdowsi",
+"Rumi",
+"Hafez",
+"Omar Khayyam"
+],
+"d": 3,
+"x": "Ferdowsi spent around thirty years on the poem of about 50,000 couplets, finishing it around the year 1010.",
+"tags": [
+"persian",
+"epic"
+]
+},
+{
+"q": "In Gulliver's Travels, what is the name of the flying island that Gulliver visits?",
+"a": [
+"Laputa",
+"Lilliput",
+"Brobdingnag",
+"Balnibarbi"
+],
+"d": 3,
+"x": "Laputa floats above the land of Balnibarbi and is home to absent-minded scientists. Swift used it to mock the learned societies of his day.",
+"tags": [
+"satire"
+]
+},
+{
+"q": "Which Argentine writer wrote the story collection Ficciones?",
+"a": [
+"Jorge Luis Borges",
+"Julio Cortazar",
+"Ernesto Sabato",
+"Roberto Bolano"
+],
+"d": 3,
+"x": "Published in 1944, it includes The Garden of Forking Paths and The Library of Babel. Borges worked for years as a librarian and became blind later in life.",
+"tags": [
+"latin american"
+]
+},
+{
+"q": "Which Chilean poet won the 1971 Nobel Prize in Literature?",
+"a": [
+"Pablo Neruda",
+"Gabriela Mistral",
+"Octavio Paz",
+"Vicente Huidobro"
+],
+"d": 3,
+"x": "Neruda was also a diplomat. His works include Twenty Love Poems and a Song of Despair. Mistral, another Chilean, won in 1945.",
+"tags": [
+"nobel",
+"poetry"
+]
+},
+{
+"q": "Which American novelist won the 1962 Nobel Prize in Literature?",
+"a": [
+"John Steinbeck",
+"William Faulkner",
+"Ernest Hemingway",
+"Sinclair Lewis"
+],
+"d": 3,
+"x": "Steinbeck's books include The Grapes of Wrath and East of Eden. The Swedish Academy praised his realism and sympathetic humor.",
+"tags": [
+"nobel",
+"american"
+]
+},
+{
+"q": "Which French philosopher and writer declined the 1964 Nobel Prize in Literature?",
+"a": [
+"Jean-Paul Sartre",
+"Albert Camus",
+"Andre Malraux",
+"Simone de Beauvoir"
+],
+"d": 3,
+"x": "Sartre said he always refused official honors. His works include the novel Nausea and the play No Exit.",
+"tags": [
+"nobel",
+"french"
+]
+},
+{
+"q": "Which Hermann Hesse novel follows a young man on a spiritual search in ancient India?",
+"a": [
+"Siddhartha",
+"Steppenwolf",
+"Demian",
+"The Glass Bead Game"
+],
+"d": 3,
+"x": "Published in 1922, it is set in the time of the Buddha. Hesse won the Nobel Prize in Literature in 1946.",
+"tags": [
+"german",
+"nobel"
+]
+},
+{
+"q": "Which novel opens with the line 'Last night I dreamt I went to Manderley again'?",
+"a": [
+"Rebecca",
+"Jamaica Inn",
+"Jane Eyre",
+"The Woman in White"
+],
+"d": 3,
+"x": "Daphne du Maurier published Rebecca in 1938. The unnamed narrator never learns the first name of the title character's husband's new wife in the story, and is simply called the second Mrs. de Winter.",
+"tags": [
+"quotation",
+"gothic"
+]
+},
+{
+"q": "In Orwell's 1984, what time are the clocks striking in the novel's famous first line?",
+"a": [
+"Thirteen",
+"Midnight",
+"Noon",
+"Seven"
+],
+"d": 3,
+"x": "The first sentence reads 'It was a bright cold day in April, and the clocks were striking thirteen.' The odd detail signals that this world is not our own.",
+"tags": [
+"quotation",
+"dystopia"
+]
+},
+{
+"q": "In which fictional village does Agatha Christie's Miss Marple live?",
+"a": [
+"St Mary Mead",
+"Little Whinging",
+"Midsomer Worthy",
+"Cranford"
+],
+"d": 3,
+"x": "Miss Marple first appeared in the 1927 short story The Tuesday Night Club. She solves crimes by comparing them to village gossip.",
+"tags": [
+"detective"
+]
+},
+{
+"q": "Who guides Dante through Hell and Purgatory in the Divine Comedy?",
+"a": [
+"Virgil",
+"Beatrice",
+"Homer",
+"Boethius"
+],
+"d": 3,
+"x": "Dante picked Virgil as the model of human reason. Beatrice takes over to lead him through Paradise.",
+"tags": [
+"poetry",
+"italian"
+]
+},
+{
+"q": "In The Canterbury Tales, at which inn do the pilgrims meet before setting out?",
+"a": [
+"The Tabard",
+"The Boar's Head",
+"The Mermaid",
+"The White Hart"
+],
+"d": 3,
+"x": "The Tabard Inn stood in Southwark, south of the Thames in London. The pilgrims agree to a storytelling contest on the way to Canterbury.",
+"tags": [
+"medieval"
+]
+},
+{
+"q": "In what language was the epic Beowulf originally composed?",
+"a": [
+"Old English",
+"Old Norse",
+"Latin",
+"Middle English"
+],
+"d": 3,
+"x": "The only surviving manuscript dates from around the year 1000. The poem is set in Scandinavia, though it was composed in England.",
+"tags": [
+"medieval",
+"epic"
+]
+},
+{
+"q": "In the 14th-century Arthurian poem about a green challenger, which knight accepts the beheading game?",
+"a": [
+"Sir Gawain",
+"Sir Lancelot",
+"Sir Galahad",
+"Sir Percival"
+],
+"d": 3,
+"x": "Gawain is King Arthur's nephew. The 14th-century poem survives in a single manuscript, possibly written by the anonymous Pearl Poet.",
+"tags": [
+"medieval",
+"legend"
+]
+},
+{
+"q": "Who wrote Le Morte d'Arthur, printed by William Caxton in 1485?",
+"a": [
+"Thomas Malory",
+"Geoffrey of Monmouth",
+"Chretien de Troyes",
+"Edmund Spenser"
+],
+"d": 3,
+"x": "Malory is thought to have written it while imprisoned. It remains the best-known English version of the Arthurian legends.",
+"tags": [
+"legend",
+"medieval"
+]
+},
+{
+"q": "Which Elizabethan poet wrote the allegorical epic The Faerie Queene?",
+"a": [
+"Edmund Spenser",
+"Philip Sidney",
+"John Donne",
+"Michael Drayton"
+],
+"d": 3,
+"x": "Spenser wrote it in honor of Queen Elizabeth I and published the first books in 1590. He invented the Spenserian stanza for it.",
+"tags": [
+"poetry",
+"epic"
+]
+},
+{
+"q": "Which Elizabethan playwright wrote Doctor Faustus?",
+"a": [
+"Christopher Marlowe",
+"Thomas Kyd",
+"Ben Jonson",
+"Thomas Middleton"
+],
+"d": 3,
+"x": "Marlowe was born in the same year as Shakespeare, 1564. He was killed in a tavern brawl in 1593 at the age of 29.",
+"tags": [
+"drama"
+]
+},
+{
+"q": "Which playwright wrote the satirical comedy Volpone?",
+"a": [
+"Ben Jonson",
+"Thomas Dekker",
+"John Webster",
+"Christopher Marlowe"
+],
+"d": 3,
+"x": "Jonson first staged Volpone around 1606. Its title means 'sly fox' and it is set in Venice.",
+"tags": [
+"drama"
+]
+},
+{
+"q": "Which poet wrote the line 'To err is human; to forgive, divine'?",
+"a": [
+"Alexander Pope",
+"John Dryden",
+"Samuel Johnson",
+"Jonathan Swift"
+],
+"d": 3,
+"x": "It appears in An Essay on Criticism (1711). The same poem gave us 'a little learning is a dangerous thing' and 'fools rush in where angels fear to tread.'",
+"tags": [
+"poetry",
+"quotation"
+]
+},
+{
+"q": "Which writer published A Dictionary of the English Language in 1755?",
+"a": [
+"Samuel Johnson",
+"James Boswell",
+"Noah Webster",
+"Oliver Goldsmith"
+],
+"d": 3,
+"x": "Johnson compiled it largely by himself in about nine years. It defined thousands of words with quotations from famous writers.",
+"tags": [
+"english"
+]
+},
+{
+"q": "Who wrote the comic novel Tom Jones?",
+"a": [
+"Henry Fielding",
+"Samuel Richardson",
+"Laurence Sterne",
+"Tobias Smollett"
+],
+"d": 3,
+"x": "Fielding published The History of Tom Jones, a Foundling in 1749. He was also a magistrate and helped found London's Bow Street Runners.",
+"tags": [
+"novel",
+"english"
+]
+},
+{
+"q": "Which 18th-century novel by Laurence Sterne is famous for its digressions and a narrator who struggles to tell his own life story?",
+"a": [
+"Tristram Shandy",
+"Pamela",
+"Clarissa",
+"Joseph Andrews"
+],
+"d": 3,
+"x": "The Life and Opinions of Tristram Shandy, Gentleman appeared from 1759 to 1767. It includes a black page and a marbled page, a playful experiment in book design.",
+"tags": [
+"novel",
+"english"
+]
+},
+{
+"q": "Which Scottish author wrote the historical novel Ivanhoe?",
+"a": [
+"Walter Scott",
+"Robert Louis Stevenson",
+"James Hogg",
+"Robert Burns"
+],
+"d": 3,
+"x": "Published in 1819, Ivanhoe is set in 12th-century England and features Robin Hood, called Locksley. Scott helped popularize the historical novel.",
+"tags": [
+"novel",
+"historical"
+]
+},
+{
+"q": "Who wrote Vanity Fair, which features the ambitious Becky Sharp?",
+"a": [
+"William Makepeace Thackeray",
+"Charles Dickens",
+"Anthony Trollope",
+"Elizabeth Gaskell"
+],
+"d": 3,
+"x": "The novel was serialized in 1847-48 and carries the subtitle 'A Novel without a Hero.' Thackeray also drew its illustrations.",
+"tags": [
+"novel",
+"english"
+]
+},
+{
+"q": "In which George Eliot novel does the idealistic Dorothea Brooke appear?",
+"a": [
+"Middlemarch",
+"Silas Marner",
+"Adam Bede",
+"Daniel Deronda"
+],
+"d": 3,
+"x": "Middlemarch (1871-72) is set in a fictional English Midlands town. Virginia Woolf called it one of the few English novels written for grown-up people.",
+"tags": [
+"novel",
+"english"
+]
+},
+{
+"q": "Which Polish-born novelist wrote Heart of Darkness?",
+"a": [
+"Joseph Conrad",
+"Henryk Sienkiewicz",
+"Bruno Schulz",
+"Stanislaw Lem"
+],
+"d": 3,
+"x": "Conrad was born Jozef Teodor Konrad Korzeniowski. He learned English as an adult after years at sea and wrote the novella in 1899.",
+"tags": [
+"novel"
+]
+},
+{
+"q": "Who wrote the ghost story The Turn of the Screw?",
+"a": [
+"Henry James",
+"Edith Wharton",
+"Nathaniel Hawthorne",
+"Oscar Wilde"
+],
+"d": 3,
+"x": "James published it in 1898. Readers still debate whether the ghosts are real or only the governess's imagination.",
+"tags": [
+"gothic",
+"american"
+]
+},
+{
+"q": "Which Edith Wharton novel won the 1921 Pulitzer Prize for Fiction?",
+"a": [
+"The Age of Innocence",
+"The House of Mirth",
+"Ethan Frome",
+"The Custom of the Country"
+],
+"d": 3,
+"x": "Wharton was the first woman to win the Pulitzer Prize for Fiction. The novel is set in the high society of 1870s New York.",
+"tags": [
+"american",
+"novel"
+]
+},
+{
+"q": "Which Mississippi author wrote The Sound and the Fury?",
+"a": [
+"William Faulkner",
+"Eudora Welty",
+"Richard Wright",
+"Tennessee Williams"
+],
+"d": 3,
+"x": "Faulkner published it in 1929. It is told in four sections, the first narrated by a man with an intellectual disability. He won the Nobel Prize in 1949.",
+"tags": [
+"american",
+"novel"
+]
+},
+{
+"q": "Which Virginia Woolf novel follows a single day in the life of a London hostess preparing for a party?",
+"a": [
+"Mrs Dalloway",
+"To the Lighthouse",
+"Orlando",
+"The Waves"
+],
+"d": 3,
+"x": "Published in 1925, the novel moves between the minds of several characters. It begins with the hostess saying she will buy the flowers herself.",
+"tags": [
+"modernist",
+"novel"
+]
+},
+{
+"q": "On what date is James Joyce's Ulysses set, now celebrated as Bloomsday?",
+"a": [
+"June 16, 1904",
+"March 17, 1904",
+"June 4, 1914",
+"December 16, 1904"
+],
+"d": 3,
+"x": "The date marks Joyce's first outing with his future wife, Nora Barnacle. The novel follows Leopold Bloom through a single day in Dublin.",
+"tags": [
+"modernist",
+"irish"
+]
+},
+{
+"q": "In Proust's In Search of Lost Time, what small cake triggers the narrator's memories?",
+"a": [
+"A madeleine",
+"A croissant",
+"An eclair",
+"A macaron"
+],
+"d": 3,
+"x": "The narrator dips the cake in tea and is flooded with childhood memories. 'Proustian' now describes a memory triggered by taste or smell.",
+"tags": [
+"french",
+"novel"
+]
+},
+{
+"q": "Who wrote the novel Madame Bovary, published in 1857?",
+"a": [
+"Gustave Flaubert",
+"Emile Zola",
+"Honore de Balzac",
+"Stendhal"
+],
+"d": 3,
+"x": "Flaubert was prosecuted for offending public morals over the book but was acquitted. He was famously obsessed with finding le mot juste, the exact word.",
+"tags": [
+"french",
+"novel"
+]
+},
+{
+"q": "Which Russian author wrote the satirical novel Dead Souls?",
+"a": [
+"Nikolai Gogol",
+"Ivan Turgenev",
+"Mikhail Lermontov",
+"Alexander Pushkin"
+],
+"d": 3,
+"x": "The 1842 novel follows a con man buying the names of dead serfs. Gogol also wrote the play The Government Inspector.",
+"tags": [
+"russian",
+"satire"
+]
+},
+{
+"q": "Which Russian author won the 1958 Nobel Prize in Literature but was pressured to decline it?",
+"a": [
+"Boris Pasternak",
+"Mikhail Sholokhov",
+"Ivan Bunin",
+"Aleksandr Solzhenitsyn"
+],
+"d": 3,
+"x": "Pasternak's novel Doctor Zhivago was banned in the Soviet Union and first published in Italy in 1957. Soviet officials forced him to refuse the prize.",
+"tags": [
+"nobel",
+"russian"
+]
+},
+{
+"q": "Which Soviet author wrote One Day in the Life of Ivan Denisovich?",
+"a": [
+"Aleksandr Solzhenitsyn",
+"Vasily Grossman",
+"Varlam Shalamov",
+"Mikhail Sholokhov"
+],
+"d": 3,
+"x": "The 1962 novella draws on the author's own years in a labor camp. Solzhenitsyn won the Nobel Prize in 1970.",
+"tags": [
+"russian",
+"nobel"
+]
+},
+{
+"q": "Which Swedish playwright wrote Miss Julie?",
+"a": [
+"August Strindberg",
+"Henrik Ibsen",
+"Ingmar Bergman",
+"Hjalmar Bergman"
+],
+"d": 3,
+"x": "Strindberg wrote the play in 1888. It takes place in a single room during one midsummer night and is a landmark of naturalist drama.",
+"tags": [
+"drama"
+]
+},
+{
+"q": "Which Swedish author was the first woman to win the Nobel Prize in Literature, in 1909?",
+"a": [
+"Selma Lagerlof",
+"Astrid Lindgren",
+"Sigrid Undset",
+"Karin Boye"
+],
+"d": 3,
+"x": "Lagerlof also wrote The Wonderful Adventures of Nils, a children's geography reader. Undset, a Norwegian, won in 1928.",
+"tags": [
+"nobel"
+]
+},
+{
+"q": "Which Swedish author created Pippi Longstocking?",
+"a": [
+"Astrid Lindgren",
+"Tove Jansson",
+"Selma Lagerlof",
+"Maria Gripe"
+],
+"d": 3,
+"x": "The first Pippi book appeared in 1945. Lindgren invented the stories while sitting at the bedside of her sick daughter.",
+"tags": [
+"children"
+]
+},
+{
+"q": "Which Finnish author and artist created the Moomins?",
+"a": [
+"Tove Jansson",
+"Astrid Lindgren",
+"Elsa Beskow",
+"Selma Lagerlof"
+],
+"d": 3,
+"x": "Jansson wrote in Swedish, which is Finland's second official language. The first Moomin book appeared in 1945.",
+"tags": [
+"children"
+]
+},
+{
+"q": "Which Italian scholar wrote the medieval murder mystery The Name of the Rose?",
+"a": [
+"Umberto Eco",
+"Italo Calvino",
+"Primo Levi",
+"Alberto Moravia"
+],
+"d": 3,
+"x": "Published in 1980, it is set in an abbey in 1327. Eco was a professor of semiotics at the University of Bologna.",
+"tags": [
+"italian",
+"novel"
+]
+},
+{
+"q": "Which Italian author wrote the Decameron, in which ten young people tell tales while escaping the plague?",
+"a": [
+"Giovanni Boccaccio",
+"Dante Alighieri",
+"Petrarch",
+"Ludovico Ariosto"
+],
+"d": 3,
+"x": "The group flees plague-stricken Florence in 1348 and tells 100 tales over ten days. Chaucer borrowed from Boccaccio.",
+"tags": [
+"italian",
+"medieval"
+]
+},
+{
+"q": "Who was the woman celebrated in Petrarch's love sonnets?",
+"a": [
+"Laura",
+"Beatrice",
+"Fiammetta",
+"Juliet"
+],
+"d": 3,
+"x": "Petrarch said he first saw her in a church in Avignon in 1327. The Petrarchan sonnet form is named after him.",
+"tags": [
+"poetry",
+"italian"
+]
+},
+{
+"q": "Which French playwright wrote the comedy Tartuffe?",
+"a": [
+"Moliere",
+"Jean Racine",
+"Pierre Corneille",
+"Beaumarchais"
+],
+"d": 3,
+"x": "Moliere's 1664 comedy about a religious hypocrite was banned for several years after powerful figures objected. He collapsed on stage in 1673 during a performance of The Imaginary Invalid.",
+"tags": [
+"drama",
+"french"
+]
+},
+{
+"q": "Which 1759 satire by Voltaire follows an optimistic young man and his tutor Pangloss?",
+"a": [
+"Candide",
+"Zadig",
+"Micromegas",
+"Le Mondain"
+],
+"d": 3,
+"x": "Pangloss insists that this is the best of all possible worlds despite the disasters that follow. Voltaire's tale mocks facile optimism.",
+"tags": [
+"french",
+"satire"
+]
+},
+{
+"q": "Who wrote the play Cyrano de Bergerac?",
+"a": [
+"Edmond Rostand",
+"Victor Hugo",
+"Alfred de Musset",
+"Alexandre Dumas"
+],
+"d": 3,
+"x": "First staged in 1897, the play features a poet with an enormous nose. The real Cyrano de Bergerac was a 17th-century writer and duelist.",
+"tags": [
+"drama",
+"french"
+]
+},
+{
+"q": "Which Egyptian novelist won the 1988 Nobel Prize in Literature and wrote the Cairo Trilogy?",
+"a": [
+"Naguib Mahfouz",
+"Taha Hussein",
+"Alaa Al Aswany",
+"Tawfiq al-Hakim"
+],
+"d": 3,
+"x": "Mahfouz was the first Arabic-language writer to win the Nobel Prize in Literature. His trilogy follows a Cairo family across three generations.",
+"tags": [
+"nobel",
+"arabic"
+]
+},
+{
+"q": "Which Japanese author of Snow Country won the 1968 Nobel Prize in Literature?",
+"a": [
+"Yasunari Kawabata",
+"Yukio Mishima",
+"Kenzaburo Oe",
+"Junichiro Tanizaki"
+],
+"d": 3,
+"x": "Kawabata was the first Japanese writer to receive the prize. Kenzaburo Oe followed in 1994.",
+"tags": [
+"nobel",
+"japanese"
+]
+},
+{
+"q": "Who wrote the Japanese satirical novel I Am a Cat, published in 1905?",
+"a": [
+"Natsume Soseki",
+"Ryunosuke Akutagawa",
+"Osamu Dazai",
+"Mori Ogai"
+],
+"d": 3,
+"x": "The novel is narrated by a cat who observes the foibles of his human owner's circle. Soseki also wrote Kokoro and Botchan.",
+"tags": [
+"japanese",
+"novel"
+]
+},
+{
+"q": "Who wrote the 18th-century Chinese novel Dream of the Red Chamber?",
+"a": [
+"Cao Xueqin",
+"Wu Cheng'en",
+"Luo Guanzhong",
+"Shi Nai'an"
+],
+"d": 3,
+"x": "Cao Xueqin did not live to finish it, and later editors added the last forty chapters. It is one of China's Four Great Classical Novels.",
+"tags": [
+"chinese",
+"novel"
+]
+},
+{
+"q": "Which Nigerian playwright became the first African to win the Nobel Prize in Literature, in 1986?",
+"a": [
+"Wole Soyinka",
+"Chinua Achebe",
+"Ben Okri",
+"Ngugi wa Thiong'o"
+],
+"d": 3,
+"x": "Soyinka's works include the play Death and the King's Horseman. He was also imprisoned during the Nigerian civil war.",
+"tags": [
+"nobel",
+"african"
+]
+},
+{
+"q": "Which Chilean author wrote the 1982 novel The House of the Spirits?",
+"a": [
+"Isabel Allende",
+"Gabriela Mistral",
+"Laura Esquivel",
+"Clarice Lispector"
+],
+"d": 3,
+"x": "Allende began the book as a letter to her dying grandfather while in exile in Venezuela. It follows the Trueba family across generations.",
+"tags": [
+"latin american",
+"novel"
+]
+},
+{
+"q": "Which author wrote the Arthurian fantasy The Once and Future King?",
+"a": [
+"T. H. White",
+"Mary Stewart",
+"Marion Zimmer Bradley",
+"Bernard Cornwell"
+],
+"d": 3,
+"x": "White published it as a single volume in 1958. Its first part, The Sword in the Stone, was adapted by Disney.",
+"tags": [
+"fantasy",
+"legend"
+]
+},
+{
+"q": "Which German author wrote The Neverending Story?",
+"a": [
+"Michael Ende",
+"Erich Kastner",
+"Otfried Preussler",
+"Cornelia Funke"
+],
+"d": 3,
+"x": "Published in 1979, it follows a boy who reads a book that pulls him into the land of Fantastica. Ende also wrote Momo.",
+"tags": [
+"fantasy",
+"children"
+]
+},
+{
+"q": "Which was the first Chronicles of Narnia book to be published, in 1950?",
+"a": [
+"The Lion, the Witch and the Wardrobe",
+"The Magician's Nephew",
+"Prince Caspian",
+"The Horse and His Boy"
+],
+"d": 3,
+"x": "The Magician's Nephew comes first in the story's chronology but was published in 1955.",
+"tags": [
+"fantasy"
+]
+},
+{
+"q": "What was the title of Dr. Seuss's first children's book, published in 1937?",
+"a": [
+"And to Think That I Saw It on Mulberry Street",
+"The 500 Hats of Bartholomew Cubbins",
+"Horton Hears a Who!",
+"If I Ran the Zoo"
+],
+"d": 3,
+"x": "Rejected by many publishers, it finally came out in 1937. Seuss later said he was about to burn the manuscript when he ran into an old friend who worked in publishing.",
+"tags": [
+"children"
+]
+},
+{
+"q": "In which year was Frankenstein first published?",
+"a": [
+"1818",
+"1816",
+"1823",
+"1831"
+],
+"d": 3,
+"x": "The first edition appeared anonymously in 1818. Mary Shelley's name was first printed on the 1823 edition and she revised the text in 1831.",
+"tags": [
+"gothic"
+]
+},
+{
+"q": "In which year was Bram Stoker's Dracula published?",
+"a": [
+"1897",
+"1886",
+"1901",
+"1912"
+],
+"d": 3,
+"x": "Stoker based the title on Vlad the Impaler's name, Dracula. He also worked as the business manager of the Lyceum Theatre in London.",
+"tags": [
+"gothic"
+]
+},
+{
+"q": "Jane Eyre and Wuthering Heights were both published in which year?",
+"a": [
+"1847",
+"1837",
+"1851",
+"1859"
+],
+"d": 3,
+"x": "Charlotte's Jane Eyre came out in October and Emily's Wuthering Heights in December. Anne's Agnes Grey appeared with the latter.",
+"tags": [
+"bronte"
+]
+},
+{
+"q": "In which year was Pride and Prejudice first published?",
+"a": [
+"1813",
+"1811",
+"1818",
+"1801"
+],
+"d": 3,
+"x": "Austen sold the copyright for 110 pounds. It was her second published novel.",
+"tags": [
+"english"
+]
+},
+{
+"q": "In which year was Melville's Moby-Dick first published?",
+"a": [
+"1851",
+"1841",
+"1861",
+"1875"
+],
+"d": 3,
+"x": "Moby-Dick got mixed reviews and sold poorly. Its reputation grew in the 20th century, decades after Melville died in 1891.",
+"tags": [
+"american"
+]
+},
+{
+"q": "In which year was the first part of Don Quixote published?",
+"a": [
+"1605",
+"1588",
+"1616",
+"1650"
+],
+"d": 3,
+"x": "Cervantes published the second part in 1615. A spurious sequel by another writer had appeared in 1614 and prompted him to finish his own.",
+"tags": [
+"spanish"
+]
+},
+{
+"q": "In which 1920 play did the word 'robot' first appear?",
+"a": [
+"R.U.R.",
+"The Machine Stops",
+"We",
+"Metropolis"
+],
+"d": 3,
+"x": "The Czech play R.U.R. (Rossum's Universal Robots) by Karel Capek premiered in 1921. The word comes from the Czech robota, meaning forced labor.",
+"tags": [
+"science fiction",
+"drama"
+]
+},
+{
+"q": "Which World War I poet wrote 'Dulce et Decorum Est'?",
+"a": [
+"Wilfred Owen",
+"Rupert Brooke",
+"Siegfried Sassoon",
+"Edward Thomas"
+],
+"d": 3,
+"x": "Owen was killed in 1918, one week before the Armistice. Only a handful of his poems were published in his lifetime.",
+"tags": [
+"poetry"
+]
+},
+{
+"q": "Which Canadian doctor wrote the poem 'In Flanders Fields'?",
+"a": [
+"John McCrae",
+"Robert Service",
+"Rupert Brooke",
+"Alan Seeger"
+],
+"d": 3,
+"x": "McCrae wrote it in 1915 after a friend's death. The poem helped make the red poppy a symbol of remembrance.",
+"tags": [
+"poetry"
+]
+},
+{
+"q": "Which poet laureate wrote the Arthurian cycle Idylls of the King?",
+"a": [
+"Alfred, Lord Tennyson",
+"Robert Browning",
+"Matthew Arnold",
+"Algernon Swinburne"
+],
+"d": 3,
+"x": "Tennyson worked on the Idylls for about 40 years and became poet laureate in 1850. He also wrote In Memoriam.",
+"tags": [
+"poetry",
+"legend"
+]
+},
+{
+"q": "Which Scottish poet is credited with writing 'Auld Lang Syne'?",
+"a": [
+"Robert Burns",
+"Walter Scott",
+"James Hogg",
+"Hugh MacDiarmid"
+],
+"d": 3,
+"x": "Burns sent the song to a collector in 1788 and said he had taken it down from an old man's singing. It is traditionally sung at New Year.",
+"tags": [
+"poetry",
+"scottish"
+]
+},
+{
+"q": "Which Irish poet won the 1923 Nobel Prize in Literature?",
+"a": [
+"W. B. Yeats",
+"George Bernard Shaw",
+"Seamus Heaney",
+"Samuel Beckett"
+],
+"d": 3,
+"x": "Yeats was the first Irish writer to win the prize. He later served as a senator of the Irish Free State.",
+"tags": [
+"nobel",
+"poetry"
+]
+},
+{
+"q": "Which Irish poet won the 1995 Nobel Prize in Literature?",
+"a": [
+"Seamus Heaney",
+"W. B. Yeats",
+"Patrick Kavanagh",
+"Louis MacNeice"
+],
+"d": 3,
+"x": "Heaney's collections include Death of a Naturalist. His poems often draw on rural life in Northern Ireland, where he grew up on a farm.",
+"tags": [
+"nobel",
+"poetry"
+]
+},
+{
+"q": "Who wrote the semi-autobiographical novel The Bell Jar?",
+"a": [
+"Sylvia Plath",
+"Anne Sexton",
+"Adrienne Rich",
+"Joyce Carol Oates"
+],
+"d": 3,
+"x": "It appeared in 1963 under the pseudonym Victoria Lucas, a month before Plath died. It was published under her own name in 1966.",
+"tags": [
+"american",
+"novel"
+]
+},
+{
+"q": "Who wrote the 1969 memoir I Know Why the Caged Bird Sings?",
+"a": [
+"Maya Angelou",
+"Toni Morrison",
+"Alice Walker",
+"Gwendolyn Brooks"
+],
+"d": 3,
+"x": "It is the first of seven autobiographies by Angelou, who read her poem at Bill Clinton's 1993 inauguration.",
+"tags": [
+"american",
+"memoir"
+]
+},
+{
+"q": "Who wrote the 1952 novel Invisible Man?",
+"a": [
+"Ralph Ellison",
+"James Baldwin",
+"Richard Wright",
+"Langston Hughes"
+],
+"d": 3,
+"x": "It won the 1953 National Book Award. Ellison's novel is not about a literal invisible person but about social invisibility.",
+"tags": [
+"american",
+"novel"
+]
+},
+{
+"q": "Which ancient Greek tragedian wrote Medea?",
+"a": [
+"Euripides",
+"Sophocles",
+"Aeschylus",
+"Aristophanes"
+],
+"d": 3,
+"x": "The play was first staged in 431 BC. Euripides is known for giving his female characters strong psychological depth.",
+"tags": [
+"greek",
+"drama"
+]
+},
+{
+"q": "Which Greek philosopher's Poetics discusses tragedy and the idea of catharsis?",
+"a": [
+"Aristotle",
+"Plato",
+"Socrates",
+"Plutarch"
+],
+"d": 3,
+"x": "Aristotle argued that tragedy purges the audience's pity and fear. The Poetics is the earliest surviving work of dramatic theory.",
+"tags": [
+"greek",
+"literary term"
+]
+},
+{
+"q": "What is it called when a sentence runs over a line break in poetry without a pause?",
+"a": [
+"Enjambment",
+"Caesura",
+"Elision",
+"Apostrophe"
+],
+"d": 3,
+"x": "The word comes from the French for 'straddling.' A caesura, by contrast, is a pause within a line.",
+"tags": [
+"literary term",
+"poetry"
+]
+},
+{
+"q": "Which fixed poetic form has 19 lines and two repeating refrains?",
+"a": [
+"Villanelle",
+"Sestina",
+"Ballade",
+"Rondeau"
+],
+"d": 3,
+"x": "Dylan Thomas's 'Do Not Go Gentle into That Good Night' is the most famous English villanelle. Elizabeth Bishop's 'One Art' is another.",
+"tags": [
+"literary term",
+"poetry"
+]
+},
+{
+"q": "Under what pen name did the young Charles Dickens publish his early newspaper sketches?",
+"a": [
+"Boz",
+"Phiz",
+"Elia",
+"Ouida"
+],
+"d": 3,
+"x": "Sketches by Boz appeared in 1836. Boz was a family nickname for Dickens's younger brother.",
+"tags": [
+"pen name",
+"dickens"
+]
+},
+{
+"q": "Which Bronte sister wrote The Tenant of Wildfell Hall?",
+"a": [
+"Anne",
+"Charlotte",
+"Emily",
+"Branwell"
+],
+"d": 3,
+"x": "Anne's 1848 novel features a woman who leaves her abusive husband. It was a bold subject for its time.",
+"tags": [
+"bronte",
+"novel"
+]
+},
+{
+"q": "Which Shakespeare tragedy is the shortest of the tragedies?",
+"a": [
+"Macbeth",
+"Hamlet",
+"Othello",
+"King Lear"
+],
+"d": 3,
+"x": "Macbeth runs about 2,100 lines, roughly half the length of Hamlet. Hamlet is Shakespeare's longest play.",
+"tags": [
+"shakespeare"
+]
+},
+{
+"q": "How many plays were printed in Shakespeare's First Folio of 1623?",
+"a": [
+"36",
+"32",
+"38",
+"40"
+],
+"d": 3,
+"x": "Half of the 36 plays, including Macbeth and The Tempest, had never been printed before and might have been lost without the Folio.",
+"tags": [
+"shakespeare"
+]
+},
+{
+"q": "In which Shakespeare play does the stage direction 'Exit, pursued by a bear' appear?",
+"a": [
+"The Winter's Tale",
+"The Tempest",
+"Cymbeline",
+"Titus Andronicus"
+],
+"d": 3,
+"x": "The direction occurs in Act 3 and is one of the most famous in drama. Scholars debate whether a real bear or an actor in a costume was used.",
+"tags": [
+"shakespeare",
+"quotation"
+]
+},
+{
+"q": "In Twelfth Night, what name does Viola use when she disguises herself as a man?",
+"a": [
+"Cesario",
+"Orsino",
+"Sebastian",
+"Malvolio"
+],
+"d": 3,
+"x": "Viola's disguise creates a tangle of mistaken love. Her twin brother Sebastian, whom she thinks is dead, finally appears.",
+"tags": [
+"shakespeare"
+]
+},
+{
+"q": "Who is Hamlet's loyal friend who survives the play?",
+"a": [
+"Horatio",
+"Laertes",
+"Rosencrantz",
+"Fortinbras"
+],
+"d": 3,
+"x": "Hamlet asks Horatio to tell his story to the world. Horatio is a fellow student from Wittenberg.",
+"tags": [
+"shakespeare",
+"character"
+]
+},
+{
+"q": "At which Danish castle is Hamlet set?",
+"a": [
+"Elsinore",
+"Dunsinane",
+"Kronborg Hall",
+"Fredensborg"
+],
+"d": 3,
+"x": "Elsinore is the English name for Helsingor. Kronborg Castle there is traditionally associated with the play.",
+"tags": [
+"shakespeare"
+]
+},
+{
+"q": "Which Jane Austen novel features Anne Elliot and Captain Wentworth?",
+"a": [
+"Persuasion",
+"Emma",
+"Mansfield Park",
+"Northanger Abbey"
+],
+"d": 3,
+"x": "Persuasion was Austen's last completed novel and was published posthumously in 1817. Its heroine is 27, old by the standards of the time.",
+"tags": [
+"english",
+"novel"
+]
+},
+{
+"q": "Which Dickens novel centers on the endless lawsuit of Jarndyce and Jarndyce?",
+"a": [
+"Bleak House",
+"Little Dorrit",
+"Our Mutual Friend",
+"Hard Times"
+],
+"d": 3,
+"x": "Published in 1852-53, it mocks the slow Court of Chancery. The lawsuit is so old that no one remembers what it is about.",
+"tags": [
+"dickens"
+]
+},
+{
+"q": "In which Dickens novel does the falsely humble clerk Uriah Heep appear?",
+"a": [
+"David Copperfield",
+"Oliver Twist",
+"Nicholas Nickleby",
+"Dombey and Son"
+],
+"d": 3,
+"x": "Heep repeatedly insists that he is 'umble'. Dickens called David Copperfield his 'favourite child' among his novels.",
+"tags": [
+"dickens",
+"character"
+]
+},
+{
+"q": "Which 1873 Mark Twain novel, co-written with Charles Dudley Warner, gave a name to an era?",
+"a": [
+"The Gilded Age",
+"The Innocents Abroad",
+"Roughing It",
+"The Prince and the Pauper"
+],
+"d": 3,
+"x": "The satirical novel of greed and corruption lent its title to the late 19th-century period of American history.",
+"tags": [
+"american",
+"novel"
+]
+},
+{
+"q": "Which Henry David Thoreau book recounts his time living in a cabin by a pond in Massachusetts?",
+"a": [
+"Walden",
+"Nature",
+"Self-Reliance",
+"Civil Disobedience"
+],
+"d": 3,
+"x": "Thoreau lived by Walden Pond from 1845 to 1847. The book compresses his two years into a single seasonal cycle.",
+"tags": [
+"american"
+]
+},
+{
+"q": "Which Upton Sinclair novel exposed conditions in the Chicago meatpacking industry?",
+"a": [
+"The Jungle",
+"Babbitt",
+"Sister Carrie",
+"Main Street"
+],
+"d": 3,
+"x": "Published in 1906, it led to the Pure Food and Drug Act. Sinclair said he aimed for the public's heart but hit its stomach.",
+"tags": [
+"american",
+"novel"
+]
+},
+{
+"q": "What is the name of the fictional Alabama town in To Kill a Mockingbird?",
+"a": [
+"Maycomb",
+"Macon",
+"Millbrook",
+"Monroeville"
+],
+"d": 3,
+"x": "Harper Lee modeled Maycomb on her hometown of Monroeville, Alabama. Atticus Finch is a lawyer there.",
+"tags": [
+"american",
+"novel"
+]
+},
+{
+"q": "What is the name of Don Quixote's horse?",
+"a": [
+"Rocinante",
+"Babieca",
+"Bucephalus",
+"Clavileno"
+],
+"d": 3,
+"x": "Don Quixote gives the thin, old horse a grand name that means 'formerly a work horse'. Babieca was the horse of El Cid.",
+"tags": [
+"spanish",
+"character"
+]
+},
+{
+"q": "Which ancient Greek playwright wrote Antigone?",
+"a": [
+"Sophocles",
+"Euripides",
+"Aeschylus",
+"Menander"
+],
+"d": 3,
+"x": "Sophocles wrote about 120 plays, but only seven survive complete. Antigone is one of his three Theban plays.",
+"tags": [
+"greek",
+"drama"
+]
+},
+{
+"q": "Which Dostoevsky novel has Prince Myshkin as its hero?",
+"a": [
+"The Idiot",
+"Demons",
+"The Gambler",
+"Notes from Underground"
+],
+"d": 3,
+"x": "Dostoevsky intended to portray a truly good man in a corrupt society. The novel was published in 1868-69.",
+"tags": [
+"russian",
+"novel"
+]
+},
+{
+"q": "Which Russian author wrote the novel Fathers and Sons?",
+"a": [
+"Ivan Turgenev",
+"Leo Tolstoy",
+"Anton Chekhov",
+"Nikolai Leskov"
+],
+"d": 3,
+"x": "Published in 1862, it popularized the word 'nihilist' through its character Bazarov. It is a classic of the generational clash.",
+"tags": [
+"russian",
+"novel"
+]
+},
+{
+"q": "Which Melville story features a clerk who repeatedly says 'I would prefer not to'?",
+"a": [
+"Bartleby, the Scrivener",
+"Billy Budd",
+"Benito Cereno",
+"Typee"
+],
+"d": 3,
+"x": "Bartleby gradually refuses all work, until he refuses to leave the office. The story is set on Wall Street and was published in 1853.",
+"tags": [
+"american",
+"quotation"
+]
+},
+{
+"q": "Which moor is the setting for The Hound of the Baskervilles?",
+"a": [
+"Dartmoor",
+"Exmoor",
+"Bodmin Moor",
+"The Yorkshire moors"
+],
+"d": 3,
+"x": "Doyle's 1902 Sherlock Holmes novel is set in Devon. He heard the local legend of a spectral hound from a friend.",
+"tags": [
+"detective"
+]
+},
+{
+"q": "From which French region does Dumas's hero d'Artagnan come?",
+"a": [
+"Gascony",
+"Brittany",
+"Normandy",
+"Provence"
+],
+"d": 3,
+"x": "Gascons were famously proud and quick-tempered, which suits d'Artagnan. The real d'Artagnan was a captain of the king's musketeers.",
+"tags": [
+"french",
+"character"
+]
+},
+{
+"q": "Which Jane Austen novel is set partly in Bath and parodies Gothic fiction?",
+"a": [
+"Northanger Abbey",
+"Persuasion",
+"Sense and Sensibility",
+"Emma"
+],
+"d": 3,
+"x": "Austen wrote it around 1798-99, but it was published posthumously in 1817. Its heroine Catherine Morland loves reading Gothic romances.",
+"tags": [
+"english",
+"novel"
+]
+}
+]

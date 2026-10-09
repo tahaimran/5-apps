@@ -1,0 +1,1432 @@
+[
+{
+"q": "In which year did the Western Roman Empire traditionally fall?",
+"a": [
+"476",
+"410",
+"395",
+"527"
+],
+"d": 2,
+"x": "In 476 the Germanic leader Odoacer deposed the teenage emperor Romulus Augustulus. The Eastern Roman Empire lasted almost another thousand years.",
+"tags": [
+"rome"
+]
+},
+{
+"q": "Who founded the Achaemenid Persian Empire in the 6th century BC?",
+"a": [
+"Cyrus the Great",
+"Darius I",
+"Xerxes I",
+"Cambyses II"
+],
+"d": 2,
+"x": "Cyrus conquered Babylon in 539 BC. The Cyrus Cylinder from that time is often described as an early statement on tolerance of subject peoples.",
+"tags": [
+"persia"
+]
+},
+{
+"q": "From which North African city did the general Hannibal come?",
+"a": [
+"Carthage",
+"Syracuse",
+"Tyre",
+"Utica"
+],
+"d": 2,
+"x": "Carthage lay near modern Tunis. Rome fought three Punic Wars against it and finally destroyed the city in 146 BC.",
+"tags": [
+"rome",
+"ancient"
+]
+},
+{
+"q": "William of Normandy defeated which Anglo-Saxon king at Hastings in 1066?",
+"a": [
+"Harold Godwinson",
+"Edward the Confessor",
+"Harald Hardrada",
+"Canute"
+],
+"d": 2,
+"x": "Harold had marched his army about 250 miles in under three weeks after beating a Norwegian invasion in the north.",
+"tags": [
+"medieval",
+"uk"
+]
+},
+{
+"q": "Alexander the Great was king of which kingdom?",
+"a": [
+"Macedon",
+"Epirus",
+"Thrace",
+"Sparta"
+],
+"d": 2,
+"x": "Alexander took the throne at age 20 and created an empire reaching from Greece to northwestern India before dying at 32.",
+"tags": [
+"greece"
+]
+},
+{
+"q": "Which Spartan king led the Greek defense at Thermopylae in 480 BC?",
+"a": [
+"Leonidas",
+"Pausanias",
+"Lysander",
+"Agis"
+],
+"d": 2,
+"x": "Leonidas and his 300 Spartans, with several thousand allies, held a narrow pass against the huge Persian army for three days.",
+"tags": [
+"greece",
+"persia"
+]
+},
+{
+"q": "Who unified China in 221 BC and became its first emperor?",
+"a": [
+"Qin Shi Huang",
+"Liu Bang",
+"Wu Zetian",
+"Kangxi"
+],
+"d": 2,
+"x": "He standardized writing, money and measurements, and linked earlier defensive walls that became the first Great Wall.",
+"tags": [
+"china"
+]
+},
+{
+"q": "Near which Chinese city was the Terracotta Army discovered in 1974?",
+"a": [
+"Xi'an",
+"Beijing",
+"Nanjing",
+"Luoyang"
+],
+"d": 2,
+"x": "Farmers digging a well found the army, which includes more than 8,000 life-size soldiers, each with a different face.",
+"tags": [
+"china"
+]
+},
+{
+"q": "Mansa Musa, famed for his wealth and a 1324 pilgrimage to Mecca, ruled which empire?",
+"a": [
+"The Mali Empire",
+"The Songhai Empire",
+"The Ghana Empire",
+"The Kanem Empire"
+],
+"d": 2,
+"x": "He gave away so much gold in Cairo that the price of gold there reportedly stayed depressed for years.",
+"tags": [
+"africa"
+]
+},
+{
+"q": "In which year did the Suez Canal open?",
+"a": [
+"1869",
+"1859",
+"1879",
+"1889"
+],
+"d": 2,
+"x": "The canal linking the Mediterranean and the Red Sea cut thousands of miles off voyages between Europe and Asia.",
+"tags": [
+"engineering"
+]
+},
+{
+"q": "Which Portuguese explorer led the 1519 expedition that became the first to sail around the world?",
+"a": [
+"Ferdinand Magellan",
+"Francis Drake",
+"James Cook",
+"Vasco da Gama"
+],
+"d": 2,
+"x": "Magellan was killed in the Philippines in 1521. Only 18 men of about 270 completed the voyage, under Juan Sebastian Elcano.",
+"tags": [
+"explorers"
+]
+},
+{
+"q": "Which Roman emperor issued the Edict of Milan in 313, tolerating Christianity?",
+"a": [
+"Constantine",
+"Diocletian",
+"Nero",
+"Theodosius"
+],
+"d": 2,
+"x": "Constantine also moved the capital east, founding Constantinople in AD 330 on the site of the old city of Byzantium.",
+"tags": [
+"rome"
+]
+},
+{
+"q": "Which Scottish queen was executed in 1587 on the orders of Elizabeth I?",
+"a": [
+"Mary, Queen of Scots",
+"Lady Jane Grey",
+"Anne Boleyn",
+"Catherine Howard"
+],
+"d": 2,
+"x": "Mary had been held in English captivity for nearly 19 years. Her son James VI later inherited Elizabeth's throne.",
+"tags": [
+"uk",
+"tudor"
+]
+},
+{
+"q": "In which year did the English defeat the Spanish Armada?",
+"a": [
+"1588",
+"1558",
+"1603",
+"1571"
+],
+"d": 2,
+"x": "The English used fireships to scatter the Spanish fleet at Gravelines, and storms on the long route home destroyed many more ships.",
+"tags": [
+"uk",
+"tudor"
+]
+},
+{
+"q": "Which 1648 settlement ended the Thirty Years' War?",
+"a": [
+"The Peace of Westphalia",
+"The Treaty of Utrecht",
+"The Treaty of Versailles",
+"The Congress of Vienna"
+],
+"d": 2,
+"x": "Westphalia is often seen as the start of the modern system of sovereign states, and the war had devastated much of Germany.",
+"tags": [
+"europe"
+]
+},
+{
+"q": "Which French king was executed during the Revolution in January 1793?",
+"a": [
+"Louis XVI",
+"Louis XIV",
+"Charles X",
+"Louis XV"
+],
+"d": 2,
+"x": "Louis XVI had been king since 1774. His wife Marie Antoinette was executed nine months later.",
+"tags": [
+"france"
+]
+},
+{
+"q": "To which Mediterranean island was Napoleon first exiled in 1814?",
+"a": [
+"Elba",
+"Corsica",
+"Sicily",
+"Malta"
+],
+"d": 2,
+"x": "Napoleon escaped from Elba in February 1815 and returned to power for the Hundred Days, which ended at Waterloo.",
+"tags": [
+"france",
+"napoleon"
+]
+},
+{
+"q": "Which British admiral won the Battle of Trafalgar in 1805 but was killed in the fighting?",
+"a": [
+"Horatio Nelson",
+"Arthur Wellesley",
+"Francis Drake",
+"James Cook"
+],
+"d": 2,
+"x": "Nelson's signal \"England expects that every man will do his duty\" is still famous. The victory ended Napoleon's hopes of invading Britain.",
+"tags": [
+"uk",
+"napoleon"
+]
+},
+{
+"q": "Which Prussian statesman engineered the unification of Germany in 1871?",
+"a": [
+"Otto von Bismarck",
+"Klemens von Metternich",
+"Helmuth von Moltke",
+"Paul von Hindenburg"
+],
+"d": 2,
+"x": "Bismarck used three short wars against Denmark, Austria and France to build the German Empire, which was proclaimed at Versailles.",
+"tags": [
+"germany"
+]
+},
+{
+"q": "Which Italian patriot led the Red Shirts in the 1860 campaign to unify Italy?",
+"a": [
+"Giuseppe Garibaldi",
+"Camillo Cavour",
+"Victor Emmanuel II",
+"Giuseppe Mazzini"
+],
+"d": 2,
+"x": "Garibaldi conquered Sicily and Naples with about a thousand volunteers and then handed his gains to the king of Piedmont.",
+"tags": [
+"italy"
+]
+},
+{
+"q": "The Charge of the Light Brigade took place during which war?",
+"a": [
+"The Crimean War",
+"The Boer War",
+"The Opium War",
+"The Napoleonic Wars"
+],
+"d": 2,
+"x": "The charge at Balaclava in 1854 resulted from a misunderstood order. Tennyson's poem made it a lasting symbol of courage.",
+"tags": [
+"uk",
+"russia"
+]
+},
+{
+"q": "Which island was ceded to Britain in 1842 after the First Opium War?",
+"a": [
+"Hong Kong",
+"Macau",
+"Taiwan",
+"Singapore"
+],
+"d": 2,
+"x": "The Treaty of Nanking gave Britain Hong Kong Island, which stayed British until 1997, along with the opening of five Chinese ports to trade.",
+"tags": [
+"china",
+"uk"
+]
+},
+{
+"q": "Which event of 1868 ended the Tokugawa shogunate and returned power to the Japanese emperor?",
+"a": [
+"The Meiji Restoration",
+"The Boshin Treaty",
+"The Kanagawa Accord",
+"The Satsuma Pact"
+],
+"d": 2,
+"x": "Japan then modernized at remarkable speed, building railways, a modern army and an industrial economy within a few decades.",
+"tags": [
+"japan"
+]
+},
+{
+"q": "Which US naval officer's 1853 arrival in Tokyo Bay pressured Japan to open to trade?",
+"a": [
+"Matthew Perry",
+"John Paul Jones",
+"David Farragut",
+"George Dewey"
+],
+"d": 2,
+"x": "Perry's \"black ships\" were steam-powered, which astonished the Japanese. He returned in 1854 and signed a treaty.",
+"tags": [
+"japan",
+"usa"
+]
+},
+{
+"q": "In 1857 soldiers called sepoys rebelled in India against the rule of which company?",
+"a": [
+"The British East India Company",
+"The Hudson's Bay Company",
+"The Dutch East India Company",
+"The Royal Niger Company"
+],
+"d": 2,
+"x": "After the rebellion, Britain dissolved the company and began ruling India directly under the Crown in 1858.",
+"tags": [
+"india",
+"uk"
+]
+},
+{
+"q": "What was the late-1800s race by European powers to claim African territory called?",
+"a": [
+"The Scramble for Africa",
+"The Great Game",
+"Manifest Destiny",
+"The Age of Sail"
+],
+"d": 2,
+"x": "By 1914 only Ethiopia and Liberia remained independent. The Berlin Conference of 1884-85 set ground rules among the colonial powers.",
+"tags": [
+"africa"
+]
+},
+{
+"q": "At which naval battle in 31 BC did Octavian win the war that made him sole ruler of Rome?",
+"a": [
+"Actium",
+"Salamis",
+"Lepanto",
+"Trafalgar"
+],
+"d": 2,
+"x": "The victory off western Greece led to Octavian becoming Augustus, and Egypt then became a Roman province.",
+"tags": [
+"rome"
+]
+},
+{
+"q": "Which Persian king invaded Greece in 480 BC with a vast army and fleet?",
+"a": [
+"Xerxes I",
+"Darius III",
+"Cyrus II",
+"Artaxerxes II"
+],
+"d": 2,
+"x": "Xerxes reportedly had a bridge of boats built across the Hellespont. His army burned Athens but his fleet lost at Salamis.",
+"tags": [
+"persia",
+"greece"
+]
+},
+{
+"q": "Which statesman led Athens during its golden age and oversaw the building of the Parthenon?",
+"a": [
+"Pericles",
+"Solon",
+"Cleisthenes",
+"Themistocles"
+],
+"d": 2,
+"x": "Pericles guided Athens for about 30 years until a plague killed him in 429 BC during the Peloponnesian War.",
+"tags": [
+"greece"
+]
+},
+{
+"q": "Which philosopher, a student of Socrates, founded the Academy in Athens?",
+"a": [
+"Plato",
+"Aristotle",
+"Epicurus",
+"Zeno"
+],
+"d": 2,
+"x": "Plato's Academy, founded around 387 BC, operated for centuries and is often called the first university in the Western world.",
+"tags": [
+"greece"
+]
+},
+{
+"q": "Which French scholar deciphered Egyptian hieroglyphs in 1822?",
+"a": [
+"Jean-Francois Champollion",
+"Auguste Mariette",
+"Napoleon Bonaparte",
+"Gaston Maspero"
+],
+"d": 2,
+"x": "Champollion used the Rosetta Stone, which carries the same decree in hieroglyphs, Demotic and Greek, and realized the signs recorded sounds.",
+"tags": [
+"egypt"
+]
+},
+{
+"q": "Which female pharaoh built a famous mortuary temple at Deir el-Bahari?",
+"a": [
+"Hatshepsut",
+"Nefertiti",
+"Cleopatra VII",
+"Sobekneferu"
+],
+"d": 2,
+"x": "Hatshepsut ruled for about two decades in the 15th century BC and sent a famous trading expedition to the land of Punt.",
+"tags": [
+"egypt"
+]
+},
+{
+"q": "Which pharaoh had the great temples of Abu Simbel carved into a cliff?",
+"a": [
+"Ramses II",
+"Khufu",
+"Thutmose III",
+"Akhenaten"
+],
+"d": 2,
+"x": "In the 1960s the temples were cut apart and moved uphill to save them from the rising waters of Lake Nasser.",
+"tags": [
+"egypt"
+]
+},
+{
+"q": "For which pharaoh was the Great Pyramid of Giza built?",
+"a": [
+"Khufu",
+"Khafre",
+"Djoser",
+"Menkaure"
+],
+"d": 2,
+"x": "Khufu's pyramid held about 2.3 million stone blocks. The Greeks later called him Cheops.",
+"tags": [
+"egypt"
+]
+},
+{
+"q": "Which Babylonian king issued a famous law code around 1750 BC?",
+"a": [
+"Hammurabi",
+"Nebuchadnezzar II",
+"Sargon of Akkad",
+"Ashurbanipal"
+],
+"d": 2,
+"x": "The code was carved on a tall black stone slab, now in the Louvre, and includes the principle of \"an eye for an eye.\"",
+"tags": [
+"mesopotamia"
+]
+},
+{
+"q": "Which people of ancient Mesopotamia developed cuneiform writing?",
+"a": [
+"The Sumerians",
+"The Phoenicians",
+"The Hittites",
+"The Minoans"
+],
+"d": 2,
+"x": "Cuneiform began around 3400 BC as pictures pressed into wet clay with a reed stylus, originally to keep trade records.",
+"tags": [
+"mesopotamia"
+]
+},
+{
+"q": "Which grandson of Genghis Khan founded China's Yuan dynasty?",
+"a": [
+"Kublai Khan",
+"Ogedei Khan",
+"Batu Khan",
+"Hulagu Khan"
+],
+"d": 2,
+"x": "Kublai completed the conquest of Song China in 1279 and moved his capital to what is now Beijing.",
+"tags": [
+"china",
+"mongols"
+]
+},
+{
+"q": "Which Chinese admiral led giant treasure fleets across the Indian Ocean in the early 1400s?",
+"a": [
+"Zheng He",
+"Yue Fei",
+"Hong Taiji",
+"Li Bai"
+],
+"d": 2,
+"x": "His voyages reached East Africa and were larger than any European fleet of the time, but China halted them after his death.",
+"tags": [
+"china",
+"explorers"
+]
+},
+{
+"q": "In which year did the Ottomans capture Constantinople?",
+"a": [
+"1453",
+"1443",
+"1492",
+"1389"
+],
+"d": 2,
+"x": "Sultan Mehmed II was just 21. The Ottomans used enormous cannons to breach the city's ancient walls, ending the Byzantine Empire.",
+"tags": [
+"ottoman",
+"byzantine"
+]
+},
+{
+"q": "Which English king won the Battle of Agincourt in 1415?",
+"a": [
+"Henry V",
+"Henry IV",
+"Edward III",
+"Richard III"
+],
+"d": 2,
+"x": "English longbowmen helped Henry's much smaller army defeat the French on a muddy field during the Hundred Years' War.",
+"tags": [
+"medieval",
+"uk"
+]
+},
+{
+"q": "Which English king was killed at the Battle of Bosworth Field in 1485?",
+"a": [
+"Richard III",
+"Henry VI",
+"Edward IV",
+"Harold II"
+],
+"d": 2,
+"x": "His death ended the Wars of the Roses and began the Tudor dynasty. His skeleton was found under a car park in Leicester in 2012.",
+"tags": [
+"uk",
+"medieval"
+]
+},
+{
+"q": "Which 1534 act made the English monarch head of the Church of England?",
+"a": [
+"The Act of Supremacy",
+"Magna Carta",
+"The Petition of Right",
+"The Bill of Rights"
+],
+"d": 2,
+"x": "Henry VIII pushed it through after the pope refused to annul his marriage to Catherine of Aragon.",
+"tags": [
+"uk",
+"tudor"
+]
+},
+{
+"q": "Which Polish astronomer proposed a Sun-centered model of the universe in 1543?",
+"a": [
+"Nicolaus Copernicus",
+"Tycho Brahe",
+"Johannes Kepler",
+"Galileo Galilei"
+],
+"d": 2,
+"x": "His book On the Revolutions of the Heavenly Spheres was published as he lay near death in 1543.",
+"tags": [
+"renaissance",
+"science"
+]
+},
+{
+"q": "Which conquistador captured the Inca emperor Atahualpa in 1532?",
+"a": [
+"Francisco Pizarro",
+"Hernan Cortes",
+"Pedro de Alvarado",
+"Diego de Almagro"
+],
+"d": 2,
+"x": "Pizarro's small force of fewer than 200 men took the emperor prisoner at Cajamarca and then collected a huge ransom of gold.",
+"tags": [
+"americas"
+]
+},
+{
+"q": "Columbus's 1492 fleet consisted of the Santa Maria, the Pinta and which other ship?",
+"a": [
+"The Nina",
+"The Victoria",
+"The Golden Hind",
+"The Mayflower"
+],
+"d": 2,
+"x": "The Santa Maria ran aground off Hispaniola on Christmas Day 1492, and its timbers were used to build a fort.",
+"tags": [
+"explorers"
+]
+},
+{
+"q": "On which ship did Francis Drake sail around the world between 1577 and 1580?",
+"a": [
+"The Golden Hind",
+"The Mary Rose",
+"The Santa Maria",
+"The Endeavour"
+],
+"d": 2,
+"x": "Drake returned laden with Spanish treasure and was knighted aboard his ship by Elizabeth I in 1581.",
+"tags": [
+"explorers",
+"uk"
+]
+},
+{
+"q": "Which British navigator charted the east coast of Australia in 1770?",
+"a": [
+"James Cook",
+"William Dampier",
+"Abel Tasman",
+"Matthew Flinders"
+],
+"d": 2,
+"x": "Cook's ship Endeavour was nearly lost on the Great Barrier Reef, and he claimed the coast for Britain as New South Wales.",
+"tags": [
+"explorers",
+"australia"
+]
+},
+{
+"q": "Which Scottish missionary-explorer was famously found by Henry Morton Stanley in 1871?",
+"a": [
+"David Livingstone",
+"Mungo Park",
+"Richard Burton",
+"John Speke"
+],
+"d": 2,
+"x": "Stanley is said to have greeted him with \"Dr. Livingstone, I presume?\" Livingstone had not been heard from in years.",
+"tags": [
+"explorers",
+"africa"
+]
+},
+{
+"q": "Who led the first expedition to reach the South Pole, in December 1911?",
+"a": [
+"Roald Amundsen",
+"Robert Falcon Scott",
+"Ernest Shackleton",
+"Fridtjof Nansen"
+],
+"d": 2,
+"x": "Amundsen's Norwegian team used sled dogs and beat Scott's British party by about five weeks.",
+"tags": [
+"explorers"
+]
+},
+{
+"q": "Which Shoshone woman guided the Lewis and Clark expedition?",
+"a": [
+"Sacagawea",
+"Pocahontas",
+"Nanyehi",
+"Lozen"
+],
+"d": 2,
+"x": "She joined the journey while carrying her infant son. Her presence helped signal peaceful intentions to other nations.",
+"tags": [
+"usa",
+"explorers"
+]
+},
+{
+"q": "The 1848 discovery of gold at Sutter's Mill set off a rush to which region?",
+"a": [
+"California",
+"Alaska",
+"Colorado",
+"Nevada"
+],
+"d": 2,
+"x": "By 1849 tens of thousands of \"forty-niners\" had poured in, and San Francisco grew from a village into a major city.",
+"tags": [
+"usa"
+]
+},
+{
+"q": "In which state was the Battle of Gettysburg fought in July 1863?",
+"a": [
+"Pennsylvania",
+"Virginia",
+"Maryland",
+"Ohio"
+],
+"d": 2,
+"x": "The three-day battle was the bloodiest of the Civil War. Lincoln spoke at the cemetery four months later.",
+"tags": [
+"usa"
+]
+},
+{
+"q": "In which year did Lincoln issue the Emancipation Proclamation?",
+"a": [
+"1863",
+"1861",
+"1865",
+"1860"
+],
+"d": 2,
+"x": "It took effect on January 1, 1863, declaring enslaved people in Confederate-held territory free. The 13th Amendment ended slavery nationwide in 1865.",
+"tags": [
+"usa"
+]
+},
+{
+"q": "In which US state did the first transcontinental railroad join up at Promontory Summit in 1869?",
+"a": [
+"Utah",
+"Nevada",
+"Wyoming",
+"Nebraska"
+],
+"d": 2,
+"x": "A ceremonial golden spike marked the meeting of the Central Pacific and Union Pacific lines, cutting cross-country travel from months to days.",
+"tags": [
+"usa"
+]
+},
+{
+"q": "In which year was the Treaty of Versailles signed?",
+"a": [
+"1919",
+"1918",
+"1920",
+"1921"
+],
+"d": 2,
+"x": "It was signed on June 28, 1919, exactly five years after the assassination in Sarajevo, and required Germany to pay reparations.",
+"tags": [
+"ww1"
+]
+},
+{
+"q": "In which year was the Battle of the Somme fought?",
+"a": [
+"1916",
+"1914",
+"1915",
+"1917"
+],
+"d": 2,
+"x": "On the first day, July 1, 1916, the British Army suffered about 57,000 casualties, its worst single day.",
+"tags": [
+"ww1"
+]
+},
+{
+"q": "Which British ocean liner was sunk by a German U-boat in 1915?",
+"a": [
+"The Lusitania",
+"The Britannic",
+"The Carpathia",
+"The Olympic"
+],
+"d": 2,
+"x": "The sinking off Ireland killed nearly 1,200 people, including 128 Americans, and turned US public opinion against Germany.",
+"tags": [
+"ww1"
+]
+},
+{
+"q": "Who founded the Republic of Turkey in 1923?",
+"a": [
+"Mustafa Kemal Ataturk",
+"Enver Pasha",
+"Suleiman Demirel",
+"Mehmed VI"
+],
+"d": 2,
+"x": "The surname Ataturk, meaning \"father of the Turks,\" was given to him in 1934. He also replaced the Arabic script with a Latin-based alphabet.",
+"tags": [
+"turkey"
+]
+},
+{
+"q": "In which year did India gain independence from Britain?",
+"a": [
+"1947",
+"1945",
+"1950",
+"1949"
+],
+"d": 2,
+"x": "At independence in August 1947 the subcontinent was divided into India and Pakistan, in one of history's largest migrations.",
+"tags": [
+"india"
+]
+},
+{
+"q": "Which general led the Nationalist side to victory in the Spanish Civil War?",
+"a": [
+"Francisco Franco",
+"Miguel Primo de Rivera",
+"Manuel Azana",
+"Juan Peron"
+],
+"d": 2,
+"x": "The war lasted from 1936 to 1939, and Franco ruled Spain until his death in 1975.",
+"tags": [
+"spain"
+]
+},
+{
+"q": "Which city's 1942-43 battle ended with the surrender of Germany's 6th Army?",
+"a": [
+"Stalingrad",
+"Leningrad",
+"Kiev",
+"Smolensk"
+],
+"d": 2,
+"x": "The battle is often called the turning point on the Eastern Front. The city is now called Volgograd.",
+"tags": [
+"ww2",
+"russia"
+]
+},
+{
+"q": "From which French port were over 330,000 Allied troops evacuated in May and June 1940?",
+"a": [
+"Dunkirk",
+"Calais",
+"Brest",
+"Le Havre"
+],
+"d": 2,
+"x": "Hundreds of small civilian boats joined navy ships in the rescue, which Churchill called \"a miracle of deliverance.\"",
+"tags": [
+"ww2"
+]
+},
+{
+"q": "What was the code name of the US project that built the first atomic bombs?",
+"a": [
+"The Manhattan Project",
+"Project Apollo",
+"Operation Overlord",
+"Project Mercury"
+],
+"d": 2,
+"x": "The project employed over 100,000 people, with major sites at Los Alamos, Oak Ridge and Hanford, and the first test came in July 1945.",
+"tags": [
+"ww2",
+"science"
+]
+},
+{
+"q": "In which German city were leading Nazis tried after World War II?",
+"a": [
+"Nuremberg",
+"Munich",
+"Berlin",
+"Hamburg"
+],
+"d": 2,
+"x": "The Nuremberg trials began in November 1945 and helped set precedents for international law on war crimes.",
+"tags": [
+"ww2"
+]
+},
+{
+"q": "Which US Secretary of State gave his name to the 1948 plan to rebuild Western Europe?",
+"a": [
+"George Marshall",
+"Dean Acheson",
+"Henry Kissinger",
+"John Foster Dulles"
+],
+"d": 2,
+"x": "The plan sent about 13 billion dollars in aid, and Marshall received the 1953 Nobel Peace Prize.",
+"tags": [
+"cold-war",
+"usa"
+]
+},
+{
+"q": "In which year was NATO founded?",
+"a": [
+"1949",
+"1945",
+"1955",
+"1953"
+],
+"d": 2,
+"x": "Twelve countries signed the North Atlantic Treaty in Washington in April 1949, promising to treat an attack on one as an attack on all.",
+"tags": [
+"cold-war"
+]
+},
+{
+"q": "Which line of latitude divided Korea into two zones in 1945?",
+"a": [
+"The 38th parallel",
+"The 36th parallel",
+"The 40th parallel",
+"The 42nd parallel"
+],
+"d": 2,
+"x": "Two young US officers chose the line in a matter of minutes using a National Geographic map.",
+"tags": [
+"asia",
+"cold-war"
+]
+},
+{
+"q": "Which Soviet leader agreed to withdraw missiles from Cuba in 1962?",
+"a": [
+"Nikita Khrushchev",
+"Leonid Brezhnev",
+"Joseph Stalin",
+"Georgy Malenkov"
+],
+"d": 2,
+"x": "The 13-day standoff ended when the US secretly agreed to remove its own missiles from Turkey and pledged not to invade Cuba.",
+"tags": [
+"cold-war"
+]
+},
+{
+"q": "Who became the first woman in space in 1963?",
+"a": [
+"Valentina Tereshkova",
+"Svetlana Savitskaya",
+"Sally Ride",
+"Yelena Kondakova"
+],
+"d": 2,
+"x": "Tereshkova orbited Earth 48 times in Vostok 6. The next woman in space did not follow until 1982.",
+"tags": [
+"space"
+]
+},
+{
+"q": "Who became the first American in space in May 1961?",
+"a": [
+"Alan Shepard",
+"John Glenn",
+"Gus Grissom",
+"Scott Carpenter"
+],
+"d": 2,
+"x": "Shepard's suborbital flight lasted only about 15 minutes. Ten years later he walked on the Moon on Apollo 14.",
+"tags": [
+"space"
+]
+},
+{
+"q": "In which year was the Berlin Wall built?",
+"a": [
+"1961",
+"1949",
+"1953",
+"1968"
+],
+"d": 2,
+"x": "East Germany put up barbed wire and then concrete overnight on August 13, 1961 to stop its citizens from fleeing to the West.",
+"tags": [
+"cold-war"
+]
+},
+{
+"q": "In which year was the Soviet Union dissolved?",
+"a": [
+"1991",
+"1989",
+"1990",
+"1993"
+],
+"d": 2,
+"x": "It ended on December 26, 1991, after Mikhail Gorbachev resigned and fifteen republics became independent countries.",
+"tags": [
+"cold-war",
+"russia"
+]
+},
+{
+"q": "Which Scottish engineer greatly improved the steam engine in the 1760s and 1770s?",
+"a": [
+"James Watt",
+"George Stephenson",
+"Richard Trevithick",
+"Thomas Newcomen"
+],
+"d": 2,
+"x": "The unit of power, the watt, is named after him. He also introduced the term \"horsepower.\"",
+"tags": [
+"industrial",
+"inventions"
+]
+},
+{
+"q": "Which English engineer built the locomotive Rocket, which won a famous trial in 1829?",
+"a": [
+"George Stephenson",
+"Isambard Kingdom Brunel",
+"Richard Arkwright",
+"Thomas Telford"
+],
+"d": 2,
+"x": "Rocket reached about 30 miles per hour and helped prove steam locomotives could run passenger railways.",
+"tags": [
+"industrial",
+"inventions"
+]
+},
+{
+"q": "Who invented the cotton gin in 1793?",
+"a": [
+"Eli Whitney",
+"Samuel Slater",
+"Robert Fulton",
+"Cyrus McCormick"
+],
+"d": 2,
+"x": "The machine made cleaning cotton far faster, which dramatically expanded cotton farming and, tragically, slavery in the American South.",
+"tags": [
+"inventions",
+"usa"
+]
+},
+{
+"q": "Which American developed the electric telegraph and a code of dots and dashes?",
+"a": [
+"Samuel Morse",
+"Alexander Graham Bell",
+"Thomas Edison",
+"Guglielmo Marconi"
+],
+"d": 2,
+"x": "The first official message, sent in 1844 from Washington to Baltimore, was \"What hath God wrought.\"",
+"tags": [
+"inventions"
+]
+},
+{
+"q": "On which ship did Charles Darwin sail around the world from 1831 to 1836?",
+"a": [
+"HMS Beagle",
+"HMS Endeavour",
+"HMS Challenger",
+"HMS Bounty"
+],
+"d": 2,
+"x": "The voyage took Darwin to the Galapagos Islands, where his observations of finches helped shape his theory of evolution.",
+"tags": [
+"science",
+"explorers"
+]
+},
+{
+"q": "Which British MP led the long campaign that ended the slave trade in the British Empire in 1807?",
+"a": [
+"William Wilberforce",
+"Robert Peel",
+"William Pitt",
+"Edmund Burke"
+],
+"d": 2,
+"x": "Wilberforce lived to hear that the Slavery Abolition Act, which freed slaves across the empire, was passing in 1833.",
+"tags": [
+"uk",
+"slavery"
+]
+},
+{
+"q": "Who led the Haitian Revolution, which began in 1791?",
+"a": [
+"Toussaint Louverture",
+"Jean-Jacques Dessalines",
+"Henri Christophe",
+"Simon Bolivar"
+],
+"d": 2,
+"x": "Haiti became independent in 1804 and was the first republic led by formerly enslaved people.",
+"tags": [
+"americas"
+]
+},
+{
+"q": "Which Venezuelan-born leader helped liberate Colombia, Ecuador, Peru and Bolivia from Spain?",
+"a": [
+"Simon Bolivar",
+"Jose de San Martin",
+"Francisco Miranda",
+"Bernardo O'Higgins"
+],
+"d": 2,
+"x": "Bolivia is named in his honor, and he was often called El Libertador.",
+"tags": [
+"americas"
+]
+},
+{
+"q": "Which Zulu king built a powerful military state in southern Africa in the early 1800s?",
+"a": [
+"Shaka",
+"Cetshwayo",
+"Dingane",
+"Moshoeshoe"
+],
+"d": 2,
+"x": "Shaka reorganized his army, introducing a short stabbing spear and the \"buffalo horns\" formation.",
+"tags": [
+"africa"
+]
+},
+{
+"q": "Which African country defeated an Italian invasion force at the Battle of Adwa in 1896?",
+"a": [
+"Ethiopia",
+"Egypt",
+"Sudan",
+"Morocco"
+],
+"d": 2,
+"x": "Emperor Menelik II's victory kept Ethiopia independent and made it a symbol of resistance to colonialism.",
+"tags": [
+"africa"
+]
+},
+{
+"q": "The 1911 revolution in China ended the rule of which dynasty?",
+"a": [
+"The Qing",
+"The Ming",
+"The Han",
+"The Tang"
+],
+"d": 2,
+"x": "The last emperor, Puyi, was a child of six. The Qing had ruled since 1644, and the Republic of China was proclaimed in 1912.",
+"tags": [
+"china"
+]
+},
+{
+"q": "William the Conqueror ordered which great survey of England, completed in 1086?",
+"a": [
+"The Domesday Book",
+"The Bayeux Tapestry",
+"The Pipe Rolls",
+"The Doomsday Charter"
+],
+"d": 2,
+"x": "The survey recorded who owned land, livestock and mills in nearly every English village, and gave the king a detailed picture of his wealth.",
+"tags": [
+"medieval",
+"uk"
+]
+},
+{
+"q": "Which Frankish king was crowned Emperor by the pope on Christmas Day in 800?",
+"a": [
+"Charlemagne",
+"Clovis",
+"Pepin the Short",
+"Otto I"
+],
+"d": 2,
+"x": "Charlemagne ruled much of Western Europe and promoted learning, helping spark a revival now called the Carolingian Renaissance.",
+"tags": [
+"medieval"
+]
+},
+{
+"q": "Which Russian tsar founded the city of St. Petersburg in 1703?",
+"a": [
+"Peter the Great",
+"Ivan the Terrible",
+"Nicholas I",
+"Alexander II"
+],
+"d": 2,
+"x": "Peter built it on marshland as a \"window to the West,\" and it served as Russia's capital for over 200 years.",
+"tags": [
+"russia"
+]
+},
+{
+"q": "At which Virginia town did British General Cornwallis surrender in 1781?",
+"a": [
+"Yorktown",
+"Saratoga",
+"Lexington",
+"Valley Forge"
+],
+"d": 2,
+"x": "A French fleet trapped Cornwallis from the sea while Washington's and Rochambeau's armies surrounded him by land.",
+"tags": [
+"usa"
+]
+},
+{
+"q": "In 1814, British troops burned public buildings in which American city?",
+"a": [
+"Washington, D.C.",
+"Philadelphia",
+"New York",
+"Boston"
+],
+"d": 2,
+"x": "The burning of the White House and Capitol happened during the War of 1812. A rainstorm helped put out the fires.",
+"tags": [
+"usa"
+]
+},
+{
+"q": "In which year did the 19th Amendment guarantee American women the right to vote?",
+"a": [
+"1920",
+"1913",
+"1928",
+"1933"
+],
+"d": 2,
+"x": "The amendment was ratified in August 1920 after about 72 years of campaigning that began at the Seneca Falls convention in 1848.",
+"tags": [
+"usa"
+]
+},
+{
+"q": "Which British suffragette leader founded the Women's Social and Political Union in 1903?",
+"a": [
+"Emmeline Pankhurst",
+"Millicent Fawcett",
+"Emily Davison",
+"Constance Markievicz"
+],
+"d": 2,
+"x": "The group's motto was \"Deeds, not words.\" British women over 30 gained the vote in 1918, a decade before full equality.",
+"tags": [
+"uk"
+]
+},
+{
+"q": "Which Mughal emperor built the Taj Mahal in memory of his wife Mumtaz Mahal?",
+"a": [
+"Shah Jahan",
+"Akbar",
+"Babur",
+"Aurangzeb"
+],
+"d": 2,
+"x": "Construction took about 20 years from the 1630s, and the white marble mausoleum is said to have involved some 20,000 workers.",
+"tags": [
+"india"
+]
+},
+{
+"q": "Mesopotamia, the cradle of early civilization, lay between the Tigris and which other river?",
+"a": [
+"The Euphrates",
+"The Nile",
+"The Indus",
+"The Jordan"
+],
+"d": 2,
+"x": "The name Mesopotamia means \"between the rivers\" in Greek, and the region included the first cities such as Ur and Uruk.",
+"tags": [
+"mesopotamia"
+]
+},
+{
+"q": "Which Chinese dynasty followed the short-lived Qin and ruled for about four centuries?",
+"a": [
+"The Han",
+"The Tang",
+"The Zhou",
+"The Song"
+],
+"d": 2,
+"x": "Under the Han, the Silk Road opened and paper was invented. The majority ethnic group of China still calls itself \"Han.\"",
+"tags": [
+"china"
+]
+},
+{
+"q": "In which year did the Gunpowder Plot to blow up the English Parliament take place?",
+"a": [
+"1605",
+"1588",
+"1620",
+"1649"
+],
+"d": 2,
+"x": "Guy Fawkes was caught guarding 36 barrels of gunpowder beneath the House of Lords, and Britons still mark Bonfire Night each November 5.",
+"tags": [
+"uk"
+]
+},
+{
+"q": "Which Chinese dynasty built the Forbidden City in Beijing in the early 1400s?",
+"a": [
+"The Ming",
+"The Qing",
+"The Tang",
+"The Yuan"
+],
+"d": 2,
+"x": "Construction began in 1406 under the Yongle Emperor. The palace complex has nearly 1,000 buildings and housed 24 emperors.",
+"tags": [
+"china"
+]
+},
+{
+"q": "Which US president signed the Civil Rights Act of 1964?",
+"a": [
+"Lyndon B. Johnson",
+"John F. Kennedy",
+"Richard Nixon",
+"Dwight D. Eisenhower"
+],
+"d": 2,
+"x": "Johnson signed it on July 2, 1964, outlawing discrimination based on race, color, religion, sex or national origin.",
+"tags": [
+"usa",
+"civil-rights"
+]
+},
+{
+"q": "Who was Emperor of Japan during World War II?",
+"a": [
+"Hirohito",
+"Meiji",
+"Taisho",
+"Akihito"
+],
+"d": 2,
+"x": "Hirohito reigned from 1926 to 1989, the longest of any Japanese emperor, and his radio address announced Japan's surrender in 1945.",
+"tags": [
+"japan",
+"ww2"
+]
+},
+{
+"q": "Who became India's first female Prime Minister, in 1966?",
+"a": [
+"Indira Gandhi",
+"Sarojini Naidu",
+"Pratibha Patil",
+"Vijaya Lakshmi Pandit"
+],
+"d": 2,
+"x": "She was the daughter of Jawaharlal Nehru, India's first Prime Minister, and she served until 1977 and again from 1980 to 1984.",
+"tags": [
+"india"
+]
+},
+{
+"q": "Which Carthaginian general famously crossed the Alps with elephants?",
+"a": [
+"Hannibal",
+"Hasdrubal",
+"Scipio",
+"Pyrrhus"
+],
+"d": 2,
+"x": "Hannibal marched into Italy in 218 BC during the Second Punic War."
+},
+{
+"q": "Which treaty formally ended World War I with Germany in 1919?",
+"a": [
+"Treaty of Versailles",
+"Treaty of Paris",
+"Treaty of Trianon",
+"Treaty of Utrecht"
+],
+"d": 2,
+"x": "The treaty was signed in the Hall of Mirrors at the Palace of Versailles."
+}
+]

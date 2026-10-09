@@ -1,0 +1,1452 @@
+[
+{
+"q": "What is a group of hippopotamuses called?",
+"a": [
+"Bloat",
+"Crash",
+"Dazzle",
+"Sounder"
+],
+"d": 3,
+"x": "A bloat of hippos can be found wallowing in rivers during the day.",
+"tags": [
+"group-names"
+]
+},
+{
+"q": "What is a group of rhinoceroses called?",
+"a": [
+"Crash",
+"Bloat",
+"Tower",
+"Business"
+],
+"d": 3,
+"x": "Giraffes in a group are sometimes called a tower, while rhinos form a crash.",
+"tags": [
+"group-names"
+]
+},
+{
+"q": "What is a group of zebras called?",
+"a": [
+"Dazzle",
+"Crash",
+"Mob",
+"Troop"
+],
+"d": 3,
+"x": "The dazzle of stripes may confuse predators when the herd moves.",
+"tags": [
+"group-names"
+]
+},
+{
+"q": "What is a group of jellyfish called?",
+"a": [
+"Smack",
+"Parade",
+"Rookery",
+"Clutch"
+],
+"d": 3,
+"x": "Jellyfish groups are also called blooms or swarms.",
+"tags": [
+"group-names",
+"marine-life"
+]
+},
+{
+"q": "What is a group of porcupines called?",
+"a": [
+"Prickle",
+"Sleuth",
+"Cete",
+"Shrewdness"
+],
+"d": 3,
+"x": "Prickle is the traditional collective noun for porcupines.",
+"tags": [
+"group-names"
+]
+},
+{
+"q": "What is a group of badgers called?",
+"a": [
+"Cete",
+"Prickle",
+"Skulk",
+"Leap"
+],
+"d": 3,
+"x": "Badgers live in underground burrow systems called setts.",
+"tags": [
+"group-names"
+]
+},
+{
+"q": "What is a group of foxes often called?",
+"a": [
+"Skulk",
+"Cete",
+"Sleuth",
+"Mischief"
+],
+"d": 3,
+"x": "A skulk or leash can describe a group of foxes, though foxes are often solitary.",
+"tags": [
+"group-names"
+]
+},
+{
+"q": "What is a group of leopards traditionally called?",
+"a": [
+"Leap",
+"Pride",
+"Coalition",
+"Streak"
+],
+"d": 3,
+"x": "Leopards are mostly solitary, so the 'leap' is a rarely seen sight.",
+"tags": [
+"group-names"
+]
+},
+{
+"q": "What is a group of starlings that moves in swirling formations called?",
+"a": [
+"Murmuration",
+"Exaltation",
+"Conspiracy",
+"Charm"
+],
+"d": 3,
+"x": "Each starling in a murmuration reacts to its nearest seven or so neighbors.",
+"tags": [
+"group-names",
+"birds"
+]
+},
+{
+"q": "What is a baby bat called?",
+"a": [
+"Pup",
+"Kit",
+"Cub",
+"Squab"
+],
+"d": 3,
+"x": "Bat pups are often born in huge colonies where mothers find them by voice and scent.",
+"tags": [
+"baby-animals"
+]
+},
+{
+"q": "What is a baby salmon at the stage when it is ready to migrate to the sea called?",
+"a": [
+"Smolt",
+"Elver",
+"Alevin",
+"Parr"
+],
+"d": 3,
+"x": "Salmon go through alevin, fry, parr, and smolt stages before heading to sea.",
+"tags": [
+"baby-animals",
+"fish"
+]
+},
+{
+"q": "What is a baby eel in the juvenile river stage called?",
+"a": [
+"Elver",
+"Smolt",
+"Fry",
+"Spat"
+],
+"d": 3,
+"x": "Elvers swim upstream in great numbers after drifting across the ocean as larvae.",
+"tags": [
+"baby-animals",
+"fish"
+]
+},
+{
+"q": "What is a baby oyster that attaches to a surface called?",
+"a": [
+"Spat",
+"Elver",
+"Fry",
+"Nymph"
+],
+"d": 3,
+"x": "Oyster spat settles on hard surfaces, often other oyster shells.",
+"tags": [
+"baby-animals",
+"marine-life"
+]
+},
+{
+"q": "What is the term for a baby grasshopper or dragonfly that resembles a small adult?",
+"a": [
+"Nymph",
+"Pupa",
+"Larva",
+"Grub"
+],
+"d": 3,
+"x": "Insects with incomplete metamorphosis hatch as nymphs and molt several times.",
+"tags": [
+"insects"
+]
+},
+{
+"q": "What is a baby elephant seal or fur seal called?",
+"a": [
+"Pup",
+"Calf",
+"Cub",
+"Kit"
+],
+"d": 3,
+"x": "Elephant seal pups gain weight rapidly on their mother's extremely fat-rich milk.",
+"tags": [
+"baby-animals"
+]
+},
+{
+"q": "What is a baby turkey called?",
+"a": [
+"Poult",
+"Squab",
+"Chick",
+"Gosling"
+],
+"d": 3,
+"x": "Turkey poults are able to leave the nest within a day of hatching.",
+"tags": [
+"baby-animals",
+"birds"
+]
+},
+{
+"q": "What is a baby crocodile or alligator called when it hatches?",
+"a": [
+"Hatchling",
+"Nymph",
+"Cygnet",
+"Fry"
+],
+"d": 3,
+"x": "Mother crocodiles carefully carry hatchlings to the water in their mouths.",
+"tags": [
+"baby-animals",
+"reptiles"
+]
+},
+{
+"q": "What is the name of the pigment-containing cells that let cephalopods change color?",
+"a": [
+"Chromatophores",
+"Melanocytes",
+"Photophores",
+"Keratinocytes"
+],
+"d": 3,
+"x": "Octopus and squid control thousands of chromatophores with muscles for fast color changes.",
+"tags": [
+"marine-life",
+"adaptations"
+]
+},
+{
+"q": "What is the term for organs that produce light in deep-sea animals?",
+"a": [
+"Photophores",
+"Chromatophores",
+"Nephridia",
+"Statocysts"
+],
+"d": 3,
+"x": "Bioluminescence helps deep-sea animals find food and mates or avoid predators.",
+"tags": [
+"marine-life",
+"adaptations"
+]
+},
+{
+"q": "What is a ruminant's first stomach chamber called?",
+"a": [
+"Rumen",
+"Omasum",
+"Abomasum",
+"Reticulum"
+],
+"d": 3,
+"x": "The rumen hosts microbes that ferment tough plant material.",
+"tags": [
+"anatomy",
+"diet"
+]
+},
+{
+"q": "How many stomach chambers does a cow have?",
+"a": [
+"Four",
+"Two",
+"Three",
+"Five"
+],
+"d": 3,
+"x": "The chambers are the rumen, reticulum, omasum, and abomasum.",
+"tags": [
+"anatomy",
+"farm"
+]
+},
+{
+"q": "How many neck bones (cervical vertebrae) does a giraffe have?",
+"a": [
+"Seven",
+"Fourteen",
+"Nine",
+"Twelve"
+],
+"d": 3,
+"x": "Almost all mammals, including humans and giraffes, have seven neck vertebrae.",
+"tags": [
+"anatomy",
+"mammals"
+]
+},
+{
+"q": "How many chambers does a typical bird's heart have?",
+"a": [
+"Four",
+"Two",
+"Three",
+"Five"
+],
+"d": 3,
+"x": "Birds and mammals both have fully separated four-chambered hearts.",
+"tags": [
+"anatomy",
+"birds"
+]
+},
+{
+"q": "How many chambers does a typical frog heart have?",
+"a": [
+"Three",
+"Two",
+"Four",
+"One"
+],
+"d": 3,
+"x": "A frog has two atria and one ventricle.",
+"tags": [
+"anatomy",
+"amphibians"
+]
+},
+{
+"q": "Which fish uses a bioluminescent lure on its head to attract prey in the deep sea?",
+"a": [
+"Anglerfish",
+"Lanternfish",
+"Viperfish",
+"Hatchetfish"
+],
+"d": 3,
+"x": "The glowing lure, called an esca, contains light-producing bacteria.",
+"tags": [
+"fish",
+"adaptations"
+]
+},
+{
+"q": "Which marine animal is known to have no brain and no heart, yet has stinging cells called nematocysts?",
+"a": [
+"Jellyfish",
+"Octopus",
+"Sea urchin",
+"Sea star"
+],
+"d": 3,
+"x": "Nematocysts are tiny harpoon-like cells found across cnidarians.",
+"tags": [
+"marine-life"
+]
+},
+{
+"q": "What phylum do jellyfish, corals, and sea anemones belong to?",
+"a": [
+"Cnidaria",
+"Porifera",
+"Mollusca",
+"Annelida"
+],
+"d": 3,
+"x": "Cnidarians have stinging cells and radial body symmetry.",
+"tags": [
+"classification"
+]
+},
+{
+"q": "To which phylum do sponges belong?",
+"a": [
+"Porifera",
+"Cnidaria",
+"Echinodermata",
+"Platyhelminthes"
+],
+"d": 3,
+"x": "Porifera means 'pore-bearing'; sponges filter water through their bodies.",
+"tags": [
+"classification",
+"marine-life"
+]
+},
+{
+"q": "To which phylum do humans, fish, birds, and reptiles belong?",
+"a": [
+"Chordata",
+"Arthropoda",
+"Mollusca",
+"Annelida"
+],
+"d": 3,
+"x": "Chordates have a notochord at some point in their development.",
+"tags": [
+"classification"
+]
+},
+{
+"q": "To which phylum do insects, spiders, and crustaceans belong?",
+"a": [
+"Arthropoda",
+"Annelida",
+"Mollusca",
+"Nematoda"
+],
+"d": 3,
+"x": "Arthropods have jointed legs and an exoskeleton, and make up most known animal species.",
+"tags": [
+"classification"
+]
+},
+{
+"q": "What group of mammals includes kangaroos, koalas, and opossums?",
+"a": [
+"Marsupials",
+"Monotremes",
+"Placentals",
+"Lagomorphs"
+],
+"d": 3,
+"x": "Marsupials give birth to underdeveloped young that finish growing in a pouch or on the mother's body.",
+"tags": [
+"classification",
+"mammals"
+]
+},
+{
+"q": "What is the order that includes rabbits, hares, and pikas?",
+"a": [
+"Lagomorpha",
+"Rodentia",
+"Chiroptera",
+"Carnivora"
+],
+"d": 3,
+"x": "Unlike rodents, lagomorphs have two pairs of upper incisors.",
+"tags": [
+"classification",
+"mammals"
+]
+},
+{
+"q": "What is the order of mammals that includes bats?",
+"a": [
+"Chiroptera",
+"Rodentia",
+"Primates",
+"Cetacea"
+],
+"d": 3,
+"x": "Chiroptera means 'hand wing'.",
+"tags": [
+"classification",
+"mammals"
+]
+},
+{
+"q": "Which animal family do domestic cats, lions, and cheetahs belong to?",
+"a": [
+"Felidae",
+"Canidae",
+"Ursidae",
+"Mustelidae"
+],
+"d": 3,
+"x": "Felidae includes about 40 living species of cats.",
+"tags": [
+"classification",
+"mammals"
+]
+},
+{
+"q": "Which family do wolves, foxes, and dogs belong to?",
+"a": [
+"Canidae",
+"Felidae",
+"Ursidae",
+"Mustelidae"
+],
+"d": 3,
+"x": "The domestic dog is considered a subspecies of the gray wolf by many scientists.",
+"tags": [
+"classification",
+"mammals"
+]
+},
+{
+"q": "Which family do weasels, otters, and badgers belong to?",
+"a": [
+"Mustelidae",
+"Canidae",
+"Procyonidae",
+"Viverridae"
+],
+"d": 3,
+"x": "Mustelids often have scent glands used for marking territory.",
+"tags": [
+"classification",
+"mammals"
+]
+},
+{
+"q": "Which animal is the closest living relative of whales and dolphins?",
+"a": [
+"Hippopotamus",
+"Seal",
+"Manatee",
+"Walrus"
+],
+"d": 3,
+"x": "Whales evolved from hoofed land mammals related to hippos.",
+"tags": [
+"classification",
+"marine-life"
+]
+},
+{
+"q": "Which land animal is the closest living relative of the manatee?",
+"a": [
+"Elephant",
+"Hippopotamus",
+"Seal",
+"Rhinoceros"
+],
+"d": 3,
+"x": "Manatees, elephants, and hyraxes are all part of the Afrotheria group.",
+"tags": [
+"classification",
+"mammals"
+]
+},
+{
+"q": "Which small African mammal looks like a guinea pig yet is related to elephants?",
+"a": [
+"Rock hyrax",
+"Mongoose",
+"Meerkat",
+"Aardvark"
+],
+"d": 3,
+"x": "The hyrax has foot pads that work like suction cups on rocks.",
+"tags": [
+"mammals"
+]
+},
+{
+"q": "Which male bird incubates the single egg on his feet during the Antarctic winter?",
+"a": [
+"Emperor penguin",
+"King penguin",
+"Adelie penguin",
+"Gentoo penguin"
+],
+"d": 3,
+"x": "Males fast for about two months while the females feed at sea.",
+"tags": [
+"birds",
+"behavior"
+]
+},
+{
+"q": "Which bird builds an elaborate bower decorated with colorful objects to attract a mate?",
+"a": [
+"Bowerbird",
+"Weaver",
+"Hornbill",
+"Lyrebird"
+],
+"d": 3,
+"x": "Male bowerbirds arrange blue items such as bottle caps and feathers to impress females.",
+"tags": [
+"birds",
+"behavior"
+]
+},
+{
+"q": "Which bird can mimic chainsaws and camera shutters, native to Australia?",
+"a": [
+"Superb lyrebird",
+"Kookaburra",
+"Cassowary",
+"Galah"
+],
+"d": 3,
+"x": "A lyrebird's tail resembles an ancient lyre when displayed.",
+"tags": [
+"birds"
+]
+},
+{
+"q": "Which wading bird is known for standing on one leg and has a pink, upside-down bill?",
+"a": [
+"Flamingo",
+"Heron",
+"Stork",
+"Ibis"
+],
+"d": 3,
+"x": "Flamingos feed with their heads upside down, filtering tiny food from water.",
+"tags": [
+"birds"
+]
+},
+{
+"q": "Which seabird dives from heights and is known for its blue feet?",
+"a": [
+"Blue-footed booby",
+"Puffin",
+"Gannet",
+"Cormorant"
+],
+"d": 3,
+"x": "Male blue-footed boobies show off their bright feet in courtship dances.",
+"tags": [
+"birds"
+]
+},
+{
+"q": "Which reptile has a third 'eye' on top of its head, called a parietal eye, living in New Zealand?",
+"a": [
+"Tuatara",
+"Gecko",
+"Skink",
+"Iguana"
+],
+"d": 3,
+"x": "The tuatara is the sole survivor of an ancient reptile order, Rhynchocephalia.",
+"tags": [
+"reptiles"
+]
+},
+{
+"q": "Which giant tortoises live on islands off Ecuador and inspired Darwin's thinking?",
+"a": [
+"Galapagos tortoises",
+"Aldabra tortoises",
+"Leopard tortoises",
+"Sulcata tortoises"
+],
+"d": 3,
+"x": "The Spanish word galapago means tortoise, giving the islands their name.",
+"tags": [
+"reptiles"
+]
+},
+{
+"q": "Which snake kills its prey by constriction and is the heaviest snake in the world?",
+"a": [
+"Green anaconda",
+"Reticulated python",
+"Burmese python",
+"Boa constrictor"
+],
+"d": 3,
+"x": "Anacondas live in South America and spend much of their time in water.",
+"tags": [
+"reptiles"
+]
+},
+{
+"q": "Which lizard can run on water, earning it the nickname 'Jesus lizard'?",
+"a": [
+"Basilisk",
+"Chameleon",
+"Gila monster",
+"Monitor"
+],
+"d": 3,
+"x": "Basilisks can sprint across ponds on their hind legs for several feet.",
+"tags": [
+"reptiles"
+]
+},
+{
+"q": "Which venomous lizard lives in the deserts of the southwestern United States?",
+"a": [
+"Gila monster",
+"Komodo dragon",
+"Frilled lizard",
+"Bearded dragon"
+],
+"d": 3,
+"x": "The Gila monster is one of only a few venomous lizards in the world.",
+"tags": [
+"reptiles"
+]
+},
+{
+"q": "Which amphibian is the largest in the world, reaching about 5 feet in length?",
+"a": [
+"Chinese giant salamander",
+"Hellbender",
+"Axolotl",
+"Goliath frog"
+],
+"d": 3,
+"x": "The Chinese giant salamander is the largest amphibian and lives in cold mountain streams.",
+"tags": [
+"amphibians"
+]
+},
+{
+"q": "Which South American frog family is known for the toxins that Indigenous hunters used on blowgun darts?",
+"a": [
+"Poison dart frogs",
+"Tree frogs",
+"Glass frogs",
+"Horned frogs"
+],
+"d": 3,
+"x": "Their bright colors warn predators that they are toxic.",
+"tags": [
+"amphibians"
+]
+},
+{
+"q": "What are caecilians?",
+"a": [
+"Legless amphibians",
+"Burrowing snakes",
+"Cave fish",
+"Worm-like insects"
+],
+"d": 3,
+"x": "Caecilians look like worms or snakes but are amphibians.",
+"tags": [
+"amphibians"
+]
+},
+{
+"q": "Which gas exchange organ does an adult frog use in addition to lungs?",
+"a": [
+"Skin",
+"Gills",
+"Spiracles",
+"Swim bladder"
+],
+"d": 3,
+"x": "Frogs can absorb oxygen through their moist skin.",
+"tags": [
+"amphibians",
+"anatomy"
+]
+},
+{
+"q": "What do archerfish use to catch insects above the water?",
+"a": [
+"A jet of water",
+"A sticky tongue",
+"An electric shock",
+"A hooked tooth"
+],
+"d": 3,
+"x": "Archerfish can spit a stream of water to knock insects from overhanging plants.",
+"tags": [
+"fish",
+"behavior"
+]
+},
+{
+"q": "Which fish cleans parasites from the skin of larger fish at 'cleaning stations'?",
+"a": [
+"Cleaner wrasse",
+"Remora",
+"Pilot fish",
+"Mudskipper"
+],
+"d": 3,
+"x": "Cleaner wrasses recognize returning clients and can pass mirror-like tests in studies.",
+"tags": [
+"fish",
+"behavior"
+]
+},
+{
+"q": "Which fish can climb onto land and breathe air through its skin, using fins to move across mud?",
+"a": [
+"Mudskipper",
+"Lungfish",
+"Goby",
+"Catfish"
+],
+"d": 3,
+"x": "Mudskippers live in mangrove swamps and tidal flats.",
+"tags": [
+"fish",
+"adaptations"
+]
+},
+{
+"q": "Which fish species has a skeleton made entirely of cartilage?",
+"a": [
+"Shark",
+"Tuna",
+"Trout",
+"Cod"
+],
+"d": 3,
+"x": "Rays and skates also have cartilaginous skeletons.",
+"tags": [
+"fish",
+"anatomy"
+]
+},
+{
+"q": "What organ lets bony fish control their buoyancy?",
+"a": [
+"Swim bladder",
+"Gill raker",
+"Lateral line",
+"Spleen"
+],
+"d": 3,
+"x": "Sharks lack a swim bladder and use their oily livers for buoyancy.",
+"tags": [
+"fish",
+"anatomy"
+]
+},
+{
+"q": "What sensory system lets fish detect water movement along their sides?",
+"a": [
+"Lateral line",
+"Dorsal line",
+"Ampulla",
+"Operculum"
+],
+"d": 3,
+"x": "The lateral line helps schooling fish stay in sync.",
+"tags": [
+"fish",
+"anatomy"
+]
+},
+{
+"q": "Which tiny sea creature is known as the 'immortal jellyfish' for its ability to revert to a juvenile stage?",
+"a": [
+"Turritopsis dohrnii",
+"Cassiopea",
+"Aurelia aurita",
+"Chrysaora"
+],
+"d": 3,
+"x": "It can return to the polyp stage under stress, in theory restarting its life cycle.",
+"tags": [
+"marine-life"
+]
+},
+{
+"q": "What is the name for the pointed tooth of a narwhal?",
+"a": [
+"Tusk",
+"Rostrum",
+"Fang",
+"Baleen"
+],
+"d": 3,
+"x": "The tusk is a spiraled canine tooth that grows through the upper lip.",
+"tags": [
+"marine-life"
+]
+},
+{
+"q": "What do baleen whales use to filter food from water?",
+"a": [
+"Baleen plates",
+"Tusks",
+"Gill rakers",
+"Teeth"
+],
+"d": 3,
+"x": "Baleen is made of keratin, the same protein as human fingernails.",
+"tags": [
+"marine-life",
+"anatomy"
+]
+},
+{
+"q": "Which sea mammal uses rocks to crack open shellfish while floating on its back?",
+"a": [
+"Sea otter",
+"Harbor seal",
+"Sea lion",
+"Dugong"
+],
+"d": 3,
+"x": "Sea otters have the densest fur of any animal, with up to a million hairs per square inch.",
+"tags": [
+"marine-life",
+"behavior"
+]
+},
+{
+"q": "Which sea creature has a radula, a ribbon of tiny teeth, used for scraping food?",
+"a": [
+"Snail",
+"Sea urchin",
+"Jellyfish",
+"Barnacle"
+],
+"d": 3,
+"x": "Mollusks like snails and chitons use a radula for feeding.",
+"tags": [
+"invertebrates",
+"anatomy"
+]
+},
+{
+"q": "Which sea creature has a chewing structure called Aristotle's lantern?",
+"a": [
+"Sea urchin",
+"Starfish",
+"Squid",
+"Sea cucumber"
+],
+"d": 3,
+"x": "The five-toothed structure was described by Aristotle in antiquity.",
+"tags": [
+"marine-life"
+]
+},
+{
+"q": "Which crustacean smashes clam shells with a lightning-fast club-like appendage?",
+"a": [
+"Mantis shrimp",
+"Fiddler crab",
+"Lobster",
+"Hermit crab"
+],
+"d": 3,
+"x": "Mantis shrimp strikes can create cavitation bubbles that produce a shock wave.",
+"tags": [
+"marine-life"
+]
+},
+{
+"q": "What is the common name for the crustacean that carries its shell home and swaps shells as it grows?",
+"a": [
+"Hermit crab",
+"Horseshoe crab",
+"Coconut crab",
+"Spider crab"
+],
+"d": 3,
+"x": "Hermit crabs sometimes line up in order of size to swap shells.",
+"tags": [
+"marine-life"
+]
+},
+{
+"q": "Which arthropod is a 'living fossil' with blue blood used in medical testing?",
+"a": [
+"Horseshoe crab",
+"Lobster",
+"Giant isopod",
+"Barnacle"
+],
+"d": 3,
+"x": "Horseshoe crab blood clots in the presence of bacterial toxins, so it is used to test medical products.",
+"tags": [
+"marine-life"
+]
+},
+{
+"q": "What is the sticky silk-like substance mussels use to attach to rocks?",
+"a": [
+"Byssal threads",
+"Mucin",
+"Chitin",
+"Nacre"
+],
+"d": 3,
+"x": "Byssal threads are tough protein fibers that anchor mussels in strong currents.",
+"tags": [
+"marine-life"
+]
+},
+{
+"q": "What is the iridescent inner shell layer of oysters that forms pearls called?",
+"a": [
+"Nacre",
+"Chitin",
+"Keratin",
+"Spat"
+],
+"d": 3,
+"x": "A pearl forms when an oyster coats an irritant with layers of nacre.",
+"tags": [
+"marine-life"
+]
+},
+{
+"q": "What is the hard outer covering of an insect called?",
+"a": [
+"Exoskeleton",
+"Epidermis",
+"Carapace",
+"Cuticle sac"
+],
+"d": 3,
+"x": "Insects molt to grow because their exoskeleton does not stretch.",
+"tags": [
+"insects",
+"anatomy"
+]
+},
+{
+"q": "What do insects use to breathe, the small openings along their bodies?",
+"a": [
+"Spiracles",
+"Gills",
+"Lungs",
+"Stomata"
+],
+"d": 3,
+"x": "Spiracles lead to tubes called tracheae that carry oxygen throughout the body.",
+"tags": [
+"insects",
+"anatomy"
+]
+},
+{
+"q": "Which insect spends most of its life underground as a nymph and emerges every 13 or 17 years in some species?",
+"a": [
+"Periodical cicada",
+"Dragonfly",
+"Cricket",
+"Mayfly"
+],
+"d": 3,
+"x": "The prime-number cycles may help cicadas avoid predators and parasites.",
+"tags": [
+"insects"
+]
+},
+{
+"q": "Which insect has the shortest adult lifespan, often living less than a day?",
+"a": [
+"Mayfly",
+"Housefly",
+"Honeybee",
+"Mosquito"
+],
+"d": 3,
+"x": "Some adult mayflies live only hours, just long enough to mate and lay eggs.",
+"tags": [
+"insects"
+]
+},
+{
+"q": "How many eyes do most spiders have?",
+"a": [
+"Eight",
+"Two",
+"Four",
+"Six"
+],
+"d": 3,
+"x": "Some spider species have six, four, or even fewer eyes, but eight is typical.",
+"tags": [
+"arachnids"
+]
+},
+{
+"q": "What do you call the specialized organs spiders use to spin silk?",
+"a": [
+"Spinnerets",
+"Pedipalps",
+"Chelicerae",
+"Book lungs"
+],
+"d": 3,
+"x": "Spiders have up to eight spinnerets and can produce several silk types.",
+"tags": [
+"arachnids"
+]
+},
+{
+"q": "Which arachnid group includes ticks and mites?",
+"a": [
+"Acari",
+"Opiliones",
+"Scorpiones",
+"Araneae"
+],
+"d": 3,
+"x": "Acari include thousands of species and some are microscopic.",
+"tags": [
+"arachnids",
+"classification"
+]
+},
+{
+"q": "Which group of prehistoric flying reptiles, which included Pteranodon, had wings of skin?",
+"a": [
+"Pterosaur",
+"Archaeopteryx",
+"Plesiosaur",
+"Ichthyosaur"
+],
+"d": 3,
+"x": "Pterosaurs were the first vertebrates to evolve powered flight.",
+"tags": [
+"prehistoric"
+]
+},
+{
+"q": "What is the name for an extinct marine reptile with a dolphin-like body?",
+"a": [
+"Ichthyosaur",
+"Plesiosaur",
+"Mosasaur",
+"Pterosaur"
+],
+"d": 3,
+"x": "Ichthyosaurs gave birth to live young in the water.",
+"tags": [
+"prehistoric"
+]
+},
+{
+"q": "Which period is the time when Stegosaurus and Brachiosaurus lived?",
+"a": [
+"Jurassic",
+"Triassic",
+"Cretaceous",
+"Permian"
+],
+"d": 3,
+"x": "The Jurassic ran from about 201 to 145 million years ago.",
+"tags": [
+"dinosaurs"
+]
+},
+{
+"q": "During which period did Tyrannosaurus rex live?",
+"a": [
+"Cretaceous",
+"Jurassic",
+"Triassic",
+"Permian"
+],
+"d": 3,
+"x": "T. rex lived in North America in the Late Cretaceous, about 68 to 66 million years ago.",
+"tags": [
+"dinosaurs"
+]
+},
+{
+"q": "Which dinosaur had a sail-like structure on its back and may have been semi-aquatic?",
+"a": [
+"Spinosaurus",
+"Allosaurus",
+"Carnotaurus",
+"Therizinosaurus"
+],
+"d": 3,
+"x": "Spinosaurus had a crocodile-like snout and was likely a fish eater.",
+"tags": [
+"dinosaurs"
+]
+},
+{
+"q": "Which duck-billed dinosaur had a long hollow crest on its head?",
+"a": [
+"Parasaurolophus",
+"Triceratops",
+"Iguanodon",
+"Compsognathus"
+],
+"d": 3,
+"x": "The crest may have helped it make loud, low calls.",
+"tags": [
+"dinosaurs"
+]
+},
+{
+"q": "What are fossilized dinosaur droppings called?",
+"a": [
+"Coprolites",
+"Gastroliths",
+"Trace casts",
+"Amber"
+],
+"d": 3,
+"x": "Coprolites reveal details about prehistoric diets.",
+"tags": [
+"dinosaurs"
+]
+},
+{
+"q": "What are the stones swallowed by some dinosaurs and birds to help grind food called?",
+"a": [
+"Gastroliths",
+"Coprolites",
+"Otoliths",
+"Statoliths"
+],
+"d": 3,
+"x": "Modern birds like chickens swallow grit for the same purpose.",
+"tags": [
+"dinosaurs",
+"birds"
+]
+},
+{
+"q": "Which small feathered dinosaur found in China had four wings?",
+"a": [
+"Microraptor",
+"Compsognathus",
+"Gigantoraptor",
+"Deinonychus"
+],
+"d": 3,
+"x": "Microraptor had long flight feathers on both its arms and legs.",
+"tags": [
+"dinosaurs"
+]
+},
+{
+"q": "Which famous early bird-like fossil from Germany was found in Jurassic limestone in 1861?",
+"a": [
+"Archaeopteryx",
+"Confuciusornis",
+"Pterodactylus",
+"Hesperornis"
+],
+"d": 3,
+"x": "Archaeopteryx had feathers like a bird but also teeth and a bony tail like a dinosaur.",
+"tags": [
+"prehistoric"
+]
+},
+{
+"q": "What was the giant flightless bird that lived in New Zealand and was hunted to extinction by about 1400?",
+"a": [
+"Moa",
+"Dodo",
+"Elephant bird",
+"Great auk"
+],
+"d": 3,
+"x": "The largest moa stood about 12 feet tall with its neck stretched.",
+"tags": [
+"prehistoric",
+"birds"
+]
+},
+{
+"q": "Which island was the home of the dodo?",
+"a": [
+"Mauritius",
+"Madagascar",
+"Tasmania",
+"Sri Lanka"
+],
+"d": 3,
+"x": "The dodo disappeared within about a century after Europeans arrived in the late 1500s.",
+"tags": [
+"prehistoric",
+"birds"
+]
+},
+{
+"q": "What is the mother-offspring bond called when a duckling follows the first moving thing it sees?",
+"a": [
+"Imprinting",
+"Mimicry",
+"Mobbing",
+"Foraging"
+],
+"d": 3,
+"x": "Konrad Lorenz made imprinting famous with his goslings that followed him.",
+"tags": [
+"behavior",
+"science"
+]
+},
+{
+"q": "Which scientist shared a Nobel Prize in 1973 for work on animal behavior including imprinting in geese?",
+"a": [
+"Konrad Lorenz",
+"Jane Goodall",
+"Charles Darwin",
+"Dian Fossey"
+],
+"d": 3,
+"x": "He shared the prize with Niko Tinbergen and Karl von Frisch.",
+"tags": [
+"science"
+]
+},
+{
+"q": "Which insect did Thomas Hunt Morgan use to show that genes are carried on chromosomes?",
+"a": [
+"Fruit fly",
+"Honeybee",
+"Mosquito",
+"Cricket"
+],
+"d": 3,
+"x": "Morgan's fruit fly work showed that genes are carried on chromosomes.",
+"tags": [
+"science",
+"insects"
+]
+},
+{
+"q": "Which dog became the first animal to orbit Earth, aboard Sputnik 2 in 1957?",
+"a": [
+"Laika",
+"Belka",
+"Strelka",
+"Ham"
+],
+"d": 3,
+"x": "Laika flew aboard Sputnik 2 in November 1957.",
+"tags": [
+"science"
+]
+},
+{
+"q": "Which chimpanzee was the first great ape in space, launched by NASA in 1961?",
+"a": [
+"Ham",
+"Enos",
+"Albert",
+"Able"
+],
+"d": 3,
+"x": "Ham flew on a Mercury-Redstone mission and returned safely.",
+"tags": [
+"science"
+]
+},
+{
+"q": "Which African gray parrot, studied by Irene Pepperberg, learned to use words in context?",
+"a": [
+"Alex",
+"Koko",
+"Kanzi",
+"Washoe"
+],
+"d": 3,
+"x": "Alex could identify colors, shapes, and quantities.",
+"tags": [
+"science",
+"birds"
+]
+},
+{
+"q": "Which gorilla was taught a modified form of sign language by Francine Patterson?",
+"a": [
+"Koko",
+"Washoe",
+"Nim",
+"Kanzi"
+],
+"d": 3,
+"x": "Koko reportedly learned more than 1,000 signs.",
+"tags": [
+"science",
+"mammals"
+]
+},
+{
+"q": "Which organ in the roof of a snake's mouth helps it analyze scents collected by its tongue?",
+"a": [
+"Jacobson's organ",
+"Pit organ",
+"Lateral line",
+"Hyoid"
+],
+"d": 3,
+"x": "The forked tongue delivers scent particles to this organ, giving a snake a kind of directional smell.",
+"tags": [
+"reptiles",
+"anatomy"
+]
+},
+{
+"q": "What is the name of the reflective layer behind a cat's retina that makes its eyes glow in the dark?",
+"a": [
+"Tapetum lucidum",
+"Fovea centralis",
+"Nictitating membrane",
+"Optic disc"
+],
+"d": 3,
+"x": "The layer reflects light back through the retina, boosting night vision.",
+"tags": [
+"mammals",
+"anatomy"
+]
+},
+{
+"q": "What is the part of a bird's body that stores food before it is digested?",
+"a": [
+"Crop",
+"Syrinx",
+"Cloaca",
+"Wattle"
+],
+"d": 3,
+"x": "Pigeons also use their crop to make 'crop milk' for their chicks.",
+"tags": [
+"birds",
+"anatomy"
+]
+},
+{
+"q": "What is a bird's voice organ, located where the windpipe splits, called?",
+"a": [
+"Syrinx",
+"Larynx",
+"Gizzard",
+"Siphon"
+],
+"d": 3,
+"x": "The syrinx lets songbirds produce two different notes at once.",
+"tags": [
+"birds",
+"anatomy"
+]
+}
+]

@@ -1,0 +1,1402 @@
+[
+{
+"q": "How many days are in a leap year?",
+"a": [
+"366",
+"365",
+"364",
+"367"
+],
+"d": 1,
+"x": "An extra day, February 29, is added about every four years because Earth takes roughly 365.25 days to orbit the Sun.",
+"tags": [
+"calendar"
+]
+},
+{
+"q": "Who is credited with patenting the telephone in 1876?",
+"a": [
+"Alexander Graham Bell",
+"Thomas Edison",
+"Nikola Tesla",
+"Guglielmo Marconi"
+],
+"d": 1,
+"x": "Bell reportedly said the first words over a telephone to his assistant: 'Mr. Watson, come here, I want to see you.'",
+"tags": [
+"inventions"
+]
+},
+{
+"q": "Which holiday is known for carved jack-o'-lanterns?",
+"a": [
+"Halloween",
+"Thanksgiving",
+"Easter",
+"Valentine's Day"
+],
+"d": 1,
+"x": "The custom began in Ireland and Scotland, where people carved turnips; pumpkins became popular in North America.",
+"tags": [
+"holidays"
+]
+},
+{
+"q": "What does the 'www' in a web address stand for?",
+"a": [
+"World Wide Web",
+"Wide Web Window",
+"World Web Wire",
+"Web Wide Worldwide"
+],
+"d": 1,
+"x": "Tim Berners-Lee proposed the World Wide Web in 1989 while working at the CERN research center.",
+"tags": [
+"tech"
+]
+},
+{
+"q": "Which company makes the iPhone?",
+"a": [
+"Apple",
+"Samsung",
+"Google",
+"Sony"
+],
+"d": 1,
+"x": "Apple unveiled the first iPhone in January 2007, combining a phone, an iPod, and an internet device.",
+"tags": [
+"tech"
+]
+},
+{
+"q": "What is the official currency of the United Kingdom?",
+"a": [
+"Pound sterling",
+"Euro",
+"Dollar",
+"Franc"
+],
+"d": 1,
+"x": "The pound is one of the oldest currencies still in use, with roots going back over a thousand years.",
+"tags": [
+"money"
+]
+},
+{
+"q": "Which artist painted the Mona Lisa?",
+"a": [
+"Leonardo da Vinci",
+"Michelangelo",
+"Raphael",
+"Rembrandt"
+],
+"d": 1,
+"x": "Leonardo worked on the portrait for years and kept it with him until he died in France in 1519.",
+"tags": [
+"art"
+]
+},
+{
+"q": "Which flower is traditionally given on Valentine's Day?",
+"a": [
+"Rose",
+"Tulip",
+"Daisy",
+"Lily"
+],
+"d": 1,
+"x": "Red roses have symbolized love for centuries, and millions are sold around February 14 each year.",
+"tags": [
+"holidays"
+]
+},
+{
+"q": "What does ATM stand for?",
+"a": [
+"Automated Teller Machine",
+"Automatic Transfer Meter",
+"Advanced Trading Method",
+"Authorized Teller Module"
+],
+"d": 1,
+"x": "The first modern cash machine was installed in London in 1967.",
+"tags": [
+"money"
+]
+},
+{
+"q": "Who co-founded Microsoft with Paul Allen?",
+"a": [
+"Bill Gates",
+"Steve Jobs",
+"Mark Zuckerberg",
+"Jeff Bezos"
+],
+"d": 1,
+"x": "Gates and Allen founded Microsoft in 1975 to write software for early personal computers.",
+"tags": [
+"business"
+]
+},
+{
+"q": "What is a scientist who studies stars and planets called?",
+"a": [
+"Astronomer",
+"Meteorologist",
+"Geologist",
+"Botanist"
+],
+"d": 1,
+"x": "The word comes from Greek roots meaning 'star law'.",
+"tags": [
+"space"
+]
+},
+{
+"q": "Who was the first person to walk on the Moon?",
+"a": [
+"Neil Armstrong",
+"Buzz Aldrin",
+"Yuri Gagarin",
+"John Glenn"
+],
+"d": 1,
+"x": "Armstrong stepped onto the lunar surface on July 20, 1969, during the Apollo 11 mission.",
+"tags": [
+"space"
+]
+},
+{
+"q": "A word that means the same as another word is called what?",
+"a": [
+"Synonym",
+"Antonym",
+"Homonym",
+"Palindrome"
+],
+"d": 1,
+"x": "Synonym comes from Greek words meaning 'same name'. A thesaurus is a book full of them.",
+"tags": [
+"language"
+]
+},
+{
+"q": "What do you call a word made from the first letters of a phrase, like NASA?",
+"a": [
+"Acronym",
+"Idiom",
+"Homonym",
+"Proverb"
+],
+"d": 1,
+"x": "Acronyms are pronounced as words, while initialisms like FBI are spoken letter by letter.",
+"tags": [
+"language"
+]
+},
+{
+"q": "Which of these words reads the same forward and backward?",
+"a": [
+"Level",
+"Lever",
+"Lemon",
+"Lender"
+],
+"d": 1,
+"x": "Words like this are called palindromes, from Greek words meaning 'running back again'.",
+"tags": [
+"language"
+]
+},
+{
+"q": "How many sides does a standard stop sign have?",
+"a": [
+"Eight",
+"Six",
+"Ten",
+"Seven"
+],
+"d": 1,
+"x": "The octagon shape lets drivers recognize a stop sign from behind, even if the face is covered in snow.",
+"tags": [
+"everyday"
+]
+},
+{
+"q": "Which computer key deletes the character to the left of the cursor?",
+"a": [
+"Backspace",
+"Escape",
+"Tab",
+"Enter"
+],
+"d": 1,
+"x": "The name comes from typewriters, where the carriage moved back one space.",
+"tags": [
+"tech"
+]
+},
+{
+"q": "What does GPS stand for?",
+"a": [
+"Global Positioning System",
+"General Positioning Service",
+"Geographic Position Signal",
+"Global Planning System"
+],
+"d": 1,
+"x": "GPS was built by the US military, and its satellites broadcast time signals that your phone uses to work out where you are.",
+"tags": [
+"tech"
+]
+},
+{
+"q": "What does the 'PIN' in PIN code stand for?",
+"a": [
+"Personal Identification Number",
+"Private Instant Network",
+"Protected Input Name",
+"Personal Internet Node"
+],
+"d": 1,
+"x": "Most bank card PINs are four digits long, which allows 10,000 possible combinations.",
+"tags": [
+"money"
+]
+},
+{
+"q": "Which holiday is celebrated on July 4 in the United States?",
+"a": [
+"Independence Day",
+"Memorial Day",
+"Labor Day",
+"Flag Day"
+],
+"d": 1,
+"x": "It marks the 1776 adoption of the Declaration of Independence and is famous for fireworks.",
+"tags": [
+"holidays"
+]
+},
+{
+"q": "Which month of the year has the fewest days?",
+"a": [
+"February",
+"April",
+"June",
+"November"
+],
+"d": 1,
+"x": "February has 28 days, or 29 in a leap year, a quirk inherited from the ancient Roman calendar.",
+"tags": [
+"calendar"
+]
+},
+{
+"q": "On which US holiday do families traditionally serve roast turkey?",
+"a": [
+"Thanksgiving",
+"Labor Day",
+"Memorial Day",
+"Presidents' Day"
+],
+"d": 1,
+"x": "Turkeys are so central that the US president 'pardons' one every year before the holiday.",
+"tags": [
+"holidays"
+]
+},
+{
+"q": "Which vitamin does your skin produce when exposed to sunlight?",
+"a": [
+"Vitamin D",
+"Vitamin C",
+"Vitamin A",
+"Vitamin B12"
+],
+"d": 1,
+"x": "Vitamin D helps your body absorb calcium for strong bones.",
+"tags": [
+"health"
+]
+},
+{
+"q": "About how many hours of sleep do most adults need each night?",
+"a": [
+"7 to 9 hours",
+"3 to 4 hours",
+"5 to 6 hours",
+"11 to 12 hours"
+],
+"d": 1,
+"x": "Health experts say regular sleep in this range supports memory, mood, and the immune system.",
+"tags": [
+"health"
+]
+},
+{
+"q": "Which organ pumps blood around the human body?",
+"a": [
+"Heart",
+"Liver",
+"Kidney",
+"Stomach"
+],
+"d": 1,
+"x": "An average adult heart beats roughly 100,000 times a day.",
+"tags": [
+"health"
+]
+},
+{
+"q": "How many teeth does a typical adult have, including wisdom teeth?",
+"a": [
+"32",
+"28",
+"30",
+"36"
+],
+"d": 1,
+"x": "Children have 20 baby teeth, which are gradually replaced by permanent ones.",
+"tags": [
+"health"
+]
+},
+{
+"q": "Which famous iron tower was built for the 1889 World's Fair in Paris?",
+"a": [
+"Eiffel Tower",
+"Leaning Tower",
+"CN Tower",
+"Space Needle"
+],
+"d": 1,
+"x": "It was meant to stand for only 20 years, but its use as a radio antenna saved it from demolition.",
+"tags": [
+"landmarks"
+]
+},
+{
+"q": "Which white marble monument in Agra, India, was built as a tomb for Mumtaz Mahal?",
+"a": [
+"Taj Mahal",
+"Red Fort",
+"Hawa Mahal",
+"Qutub Minar"
+],
+"d": 1,
+"x": "Emperor Shah Jahan ordered it built for his beloved wife; construction took about 20 years.",
+"tags": [
+"landmarks"
+]
+},
+{
+"q": "Which country gave the Statue of Liberty to the United States?",
+"a": [
+"France",
+"Britain",
+"Spain",
+"Italy"
+],
+"d": 1,
+"x": "The statue arrived in 350 pieces packed in more than 200 crates and was dedicated in 1886.",
+"tags": [
+"landmarks"
+]
+},
+{
+"q": "What is the extra money a bank pays you for keeping savings in an account?",
+"a": [
+"Interest",
+"Tax",
+"Rent",
+"Tariff"
+],
+"d": 1,
+"x": "Interest that earns more interest is called compound interest, and over decades it can multiply savings.",
+"tags": [
+"money"
+]
+},
+{
+"q": "What is the word for money that one person owes to another?",
+"a": [
+"Debt",
+"Profit",
+"Revenue",
+"Equity"
+],
+"d": 1,
+"x": "The word comes from the Latin 'debitum', meaning 'something owed'.",
+"tags": [
+"money"
+]
+},
+{
+"q": "A business's income minus its costs is called what?",
+"a": [
+"Profit",
+"Revenue",
+"Dividend",
+"Loan"
+],
+"d": 1,
+"x": "When costs are higher than income, the result is a loss instead.",
+"tags": [
+"business"
+]
+},
+{
+"q": "Which currency is used by Germany, France, and Spain?",
+"a": [
+"Euro",
+"Krone",
+"Franc",
+"Lira"
+],
+"d": 1,
+"x": "Euro banknotes and coins entered circulation in January 2002.",
+"tags": [
+"money"
+]
+},
+{
+"q": "Which inventor is most famously linked with the practical light bulb?",
+"a": [
+"Thomas Edison",
+"Nikola Tesla",
+"Benjamin Franklin",
+"Henry Ford"
+],
+"d": 1,
+"x": "Edison's team tested thousands of materials for the filament before finding one that lasted.",
+"tags": [
+"inventions"
+]
+},
+{
+"q": "Which brothers made the first powered airplane flight in 1903?",
+"a": [
+"The Wright brothers",
+"The Lumiere brothers",
+"The Montgolfier brothers",
+"The Grimm brothers"
+],
+"d": 1,
+"x": "The first flight at Kitty Hawk, North Carolina, lasted only 12 seconds.",
+"tags": [
+"inventions"
+]
+},
+{
+"q": "Which German inventor introduced movable-type printing to Europe in the 1400s?",
+"a": [
+"Johannes Gutenberg",
+"Martin Luther",
+"Leonardo da Vinci",
+"Galileo Galilei"
+],
+"d": 1,
+"x": "His printing press made books cheaper and helped spread literacy across Europe.",
+"tags": [
+"inventions"
+]
+},
+{
+"q": "What does USB stand for?",
+"a": [
+"Universal Serial Bus",
+"United System Board",
+"Unified Signal Base",
+"Universal Storage Block"
+],
+"d": 1,
+"x": "USB was introduced in the mid-1990s to replace a confusing mix of ports on computers.",
+"tags": [
+"tech"
+]
+},
+{
+"q": "What does CPU stand for?",
+"a": [
+"Central Processing Unit",
+"Computer Power Utility",
+"Core Program Usage",
+"Central Printing Unit"
+],
+"d": 1,
+"x": "The CPU is often called the brain of a computer because it carries out program instructions.",
+"tags": [
+"tech"
+]
+},
+{
+"q": "What does PDF stand for?",
+"a": [
+"Portable Document Format",
+"Printed Data File",
+"Personal Display Form",
+"Public Digital Folder"
+],
+"d": 1,
+"x": "Adobe created the format in the early 1990s so documents would look the same on any device.",
+"tags": [
+"tech"
+]
+},
+{
+"q": "Which company develops the Android operating system?",
+"a": [
+"Google",
+"Apple",
+"Microsoft",
+"Nokia"
+],
+"d": 1,
+"x": "Google bought Android Inc. in 2005, and the first Android phone appeared in 2008.",
+"tags": [
+"tech"
+]
+},
+{
+"q": "In which language is 'bonjour' a common greeting?",
+"a": [
+"French",
+"Spanish",
+"Italian",
+"Portuguese"
+],
+"d": 1,
+"x": "It literally combines 'bon' (good) and 'jour' (day).",
+"tags": [
+"language"
+]
+},
+{
+"q": "What does the Spanish word 'hola' mean in English?",
+"a": [
+"Hello",
+"Goodbye",
+"Thank you",
+"Please"
+],
+"d": 1,
+"x": "Unlike many Spanish words, 'hola' starts with a silent 'h'.",
+"tags": [
+"language"
+]
+},
+{
+"q": "What does the German word 'danke' mean?",
+"a": [
+"Thank you",
+"Please",
+"Sorry",
+"Welcome"
+],
+"d": 1,
+"x": "It is related to the English word 'thank'.",
+"tags": [
+"language"
+]
+},
+{
+"q": "How many letters are in the modern English alphabet?",
+"a": [
+"26",
+"24",
+"25",
+"28"
+],
+"d": 1,
+"x": "The letters J, U, and W were the last to be added to the Latin alphabet used in English.",
+"tags": [
+"language"
+]
+},
+{
+"q": "What do you call a book that lists words and their meanings?",
+"a": [
+"Dictionary",
+"Atlas",
+"Almanac",
+"Thesaurus"
+],
+"d": 1,
+"x": "Noah Webster published his famous American dictionary in 1828.",
+"tags": [
+"language"
+]
+},
+{
+"q": "What do you call a book of maps?",
+"a": [
+"Atlas",
+"Dictionary",
+"Almanac",
+"Encyclopedia"
+],
+"d": 1,
+"x": "The name honors the Greek Titan Atlas, whose picture appeared on early map collections.",
+"tags": [
+"language"
+]
+},
+{
+"q": "Which reading system for blind people uses raised dots?",
+"a": [
+"Braille",
+"Morse code",
+"Cursive",
+"Shorthand"
+],
+"d": 1,
+"x": "It was invented by a Frenchman, Louis Braille, who was blind himself.",
+"tags": [
+"culture"
+]
+},
+{
+"q": "Which signaling code is made of short dots and long dashes?",
+"a": [
+"Morse code",
+"Braille",
+"Semaphore",
+"Binary"
+],
+"d": 1,
+"x": "Samuel Morse helped develop it in the 1830s and 1840s for the electric telegraph.",
+"tags": [
+"communication"
+]
+},
+{
+"q": "Which physicist developed the theory of relativity?",
+"a": [
+"Albert Einstein",
+"Isaac Newton",
+"Galileo Galilei",
+"Stephen Hawking"
+],
+"d": 1,
+"x": "Einstein published his special theory of relativity in 1905, a year often called his 'miracle year'.",
+"tags": [
+"people"
+]
+},
+{
+"q": "Which nurse became known as 'the lady with the lamp'?",
+"a": [
+"Florence Nightingale",
+"Clara Barton",
+"Mother Teresa",
+"Marie Curie"
+],
+"d": 1,
+"x": "She improved hygiene in military hospitals and is considered the founder of modern nursing.",
+"tags": [
+"people"
+]
+},
+{
+"q": "Which Dutch artist painted 'The Starry Night'?",
+"a": [
+"Vincent van Gogh",
+"Claude Monet",
+"Pablo Picasso",
+"Rembrandt"
+],
+"d": 1,
+"x": "Van Gogh painted it in 1889 while staying at an asylum in Saint-Remy, France.",
+"tags": [
+"art"
+]
+},
+{
+"q": "Which Scottish scientist discovered penicillin in 1928?",
+"a": [
+"Alexander Fleming",
+"Louis Pasteur",
+"Joseph Lister",
+"Jonas Salk"
+],
+"d": 1,
+"x": "Fleming noticed that mold on a forgotten dish had killed the bacteria growing around it.",
+"tags": [
+"health"
+]
+},
+{
+"q": "Which Apple co-founder introduced the first iPhone in 2007?",
+"a": [
+"Steve Jobs",
+"Tim Cook",
+"Steve Wozniak",
+"Jony Ive"
+],
+"d": 1,
+"x": "Jobs co-founded Apple in 1976, left in 1985, and returned in 1997 to lead its comeback.",
+"tags": [
+"business"
+]
+},
+{
+"q": "Who founded Amazon in 1994?",
+"a": [
+"Jeff Bezos",
+"Elon Musk",
+"Larry Page",
+"Bill Gates"
+],
+"d": 1,
+"x": "Bezos started the company in his garage in Washington state, initially selling books online.",
+"tags": [
+"business"
+]
+},
+{
+"q": "Which brand uses the slogan 'Just Do It'?",
+"a": [
+"Nike",
+"Adidas",
+"Puma",
+"Reebok"
+],
+"d": 1,
+"x": "The slogan debuted in 1988 and is one of the most recognized taglines in advertising.",
+"tags": [
+"business"
+]
+},
+{
+"q": "Which company is famous for its golden arches logo?",
+"a": [
+"McDonald's",
+"Burger King",
+"Wendy's",
+"KFC"
+],
+"d": 1,
+"x": "The arches were part of the architecture of early restaurants before becoming the logo.",
+"tags": [
+"business"
+]
+},
+{
+"q": "What is the name of the galaxy that contains our solar system?",
+"a": [
+"Milky Way",
+"Andromeda",
+"Triangulum",
+"Whirlpool"
+],
+"d": 1,
+"x": "It contains hundreds of billions of stars and is shaped like a giant spiral.",
+"tags": [
+"space"
+]
+},
+{
+"q": "Which star is closest to Earth?",
+"a": [
+"The Sun",
+"Proxima Centauri",
+"Sirius",
+"Polaris"
+],
+"d": 1,
+"x": "Sunlight takes about eight minutes to reach us; the next closest star is over four light-years away.",
+"tags": [
+"space"
+]
+},
+{
+"q": "What is the largest planet in our solar system?",
+"a": [
+"Jupiter",
+"Saturn",
+"Neptune",
+"Uranus"
+],
+"d": 1,
+"x": "More than 1,300 Earths could fit inside Jupiter.",
+"tags": [
+"space"
+]
+},
+{
+"q": "Which planet is nicknamed the Red Planet?",
+"a": [
+"Mars",
+"Venus",
+"Mercury",
+"Jupiter"
+],
+"d": 1,
+"x": "Iron oxide, or rust, in its soil gives Mars its reddish color.",
+"tags": [
+"space"
+]
+},
+{
+"q": "How many planets orbit the Sun in our solar system?",
+"a": [
+"Eight",
+"Nine",
+"Seven",
+"Ten"
+],
+"d": 1,
+"x": "Pluto was reclassified as a dwarf planet in 2006.",
+"tags": [
+"space"
+]
+},
+{
+"q": "On which holiday do many people make resolutions for the coming year?",
+"a": [
+"New Year's Day",
+"Memorial Day",
+"Earth Day",
+"Presidents' Day"
+],
+"d": 1,
+"x": "The tradition of making fresh-start promises goes back to ancient Babylon.",
+"tags": [
+"holidays"
+]
+},
+{
+"q": "Valentine's Day falls on which date?",
+"a": [
+"February 14",
+"March 14",
+"January 14",
+"February 4"
+],
+"d": 1,
+"x": "The day is named for a saint named Valentine, and the date has been linked to romance since the Middle Ages.",
+"tags": [
+"holidays"
+]
+},
+{
+"q": "How many animals appear in the Chinese zodiac?",
+"a": [
+"12",
+"10",
+"8",
+"14"
+],
+"d": 1,
+"x": "Each animal represents one year in a repeating 12-year cycle.",
+"tags": [
+"culture"
+]
+},
+{
+"q": "Which major festival of lights is celebrated across India each autumn?",
+"a": [
+"Diwali",
+"Holi",
+"Pongal",
+"Onam"
+],
+"d": 1,
+"x": "Homes are decorated with oil lamps and lights to symbolize the triumph of light over darkness.",
+"tags": [
+"culture"
+]
+},
+{
+"q": "How many bones does a typical adult human body have?",
+"a": [
+"206",
+"212",
+"196",
+"256"
+],
+"d": 1,
+"x": "Babies are born with around 300 bones, and many fuse together as they grow.",
+"tags": [
+"health"
+]
+},
+{
+"q": "For about how many seconds should you wash your hands with soap?",
+"a": [
+"20 seconds",
+"5 seconds",
+"10 seconds",
+"60 seconds"
+],
+"d": 1,
+"x": "Scrubbing for at least 20 seconds helps lift germs off your skin, about the time it takes to sing 'Happy Birthday' twice.",
+"tags": [
+"health"
+]
+},
+{
+"q": "Which mineral found in milk helps build strong bones and teeth?",
+"a": [
+"Calcium",
+"Iron",
+"Sodium",
+"Zinc"
+],
+"d": 1,
+"x": "About 99 percent of the calcium in your body is stored in your bones and teeth.",
+"tags": [
+"health"
+]
+},
+{
+"q": "Normal human body temperature is about 98.6 degrees on which scale?",
+"a": [
+"Fahrenheit",
+"Celsius",
+"Kelvin",
+"Rankine"
+],
+"d": 1,
+"x": "That equals about 37 degrees Celsius, though the true average varies from person to person.",
+"tags": [
+"health"
+]
+},
+{
+"q": "What does the first aid term CPR stand for?",
+"a": [
+"Cardiopulmonary resuscitation",
+"Cardiac pulse restoration",
+"Critical pulse recovery",
+"Cardiovascular pressure relief"
+],
+"d": 1,
+"x": "CPR uses chest compressions to keep blood moving to the brain until medical help arrives.",
+"tags": [
+"health"
+]
+},
+{
+"q": "What is the name of the US coin worth one cent?",
+"a": [
+"Penny",
+"Nickel",
+"Dime",
+"Quarter"
+],
+"d": 1,
+"x": "The Lincoln penny, introduced in 1909, was the first US coin to feature a real person.",
+"tags": [
+"money"
+]
+},
+{
+"q": "How many cents is a US dime worth?",
+"a": [
+"10",
+"5",
+"25",
+"50"
+],
+"d": 1,
+"x": "The dime is the smallest in size of all current US coins even though it is worth more than a penny or nickel.",
+"tags": [
+"money"
+]
+},
+{
+"q": "What plastic card lets you borrow money up to a set limit and pay it back later?",
+"a": [
+"Credit card",
+"Debit card",
+"Gift card",
+"Library card"
+],
+"d": 1,
+"x": "Unlike a debit card, a credit card spends the bank's money first, and interest applies if you do not repay in time.",
+"tags": [
+"money"
+]
+},
+{
+"q": "What do we call a company's recognizable name, logo, and reputation?",
+"a": [
+"Brand",
+"Franchise",
+"Merger",
+"Dividend"
+],
+"d": 1,
+"x": "The word comes from the practice of burning a mark onto livestock to show ownership.",
+"tags": [
+"business"
+]
+},
+{
+"q": "What is a share of ownership in a company called?",
+"a": [
+"Stock",
+"Bond",
+"Loan",
+"Coupon"
+],
+"d": 1,
+"x": "Owning stock makes you a part-owner, and its price rises or falls with the company's fortunes.",
+"tags": [
+"money"
+]
+},
+{
+"q": "In which art form do dancers wear pointe shoes?",
+"a": [
+"Ballet",
+"Tap",
+"Salsa",
+"Hip-hop"
+],
+"d": 1,
+"x": "Ballet began in the Italian Renaissance courts and was developed further in France.",
+"tags": [
+"culture"
+]
+},
+{
+"q": "What is the Japanese art of paper folding called?",
+"a": [
+"Origami",
+"Ikebana",
+"Kabuki",
+"Haiku"
+],
+"d": 1,
+"x": "The word means 'folding paper', and a traditional crane is the best-known design.",
+"tags": [
+"culture"
+]
+},
+{
+"q": "What is the traditional Japanese robe with wide sleeves called?",
+"a": [
+"Kimono",
+"Sari",
+"Hanbok",
+"Cheongsam"
+],
+"d": 1,
+"x": "Kimono literally means 'thing to wear'.",
+"tags": [
+"culture"
+]
+},
+{
+"q": "What is the traditional pleated Scottish garment worn around the waist by men called?",
+"a": [
+"Kilt",
+"Poncho",
+"Sarong",
+"Toga"
+],
+"d": 1,
+"x": "Each clan traditionally has its own tartan pattern.",
+"tags": [
+"culture"
+]
+},
+{
+"q": "Which famous ancient monuments stand near Cairo, Egypt?",
+"a": [
+"Pyramids of Giza",
+"Colosseum",
+"Parthenon",
+"Stonehenge"
+],
+"d": 1,
+"x": "The Great Pyramid was the tallest human-made structure on Earth for about 3,800 years.",
+"tags": [
+"landmarks"
+]
+},
+{
+"q": "Which clock tower stands beside the Houses of Parliament in London?",
+"a": [
+"Big Ben",
+"Tower Bridge",
+"Leaning Tower",
+"Clock of Prague"
+],
+"d": 1,
+"x": "Strictly, Big Ben is the name of the great bell inside the tower, not the tower itself.",
+"tags": [
+"landmarks"
+]
+},
+{
+"q": "Which mountain memorial in South Dakota features four carved US presidents?",
+"a": [
+"Mount Rushmore",
+"Stone Mountain",
+"Crazy Horse Memorial",
+"Devils Tower"
+],
+"d": 1,
+"x": "Carving took 14 years, from 1927 to 1941, and about 400 workers took part.",
+"tags": [
+"landmarks"
+]
+},
+{
+"q": "What is a small digital picture used to express a feeling in messages called?",
+"a": [
+"Emoji",
+"Avatar",
+"Meme",
+"Hashtag"
+],
+"d": 1,
+"x": "The word comes from Japanese and means 'picture character'. It has nothing to do with the English word 'emotion'.",
+"tags": [
+"tech"
+]
+},
+{
+"q": "What is the name of Apple's voice assistant?",
+"a": [
+"Siri",
+"Alexa",
+"Cortana",
+"Bixby"
+],
+"d": 1,
+"x": "Siri first appeared on the iPhone 4S in 2011.",
+"tags": [
+"tech"
+]
+},
+{
+"q": "Which company owns the video platform YouTube?",
+"a": [
+"Google",
+"Meta",
+"Microsoft",
+"Amazon"
+],
+"d": 1,
+"x": "Google bought YouTube in 2006, just 18 months after it was founded.",
+"tags": [
+"tech"
+]
+},
+{
+"q": "What does 'AI' stand for in technology?",
+"a": [
+"Artificial intelligence",
+"Automated interface",
+"Advanced internet",
+"Analog input"
+],
+"d": 1,
+"x": "The term was coined by computer scientist John McCarthy for a 1956 workshop at Dartmouth.",
+"tags": [
+"tech"
+]
+},
+{
+"q": "In most programs, which keyboard shortcut copies selected text?",
+"a": [
+"Ctrl+C",
+"Ctrl+V",
+"Ctrl+X",
+"Ctrl+Z"
+],
+"d": 1,
+"x": "The 'C' is easy to remember for 'copy', and Ctrl+V pastes it.",
+"tags": [
+"tech"
+]
+},
+{
+"q": "On a standard traffic light, which color means stop?",
+"a": [
+"Red",
+"Green",
+"Yellow",
+"White"
+],
+"d": 1,
+"x": "Red was chosen because it is visible from far away.",
+"tags": [
+"everyday"
+]
+},
+{
+"q": "Which alphabet is used to write Russian?",
+"a": [
+"Cyrillic",
+"Greek",
+"Arabic",
+"Hebrew"
+],
+"d": 1,
+"x": "It is named after Saint Cyril, a missionary to the Slavs in the ninth century.",
+"tags": [
+"language"
+]
+},
+{
+"q": "What do you call a doctor who specializes in treating children?",
+"a": [
+"Pediatrician",
+"Cardiologist",
+"Dermatologist",
+"Surgeon"
+],
+"d": 1,
+"x": "The word comes from Greek roots meaning 'child healer'.",
+"tags": [
+"health"
+]
+},
+{
+"q": "Which instrument is used to measure temperature?",
+"a": [
+"Thermometer",
+"Barometer",
+"Speedometer",
+"Odometer"
+],
+"d": 1,
+"x": "Daniel Fahrenheit built the first reliable mercury thermometer in 1714.",
+"tags": [
+"everyday"
+]
+},
+{
+"q": "How many bits are in one standard byte?",
+"a": [
+"Eight",
+"Four",
+"Sixteen",
+"Ten"
+],
+"d": 1,
+"x": "A single byte can represent 256 different values, enough for one text character in early computers.",
+"tags": [
+"tech"
+]
+},
+{
+"q": "Which phone number do you dial for emergencies in the United States?",
+"a": [
+"911",
+"411",
+"311",
+"511"
+],
+"d": 1,
+"x": "911 was first used in 1968 and now connects callers to police, fire, and medical help.",
+"tags": [
+"everyday"
+]
+},
+{
+"q": "Which color is most associated with St. Patrick's Day?",
+"a": [
+"Green",
+"Blue",
+"Orange",
+"Gold"
+],
+"d": 1,
+"x": "Cities such as Chicago dye their river green each year for the celebration.",
+"tags": [
+"holidays"
+]
+},
+{
+"q": "On which holiday do children traditionally hunt for decorated eggs?",
+"a": [
+"Easter",
+"Thanksgiving",
+"Labor Day",
+"Memorial Day"
+],
+"d": 1,
+"x": "Eggs became a symbol of new life in spring long before they were dyed and hidden.",
+"tags": [
+"holidays"
+]
+},
+{
+"q": "In which month is Mother's Day celebrated in the United States?",
+"a": [
+"May",
+"June",
+"April",
+"March"
+],
+"d": 1,
+"x": "It is held on the second Sunday of the month and became an official US holiday in 1914.",
+"tags": [
+"holidays"
+]
+},
+{
+"q": "What does CEO stand for?",
+"a": [
+"Chief Executive Officer",
+"Chief Economic Officer",
+"Central Executive Operator",
+"Chief Operating Expert"
+],
+"d": 1,
+"x": "The CEO is the highest-ranking manager in a company and reports to its board of directors.",
+"tags": [
+"business"
+]
+},
+{
+"q": "What do we call the money people and companies pay to the government from income and purchases?",
+"a": [
+"Taxes",
+"Tips",
+"Tolls",
+"Rents"
+],
+"d": 1,
+"x": "Benjamin Franklin wrote that nothing is certain but death and taxes.",
+"tags": [
+"money"
+]
+},
+{
+"q": "Which tool uses a magnetic needle to show direction?",
+"a": [
+"Compass",
+"Sextant",
+"Altimeter",
+"Barometer"
+],
+"d": 1,
+"x": "Early compasses were made in China more than 2,000 years ago.",
+"tags": [
+"everyday"
+]
+},
+{
+"q": "How many cards are in a standard deck of playing cards, not counting jokers?",
+"a": [
+"52",
+"54",
+"48",
+"56"
+],
+"d": 1,
+"x": "The four suits each have 13 cards, and the 52 cards roughly match the number of weeks in a year.",
+"tags": [
+"everyday"
+]
+}
+]

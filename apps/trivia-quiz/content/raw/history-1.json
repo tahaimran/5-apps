@@ -1,0 +1,1416 @@
+[
+{
+"q": "Who was the first President of the United States?",
+"a": [
+"George Washington",
+"John Adams",
+"Thomas Jefferson",
+"Benjamin Franklin"
+],
+"d": 1,
+"x": "Washington served two terms from 1789 to 1797 and then voluntarily stepped down, setting a precedent that lasted over a century.",
+"tags": [
+"usa"
+]
+},
+{
+"q": "Which ancient civilization built the pyramids at Giza?",
+"a": [
+"The Egyptians",
+"The Romans",
+"The Persians",
+"The Greeks"
+],
+"d": 1,
+"x": "The Great Pyramid was finished around 2560 BC and stayed the tallest human-made structure in the world for nearly 4,000 years.",
+"tags": [
+"egypt"
+]
+},
+{
+"q": "In which year did World War II end?",
+"a": [
+"1945",
+"1944",
+"1946",
+"1943"
+],
+"d": 1,
+"x": "Germany surrendered in May 1945 and Japan in August and September, ending a war that involved more than 30 countries.",
+"tags": [
+"ww2"
+]
+},
+{
+"q": "Which famous ocean liner sank in 1912 after hitting an iceberg?",
+"a": [
+"Titanic",
+"Lusitania",
+"Mayflower",
+"Bismarck"
+],
+"d": 1,
+"x": "The Titanic sank on its maiden voyage from Southampton to New York. It carried lifeboats for only about half of the people on board.",
+"tags": [
+"20th-century"
+]
+},
+{
+"q": "Which explorer reached the Caribbean in 1492 on a voyage funded by Spain?",
+"a": [
+"Christopher Columbus",
+"Vasco da Gama",
+"Ferdinand Magellan",
+"Marco Polo"
+],
+"d": 1,
+"x": "Columbus was Italian-born and sailed west hoping to reach Asia. He made landfall in the Bahamas on October 12, 1492.",
+"tags": [
+"explorers"
+]
+},
+{
+"q": "Which divided city's wall came down in 1989?",
+"a": [
+"Berlin",
+"Vienna",
+"Warsaw",
+"Budapest"
+],
+"d": 1,
+"x": "The Berlin Wall opened on November 9, 1989. Germany reunified less than a year later, on October 3, 1990.",
+"tags": [
+"cold-war"
+]
+},
+{
+"q": "Who became the first emperor of Rome in 27 BC?",
+"a": [
+"Augustus",
+"Julius Caesar",
+"Nero",
+"Constantine"
+],
+"d": 1,
+"x": "Born Octavian, he was Julius Caesar's adopted heir. The month of August is named in his honor.",
+"tags": [
+"rome"
+]
+},
+{
+"q": "Which vast empire was founded by Genghis Khan in the early 1200s?",
+"a": [
+"The Mongol Empire",
+"The Ottoman Empire",
+"The Persian Empire",
+"The Byzantine Empire"
+],
+"d": 1,
+"x": "At its height the Mongol Empire was the largest contiguous land empire in history, stretching from Korea to Eastern Europe.",
+"tags": [
+"medieval",
+"asia"
+]
+},
+{
+"q": "Which French leader crowned himself emperor in 1804?",
+"a": [
+"Napoleon Bonaparte",
+"Louis XIV",
+"Charlemagne",
+"Maximilien Robespierre"
+],
+"d": 1,
+"x": "At his coronation in Notre-Dame, Napoleon took the crown from the pope's hands and placed it on his own head.",
+"tags": [
+"france"
+]
+},
+{
+"q": "In which year was the American Declaration of Independence adopted?",
+"a": [
+"1776",
+"1783",
+"1789",
+"1775"
+],
+"d": 1,
+"x": "Congress approved the final text on July 4, 1776. Most delegates actually signed it about a month later, on August 2.",
+"tags": [
+"usa"
+]
+},
+{
+"q": "Which ancient Greek city-state was famous for its tough warrior culture?",
+"a": [
+"Sparta",
+"Athens",
+"Corinth",
+"Thebes"
+],
+"d": 1,
+"x": "Spartan boys began military training at age seven. Our word \"laconic\" comes from Laconia, the region around Sparta.",
+"tags": [
+"greece"
+]
+},
+{
+"q": "Which Egyptian queen joined forces with Mark Antony against Octavian?",
+"a": [
+"Cleopatra",
+"Nefertiti",
+"Hatshepsut",
+"Ankhesenamun"
+],
+"d": 1,
+"x": "Cleopatra VII was actually of Greek Macedonian descent and was said to be the first of her dynasty to learn the Egyptian language.",
+"tags": [
+"egypt",
+"rome"
+]
+},
+{
+"q": "Which young pharaoh's nearly intact tomb was found by Howard Carter in 1922?",
+"a": [
+"Tutankhamun",
+"Ramses II",
+"Khufu",
+"Akhenaten"
+],
+"d": 1,
+"x": "The tomb in the Valley of the Kings held more than 5,000 objects, including a solid gold funeral mask.",
+"tags": [
+"egypt"
+]
+},
+{
+"q": "Who was British Prime Minister for most of World War II?",
+"a": [
+"Winston Churchill",
+"Neville Chamberlain",
+"Clement Attlee",
+"David Lloyd George"
+],
+"d": 1,
+"x": "Churchill took office in May 1940. He also won the 1953 Nobel Prize in Literature for his historical and biographical writing.",
+"tags": [
+"ww2",
+"uk"
+]
+},
+{
+"q": "Which dictator led Nazi Germany from 1933 until 1945?",
+"a": [
+"Adolf Hitler",
+"Benito Mussolini",
+"Joseph Stalin",
+"Francisco Franco"
+],
+"d": 1,
+"x": "Hitler was born in Austria, not Germany. He became chancellor in January 1933 and took his own life in Berlin in April 1945.",
+"tags": [
+"ww2"
+]
+},
+{
+"q": "Which Hawaiian naval base was attacked on December 7, 1941?",
+"a": [
+"Pearl Harbor",
+"Midway Island",
+"Okinawa",
+"Iwo Jima"
+],
+"d": 1,
+"x": "The surprise attack by Japan led the United States to declare war the next day and enter World War II.",
+"tags": [
+"ww2",
+"usa"
+]
+},
+{
+"q": "Which German monk sparked the Protestant Reformation with his 95 Theses in 1517?",
+"a": [
+"Martin Luther",
+"John Calvin",
+"Erasmus",
+"Thomas More"
+],
+"d": 1,
+"x": "The printing press spread Luther's ideas across Europe with astonishing speed, far faster than earlier reform movements.",
+"tags": [
+"reformation"
+]
+},
+{
+"q": "Which battle in 1815 ended Napoleon's rule for good?",
+"a": [
+"Waterloo",
+"Austerlitz",
+"Trafalgar",
+"Borodino"
+],
+"d": 1,
+"x": "Napoleon was beaten in present-day Belgium by Wellington and Blucher, then exiled to the remote island of Saint Helena.",
+"tags": [
+"france",
+"napoleon"
+]
+},
+{
+"q": "Which ancient civilization built Machu Picchu high in the Andes?",
+"a": [
+"The Inca",
+"The Aztec",
+"The Maya",
+"The Olmec"
+],
+"d": 1,
+"x": "Machu Picchu was built around 1450 as an estate for an Inca emperor and was abandoned about a century later.",
+"tags": [
+"americas"
+]
+},
+{
+"q": "Which ancient empire built the Colosseum in its capital city?",
+"a": [
+"The Roman Empire",
+"The Persian Empire",
+"The Greek city-states",
+"The Byzantine Empire"
+],
+"d": 1,
+"x": "The Colosseum opened in AD 80 and could hold roughly 50,000 spectators, with 80 entrances to speed crowds in and out.",
+"tags": [
+"rome"
+]
+},
+{
+"q": "Which US president was assassinated in Dallas in 1963?",
+"a": [
+"John F. Kennedy",
+"Lyndon B. Johnson",
+"Richard Nixon",
+"Dwight D. Eisenhower"
+],
+"d": 1,
+"x": "Kennedy was the 35th president and, at age 43 when elected, the youngest person ever chosen for the office.",
+"tags": [
+"usa"
+]
+},
+{
+"q": "Who was President of the United States during the Civil War?",
+"a": [
+"Abraham Lincoln",
+"Ulysses S. Grant",
+"James Buchanan",
+"Andrew Johnson"
+],
+"d": 1,
+"x": "Lincoln issued the Emancipation Proclamation in 1863 and is the only president to have held a patent, for a device to lift boats.",
+"tags": [
+"usa"
+]
+},
+{
+"q": "Which country launched Sputnik, the first artificial satellite, in 1957?",
+"a": [
+"The Soviet Union",
+"The United States",
+"Germany",
+"China"
+],
+"d": 1,
+"x": "Sputnik was about the size of a beach ball. Its radio beeps were heard around the world and kicked off the space race.",
+"tags": [
+"space"
+]
+},
+{
+"q": "Who became the first human to travel into space in 1961?",
+"a": [
+"Yuri Gagarin",
+"Alan Shepard",
+"Neil Armstrong",
+"Valentina Tereshkova"
+],
+"d": 1,
+"x": "Gagarin's Vostok 1 flight on April 12, 1961 lasted just 108 minutes and made one orbit of Earth.",
+"tags": [
+"space"
+]
+},
+{
+"q": "Which brothers made the first powered, controlled airplane flights in 1903?",
+"a": [
+"The Wright brothers",
+"The Montgolfier brothers",
+"The Lumiere brothers",
+"The Grimm brothers"
+],
+"d": 1,
+"x": "Orville's first flight at Kitty Hawk, North Carolina lasted 12 seconds and covered about 120 feet.",
+"tags": [
+"inventions"
+]
+},
+{
+"q": "Who introduced movable-type printing to Europe around 1450?",
+"a": [
+"Johannes Gutenberg",
+"William Caxton",
+"Albrecht Durer",
+"Martin Luther"
+],
+"d": 1,
+"x": "The Gutenberg Bible, printed in Mainz, was among the first major books produced this way. About 49 copies survive today.",
+"tags": [
+"renaissance",
+"inventions"
+]
+},
+{
+"q": "Which Roman general crossed the Rubicon River with his army in 49 BC?",
+"a": [
+"Julius Caesar",
+"Mark Antony",
+"Scipio Africanus",
+"Pompey"
+],
+"d": 1,
+"x": "The act started a civil war. His reported words \"the die is cast\" have become a phrase for an irreversible decision.",
+"tags": [
+"rome"
+]
+},
+{
+"q": "Who became the first female Prime Minister of the United Kingdom in 1979?",
+"a": [
+"Margaret Thatcher",
+"Theresa May",
+"Indira Gandhi",
+"Golda Meir"
+],
+"d": 1,
+"x": "Thatcher won three general elections in a row and served for 11 years, the longest continuous term of the 20th century.",
+"tags": [
+"uk"
+]
+},
+{
+"q": "Which English king was forced to seal the Magna Carta in 1215?",
+"a": [
+"King John",
+"Henry VIII",
+"Richard I",
+"Edward I"
+],
+"d": 1,
+"x": "The charter was sealed at Runnymede by rebellious barons and limited the king's power by putting him under the law.",
+"tags": [
+"medieval",
+"uk"
+]
+},
+{
+"q": "Which Spanish conquistador defeated the Aztec Empire in 1521?",
+"a": [
+"Hernan Cortes",
+"Francisco Pizarro",
+"Ponce de Leon",
+"Vasco Nunez de Balboa"
+],
+"d": 1,
+"x": "Cortes landed in Mexico in 1519 with about 500 men and relied on local allies who resented Aztec rule.",
+"tags": [
+"americas"
+]
+},
+{
+"q": "Which leader championed nonviolent resistance in India's fight for independence?",
+"a": [
+"Mahatma Gandhi",
+"Jawaharlal Nehru",
+"Subhas Chandra Bose",
+"Muhammad Ali Jinnah"
+],
+"d": 1,
+"x": "Gandhi's 240-mile Salt March in 1930 protested the British salt tax and drew worldwide attention.",
+"tags": [
+"asia"
+]
+},
+{
+"q": "What was the name of the ship that carried the Pilgrims to America in 1620?",
+"a": [
+"Mayflower",
+"Santa Maria",
+"Endeavour",
+"Discovery"
+],
+"d": 1,
+"x": "The Mayflower carried about 102 passengers on a voyage of roughly 66 days before landing near Cape Cod.",
+"tags": [
+"usa"
+]
+},
+{
+"q": "Which devastating plague killed up to a third of Europeans in the 1300s?",
+"a": [
+"The Black Death",
+"Smallpox",
+"Cholera",
+"Typhus"
+],
+"d": 1,
+"x": "It spread along trade routes, probably carried by fleas on rats, and returned in waves for centuries.",
+"tags": [
+"medieval"
+]
+},
+{
+"q": "Which French heroine led armies against the English and was nicknamed the Maid of Orleans?",
+"a": [
+"Joan of Arc",
+"Marie Antoinette",
+"Eleanor of Aquitaine",
+"Catherine de Medici"
+],
+"d": 1,
+"x": "She was just a teenager when she helped lift the siege of Orleans in 1429 and was later declared a saint.",
+"tags": [
+"medieval",
+"france"
+]
+},
+{
+"q": "In which present-day US state was the Battle of the Alamo fought in 1836?",
+"a": [
+"Texas",
+"New Mexico",
+"Arizona",
+"Louisiana"
+],
+"d": 1,
+"x": "The phrase \"Remember the Alamo\" became a rallying cry, and Texas won independence from Mexico weeks later at San Jacinto.",
+"tags": [
+"usa"
+]
+},
+{
+"q": "Which Roman city was buried by the eruption of Mount Vesuvius in AD 79?",
+"a": [
+"Pompeii",
+"Ostia",
+"Carthage",
+"Syracuse"
+],
+"d": 1,
+"x": "Ash preserved the city so well that archaeologists can still see graffiti, bread loaves and street shops from nearly 2,000 years ago.",
+"tags": [
+"rome"
+]
+},
+{
+"q": "Which Norse explorer reached North America around the year 1000?",
+"a": [
+"Leif Erikson",
+"Ragnar Lothbrok",
+"Harald Hardrada",
+"Eric Bloodaxe"
+],
+"d": 1,
+"x": "He named the land Vinland. A Viking settlement at L'Anse aux Meadows in Newfoundland confirms the Norse reached North America.",
+"tags": [
+"explorers",
+"vikings"
+]
+},
+{
+"q": "In which year did the French Revolution begin?",
+"a": [
+"1789",
+"1776",
+"1799",
+"1804"
+],
+"d": 1,
+"x": "It began with the Estates-General meeting in May 1789 and ended the absolute monarchy that had ruled France for centuries.",
+"tags": [
+"france"
+]
+},
+{
+"q": "Which Paris fortress-prison was stormed by a crowd on July 14, 1789?",
+"a": [
+"The Bastille",
+"Versailles",
+"The Louvre",
+"The Tuileries"
+],
+"d": 1,
+"x": "Only seven prisoners were inside, but the fall of the Bastille became the symbol of the Revolution, and July 14 is now France's national day.",
+"tags": [
+"france"
+]
+},
+{
+"q": "Which US president led the country through the Great Depression and most of World War II?",
+"a": [
+"Franklin D. Roosevelt",
+"Herbert Hoover",
+"Harry Truman",
+"Woodrow Wilson"
+],
+"d": 1,
+"x": "Roosevelt was elected four times, and the 22nd Amendment was later passed to limit presidents to two terms.",
+"tags": [
+"usa"
+]
+},
+{
+"q": "At which Washington, D.C. monument did Martin Luther King Jr. give his \"I Have a Dream\" speech?",
+"a": [
+"Lincoln Memorial",
+"Washington Monument",
+"Jefferson Memorial",
+"US Capitol"
+],
+"d": 1,
+"x": "About 250,000 people gathered for the March on Washington on August 28, 1963. The famous dream passage was partly improvised.",
+"tags": [
+"usa",
+"civil-rights"
+]
+},
+{
+"q": "Which Venetian merchant-explorer wrote of his travels to the court of Kublai Khan?",
+"a": [
+"Marco Polo",
+"Christopher Columbus",
+"Amerigo Vespucci",
+"Giovanni da Verrazzano"
+],
+"d": 1,
+"x": "Marco Polo spent about 24 years away, and his book inspired later explorers, including Columbus, who owned a copy.",
+"tags": [
+"explorers",
+"asia"
+]
+},
+{
+"q": "In which year did World War I begin?",
+"a": [
+"1914",
+"1912",
+"1916",
+"1917"
+],
+"d": 1,
+"x": "The war began in July and August 1914 and lasted four years. It was the first major conflict to use machine guns and tanks on a large scale.",
+"tags": [
+"ww1"
+]
+},
+{
+"q": "Whose assassination in Sarajevo in 1914 triggered World War I?",
+"a": [
+"Archduke Franz Ferdinand",
+"Tsar Alexander II",
+"King Umberto I",
+"Kaiser Wilhelm I"
+],
+"d": 1,
+"x": "He was heir to the Austro-Hungarian throne. Within about six weeks, a chain of alliances had pulled the major European powers into war.",
+"tags": [
+"ww1"
+]
+},
+{
+"q": "What was the capital of the Inca Empire?",
+"a": [
+"Cusco",
+"Lima",
+"Quito",
+"Bogota"
+],
+"d": 1,
+"x": "Cusco was laid out in the shape of a puma, and many Inca stone walls there fit so tightly that they survived earthquakes.",
+"tags": [
+"americas"
+]
+},
+{
+"q": "Which British queen reigned from 1837 to 1901?",
+"a": [
+"Queen Victoria",
+"Elizabeth I",
+"Queen Anne",
+"Mary II"
+],
+"d": 1,
+"x": "Her 63-year reign, the longest of any British monarch until 2015, gave its name to an entire era.",
+"tags": [
+"uk"
+]
+},
+{
+"q": "Which English king had six wives?",
+"a": [
+"Henry VIII",
+"Henry VII",
+"Edward VI",
+"Charles II"
+],
+"d": 1,
+"x": "A popular rhyme sums up their fates: divorced, beheaded, died, divorced, beheaded, survived.",
+"tags": [
+"uk",
+"tudor"
+]
+},
+{
+"q": "Which Greek philosopher tutored the young Alexander of Macedon?",
+"a": [
+"Aristotle",
+"Plato",
+"Socrates",
+"Pythagoras"
+],
+"d": 1,
+"x": "Aristotle taught Alexander from about age 13, and the king later had scientific specimens sent back to his old teacher.",
+"tags": [
+"greece"
+]
+},
+{
+"q": "Which Portuguese explorer was the first to reach India by sea from Europe, in 1498?",
+"a": [
+"Vasco da Gama",
+"Bartolomeu Dias",
+"Pedro Cabral",
+"Henry the Navigator"
+],
+"d": 1,
+"x": "His voyage around Africa opened a direct sea route to the spice trade and made Portugal enormously rich.",
+"tags": [
+"explorers"
+]
+},
+{
+"q": "Which US document opens with the words \"We the People\"?",
+"a": [
+"The Constitution",
+"The Declaration of Independence",
+"The Bill of Rights",
+"The Articles of Confederation"
+],
+"d": 1,
+"x": "The Constitution was signed in Philadelphia in 1787 and is the oldest written national constitution still in use.",
+"tags": [
+"usa"
+]
+},
+{
+"q": "Which two Japanese cities were hit by atomic bombs in August 1945?",
+"a": [
+"Hiroshima and Nagasaki",
+"Tokyo and Osaka",
+"Kyoto and Kobe",
+"Yokohama and Nagoya"
+],
+"d": 1,
+"x": "These remain the only two times nuclear weapons have been used in war. Japan announced its surrender days later.",
+"tags": [
+"ww2"
+]
+},
+{
+"q": "Which US president resigned in 1974 because of the Watergate scandal?",
+"a": [
+"Richard Nixon",
+"Gerald Ford",
+"Lyndon B. Johnson",
+"Jimmy Carter"
+],
+"d": 1,
+"x": "Nixon is the only US president ever to resign. His successor Gerald Ford had never been elected as president or vice president.",
+"tags": [
+"usa"
+]
+},
+{
+"q": "What was the name of the Apollo 11 lunar module that landed on the Moon?",
+"a": [
+"Eagle",
+"Columbia",
+"Intrepid",
+"Falcon"
+],
+"d": 1,
+"x": "Armstrong radioed \"The Eagle has landed.\" The command module that stayed in orbit was named Columbia.",
+"tags": [
+"space"
+]
+},
+{
+"q": "Who was freed in 1990 after 27 years in prison and became South Africa's president in 1994?",
+"a": [
+"Nelson Mandela",
+"Desmond Tutu",
+"F. W. de Klerk",
+"Steve Biko"
+],
+"d": 1,
+"x": "Mandela shared the 1993 Nobel Peace Prize with de Klerk and became the first president elected in fully democratic elections.",
+"tags": [
+"africa"
+]
+},
+{
+"q": "Which empire did Suleiman the Magnificent rule in the 1500s?",
+"a": [
+"The Ottoman Empire",
+"The Mughal Empire",
+"The Safavid Empire",
+"The Byzantine Empire"
+],
+"d": 1,
+"x": "Suleiman reigned 46 years, expanded his realm into Europe and North Africa, and is also remembered as \"the Lawgiver.\"",
+"tags": [
+"ottoman"
+]
+},
+{
+"q": "Which Mesoamerican civilization built the pyramid of Chichen Itza?",
+"a": [
+"The Maya",
+"The Aztec",
+"The Inca",
+"The Olmec"
+],
+"d": 1,
+"x": "At the spring and autumn equinoxes, the sun creates a shadow like a snake slithering down the pyramid's staircase.",
+"tags": [
+"americas"
+]
+},
+{
+"q": "What was the capital city of the Aztec Empire?",
+"a": [
+"Tenochtitlan",
+"Cusco",
+"Teotihuacan",
+"Cholula"
+],
+"d": 1,
+"x": "Built on an island in a lake, it had causeways and floating gardens. Mexico City now stands on its ruins.",
+"tags": [
+"americas"
+]
+},
+{
+"q": "What was the first permanent English settlement in North America, founded in 1607?",
+"a": [
+"Jamestown",
+"Plymouth",
+"Roanoke",
+"Boston"
+],
+"d": 1,
+"x": "Jamestown in Virginia struggled through disease and hunger at first, but it survived thanks in part to tobacco farming.",
+"tags": [
+"usa"
+]
+},
+{
+"q": "Which British nurse, known as \"the Lady with the Lamp,\" reformed hospital care during the Crimean War?",
+"a": [
+"Florence Nightingale",
+"Clara Barton",
+"Edith Cavell",
+"Elizabeth Fry"
+],
+"d": 1,
+"x": "Nightingale was also a pioneering statistician and invented a type of pie chart to show how many soldiers died from preventable disease.",
+"tags": [
+"uk",
+"medicine"
+]
+},
+{
+"q": "Who received the first US patent for the telephone in 1876?",
+"a": [
+"Alexander Graham Bell",
+"Thomas Edison",
+"Nikola Tesla",
+"Guglielmo Marconi"
+],
+"d": 1,
+"x": "Bell's assistant Thomas Watson heard the first telephone words: \"Mr. Watson, come here, I want to see you.\"",
+"tags": [
+"inventions"
+]
+},
+{
+"q": "Which revolutionary led the Bolsheviks to power in Russia in 1917?",
+"a": [
+"Vladimir Lenin",
+"Leon Trotsky",
+"Joseph Stalin",
+"Alexander Kerensky"
+],
+"d": 1,
+"x": "Lenin returned to Russia from exile in Switzerland in a sealed train, arriving in Petrograd in April 1917.",
+"tags": [
+"russia"
+]
+},
+{
+"q": "Which two superpowers were the main rivals in the Cold War?",
+"a": [
+"The United States and the Soviet Union",
+"Britain and Germany",
+"China and Japan",
+"France and Russia"
+],
+"d": 1,
+"x": "They never fought each other directly, but competed through arms races, the space race and proxy wars from about 1947 to 1991.",
+"tags": [
+"cold-war"
+]
+},
+{
+"q": "Which US president arranged the Louisiana Purchase in 1803?",
+"a": [
+"Thomas Jefferson",
+"James Madison",
+"John Adams",
+"James Monroe"
+],
+"d": 1,
+"x": "The purchase from France cost about 15 million dollars and roughly doubled the size of the United States.",
+"tags": [
+"usa"
+]
+},
+{
+"q": "Which Wonder of the Ancient World stood on the island of Pharos near Alexandria?",
+"a": [
+"The Lighthouse",
+"The Colossus",
+"The Mausoleum",
+"The Hanging Gardens"
+],
+"d": 1,
+"x": "Built in the 3rd century BC, it was possibly over 100 meters tall and the word for lighthouse in several languages comes from Pharos.",
+"tags": [
+"egypt",
+"ancient"
+]
+},
+{
+"q": "Which French king was known as the Sun King?",
+"a": [
+"Louis XIV",
+"Louis XVI",
+"Charles X",
+"Napoleon III"
+],
+"d": 1,
+"x": "Louis XIV reigned for 72 years, the longest of any major European monarch, and built the Palace of Versailles.",
+"tags": [
+"france"
+]
+},
+{
+"q": "Which country did Germany invade on September 1, 1939, starting World War II in Europe?",
+"a": [
+"Poland",
+"Czechoslovakia",
+"Austria",
+"France"
+],
+"d": 1,
+"x": "Britain and France declared war on Germany two days later, on September 3.",
+"tags": [
+"ww2"
+]
+},
+{
+"q": "On D-Day in June 1944, Allied troops landed on the beaches of which region of France?",
+"a": [
+"Normandy",
+"Brittany",
+"Provence",
+"Calais"
+],
+"d": 1,
+"x": "Over 150,000 troops crossed the English Channel on the first day in the largest seaborne invasion in history.",
+"tags": [
+"ww2"
+]
+},
+{
+"q": "Which leader proclaimed the People's Republic of China in 1949?",
+"a": [
+"Mao Zedong",
+"Chiang Kai-shek",
+"Sun Yat-sen",
+"Deng Xiaoping"
+],
+"d": 1,
+"x": "Mao announced the new state from Tiananmen Gate in Beijing on October 1, 1949.",
+"tags": [
+"asia"
+]
+},
+{
+"q": "Who became the first woman to fly solo across the Atlantic Ocean, in 1932?",
+"a": [
+"Amelia Earhart",
+"Bessie Coleman",
+"Harriet Quimby",
+"Beryl Markham"
+],
+"d": 1,
+"x": "Earhart disappeared in 1937 over the Pacific while attempting to fly around the world, and her fate remains a mystery.",
+"tags": [
+"aviation"
+]
+},
+{
+"q": "Who made the first solo nonstop flight across the Atlantic in 1927?",
+"a": [
+"Charles Lindbergh",
+"Howard Hughes",
+"Wiley Post",
+"Richard Byrd"
+],
+"d": 1,
+"x": "Lindbergh flew the \"Spirit of St. Louis\" from New York to Paris in about 33.5 hours and won a 25,000-dollar prize.",
+"tags": [
+"aviation"
+]
+},
+{
+"q": "Whose refusal to give up her bus seat in 1955 helped spark the Montgomery bus boycott?",
+"a": [
+"Rosa Parks",
+"Harriet Tubman",
+"Sojourner Truth",
+"Coretta Scott King"
+],
+"d": 1,
+"x": "The boycott lasted 381 days and ended after the Supreme Court ruled bus segregation unconstitutional.",
+"tags": [
+"usa",
+"civil-rights"
+]
+},
+{
+"q": "Which woman helped many enslaved people escape north on the Underground Railroad?",
+"a": [
+"Harriet Tubman",
+"Clara Barton",
+"Mary McLeod Bethune",
+"Ida B. Wells"
+],
+"d": 1,
+"x": "Tubman escaped slavery herself in 1849 and made about 13 trips back to the South, reportedly never losing a passenger.",
+"tags": [
+"usa"
+]
+},
+{
+"q": "Who painted the ceiling of the Sistine Chapel in the early 1500s?",
+"a": [
+"Michelangelo",
+"Raphael",
+"Leonardo da Vinci",
+"Botticelli"
+],
+"d": 1,
+"x": "Michelangelo considered himself a sculptor and reportedly resisted the commission, which took about four years.",
+"tags": [
+"renaissance"
+]
+},
+{
+"q": "In which year did the Great Fire of London occur?",
+"a": [
+"1666",
+"1665",
+"1676",
+"1656"
+],
+"d": 1,
+"x": "The fire began in a bakery on Pudding Lane and destroyed about 13,000 houses, yet only a handful of deaths were officially recorded.",
+"tags": [
+"uk"
+]
+},
+{
+"q": "What name is given to the ancient Egyptian system of picture writing?",
+"a": [
+"Hieroglyphs",
+"Cuneiform",
+"Runes",
+"Linear B"
+],
+"d": 1,
+"x": "The Rosetta Stone, found in 1799, helped scholars finally decipher hieroglyphs after about 1,400 years of silence.",
+"tags": [
+"egypt"
+]
+},
+{
+"q": "Which English queen saw her navy defeat the Spanish Armada in 1588?",
+"a": [
+"Elizabeth I",
+"Mary I",
+"Queen Anne",
+"Victoria"
+],
+"d": 1,
+"x": "Elizabeth rallied troops at Tilbury saying she had \"the heart and stomach of a king.\" Storms also helped wreck the Spanish fleet.",
+"tags": [
+"uk",
+"tudor"
+]
+},
+{
+"q": "What was the 1773 protest in which colonists threw tea into Boston Harbor called?",
+"a": [
+"The Boston Tea Party",
+"The Stamp Act Congress",
+"The Whiskey Rebellion",
+"The Boston Massacre"
+],
+"d": 1,
+"x": "Colonists dumped 342 chests of tea to protest taxation without representation, which pushed Britain toward harsher laws and then revolution.",
+"tags": [
+"usa"
+]
+},
+{
+"q": "In dating years, what do the letters BC stand for?",
+"a": [
+"Before Christ",
+"Before Caesar",
+"Born Christian",
+"Beyond Century"
+],
+"d": 1,
+"x": "The system was devised by a monk named Dionysius Exiguus around AD 525. There is no year zero between 1 BC and AD 1.",
+"tags": [
+"general"
+]
+},
+{
+"q": "Which Italian dictator was known as \"Il Duce\"?",
+"a": [
+"Benito Mussolini",
+"Giuseppe Garibaldi",
+"Victor Emmanuel III",
+"Francisco Franco"
+],
+"d": 1,
+"x": "Mussolini founded the Fascist movement and ruled Italy from 1922 until 1943, when the Allied invasion of Sicily led to his removal.",
+"tags": [
+"ww2"
+]
+},
+{
+"q": "In which Dutch city did Anne Frank and her family hide during World War II?",
+"a": [
+"Amsterdam",
+"Rotterdam",
+"The Hague",
+"Utrecht"
+],
+"d": 1,
+"x": "The family hid for over two years in a concealed annex above her father's business. Her diary has been translated into over 60 languages.",
+"tags": [
+"ww2"
+]
+},
+{
+"q": "Which event in October 1929 helped trigger the Great Depression?",
+"a": [
+"The Wall Street stock market crash",
+"The Dust Bowl",
+"The Smoot-Hawley Tariff",
+"The bank holiday"
+],
+"d": 1,
+"x": "Stock prices collapsed over several days around \"Black Tuesday,\" October 29, and the Dow Jones average did not regain its 1929 peak until 1954.",
+"tags": [
+"usa",
+"economy"
+]
+},
+{
+"q": "Which American scientist developed the first successful polio vaccine in the 1950s?",
+"a": [
+"Jonas Salk",
+"Louis Pasteur",
+"Alexander Fleming",
+"Edward Jenner"
+],
+"d": 1,
+"x": "Salk refused to patent the vaccine. When asked who owned it, he reportedly said, \"Could you patent the sun?\"",
+"tags": [
+"medicine"
+]
+},
+{
+"q": "Which Italian astronomer was tried by the Inquisition in 1633 for supporting a Sun-centered universe?",
+"a": [
+"Galileo Galilei",
+"Nicolaus Copernicus",
+"Johannes Kepler",
+"Giordano Bruno"
+],
+"d": 1,
+"x": "Galileo spent his last years under house arrest, yet his telescope observations of Jupiter's moons transformed astronomy.",
+"tags": [
+"renaissance",
+"science"
+]
+},
+{
+"q": "From which region of Europe did the Vikings come?",
+"a": [
+"Scandinavia",
+"Iberia",
+"Anatolia",
+"The Balkans"
+],
+"d": 1,
+"x": "Vikings from today's Norway, Sweden and Denmark raided and traded from about AD 793 to 1066, reaching Russia, Iceland and North America.",
+"tags": [
+"vikings"
+]
+},
+{
+"q": "Which canal, opened in 1914, linked the Atlantic and Pacific Oceans?",
+"a": [
+"The Panama Canal",
+"The Suez Canal",
+"The Erie Canal",
+"The Kiel Canal"
+],
+"d": 1,
+"x": "Ships crossing it are raised by locks about 26 meters above sea level, saving a journey of thousands of miles around South America.",
+"tags": [
+"engineering"
+]
+},
+{
+"q": "What animals did the Carthaginian general Hannibal famously bring across the Alps to attack Rome?",
+"a": [
+"Elephants",
+"Camels",
+"Horses",
+"War dogs"
+],
+"d": 1,
+"x": "He crossed in 218 BC with a force that included dozens of elephants, though most of them died from the cold and the harsh journey.",
+"tags": [
+"rome",
+"ancient"
+]
+},
+{
+"q": "Ancient Egyptian civilization grew up along the banks of which river?",
+"a": [
+"The Nile",
+"The Tigris",
+"The Indus",
+"The Euphrates"
+],
+"d": 1,
+"x": "Yearly floods left fertile black silt, and the Egyptians called their land Kemet, meaning \"the black land.\"",
+"tags": [
+"egypt"
+]
+},
+{
+"q": "Which Greek city-state is credited with inventing democracy?",
+"a": [
+"Athens",
+"Sparta",
+"Corinth",
+"Thebes"
+],
+"d": 1,
+"x": "Athenian democracy began around 508 BC, but only free adult male citizens could vote, and women and enslaved people were excluded.",
+"tags": [
+"greece"
+]
+},
+{
+"q": "Who was the last Tsar of Russia?",
+"a": [
+"Nicholas II",
+"Alexander III",
+"Peter the Great",
+"Ivan IV"
+],
+"d": 1,
+"x": "Nicholas II abdicated in March 1917 and the Romanov dynasty, which had ruled since 1613, came to an end.",
+"tags": [
+"russia"
+]
+},
+{
+"q": "Which ancient Greek poet is credited with composing the Iliad and the Odyssey?",
+"a": [
+"Homer",
+"Hesiod",
+"Sophocles",
+"Virgil"
+],
+"d": 1,
+"x": "The epics were passed down orally before being written, and the Iliad tells of the final weeks of the Trojan War.",
+"tags": [
+"greece"
+]
+},
+{
+"q": "What was the capital of the Byzantine Empire?",
+"a": [
+"Constantinople",
+"Rome",
+"Athens",
+"Alexandria"
+],
+"d": 1,
+"x": "The city, founded by Emperor Constantine in AD 330, is now called Istanbul and sits on two continents.",
+"tags": [
+"byzantine"
+]
+},
+{
+"q": "Edward Jenner's pioneering vaccine helped humanity eventually wipe out which disease?",
+"a": [
+"Smallpox",
+"Measles",
+"Polio",
+"Malaria"
+],
+"d": 1,
+"x": "Jenner tested his idea in 1796 using cowpox. Smallpox was declared eradicated worldwide in 1980.",
+"tags": [
+"medicine"
+]
+},
+{
+"q": "Which American businessman introduced the moving assembly line for cars in 1913?",
+"a": [
+"Henry Ford",
+"Thomas Edison",
+"Eli Whitney",
+"Cyrus McCormick"
+],
+"d": 1,
+"x": "The assembly line cut the time to build a Model T from over 12 hours to about 90 minutes, making cars affordable.",
+"tags": [
+"inventions",
+"usa"
+]
+},
+{
+"q": "Who assassinated President Abraham Lincoln in 1865?",
+"a": [
+"John Wilkes Booth",
+"Lee Harvey Oswald",
+"Charles Guiteau",
+"Leon Czolgosz"
+],
+"d": 1,
+"x": "Booth was an actor, and the shooting took place at Ford's Theatre in Washington days after the Confederate surrender at Appomattox.",
+"tags": [
+"usa"
+]
+},
+{
+"q": "Which US space shuttle broke apart shortly after launch in January 1986?",
+"a": [
+"Challenger",
+"Columbia",
+"Discovery",
+"Atlantis"
+],
+"d": 1,
+"x": "The accident, caused by a failed rubber seal in cold weather, led to a 32-month pause in shuttle flights.",
+"tags": [
+"space"
+]
+},
+{
+"q": "Which city hosted the first modern Olympic Games in 1896?",
+"a": [
+"Athens",
+"Paris",
+"London",
+"Rome"
+],
+"d": 1,
+"x": "The Games were revived by Frenchman Pierre de Coubertin. About 14 nations took part, and the marathon was added in memory of a legendary Greek runner.",
+"tags": [
+"sports"
+]
+},
+{
+"q": "In which country did the Industrial Revolution begin in the 1700s?",
+"a": [
+"Great Britain",
+"France",
+"Germany",
+"The United States"
+],
+"d": 1,
+"x": "Britain had coal, iron, capital and colonial markets, and its textile mills and steam engines became models for the world.",
+"tags": [
+"industrial"
+]
+},
+{
+"q": "Which scientist became the first woman to win a Nobel Prize, in 1903?",
+"a": [
+"Marie Curie",
+"Rosalind Franklin",
+"Lise Meitner",
+"Dorothy Hodgkin"
+],
+"d": 1,
+"x": "Curie won in Physics in 1903 and in Chemistry in 1911, becoming the first person to win Nobel Prizes in two different sciences.",
+"tags": [
+"science"
+]
+},
+{
+"q": "Which ship sank on its maiden voyage in 1912 after hitting an iceberg?",
+"a": [
+"Titanic",
+"Lusitania",
+"Britannic",
+"Queen Mary"
+],
+"d": 1,
+"x": "The Titanic sank in the North Atlantic with more than 1,500 people lost."
+},
+{
+"q": "Which queen of Egypt was linked with Julius Caesar and Mark Antony?",
+"a": [
+"Cleopatra",
+"Nefertiti",
+"Hatshepsut",
+"Boudicca"
+],
+"d": 1,
+"x": "Cleopatra VII was the last active ruler of Ptolemaic Egypt."
+}
+]

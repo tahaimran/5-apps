@@ -1,0 +1,1493 @@
+[
+{
+"q": "Who directed Citizen Kane (1941)?",
+"a": [
+"Orson Welles",
+"John Ford",
+"Howard Hawks",
+"Frank Capra"
+],
+"d": 2,
+"x": "Welles co-wrote, directed and starred in it in his mid-twenties, and it is often ranked among the greatest films ever made.",
+"tags": [
+"classics",
+"directors"
+]
+},
+{
+"q": "In Citizen Kane, what is the last word spoken by Charles Foster Kane?",
+"a": [
+"Rosebud",
+"Xanadu",
+"Inquirer",
+"Emily"
+],
+"d": 2,
+"x": "The word turns out to refer to a sled from his childhood.",
+"tags": [
+"classics",
+"quotes"
+]
+},
+{
+"q": "Which director made 2001: A Space Odyssey (1968)?",
+"a": [
+"Stanley Kubrick",
+"Andrei Tarkovsky",
+"Robert Wise",
+"Irvin Kershner"
+],
+"d": 2,
+"x": "Kubrick developed the story with author Arthur C. Clarke, who co-wrote the screenplay.",
+"tags": [
+"sci-fi",
+"directors"
+]
+},
+{
+"q": "What is the name of the ship's computer in 2001: A Space Odyssey?",
+"a": [
+"HAL 9000",
+"GERTY",
+"Skynet",
+"WOPR"
+],
+"d": 2,
+"x": "HAL's calm voice was provided by Canadian actor Douglas Rain.",
+"tags": [
+"sci-fi",
+"classics"
+]
+},
+{
+"q": "Which Japanese director made Seven Samurai (1954)?",
+"a": [
+"Akira Kurosawa",
+"Yasujiro Ozu",
+"Hayao Miyazaki",
+"Kenji Mizoguchi"
+],
+"d": 2,
+"x": "The 1960 Hollywood Western The Magnificent Seven is a remake of the story.",
+"tags": [
+"japan",
+"directors"
+]
+},
+{
+"q": "Which film won the Best Picture Oscar at the 1995 ceremony, beating Pulp Fiction and The Shawshank Redemption?",
+"a": [
+"Forrest Gump",
+"Quiz Show",
+"Four Weddings and a Funeral",
+"The Lion King"
+],
+"d": 2,
+"x": "Forrest Gump won six Oscars, including Best Director for Robert Zemeckis.",
+"tags": [
+"awards",
+"1990s"
+]
+},
+{
+"q": "Who composed the score for the original Star Wars (1977)?",
+"a": [
+"John Williams",
+"Hans Zimmer",
+"Jerry Goldsmith",
+"Danny Elfman"
+],
+"d": 2,
+"x": "Williams also scored Jaws, E.T. and Raiders of the Lost Ark.",
+"tags": [
+"composers",
+"star wars"
+]
+},
+{
+"q": "Who composed the music for The Good, the Bad and the Ugly (1966)?",
+"a": [
+"Ennio Morricone",
+"Nino Rota",
+"Henry Mancini",
+"Bernard Herrmann"
+],
+"d": 2,
+"x": "Its main theme imitates the howl of a coyote.",
+"tags": [
+"composers",
+"westerns"
+]
+},
+{
+"q": "Which composer wrote the score for Titanic (1997)?",
+"a": [
+"James Horner",
+"John Williams",
+"Hans Zimmer",
+"Alan Silvestri"
+],
+"d": 2,
+"x": "The soundtrack album became one of the best-selling film soundtracks ever.",
+"tags": [
+"composers",
+"soundtracks"
+]
+},
+{
+"q": "Which composer wrote the orchestral score for Disney's The Lion King (1994)?",
+"a": [
+"Hans Zimmer",
+"Alan Menken",
+"Randy Newman",
+"Phil Collins"
+],
+"d": 2,
+"x": "Zimmer won the Oscar for Best Original Score; Elton John's 'Can You Feel the Love Tonight' won Best Original Song.",
+"tags": [
+"composers",
+"animation"
+]
+},
+{
+"q": "Which 1927 film is considered the first feature with synchronized spoken dialogue and songs?",
+"a": [
+"The Jazz Singer",
+"Don Juan",
+"Sunrise",
+"Wings"
+],
+"d": 2,
+"x": "Starring Al Jolson, it signaled the end of the silent era.",
+"tags": [
+"film history",
+"1920s"
+]
+},
+{
+"q": "What does the film term CGI stand for?",
+"a": [
+"Computer-generated imagery",
+"Cinematic graphics integration",
+"Camera graphics interface",
+"Computed global imaging"
+],
+"d": 2,
+"x": "The 1982 film Tron was among the first to use extensive computer-generated scenes.",
+"tags": [
+"terminology"
+]
+},
+{
+"q": "On a film crew, what does a Foley artist create?",
+"a": [
+"Everyday sound effects",
+"Costume designs",
+"Stunt choreography",
+"Musical scores"
+],
+"d": 2,
+"x": "The craft is named after Jack Foley, who pioneered it at Universal Studios.",
+"tags": [
+"terminology"
+]
+},
+{
+"q": "In film, what is a 'MacGuffin'?",
+"a": [
+"An object that drives the plot",
+"A large camera crane",
+"A kind of wide-angle lens",
+"A scene after the credits"
+],
+"d": 2,
+"x": "Alfred Hitchcock popularized the term, noting that the audience often cares less about it than the characters do.",
+"tags": [
+"terminology",
+"hitchcock"
+]
+},
+{
+"q": "What is a clapperboard mainly used for on a film set?",
+"a": [
+"Syncing picture and sound",
+"Measuring light levels",
+"Timing actors' entrances",
+"Numbering finished reels"
+],
+"d": 2,
+"x": "The clap gives editors a sharp visual and audio mark to line up the footage and sound.",
+"tags": [
+"terminology"
+]
+},
+{
+"q": "What does the French term 'film noir' literally mean?",
+"a": [
+"Black film",
+"Night picture",
+"Dark story",
+"Shadow play"
+],
+"d": 2,
+"x": "Classic examples include The Maltese Falcon (1941) and Double Indemnity (1944).",
+"tags": [
+"terminology",
+"film history"
+]
+},
+{
+"q": "Which film festival awards the Palme d'Or?",
+"a": [
+"Cannes Film Festival",
+"Venice Film Festival",
+"Berlin International Film Festival",
+"Sundance Film Festival"
+],
+"d": 2,
+"x": "The festival is held each May on the French Riviera.",
+"tags": [
+"awards",
+"festivals"
+]
+},
+{
+"q": "In which Hitchcock thriller is Cary Grant chased by a crop-duster plane?",
+"a": [
+"North by Northwest",
+"Vertigo",
+"Rear Window",
+"The Birds"
+],
+"d": 2,
+"x": "The finale takes place on the faces of Mount Rushmore.",
+"tags": [
+"hitchcock",
+"classics"
+]
+},
+{
+"q": "Which 1958 Hitchcock film stars James Stewart as a detective who fears heights?",
+"a": [
+"Vertigo",
+"Rope",
+"Rear Window",
+"Psycho"
+],
+"d": 2,
+"x": "Set in San Francisco, it also stars Kim Novak.",
+"tags": [
+"hitchcock",
+"classics"
+]
+},
+{
+"q": "Which Italian director made La Dolce Vita (1960)?",
+"a": [
+"Federico Fellini",
+"Michelangelo Antonioni",
+"Sergio Leone",
+"Luchino Visconti"
+],
+"d": 2,
+"x": "The film gave the world the word 'paparazzi', from a photographer character named Paparazzo.",
+"tags": [
+"italy",
+"directors"
+]
+},
+{
+"q": "Which film beat Taxi Driver, Network and All the President's Men to win Best Picture for 1976?",
+"a": [
+"Rocky",
+"Bound for Glory",
+"Carrie",
+"A Star Is Born"
+],
+"d": 2,
+"x": "It won three Oscars, including Best Director for John G. Avildsen.",
+"tags": [
+"awards",
+"1970s"
+]
+},
+{
+"q": "Who directed Raging Bull (1980)?",
+"a": [
+"Martin Scorsese",
+"Francis Ford Coppola",
+"Sidney Lumet",
+"Michael Cimino"
+],
+"d": 2,
+"x": "Robert De Niro gained around 60 pounds to portray the older Jake LaMotta.",
+"tags": [
+"directors",
+"1980s"
+]
+},
+{
+"q": "Who directed The Godfather (1972)?",
+"a": [
+"Francis Ford Coppola",
+"Martin Scorsese",
+"Brian De Palma",
+"Sydney Pollack"
+],
+"d": 2,
+"x": "Coppola's sequel, The Godfather Part II, went on to win Best Picture as well.",
+"tags": [
+"directors",
+"1970s"
+]
+},
+{
+"q": "Which actor won Best Actor for playing Don Vito in the 1972 film The Godfather?",
+"a": [
+"Marlon Brando",
+"Robert Duvall",
+"Al Pacino",
+"James Caan"
+],
+"d": 2,
+"x": "Pacino, Duvall and Caan were all nominated for Oscars for the same film.",
+"tags": [
+"actors",
+"1970s"
+]
+},
+{
+"q": "Which actor played the 'Man with No Name' in Sergio Leone's Dollars trilogy?",
+"a": [
+"Clint Eastwood",
+"Charles Bronson",
+"Lee Van Cleef",
+"John Wayne"
+],
+"d": 2,
+"x": "The trilogy made Eastwood an international star.",
+"tags": [
+"westerns",
+"actors"
+]
+},
+{
+"q": "Which director made Crouching Tiger, Hidden Dragon (2000)?",
+"a": [
+"Ang Lee",
+"Zhang Yimou",
+"John Woo",
+"Wong Kar-wai"
+],
+"d": 2,
+"x": "It won the Oscar for Best Foreign Language Film.",
+"tags": [
+"china",
+"directors"
+]
+},
+{
+"q": "Who directed and starred in the 1997 Italian film Life Is Beautiful?",
+"a": [
+"Roberto Benigni",
+"Giuseppe Tornatore",
+"Marcello Mastroianni",
+"Vittorio Gassman"
+],
+"d": 2,
+"x": "Benigni won Best Actor, and the film won Best Foreign Language Film.",
+"tags": [
+"italy",
+"awards"
+]
+},
+{
+"q": "Which Mexican director made Pan's Labyrinth (2006)?",
+"a": [
+"Guillermo del Toro",
+"Alfonso Cuarón",
+"Alejandro G. Iñárritu",
+"Robert Rodriguez"
+],
+"d": 2,
+"x": "The dark fantasy is set in Spain in 1944.",
+"tags": [
+"fantasy",
+"directors"
+]
+},
+{
+"q": "Which 1940 Disney film sets animation to classical music, with Mickey as the Sorcerer's Apprentice?",
+"a": [
+"Fantasia",
+"Bambi",
+"Dumbo",
+"The Reluctant Dragon"
+],
+"d": 2,
+"x": "Leopold Stokowski conducted the Philadelphia Orchestra for the soundtrack.",
+"tags": [
+"animation",
+"disney"
+]
+},
+{
+"q": "Who directed Toy Story (1995)?",
+"a": [
+"John Lasseter",
+"Brad Bird",
+"Pete Docter",
+"Andrew Stanton"
+],
+"d": 2,
+"x": "Lasseter's earlier short Tin Toy won an Oscar for animated short film.",
+"tags": [
+"animation",
+"pixar"
+]
+},
+{
+"q": "What is the surname of the superhero family in The Incredibles?",
+"a": [
+"Parr",
+"Park",
+"Pearson",
+"Powers"
+],
+"d": 2,
+"x": "Brad Bird wrote and directed the 2004 film.",
+"tags": [
+"animation",
+"pixar"
+]
+},
+{
+"q": "Which Studio Ghibli director made My Neighbor Totoro (1988)?",
+"a": [
+"Hayao Miyazaki",
+"Isao Takahata",
+"Mamoru Hosoda",
+"Satoshi Kon"
+],
+"d": 2,
+"x": "The furry forest spirit Totoro is the studio's mascot and appears in its logo.",
+"tags": [
+"animation",
+"japan"
+]
+},
+{
+"q": "Which Hayao Miyazaki film won the Oscar for Best Animated Feature in 2003?",
+"a": [
+"Spirited Away",
+"Princess Mononoke",
+"Howl's Moving Castle",
+"Ponyo"
+],
+"d": 2,
+"x": "It also won the Golden Bear at Berlin and was the top-grossing film in Japanese history for years.",
+"tags": [
+"animation",
+"awards"
+]
+},
+{
+"q": "In Aardman's Wallace & Gromit films, what food does Wallace love most?",
+"a": [
+"Cheese",
+"Fish and chips",
+"Toast",
+"Pie"
+],
+"d": 2,
+"x": "He especially loves Wensleydale on crackers; the clay-animated films come from Bristol.",
+"tags": [
+"animation",
+"british"
+]
+},
+{
+"q": "What is the name of the desert planet where Luke Skywalker grows up?",
+"a": [
+"Tatooine",
+"Hoth",
+"Endor",
+"Naboo"
+],
+"d": 2,
+"x": "Scenes were filmed in Tunisia, and the name comes from the Tunisian town of Tataouine.",
+"tags": [
+"star wars"
+]
+},
+{
+"q": "Which planet is destroyed by the Death Star in the original Star Wars?",
+"a": [
+"Alderaan",
+"Yavin 4",
+"Coruscant",
+"Hoth"
+],
+"d": 2,
+"x": "It is the home world of Princess Leia.",
+"tags": [
+"star wars"
+]
+},
+{
+"q": "Who provided the voice of Darth Vader in the original trilogy?",
+"a": [
+"James Earl Jones",
+"David Prowse",
+"Orson Welles",
+"Ian McDiarmid"
+],
+"d": 2,
+"x": "David Prowse wore the suit on set, but his lines were dubbed by Jones.",
+"tags": [
+"star wars",
+"actors"
+]
+},
+{
+"q": "Which actor played Obi-Wan Kenobi in the original 1977 Star Wars?",
+"a": [
+"Alec Guinness",
+"Peter Cushing",
+"Christopher Lee",
+"Max von Sydow"
+],
+"d": 2,
+"x": "Guinness already had an Oscar for The Bridge on the River Kwai.",
+"tags": [
+"star wars",
+"actors"
+]
+},
+{
+"q": "What is Indiana Jones famously afraid of?",
+"a": [
+"Snakes",
+"Heights",
+"Spiders",
+"Fire"
+],
+"d": 2,
+"x": "In Raiders of the Lost Ark he groans, 'Snakes. Why'd it have to be snakes?'",
+"tags": [
+"franchises",
+"quotes"
+]
+},
+{
+"q": "Which actor played Indiana Jones' father in Indiana Jones and the Last Crusade (1989)?",
+"a": [
+"Sean Connery",
+"Michael Caine",
+"Christopher Lee",
+"Alec Guinness"
+],
+"d": 2,
+"x": "Connery was only about 12 years older than Harrison Ford.",
+"tags": [
+"franchises",
+"actors"
+]
+},
+{
+"q": "Which actor played Hagrid in the Harry Potter films?",
+"a": [
+"Robbie Coltrane",
+"Brendan Gleeson",
+"Richard Harris",
+"Timothy Spall"
+],
+"d": 2,
+"x": "Richard Harris played Dumbledore in the first two films.",
+"tags": [
+"harry potter",
+"actors"
+]
+},
+{
+"q": "Which actor played Professor Severus Snape in the Harry Potter films?",
+"a": [
+"Alan Rickman",
+"Gary Oldman",
+"Ralph Fiennes",
+"Jim Broadbent"
+],
+"d": 2,
+"x": "Rickman also played villain Hans Gruber in an action classic from 1988.",
+"tags": [
+"harry potter",
+"actors"
+]
+},
+{
+"q": "In Quidditch, what small winged ball must the Seeker catch?",
+"a": [
+"The Golden Snitch",
+"The Quaffle",
+"The Bludger",
+"The Remembrall"
+],
+"d": 2,
+"x": "Catching it ends the match and earns 150 points.",
+"tags": [
+"harry potter"
+]
+},
+{
+"q": "At which London railway station is Platform 9 3/4 in the Harry Potter story?",
+"a": [
+"King's Cross",
+"Paddington",
+"Euston",
+"Waterloo"
+],
+"d": 2,
+"x": "For the films, the station's grand exterior was actually the neighboring St Pancras building.",
+"tags": [
+"harry potter"
+]
+},
+{
+"q": "Which slow-motion camera effect did The Matrix popularize?",
+"a": [
+"Bullet time",
+"Slow zoom",
+"Time freeze",
+"Frame lock"
+],
+"d": 2,
+"x": "It was created using a ring of still cameras that fired in sequence around the actor.",
+"tags": [
+"sci-fi",
+"terminology"
+]
+},
+{
+"q": "Who played Morpheus in The Matrix?",
+"a": [
+"Laurence Fishburne",
+"Hugo Weaving",
+"Samuel L. Jackson",
+"Morgan Freeman"
+],
+"d": 2,
+"x": "Hugo Weaving played the villainous Agent Smith.",
+"tags": [
+"sci-fi",
+"actors"
+]
+},
+{
+"q": "Which actress plays Ellen Ripley in Alien (1979)?",
+"a": [
+"Sigourney Weaver",
+"Jamie Lee Curtis",
+"Linda Hamilton",
+"Jodie Foster"
+],
+"d": 2,
+"x": "Its tagline was 'In space no one can hear you scream.'",
+"tags": [
+"sci-fi",
+"actors"
+]
+},
+{
+"q": "Which actress played Sarah Connor in The Terminator (1984)?",
+"a": [
+"Linda Hamilton",
+"Sigourney Weaver",
+"Geena Davis",
+"Jamie Lee Curtis"
+],
+"d": 2,
+"x": "In the series, the artificial intelligence that starts the war is called Skynet.",
+"tags": [
+"sci-fi",
+"actors"
+]
+},
+{
+"q": "In the first Rocky film, who is the heavyweight champion Rocky fights?",
+"a": [
+"Apollo Creed",
+"Clubber Lang",
+"Ivan Drago",
+"Mickey Goldmill"
+],
+"d": 2,
+"x": "Carl Weathers played Creed, a showman champion who picks Rocky for a publicity stunt.",
+"tags": [
+"classics",
+"1970s"
+]
+},
+{
+"q": "Which actor starred as Max in the original 1979 film Mad Max?",
+"a": [
+"Mel Gibson",
+"Tom Hardy",
+"Hugh Jackman",
+"Russell Crowe"
+],
+"d": 2,
+"x": "The low-budget Australian film became a worldwide hit.",
+"tags": [
+"australia",
+"actors"
+]
+},
+{
+"q": "Who wrote the 1974 novel on which Jaws is based?",
+"a": [
+"Peter Benchley",
+"Stephen King",
+"Michael Crichton",
+"Mario Puzo"
+],
+"d": 2,
+"x": "Benchley also co-wrote the screenplay.",
+"tags": [
+"classics",
+"1970s"
+]
+},
+{
+"q": "What is the name of the beach town menaced by the shark in Jaws?",
+"a": [
+"Amity Island",
+"Bodega Bay",
+"Cabot Cove",
+"Haddonfield"
+],
+"d": 2,
+"x": "The film was shot on Martha's Vineyard in Massachusetts.",
+"tags": [
+"classics",
+"1970s"
+]
+},
+{
+"q": "In what year was the first Star Wars film released?",
+"a": [
+"1977",
+"1975",
+"1979",
+"1983"
+],
+"d": 2,
+"x": "It opened on a limited number of screens on May 25, 1977, and quickly spread nationwide.",
+"tags": [
+"star wars",
+"film history"
+]
+},
+{
+"q": "In the original Ghostbusters finale, which giant figure stomps through New York?",
+"a": [
+"The Stay Puft Man",
+"Slimer the ghost",
+"Gozer the Gozerian",
+"Vigo the Carpathian"
+],
+"d": 2,
+"x": "The Ghostbusters' own minds choose the form, picking the harmless-looking mascot.",
+"tags": [
+"comedy",
+"1980s"
+]
+},
+{
+"q": "In Back to the Future, how much electrical power does the flux capacitor require?",
+"a": [
+"1.21 gigawatts",
+"1.12 gigawatts",
+"2.1 gigawatts",
+"12.1 gigawatts"
+],
+"d": 2,
+"x": "Doc Brown pronounces it 'jigowatts', and the DeLorean must reach 88 miles per hour.",
+"tags": [
+"quotes",
+"1980s"
+]
+},
+{
+"q": "To which year does Marty McFly first travel in Back to the Future?",
+"a": [
+"1955",
+"1885",
+"1965",
+"1945"
+],
+"d": 2,
+"x": "He meets his teenage parents in Hill Valley, where the clock tower is struck by lightning.",
+"tags": [
+"1980s",
+"franchises"
+]
+},
+{
+"q": "Which 1999 thriller features a boy who whispers 'I see dead people'?",
+"a": [
+"The Sixth Sense",
+"The Others",
+"Signs",
+"Poltergeist"
+],
+"d": 2,
+"x": "M. Night Shyamalan directed, and Haley Joel Osment earned an Oscar nomination.",
+"tags": [
+"quotes",
+"thrillers"
+]
+},
+{
+"q": "Which 1983 film has Tony Montana saying 'Say hello to my little friend'?",
+"a": [
+"Scarface",
+"Goodfellas",
+"Casino",
+"Carlito's Way"
+],
+"d": 2,
+"x": "Al Pacino starred, and Brian De Palma directed.",
+"tags": [
+"quotes",
+"1980s"
+]
+},
+{
+"q": "Which 1987 film includes the line 'Nobody puts Baby in a corner'?",
+"a": [
+"Dirty Dancing",
+"Footloose",
+"Flashdance",
+"Fame"
+],
+"d": 2,
+"x": "Its song '(I've Had) The Time of My Life' won the Oscar for Best Original Song.",
+"tags": [
+"quotes",
+"1980s"
+]
+},
+{
+"q": "Which 1988 action film is set in Nakatomi Plaza with detective John McClane?",
+"a": [
+"Die Hard",
+"Lethal Weapon",
+"Predator",
+"Speed"
+],
+"d": 2,
+"x": "It was based on Roderick Thorp's novel Nothing Lasts Forever.",
+"tags": [
+"action",
+"1980s"
+]
+},
+{
+"q": "In which Scorsese film does De Niro famously talk to his own reflection in a mirror?",
+"a": [
+"Taxi Driver",
+"Raging Bull",
+"Mean Streets",
+"Goodfellas"
+],
+"d": 2,
+"x": "Robert De Niro reportedly improvised the famous mirror scene.",
+"tags": [
+"quotes",
+"1970s"
+]
+},
+{
+"q": "Which actress sings 'Moon River' on a fire escape in Breakfast at Tiffany's?",
+"a": [
+"Audrey Hepburn",
+"Marilyn Monroe",
+"Grace Kelly",
+"Judy Garland"
+],
+"d": 2,
+"x": "The song, by Henry Mancini and Johnny Mercer, won the Oscar for Best Original Song.",
+"tags": [
+"soundtracks",
+"1960s"
+]
+},
+{
+"q": "Who sang the 1984 hit theme song of Ghostbusters?",
+"a": [
+"Ray Parker Jr.",
+"Huey Lewis",
+"Kenny Loggins",
+"Billy Idol"
+],
+"d": 2,
+"x": "The song became a number-one hit in 1984.",
+"tags": [
+"soundtracks",
+"1980s"
+]
+},
+{
+"q": "Which musical film pits the Jets against the Sharks?",
+"a": [
+"West Side Story",
+"Grease",
+"Oliver!",
+"Guys and Dolls"
+],
+"d": 2,
+"x": "The 1961 film won 10 Oscars, including Best Picture, and updates Romeo and Juliet to New York.",
+"tags": [
+"musicals",
+"1960s"
+]
+},
+{
+"q": "Which 1952 musical features Gene Kelly dancing and splashing in puddles?",
+"a": [
+"Singin' in the Rain",
+"An American in Paris",
+"On the Town",
+"Top Hat"
+],
+"d": 2,
+"x": "Debbie Reynolds and Donald O'Connor co-starred.",
+"tags": [
+"musicals",
+"classics"
+]
+},
+{
+"q": "Which 1955 Billy Wilder comedy shows Marilyn Monroe's white dress blowing over a subway grate?",
+"a": [
+"The Seven Year Itch",
+"Some Like It Hot",
+"Gentlemen Prefer Blondes",
+"Niagara"
+],
+"d": 2,
+"x": "The image became one of the most famous in Hollywood history.",
+"tags": [
+"classics",
+"1950s"
+]
+},
+{
+"q": "Which actor played Norman Bates in Psycho (1960)?",
+"a": [
+"Anthony Perkins",
+"Tony Curtis",
+"Cary Grant",
+"James Stewart"
+],
+"d": 2,
+"x": "Janet Leigh played Marion Crane.",
+"tags": [
+"hitchcock",
+"actors"
+]
+},
+{
+"q": "Which 1931 Universal horror film featured Boris Karloff as a stitched-together monster?",
+"a": [
+"Frankenstein",
+"Dracula",
+"The Mummy",
+"The Wolf Man"
+],
+"d": 2,
+"x": "Makeup artist Jack Pierce created the monster's flat-headed look.",
+"tags": [
+"horror",
+"1930s"
+]
+},
+{
+"q": "Which actor played Count Dracula in Universal's 1931 film?",
+"a": [
+"Bela Lugosi",
+"Boris Karloff",
+"Lon Chaney Jr.",
+"Vincent Price"
+],
+"d": 2,
+"x": "Lugosi had played the role on Broadway before the film.",
+"tags": [
+"horror",
+"1930s"
+]
+},
+{
+"q": "Which Charlie Chaplin film from 1940 mocks a dictator?",
+"a": [
+"The Great Dictator",
+"Modern Times",
+"City Lights",
+"The Gold Rush"
+],
+"d": 2,
+"x": "It was Chaplin's first fully sound film.",
+"tags": [
+"silent film",
+"classics"
+]
+},
+{
+"q": "Which comedy duo starred in dozens of films as Stan and Ollie?",
+"a": [
+"Laurel and Hardy",
+"Abbott and Costello",
+"Martin and Lewis",
+"Hope and Crosby"
+],
+"d": 2,
+"x": "Their 1932 short The Music Box won an Oscar.",
+"tags": [
+"comedy",
+"classics"
+]
+},
+{
+"q": "Which Indian city is the center of the Hindi-language film industry known as Bollywood?",
+"a": [
+"Mumbai",
+"Delhi",
+"Chennai",
+"Kolkata"
+],
+"d": 2,
+"x": "The name blends Bombay, the city's former name, and Hollywood.",
+"tags": [
+"india",
+"film history"
+]
+},
+{
+"q": "Nollywood is the nickname of the film industry of which country?",
+"a": [
+"Nigeria",
+"Ghana",
+"Kenya",
+"South Africa"
+],
+"d": 2,
+"x": "It is one of the largest film industries in the world by number of releases.",
+"tags": [
+"africa",
+"film history"
+]
+},
+{
+"q": "Which Hollywood studio's logo features a roaring lion named Leo?",
+"a": [
+"Metro-Goldwyn-Mayer",
+"Paramount",
+"Columbia",
+"20th Century Fox"
+],
+"d": 2,
+"x": "MGM was formed in 1924 by merging three smaller companies.",
+"tags": [
+"studios"
+]
+},
+{
+"q": "Which Hollywood studio's logo shows a woman holding a torch?",
+"a": [
+"Columbia Pictures",
+"Paramount",
+"Universal",
+"Warner Bros."
+],
+"d": 2,
+"x": "The figure is often called the Torch Lady.",
+"tags": [
+"studios"
+]
+},
+{
+"q": "Who played the title role in Ferris Bueller's Day Off (1986)?",
+"a": [
+"Matthew Broderick",
+"Anthony Michael Hall",
+"Emilio Estevez",
+"Judd Nelson"
+],
+"d": 2,
+"x": "The film is set in Chicago, and Ferris often speaks directly to the camera.",
+"tags": [
+"comedy",
+"1980s"
+]
+},
+{
+"q": "Who directed The Breakfast Club (1985)?",
+"a": [
+"John Hughes",
+"Rob Reiner",
+"Ivan Reitman",
+"Cameron Crowe"
+],
+"d": 2,
+"x": "The story takes place almost entirely during one Saturday detention in an Illinois high school.",
+"tags": [
+"comedy",
+"1980s"
+]
+},
+{
+"q": "Which actor stars as a weatherman stuck in a time loop in Groundhog Day (1993)?",
+"a": [
+"Bill Murray",
+"Chevy Chase",
+"Steve Martin",
+"Dan Aykroyd"
+],
+"d": 2,
+"x": "The film is set in Punxsutawney, Pennsylvania, though it was mostly shot in Woodstock, Illinois.",
+"tags": [
+"comedy",
+"1990s"
+]
+},
+{
+"q": "Which 1993 Spielberg film was shot largely in black and white?",
+"a": [
+"Schindler's List",
+"Jurassic Park",
+"Amistad",
+"Empire of the Sun"
+],
+"d": 2,
+"x": "It won Best Picture, and Spielberg won his first Best Director Oscar.",
+"tags": [
+"awards",
+"1990s"
+]
+},
+{
+"q": "Which 1998 war film opens with the D-Day landing at Omaha Beach?",
+"a": [
+"Saving Private Ryan",
+"The Thin Red Line",
+"Platoon",
+"Das Boot"
+],
+"d": 2,
+"x": "Spielberg won Best Director for it, though it lost Best Picture to a romantic comedy.",
+"tags": [
+"war",
+"1990s"
+]
+},
+{
+"q": "Which 1959 epic features a famous chariot race?",
+"a": [
+"Ben-Hur",
+"Spartacus",
+"Cleopatra",
+"Quo Vadis"
+],
+"d": 2,
+"x": "Charlton Heston starred as Judah Ben-Hur, and the race remains a landmark of stunt work.",
+"tags": [
+"epics",
+"awards"
+]
+},
+{
+"q": "In which film is Andy Dufresne a banker wrongly sent to prison?",
+"a": [
+"The Shawshank Redemption",
+"The Green Mile",
+"Cool Hand Luke",
+"Escape from Alcatraz"
+],
+"d": 2,
+"x": "It is based on a Stephen King novella and was only a modest box-office success at first.",
+"tags": [
+"1990s",
+"drama"
+]
+},
+{
+"q": "Who directed Inception (2010)?",
+"a": [
+"Christopher Nolan",
+"Denis Villeneuve",
+"Darren Aronofsky",
+"David Fincher"
+],
+"d": 2,
+"x": "Nolan also directed The Dark Knight trilogy.",
+"tags": [
+"sci-fi",
+"directors"
+]
+},
+{
+"q": "Who directed Fight Club (1999)?",
+"a": [
+"David Fincher",
+"Danny Boyle",
+"Darren Aronofsky",
+"Guy Ritchie"
+],
+"d": 2,
+"x": "Fincher also directed Se7en and The Social Network.",
+"tags": [
+"directors",
+"1990s"
+]
+},
+{
+"q": "Which Danny Boyle film set in Mumbai won Best Picture for 2008?",
+"a": [
+"Slumdog Millionaire",
+"Life of Pi",
+"The Namesake",
+"Salaam Bombay!"
+],
+"d": 2,
+"x": "It won eight Oscars, including Best Director.",
+"tags": [
+"awards",
+"2000s"
+]
+},
+{
+"q": "Which 2003 film features Bill Murray as a lonely actor in Tokyo?",
+"a": [
+"Lost in Translation",
+"Groundhog Day",
+"Rushmore",
+"Broken Flowers"
+],
+"d": 2,
+"x": "Sofia Coppola won the Oscar for Best Original Screenplay.",
+"tags": [
+"comedy",
+"2000s"
+]
+},
+{
+"q": "Which actress played Princess Leia in the original Star Wars trilogy?",
+"a": [
+"Carrie Fisher",
+"Natalie Portman",
+"Sigourney Weaver",
+"Kate Beckinsale"
+],
+"d": 2,
+"x": "She returned to the role in The Force Awakens (2015).",
+"tags": [
+"star wars",
+"actors"
+]
+},
+{
+"q": "Which 1991 Disney film includes the song 'Be Our Guest'?",
+"a": [
+"Beauty and the Beast",
+"The Little Mermaid",
+"Aladdin",
+"Pocahontas"
+],
+"d": 2,
+"x": "The song is performed by Lumiere and the enchanted objects to welcome Belle.",
+"tags": [
+"animation",
+"soundtracks"
+]
+},
+{
+"q": "Which actor played the lawyer Atticus Finch in To Kill a Mockingbird (1962)?",
+"a": [
+"Gregory Peck",
+"Henry Fonda",
+"James Stewart",
+"Spencer Tracy"
+],
+"d": 2,
+"x": "Peck won the Best Actor Oscar for the role; the film is based on Harper Lee's novel.",
+"tags": [
+"classics",
+"actors"
+]
+},
+{
+"q": "Which actress plays Ilsa Lund in Casablanca?",
+"a": [
+"Ingrid Bergman",
+"Katharine Hepburn",
+"Lauren Bacall",
+"Rita Hayworth"
+],
+"d": 2,
+"x": "The song 'As Time Goes By' is played by the pianist Sam, played by Dooley Wilson.",
+"tags": [
+"classics",
+"actors"
+]
+},
+{
+"q": "Which actor played Rhett Butler in Gone with the Wind?",
+"a": [
+"Clark Gable",
+"Cary Grant",
+"Humphrey Bogart",
+"Errol Flynn"
+],
+"d": 2,
+"x": "His line 'Frankly, my dear, I don't give a damn' is one of cinema's most famous.",
+"tags": [
+"classics",
+"quotes"
+]
+},
+{
+"q": "Which actor starred in GoldenEye (1995), his first outing as James Bond?",
+"a": [
+"Pierce Brosnan",
+"Timothy Dalton",
+"Roger Moore",
+"Daniel Craig"
+],
+"d": 2,
+"x": "It was also the first Bond film for Judi Dench, who played M.",
+"tags": [
+"james bond",
+"actors"
+]
+},
+{
+"q": "In which 1964 Bond film did the Aston Martin DB5 make its debut?",
+"a": [
+"Goldfinger",
+"Thunderball",
+"Dr. No",
+"From Russia with Love"
+],
+"d": 2,
+"x": "Q's modified DB5 came with an ejector seat and machine guns behind the headlights.",
+"tags": [
+"james bond",
+"franchises"
+]
+},
+{
+"q": "Which 2015 Pixar film is set inside the mind of a young girl?",
+"a": [
+"Inside Out",
+"The Good Dinosaur",
+"Brave",
+"Up"
+],
+"d": 2,
+"x": "The emotions Joy, Sadness, Anger, Fear and Disgust run her headquarters.",
+"tags": [
+"animation",
+"pixar"
+]
+},
+{
+"q": "Who voices the forgetful fish Dory in Finding Nemo?",
+"a": [
+"Ellen DeGeneres",
+"Whoopi Goldberg",
+"Tina Fey",
+"Rosie O'Donnell"
+],
+"d": 2,
+"x": "Albert Brooks voiced Nemo's father Marlin.",
+"tags": [
+"animation",
+"pixar"
+]
+},
+{
+"q": "Which 1998 Disney film features the tiny dragon Mushu?",
+"a": [
+"Mulan",
+"Pocahontas",
+"Hercules",
+"Tarzan"
+],
+"d": 2,
+"x": "Eddie Murphy voiced Mushu in the story based on a Chinese legend.",
+"tags": [
+"animation",
+"disney"
+]
+},
+{
+"q": "Which actor played Hannibal Lecter in The Silence of the Lambs?",
+"a": [
+"Anthony Hopkins",
+"Brian Cox",
+"Gary Oldman",
+"Ralph Fiennes"
+],
+"d": 2,
+"x": "Brian Cox had earlier played the character, spelled 'Lecktor', in Manhunter (1986).",
+"tags": [
+"actors",
+"thrillers"
+]
+},
+{
+"q": "For which 1975 film did Jack Nicholson win his first Best Actor Oscar, playing a patient in a mental hospital?",
+"a": [
+"One Flew Over the Cuckoo's Nest",
+"Five Easy Pieces",
+"Prizzi's Honor",
+"The Last Detail"
+],
+"d": 2,
+"x": "Milos Forman directed it; it was the second film to win all five top Oscars.",
+"tags": [
+"awards",
+"1970s"
+]
+},
+{
+"q": "Which 2013 sci-fi thriller stars Sandra Bullock adrift in space?",
+"a": [
+"Gravity",
+"Moon",
+"Interstellar",
+"Sunshine"
+],
+"d": 2,
+"x": "Alfonso Cuarón won the Oscar for Best Director for it.",
+"tags": [
+"sci-fi",
+"2010s"
+]
+},
+{
+"q": "Which 2001 Baz Luhrmann musical is set in a Paris nightclub and stars Nicole Kidman?",
+"a": [
+"Moulin Rouge!",
+"Chicago",
+"Cabaret",
+"Nine"
+],
+"d": 2,
+"x": "Ewan McGregor co-starred, and the film mixes modern pop songs into a period setting.",
+"tags": [
+"musicals",
+"2000s"
+]
+}
+]

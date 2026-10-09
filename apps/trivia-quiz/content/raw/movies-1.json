@@ -1,0 +1,1497 @@
+[
+{
+"q": "Who directed the 1975 shark thriller Jaws?",
+"a": [
+"Steven Spielberg",
+"George Lucas",
+"Ridley Scott",
+"Brian De Palma"
+],
+"d": 1,
+"x": "Spielberg was in his twenties when he made it, and the film is often called the first summer blockbuster.",
+"tags": [
+"directors",
+"1970s"
+]
+},
+{
+"q": "Which studio made Toy Story, the first fully computer-animated feature film?",
+"a": [
+"Pixar",
+"DreamWorks",
+"Blue Sky",
+"Illumination"
+],
+"d": 1,
+"x": "It was released in 1995 and distributed by Disney, and it launched a whole era of computer animation.",
+"tags": [
+"animation",
+"pixar"
+]
+},
+{
+"q": "Which actor played Jack Dawson in Titanic?",
+"a": [
+"Leonardo DiCaprio",
+"Brad Pitt",
+"Matt Damon",
+"Johnny Depp"
+],
+"d": 1,
+"x": "Jack is a fictional passenger; the 1997 film also starred Kate Winslet as Rose.",
+"tags": [
+"actors",
+"1990s"
+]
+},
+{
+"q": "What is the name of the young lion prince in The Lion King (1994)?",
+"a": [
+"Simba",
+"Nala",
+"Kovu",
+"Kiara"
+],
+"d": 1,
+"x": "The songs were written by Elton John and lyricist Tim Rice.",
+"tags": [
+"animation",
+"disney"
+]
+},
+{
+"q": "In Star Wars, what is the name of Han Solo's Wookiee co-pilot?",
+"a": [
+"Chewbacca",
+"Wicket",
+"Jar Jar Binks",
+"Greedo"
+],
+"d": 1,
+"x": "Chewbacca's roar was built from recordings of bears and other animals.",
+"tags": [
+"star wars",
+"franchises"
+]
+},
+{
+"q": "What color is the brick road Dorothy follows in The Wizard of Oz?",
+"a": [
+"Yellow",
+"Red",
+"Silver",
+"Blue"
+],
+"d": 1,
+"x": "In L. Frank Baum's book Dorothy's magic shoes were silver, but the 1939 film made them ruby red to show off Technicolor.",
+"tags": [
+"classics",
+"1930s"
+]
+},
+{
+"q": "Who directed the 1997 film Titanic?",
+"a": [
+"James Cameron",
+"Steven Spielberg",
+"Ridley Scott",
+"Michael Bay"
+],
+"d": 1,
+"x": "Cameron built a nearly full-scale replica of the ship in a giant water tank in Mexico.",
+"tags": [
+"directors",
+"1990s"
+]
+},
+{
+"q": "In which 1993 film do scientists clone dinosaurs for a theme park?",
+"a": [
+"Jurassic Park",
+"Dinosaur",
+"The Land Before Time",
+"Twister"
+],
+"d": 1,
+"x": "Based on a Michael Crichton novel, it blended Stan Winston's animatronics with then-groundbreaking computer-generated dinosaurs.",
+"tags": [
+"franchises",
+"1990s"
+]
+},
+{
+"q": "What is the name of the cowboy doll in Toy Story?",
+"a": [
+"Woody",
+"Buzz",
+"Rex",
+"Slinky"
+],
+"d": 1,
+"x": "Woody is voiced by Tom Hanks, while Buzz Lightyear is voiced by Tim Allen.",
+"tags": [
+"animation",
+"pixar"
+]
+},
+{
+"q": "What type of fish is Nemo in Finding Nemo?",
+"a": [
+"Clownfish",
+"Blue tang",
+"Pufferfish",
+"Angelfish"
+],
+"d": 1,
+"x": "His dad Marlin is also a clownfish, while his forgetful friend Dory is a blue tang.",
+"tags": [
+"animation",
+"pixar"
+]
+},
+{
+"q": "Which actor played the title role in Forrest Gump?",
+"a": [
+"Tom Hanks",
+"Kevin Costner",
+"Bill Murray",
+"Tom Cruise"
+],
+"d": 1,
+"x": "Hanks won Best Actor for it at the 1995 Oscars, his second win in a row after Philadelphia.",
+"tags": [
+"actors",
+"1990s"
+]
+},
+{
+"q": "Which animated film features the song 'Let It Go'?",
+"a": [
+"Frozen",
+"Tangled",
+"Brave",
+"Moana"
+],
+"d": 1,
+"x": "Sung by Idina Menzel as Elsa, it won the Oscar for Best Original Song at the 2014 ceremony.",
+"tags": [
+"animation",
+"soundtracks"
+]
+},
+{
+"q": "What is the name of the school of witchcraft and wizardry attended by Harry Potter?",
+"a": [
+"Hogwarts",
+"Beauxbatons",
+"Durmstrang",
+"Ilvermorny"
+],
+"d": 1,
+"x": "Scenes for Hogwarts used real locations such as Alnwick Castle in England and Gloucester Cathedral.",
+"tags": [
+"franchises",
+"harry potter"
+]
+},
+{
+"q": "Which actor played Captain Jack Sparrow in Pirates of the Caribbean?",
+"a": [
+"Johnny Depp",
+"Orlando Bloom",
+"Geoffrey Rush",
+"Hugh Jackman"
+],
+"d": 1,
+"x": "The 2003 film was based on a Disney theme park ride, and Depp earned an Oscar nomination for the role.",
+"tags": [
+"actors",
+"franchises"
+]
+},
+{
+"q": "Which superhero's alter ego is Peter Parker?",
+"a": [
+"Spider-Man",
+"Batman",
+"Daredevil",
+"Iron Man"
+],
+"d": 1,
+"x": "Sam Raimi's 2002 Spider-Man starred Tobey Maguire and helped launch the modern superhero movie boom.",
+"tags": [
+"superheroes"
+]
+},
+{
+"q": "In The Godfather, what is the surname of the crime family at the center of the story?",
+"a": [
+"Corleone",
+"Barzini",
+"Gambino",
+"Soprano"
+],
+"d": 1,
+"x": "The 1972 film is based on Mario Puzo's novel and won the Oscar for Best Picture.",
+"tags": [
+"classics",
+"1970s"
+]
+},
+{
+"q": "Which actor played Indiana Jones in the original film trilogy?",
+"a": [
+"Harrison Ford",
+"Tom Selleck",
+"Kurt Russell",
+"Mel Gibson"
+],
+"d": 1,
+"x": "Tom Selleck was first offered the part but was committed to the TV series Magnum, P.I.",
+"tags": [
+"actors",
+"franchises"
+]
+},
+{
+"q": "What color is the ogre in the animated film Shrek?",
+"a": [
+"Green",
+"Blue",
+"Gray",
+"Brown"
+],
+"d": 1,
+"x": "Eddie Murphy voiced Donkey, and the 2001 film spawned three sequels.",
+"tags": [
+"animation",
+"dreamworks"
+]
+},
+{
+"q": "In the 1976 film Rocky, which city does Rocky Balboa train in and run through?",
+"a": [
+"Philadelphia",
+"Boston",
+"New York",
+"Pittsburgh"
+],
+"d": 1,
+"x": "The steps he runs up at the Philadelphia Museum of Art are now known as the Rocky Steps.",
+"tags": [
+"classics",
+"1970s"
+]
+},
+{
+"q": "Who directed the 1960 thriller Psycho?",
+"a": [
+"Alfred Hitchcock",
+"Orson Welles",
+"Stanley Kubrick",
+"Billy Wilder"
+],
+"d": 1,
+"x": "Hitchcock reportedly used chocolate syrup as blood in the black-and-white shower scene.",
+"tags": [
+"directors",
+"classics"
+]
+},
+{
+"q": "How many Academy Awards did Titanic win?",
+"a": [
+"11",
+"9",
+"14",
+"7"
+],
+"d": 1,
+"x": "It tied the record set by Ben-Hur, which Return of the King later matched as well.",
+"tags": [
+"awards",
+"1990s"
+]
+},
+{
+"q": "What is the name of the fishing boat used to hunt the shark in Jaws?",
+"a": [
+"Orca",
+"Nautilus",
+"Black Pearl",
+"Pequod"
+],
+"d": 1,
+"x": "The boat belongs to the grizzled shark hunter Quint, who sets out with the police chief and a scientist.",
+"tags": [
+"classics",
+"1970s"
+]
+},
+{
+"q": "Which car is turned into a time machine in Back to the Future?",
+"a": [
+"DeLorean",
+"Ford Mustang",
+"Chevrolet Camaro",
+"Pontiac Firebird"
+],
+"d": 1,
+"x": "The real DeLorean DMC-12 was built in Northern Ireland and was made for only a few years.",
+"tags": [
+"franchises",
+"1980s"
+]
+},
+{
+"q": "What is the name of Batman's loyal butler?",
+"a": [
+"Alfred",
+"Jeeves",
+"Lurch",
+"Geoffrey"
+],
+"d": 1,
+"x": "In Christopher Nolan's Batman films, Alfred Pennyworth is played by Michael Caine.",
+"tags": [
+"superheroes"
+]
+},
+{
+"q": "Which actor plays Neo in The Matrix?",
+"a": [
+"Keanu Reeves",
+"Brad Pitt",
+"Will Smith",
+"Nicolas Cage"
+],
+"d": 1,
+"x": "Reeves also starred in Speed and Point Break; The Matrix came out in 1999.",
+"tags": [
+"actors",
+"sci-fi"
+]
+},
+{
+"q": "In The Matrix, what color pill does Neo take to learn the truth?",
+"a": [
+"Red",
+"Blue",
+"Green",
+"Yellow"
+],
+"d": 1,
+"x": "Morpheus offers him a choice: the blue pill returns him to his ordinary life, the red one shows how deep the rabbit hole goes.",
+"tags": [
+"sci-fi",
+"1990s"
+]
+},
+{
+"q": "Which 1984 sci-fi film made 'I'll be back' a famous catchphrase?",
+"a": [
+"The Terminator",
+"RoboCop",
+"Blade Runner",
+"Alien"
+],
+"d": 1,
+"x": "Arnold Schwarzenegger delivers the line as the cyborg assassin in James Cameron's low-budget hit.",
+"tags": [
+"quotes",
+"sci-fi"
+]
+},
+{
+"q": "Which studio released Snow White and the Seven Dwarfs in 1937?",
+"a": [
+"Walt Disney Productions",
+"Warner Bros.",
+"Fleischer Studios",
+"MGM"
+],
+"d": 1,
+"x": "Hollywood nicknamed it 'Disney's Folly' during production, but it became a huge hit.",
+"tags": [
+"animation",
+"disney"
+]
+},
+{
+"q": "Which actor played Tony Stark in Marvel's Iron Man films?",
+"a": [
+"Robert Downey Jr.",
+"Chris Evans",
+"Chris Hemsworth",
+"Mark Ruffalo"
+],
+"d": 1,
+"x": "Iron Man (2008) kicked off the Marvel Cinematic Universe.",
+"tags": [
+"superheroes",
+"actors"
+]
+},
+{
+"q": "Which 1991 thriller features the cannibal Hannibal Lecter?",
+"a": [
+"The Silence of the Lambs",
+"Se7en",
+"Misery",
+"Cape Fear"
+],
+"d": 1,
+"x": "It won all five top Oscars: picture, director, actor, actress and adapted screenplay.",
+"tags": [
+"awards",
+"thrillers"
+]
+},
+{
+"q": "In which 1939 Civil War epic does Scarlett O'Hara appear?",
+"a": [
+"Gone with the Wind",
+"Casablanca",
+"Cleopatra",
+"Ben-Hur"
+],
+"d": 1,
+"x": "Vivien Leigh won the Best Actress Oscar for playing Scarlett.",
+"tags": [
+"classics",
+"1930s"
+]
+},
+{
+"q": "Who directed the 1994 film Pulp Fiction?",
+"a": [
+"Quentin Tarantino",
+"Martin Scorsese",
+"Guy Ritchie",
+"Robert Rodriguez"
+],
+"d": 1,
+"x": "It won the Palme d'Or at Cannes and the Oscar for Best Original Screenplay.",
+"tags": [
+"directors",
+"1990s"
+]
+},
+{
+"q": "In which 2008 Pixar film does a lonely robot compact trash on an abandoned Earth?",
+"a": [
+"WALL-E",
+"Robots",
+"Cars",
+"Meet the Robinsons"
+],
+"d": 1,
+"x": "Much of the film's opening act has almost no spoken dialogue.",
+"tags": [
+"animation",
+"pixar"
+]
+},
+{
+"q": "Who played the Joker in The Dark Knight (2008)?",
+"a": [
+"Heath Ledger",
+"Jack Nicholson",
+"Mark Hamill",
+"Cesar Romero"
+],
+"d": 1,
+"x": "Ledger won the Best Supporting Actor Oscar for the role.",
+"tags": [
+"superheroes",
+"actors"
+]
+},
+{
+"q": "What is the name of Harry Potter's pet owl?",
+"a": [
+"Hedwig",
+"Errol",
+"Pigwidgeon",
+"Crookshanks"
+],
+"d": 1,
+"x": "In the films, Hedwig is played by several snowy owls.",
+"tags": [
+"harry potter",
+"franchises"
+]
+},
+{
+"q": "Which giant ape climbs the Empire State Building in a classic 1933 film?",
+"a": [
+"King Kong",
+"Mighty Joe Young",
+"Godzilla",
+"Magilla Gorilla"
+],
+"d": 1,
+"x": "The original premiered in 1933 and inspired countless monster movies.",
+"tags": [
+"classics",
+"1930s"
+]
+},
+{
+"q": "What is the surname of the singing family in The Sound of Music?",
+"a": [
+"Von Trapp",
+"Strauss",
+"Schneider",
+"Hoffmann"
+],
+"d": 1,
+"x": "Julie Andrews starred as Maria, and the film is set in Austria in 1938.",
+"tags": [
+"musicals",
+"1960s"
+]
+},
+{
+"q": "Which 1995 film about a NASA mission features the line 'Houston, we have a problem'?",
+"a": [
+"Apollo 13",
+"The Right Stuff",
+"Gravity",
+"Armageddon"
+],
+"d": 1,
+"x": "Directed by Ron Howard, it filmed weightless scenes aboard a NASA aircraft that flies steep arcs.",
+"tags": [
+"quotes",
+"1990s"
+]
+},
+{
+"q": "Who played the wizard Gandalf in The Lord of the Rings films?",
+"a": [
+"Ian McKellen",
+"Patrick Stewart",
+"Christopher Lee",
+"Ian Holm"
+],
+"d": 1,
+"x": "Christopher Lee played the wizard Saruman in the same trilogy.",
+"tags": [
+"actors",
+"fantasy"
+]
+},
+{
+"q": "Who played Superman in the 1978 film?",
+"a": [
+"Christopher Reeve",
+"Dean Cain",
+"Brandon Routh",
+"George Reeves"
+],
+"d": 1,
+"x": "Its tagline promised 'You'll believe a man can fly.'",
+"tags": [
+"superheroes",
+"1970s"
+]
+},
+{
+"q": "Which actor played the fighter pilot Maverick in Top Gun?",
+"a": [
+"Tom Cruise",
+"Val Kilmer",
+"Tom Selleck",
+"Kevin Bacon"
+],
+"d": 1,
+"x": "The 1986 film's soundtrack included the hit 'Danger Zone' by Kenny Loggins.",
+"tags": [
+"actors",
+"1980s"
+]
+},
+{
+"q": "Who directed the original Star Wars (1977)?",
+"a": [
+"George Lucas",
+"Steven Spielberg",
+"Irvin Kershner",
+"J. J. Abrams"
+],
+"d": 1,
+"x": "Lucas also founded Industrial Light & Magic to create the film's special effects.",
+"tags": [
+"star wars",
+"directors"
+]
+},
+{
+"q": "In the 1990 film Home Alone, what is the name of the boy left behind?",
+"a": [
+"Kevin McCallister",
+"Kevin Arnold",
+"Buzz McCallister",
+"Marv Murchins"
+],
+"d": 1,
+"x": "The house used in the film is in Winnetka, Illinois, near Chicago.",
+"tags": [
+"comedy",
+"1990s"
+]
+},
+{
+"q": "Which actor played Marty McFly in Back to the Future?",
+"a": [
+"Michael J. Fox",
+"Charlie Sheen",
+"Tom Hanks",
+"Matthew Broderick"
+],
+"d": 1,
+"x": "Eric Stoltz was originally cast but was replaced early in filming.",
+"tags": [
+"actors",
+"1980s"
+]
+},
+{
+"q": "Who was the first actor to play James Bond in the film series, starting with Dr. No (1962)?",
+"a": [
+"Sean Connery",
+"Roger Moore",
+"Pierce Brosnan",
+"David Niven"
+],
+"d": 1,
+"x": "Roger Moore took over the role in 1973's Live and Let Die.",
+"tags": [
+"james bond",
+"franchises"
+]
+},
+{
+"q": "Which Disney princess pricks her finger on a spinning wheel?",
+"a": [
+"Aurora",
+"Belle",
+"Cinderella",
+"Ariel"
+],
+"d": 1,
+"x": "Sleeping Beauty (1959) used music adapted from Tchaikovsky's ballet.",
+"tags": [
+"animation",
+"disney"
+]
+},
+{
+"q": "In Aladdin (1992), which comedian voices the Genie?",
+"a": [
+"Robin Williams",
+"Eddie Murphy",
+"Jim Carrey",
+"Billy Crystal"
+],
+"d": 1,
+"x": "Williams improvised so many jokes that the animators had plenty of material to draw from.",
+"tags": [
+"animation",
+"disney"
+]
+},
+{
+"q": "Which actress played Katniss Everdeen in The Hunger Games?",
+"a": [
+"Jennifer Lawrence",
+"Emma Stone",
+"Shailene Woodley",
+"Kristen Stewart"
+],
+"d": 1,
+"x": "The first film, released in 2012, is based on Suzanne Collins' novel.",
+"tags": [
+"actors",
+"franchises"
+]
+},
+{
+"q": "Who played Willy Wonka in the 1971 film Willy Wonka & the Chocolate Factory?",
+"a": [
+"Gene Wilder",
+"Johnny Depp",
+"Robin Williams",
+"Peter Sellers"
+],
+"d": 1,
+"x": "The film is based on Roald Dahl's children's book Charlie and the Chocolate Factory.",
+"tags": [
+"actors",
+"1970s"
+]
+},
+{
+"q": "In which 2000 film does Russell Crowe play the Roman general Maximus?",
+"a": [
+"Gladiator",
+"Troy",
+"Ben-Hur",
+"Spartacus"
+],
+"d": 1,
+"x": "It won the Best Picture Oscar, and Crowe won Best Actor.",
+"tags": [
+"awards",
+"2000s"
+]
+},
+{
+"q": "Which hobbit carries the One Ring to Mordor in Peter Jackson's films?",
+"a": [
+"Frodo Baggins",
+"Samwise Gamgee",
+"Bilbo Baggins",
+"Peregrin Took"
+],
+"d": 1,
+"x": "Elijah Wood played Frodo across all three films.",
+"tags": [
+"fantasy",
+"lord of the rings"
+]
+},
+{
+"q": "Which actor played boxer Rocky Balboa?",
+"a": [
+"Sylvester Stallone",
+"Arnold Schwarzenegger",
+"Dolph Lundgren",
+"Jean-Claude Van Damme"
+],
+"d": 1,
+"x": "Stallone wrote the screenplay himself and insisted on starring in it.",
+"tags": [
+"actors",
+"1970s"
+]
+},
+{
+"q": "Who directed The Lord of the Rings film trilogy?",
+"a": [
+"Peter Jackson",
+"Guillermo del Toro",
+"Sam Raimi",
+"Ridley Scott"
+],
+"d": 1,
+"x": "The trilogy was filmed in Jackson's native New Zealand.",
+"tags": [
+"directors",
+"fantasy"
+]
+},
+{
+"q": "In Disney's Lady and the Tramp, what food do the two dogs famously share?",
+"a": [
+"Spaghetti",
+"Pizza",
+"Hot dogs",
+"Steak"
+],
+"d": 1,
+"x": "The 1955 film was Disney's first animated feature made in widescreen CinemaScope.",
+"tags": [
+"animation",
+"disney"
+]
+},
+{
+"q": "Which actress starred in the 1964 Disney film Mary Poppins?",
+"a": [
+"Julie Andrews",
+"Audrey Hepburn",
+"Deborah Kerr",
+"Shirley Jones"
+],
+"d": 1,
+"x": "She won the Best Actress Oscar for the role.",
+"tags": [
+"musicals",
+"disney"
+]
+},
+{
+"q": "In which 1942 film does Humphrey Bogart play café owner Rick Blaine?",
+"a": [
+"Casablanca",
+"To Have and Have Not",
+"The Maltese Falcon",
+"Key Largo"
+],
+"d": 1,
+"x": "The film is set in Morocco during World War II and also stars Ingrid Bergman.",
+"tags": [
+"classics",
+"1940s"
+]
+},
+{
+"q": "Who played Wolverine in the X-Men films?",
+"a": [
+"Hugh Jackman",
+"Patrick Stewart",
+"Ryan Reynolds",
+"Liev Schreiber"
+],
+"d": 1,
+"x": "Jackman first took the role in X-Men (2000) after another actor dropped out.",
+"tags": [
+"superheroes",
+"actors"
+]
+},
+{
+"q": "Which Japanese movie monster first stomped onto screens in 1954?",
+"a": [
+"Godzilla",
+"Mothra",
+"Rodan",
+"Gamera"
+],
+"d": 1,
+"x": "The original Gojira was made by Toho studio and reflected Japan's postwar nuclear fears.",
+"tags": [
+"japan",
+"monsters"
+]
+},
+{
+"q": "In which 2007 Pixar film does a rat dream of becoming a chef in Paris?",
+"a": [
+"Ratatouille",
+"Flushed Away",
+"Stuart Little",
+"The Tale of Despereaux"
+],
+"d": 1,
+"x": "Remy cooks with the help of a clumsy kitchen worker named Linguini.",
+"tags": [
+"animation",
+"pixar"
+]
+},
+{
+"q": "Which 1984 comedy asks 'Who ya gonna call?' about paranormal pests?",
+"a": [
+"Ghostbusters",
+"Beetlejuice",
+"Gremlins",
+"Poltergeist"
+],
+"d": 1,
+"x": "Bill Murray, Dan Aykroyd and Harold Ramis starred as the ghost-catching team in New York.",
+"tags": [
+"comedy",
+"1980s"
+]
+},
+{
+"q": "In which Spielberg film does a boy's bicycle fly across the face of the moon?",
+"a": [
+"E.T. the Extra-Terrestrial",
+"Close Encounters of the Third Kind",
+"Flight of the Navigator",
+"The Goonies"
+],
+"d": 1,
+"x": "That moonlit silhouette became the logo of Spielberg's company Amblin Entertainment.",
+"tags": [
+"classics",
+"1980s"
+]
+},
+{
+"q": "Which famous character did Charlie Chaplin play in many silent comedies?",
+"a": [
+"The Little Tramp",
+"Mr. Hulot",
+"The Pink Panther",
+"Buster Brown"
+],
+"d": 1,
+"x": "The Tramp wore a bowler hat, tight jacket and baggy trousers, and carried a cane.",
+"tags": [
+"silent film",
+"classics"
+]
+},
+{
+"q": "Who directed Edward Scissorhands, Beetlejuice and the 1989 Batman?",
+"a": [
+"Tim Burton",
+"Sam Raimi",
+"Joel Schumacher",
+"Terry Gilliam"
+],
+"d": 1,
+"x": "Composer Danny Elfman scored many of his films, which share a gothic look.",
+"tags": [
+"directors",
+"1980s"
+]
+},
+{
+"q": "Which 1995 film follows a pig that herds sheep?",
+"a": [
+"Babe",
+"Chicken Run",
+"Gordy",
+"Charlotte's Web"
+],
+"d": 1,
+"x": "It was nominated for seven Oscars, including Best Picture, and won for visual effects.",
+"tags": [
+"family",
+"1990s"
+]
+},
+{
+"q": "Which 1940 Disney film is about a wooden puppet who wants to be a real boy?",
+"a": [
+"Pinocchio",
+"Dumbo",
+"Bambi",
+"Fantasia"
+],
+"d": 1,
+"x": "Its song 'When You Wish Upon a Star' won the Oscar for Best Original Song.",
+"tags": [
+"animation",
+"disney"
+]
+},
+{
+"q": "Which 1967 Disney film follows the boy Mowgli raised in the Indian jungle?",
+"a": [
+"The Jungle Book",
+"Tarzan",
+"Bambi",
+"Robin Hood"
+],
+"d": 1,
+"x": "It was the last animated feature Walt Disney personally supervised.",
+"tags": [
+"animation",
+"disney"
+]
+},
+{
+"q": "What is the name of Bruce Banner's big green alter ego?",
+"a": [
+"The Hulk",
+"The Abomination",
+"The Lizard",
+"Green Goblin"
+],
+"d": 1,
+"x": "In The Avengers (2012), Banner was played by Mark Ruffalo.",
+"tags": [
+"superheroes"
+]
+},
+{
+"q": "Which actor starred as Harry Potter in the film series?",
+"a": [
+"Daniel Radcliffe",
+"Elijah Wood",
+"Freddie Highmore",
+"Rupert Grint"
+],
+"d": 1,
+"x": "Radcliffe appeared in all eight films, released between 2001 and 2011.",
+"tags": [
+"harry potter",
+"actors"
+]
+},
+{
+"q": "Which film franchise features the robot hero Optimus Prime?",
+"a": [
+"Transformers",
+"Power Rangers",
+"Voltron",
+"Robotech"
+],
+"d": 1,
+"x": "Michael Bay directed the first live-action film in 2007.",
+"tags": [
+"franchises"
+]
+},
+{
+"q": "Which 1998 film stars Jim Carrey as a man who discovers his whole life is a TV show?",
+"a": [
+"The Truman Show",
+"Liar Liar",
+"Bruce Almighty",
+"EDtv"
+],
+"d": 1,
+"x": "Directed by Peter Weir, it also stars Ed Harris as the show's creator.",
+"tags": [
+"actors",
+"1990s"
+]
+},
+{
+"q": "Who played Dorothy in the 1939 film The Wizard of Oz?",
+"a": [
+"Judy Garland",
+"Shirley Temple",
+"Deanna Durbin",
+"Judy Holliday"
+],
+"d": 1,
+"x": "Shirley Temple had been considered for the role, but Garland made 'Over the Rainbow' her signature song.",
+"tags": [
+"classics",
+"musicals"
+]
+},
+{
+"q": "What is the name of the princess who marries Shrek?",
+"a": [
+"Fiona",
+"Belle",
+"Rapunzel",
+"Esmeralda"
+],
+"d": 1,
+"x": "Cameron Diaz voiced Fiona in the film and its sequels.",
+"tags": [
+"animation",
+"dreamworks"
+]
+},
+{
+"q": "Which 1977 disco-era drama featured a Bee Gees soundtrack?",
+"a": [
+"Saturday Night Fever",
+"Flashdance",
+"Footloose",
+"Fame"
+],
+"d": 1,
+"x": "The soundtrack became one of the best-selling film albums of its time.",
+"tags": [
+"soundtracks",
+"1970s"
+]
+},
+{
+"q": "Which singer starred in the 1992 film The Bodyguard and sang 'I Will Always Love You'?",
+"a": [
+"Whitney Houston",
+"Dolly Parton",
+"Aretha Franklin",
+"Diana Ross"
+],
+"d": 1,
+"x": "Dolly Parton wrote the song and first recorded it in 1973.",
+"tags": [
+"soundtracks",
+"1990s"
+]
+},
+{
+"q": "Which singer performed the Titanic theme 'My Heart Will Go On'?",
+"a": [
+"Celine Dion",
+"Whitney Houston",
+"Mariah Carey",
+"Barbra Streisand"
+],
+"d": 1,
+"x": "The song won the Oscar for Best Original Song, and James Horner composed the film's score.",
+"tags": [
+"soundtracks",
+"1990s"
+]
+},
+{
+"q": "Who played Hermione Granger in the Harry Potter films?",
+"a": [
+"Emma Watson",
+"Emma Stone",
+"Keira Knightley",
+"Emma Thompson"
+],
+"d": 1,
+"x": "She was cast at age 10 and appeared in all eight films.",
+"tags": [
+"harry potter",
+"actors"
+]
+},
+{
+"q": "Which 2012 Marvel film teams up Iron Man, Thor, Hulk and Captain America?",
+"a": [
+"The Avengers",
+"Justice League",
+"X-Men",
+"Fantastic Four"
+],
+"d": 1,
+"x": "Joss Whedon directed it, and Tom Hiddleston's Loki was the villain.",
+"tags": [
+"superheroes"
+]
+},
+{
+"q": "Who voiced Buzz Lightyear in the first Toy Story?",
+"a": [
+"Tim Allen",
+"Billy Crystal",
+"John Goodman",
+"Jim Carrey"
+],
+"d": 1,
+"x": "Allen returned for the sequels in 1999 and 2010.",
+"tags": [
+"animation",
+"pixar"
+]
+},
+{
+"q": "Which 1980 horror film is set in the Overlook Hotel?",
+"a": [
+"The Shining",
+"Psycho",
+"Misery",
+"The Haunting"
+],
+"d": 1,
+"x": "Stanley Kubrick directed it, adapting a Stephen King novel.",
+"tags": [
+"horror",
+"1980s"
+]
+},
+{
+"q": "Which 1996 blockbuster sees Will Smith and Jeff Goldblum fight invading aliens on July 4th?",
+"a": [
+"Independence Day",
+"Men in Black",
+"Mars Attacks!",
+"Armageddon"
+],
+"d": 1,
+"x": "Will Smith went on to star in Men in Black the following summer.",
+"tags": [
+"sci-fi",
+"1990s"
+]
+},
+{
+"q": "What is the name of the talking snowman in Frozen?",
+"a": [
+"Olaf",
+"Kristoff",
+"Sven",
+"Hans"
+],
+"d": 1,
+"x": "Josh Gad voiced Olaf, who dreams of experiencing summer.",
+"tags": [
+"animation",
+"disney"
+]
+},
+{
+"q": "In the 2009 Pixar film Up, what lifts Carl's house into the sky?",
+"a": [
+"Balloons",
+"Kites",
+"A hurricane",
+"Parachutes"
+],
+"d": 1,
+"x": "Up was Pixar's first 3D film and only the second animated film ever nominated for Best Picture.",
+"tags": [
+"animation",
+"pixar"
+]
+},
+{
+"q": "Which comedian dresses as an elderly nanny in the 1993 film Mrs. Doubtfire?",
+"a": [
+"Robin Williams",
+"Dustin Hoffman",
+"Eddie Murphy",
+"Michael Keaton"
+],
+"d": 1,
+"x": "The film's prosthetic makeup won an Oscar.",
+"tags": [
+"comedy",
+"1990s"
+]
+},
+{
+"q": "Which Disney villain wants a coat made of Dalmatian puppies' fur?",
+"a": [
+"Cruella de Vil",
+"Ursula",
+"Maleficent",
+"The Evil Queen"
+],
+"d": 1,
+"x": "101 Dalmatians (1961) features the dog parents Pongo and Perdita.",
+"tags": [
+"animation",
+"disney"
+]
+},
+{
+"q": "Which Disney villain is the sea witch in The Little Mermaid?",
+"a": [
+"Ursula",
+"Medusa",
+"Hades",
+"Jafar"
+],
+"d": 1,
+"x": "The 1989 film kicked off what fans call the Disney Renaissance.",
+"tags": [
+"animation",
+"disney"
+]
+},
+{
+"q": "Which actor plays the amnesiac agent Jason Bourne in The Bourne Identity (2002)?",
+"a": [
+"Matt Damon",
+"Tom Cruise",
+"Mark Wahlberg",
+"Brad Pitt"
+],
+"d": 1,
+"x": "The film was directed by Doug Liman and launched a successful action series.",
+"tags": [
+"actors",
+"2000s"
+]
+},
+{
+"q": "Which 2009 film is set on the moon Pandora and features blue-skinned Na'vi?",
+"a": [
+"Avatar",
+"District 9",
+"Tron: Legacy",
+"John Carter"
+],
+"d": 1,
+"x": "James Cameron directed it using newly developed 3D camera technology.",
+"tags": [
+"sci-fi",
+"2000s"
+]
+},
+{
+"q": "What are the little yellow henchmen in Despicable Me called?",
+"a": [
+"Minions",
+"Gremlins",
+"Oompa Loompas",
+"Smurfs"
+],
+"d": 1,
+"x": "They got their own spin-off film in 2015.",
+"tags": [
+"animation",
+"family"
+]
+},
+{
+"q": "Which martial arts star headlines the 1973 film Enter the Dragon?",
+"a": [
+"Bruce Lee",
+"Jackie Chan",
+"Jet Li",
+"Chow Yun-fat"
+],
+"d": 1,
+"x": "This Hong Kong and US co-production helped make martial arts films a global phenomenon.",
+"tags": [
+"action",
+"1970s"
+]
+},
+{
+"q": "Which actress played Vivian in the 1990 romantic comedy Pretty Woman?",
+"a": [
+"Julia Roberts",
+"Meg Ryan",
+"Sandra Bullock",
+"Demi Moore"
+],
+"d": 1,
+"x": "Roberts earned an Oscar nomination for Best Actress for the role.",
+"tags": [
+"actors",
+"1990s"
+]
+},
+{
+"q": "Which actor played Danny Zuko in the 1978 musical Grease?",
+"a": [
+"John Travolta",
+"Patrick Swayze",
+"Kevin Bacon",
+"Rob Lowe"
+],
+"d": 1,
+"x": "Olivia Newton-John co-starred as Sandy, and the film became a huge musical hit.",
+"tags": [
+"musicals",
+"1970s"
+]
+},
+{
+"q": "Who played the Grinch in the 2000 live-action film How the Grinch Stole Christmas?",
+"a": [
+"Jim Carrey",
+"Mike Myers",
+"Robin Williams",
+"Jack Black"
+],
+"d": 1,
+"x": "Rick Baker's makeup for the character won an Oscar.",
+"tags": [
+"comedy",
+"2000s"
+]
+},
+{
+"q": "In The Karate Kid (1984), what is the name of Daniel's karate teacher?",
+"a": [
+"Mr. Miyagi",
+"Mr. Han",
+"Master Splinter",
+"Mr. Kato"
+],
+"d": 1,
+"x": "Pat Morita earned an Oscar nomination for Best Supporting Actor for playing him.",
+"tags": [
+"1980s",
+"family"
+]
+},
+{
+"q": "What is the name of the hero race car in Pixar's Cars (2006)?",
+"a": [
+"Lightning McQueen",
+"Doc Hudson",
+"Mater",
+"Sally"
+],
+"d": 1,
+"x": "Owen Wilson voices him, and the story takes place in the town of Radiator Springs.",
+"tags": [
+"animation",
+"pixar"
+]
+},
+{
+"q": "Alongside the Scarecrow and the Tin Man, which character joins Dorothy in The Wizard of Oz?",
+"a": [
+"The Cowardly Lion",
+"The Flying Monkey",
+"The Munchkin",
+"The Winkie"
+],
+"d": 1,
+"x": "Bert Lahr played the Cowardly Lion in a heavy costume made with real lion fur.",
+"tags": [
+"classics",
+"1930s"
+]
+},
+{
+"q": "In Cast Away (2000), what is the name of the volleyball Tom Hanks' character talks to?",
+"a": [
+"Wilson",
+"Spalding",
+"Rawlings",
+"Penn"
+],
+"d": 1,
+"x": "Chuck Noland draws a face on it while stranded alone on a remote island.",
+"tags": [
+"actors",
+"2000s"
+]
+},
+{
+"q": "In Mean Girls (2004), on which day of the week do the Plastics wear pink?",
+"a": [
+"Wednesday",
+"Friday",
+"Monday",
+"Thursday"
+],
+"d": 1,
+"x": "Tina Fey wrote the screenplay and also appears in the film as a math teacher.",
+"tags": [
+"comedy",
+"2000s"
+]
+},
+{
+"q": "Which 1996 sports film gave us the line 'Show me the money!'?",
+"a": [
+"Jerry Maguire",
+"Any Given Sunday",
+"Rudy",
+"The Replacements"
+],
+"d": 1,
+"x": "Cuba Gooding Jr. won the Best Supporting Actor Oscar for it.",
+"tags": [
+"quotes",
+"1990s"
+]
+},
+{
+"q": "In the 2005 Narnia film, what do the children climb through to reach Narnia?",
+"a": [
+"A wardrobe",
+"A mirror",
+"An attic door",
+"A garden gate"
+],
+"d": 1,
+"x": "The film is Disney's adaptation of C. S. Lewis's classic children's novel.",
+"tags": [
+"fantasy",
+"2000s"
+]
+},
+{
+"q": "In Disney's Beauty and the Beast, what kind of object is the enchanted Lumiere?",
+"a": [
+"A candelabra",
+"A teapot",
+"A mantel clock",
+"A feather duster"
+],
+"d": 1,
+"x": "Cogsworth is a clock and Mrs. Potts is a teapot, all servants of the cursed castle.",
+"tags": [
+"animation",
+"disney"
+]
+}
+]

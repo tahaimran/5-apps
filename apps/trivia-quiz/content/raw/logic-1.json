@@ -1,0 +1,1402 @@
+[
+{
+"q": "What comes next in the series: 2, 5, 8, 11, 14, ?",
+"a": [
+"17",
+"18",
+"16",
+"20"
+],
+"d": 1,
+"x": "Each term adds 3: 14 + 3 = 17.",
+"tags": [
+"series"
+]
+},
+{
+"q": "What comes next in the series: 5, 9, 13, 17, 21, ?",
+"a": [
+"25",
+"26",
+"24",
+"29"
+],
+"d": 1,
+"x": "Each term adds 4: 21 + 4 = 25.",
+"tags": [
+"series"
+]
+},
+{
+"q": "What comes next in the series: 3, 9, 15, 21, 27, ?",
+"a": [
+"33",
+"34",
+"32",
+"39"
+],
+"d": 1,
+"x": "Each term adds 6: 27 + 6 = 33.",
+"tags": [
+"series"
+]
+},
+{
+"q": "What comes next in the series: 1, 8, 15, 22, 29, ?",
+"a": [
+"36",
+"37",
+"35",
+"43"
+],
+"d": 1,
+"x": "Each term adds 7: 29 + 7 = 36.",
+"tags": [
+"series"
+]
+},
+{
+"q": "What comes next in the series: 4, 13, 22, 31, 40, ?",
+"a": [
+"49",
+"50",
+"48",
+"58"
+],
+"d": 1,
+"x": "Each term adds 9: 40 + 9 = 49.",
+"tags": [
+"series"
+]
+},
+{
+"q": "What comes next in the series: 50, 46, 42, 38, 34, ?",
+"a": [
+"30",
+"31",
+"29",
+"26"
+],
+"d": 1,
+"x": "Each term subtracts 4: 34 - 4 = 30.",
+"tags": [
+"series"
+]
+},
+{
+"q": "What comes next in the series: 30, 27, 24, 21, 18, ?",
+"a": [
+"15",
+"16",
+"14",
+"12"
+],
+"d": 1,
+"x": "Each term subtracts 3: 18 - 3 = 15.",
+"tags": [
+"series"
+]
+},
+{
+"q": "What comes next in the series: 160, 80, 40, 20, ?",
+"a": [
+"10",
+"0",
+"11",
+"20"
+],
+"d": 1,
+"x": "Each term is divided by 2: 20 / 2 = 10.",
+"tags": [
+"series"
+]
+},
+{
+"q": "What comes next in the series: 1, 3, 5, 7, 9, ?",
+"a": [
+"11",
+"10",
+"12",
+"13"
+],
+"d": 1,
+"x": "These are consecutive odd numbers, so the next is 9 + 2 = 11.",
+"tags": [
+"series"
+]
+},
+{
+"q": "What letter comes next: A, C, E, G, ?",
+"a": [
+"I",
+"J",
+"H",
+"K"
+],
+"d": 1,
+"x": "Each letter moves 2 places forward in the alphabet, so after G comes I.",
+"tags": [
+"letters"
+]
+},
+{
+"q": "What letter comes next: B, E, H, K, ?",
+"a": [
+"N",
+"O",
+"M",
+"Q"
+],
+"d": 1,
+"x": "Each letter moves 3 places forward in the alphabet, so after K comes N.",
+"tags": [
+"letters"
+]
+},
+{
+"q": "What letter comes next: Z, X, V, T, ?",
+"a": [
+"R",
+"S",
+"Q",
+"P"
+],
+"d": 1,
+"x": "Each letter moves 2 places back in the alphabet, so after T comes R.",
+"tags": [
+"letters"
+]
+},
+{
+"q": "What letter comes next: C, G, K, O, ?",
+"a": [
+"S",
+"T",
+"R",
+"W"
+],
+"d": 1,
+"x": "Each letter moves 4 places forward in the alphabet, so after O comes S.",
+"tags": [
+"letters"
+]
+},
+{
+"q": "What letter comes next: T, Q, N, K, ?",
+"a": [
+"H",
+"I",
+"G",
+"E"
+],
+"d": 1,
+"x": "Each letter moves 3 places back in the alphabet, so after K comes H.",
+"tags": [
+"letters"
+]
+},
+{
+"q": "What letter comes next: G, J, M, P, ?",
+"a": [
+"S",
+"T",
+"R",
+"V"
+],
+"d": 1,
+"x": "Each letter moves 3 places forward in the alphabet, so after P comes S.",
+"tags": [
+"letters"
+]
+},
+{
+"q": "What is 10% of 250?",
+"a": [
+"25",
+"250",
+"2.5",
+"225"
+],
+"d": 1,
+"x": "10% of 250 = 10/100 x 250 = 25.",
+"tags": [
+"percent"
+]
+},
+{
+"q": "What is 50% of 86?",
+"a": [
+"43",
+"430",
+"4.3",
+"93"
+],
+"d": 1,
+"x": "50% of 86 = 50/100 x 86 = 43.",
+"tags": [
+"percent"
+]
+},
+{
+"q": "What is 25% of 120?",
+"a": [
+"30",
+"300",
+"3",
+"90"
+],
+"d": 1,
+"x": "25% of 120 = 25/100 x 120 = 30.",
+"tags": [
+"percent"
+]
+},
+{
+"q": "What is 10% of 90?",
+"a": [
+"9",
+"90",
+"0.9",
+"81"
+],
+"d": 1,
+"x": "10% of 90 = 10/100 x 90 = 9.",
+"tags": [
+"percent"
+]
+},
+{
+"q": "What is 20% of 150?",
+"a": [
+"30",
+"300",
+"3",
+"120"
+],
+"d": 1,
+"x": "20% of 150 = 20/100 x 150 = 30.",
+"tags": [
+"percent"
+]
+},
+{
+"q": "What is 50% of 44?",
+"a": [
+"22",
+"220",
+"2.2",
+"72"
+],
+"d": 1,
+"x": "50% of 44 = 50/100 x 44 = 22.",
+"tags": [
+"percent"
+]
+},
+{
+"q": "What is 75% of 40?",
+"a": [
+"30",
+"300",
+"3",
+"10"
+],
+"d": 1,
+"x": "75% of 40 = 75/100 x 40 = 30.",
+"tags": [
+"percent"
+]
+},
+{
+"q": "What is 10% of 730?",
+"a": [
+"73",
+"730",
+"7.3",
+"657"
+],
+"d": 1,
+"x": "10% of 730 = 10/100 x 730 = 73.",
+"tags": [
+"percent"
+]
+},
+{
+"q": "There are 12 pencils in a pack. How many pencils are in 5 packs?",
+"a": [
+"60",
+"17",
+"72",
+"55"
+],
+"d": 1,
+"x": "5 groups of 12: 5 x 12 = 60.",
+"tags": [
+"arithmetic"
+]
+},
+{
+"q": "A shirt costs $18. How much change do you get from a $50 bill?",
+"a": [
+"$32",
+"$28",
+"$38",
+"$68"
+],
+"d": 1,
+"x": "50 - 18 = 32.",
+"tags": [
+"arithmetic"
+]
+},
+{
+"q": "Sam has 24 stickers and gives away a third of them. How many does he have left?",
+"a": [
+"16",
+"8",
+"12",
+"21"
+],
+"d": 1,
+"x": "A third of 24 is 8. 24 - 8 = 16 left.",
+"tags": [
+"arithmetic"
+]
+},
+{
+"q": "Four friends share 36 grapes equally. How many grapes does each get?",
+"a": [
+"9",
+"8",
+"12",
+"32"
+],
+"d": 1,
+"x": "36 / 4 = 9.",
+"tags": [
+"arithmetic"
+]
+},
+{
+"q": "A ticket costs $7. How much do 6 tickets cost?",
+"a": [
+"$42",
+"$13",
+"$36",
+"$49"
+],
+"d": 1,
+"x": "6 x 7 = 42.",
+"tags": [
+"arithmetic"
+]
+},
+{
+"q": "If 3 pens cost $6, how much do 5 pens cost at the same price?",
+"a": [
+"$10",
+"$9",
+"$12",
+"$15"
+],
+"d": 1,
+"x": "One pen costs $6 / 3 = $2. Five pens: 5 x 2 = $10.",
+"tags": [
+"arithmetic"
+]
+},
+{
+"q": "A rope 20 feet long is cut into pieces 4 feet long. How many pieces are there?",
+"a": [
+"5",
+"4",
+"6",
+"16"
+],
+"d": 1,
+"x": "20 / 4 = 5 pieces.",
+"tags": [
+"arithmetic"
+]
+},
+{
+"q": "How many even numbers are there from 1 to 20?",
+"a": [
+"10",
+"9",
+"11",
+"20"
+],
+"d": 1,
+"x": "Every second number is even, so half of 20 gives 10.",
+"tags": [
+"counting"
+]
+},
+{
+"q": "Today is Wednesday. What day of the week will it be 4 days from now?",
+"a": [
+"Sunday",
+"Monday",
+"Saturday",
+"Tuesday"
+],
+"d": 1,
+"x": "Count 4 days forward from Wednesday: Thursday, Friday, Saturday, Sunday.",
+"tags": [
+"calendar"
+]
+},
+{
+"q": "Today is Friday. What day of the week will it be 3 days from now?",
+"a": [
+"Monday",
+"Tuesday",
+"Sunday",
+"Wednesday"
+],
+"d": 1,
+"x": "Count 3 days forward from Friday: Saturday, Sunday, Monday.",
+"tags": [
+"calendar"
+]
+},
+{
+"q": "Today is Sunday. What day of the week will it be 6 days from now?",
+"a": [
+"Saturday",
+"Sunday",
+"Friday",
+"Monday"
+],
+"d": 1,
+"x": "Count 6 days forward from Sunday: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday.",
+"tags": [
+"calendar"
+]
+},
+{
+"q": "Today is Thursday. What day was it 2 days ago?",
+"a": [
+"Tuesday",
+"Monday",
+"Wednesday",
+"Thursday"
+],
+"d": 1,
+"x": "Count 2 back from Thursday: that gives Tuesday.",
+"tags": [
+"calendar"
+]
+},
+{
+"q": "Today is Tuesday. What day was it 3 days ago?",
+"a": [
+"Saturday",
+"Friday",
+"Sunday",
+"Monday"
+],
+"d": 1,
+"x": "Count 3 back from Tuesday: that gives Saturday.",
+"tags": [
+"calendar"
+]
+},
+{
+"q": "Today is Monday. What day was it 1 day ago?",
+"a": [
+"Sunday",
+"Saturday",
+"Monday",
+"Tuesday"
+],
+"d": 1,
+"x": "Count 1 back from Monday: that gives Sunday.",
+"tags": [
+"calendar"
+]
+},
+{
+"q": "How many days are there in 3 weeks?",
+"a": [
+"21",
+"18",
+"24",
+"30"
+],
+"d": 1,
+"x": "A week has 7 days, and 3 x 7 = 21.",
+"tags": [
+"calendar"
+]
+},
+{
+"q": "What month comes 4 months after October?",
+"a": [
+"February",
+"January",
+"March",
+"December"
+],
+"d": 1,
+"x": "After October: November, December, January, February.",
+"tags": [
+"calendar"
+]
+},
+{
+"q": "If the 5th of a month is a Tuesday, what weekday is the 13th?",
+"a": [
+"Wednesday",
+"Tuesday",
+"Thursday",
+"Monday"
+],
+"d": 1,
+"x": "13 is 8 days after 5: one week plus 1 day, so Tuesday plus 1 is Wednesday.",
+"tags": [
+"calendar"
+]
+},
+{
+"q": "A show starts at 3:15 and lasts 90 minutes. At what time does it end?",
+"a": [
+"4:45",
+"4:15",
+"5:45",
+"4:00"
+],
+"d": 1,
+"x": "90 minutes added to 3:15 gives 4:45.",
+"tags": [
+"clock"
+]
+},
+{
+"q": "A show starts at 4:30 and lasts 45 minutes. At what time does it end?",
+"a": [
+"5:15",
+"5:45",
+"6:15",
+"5:30"
+],
+"d": 1,
+"x": "45 minutes added to 4:30 gives 5:15.",
+"tags": [
+"clock"
+]
+},
+{
+"q": "A show starts at 7:20 and lasts 60 minutes. At what time does it end?",
+"a": [
+"8:20",
+"8:50",
+"9:20",
+"8:35"
+],
+"d": 1,
+"x": "60 minutes added to 7:20 gives 8:20.",
+"tags": [
+"clock"
+]
+},
+{
+"q": "A show starts at 1:45 and lasts 30 minutes. At what time does it end?",
+"a": [
+"2:15",
+"2:45",
+"3:15",
+"2:30"
+],
+"d": 1,
+"x": "30 minutes added to 1:45 gives 2:15.",
+"tags": [
+"clock"
+]
+},
+{
+"q": "A show starts at 10:10 and lasts 50 minutes. At what time does it end?",
+"a": [
+"11:00",
+"11:30",
+"12:00",
+"11:15"
+],
+"d": 1,
+"x": "50 minutes added to 10:10 gives 11:00.",
+"tags": [
+"clock"
+]
+},
+{
+"q": "How many hours pass between 9 AM and 5 PM on the same day?",
+"a": [
+"8",
+"7",
+"9",
+"12"
+],
+"d": 1,
+"x": "From 9 to 12 is 3 hours and from 12 to 5 is 5 hours: 3 + 5 = 8.",
+"tags": [
+"clock"
+]
+},
+{
+"q": "How many minutes are there between 2:10 PM and 3:00 PM?",
+"a": [
+"50",
+"40",
+"60",
+"70"
+],
+"d": 1,
+"x": "From 2:10 to 3:00 is 60 - 10 = 50 minutes.",
+"tags": [
+"clock"
+]
+},
+{
+"q": "What time is it 2 hours after 11 AM?",
+"a": [
+"1 PM",
+"9 AM",
+"1 AM",
+"12 PM"
+],
+"d": 1,
+"x": "11 AM plus 1 hour is noon, plus 1 more hour is 1 PM.",
+"tags": [
+"clock"
+]
+},
+{
+"q": "How many minutes are in 2 and a half hours?",
+"a": [
+"150",
+"120",
+"130",
+"250"
+],
+"d": 1,
+"x": "2 x 60 = 120, plus half an hour (30) = 150.",
+"tags": [
+"units"
+]
+},
+{
+"q": "How many centimeters are in 3 meters?",
+"a": [
+"300",
+"30",
+"3000",
+"103"
+],
+"d": 1,
+"x": "1 meter = 100 cm, so 3 x 100 = 300.",
+"tags": [
+"units"
+]
+},
+{
+"q": "How many days are in 6 weeks?",
+"a": [
+"42",
+"36",
+"48",
+"40"
+],
+"d": 1,
+"x": "6 x 7 = 42.",
+"tags": [
+"units"
+]
+},
+{
+"q": "How many feet are in 4 yards?",
+"a": [
+"12",
+"8",
+"16",
+"10"
+],
+"d": 1,
+"x": "1 yard = 3 feet, so 4 x 3 = 12.",
+"tags": [
+"units"
+]
+},
+{
+"q": "How many seconds are in 5 minutes?",
+"a": [
+"300",
+"50",
+"360",
+"500"
+],
+"d": 1,
+"x": "5 x 60 = 300.",
+"tags": [
+"units"
+]
+},
+{
+"q": "How many grams are in 2 kilograms?",
+"a": [
+"2000",
+"200",
+"20",
+"1002"
+],
+"d": 1,
+"x": "1 kg = 1000 g, so 2 x 1000 = 2000.",
+"tags": [
+"units"
+]
+},
+{
+"q": "How many pints are in 3 quarts, if 1 quart is 2 pints?",
+"a": [
+"6",
+"5",
+"9",
+"1"
+],
+"d": 1,
+"x": "3 x 2 = 6.",
+"tags": [
+"units"
+]
+},
+{
+"q": "How many legs do 3 dogs and 2 birds have altogether?",
+"a": [
+"16",
+"10",
+"12",
+"20"
+],
+"d": 1,
+"x": "Dogs: 3 x 4 = 12. Birds: 2 x 2 = 4. Total 16.",
+"tags": [
+"counting"
+]
+},
+{
+"q": "How many sides do 2 triangles and 1 square have in total?",
+"a": [
+"10",
+"7",
+"9",
+"12"
+],
+"d": 1,
+"x": "Triangles: 2 x 3 = 6. Square: 4. Total 10.",
+"tags": [
+"counting"
+]
+},
+{
+"q": "How many wheels are on 4 bicycles and 2 cars?",
+"a": [
+"16",
+"12",
+"14",
+"20"
+],
+"d": 1,
+"x": "Bicycles: 4 x 2 = 8. Cars: 2 x 4 = 8. Total 16.",
+"tags": [
+"counting"
+]
+},
+{
+"q": "How many fingers are on 6 hands?",
+"a": [
+"30",
+"24",
+"36",
+"60"
+],
+"d": 1,
+"x": "6 x 5 = 30.",
+"tags": [
+"counting"
+]
+},
+{
+"q": "Ann is taller than Bo. Bo is taller than Cy. Who is the tallest?",
+"a": [
+"Ann",
+"Bo",
+"Cy",
+"Not enough information"
+],
+"d": 1,
+"x": "Ann > Bo > Cy, so Ann is tallest.",
+"tags": [
+"ordering"
+]
+},
+{
+"q": "Max is older than Lee. Kim is younger than Lee. Who is the youngest?",
+"a": [
+"Kim",
+"Max",
+"Lee",
+"Not enough information"
+],
+"d": 1,
+"x": "Max > Lee > Kim in age, so Kim is youngest.",
+"tags": [
+"ordering"
+]
+},
+{
+"q": "Zed is faster than Jay. Lou is slower than Jay. Who is the slowest?",
+"a": [
+"Lou",
+"Zed",
+"Jay",
+"Not enough information"
+],
+"d": 1,
+"x": "Zed > Jay > Lou in speed, so Lou is slowest.",
+"tags": [
+"ordering"
+]
+},
+{
+"q": "Pat has more coins than Dan. Dan has more coins than Eve. Who has the fewest?",
+"a": [
+"Eve",
+"Pat",
+"Dan",
+"Not enough information"
+],
+"d": 1,
+"x": "Pat > Dan > Eve, so Eve has the fewest.",
+"tags": [
+"ordering"
+]
+},
+{
+"q": "Ann is heavier than Joe. Joe is heavier than Sue. Who is the lightest?",
+"a": [
+"Sue",
+"Ann",
+"Joe",
+"Not enough information"
+],
+"d": 1,
+"x": "Ann > Joe > Sue, so Sue is lightest.",
+"tags": [
+"ordering"
+]
+},
+{
+"q": "Joy finished before Ray. Ray finished before Sue. Who finished in the middle?",
+"a": [
+"Ray",
+"Joy",
+"Sue",
+"Not enough information"
+],
+"d": 1,
+"x": "The order is Joy, Ray, Sue, so Ray is in the middle.",
+"tags": [
+"ordering"
+]
+},
+{
+"q": "Which position is the odd one out: Apple, Carrot, Banana, Grape?",
+"a": [
+"Position 2",
+"Position 1",
+"Position 3",
+"Position 4"
+],
+"d": 1,
+"x": "Apple, banana and grape are fruits; a carrot is a vegetable.",
+"tags": [
+"odd-one-out"
+]
+},
+{
+"q": "Which position is the odd one out: Sparrow, Dog, Cat, Horse?",
+"a": [
+"Position 1",
+"Position 2",
+"Position 3",
+"Position 4"
+],
+"d": 1,
+"x": "Dog, cat and horse are mammals; a sparrow is a bird.",
+"tags": [
+"odd-one-out"
+]
+},
+{
+"q": "Which position is the odd one out: Red, Blue, Green, Square?",
+"a": [
+"Position 4",
+"Position 1",
+"Position 2",
+"Position 3"
+],
+"d": 1,
+"x": "Red, blue and green are colors; a square is a shape.",
+"tags": [
+"odd-one-out"
+]
+},
+{
+"q": "Which one is the odd one out: 2, 4, 6, 9?",
+"a": [
+"9",
+"2",
+"4",
+"6"
+],
+"d": 1,
+"x": "2, 4 and 6 are even; 9 is odd.",
+"tags": [
+"odd-one-out"
+]
+},
+{
+"q": "Which one is the odd one out: 3, 5, 7, 9?",
+"a": [
+"9",
+"3",
+"5",
+"7"
+],
+"d": 1,
+"x": "3, 5 and 7 are prime numbers; 9 = 3 x 3 is not.",
+"tags": [
+"odd-one-out"
+]
+},
+{
+"q": "Which position is the odd one out: Car, Bus, Train, Chair?",
+"a": [
+"Position 4",
+"Position 1",
+"Position 2",
+"Position 3"
+],
+"d": 1,
+"x": "Car, bus and train are vehicles; a chair is furniture.",
+"tags": [
+"odd-one-out"
+]
+},
+{
+"q": "Which position is the odd one out: Penny, Dime, Ruler, Nickel?",
+"a": [
+"Position 3",
+"Position 1",
+"Position 2",
+"Position 4"
+],
+"d": 1,
+"x": "Penny, dime and nickel are coins; a ruler is not.",
+"tags": [
+"odd-one-out"
+]
+},
+{
+"q": "Which one is the odd one out: Eagle, Hawk, Owl, Bat?",
+"a": [
+"Bat",
+"Eagle",
+"Hawk",
+"Owl"
+],
+"d": 1,
+"x": "Eagle, hawk and owl are birds; a bat is a mammal.",
+"tags": [
+"odd-one-out"
+]
+},
+{
+"q": "Which position is the odd one out: Bread, Water, Milk, Juice?",
+"a": [
+"Position 1",
+"Position 2",
+"Position 3",
+"Position 4"
+],
+"d": 1,
+"x": "Water, milk and juice are drinks; bread is a solid food.",
+"tags": [
+"odd-one-out"
+]
+},
+{
+"q": "Which one is the odd one out: 16, 25, 36, 40?",
+"a": [
+"40",
+"16",
+"25",
+"36"
+],
+"d": 1,
+"x": "16, 25 and 36 are perfect squares (4x4, 5x5, 6x6); 40 is not.",
+"tags": [
+"odd-one-out"
+]
+},
+{
+"q": "Hot is to cold as up is to what?",
+"a": [
+"down",
+"high",
+"over",
+"north"
+],
+"d": 1,
+"x": "Hot and cold are opposites, and the opposite of up is down.",
+"tags": [
+"analogy"
+]
+},
+{
+"q": "Finger is to hand as toe is to what?",
+"a": [
+"foot",
+"leg",
+"shoe",
+"nail"
+],
+"d": 1,
+"x": "A finger is part of a hand; a toe is part of a foot.",
+"tags": [
+"analogy"
+]
+},
+{
+"q": "Bird is to nest as bee is to what?",
+"a": [
+"hive",
+"honey",
+"flower",
+"sting"
+],
+"d": 1,
+"x": "A bird lives in a nest; a bee lives in a hive.",
+"tags": [
+"analogy"
+]
+},
+{
+"q": "Pen is to write as knife is to what?",
+"a": [
+"cut",
+"sharp",
+"eat",
+"steel"
+],
+"d": 1,
+"x": "A pen is used to write; a knife is used to cut.",
+"tags": [
+"analogy"
+]
+},
+{
+"q": "Fish is to swim as bird is to what?",
+"a": [
+"fly",
+"sing",
+"nest",
+"feather"
+],
+"d": 1,
+"x": "A fish moves by swimming; a bird moves by flying.",
+"tags": [
+"analogy"
+]
+},
+{
+"q": "Eye is to see as ear is to what?",
+"a": [
+"hear",
+"sound",
+"head",
+"speak"
+],
+"d": 1,
+"x": "The eye is for seeing; the ear is for hearing.",
+"tags": [
+"analogy"
+]
+},
+{
+"q": "Puppy is to dog as kitten is to what?",
+"a": [
+"cat",
+"mouse",
+"paw",
+"milk"
+],
+"d": 1,
+"x": "A puppy is a young dog; a kitten is a young cat.",
+"tags": [
+"analogy"
+]
+},
+{
+"q": "Teacher is to school as doctor is to what?",
+"a": [
+"hospital",
+"nurse",
+"medicine",
+"patient"
+],
+"d": 1,
+"x": "A teacher works at a school; a doctor works at a hospital.",
+"tags": [
+"analogy"
+]
+},
+{
+"q": "Slow is to fast as weak is to what?",
+"a": [
+"strong",
+"tired",
+"heavy",
+"quick"
+],
+"d": 1,
+"x": "Slow and fast are opposites, and so are weak and strong.",
+"tags": [
+"analogy"
+]
+},
+{
+"q": "Glove is to hand as sock is to what?",
+"a": [
+"foot",
+"shoe",
+"knee",
+"hair"
+],
+"d": 1,
+"x": "A glove covers a hand; a sock covers a foot.",
+"tags": [
+"analogy"
+]
+},
+{
+"q": "A farmer has 10 sheep. All but 3 run away. How many sheep are left?",
+"a": [
+"3",
+"7",
+"10",
+"0"
+],
+"d": 1,
+"x": "\"All but 3\" means 3 stay. So 3 are left.",
+"tags": [
+"riddle"
+]
+},
+{
+"q": "Ann's father has 5 daughters: Nana, Nene, Nini, Nono and a fifth. What is the fifth one's name?",
+"a": [
+"Ann",
+"Nunu",
+"Nina",
+"Nuno"
+],
+"d": 1,
+"x": "Ann's father has five daughters, and Ann is one of them, so the fifth is Ann.",
+"tags": [
+"riddle"
+]
+},
+{
+"q": "Which weighs more: a pound of feathers or a pound of bricks?",
+"a": [
+"They weigh the same",
+"The bricks",
+"The feathers",
+"It depends on the size"
+],
+"d": 1,
+"x": "Both are one pound, so they weigh the same.",
+"tags": [
+"riddle"
+]
+},
+{
+"q": "If a red house is made of red bricks, what is a greenhouse made of?",
+"a": [
+"Glass",
+"Green bricks",
+"Grass",
+"Wood"
+],
+"d": 1,
+"x": "A greenhouse is a glass building for growing plants; it is not green-colored.",
+"tags": [
+"riddle"
+]
+},
+{
+"q": "Tom is 8 and his sister is 4 years older. How old will she be when Tom is 12?",
+"a": [
+"16",
+"12",
+"20",
+"8"
+],
+"d": 1,
+"x": "She is 4 years older now (12) and always will be, so when Tom is 12 she is 16.",
+"tags": [
+"riddle"
+]
+},
+{
+"q": "How many letters are in the word that names the number after six?",
+"a": [
+"5",
+"4",
+"6",
+"7"
+],
+"d": 1,
+"x": "The number after six is seven, which has 5 letters.",
+"tags": [
+"word-logic"
+]
+},
+{
+"q": "If you rearrange the letters of \"TAC\", which animal do you get?",
+"a": [
+"Cat",
+"Rat",
+"Bat",
+"Act"
+],
+"d": 1,
+"x": "T, A, C can be rearranged to C-A-T, which is a cat.",
+"tags": [
+"word-logic"
+]
+},
+{
+"q": "If the letters A, B, C, D, E are numbered 1 to 5, what is the number for D?",
+"a": [
+"4",
+"3",
+"5",
+"2"
+],
+"d": 1,
+"x": "A=1, B=2, C=3, D=4.",
+"tags": [
+"word-logic"
+]
+},
+{
+"q": "What is the first letter of the word that comes last in the alphabet: dog, cat, bird, fish?",
+"a": [
+"F",
+"D",
+"C",
+"B"
+],
+"d": 1,
+"x": "In alphabetical order the last word is fish, and its first letter is F.",
+"tags": [
+"word-logic"
+]
+},
+{
+"q": "What is the sum of the largest and the smallest of 0.5, 0.25, 0.75 and 0.6?",
+"a": [
+"1",
+"1.35",
+"0.85",
+"1.25"
+],
+"d": 1,
+"x": "The largest is 0.75 and the smallest is 0.25. 0.75 + 0.25 = 1.",
+"tags": [
+"arithmetic"
+]
+},
+{
+"q": "A square has a side of 5 cm. What is the distance around it?",
+"a": [
+"20 cm",
+"25 cm",
+"10 cm",
+"15 cm"
+],
+"d": 1,
+"x": "A square has 4 equal sides: 4 x 5 = 20 cm.",
+"tags": [
+"arithmetic"
+]
+},
+{
+"q": "How much larger is 4 x 7 than 20 + 5?",
+"a": [
+"3",
+"8",
+"5",
+"2"
+],
+"d": 1,
+"x": "4 x 7 = 28 and 20 + 5 = 25. 28 - 25 = 3.",
+"tags": [
+"arithmetic"
+]
+},
+{
+"q": "A clock shows 6:00. What number is the hour hand pointing at?",
+"a": [
+"6",
+"12",
+"3",
+"9"
+],
+"d": 1,
+"x": "At 6:00 the hour hand points at the 6.",
+"tags": [
+"clock"
+]
+},
+{
+"q": "How many months in a year have 30 days?",
+"a": [
+"4",
+"5",
+"6",
+"7"
+],
+"d": 1,
+"x": "April, June, September and November have 30 days.",
+"tags": [
+"calendar"
+]
+},
+{
+"q": "Counting by 5s from 5, what is the 8th number?",
+"a": [
+"40",
+"35",
+"45",
+"13"
+],
+"d": 1,
+"x": "The nth number is 5 x n, so the 8th is 5 x 8 = 40.",
+"tags": [
+"series"
+]
+}
+]

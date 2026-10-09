@@ -1,0 +1,1402 @@
+[
+{
+"q": "What two words made up the first text message, sent in December 1992?",
+"a": [
+"Merry Christmas",
+"Hello world",
+"Happy holidays",
+"Test message"
+],
+"d": 3,
+"x": "Engineer Neil Papworth sent it from a computer to a colleague's phone on the Vodafone network in the UK.",
+"tags": [
+"tech"
+]
+},
+{
+"q": "Which engineer chose the @ symbol for network email addresses in 1971?",
+"a": [
+"Ray Tomlinson",
+"Vint Cerf",
+"Tim Berners-Lee",
+"Jon Postel"
+],
+"d": 3,
+"x": "Tomlinson sent the first networked email himself, and later said he could not remember what the message said.",
+"tags": [
+"tech"
+]
+},
+{
+"q": "Which inventor patented the typewriter that popularized the QWERTY keyboard layout?",
+"a": [
+"Christopher Latham Sholes",
+"Philo Remington",
+"Thomas Edison",
+"Mark Twain"
+],
+"d": 3,
+"x": "The layout was designed to reduce jams by separating commonly paired letters on early machines.",
+"tags": [
+"inventions"
+]
+},
+{
+"q": "In what year did Apple launch the first Macintosh computer?",
+"a": [
+"1984",
+"1982",
+"1986",
+"1988"
+],
+"d": 3,
+"x": "Apple introduced it during the Super Bowl with a famous TV commercial, and it popularized the mouse and graphical interface.",
+"tags": [
+"tech"
+]
+},
+{
+"q": "In the audio format name MP3, what does 'MP' stand for?",
+"a": [
+"Moving Picture",
+"Music Player",
+"Media Protocol",
+"Multi Pulse"
+],
+"d": 3,
+"x": "MP3 is short for MPEG-1 Audio Layer III, named after the Moving Picture Experts Group standards committee.",
+"tags": [
+"tech"
+]
+},
+{
+"q": "Which letter of the alphabet does not appear in the name of any US state?",
+"a": [
+"Q",
+"J",
+"Z",
+"X"
+],
+"d": 3,
+"x": "J appears in New Jersey, Z in Arizona, and X in Texas, but no state name contains a Q.",
+"tags": [
+"language"
+]
+},
+{
+"q": "What is a word like 'brunch' or 'smog' that blends two other words called?",
+"a": [
+"Portmanteau",
+"Initialism",
+"Eponym",
+"Backronym"
+],
+"d": 3,
+"x": "Lewis Carroll popularized the term in 'Through the Looking-Glass', using it for words like 'slithy'.",
+"tags": [
+"language"
+]
+},
+{
+"q": "What is a word derived from a person's name, like 'sandwich' or 'cardigan', called?",
+"a": [
+"Eponym",
+"Toponym",
+"Pseudonym",
+"Anagram"
+],
+"d": 3,
+"x": "The sandwich is named for the Earl of Sandwich, and the cardigan for the Earl of Cardigan.",
+"tags": [
+"language"
+]
+},
+{
+"q": "The word 'robot' comes from a Czech word meaning what?",
+"a": [
+"Forced labor",
+"Iron machine",
+"Mechanical man",
+"Silent servant"
+],
+"d": 3,
+"x": "It was introduced by the 1920 play R.U.R. by Karel Capek, whose brother Josef suggested the word.",
+"tags": [
+"language"
+]
+},
+{
+"q": "The word 'quarantine' comes from an Italian phrase referring to how many days?",
+"a": [
+"Forty",
+"Thirty",
+"Fourteen",
+"Sixty"
+],
+"d": 3,
+"x": "Ships arriving in Venice in the 1300s had to wait 40 days, or 'quaranta giorni', before landing, to protect the city from plague.",
+"tags": [
+"health"
+]
+},
+{
+"q": "Halloween traditions trace back to an ancient Celtic festival with which name?",
+"a": [
+"Samhain",
+"Beltane",
+"Imbolc",
+"Lughnasadh"
+],
+"d": 3,
+"x": "Samhain marked the end of the harvest season and was celebrated at the start of November.",
+"tags": [
+"holidays"
+]
+},
+{
+"q": "Which Scottish poet wrote down the words of the New Year song 'Auld Lang Syne'?",
+"a": [
+"Robert Burns",
+"Walter Scott",
+"Robert Louis Stevenson",
+"James Hogg"
+],
+"d": 3,
+"x": "Burns sent it to a collection in 1788, noting that he had taken it down from an old man's singing.",
+"tags": [
+"holidays"
+]
+},
+{
+"q": "On which date is Boxing Day observed in the UK and several other countries?",
+"a": [
+"December 26",
+"December 24",
+"December 27",
+"January 1"
+],
+"d": 3,
+"x": "The name is thought to come from the old tradition of giving boxes of money or gifts to servants and tradespeople.",
+"tags": [
+"holidays"
+]
+},
+{
+"q": "What is the Japanese custom of viewing cherry blossoms in spring called?",
+"a": [
+"Hanami",
+"Obon",
+"Tanabata",
+"Setsubun"
+],
+"d": 3,
+"x": "The word means 'flower viewing', and families gather beneath blossoming trees for picnics.",
+"tags": [
+"culture"
+]
+},
+{
+"q": "Which festival marks the traditional new year in Thailand with water fights?",
+"a": [
+"Songkran",
+"Loy Krathong",
+"Visakha Bucha",
+"Yi Peng"
+],
+"d": 3,
+"x": "It is held in mid-April, and splashing water symbolizes washing away bad luck.",
+"tags": [
+"holidays"
+]
+},
+{
+"q": "Which company that later became a phone maker began in 1865 as a Finnish pulp mill?",
+"a": [
+"Nokia",
+"Ericsson",
+"Siemens",
+"Motorola"
+],
+"d": 3,
+"x": "It was named after the Nokianvirta river, and over the years it also made rubber boots and cables.",
+"tags": [
+"business"
+]
+},
+{
+"q": "Sony's name combines the Latin word 'sonus', meaning sound, with an English word for what?",
+"a": [
+"A young boy",
+"A quiet sound",
+"A sunny day",
+"A loyal friend"
+],
+"d": 3,
+"x": "The founders liked 'sonny' as a nickname for a lively young person, and dropped one 'n' to make it easier worldwide.",
+"tags": [
+"business"
+]
+},
+{
+"q": "Which sportswear brand is named after the Greek goddess of victory?",
+"a": [
+"Nike",
+"Adidas",
+"Puma",
+"Asics"
+],
+"d": 3,
+"x": "The brand's swoosh logo was designed in 1971 by a student who was paid $35.",
+"tags": [
+"business"
+]
+},
+{
+"q": "What is a market dominated by just a few large sellers called?",
+"a": [
+"Oligopoly",
+"Monopoly",
+"Monopsony",
+"Autarky"
+],
+"d": 3,
+"x": "Oligopoly comes from Greek words meaning 'few sellers'.",
+"tags": [
+"money"
+]
+},
+{
+"q": "Who wrote the 1776 book 'The Wealth of Nations'?",
+"a": [
+"Adam Smith",
+"John Maynard Keynes",
+"Karl Marx",
+"David Ricardo"
+],
+"d": 3,
+"x": "Smith, a Scottish thinker, is often called the father of modern economics and wrote about the 'invisible hand' of markets.",
+"tags": [
+"money"
+]
+},
+{
+"q": "Which company was the first to issue publicly traded shares on a stock exchange, in Amsterdam in 1602?",
+"a": [
+"Dutch East India Company",
+"British East India Company",
+"Hudson's Bay Company",
+"Muscovy Company"
+],
+"d": 3,
+"x": "Investors could buy and sell its shares, creating the world's first stock market.",
+"tags": [
+"business"
+]
+},
+{
+"q": "The baht is the official currency of which country?",
+"a": [
+"Thailand",
+"Vietnam",
+"Indonesia",
+"Malaysia"
+],
+"d": 3,
+"x": "A baht was originally a unit of weight for silver.",
+"tags": [
+"money"
+]
+},
+{
+"q": "Which country is credited with the first widely used paper money?",
+"a": [
+"China",
+"Persia",
+"Italy",
+"Sweden"
+],
+"d": 3,
+"x": "Paper notes appeared in China around the 11th century, and Marco Polo later described them to astonished Europeans.",
+"tags": [
+"money"
+]
+},
+{
+"q": "In what year did euro banknotes and coins first enter circulation?",
+"a": [
+"2002",
+"1999",
+"2000",
+"2004"
+],
+"d": 3,
+"x": "The euro had existed as an electronic currency since 1999, but cash arrived on January 1, 2002.",
+"tags": [
+"money"
+]
+},
+{
+"q": "The Pareto principle suggests roughly what share of effects come from 20 percent of causes?",
+"a": [
+"80 percent",
+"50 percent",
+"60 percent",
+"90 percent"
+],
+"d": 3,
+"x": "Vilfredo Pareto noticed that about 80 percent of Italy's land was owned by 20 percent of its people.",
+"tags": [
+"business"
+]
+},
+{
+"q": "Which vitamin is also known as cobalamin?",
+"a": [
+"Vitamin B12",
+"Vitamin B6",
+"Vitamin B1",
+"Vitamin B9"
+],
+"d": 3,
+"x": "It contains the mineral cobalt and is found mainly in animal foods, so vegans often take supplements.",
+"tags": [
+"health"
+]
+},
+{
+"q": "Which is the smallest bone in the human body?",
+"a": [
+"Stapes",
+"Incus",
+"Malleus",
+"Patella"
+],
+"d": 3,
+"x": "The stapes, or stirrup bone, is inside your ear and is about the size of a grain of rice.",
+"tags": [
+"health"
+]
+},
+{
+"q": "How many pairs of ribs does a typical human have?",
+"a": [
+"12",
+"10",
+"14",
+"11"
+],
+"d": 3,
+"x": "The ribs form a protective cage around the heart and lungs.",
+"tags": [
+"health"
+]
+},
+{
+"q": "Which American researcher announced a successful inactivated polio vaccine in 1955?",
+"a": [
+"Jonas Salk",
+"Albert Sabin",
+"Paul Ehrlich",
+"Maurice Hilleman"
+],
+"d": 3,
+"x": "Salk famously refused to patent the vaccine, asking who could patent the Sun.",
+"tags": [
+"health"
+]
+},
+{
+"q": "In first aid, the acronym RICE stands for rest, ice, compression, and what?",
+"a": [
+"Elevation",
+"Exercise",
+"Energy",
+"Extension"
+],
+"d": 3,
+"x": "The method is used for sprains and strains, and raising the injured limb helps reduce swelling.",
+"tags": [
+"health"
+]
+},
+{
+"q": "Which disease did the World Health Organization declare eradicated worldwide in 1980?",
+"a": [
+"Smallpox",
+"Polio",
+"Measles",
+"Malaria"
+],
+"d": 3,
+"x": "It is the only human infectious disease eradicated so far, thanks to a global vaccination campaign.",
+"tags": [
+"health"
+]
+},
+{
+"q": "Which moon of Jupiter is the largest moon in the solar system?",
+"a": [
+"Ganymede",
+"Titan",
+"Callisto",
+"Io"
+],
+"d": 3,
+"x": "Ganymede is larger than the planet Mercury, though it has less mass.",
+"tags": [
+"space"
+]
+},
+{
+"q": "Which planet takes longer to rotate once than to orbit the Sun?",
+"a": [
+"Venus",
+"Mercury",
+"Mars",
+"Neptune"
+],
+"d": 3,
+"x": "A Venusian day lasts about 243 Earth days, while its year lasts about 225.",
+"tags": [
+"space"
+]
+},
+{
+"q": "Who became the first American woman in space in 1983?",
+"a": [
+"Sally Ride",
+"Mae Jemison",
+"Judith Resnik",
+"Christa McAuliffe"
+],
+"d": 3,
+"x": "Ride flew aboard the space shuttle Challenger and remains the youngest American astronaut to reach space.",
+"tags": [
+"space"
+]
+},
+{
+"q": "Who became the first American to orbit the Earth, in 1962?",
+"a": [
+"John Glenn",
+"Alan Shepard",
+"Gus Grissom",
+"Scott Carpenter"
+],
+"d": 3,
+"x": "Glenn returned to space in 1998 at age 77 aboard the space shuttle Discovery.",
+"tags": [
+"space"
+]
+},
+{
+"q": "Which pair of NASA space probes launched in 1977 each carry a Golden Record of Earth sounds?",
+"a": [
+"Voyager 1 and 2",
+"Pioneer 10 and 11",
+"Viking 1 and 2",
+"Mariner 9 and 10"
+],
+"d": 3,
+"x": "The records hold greetings in 55 languages, music, and images, in case anyone finds them.",
+"tags": [
+"space"
+]
+},
+{
+"q": "Which star is the brightest in the night sky as seen from Earth, not counting the Sun?",
+"a": [
+"Sirius",
+"Canopus",
+"Vega",
+"Betelgeuse"
+],
+"d": 3,
+"x": "Sirius is also called the Dog Star, as it is part of the constellation Canis Major.",
+"tags": [
+"space"
+]
+},
+{
+"q": "In which year did astronomers officially reclassify Pluto as a dwarf planet?",
+"a": [
+"2006",
+"2003",
+"2010",
+"1999"
+],
+"d": 3,
+"x": "The International Astronomical Union made the decision at a meeting in Prague.",
+"tags": [
+"space"
+]
+},
+{
+"q": "How many Apollo missions landed astronauts on the Moon?",
+"a": [
+"Six",
+"Five",
+"Seven",
+"Eight"
+],
+"d": 3,
+"x": "Apollo 13 was meant to land but was aborted after an oxygen tank failed, and the crew returned safely.",
+"tags": [
+"space"
+]
+},
+{
+"q": "How many people have walked on the Moon in total?",
+"a": [
+"Twelve",
+"Ten",
+"Eight",
+"Six"
+],
+"d": 3,
+"x": "All twelve were Americans, and the last to leave the surface was Eugene Cernan in December 1972.",
+"tags": [
+"space"
+]
+},
+{
+"q": "Which Swedish-American engineer designed the modern zipper in the 1910s?",
+"a": [
+"Gideon Sundback",
+"Whitcomb Judson",
+"Elias Howe",
+"Levi Strauss"
+],
+"d": 3,
+"x": "His design was called the 'Hookless Fastener' before the name zipper stuck.",
+"tags": [
+"inventions"
+]
+},
+{
+"q": "Which DuPont chemist invented the strong fiber Kevlar in 1965?",
+"a": [
+"Stephanie Kwolek",
+"Marie Curie",
+"Rosalind Franklin",
+"Grace Hopper"
+],
+"d": 3,
+"x": "Kwolek noticed an unusual cloudy liquid that most chemists would have thrown away, and it led to a fiber five times stronger than steel by weight.",
+"tags": [
+"inventions"
+]
+},
+{
+"q": "Which Cornish engineer ran the first steam locomotive on rails in 1804?",
+"a": [
+"Richard Trevithick",
+"George Stephenson",
+"James Watt",
+"Thomas Newcomen"
+],
+"d": 3,
+"x": "His locomotive hauled iron and passengers at a Welsh ironworks, but its weight broke the cast-iron rails.",
+"tags": [
+"inventions"
+]
+},
+{
+"q": "Which Scottish engineer improved the steam engine in the 1760s by adding a separate condenser?",
+"a": [
+"James Watt",
+"Thomas Telford",
+"William Murdoch",
+"John Rennie"
+],
+"d": 3,
+"x": "The unit of power, the watt, is named for him, and he popularized the term 'horsepower'.",
+"tags": [
+"inventions"
+]
+},
+{
+"q": "Which Scottish inventor gave the first public demonstration of a working television in 1926?",
+"a": [
+"John Logie Baird",
+"Alexander Fleming",
+"James Dewar",
+"Alexander Bell"
+],
+"d": 3,
+"x": "His early system scanned images using a spinning disk with holes, and he showed it to members of the Royal Institution in London.",
+"tags": [
+"inventions"
+]
+},
+{
+"q": "Which French mathematician built one of the first mechanical calculators in 1642?",
+"a": [
+"Blaise Pascal",
+"Gottfried Leibniz",
+"Rene Descartes",
+"Pierre de Fermat"
+],
+"d": 3,
+"x": "He built it at age 19 to help his father, a tax official, with long sums.",
+"tags": [
+"inventions"
+]
+},
+{
+"q": "Which company released the 4004, the first commercially available microprocessor, in 1971?",
+"a": [
+"Intel",
+"IBM",
+"Motorola",
+"Texas Instruments"
+],
+"d": 3,
+"x": "The tiny chip had about 2,300 transistors and was first designed for a Japanese calculator.",
+"tags": [
+"tech"
+]
+},
+{
+"q": "Which US Navy rear admiral developed one of the first compilers, in 1952?",
+"a": [
+"Grace Hopper",
+"Ada Lovelace",
+"Margaret Hamilton",
+"Jean Bartik"
+],
+"d": 3,
+"x": "Her work helped lead to the COBOL language and the idea that programs could be written in English-like words.",
+"tags": [
+"tech"
+]
+},
+{
+"q": "Which architect designed the Guggenheim Museum in Bilbao, Spain?",
+"a": [
+"Frank Gehry",
+"Zaha Hadid",
+"Norman Foster",
+"Renzo Piano"
+],
+"d": 3,
+"x": "The titanium-clad building opened in 1997 and spurred the idea of a 'Bilbao effect' on tourism.",
+"tags": [
+"landmarks"
+]
+},
+{
+"q": "Which Danish architect designed the Sydney Opera House?",
+"a": [
+"Jorn Utzon",
+"Frank Lloyd Wright",
+"Le Corbusier",
+"Eero Saarinen"
+],
+"d": 3,
+"x": "He won the design competition in 1957, but left the project before it was finished in 1973.",
+"tags": [
+"landmarks"
+]
+},
+{
+"q": "Which engineer, famed for a Paris tower, designed the Statue of Liberty's internal iron framework?",
+"a": [
+"Gustave Eiffel",
+"Frederic Bartholdi",
+"Eugene Viollet-le-Duc",
+"Ferdinand de Lesseps"
+],
+"d": 3,
+"x": "The sculptor Bartholdi designed the statue's exterior, and the flexible frame lets it sway in strong wind.",
+"tags": [
+"landmarks"
+]
+},
+{
+"q": "In which country is the temple complex of Angkor Wat?",
+"a": [
+"Cambodia",
+"Thailand",
+"Vietnam",
+"Laos"
+],
+"d": 3,
+"x": "It is the largest religious monument in the world and appears on Cambodia's national flag.",
+"tags": [
+"landmarks"
+]
+},
+{
+"q": "What is the name of the giant sandstone rock in Australia's Northern Territory that is sacred to the Anangu people?",
+"a": [
+"Uluru",
+"Kata Tjuta",
+"Mount Augustus",
+"Wave Rock"
+],
+"d": 3,
+"x": "It is also known as Ayers Rock, and visitors are no longer allowed to climb it.",
+"tags": [
+"landmarks"
+]
+},
+{
+"q": "In which Spanish city is the Alhambra palace complex?",
+"a": [
+"Granada",
+"Seville",
+"Cordoba",
+"Toledo"
+],
+"d": 3,
+"x": "The Alhambra was built mostly in the 1200s and 1300s and is famed for its intricate tilework and courtyards.",
+"tags": [
+"landmarks"
+]
+},
+{
+"q": "Neuschwanstein Castle in Bavaria was built for which king?",
+"a": [
+"Ludwig II",
+"Wilhelm II",
+"Frederick the Great",
+"Maximilian I"
+],
+"d": 3,
+"x": "The fairy-tale castle inspired Disney's Sleeping Beauty Castle, and Ludwig never saw it completed.",
+"tags": [
+"landmarks"
+]
+},
+{
+"q": "Who was the first African American woman to travel into space, in 1992?",
+"a": [
+"Mae Jemison",
+"Sally Ride",
+"Guion Bluford",
+"Valentina Tereshkova"
+],
+"d": 3,
+"x": "Before becoming an astronaut, Jemison was a doctor and served in the Peace Corps in West Africa.",
+"tags": [
+"people"
+]
+},
+{
+"q": "Which Norwegian explorer led the first expedition to reach the South Pole, in 1911?",
+"a": [
+"Roald Amundsen",
+"Robert Falcon Scott",
+"Ernest Shackleton",
+"Fridtjof Nansen"
+],
+"d": 3,
+"x": "Amundsen's team beat Scott's British expedition by about five weeks, relying on sled dogs.",
+"tags": [
+"people"
+]
+},
+{
+"q": "Which self-taught Indian mathematician's life inspired the book and film 'The Man Who Knew Infinity'?",
+"a": [
+"Srinivasa Ramanujan",
+"Aryabhata",
+"C. V. Raman",
+"Satyendra Nath Bose"
+],
+"d": 3,
+"x": "Ramanujan wrote to the British mathematician G. H. Hardy in 1913, and Hardy invited him to Cambridge.",
+"tags": [
+"people"
+]
+},
+{
+"q": "Which artist painted 'The Persistence of Memory', featuring melting clocks?",
+"a": [
+"Salvador Dali",
+"Rene Magritte",
+"Joan Miro",
+"Max Ernst"
+],
+"d": 3,
+"x": "Dali painted it in 1931 and said the clocks were inspired by melting Camembert cheese.",
+"tags": [
+"art"
+]
+},
+{
+"q": "Which Dutch painter created 'Girl with a Pearl Earring'?",
+"a": [
+"Johannes Vermeer",
+"Rembrandt",
+"Frans Hals",
+"Jan Steen"
+],
+"d": 3,
+"x": "Only about three dozen paintings by Vermeer survive, and the girl's identity is unknown.",
+"tags": [
+"art"
+]
+},
+{
+"q": "What is the fear of the number 13 called?",
+"a": [
+"Triskaidekaphobia",
+"Tetraphobia",
+"Arithmophobia",
+"Numerophobia"
+],
+"d": 3,
+"x": "The fear is why many tall buildings skip the 13th floor in their numbering.",
+"tags": [
+"language"
+]
+},
+{
+"q": "In the NATO phonetic alphabet, which word stands for the letter Q?",
+"a": [
+"Quebec",
+"Quartz",
+"Queen",
+"Quiet"
+],
+"d": 3,
+"x": "The alphabet was designed so that each word sounds clearly different, even over poor radio connections.",
+"tags": [
+"communication"
+]
+},
+{
+"q": "How many items are in a gross?",
+"a": [
+"144",
+"100",
+"120",
+"112"
+],
+"d": 3,
+"x": "A gross is a dozen dozens, and a 'great gross' is 12 gross, or 1,728.",
+"tags": [
+"everyday"
+]
+},
+{
+"q": "Which day of the week is named after the Norse thunder god Thor?",
+"a": [
+"Thursday",
+"Wednesday",
+"Tuesday",
+"Friday"
+],
+"d": 3,
+"x": "Wednesday is named for Odin, Tuesday for Tyr, and Friday for the goddess Frigg.",
+"tags": [
+"calendar"
+]
+},
+{
+"q": "Which wedding anniversary is traditionally associated with paper?",
+"a": [
+"First",
+"Fifth",
+"Tenth",
+"Twenty-fifth"
+],
+"d": 3,
+"x": "Traditional gift lists run from paper for the first year to cotton, leather, and iron in the following years.",
+"tags": [
+"culture"
+]
+},
+{
+"q": "The Rosetta Stone, key to deciphering Egyptian hieroglyphs, is displayed in which museum?",
+"a": [
+"British Museum",
+"The Louvre",
+"Metropolitan Museum",
+"Vatican Museums"
+],
+"d": 3,
+"x": "Discovered in 1799, it carries the same decree in three scripts, which let scholars compare them.",
+"tags": [
+"landmarks"
+]
+},
+{
+"q": "The word 'tsunami' comes from Japanese words meaning what?",
+"a": [
+"Harbor wave",
+"Great flood",
+"Sea storm",
+"Deep tide"
+],
+"d": 3,
+"x": "The name came from fishermen who returned to find their harbor devastated although they had felt nothing at sea.",
+"tags": [
+"language"
+]
+},
+{
+"q": "The word 'ombudsman', meaning an official who investigates complaints, comes from which language?",
+"a": [
+"Swedish",
+"German",
+"Danish",
+"Dutch"
+],
+"d": 3,
+"x": "Sweden created the first modern parliamentary ombudsman in 1809.",
+"tags": [
+"language"
+]
+},
+{
+"q": "At about what age did Louis Braille develop his raised-dot reading system?",
+"a": [
+"15",
+"25",
+"10",
+"20"
+],
+"d": 3,
+"x": "Braille became blind as a child, and he refined his system based on a military code of raised dots.",
+"tags": [
+"culture"
+]
+},
+{
+"q": "Which Swiss businessman founded the Red Cross movement?",
+"a": [
+"Henry Dunant",
+"Louis Agassiz",
+"Auguste Piccard",
+"Carl Jung"
+],
+"d": 3,
+"x": "Dunant was moved to act after seeing wounded soldiers at the 1859 Battle of Solferino, and he won the first Nobel Peace Prize in 1901.",
+"tags": [
+"people"
+]
+},
+{
+"q": "Which IBM engineer created the Ctrl+Alt+Del keyboard shortcut?",
+"a": [
+"David Bradley",
+"Bill Gates",
+"Gary Kildall",
+"Dennis Ritchie"
+],
+"d": 3,
+"x": "Bradley made it as a quick way to restart a computer during development, and later joked that he may have invented it but Gates made it famous.",
+"tags": [
+"tech"
+]
+},
+{
+"q": "The Python programming language was named after what?",
+"a": [
+"Monty Python's Flying Circus",
+"The python snake family",
+"The Greek oracle at Delphi",
+"A Dutch novel character"
+],
+"d": 3,
+"x": "Creator Guido van Rossum was reading scripts from the British comedy show while he started the project in late 1989.",
+"tags": [
+"tech"
+]
+},
+{
+"q": "Which tailor partnered with Levi Strauss to patent riveted work pants in 1873?",
+"a": [
+"Jacob Davis",
+"Adolph Sutro",
+"Isaac Singer",
+"Joseph Pulitzer"
+],
+"d": 3,
+"x": "Davis added metal rivets at stress points to make trousers last longer, and needed Strauss to pay the patent fee.",
+"tags": [
+"business"
+]
+},
+{
+"q": "The name Lego comes from a Danish phrase meaning what?",
+"a": [
+"Play well",
+"Build more",
+"Small bricks",
+"Happy child"
+],
+"d": 3,
+"x": "The Danish phrase is 'leg godt', and Lego began as a wooden toy maker in 1932.",
+"tags": [
+"business"
+]
+},
+{
+"q": "Adidas is named after the nickname and surname of which German founder?",
+"a": [
+"Adi Dassler",
+"Rudi Dassler",
+"Hugo Boss",
+"Ferdinand Porsche"
+],
+"d": 3,
+"x": "His brother Rudolf founded the rival company Puma, after the two split in 1948.",
+"tags": [
+"business"
+]
+},
+{
+"q": "A lack of which mineral in the diet can cause a swelling of the thyroid gland known as goiter?",
+"a": [
+"Iodine",
+"Iron",
+"Calcium",
+"Zinc"
+],
+"d": 3,
+"x": "Adding iodine to table salt, started in the 1920s, greatly reduced goiter in many countries.",
+"tags": [
+"health"
+]
+},
+{
+"q": "Which vitamin is essential for normal blood clotting?",
+"a": [
+"Vitamin K",
+"Vitamin E",
+"Vitamin B6",
+"Vitamin A"
+],
+"d": 3,
+"x": "The K comes from the Danish word 'koagulation'.",
+"tags": [
+"health"
+]
+},
+{
+"q": "Which Hungarian doctor championed handwashing to reduce childbed fever in the 1840s?",
+"a": [
+"Ignaz Semmelweis",
+"Joseph Lister",
+"Rudolf Virchow",
+"Robert Koch"
+],
+"d": 3,
+"x": "Death rates in his clinic dropped sharply after doctors began washing with chlorinated lime, but many colleagues dismissed his findings.",
+"tags": [
+"health"
+]
+},
+{
+"q": "What is the largest moon of Saturn?",
+"a": [
+"Titan",
+"Rhea",
+"Enceladus",
+"Iapetus"
+],
+"d": 3,
+"x": "Titan has a thick atmosphere and lakes of liquid methane and ethane.",
+"tags": [
+"space"
+]
+},
+{
+"q": "Which inventor produced the first xerographic copy, the basis of photocopying, in 1938?",
+"a": [
+"Chester Carlson",
+"Thomas Watson",
+"Edwin Land",
+"George Eastman"
+],
+"d": 3,
+"x": "Carlson's first copy said '10-22-38 Astoria', and it took years before a company would back his invention.",
+"tags": [
+"inventions"
+]
+},
+{
+"q": "Which Italian inventor sent the first transatlantic radio signal in 1901?",
+"a": [
+"Guglielmo Marconi",
+"Nikola Tesla",
+"Heinrich Hertz",
+"Lee de Forest"
+],
+"d": 3,
+"x": "The signal was the letter 'S' in Morse code, sent from Cornwall, England, to Newfoundland.",
+"tags": [
+"inventions"
+]
+},
+{
+"q": "Which Serbian-American engineer patented the alternating current induction motor in 1888?",
+"a": [
+"Nikola Tesla",
+"George Westinghouse",
+"Thomas Edison",
+"Guglielmo Marconi"
+],
+"d": 3,
+"x": "Westinghouse bought his patents, and AC power won the 'War of the Currents' against Edison's direct current.",
+"tags": [
+"inventions"
+]
+},
+{
+"q": "Which German physicist discovered X-rays in 1895?",
+"a": [
+"Wilhelm Rontgen",
+"Max Planck",
+"Heinrich Hertz",
+"Otto Hahn"
+],
+"d": 3,
+"x": "He called them X-rays because the 'X' stands for unknown, and he won the first Nobel Prize in Physics.",
+"tags": [
+"health"
+]
+},
+{
+"q": "Earth Day was first observed in what year, on April 22?",
+"a": [
+"1970",
+"1960",
+"1980",
+"1990"
+],
+"d": 3,
+"x": "About 20 million Americans took part in the first Earth Day, which helped lead to the creation of the Environmental Protection Agency.",
+"tags": [
+"holidays"
+]
+},
+{
+"q": "Which small Spanish town hosts the annual tomato-throwing festival La Tomatina?",
+"a": [
+"Bunol",
+"Pamplona",
+"Sitges",
+"Bilbao"
+],
+"d": 3,
+"x": "Tens of thousands of participants throw ripe tomatoes in the streets for an hour each August.",
+"tags": [
+"holidays"
+]
+},
+{
+"q": "In which country is the Up Helly Aa fire festival held every January?",
+"a": [
+"Scotland",
+"Norway",
+"Iceland",
+"Ireland"
+],
+"d": 3,
+"x": "The festival, held on the Shetland Islands, celebrates the islands' Viking heritage with torchlit processions and a ship burning.",
+"tags": [
+"holidays"
+]
+},
+{
+"q": "What is the dot above a lowercase 'i' or 'j' called?",
+"a": [
+"Tittle",
+"Umlaut",
+"Serif",
+"Ascender"
+],
+"d": 3,
+"x": "The word 'tittle' also gives us the phrase 'to the last jot and tittle'.",
+"tags": [
+"language"
+]
+},
+{
+"q": "The ampersand symbol (&) originated as a ligature of which Latin word?",
+"a": [
+"Et",
+"Ad",
+"Ex",
+"Est"
+],
+"d": 3,
+"x": "Et means 'and', and the symbol was once the 27th letter of the English alphabet recited by schoolchildren.",
+"tags": [
+"language"
+]
+},
+{
+"q": "Who created the constructed language Esperanto in 1887?",
+"a": [
+"L. L. Zamenhof",
+"Noam Chomsky",
+"J. R. R. Tolkien",
+"Ferdinand de Saussure"
+],
+"d": 3,
+"x": "Zamenhof, a Polish doctor, hoped a simple shared language would help people from different nations understand each other.",
+"tags": [
+"language"
+]
+},
+{
+"q": "Japanese writing combines hiragana, katakana, and which Chinese-derived characters?",
+"a": [
+"Kanji",
+"Hanzi",
+"Hangul",
+"Romaji"
+],
+"d": 3,
+"x": "Hangul is the Korean alphabet, and romaji is the Latin-letter spelling of Japanese.",
+"tags": [
+"language"
+]
+},
+{
+"q": "Which Italian friar published a landmark 1494 book that described double-entry bookkeeping, earning the title father of accounting?",
+"a": [
+"Luca Pacioli",
+"Fibonacci",
+"Niccolo Machiavelli",
+"Galileo Galilei"
+],
+"d": 3,
+"x": "Pacioli was also a friend of Leonardo da Vinci, who illustrated one of his books.",
+"tags": [
+"business"
+]
+},
+{
+"q": "Which banking family held great power in Renaissance Florence?",
+"a": [
+"Medici",
+"Borgia",
+"Sforza",
+"Este"
+],
+"d": 3,
+"x": "The Medici bank was among the largest in Europe, and the family funded artists such as Botticelli and Michelangelo.",
+"tags": [
+"money"
+]
+},
+{
+"q": "Which company introduced the first general-purpose charge card in 1950?",
+"a": [
+"Diners Club",
+"American Express",
+"Visa",
+"BankAmericard"
+],
+"d": 3,
+"x": "The idea reportedly came after its founder forgot his wallet at a restaurant dinner.",
+"tags": [
+"money"
+]
+},
+{
+"q": "What does the acronym RADAR stand for?",
+"a": [
+"Radio Detection And Ranging",
+"Rapid Distance And Range",
+"Radar Direction And Reporting",
+"Remote Air Detection Array"
+],
+"d": 3,
+"x": "The term was coined by the US Navy in 1940, and the technology was crucial for air defense in World War II.",
+"tags": [
+"tech"
+]
+},
+{
+"q": "What does the acronym SCUBA stand for?",
+"a": [
+"Self-Contained Underwater Breathing Apparatus",
+"Standard Compressed Underwater Breathing Array",
+"Sealed Compressed Underwater Breathing Aid",
+"Self-Controlled Underwater Buoyancy Apparatus"
+],
+"d": 3,
+"x": "The device was co-developed by Jacques Cousteau and Emile Gagnan in the 1940s.",
+"tags": [
+"tech"
+]
+},
+{
+"q": "What does the acronym ASCII stand for?",
+"a": [
+"American Standard Code for Information Interchange",
+"Advanced System Code for Internet Interaction",
+"Automatic Standard Computer Input Interface",
+"American Symbolic Character Index Interface"
+],
+"d": 3,
+"x": "ASCII assigns numbers to letters and symbols, such as 65 for capital A, and it dates from the early 1960s.",
+"tags": [
+"tech"
+]
+},
+{
+"q": "What does the acronym LASER stand for?",
+"a": [
+"Light Amplification by Stimulated Emission of Radiation",
+"Linear Amplified Signal Emission Radiation",
+"Light Absorption by Standard Electron Resonance",
+"Laser Aimed Spectrum Emission Ray"
+],
+"d": 3,
+"x": "The first working laser was built by Theodore Maiman in 1960 using a ruby crystal.",
+"tags": [
+"tech"
+]
+},
+{
+"q": "What does the 'HTTP' at the start of many web addresses stand for?",
+"a": [
+"HyperText Transfer Protocol",
+"HyperText Transmission Process",
+"High Traffic Transfer Path",
+"Host Terminal Transfer Protocol"
+],
+"d": 3,
+"x": "The 'S' in HTTPS means the connection is secured with encryption.",
+"tags": [
+"tech"
+]
+},
+{
+"q": "Interest earned on both the original amount and on previously earned interest is called what?",
+"a": [
+"Compound interest",
+"Simple interest",
+"Fixed interest",
+"Annual interest"
+],
+"d": 3,
+"x": "Albert Einstein is often (probably wrongly) quoted as calling compound interest the eighth wonder of the world.",
+"tags": [
+"money"
+]
+},
+{
+"q": "Which Dutch company introduced the compact cassette in 1963?",
+"a": [
+"Philips",
+"Sony",
+"Grundig",
+"Siemens"
+],
+"d": 3,
+"x": "Philips made the format available to other manufacturers without charging royalties, which helped it become a worldwide standard.",
+"tags": [
+"tech"
+]
+}
+]

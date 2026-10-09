@@ -1,0 +1,1443 @@
+[
+{
+"q": "Which French town hosted the first Winter Olympics in 1924?",
+"a": [
+"Chamonix",
+"Grenoble",
+"Albertville",
+"Nice"
+],
+"d": 2,
+"x": "The event was originally called 'International Winter Sports Week' and was only declared the first Winter Olympics afterward.",
+"tags": [
+"olympics",
+"winter sports"
+]
+},
+{
+"q": "How far is the penalty spot from the goal line in soccer?",
+"a": [
+"12 yards",
+"10 yards",
+"15 yards",
+"18 yards"
+],
+"d": 2,
+"x": "That is about 11 meters. The distance was set in the early rules adopted in 1902, when the penalty kick was introduced.",
+"tags": [
+"soccer",
+"rules"
+]
+},
+{
+"q": "Which country won the 1994 FIFA World Cup, beating Italy on penalties?",
+"a": [
+"Brazil",
+"Germany",
+"Argentina",
+"Sweden"
+],
+"d": 2,
+"x": "It was the first World Cup final decided by a penalty shootout. Italy's Roberto Baggio missed the decisive kick.",
+"tags": [
+"soccer",
+"world cup"
+]
+},
+{
+"q": "Which team did France beat 3-0 in the 1998 World Cup final?",
+"a": [
+"Brazil",
+"Italy",
+"Croatia",
+"Netherlands"
+],
+"d": 2,
+"x": "The match was played at the Stade de France in Saint-Denis. Brazil's Ronaldo had suffered a mysterious fit hours before kickoff.",
+"tags": [
+"soccer",
+"world cup"
+]
+},
+{
+"q": "Which Swedish tennis player won five consecutive Wimbledon titles from 1976 to 1980?",
+"a": [
+"Bjorn Borg",
+"Stefan Edberg",
+"Mats Wilander",
+"Ivan Lendl"
+],
+"d": 2,
+"x": "Borg retired at just 26 years old. His 1980 final against John McEnroe included a famous 18-16 tiebreak.",
+"tags": [
+"tennis"
+]
+},
+{
+"q": "Which golf major is traditionally awarded with the Claret Jug?",
+"a": [
+"The Open Championship",
+"The Masters",
+"The US Open",
+"The PGA Championship"
+],
+"d": 2,
+"x": "The Open is the oldest golf major, first played in 1860. It is always held on a links course in Britain.",
+"tags": [
+"golf"
+]
+},
+{
+"q": "What is the diameter of a standard basketball hoop's rim?",
+"a": [
+"18 inches",
+"15 inches",
+"20 inches",
+"24 inches"
+],
+"d": 2,
+"x": "The hoop is 18 inches (45.7 cm) across, while a regulation basketball is only about 9.5 inches wide.",
+"tags": [
+"basketball",
+"rules"
+]
+},
+{
+"q": "What is the trophy of the Rugby World Cup called?",
+"a": [
+"Webb Ellis Cup",
+"Calcutta Cup",
+"Bledisloe Cup",
+"Heineken Cup"
+],
+"d": 2,
+"x": "The trophy is named after William Webb Ellis, who according to legend invented rugby by picking up the ball and running with it.",
+"tags": [
+"rugby"
+]
+},
+{
+"q": "What is a batter's score of 100 runs called in cricket?",
+"a": [
+"A century",
+"A ton-run",
+"A hundred-hit",
+"A maximum"
+],
+"d": 2,
+"x": "Scoring a century is a major milestone. A score of 200 is a double century, and the batter's team is often applauded loudly.",
+"tags": [
+"cricket"
+]
+},
+{
+"q": "Which country won the first Rugby World Cup, in 1987?",
+"a": [
+"New Zealand",
+"Australia",
+"France",
+"England"
+],
+"d": 2,
+"x": "New Zealand beat France 29-9 in the final at Eden Park in Auckland. The tournament was co-hosted with Australia.",
+"tags": [
+"rugby",
+"world cup"
+]
+},
+{
+"q": "Which British runner was the first to break the four-minute mile, in 1954?",
+"a": [
+"Roger Bannister",
+"Sebastian Coe",
+"Steve Ovett",
+"Chris Chataway"
+],
+"d": 2,
+"x": "Bannister ran 3:59.4 at Iffley Road in Oxford. He was a medical student at the time and later became a neurologist.",
+"tags": [
+"athletics"
+]
+},
+{
+"q": "Which American swimmer won seven gold medals at the 1972 Olympics?",
+"a": [
+"Mark Spitz",
+"Johnny Weissmuller",
+"Matt Biondi",
+"Rowdy Gaines"
+],
+"d": 2,
+"x": "Spitz set a world record in each of his seven events. His total stood as the most golds at one Games until 2008.",
+"tags": [
+"swimming",
+"olympics"
+]
+},
+{
+"q": "Which German tennis player won the 1988 calendar-year Grand Slam and an Olympic gold?",
+"a": [
+"Steffi Graf",
+"Martina Navratilova",
+"Monica Seles",
+"Chris Evert"
+],
+"d": 2,
+"x": "Graf's 1988 'Golden Slam' of all four majors plus Olympic gold in Seoul remains one of tennis's greatest feats.",
+"tags": [
+"tennis"
+]
+},
+{
+"q": "Which Australian tennis legend won the calendar-year Grand Slam in both 1962 and 1969?",
+"a": [
+"Rod Laver",
+"Ken Rosewall",
+"John Newcombe",
+"Roy Emerson"
+],
+"d": 2,
+"x": "Laver is the only man to complete the calendar-year Grand Slam twice, with the second coming after tennis opened to professionals.",
+"tags": [
+"tennis"
+]
+},
+{
+"q": "How long is the pitch between the wickets in cricket?",
+"a": [
+"22 yards",
+"20 yards",
+"25 yards",
+"18 yards"
+],
+"d": 2,
+"x": "This distance is one chain, a unit of land measurement used since 1700, and equals about 20 meters.",
+"tags": [
+"cricket",
+"rules"
+]
+},
+{
+"q": "How many players per team are on the field in Australian rules football?",
+"a": [
+"18",
+"15",
+"20",
+"22"
+],
+"d": 2,
+"x": "Each team also has four substitutes on the interchange bench. The oval field can be up to 185 meters long.",
+"tags": [
+"australian rules"
+]
+},
+{
+"q": "Which basketball team did Bill Russell win 11 NBA championships with?",
+"a": [
+"Boston Celtics",
+"New York Knicks",
+"Philadelphia 76ers",
+"Los Angeles Lakers"
+],
+"d": 2,
+"x": "Russell won the titles in 13 seasons from 1957 to 1969, and for the last two he also served as the team's player-coach.",
+"tags": [
+"basketball"
+]
+},
+{
+"q": "Which New York Yankees first baseman was nicknamed 'the Iron Horse'?",
+"a": [
+"Lou Gehrig",
+"Babe Ruth",
+"Joe DiMaggio",
+"Mickey Mantle"
+],
+"d": 2,
+"x": "Gehrig played 2,130 consecutive games between 1925 and 1939. He ended the streak when illness began to weaken him.",
+"tags": [
+"baseball"
+]
+},
+{
+"q": "In 1947, Jackie Robinson broke Major League Baseball's color barrier with which team?",
+"a": [
+"Brooklyn Dodgers",
+"New York Yankees",
+"Boston Red Sox",
+"St. Louis Cardinals"
+],
+"d": 2,
+"x": "His number 42 was retired across all Major League teams in 1997. The Dodgers later moved to Los Angeles.",
+"tags": [
+"baseball"
+]
+},
+{
+"q": "Ayrton Senna, a three-time Formula One champion, was from which country?",
+"a": [
+"Brazil",
+"Argentina",
+"Portugal",
+"Italy"
+],
+"d": 2,
+"x": "Senna won his titles in 1988, 1990 and 1991 and was known for his skill in wet conditions.",
+"tags": [
+"motor racing"
+]
+},
+{
+"q": "Which German driver won five consecutive Formula One titles from 2000 to 2004?",
+"a": [
+"Michael Schumacher",
+"Sebastian Vettel",
+"Nico Rosberg",
+"Heinz-Harald Frentzen"
+],
+"d": 2,
+"x": "Schumacher won those titles driving for Ferrari, ending a long title drought for the Italian team that had lasted since 1979.",
+"tags": [
+"motor racing"
+]
+},
+{
+"q": "The Daytona 500 stock car race is held in which US state?",
+"a": [
+"Florida",
+"Texas",
+"North Carolina",
+"Georgia"
+],
+"d": 2,
+"x": "Held at Daytona International Speedway each February, the race is the opening event of the NASCAR season.",
+"tags": [
+"motor racing"
+]
+},
+{
+"q": "Which Italian car maker uses a prancing horse as its racing emblem?",
+"a": [
+"Ferrari",
+"Maserati",
+"Lamborghini",
+"Alfa Romeo"
+],
+"d": 2,
+"x": "Enzo Ferrari adopted the horse after meeting the parents of an Italian air ace, Francesco Baracca, who had painted it on his plane.",
+"tags": [
+"motor racing"
+]
+},
+{
+"q": "The 24 Hours of Le Mans endurance race takes place in which country?",
+"a": [
+"France",
+"Italy",
+"Belgium",
+"Germany"
+],
+"d": 2,
+"x": "The race was first held in 1923 on public roads near the town of Le Mans. Teams of drivers share one car for a full day.",
+"tags": [
+"motor racing"
+]
+},
+{
+"q": "In golf, what is the name for a score of three strokes under par on one hole?",
+"a": [
+"Albatross",
+"Eagle",
+"Condor",
+"Birdie"
+],
+"d": 2,
+"x": "The term is the Americanized form of 'double eagle'. It is extremely rare, as it usually requires holing out on a par 5.",
+"tags": [
+"golf"
+]
+},
+{
+"q": "Which golfer was nicknamed 'the Golden Bear'?",
+"a": [
+"Jack Nicklaus",
+"Arnold Palmer",
+"Gary Player",
+"Tom Watson"
+],
+"d": 2,
+"x": "Nicklaus won 18 major championships in a career spanning more than two decades. He won his last Masters at age 46.",
+"tags": [
+"golf"
+]
+},
+{
+"q": "Which Australian golfer was nicknamed 'the Great White Shark'?",
+"a": [
+"Greg Norman",
+"Adam Scott",
+"Peter Thomson",
+"Ian Baker-Finch"
+],
+"d": 2,
+"x": "Norman won the Open Championship twice and held the world number one ranking for 331 weeks.",
+"tags": [
+"golf"
+]
+},
+{
+"q": "Which team won the first Cricket World Cup in 1975?",
+"a": [
+"West Indies",
+"Australia",
+"England",
+"India"
+],
+"d": 2,
+"x": "The West Indies beat Australia in the final at Lord's, with captain Clive Lloyd scoring a century. They also won in 1979.",
+"tags": [
+"cricket",
+"world cup"
+]
+},
+{
+"q": "Which country won the 1983 Cricket World Cup, beating the West Indies in the final?",
+"a": [
+"India",
+"Pakistan",
+"England",
+"Sri Lanka"
+],
+"d": 2,
+"x": "India defended a low total of 183 at Lord's, a huge upset. The win helped spark cricket's popularity across India.",
+"tags": [
+"cricket",
+"world cup"
+]
+},
+{
+"q": "Which Australian batsman finished his Test career with an average of 99.94?",
+"a": [
+"Don Bradman",
+"Steve Waugh",
+"Allan Border",
+"Ricky Ponting"
+],
+"d": 2,
+"x": "Bradman needed just four runs in his final innings to average 100 but was bowled for a duck.",
+"tags": [
+"cricket"
+]
+},
+{
+"q": "Which city hosted the 1900 Olympics, the first Games in which women competed?",
+"a": [
+"Paris",
+"London",
+"Athens",
+"St. Louis"
+],
+"d": 2,
+"x": "The 1900 Games were spread over five months as part of the World's Fair. Tennis player Charlotte Cooper became the first female Olympic champion.",
+"tags": [
+"olympics"
+]
+},
+{
+"q": "Who founded the International Olympic Committee in 1894 and revived the modern Games?",
+"a": [
+"Pierre de Coubertin",
+"Avery Brundage",
+"Juan Antonio Samaranch",
+"Demetrios Vikelas"
+],
+"d": 2,
+"x": "The French educator was inspired by England's Wenlock Olympian Games. His heart is buried at Olympia in Greece.",
+"tags": [
+"olympics"
+]
+},
+{
+"q": "How many players per team are in the water in a water polo match, including the goalkeeper?",
+"a": [
+"Seven",
+"Six",
+"Eight",
+"Nine"
+],
+"d": 2,
+"x": "Water polo players must tread water throughout the match and may only hold the ball with one hand, except the goalkeeper.",
+"tags": [
+"water polo",
+"rules"
+]
+},
+{
+"q": "How many points is a drop goal worth in rugby union?",
+"a": [
+"Three",
+"Two",
+"Five",
+"Four"
+],
+"d": 2,
+"x": "England's Jonny Wilkinson scored a famous drop goal to win the 2003 World Cup final.",
+"tags": [
+"rugby",
+"rules"
+]
+},
+{
+"q": "What is the name of the traditional Maori war dance performed by the New Zealand national rugby team?",
+"a": [
+"Haka",
+"Kapa",
+"Waiata",
+"Poi"
+],
+"d": 2,
+"x": "The All Blacks' best-known haka is 'Ka Mate', which they have performed before test matches for over a century.",
+"tags": [
+"rugby"
+]
+},
+{
+"q": "In which athletics event did Dick Fosbury revolutionize technique at the 1968 Olympics?",
+"a": [
+"High jump",
+"Pole vault",
+"Long jump",
+"Triple jump"
+],
+"d": 2,
+"x": "He went over the bar backwards and headfirst, a style now known worldwide as the Fosbury Flop. It replaced older straddle styles.",
+"tags": [
+"athletics",
+"olympics"
+]
+},
+{
+"q": "Which American won the first women's Olympic marathon, at the 1984 Los Angeles Games?",
+"a": [
+"Joan Benoit",
+"Grete Waitz",
+"Rosa Mota",
+"Mary Decker"
+],
+"d": 2,
+"x": "Benoit entered the stadium to a roar from the crowd and won by over 400 meters. The women's marathon was first added in 1984.",
+"tags": [
+"athletics",
+"olympics"
+]
+},
+{
+"q": "Which Ethiopian ran barefoot to win the marathon at the 1960 Rome Olympics?",
+"a": [
+"Abebe Bikila",
+"Haile Gebrselassie",
+"Mamo Wolde",
+"Kenenisa Bekele"
+],
+"d": 2,
+"x": "Bikila won gold in Rome in bare feet and won again in Tokyo in 1964, this time wearing shoes. He set a world best in both races.",
+"tags": [
+"athletics",
+"olympics"
+]
+},
+{
+"q": "Which Czechoslovak runner won the 5,000 m, 10,000 m and marathon at the 1952 Olympics?",
+"a": [
+"Emil Zatopek",
+"Paavo Nurmi",
+"Vladimir Kuts",
+"Lasse Viren"
+],
+"d": 2,
+"x": "Zatopek entered his first marathon in Helsinki and won, after a few words of advice from British rival Jim Peters.",
+"tags": [
+"athletics",
+"olympics"
+]
+},
+{
+"q": "Which Finnish distance runner, nicknamed the 'Flying Finn', won nine Olympic gold medals?",
+"a": [
+"Paavo Nurmi",
+"Lasse Viren",
+"Hannes Kolehmainen",
+"Ville Ritola"
+],
+"d": 2,
+"x": "Nurmi won his golds between 1920 and 1928. He was known for carrying a stopwatch to pace himself in races.",
+"tags": [
+"athletics",
+"olympics"
+]
+},
+{
+"q": "Which fruit is traditionally served with cream at the Wimbledon Championships?",
+"a": [
+"Strawberries",
+"Raspberries",
+"Blueberries",
+"Cherries"
+],
+"d": 2,
+"x": "Fans consume more than 30 tonnes of strawberries during the two-week tournament.",
+"tags": [
+"tennis"
+]
+},
+{
+"q": "What is the maximum number of sets in a men's Grand Slam singles match?",
+"a": [
+"Five",
+"Three",
+"Four",
+"Seven"
+],
+"d": 2,
+"x": "The women's matches use a best-of-three format. A man must win three sets to win a match.",
+"tags": [
+"tennis",
+"rules"
+]
+},
+{
+"q": "Which Parisian stadium hosts the French Open?",
+"a": [
+"Roland Garros",
+"Stade de France",
+"Parc des Princes",
+"Stade Pierre-Mauroy"
+],
+"d": 2,
+"x": "The stadium was named after Roland Garros, a French aviator and World War I pilot. It was built in 1928 for a Davis Cup match.",
+"tags": [
+"tennis"
+]
+},
+{
+"q": "Which 17-year-old German won Wimbledon in 1985?",
+"a": [
+"Boris Becker",
+"Michael Stich",
+"Tommy Haas",
+"Nick Kyrgios"
+],
+"d": 2,
+"x": "Becker became the youngest men's singles champion at Wimbledon, and also the first unseeded winner.",
+"tags": [
+"tennis"
+]
+},
+{
+"q": "Which national team, led by Johan Cruyff, popularized 'Total Football' in the 1970s?",
+"a": [
+"Netherlands",
+"Brazil",
+"West Germany",
+"Belgium"
+],
+"d": 2,
+"x": "In Total Football any outfield player can take over the role of a teammate. The Dutch reached the 1974 and 1978 World Cup finals.",
+"tags": [
+"soccer"
+]
+},
+{
+"q": "Which English captain lifted the World Cup trophy in 1966?",
+"a": [
+"Bobby Moore",
+"Bobby Charlton",
+"Jack Charlton",
+"Gordon Banks"
+],
+"d": 2,
+"x": "Moore received the trophy from the Queen at Wembley. He wiped his muddy hands on his shorts before shaking her hand.",
+"tags": [
+"soccer",
+"world cup"
+]
+},
+{
+"q": "Who scored a hat-trick for England in the 1966 World Cup final?",
+"a": [
+"Geoff Hurst",
+"Martin Peters",
+"Bobby Charlton",
+"Roger Hunt"
+],
+"d": 2,
+"x": "Hurst's second goal, which bounced off the crossbar, is still debated. His hat-trick sealed a 4-2 win after extra time.",
+"tags": [
+"soccer",
+"world cup"
+]
+},
+{
+"q": "Which Spanish club plays its home matches at Camp Nou?",
+"a": [
+"FC Barcelona",
+"Real Madrid",
+"Atletico Madrid",
+"Valencia"
+],
+"d": 2,
+"x": "Camp Nou opened in 1957 and means 'new field' in Catalan. It is among the largest club stadiums in Europe.",
+"tags": [
+"soccer"
+]
+},
+{
+"q": "Which English club plays its home matches at Old Trafford?",
+"a": [
+"Manchester United",
+"Manchester City",
+"Liverpool",
+"Everton"
+],
+"d": 2,
+"x": "Old Trafford is nicknamed 'the Theatre of Dreams'. It is in Greater Manchester, near the city center.",
+"tags": [
+"soccer"
+]
+},
+{
+"q": "Biathlon combines cross-country skiing with which other discipline?",
+"a": [
+"Rifle shooting",
+"Archery",
+"Javelin throwing",
+"Fencing"
+],
+"d": 2,
+"x": "Missed targets add penalty loops or time. The sport grew out of military patrol training in Scandinavia.",
+"tags": [
+"winter sports"
+]
+},
+{
+"q": "What type of rock are curling stones traditionally made from?",
+"a": [
+"Granite",
+"Marble",
+"Limestone",
+"Basalt"
+],
+"d": 2,
+"x": "The finest curling stones come from a single quarry on Ailsa Craig, a Scottish island. Each stone weighs about 20 kg.",
+"tags": [
+"winter sports",
+"curling"
+]
+},
+{
+"q": "How many players make up a curling team?",
+"a": [
+"Four",
+"Three",
+"Five",
+"Six"
+],
+"d": 2,
+"x": "The positions are called the lead, second, third (or vice-skip) and skip. The skip calls the strategy.",
+"tags": [
+"winter sports",
+"curling"
+]
+},
+{
+"q": "How long is a minor penalty in ice hockey?",
+"a": [
+"Two minutes",
+"Five minutes",
+"One minute",
+"Three minutes"
+],
+"d": 2,
+"x": "The offending player sits in the penalty box while the team plays shorthanded. A major penalty lasts five minutes.",
+"tags": [
+"ice hockey",
+"rules"
+]
+},
+{
+"q": "How many major championships are there in men's professional golf?",
+"a": [
+"Four",
+"Three",
+"Five",
+"Six"
+],
+"d": 2,
+"x": "The four majors are the Masters, the US Open, the Open Championship and the PGA Championship.",
+"tags": [
+"golf"
+]
+},
+{
+"q": "What is the maximum number of clubs a golfer may carry during a round?",
+"a": [
+"14",
+"12",
+"16",
+"18"
+],
+"d": 2,
+"x": "The limit was adopted in 1938. Before that, some golfers carried as many as 25 clubs.",
+"tags": [
+"golf",
+"rules"
+]
+},
+{
+"q": "Which trophy is awarded to the winner of the Super Bowl?",
+"a": [
+"Vince Lombardi Trophy",
+"Heisman Trophy",
+"Lord Stanley's Cup",
+"Larry O'Brien Trophy"
+],
+"d": 2,
+"x": "The silver football-shaped trophy was renamed in honor of Green Bay Packers coach Vince Lombardi after his death in 1970.",
+"tags": [
+"american football"
+]
+},
+{
+"q": "How many innings are in a standard Major League Baseball game?",
+"a": [
+"Nine",
+"Seven",
+"Eight",
+"Ten"
+],
+"d": 2,
+"x": "Tied games go to extra innings until one team leads at the end of a full inning.",
+"tags": [
+"baseball",
+"rules"
+]
+},
+{
+"q": "What is it called when a baseball batter receives four balls and advances to first base?",
+"a": [
+"A walk",
+"A bunt",
+"A steal",
+"A sacrifice"
+],
+"d": 2,
+"x": "The official term is 'base on balls'. A pitcher who walks many batters is said to have poor control.",
+"tags": [
+"baseball"
+]
+},
+{
+"q": "In which US city is Fenway Park, one of baseball's oldest stadiums?",
+"a": [
+"Boston",
+"Chicago",
+"Philadelphia",
+"Detroit"
+],
+"d": 2,
+"x": "Fenway Park opened in 1912 and is the home of the Red Sox. Its tall left-field wall is known as the Green Monster.",
+"tags": [
+"baseball"
+]
+},
+{
+"q": "In which US city is Wrigley Field, home of the Cubs?",
+"a": [
+"Chicago",
+"Cleveland",
+"Milwaukee",
+"Pittsburgh"
+],
+"d": 2,
+"x": "Wrigley Field opened in 1914 and is famous for its ivy-covered outfield walls. It did not have lights for night games until 1988.",
+"tags": [
+"baseball"
+]
+},
+{
+"q": "How many seconds is the shot clock in NBA basketball?",
+"a": [
+"24",
+"30",
+"20",
+"35"
+],
+"d": 2,
+"x": "The 24-second clock was introduced in 1954 to speed up the game, which had become slow and low scoring.",
+"tags": [
+"basketball",
+"rules"
+]
+},
+{
+"q": "What is the name of Major League Baseball's annual championship series?",
+"a": [
+"The World Series",
+"The Diamond Bowl",
+"The Grand Classic",
+"The Pennant Cup"
+],
+"d": 2,
+"x": "Despite the name, only teams from the United States and Canada take part. The first modern series was in 1903. It is also nicknamed the Fall Classic.",
+"tags": [
+"baseball"
+]
+},
+{
+"q": "Which of cycling's Grand Tours takes place in Italy?",
+"a": [
+"Giro d'Italia",
+"Vuelta a Espana",
+"Tour de Suisse",
+"Tour de Pologne"
+],
+"d": 2,
+"x": "The Giro leader wears a pink jersey, because the sponsoring newspaper, La Gazzetta dello Sport, is printed on pink paper.",
+"tags": [
+"cycling"
+]
+},
+{
+"q": "What does the polka-dot jersey signify in the Tour de France?",
+"a": [
+"Best climber",
+"Best sprinter",
+"Best young rider",
+"Most aggressive rider"
+],
+"d": 2,
+"x": "The jersey is white with red dots. It is awarded to the rider who earns the most points on the major mountain climbs.",
+"tags": [
+"cycling"
+]
+},
+{
+"q": "On which river does the annual Oxford-Cambridge Boat Race take place?",
+"a": [
+"Thames",
+"Severn",
+"Cam",
+"Mersey"
+],
+"d": 2,
+"x": "The race has been held since 1829 on a 4.2-mile stretch in London between Putney and Mortlake.",
+"tags": [
+"rowing"
+]
+},
+{
+"q": "Which fencing weapon, along with foil and sabre, is used in Olympic competition?",
+"a": [
+"Epee",
+"Rapier",
+"Saber-lance",
+"Cutlass"
+],
+"d": 2,
+"x": "Fencing has been in every modern Olympics. In epee, a touch can be scored anywhere on the body.",
+"tags": [
+"fencing",
+"olympics"
+]
+},
+{
+"q": "What is the highest rank in professional sumo wrestling?",
+"a": [
+"Yokozuna",
+"Ozeki",
+"Sekiwake",
+"Komusubi"
+],
+"d": 2,
+"x": "A yokozuna cannot be demoted and is expected to retire if they can no longer perform. They wear a special white rope belt.",
+"tags": [
+"sumo"
+]
+},
+{
+"q": "In which African country did Muhammad Ali fight George Foreman in the 1974 'Rumble in the Jungle'?",
+"a": [
+"Zaire",
+"Nigeria",
+"Kenya",
+"Ghana"
+],
+"d": 2,
+"x": "The fight took place in Kinshasa, now in the Democratic Republic of the Congo. Ali used his 'rope-a-dope' tactic to win by knockout.",
+"tags": [
+"boxing"
+]
+},
+{
+"q": "Which American heavyweight boxer was nicknamed the 'Brown Bomber'?",
+"a": [
+"Joe Louis",
+"Joe Frazier",
+"Floyd Patterson",
+"Sonny Liston"
+],
+"d": 2,
+"x": "Louis held the heavyweight title for nearly 12 years, from 1937 to 1949, defending it a record 25 times.",
+"tags": [
+"boxing"
+]
+},
+{
+"q": "Which Soviet gymnast charmed audiences at the 1972 Olympics and popularized a backward somersault on the beam?",
+"a": [
+"Olga Korbut",
+"Ludmilla Tourischeva",
+"Nelli Kim",
+"Svetlana Khorkina"
+],
+"d": 2,
+"x": "Korbut won three gold medals in 1972. Her fame helped spark a boom in gymnastics around the world.",
+"tags": [
+"gymnastics",
+"olympics"
+]
+},
+{
+"q": "How many events make up the women's heptathlon?",
+"a": [
+"Seven",
+"Five",
+"Eight",
+"Ten"
+],
+"d": 2,
+"x": "The events are spread over two days. The men's equivalent, the decathlon, has ten events.",
+"tags": [
+"athletics"
+]
+},
+{
+"q": "Which Australian runner lit the Olympic cauldron at the 2000 Sydney Games?",
+"a": [
+"Cathy Freeman",
+"Dawn Fraser",
+"Betty Cuthbert",
+"Shirley Strickland"
+],
+"d": 2,
+"x": "Freeman went on to win the 400 m gold in front of a home crowd, after emerging from a pool of water in the ceremony.",
+"tags": [
+"athletics",
+"olympics"
+]
+},
+{
+"q": "Which North London club is nicknamed 'the Gunners'?",
+"a": [
+"Arsenal",
+"Tottenham Hotspur",
+"West Ham United",
+"Fulham"
+],
+"d": 2,
+"x": "The club was founded in 1886 by workers at the Royal Arsenal armaments factory in Woolwich.",
+"tags": [
+"soccer"
+]
+},
+{
+"q": "Pele spent most of his club career at which Brazilian club?",
+"a": [
+"Santos",
+"Flamengo",
+"Corinthians",
+"Palmeiras"
+],
+"d": 2,
+"x": "Pele joined Santos at age 15 and stayed for almost two decades. He also played in the United States for the New York Cosmos.",
+"tags": [
+"soccer"
+]
+},
+{
+"q": "What was the original name of the UEFA Champions League when it began in 1955?",
+"a": [
+"European Cup",
+"Continental Cup",
+"UEFA Trophy",
+"Euro Shield"
+],
+"d": 2,
+"x": "The tournament was proposed by the French sports newspaper L'Equipe. Real Madrid won the first five editions.",
+"tags": [
+"soccer"
+]
+},
+{
+"q": "At which Olympics did the American 'Dream Team' of NBA stars first compete?",
+"a": [
+"1992",
+"1984",
+"1988",
+"1996"
+],
+"d": 2,
+"x": "Before 1992, only amateurs were allowed to play for the US team. The Dream Team won gold by an average of more than 40 points.",
+"tags": [
+"basketball",
+"olympics"
+]
+},
+{
+"q": "In cricket, what does LBW stand for?",
+"a": [
+"Leg before wicket",
+"Left behind wicket",
+"Long ball wide",
+"Legal bat width"
+],
+"d": 2,
+"x": "A batter can be out LBW if the ball would have hit the stumps but was blocked by the batter's leg or body.",
+"tags": [
+"cricket",
+"rules"
+]
+},
+{
+"q": "How many legal deliveries are in a standard over in cricket?",
+"a": [
+"Six",
+"Five",
+"Eight",
+"Ten"
+],
+"d": 2,
+"x": "In the past some countries used eight-ball overs, including Australia until the 1979-80 season.",
+"tags": [
+"cricket",
+"rules"
+]
+},
+{
+"q": "Which country joined the Five Nations rugby tournament in 2000 to make it the Six Nations?",
+"a": [
+"Italy",
+"Argentina",
+"Spain",
+"Romania"
+],
+"d": 2,
+"x": "Italy beat Scotland 34-20 in its debut match. The tournament had previously included England, Scotland, Ireland, Wales and France.",
+"tags": [
+"rugby"
+]
+},
+{
+"q": "Which fly-half kicked England's winning drop goal in the 2003 Rugby World Cup final?",
+"a": [
+"Jonny Wilkinson",
+"Owen Farrell",
+"Rob Andrew",
+"Paul Grayson"
+],
+"d": 2,
+"x": "The kick came in the final seconds of extra time against Australia in Sydney, giving England a 20-17 victory.",
+"tags": [
+"rugby",
+"world cup"
+]
+},
+{
+"q": "Which country won the 1995 Rugby World Cup on home soil?",
+"a": [
+"South Africa",
+"New Zealand",
+"Australia",
+"England"
+],
+"d": 2,
+"x": "South Africa beat New Zealand 15-12 in extra time. Nelson Mandela famously presented the trophy wearing a Springbok jersey.",
+"tags": [
+"rugby",
+"world cup"
+]
+},
+{
+"q": "What is the maximum break in a frame of snooker?",
+"a": [
+"147",
+"155",
+"140",
+"180"
+],
+"d": 2,
+"x": "It requires potting all 15 reds with 15 blacks, then all six colors in order. It is known as a maximum break.",
+"tags": [
+"snooker"
+]
+},
+{
+"q": "What is the highest score possible with three darts in one turn?",
+"a": [
+"180",
+"170",
+"201",
+"150"
+],
+"d": 2,
+"x": "It is achieved with three treble 20s. Many pub players dream of hitting it, and crowds traditionally cheer a loud 'one hundred and eighty!'",
+"tags": [
+"darts"
+]
+},
+{
+"q": "In which sport did Eddie 'the Eagle' Edwards become a cult hero at the 1988 Winter Olympics?",
+"a": [
+"Ski jumping",
+"Alpine skiing",
+"Bobsleigh",
+"Luge"
+],
+"d": 2,
+"x": "Michael 'Eddie' Edwards from England was the only British ski jumper at the Calgary Games and finished last in both events.",
+"tags": [
+"winter sports",
+"olympics"
+]
+},
+{
+"q": "Which music did British ice dancers Torvill and Dean skate to for their 1984 Olympic gold?",
+"a": [
+"Bolero",
+"The Blue Danube",
+"Swan Lake",
+"Carmen"
+],
+"d": 2,
+"x": "Their Sarajevo routine to Ravel's Bolero earned a perfect set of nine 6.0 marks for artistic impression.",
+"tags": [
+"winter sports",
+"olympics"
+]
+},
+{
+"q": "Which team did the United States beat in the 1980 'Miracle on Ice' hockey game?",
+"a": [
+"Soviet Union",
+"Canada",
+"Sweden",
+"Finland"
+],
+"d": 2,
+"x": "A team of American college players upset the favored Soviets 4-3 at Lake Placid. They then beat Finland to win gold.",
+"tags": [
+"ice hockey",
+"olympics"
+]
+},
+{
+"q": "Which basketball player scored 100 points in a single NBA game in 1962?",
+"a": [
+"Wilt Chamberlain",
+"Bill Russell",
+"Elgin Baylor",
+"Oscar Robertson"
+],
+"d": 2,
+"x": "Chamberlain's Philadelphia Warriors beat the New York Knicks 169-147 in Hershey, Pennsylvania. The game was not televised.",
+"tags": [
+"basketball"
+]
+},
+{
+"q": "Which NBA team plays its home games at Madison Square Garden?",
+"a": [
+"New York Knicks",
+"Brooklyn Nets",
+"Boston Celtics",
+"Philadelphia 76ers"
+],
+"d": 2,
+"x": "The current Garden is the fourth building to use the name. It also hosts boxing, concerts and ice hockey.",
+"tags": [
+"basketball"
+]
+},
+{
+"q": "Which jersey number did hockey star Wayne Gretzky wear, later retired across the NHL?",
+"a": [
+"99",
+"66",
+"87",
+"10"
+],
+"d": 2,
+"x": "Gretzky's number 99 was retired by the whole league in 2000. He was nicknamed 'The Great One'.",
+"tags": [
+"ice hockey"
+]
+},
+{
+"q": "The Cy Young Award honors excellence in which baseball role?",
+"a": [
+"Pitching",
+"Batting",
+"Fielding",
+"Base running"
+],
+"d": 2,
+"x": "It is named after Cy Young, who won 511 games as a pitcher, a total that is unlikely ever to be beaten.",
+"tags": [
+"baseball"
+]
+},
+{
+"q": "How many yards must an American football offense gain to earn a first down?",
+"a": [
+"10",
+"5",
+"15",
+"20"
+],
+"d": 2,
+"x": "The offense has four chances, called downs, to advance 10 yards. If it fails, the ball goes to the other team.",
+"tags": [
+"american football",
+"rules"
+]
+},
+{
+"q": "How long is an American football field between the two goal lines?",
+"a": [
+"100 yards",
+"90 yards",
+"110 yards",
+"120 yards"
+],
+"d": 2,
+"x": "The end zones add 10 yards at each end, so the whole field is 120 yards. The field is 53 and a third yards wide.",
+"tags": [
+"american football",
+"rules"
+]
+},
+{
+"q": "Which Olympic champion swimmer later starred as Tarzan in Hollywood films?",
+"a": [
+"Johnny Weissmuller",
+"Buster Crabbe",
+"Duke Kahanamoku",
+"Mark Spitz"
+],
+"d": 2,
+"x": "Weissmuller won five Olympic golds in the 1920s and later made 12 Tarzan films.",
+"tags": [
+"swimming",
+"olympics"
+]
+},
+{
+"q": "Which Asian city hosted the 1964 Summer Olympics, the first Games held in Asia?",
+"a": [
+"Tokyo",
+"Seoul",
+"Beijing",
+"Osaka"
+],
+"d": 2,
+"x": "The Tokyo Games were the first broadcast internationally by satellite. Judo made its Olympic debut there.",
+"tags": [
+"olympics"
+]
+},
+{
+"q": "Which Norwegian town hosted the 1994 Winter Olympics?",
+"a": [
+"Lillehammer",
+"Oslo",
+"Trondheim",
+"Bergen"
+],
+"d": 2,
+"x": "The 1994 Games were held only two years after the 1992 edition, when the schedule was changed so Winter and Summer Games alternate every two years.",
+"tags": [
+"olympics",
+"winter sports"
+]
+},
+{
+"q": "Which Italian club is nicknamed 'the Old Lady'?",
+"a": [
+"Juventus",
+"AC Milan",
+"Inter Milan",
+"Roma"
+],
+"d": 2,
+"x": "Juventus is based in Turin and wears black and white stripes. It has won more Italian league titles than any other club.",
+"tags": [
+"soccer"
+]
+},
+{
+"q": "Which Argentine won five Formula One world titles in the 1950s?",
+"a": [
+"Juan Manuel Fangio",
+"Jose Froilan Gonzalez",
+"Carlos Reutemann",
+"Gabriele Tarquini"
+],
+"d": 2,
+"x": "Fangio won his titles with four different teams. He was nicknamed 'El Chueco', Spanish for 'the bowlegged one'.",
+"tags": [
+"motor racing"
+]
+},
+{
+"q": "Which Parisian avenue is the traditional finish of the Tour de France?",
+"a": [
+"Champs-Elysees",
+"Rue de Rivoli",
+"Boulevard Saint-Germain",
+"Avenue Foch"
+],
+"d": 2,
+"x": "The race has finished on the Champs-Elysees since 1975. Before that, it ended at the Parc des Princes or Vel d'Hiv.",
+"tags": [
+"cycling"
+]
+},
+{
+"q": "Which Soviet goalkeeper, nicknamed the 'Black Spider', is a legend of European football?",
+"a": [
+"Lev Yashin",
+"Dino Zoff",
+"Gordon Banks",
+"Sepp Maier"
+],
+"d": 2,
+"x": "Yashin wore all black and is said to have saved well over 100 penalties. He won the Ballon d'Or in 1963.",
+"tags": [
+"soccer"
+]
+},
+{
+"q": "What does the winner of the Indianapolis 500 traditionally drink in victory lane?",
+"a": [
+"Milk",
+"Champagne",
+"Water",
+"Orange juice"
+],
+"d": 2,
+"x": "The custom began in 1936, when Louis Meyer asked for buttermilk, which his mother had told him refreshes on hot days.",
+"tags": [
+"motor racing"
+]
+}
+]

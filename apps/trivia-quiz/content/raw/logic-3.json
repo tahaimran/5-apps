@@ -1,0 +1,1406 @@
+[
+{
+"q": "What comes next in the series: 3, 2, 5, 4, 7, 8, 9, ?",
+"a": [
+"16",
+"11",
+"18",
+"17"
+],
+"d": 3,
+"x": "Two interleaved series: one adds 2 each time (3, 5...), the other multiplies by 2 (2, 4...). The next term is 16.",
+"tags": [
+"series",
+"alternating"
+]
+},
+{
+"q": "What comes next in the series: 10, 1, 15, 2, 20, 4, 25, ?",
+"a": [
+"8",
+"30",
+"10",
+"9"
+],
+"d": 3,
+"x": "Two interleaved series: one adds 5 each time (10, 15...), the other multiplies by 2 (1, 2...). The next term is 8.",
+"tags": [
+"series",
+"alternating"
+]
+},
+{
+"q": "What comes next in the series: 2, 5, 6, 10, 10, 20, 14, ?",
+"a": [
+"40",
+"18",
+"42",
+"41"
+],
+"d": 3,
+"x": "Two interleaved series: one adds 4 each time (2, 6...), the other multiplies by 2 (5, 10...). The next term is 40.",
+"tags": [
+"series",
+"alternating"
+]
+},
+{
+"q": "What comes next in the series: 20, 1, 17, 3, 14, 9, 11, ?",
+"a": [
+"27",
+"8",
+"30",
+"28"
+],
+"d": 3,
+"x": "Two interleaved series: one subtracts 3 each time (20, 17...), the other multiplies by 3 (1, 3...). The next term is 27.",
+"tags": [
+"series",
+"alternating"
+]
+},
+{
+"q": "What comes next in the series: 3, 4, 6, 10, 18, 34, ?",
+"a": [
+"66",
+"50",
+"64",
+"68"
+],
+"d": 3,
+"x": "The gaps are 1, 2, 4, 8, 16, doubling. The next gap is 32. 34 + 32 = 66.",
+"tags": [
+"series"
+]
+},
+{
+"q": "What comes next in the series: 1, 3, 6, 11, 18, 29, ?",
+"a": [
+"42",
+"40",
+"41",
+"47"
+],
+"d": 3,
+"x": "The gaps are the primes 2, 3, 5, 7, 11. The next prime is 13. 29 + 13 = 42.",
+"tags": [
+"series"
+]
+},
+{
+"q": "What comes next in the series: 0, 1, 9, 36, 100, ?",
+"a": [
+"225",
+"200",
+"150",
+"144"
+],
+"d": 3,
+"x": "The gaps are 1, 8, 27, 64 (cubes), so the next is 125. 100 + 125 = 225.",
+"tags": [
+"series"
+]
+},
+{
+"q": "What comes next in the series: 1, 3, 9, 11, 33, 35, 105, ?",
+"a": [
+"107",
+"315",
+"108",
+"106"
+],
+"d": 3,
+"x": "The rules alternate: add 2, then multiply by 3. After x3 comes +2: 105 + 2 = 107.",
+"tags": [
+"series"
+]
+},
+{
+"q": "What comes next in the series: 2, 5, 10, 13, 26, 29, 58, ?",
+"a": [
+"61",
+"116",
+"62",
+"60"
+],
+"d": 3,
+"x": "The rules alternate: add 3, then multiply by 2. After x2 comes +3: 58 + 3 = 61.",
+"tags": [
+"series"
+]
+},
+{
+"q": "What comes next in the series: 1, 5, 10, 14, 28, 32, 64, ?",
+"a": [
+"68",
+"128",
+"69",
+"67"
+],
+"d": 3,
+"x": "The rules alternate: add 4, then multiply by 2. After x2 comes +4: 64 + 4 = 68.",
+"tags": [
+"series"
+]
+},
+{
+"q": "What comes next in the series: 1, 4, 27, 16, 125, 36, ?",
+"a": [
+"343",
+"49",
+"216",
+"64"
+],
+"d": 3,
+"x": "Odd positions are cubes (1, 27, 125, next 343); even positions are squares (4, 16, 36).",
+"tags": [
+"series"
+]
+},
+{
+"q": "What letter comes next: A, C, F, J, O, ?",
+"a": [
+"U",
+"T",
+"V",
+"S"
+],
+"d": 3,
+"x": "Steps are +2, +3, +4, +5, so the next is +6. O is 15, and 15 + 6 = 21, which is U.",
+"tags": [
+"letters"
+]
+},
+{
+"q": "What letter comes next: Z, X, U, Q, L, ?",
+"a": [
+"F",
+"G",
+"H",
+"E"
+],
+"d": 3,
+"x": "Steps are -2, -3, -4, -5, so the next is -6. L is 12, and 12 - 6 = 6, which is F.",
+"tags": [
+"letters"
+]
+},
+{
+"q": "What comes next: J, F, M, A, M, J, ?",
+"a": [
+"J",
+"A",
+"S",
+"M"
+],
+"d": 3,
+"x": "These are the first letters of the months: January, February, ... June, then July.",
+"tags": [
+"letters"
+]
+},
+{
+"q": "What comes next: O, T, T, F, F, S, S, ?",
+"a": [
+"E",
+"N",
+"T",
+"O"
+],
+"d": 3,
+"x": "First letters of One, Two, Three, Four, Five, Six, Seven, so next is Eight, E.",
+"tags": [
+"letters"
+]
+},
+{
+"q": "A price goes up 10% and then down 10%. Compared with the start, the final price is what?",
+"a": [
+"1% lower",
+"The same as the start",
+"10% lower",
+"1% higher"
+],
+"d": 3,
+"x": "Factor is (1+0.1) x (1-0.1) = 1 - 0.01 so it is 1% lower.",
+"tags": [
+"percent"
+]
+},
+{
+"q": "A price goes up 20% and then down 20%. Compared with the start, the final price is what?",
+"a": [
+"4% lower",
+"The same as the start",
+"20% lower",
+"4% higher"
+],
+"d": 3,
+"x": "Factor is (1+0.2) x (1-0.2) = 1 - 0.04 so it is 4% lower.",
+"tags": [
+"percent"
+]
+},
+{
+"q": "A price goes up 30% and then down 30%. Compared with the start, the final price is what?",
+"a": [
+"9% lower",
+"The same as the start",
+"30% lower",
+"9% higher"
+],
+"d": 3,
+"x": "Factor is (1+0.3) x (1-0.3) = 1 - 0.09 so it is 9% lower.",
+"tags": [
+"percent"
+]
+},
+{
+"q": "A coat is 20% off, then an extra 10% off the sale price. What is the total discount?",
+"a": [
+"28%",
+"30%",
+"10%",
+"25%"
+],
+"d": 3,
+"x": "You pay 80% x 90% = 72% of the original, so the discount is 28%, not 30%.",
+"tags": [
+"percent"
+]
+},
+{
+"q": "A coat is 30% off, then an extra 20% off the sale price. What is the total discount?",
+"a": [
+"44%",
+"50%",
+"10%",
+"41%"
+],
+"d": 3,
+"x": "You pay 70% x 80% = 56% of the original, so the discount is 44%, not 50%.",
+"tags": [
+"percent"
+]
+},
+{
+"q": "A coat is 50% off, then an extra 50% off the sale price. What is the total discount?",
+"a": [
+"75%",
+"100%",
+"0%",
+"72%"
+],
+"d": 3,
+"x": "You pay 50% x 50% = 25% of the original, so the discount is 75%, not 100%.",
+"tags": [
+"percent"
+]
+},
+{
+"q": "A coat is 25% off, then an extra 20% off the sale price. What is the total discount?",
+"a": [
+"40%",
+"45%",
+"5%",
+"37%"
+],
+"d": 3,
+"x": "You pay 75% x 80% = 60% of the original, so the discount is 40%, not 45%.",
+"tags": [
+"percent"
+]
+},
+{
+"q": "A number is increased by 50%, then the result is decreased by 50%. The result is 75. What was the original number?",
+"a": [
+"100",
+"75",
+"150",
+"112.5"
+],
+"d": 3,
+"x": "1.5 x 0.5 = 0.75 of the original, and 75 is 0.75 of 100.",
+"tags": [
+"percent"
+]
+},
+{
+"q": "After a 20% discount a book costs $48. What was the original price?",
+"a": [
+"$60",
+"$57.60",
+"$38.40",
+"$68"
+],
+"d": 3,
+"x": "$48 is 80% of the original. 48 / 0.8 = 60.",
+"tags": [
+"percent"
+]
+},
+{
+"q": "A store marks up cost by 25% to get a price of $75. What was the cost?",
+"a": [
+"$60",
+"$56.25",
+"$50",
+"$93.75"
+],
+"d": 3,
+"x": "Price = 1.25 x cost, so cost = 75 / 1.25 = 60.",
+"tags": [
+"percent"
+]
+},
+{
+"q": "A is 20% larger than B. B is what percent smaller than A?",
+"a": [
+"About 16.7%",
+"20%",
+"25%",
+"10%"
+],
+"d": 3,
+"x": "A = 1.2B, so the gap 0.2B is 0.2/1.2 = 1/6, about 16.7% of A.",
+"tags": [
+"percent"
+]
+},
+{
+"q": "The sum of three consecutive integers is 72. What is the largest?",
+"a": [
+"25",
+"24",
+"23",
+"26"
+],
+"d": 3,
+"x": "Middle = 72 / 3 = 24, so the numbers are 23, 24, 25.",
+"tags": [
+"algebra"
+]
+},
+{
+"q": "The sum of four consecutive even numbers is 100. What is the smallest?",
+"a": [
+"22",
+"20",
+"24",
+"25"
+],
+"d": 3,
+"x": "22 + 24 + 26 + 28 = 100.",
+"tags": [
+"algebra"
+]
+},
+{
+"q": "The sum of three consecutive odd numbers is 99. What is the middle one?",
+"a": [
+"33",
+"31",
+"35",
+"29"
+],
+"d": 3,
+"x": "The middle one is the mean: 99 / 3 = 33 (numbers 31, 33, 35).",
+"tags": [
+"algebra"
+]
+},
+{
+"q": "The product of two consecutive positive integers is 156. What is their sum?",
+"a": [
+"25",
+"24",
+"26",
+"13"
+],
+"d": 3,
+"x": "12 x 13 = 156, and 12 + 13 = 25.",
+"tags": [
+"algebra"
+]
+},
+{
+"q": "Boys and girls in a club are in the ratio 3:5 and there are 40 members. How many girls are there?",
+"a": [
+"25",
+"15",
+"24",
+"16"
+],
+"d": 3,
+"x": "The ratio has 8 parts; 40 / 8 = 5 per part; girls = 5 x 5 = 25.",
+"tags": [
+"ratio"
+]
+},
+{
+"q": "Red and blue marbles are in the ratio 2:7. There are 63 marbles. How many are red?",
+"a": [
+"14",
+"18",
+"9",
+"49"
+],
+"d": 3,
+"x": "2 + 7 = 9 parts, 63 / 9 = 7 per part, red = 2 x 7 = 14.",
+"tags": [
+"ratio"
+]
+},
+{
+"q": "A recipe uses flour and sugar in the ratio 5:2. With 8 cups of sugar, how many cups of flour?",
+"a": [
+"20",
+"16",
+"3.2",
+"10"
+],
+"d": 3,
+"x": "Sugar 8 is 4 times 2, so flour is 4 x 5 = 20.",
+"tags": [
+"ratio"
+]
+},
+{
+"q": "Pump A fills a pool in 6 hours and pump B in 3 hours. Working together, how long do they take?",
+"a": [
+"2 hours",
+"4.5 hours",
+"9 hours",
+"3 hours"
+],
+"d": 3,
+"x": "Rates: 1/6 + 1/3 = 9/18 of the pool per hour, so the time is 18/9 = 2 hours.",
+"tags": [
+"work"
+]
+},
+{
+"q": "Pump A fills a pool in 12 hours and pump B in 4 hours. Working together, how long do they take?",
+"a": [
+"3 hours",
+"8 hours",
+"16 hours",
+"4 hours"
+],
+"d": 3,
+"x": "Rates: 1/12 + 1/4 = 16/48 of the pool per hour, so the time is 48/16 = 3 hours.",
+"tags": [
+"work"
+]
+},
+{
+"q": "Pump A fills a pool in 10 hours and pump B in 15 hours. Working together, how long do they take?",
+"a": [
+"6 hours",
+"12.5 hours",
+"25 hours",
+"10 hours"
+],
+"d": 3,
+"x": "Rates: 1/10 + 1/15 = 25/150 of the pool per hour, so the time is 150/25 = 6 hours.",
+"tags": [
+"work"
+]
+},
+{
+"q": "Two trains 300 miles apart head toward each other at 40 and 60 mph. After how many hours do they meet?",
+"a": [
+"3",
+"5",
+"6",
+"7.5"
+],
+"d": 3,
+"x": "They close 40 + 60 = 100 miles each hour. 300 / 100 = 3 hours.",
+"tags": [
+"speed"
+]
+},
+{
+"q": "Two cyclists start 90 km apart and ride toward each other at 12 and 18 km/h. How many hours until they meet?",
+"a": [
+"3",
+"5",
+"7.5",
+"6"
+],
+"d": 3,
+"x": "The gap closes at 12 + 18 = 30 km/h. 90 / 30 = 3 hours.",
+"tags": [
+"speed"
+]
+},
+{
+"q": "A runner at 9 mph starts 6 miles behind another at 6 mph, both going the same way. How many hours until she catches up?",
+"a": [
+"2",
+"6",
+"1",
+"0.4"
+],
+"d": 3,
+"x": "She gains 9 - 6 = 3 mph. 6 / 3 = 2 hours.",
+"tags": [
+"speed"
+]
+},
+{
+"q": "A car drives to a town at 30 mph and returns the same road at 60 mph. What is its average speed for the whole trip?",
+"a": [
+"40 mph",
+"45 mph",
+"36 mph",
+"48 mph"
+],
+"d": 3,
+"x": "Average speed = total distance / total time = 2ab/(a+b) = 2x30x60/90 = 40 mph, not the simple mean.",
+"tags": [
+"speed"
+]
+},
+{
+"q": "A car drives to a town at 40 mph and returns the same road at 60 mph. What is its average speed for the whole trip?",
+"a": [
+"48 mph",
+"50 mph",
+"53 mph",
+"44 mph"
+],
+"d": 3,
+"x": "Average speed = total distance / total time = 2ab/(a+b) = 2x40x60/100 = 48 mph, not the simple mean.",
+"tags": [
+"speed"
+]
+},
+{
+"q": "A car drives to a town at 20 mph and returns the same road at 30 mph. What is its average speed for the whole trip?",
+"a": [
+"24 mph",
+"25 mph",
+"29 mph",
+"20 mph"
+],
+"d": 3,
+"x": "Average speed = total distance / total time = 2ab/(a+b) = 2x20x30/50 = 24 mph, not the simple mean.",
+"tags": [
+"speed"
+]
+},
+{
+"q": "How many squares of all sizes are in a 3 by 3 grid of small squares?",
+"a": [
+"14",
+"9",
+"12",
+"17"
+],
+"d": 3,
+"x": "Count by size: 9 of size 1, 4 of size 2, 1 of size 3. Total 14.",
+"tags": [
+"counting"
+]
+},
+{
+"q": "How many squares of all sizes are in a 5 by 5 grid of small squares?",
+"a": [
+"55",
+"25",
+"30",
+"60"
+],
+"d": 3,
+"x": "Count by size: 25 of size 1, 16 of size 2, 9 of size 3, 4 of size 4, 1 of size 5. Total 55.",
+"tags": [
+"counting"
+]
+},
+{
+"q": "How many diagonals does a polygon with 6 sides have?",
+"a": [
+"9",
+"15",
+"18",
+"12"
+],
+"d": 3,
+"x": "Each corner joins to 3 others, and each diagonal is counted twice: 6 x 3 / 2 = 9.",
+"tags": [
+"counting"
+]
+},
+{
+"q": "How many diagonals does a polygon with 8 sides have?",
+"a": [
+"20",
+"28",
+"40",
+"24"
+],
+"d": 3,
+"x": "Each corner joins to 5 others, and each diagonal is counted twice: 8 x 5 / 2 = 20.",
+"tags": [
+"counting"
+]
+},
+{
+"q": "In how many different orders can 4 books be arranged on a shelf?",
+"a": [
+"24",
+"16",
+"12",
+"8"
+],
+"d": 3,
+"x": "4 x 3 x 2 x 1 = 24.",
+"tags": [
+"counting"
+]
+},
+{
+"q": "In how many ways can 5 people be seated in a row?",
+"a": [
+"120",
+"25",
+"60",
+"24"
+],
+"d": 3,
+"x": "5 x 4 x 3 x 2 x 1 = 120.",
+"tags": [
+"counting"
+]
+},
+{
+"q": "How many different ways can you choose 2 people from a group of 6?",
+"a": [
+"15",
+"12",
+"30",
+"36"
+],
+"d": 3,
+"x": "Choose in order: 6 x 5 = 30, but each pair is counted twice, so 15.",
+"tags": [
+"counting"
+]
+},
+{
+"q": "A binary number is read right to left as 1, 2, 4, 8. What is 1011 in ordinary numbers?",
+"a": [
+"11",
+"13",
+"10",
+"9"
+],
+"d": 3,
+"x": "1011 = 8 + 0 + 2 + 1 = 11.",
+"tags": [
+"units"
+]
+},
+{
+"q": "What is 110 in binary, written as an ordinary number?",
+"a": [
+"6",
+"5",
+"7",
+"110"
+],
+"d": 3,
+"x": "110 = 4 + 2 + 0 = 6.",
+"tags": [
+"units"
+]
+},
+{
+"q": "What is the units digit of 7 x 7 x 7 x 7?",
+"a": [
+"1",
+"7",
+"9",
+"3"
+],
+"d": 3,
+"x": "7x7=49, 49x7=343, 343x7=2401. The last digit is 1.",
+"tags": [
+"counting"
+]
+},
+{
+"q": "What is the last digit of 2 to the power 10 (ten 2s multiplied)?",
+"a": [
+"4",
+"2",
+"6",
+"8"
+],
+"d": 3,
+"x": "Last digits repeat 2, 4, 8, 6. Power 10 is position 2 in the cycle: 4. (2^10 = 1024)",
+"tags": [
+"counting"
+]
+},
+{
+"q": "What is the last digit of 3 to the power 5?",
+"a": [
+"3",
+"9",
+"7",
+"1"
+],
+"d": 3,
+"x": "3, 9, 27, 81, 243: last digit 3.",
+"tags": [
+"counting"
+]
+},
+{
+"q": "In a class of 30, 18 play soccer, 15 play chess and 5 do neither. How many play both?",
+"a": [
+"8",
+"3",
+"7",
+"11"
+],
+"d": 3,
+"x": "25 play at least one. 18 + 15 = 33, so 33 - 25 = 8 play both.",
+"tags": [
+"sets"
+]
+},
+{
+"q": "In a class of 40, 26 play soccer, 20 play chess and 3 do neither. How many play both?",
+"a": [
+"9",
+"6",
+"11",
+"12"
+],
+"d": 3,
+"x": "37 play at least one. 26 + 20 = 46, so 46 - 37 = 9 play both.",
+"tags": [
+"sets"
+]
+},
+{
+"q": "In a class of 50, 30 play soccer, 28 play chess and 8 do neither. How many play both?",
+"a": [
+"16",
+"8",
+"12",
+"19"
+],
+"d": 3,
+"x": "42 play at least one. 30 + 28 = 58, so 58 - 42 = 16 play both.",
+"tags": [
+"sets"
+]
+},
+{
+"q": "Starting on a Wednesday, which weekday comes 100 days later?",
+"a": [
+"Friday",
+"Thursday",
+"Saturday",
+"Wednesday"
+],
+"d": 3,
+"x": "100 = 14 weeks + 2 days. Wednesday plus 2 is Friday.",
+"tags": [
+"calendar"
+]
+},
+{
+"q": "In 2024 (a leap year) January 1 was a Monday. What day was December 31, 2024?",
+"a": [
+"Tuesday",
+"Monday",
+"Wednesday",
+"Sunday"
+],
+"d": 3,
+"x": "Dec 31 is 365 days after Jan 1. 365 = 52 weeks + 1 day. Monday plus 1 is Tuesday.",
+"tags": [
+"calendar"
+]
+},
+{
+"q": "If June 10 is a Thursday, what day is August 10 in the same year?",
+"a": [
+"Tuesday",
+"Monday",
+"Wednesday",
+"Sunday"
+],
+"d": 3,
+"x": "June 10 to Aug 10 is 20 + 31 + 10 = 61 days = 8 weeks + 5 days. Thursday + 5 = Tuesday.",
+"tags": [
+"calendar"
+]
+},
+{
+"q": "Counting back 100 days from a Friday, which weekday do you reach?",
+"a": [
+"Wednesday",
+"Thursday",
+"Tuesday",
+"Monday"
+],
+"d": 3,
+"x": "100 = 14 weeks + 2 days. Friday minus 2 days is Wednesday.",
+"tags": [
+"calendar"
+]
+},
+{
+"q": "Today is Monday. What day will it be 1,000 days from now?",
+"a": [
+"Sunday",
+"Saturday",
+"Monday",
+"Friday"
+],
+"d": 3,
+"x": "1,000 = 142 x 7 + 6. Monday plus 6 days is Sunday.",
+"tags": [
+"calendar"
+]
+},
+{
+"q": "How many days are there from January 1 to March 1 in a leap year, not counting the end date?",
+"a": [
+"60",
+"59",
+"61",
+"62"
+],
+"d": 3,
+"x": "January 31 + February 29 = 60 days.",
+"tags": [
+"calendar"
+]
+},
+{
+"q": "If the 3rd of a month is a Sunday, on which date is the third Friday?",
+"a": [
+"22nd",
+"15th",
+"21st",
+"29th"
+],
+"d": 3,
+"x": "The 3rd is Sunday, so the first Friday is the 8th. Fridays fall on the 8th, 15th and 22nd, so the third is the 22nd.",
+"tags": [
+"calendar"
+]
+},
+{
+"q": "What is the smaller angle between the hour and minute hands at 2:30?",
+"a": [
+"105 degrees",
+"120 degrees",
+"115 degrees",
+"90 degrees"
+],
+"d": 3,
+"x": "Hour hand: 30x2 + 0.5x30 = 75 degrees. Minute hand: 6x30 = 180. The smaller gap is 105 degrees.",
+"tags": [
+"clock"
+]
+},
+{
+"q": "What is the smaller angle between the hour and minute hands at 3:40?",
+"a": [
+"130 degrees",
+"150 degrees",
+"140 degrees",
+"115 degrees"
+],
+"d": 3,
+"x": "Hour hand: 30x3 + 0.5x40 = 110 degrees. Minute hand: 6x40 = 240. The smaller gap is 130 degrees.",
+"tags": [
+"clock"
+]
+},
+{
+"q": "What is the smaller angle between the hour and minute hands at 9:15?",
+"a": [
+"172.5 degrees",
+"180 degrees",
+"182.5 degrees",
+"157.5 degrees"
+],
+"d": 3,
+"x": "Hour hand: 30x9 + 0.5x15 = 277.5 degrees. Minute hand: 6x15 = 90. The smaller gap is 172.5 degrees.",
+"tags": [
+"clock"
+]
+},
+{
+"q": "How many times do the hour and minute hands overlap in a 12-hour period (counting 12:00 once)?",
+"a": [
+"11",
+"12",
+"10",
+"13"
+],
+"d": 3,
+"x": "The minute hand laps the hour hand 11 times in 12 hours.",
+"tags": [
+"clock"
+]
+},
+{
+"q": "A clock gains 3 minutes every hour. It is set right at noon. What time does it show at 6 PM real time?",
+"a": [
+"6:18 PM",
+"6:03 PM",
+"6:30 PM",
+"5:42 PM"
+],
+"d": 3,
+"x": "6 hours x 3 minutes = 18 extra minutes, so 6:18 PM.",
+"tags": [
+"clock"
+]
+},
+{
+"q": "A bag has 4 red and 6 blue marbles. Two are drawn without replacement. What is the chance both are red?",
+"a": [
+"2/15",
+"4/25",
+"2/5",
+"7/45"
+],
+"d": 3,
+"x": "First red: 4/10. Then 3/9. Multiply: 12/90 = 2/15.",
+"tags": [
+"probability"
+]
+},
+{
+"q": "A bag has 5 red and 7 blue marbles. Two are drawn without replacement. What is the chance both are red?",
+"a": [
+"5/33",
+"25/144",
+"5/12",
+"1/6"
+],
+"d": 3,
+"x": "First red: 5/12. Then 4/11. Multiply: 20/132 = 5/33.",
+"tags": [
+"probability"
+]
+},
+{
+"q": "Two fair dice are rolled. What is the chance their sum is 7?",
+"a": [
+"1/6",
+"1/12",
+"1/7",
+"7/36"
+],
+"d": 3,
+"x": "Six of the 36 outcomes sum to 7 (1+6, 2+5, 3+4 and reverses): 6/36 = 1/6.",
+"tags": [
+"probability"
+]
+},
+{
+"q": "Two fair dice are rolled. What is the chance their sum is 10?",
+"a": [
+"1/12",
+"1/6",
+"1/10",
+"1/9"
+],
+"d": 3,
+"x": "The outcomes are 4+6, 5+5, 6+4: 3 of 36 = 1/12.",
+"tags": [
+"probability"
+]
+},
+{
+"q": "A fair coin is flipped 3 times. What is the chance of exactly 2 heads?",
+"a": [
+"3/8",
+"1/4",
+"1/2",
+"2/3"
+],
+"d": 3,
+"x": "There are 8 outcomes and 3 have exactly two heads (HHT, HTH, THH): 3/8.",
+"tags": [
+"probability"
+]
+},
+{
+"q": "A coin lands heads 5 times in a row. For a fair coin, what is the chance the next flip is heads?",
+"a": [
+"1/2",
+"1/32",
+"1/64",
+"1/6"
+],
+"d": 3,
+"x": "Flips are independent, so each flip is 1/2 regardless of the past.",
+"tags": [
+"probability"
+]
+},
+{
+"q": "A box holds 3 red and 2 blue cards. One card is drawn at random. What is the chance it is blue?",
+"a": [
+"2/5",
+"2/3",
+"3/5",
+"1/2"
+],
+"d": 3,
+"x": "Total 5 cards, 2 are blue: 2/5.",
+"tags": [
+"probability"
+]
+},
+{
+"q": "Three boxes are labeled Apples, Oranges and Mixed, all wrongly. A fruit from the Mixed box is an apple. What is in the Oranges box?",
+"a": [
+"A mix of both fruits",
+"Only apples",
+"Only oranges",
+"It is empty"
+],
+"d": 3,
+"x": "The Mixed label is wrong, so that box is all apples. The Oranges box cannot be oranges or apples, so it is mixed.",
+"tags": [
+"deduction"
+]
+},
+{
+"q": "A says \"B lies.\" B says \"C lies.\" C says \"A and B both lie.\" Who tells the truth?",
+"a": [
+"Only B",
+"Only A",
+"Only C",
+"Everyone"
+],
+"d": 3,
+"x": "If B tells the truth, C lies and A lies: consistent (C lies, A lies). Other options fail.",
+"tags": [
+"deduction"
+]
+},
+{
+"q": "Five runners finish. Ana beat Bo, Bo beat Cy, Cy beat Dee and Eli beat Ana. Who came third?",
+"a": [
+"Bo",
+"Ana",
+"Cy",
+"Dee"
+],
+"d": 3,
+"x": "The order is Eli, Ana, Bo, Cy, Dee. Third is Bo.",
+"tags": [
+"ordering"
+]
+},
+{
+"q": "In a 4-floor building (floor 1 is the lowest), Ann lives above Bo, Cy lives below Bo and Dee lives above Ann. Who lives on floor 2?",
+"a": [
+"Bo",
+"Ann",
+"Cy",
+"Dee"
+],
+"d": 3,
+"x": "From bottom to top: Cy, Bo, Ann, Dee. Floor 2 is Bo.",
+"tags": [
+"ordering"
+]
+},
+{
+"q": "Knights always tell the truth and knaves always lie. A says \"B is a knave\", and B says \"A and I are both knights.\" What are A and B?",
+"a": [
+"A knight, B knave",
+"Both knights",
+"Both knaves",
+"A knave, B knight"
+],
+"d": 3,
+"x": "If B were a knight, B's claim makes A a knight too, but A says B is a knave: contradiction. So B is a knave, and A is truthful.",
+"tags": [
+"deduction"
+]
+},
+{
+"q": "Ann, Ben and Cal each own one pet: a cat, a dog or a fish. Ann is allergic to fur. Ben does not own a dog. Who owns the dog?",
+"a": [
+"Cal",
+"Ann",
+"Ben",
+"Cannot be told"
+],
+"d": 3,
+"x": "Ann has the fish (allergic to fur). Ben does not have the dog, so he has the cat. Cal has the dog.",
+"tags": [
+"deduction"
+]
+},
+{
+"q": "Sue is taller than Tim. Tim is taller than Uma. Vic is shorter than Sue but taller than Tim. Who is second tallest?",
+"a": [
+"Vic",
+"Sue",
+"Tim",
+"Uma"
+],
+"d": 3,
+"x": "Sue > Vic > Tim > Uma, so Vic is second.",
+"tags": [
+"ordering"
+]
+},
+{
+"q": "Four people stand in a line. Ann is not first or last. Ben is first. Cal is not next to Ben. Cal is not last. Who is last?",
+"a": [
+"Dee",
+"Ann",
+"Ben",
+"Cal"
+],
+"d": 3,
+"x": "Ben is first. Cal is not second, not last, so Cal is third. Ann is not last, so Ann is second and Dee is last.",
+"tags": [
+"deduction"
+]
+},
+{
+"q": "There are 8 coins and one is heavier. With a balance scale, what is the fewest weighings that always find the heavy coin?",
+"a": [
+"2",
+"1",
+"3",
+"4"
+],
+"d": 3,
+"x": "Weigh 3 vs 3. If they balance, the heavy coin is among 2 left. Else it is in the heavy 3. One more weighing finds it among 3. Total 2.",
+"tags": [
+"deduction"
+]
+},
+{
+"q": "A bat and a ball cost $1.10 together. The bat costs $1.00 more than the ball. How much does the ball cost?",
+"a": [
+"5 cents",
+"10 cents",
+"1 cent",
+"15 cents"
+],
+"d": 3,
+"x": "Ball b, bat b + 1.00: 2b + 1.00 = 1.10, so b = 0.05.",
+"tags": [
+"riddle"
+]
+},
+{
+"q": "Lily pads double every day and cover a lake on day 48. On which day did they cover half the lake?",
+"a": [
+"Day 47",
+"Day 24",
+"Day 46",
+"Day 40"
+],
+"d": 3,
+"x": "Doubling means the day before full coverage is half coverage: day 47.",
+"tags": [
+"riddle"
+]
+},
+{
+"q": "If 3 machines make 3 widgets in 8 minutes, how many seconds do 90 machines need to make 90 widgets?",
+"a": [
+"480",
+"8",
+"240",
+"14,400"
+],
+"d": 3,
+"x": "Each machine makes 1 widget in 8 minutes, so 90 machines make 90 in 8 minutes = 480 seconds.",
+"tags": [
+"riddle"
+]
+},
+{
+"q": "In a race you overtake the runner in second place. What place are you in now?",
+"a": [
+"2nd",
+"1st",
+"3rd",
+"Last"
+],
+"d": 3,
+"x": "You take the position of the runner you passed: 2nd.",
+"tags": [
+"riddle"
+]
+},
+{
+"q": "Two fathers and two sons share 3 apples, one each, with none left over. How is that possible?",
+"a": [
+"Three people: grandfather, father, son",
+"Four people",
+"Two people",
+"One apple is cut"
+],
+"d": 3,
+"x": "The grandfather and father are fathers; the father and son are sons. That is only 3 people.",
+"tags": [
+"riddle"
+]
+},
+{
+"q": "A doctor gives you 3 pills and says to take one every half hour. How long do they last?",
+"a": [
+"1 hour",
+"1.5 hours",
+"3 hours",
+"30 minutes"
+],
+"d": 3,
+"x": "Take one now, one after 30 min, one after 60 min: 1 hour.",
+"tags": [
+"riddle"
+]
+},
+{
+"q": "A farmer has 17 sheep. All but 9 die. How many are left?",
+"a": [
+"9",
+"8",
+"17",
+"0"
+],
+"d": 3,
+"x": "\"All but 9\" means 9 survive.",
+"tags": [
+"riddle"
+]
+},
+{
+"q": "What comes once in a minute, twice in a moment, but never in a thousand years?",
+"a": [
+"The letter M",
+"The letter T",
+"A second",
+"The letter N"
+],
+"d": 3,
+"x": "\"Minute\" has one M, \"moment\" has two, and \"thousand years\" has none.",
+"tags": [
+"riddle"
+]
+},
+{
+"q": "With a 3-liter and a 5-liter jug, what is the fewest fill, pour or empty steps to measure exactly 4 liters?",
+"a": [
+"6",
+"4",
+"5",
+"8"
+],
+"d": 3,
+"x": "Fill 5 (1), pour into 3 (2), empty 3 (3), pour 2 into 3 (4), fill 5 (5), pour into 3 (6): 4 left in the 5-liter jug.",
+"tags": [
+"riddle"
+]
+},
+{
+"q": "Half of a number plus a third of it is 25. What is the number?",
+"a": [
+"30",
+"50",
+"25",
+"60"
+],
+"d": 3,
+"x": "Half + third = 5/6 of the number = 25. 25 x 6/5 = 30.",
+"tags": [
+"algebra"
+]
+},
+{
+"q": "I am thinking of a number. Double it, add 6, then halve: the result is 11. What number was it?",
+"a": [
+"8",
+"16",
+"10",
+"14"
+],
+"d": 3,
+"x": "Work backward: double 11 = 22, subtract 6 = 16, halve = 8.",
+"tags": [
+"algebra"
+]
+},
+{
+"q": "A hen and a half lays an egg and a half in a day and a half. How many eggs do 6 hens lay in 6 days?",
+"a": [
+"24",
+"6",
+"12",
+"36"
+],
+"d": 3,
+"x": "Rate: 1.5 hens lay 1.5 eggs in 1.5 days, so 1 hen lays 1 egg per 1.5 days. 6 hens x 6 days / 1.5 = 24.",
+"tags": [
+"riddle"
+]
+},
+{
+"q": "A farmer has chickens and cows with 20 heads and 56 legs. How many cows are there?",
+"a": [
+"8",
+"12",
+"10",
+"6"
+],
+"d": 3,
+"x": "All chickens would be 40 legs. 16 extra legs, 2 per cow swapped: 8 cows.",
+"tags": [
+"algebra"
+]
+},
+{
+"q": "A number is divisible by both 6 and 8. What is the smallest positive such number?",
+"a": [
+"24",
+"48",
+"14",
+"12"
+],
+"d": 3,
+"x": "The least common multiple of 6 and 8 is 24.",
+"tags": [
+"algebra"
+]
+},
+{
+"q": "How many whole numbers from 1 to 100 are divisible by both 2 and 5?",
+"a": [
+"10",
+"20",
+"50",
+"15"
+],
+"d": 3,
+"x": "Divisible by 2 and 5 means by 10: 10, 20, ... 100, which is 10 numbers.",
+"tags": [
+"counting"
+]
+}
+]

@@ -1,0 +1,1426 @@
+[
+{
+"q": "Which British composer wrote the opera Peter Grimes, premiered in 1945?",
+"a": [
+"Benjamin Britten",
+"Michael Tippett",
+"William Walton",
+"Ralph Vaughan Williams"
+],
+"d": 3,
+"x": "The opera is set in a fishing village on the English coast and was inspired by Britten's home region of Suffolk.",
+"tags": [
+"opera"
+]
+},
+{
+"q": "Which composer wrote The Well-Tempered Clavier, with preludes and fugues in all 24 keys?",
+"a": [
+"J. S. Bach",
+"George Frideric Handel",
+"Domenico Scarlatti",
+"Francois Couperin"
+],
+"d": 3,
+"x": "He compiled two books of 24 preludes and fugues, the first completed in 1722.",
+"tags": [
+"classical"
+]
+},
+{
+"q": "Which French composer wrote the Symphonie fantastique in 1830?",
+"a": [
+"Hector Berlioz",
+"Georges Bizet",
+"Charles Gounod",
+"Cesar Franck"
+],
+"d": 3,
+"x": "The five-movement work tells a dramatic story and is an early landmark of program music.",
+"tags": [
+"classical"
+]
+},
+{
+"q": "How many separate operas make up Wagner's Ring cycle?",
+"a": [
+"Four",
+"Three",
+"Five",
+"Six"
+],
+"d": 3,
+"x": "A full performance of the cycle takes about 15 hours spread over four evenings.",
+"tags": [
+"opera"
+]
+},
+{
+"q": "Which Czech composer wrote the tone poem cycle Ma vlast, which includes \"The Moldau\"?",
+"a": [
+"Bedrich Smetana",
+"Antonin Dvorak",
+"Leos Janacek",
+"Bohuslav Martinu"
+],
+"d": 3,
+"x": "The Moldau traces the Vltava river from its source in the mountains to Prague.",
+"tags": [
+"classical"
+]
+},
+{
+"q": "Which Finnish composer wrote the tone poem Finlandia?",
+"a": [
+"Jean Sibelius",
+"Carl Nielsen",
+"Edvard Grieg",
+"Wilhelm Stenhammar"
+],
+"d": 3,
+"x": "He composed it in 1899, and its hymn-like melody became a symbol of Finnish national feeling.",
+"tags": [
+"classical"
+]
+},
+{
+"q": "Which composer made the best-known orchestration of Mussorgsky's Pictures at an Exhibition in 1922?",
+"a": [
+"Maurice Ravel",
+"Nikolai Rimsky-Korsakov",
+"Sergei Prokofiev",
+"Igor Stravinsky"
+],
+"d": 3,
+"x": "Mussorgsky wrote the work for solo piano in 1874, inspired by paintings by his friend Viktor Hartmann.",
+"tags": [
+"classical"
+]
+},
+{
+"q": "Which composer is often called the \"Father of the Symphony\"?",
+"a": [
+"Joseph Haydn",
+"Wolfgang Amadeus Mozart",
+"Johann Stamitz",
+"Carl Philipp Emanuel Bach"
+],
+"d": 3,
+"x": "He wrote more than 100 symphonies and helped establish the four-movement form.",
+"tags": [
+"classical"
+]
+},
+{
+"q": "Whose Requiem was left unfinished at his death in 1791?",
+"a": [
+"Mozart",
+"Haydn",
+"Schubert",
+"Cherubini"
+],
+"d": 3,
+"x": "His pupil Franz Xaver Sussmayr completed it at the request of his widow.",
+"tags": [
+"classical"
+]
+},
+{
+"q": "Which composer wrote the Rhapsody on a Theme of Paganini in 1934?",
+"a": [
+"Sergei Rachmaninoff",
+"Franz Liszt",
+"Johannes Brahms",
+"Sergei Prokofiev"
+],
+"d": 3,
+"x": "The work for piano and orchestra includes a famous 18th variation that became a movie-soundtrack favorite.",
+"tags": [
+"classical"
+]
+},
+{
+"q": "Which number is Shostakovich's \"Leningrad\" Symphony?",
+"a": [
+"Seventh",
+"Fifth",
+"Ninth",
+"Tenth"
+],
+"d": 3,
+"x": "He wrote much of it in 1941, and it was performed in the besieged city in 1942.",
+"tags": [
+"classical"
+]
+},
+{
+"q": "Which American composer wrote the ballet Appalachian Spring?",
+"a": [
+"Aaron Copland",
+"Samuel Barber",
+"Charles Ives",
+"William Schuman"
+],
+"d": 3,
+"x": "Written for dancer Martha Graham in 1944, it won him a Pulitzer Prize and uses the Shaker tune \"Simple Gifts\".",
+"tags": [
+"classical",
+"ballet"
+]
+},
+{
+"q": "Which American composer wrote the \"silent\" piece 4'33\"?",
+"a": [
+"John Cage",
+"Philip Glass",
+"Steve Reich",
+"Charles Ives"
+],
+"d": 3,
+"x": "The 1952 piece asks the performer to play nothing, so the audience hears the sounds of the room.",
+"tags": [
+"classical"
+]
+},
+{
+"q": "Which Stravinsky ballet, premiered in Paris in 1910, is based on a Russian folk tale?",
+"a": [
+"The Firebird",
+"Petrushka",
+"Apollo",
+"Pulcinella"
+],
+"d": 3,
+"x": "It made the young composer famous overnight, and the Ballets Russes produced it.",
+"tags": [
+"classical",
+"ballet"
+]
+},
+{
+"q": "Who wrote the librettos for Mozart's Don Giovanni and The Marriage of Figaro?",
+"a": [
+"Lorenzo Da Ponte",
+"Emanuel Schikaneder",
+"Pietro Metastasio",
+"Eugene Scribe"
+],
+"d": 3,
+"x": "He also wrote the libretto for Cosi fan tutte and later emigrated to the United States.",
+"tags": [
+"opera"
+]
+},
+{
+"q": "In which city is Puccini's opera Madama Butterfly set?",
+"a": [
+"Nagasaki",
+"Tokyo",
+"Kyoto",
+"Osaka"
+],
+"d": 3,
+"x": "The story follows a young Japanese woman and a visiting US naval officer, and it premiered at La Scala in 1904.",
+"tags": [
+"opera"
+]
+},
+{
+"q": "In which city did Verdi's opera Aida have its premiere in 1871?",
+"a": [
+"Cairo",
+"Milan",
+"Paris",
+"Alexandria"
+],
+"d": 3,
+"x": "It was reportedly commissioned for the Khedive of Egypt's new opera house, though not for the house's opening.",
+"tags": [
+"opera"
+]
+},
+{
+"q": "In which city was Handel's Messiah first performed in 1742?",
+"a": [
+"Dublin",
+"London",
+"Hamburg",
+"Edinburgh"
+],
+"d": 3,
+"x": "The premiere was a charity concert, and the work only later became a London favorite.",
+"tags": [
+"classical"
+]
+},
+{
+"q": "Which US city is the setting for Gershwin's opera Porgy and Bess?",
+"a": [
+"Charleston",
+"New Orleans",
+"Savannah",
+"Memphis"
+],
+"d": 3,
+"x": "The 1935 opera takes place in the fictional Catfish Row and includes the song \"Summertime\".",
+"tags": [
+"opera"
+]
+},
+{
+"q": "In which Italian city did Antonio Stradivari make his violins?",
+"a": [
+"Cremona",
+"Florence",
+"Venice",
+"Bologna"
+],
+"d": 3,
+"x": "Cremona was also the home of the Amati and Guarneri families of violin makers.",
+"tags": [
+"instruments"
+]
+},
+{
+"q": "How many valves does a standard modern trumpet have?",
+"a": [
+"Three",
+"Two",
+"Four",
+"Five"
+],
+"d": 3,
+"x": "Pressing the valves in different combinations lengthens the tubing and lowers the pitch.",
+"tags": [
+"instruments"
+]
+},
+{
+"q": "Which double-reed instrument is the usual bass of the orchestra's woodwind section?",
+"a": [
+"Bassoon",
+"Oboe",
+"English horn",
+"Bass clarinet"
+],
+"d": 3,
+"x": "Its tube is about 8 feet long folded back on itself, and the contrabassoon sounds an octave lower.",
+"tags": [
+"instruments"
+]
+},
+{
+"q": "The viola is tuned a perfect fifth lower than which instrument?",
+"a": [
+"Violin",
+"Cello",
+"Double bass",
+"Harp"
+],
+"d": 3,
+"x": "Its strings are C, G, D and A, the same as a cello but an octave higher.",
+"tags": [
+"instruments"
+]
+},
+{
+"q": "Which instrument did the jazz composer Charles Mingus play?",
+"a": [
+"Double bass",
+"Trombone",
+"Tenor saxophone",
+"Drums"
+],
+"d": 3,
+"x": "His 1959 album Mingus Ah Um includes \"Goodbye Pork Pie Hat\".",
+"tags": [
+"jazz"
+]
+},
+{
+"q": "Playing all white keys from D to D produces which musical mode?",
+"a": [
+"Dorian",
+"Lydian",
+"Mixolydian",
+"Phrygian"
+],
+"d": 3,
+"x": "It sounds like a minor scale with a raised sixth, and it is common in folk, jazz and rock.",
+"tags": [
+"theory"
+]
+},
+{
+"q": "How many sharps are in the key signature of D major?",
+"a": [
+"Two",
+"One",
+"Three",
+"Four"
+],
+"d": 3,
+"x": "The two sharps are F sharp and C sharp.",
+"tags": [
+"theory"
+]
+},
+{
+"q": "In sonata form, what is the section after the exposition and development called?",
+"a": [
+"Recapitulation",
+"Coda",
+"Cadenza",
+"Prelude"
+],
+"d": 3,
+"x": "The main themes return in the home key, and the movement may end with a short coda.",
+"tags": [
+"theory"
+]
+},
+{
+"q": "In music, what does \"rubato\" allow a performer to do?",
+"a": [
+"Stretch and bend the tempo",
+"Play only on the beat",
+"Get gradually louder",
+"Use only open strings"
+],
+"d": 3,
+"x": "The Italian word means \"stolen\", and Chopin's piano music is famous for it.",
+"tags": [
+"terms"
+]
+},
+{
+"q": "What does the Italian marking \"sforzando\" call for?",
+"a": [
+"A sudden strong accent",
+"A gradual slowdown",
+"A very soft passage",
+"A detached note"
+],
+"d": 3,
+"x": "It is abbreviated sfz and means \"forced\".",
+"tags": [
+"terms"
+]
+},
+{
+"q": "What does the instruction \"pizzicato\" ask string players to do?",
+"a": [
+"Pluck the strings",
+"Use a mute",
+"Bow near the bridge",
+"Play very softly"
+],
+"d": 3,
+"x": "The Italian word means \"pinched\" or \"plucked\".",
+"tags": [
+"terms"
+]
+},
+{
+"q": "What does the Italian term \"tutti\" tell the performers?",
+"a": [
+"Everyone plays together",
+"Only soloists play",
+"Play with a mute",
+"Repeat from the start"
+],
+"d": 3,
+"x": "It literally means \"all\" and is used to mark the full orchestra after a solo passage.",
+"tags": [
+"terms"
+]
+},
+{
+"q": "Which bandleader's group, the Blue Grass Boys, gave bluegrass its name?",
+"a": [
+"Bill Monroe",
+"Earl Scruggs",
+"Lester Flatt",
+"Ralph Stanley"
+],
+"d": 3,
+"x": "He formed the group in the late 1930s, and his mandolin playing set the style's blueprint.",
+"tags": [
+"country",
+"genres"
+]
+},
+{
+"q": "Which German band released the 1974 album Autobahn and pioneered electronic pop?",
+"a": [
+"Kraftwerk",
+"Can",
+"Tangerine Dream",
+"Neu!"
+],
+"d": 3,
+"x": "The title track runs over 20 minutes and imitates a drive on a German highway.",
+"tags": [
+"electronic"
+]
+},
+{
+"q": "In which country did Fela Kuti create the genre Afrobeat?",
+"a": [
+"Nigeria",
+"Ghana",
+"Senegal",
+"Mali"
+],
+"d": 3,
+"x": "He mixed highlife, jazz and funk, and founded a club called the Afrika Shrine in Lagos.",
+"tags": [
+"genres"
+]
+},
+{
+"q": "Fado, a mournful singing style, comes from which country?",
+"a": [
+"Portugal",
+"Spain",
+"Italy",
+"Greece"
+],
+"d": 3,
+"x": "It is often accompanied by a Portuguese guitar and became world famous through singer Amalia Rodrigues.",
+"tags": [
+"genres"
+]
+},
+{
+"q": "In which US city did house music emerge in the early 1980s?",
+"a": [
+"Chicago",
+"Detroit",
+"New York",
+"Miami"
+],
+"d": 3,
+"x": "The name is said to come from the Warehouse club, where DJ Frankie Knuckles played.",
+"tags": [
+"electronic",
+"genres"
+]
+},
+{
+"q": "Which ragtime composer wrote \"The Entertainer\" in 1902?",
+"a": [
+"Scott Joplin",
+"Jelly Roll Morton",
+"Eubie Blake",
+"James Scott"
+],
+"d": 3,
+"x": "The piece found new fame in the 1970s when it was used in the film The Sting.",
+"tags": [
+"jazz",
+"classical"
+]
+},
+{
+"q": "In which year was The Clash's album London Calling released?",
+"a": [
+"1979",
+"1977",
+"1981",
+"1975"
+],
+"d": 3,
+"x": "The cover photo of bassist Paul Simonon smashing his guitar echoes Elvis Presley's debut album design.",
+"tags": [
+"albums",
+"punk"
+]
+},
+{
+"q": "In which year did Bruce Springsteen release Born to Run?",
+"a": [
+"1975",
+"1973",
+"1978",
+"1980"
+],
+"d": 3,
+"x": "The title track took months to record and brought him to the covers of Time and Newsweek.",
+"tags": [
+"albums"
+]
+},
+{
+"q": "Which artist released the double album Songs in the Key of Life in 1976?",
+"a": [
+"Stevie Wonder",
+"Marvin Gaye",
+"Curtis Mayfield",
+"Al Green"
+],
+"d": 3,
+"x": "The album includes \"Sir Duke\", a tribute to Duke Ellington.",
+"tags": [
+"albums",
+"soul"
+]
+},
+{
+"q": "Which band released the 1986 thrash metal album Master of Puppets?",
+"a": [
+"Metallica",
+"Slayer",
+"Megadeth",
+"Anthrax"
+],
+"d": 3,
+"x": "It was the last Metallica album to feature bassist Cliff Burton.",
+"tags": [
+"albums",
+"rock"
+]
+},
+{
+"q": "Which Bob Dylan album from 1965 opens with \"Like a Rolling Stone\"?",
+"a": [
+"Highway 61 Revisited",
+"Blonde on Blonde",
+"Bringing It All Back Home",
+"John Wesley Harding"
+],
+"d": 3,
+"x": "The title refers to the road that runs from Dylan's home state of Minnesota to the blues heartland.",
+"tags": [
+"albums",
+"folk"
+]
+},
+{
+"q": "Which artist designed the banana cover of The Velvet Underground and Nico (1967)?",
+"a": [
+"Andy Warhol",
+"Roy Lichtenstein",
+"Keith Haring",
+"Jasper Johns"
+],
+"d": 3,
+"x": "The first pressings had a sticker that could be peeled off to reveal a pink banana underneath.",
+"tags": [
+"albums"
+]
+},
+{
+"q": "In which year did Radiohead release the album Kid A?",
+"a": [
+"2000",
+"1998",
+"2003",
+"1995"
+],
+"d": 3,
+"x": "The band moved toward electronic music and kept the album free of singles.",
+"tags": [
+"albums",
+"rock"
+]
+},
+{
+"q": "In which country is the Roskilde Festival held?",
+"a": [
+"Denmark",
+"Sweden",
+"Norway",
+"Netherlands"
+],
+"d": 3,
+"x": "It began in 1971 and is one of the largest music festivals in Northern Europe.",
+"tags": [
+"festivals"
+]
+},
+{
+"q": "Which summer classical concert series, founded in 1895, is held mainly at the Royal Albert Hall?",
+"a": [
+"The Proms",
+"The Edinburgh Festival",
+"The Glyndebourne Season",
+"The Aldeburgh Festival"
+],
+"d": 3,
+"x": "The name is short for promenade concerts, where some audience members stand close to the orchestra.",
+"tags": [
+"festivals",
+"classical"
+]
+},
+{
+"q": "In which city is the Concertgebouw, famed for its acoustics?",
+"a": [
+"Amsterdam",
+"Vienna",
+"Berlin",
+"Brussels"
+],
+"d": 3,
+"x": "The hall opened in 1888 and is home to the Royal Concertgebouw Orchestra.",
+"tags": [
+"venues"
+]
+},
+{
+"q": "Which architect designed Los Angeles' Walt Disney Concert Hall, opened in 2003?",
+"a": [
+"Frank Gehry",
+"I. M. Pei",
+"Renzo Piano",
+"Zaha Hadid"
+],
+"d": 3,
+"x": "The steel-clad building is the home of the Los Angeles Philharmonic.",
+"tags": [
+"venues"
+]
+},
+{
+"q": "Who wrote the music and lyrics for the musical Sweeney Todd?",
+"a": [
+"Stephen Sondheim",
+"Andrew Lloyd Webber",
+"Jerry Herman",
+"Frank Loesser"
+],
+"d": 3,
+"x": "The 1979 show about a vengeful barber won the Tony Award for Best Musical.",
+"tags": [
+"musicals"
+]
+},
+{
+"q": "Which British composer wrote the 1960 musical Oliver!?",
+"a": [
+"Lionel Bart",
+"Andrew Lloyd Webber",
+"Leslie Bricusse",
+"Noel Coward"
+],
+"d": 3,
+"x": "The show is based on Charles Dickens's novel Oliver Twist and includes \"Consider Yourself\".",
+"tags": [
+"musicals"
+]
+},
+{
+"q": "Verdi's La traviata is based on a play by Alexandre Dumas fils. What is its title?",
+"a": [
+"La Dame aux Camelias",
+"Les Trois Mousquetaires",
+"Le Comte de Monte-Cristo",
+"Cyrano de Bergerac"
+],
+"d": 3,
+"x": "The heroine Violetta is inspired by a real Parisian courtesan, and the opera premiered in Venice in 1853.",
+"tags": [
+"opera"
+]
+},
+{
+"q": "Which musician was the drummer and main lyricist of the Canadian band Rush?",
+"a": [
+"Neil Peart",
+"Alex Lifeson",
+"Geddy Lee",
+"Phil Collins"
+],
+"d": 3,
+"x": "His complex drum kit solos made him one of rock's most admired drummers.",
+"tags": [
+"rock"
+]
+},
+{
+"q": "Which 1960s supergroup trio featured Eric Clapton, Jack Bruce and Ginger Baker?",
+"a": [
+"Cream",
+"Traffic",
+"Blind Faith",
+"The Yardbirds"
+],
+"d": 3,
+"x": "The band formed in 1966 and made hits like \"Sunshine of Your Love\".",
+"tags": [
+"rock"
+]
+},
+{
+"q": "Which two tenors joined Luciano Pavarotti in The Three Tenors?",
+"a": [
+"Placido Domingo and Jose Carreras",
+"Andrea Bocelli and Jose Cura",
+"Roberto Alagna and Alfie Boe",
+"Enrico Caruso and Mario Lanza"
+],
+"d": 3,
+"x": "Their first joint concert was held in Rome in 1990, on the eve of the soccer World Cup final.",
+"tags": [
+"opera"
+]
+},
+{
+"q": "Which soprano was nicknamed \"La Divina\"?",
+"a": [
+"Maria Callas",
+"Renata Tebaldi",
+"Joan Sutherland",
+"Montserrat Caballe"
+],
+"d": 3,
+"x": "She was known for her dramatic intensity in roles like Norma and Tosca.",
+"tags": [
+"opera"
+]
+},
+{
+"q": "Which tape-replay keyboard instrument is heard in the intro of \"Strawberry Fields Forever\"?",
+"a": [
+"Mellotron",
+"Hammond organ",
+"Clavinet",
+"Moog synthesizer"
+],
+"d": 3,
+"x": "Each key plays back a length of recorded tape, which gives it an eerie flute-like sound.",
+"tags": [
+"instruments",
+"rock"
+]
+},
+{
+"q": "Which Pink Floyd member was the principal lyricist of The Wall?",
+"a": [
+"Roger Waters",
+"David Gilmour",
+"Syd Barrett",
+"Richard Wright"
+],
+"d": 3,
+"x": "The 1979 double album became a hit stage show and a film in 1982.",
+"tags": [
+"rock",
+"albums"
+]
+},
+{
+"q": "Who was the original lead singer of Black Sabbath?",
+"a": [
+"Ozzy Osbourne",
+"Ronnie James Dio",
+"Rob Halford",
+"Bruce Dickinson"
+],
+"d": 3,
+"x": "He fronted the band from the 1968 formation in Birmingham until 1979.",
+"tags": [
+"rock"
+]
+},
+{
+"q": "Who built the \"Red Special\" guitar from fireplace wood in the 1960s?",
+"a": [
+"Brian May",
+"Eddie Van Halen",
+"Jeff Beck",
+"Les Paul"
+],
+"d": 3,
+"x": "He built it with his father using parts from an old mantelpiece and a motorcycle valve spring.",
+"tags": [
+"rock",
+"instruments"
+]
+},
+{
+"q": "Which band released the 1969 rock opera Tommy?",
+"a": [
+"The Who",
+"The Kinks",
+"Pink Floyd",
+"Genesis"
+],
+"d": 3,
+"x": "Pete Townshend wrote the story of a deaf, dumb and blind boy who becomes a pinball champion.",
+"tags": [
+"albums",
+"rock"
+]
+},
+{
+"q": "Which funk bandleader created both Parliament and Funkadelic?",
+"a": [
+"George Clinton",
+"Bootsy Collins",
+"Sly Stone",
+"Rick James"
+],
+"d": 3,
+"x": "His groups' elaborate stage shows included a landing spaceship called the Mothership.",
+"tags": [
+"funk"
+]
+},
+{
+"q": "Which hip hop group released \"Fight the Power\" in 1989?",
+"a": [
+"Public Enemy",
+"N.W.A",
+"A Tribe Called Quest",
+"De La Soul"
+],
+"d": 3,
+"x": "The song was written for Spike Lee's film Do the Right Thing.",
+"tags": [
+"hiphop"
+]
+},
+{
+"q": "What is the traditional Indonesian ensemble of bronze gongs and metallophones called?",
+"a": [
+"Gamelan",
+"Taiko",
+"Gagaku",
+"Qawwali"
+],
+"d": 3,
+"x": "Gamelan music from Java and Bali influenced the French composer Debussy after he heard it in 1889.",
+"tags": [
+"instruments",
+"genres"
+]
+},
+{
+"q": "The kora, a 21-string harp-lute, is a traditional instrument of which region?",
+"a": [
+"West Africa",
+"East Africa",
+"South Asia",
+"The Andes"
+],
+"d": 3,
+"x": "It is traditionally played by hereditary musicians called griots.",
+"tags": [
+"instruments"
+]
+},
+{
+"q": "Which Japanese instrument is a long zither typically with 13 strings?",
+"a": [
+"Koto",
+"Shamisen",
+"Biwa",
+"Shakuhachi"
+],
+"d": 3,
+"x": "The player plucks the strings and moves movable bridges to change the tuning.",
+"tags": [
+"instruments"
+]
+},
+{
+"q": "Which Chinese instrument is a two-stringed bowed fiddle?",
+"a": [
+"Erhu",
+"Pipa",
+"Guzheng",
+"Dizi"
+],
+"d": 3,
+"x": "Its bow hair passes between the two strings, and the body is covered with snakeskin.",
+"tags": [
+"instruments"
+]
+},
+{
+"q": "Which long wooden horn is traditionally played in the Alps?",
+"a": [
+"Alphorn",
+"Didgeridoo",
+"Cornett",
+"Serpent"
+],
+"d": 3,
+"x": "It can reach more than 11 feet in length and was once used to send messages across valleys.",
+"tags": [
+"instruments"
+]
+},
+{
+"q": "Which American statesman invented the glass armonica in 1761?",
+"a": [
+"Benjamin Franklin",
+"Thomas Jefferson",
+"John Adams",
+"Alexander Hamilton"
+],
+"d": 3,
+"x": "Mozart and Beethoven both wrote music for the instrument, which is played by rubbing wet glass bowls.",
+"tags": [
+"instruments"
+]
+},
+{
+"q": "Which Italian instrument maker is credited with inventing the piano around 1700?",
+"a": [
+"Bartolomeo Cristofori",
+"Andrea Amati",
+"Giuseppe Guarneri",
+"Gasparo da Salo"
+],
+"d": 3,
+"x": "His instrument in Florence was called gravicembalo col piano e forte, which means harpsichord with soft and loud.",
+"tags": [
+"instruments"
+]
+},
+{
+"q": "Which Belgian instrument maker invented the saxophone?",
+"a": [
+"Adolphe Sax",
+"Theobald Boehm",
+"Heinrich Stolzel",
+"Jean-Baptiste Vuillaume"
+],
+"d": 3,
+"x": "He patented the instrument in Paris in 1846 and also made improvements to brass instruments.",
+"tags": [
+"instruments"
+]
+},
+{
+"q": "In a fugue, what is the main theme introduced at the start called?",
+"a": [
+"The subject",
+"The refrain",
+"The coda",
+"The bridge"
+],
+"d": 3,
+"x": "Other voices then enter in turn with the same theme, creating Bach's famous interlocking texture.",
+"tags": [
+"theory"
+]
+},
+{
+"q": "On the circle of fifths, which major key is a fifth above C major?",
+"a": [
+"G major",
+"D major",
+"F major",
+"B-flat major"
+],
+"d": 3,
+"x": "Moving up by fifths adds one sharp each time, from G major to D major and so on.",
+"tags": [
+"theory"
+]
+},
+{
+"q": "Which interval spans six semitones and was called \"diabolus in musica\" in medieval theory?",
+"a": [
+"The tritone",
+"The perfect fifth",
+"The major third",
+"The minor seventh"
+],
+"d": 3,
+"x": "It splits the octave exactly in half and is the interval in the opening of \"Maria\" from West Side Story.",
+"tags": [
+"theory"
+]
+},
+{
+"q": "What does the marking \"mezzo forte\" mean?",
+"a": [
+"Moderately loud",
+"Moderately soft",
+"Very loud",
+"Very soft"
+],
+"d": 3,
+"x": "It is written mf and sits between mezzo piano and forte.",
+"tags": [
+"terms"
+]
+},
+{
+"q": "What does a fermata symbol over a note tell the performer?",
+"a": [
+"Hold it longer than written",
+"Play it very softly",
+"Repeat it twice",
+"Skip it entirely"
+],
+"d": 3,
+"x": "The symbol looks like an eye and the length of the hold is left up to the performer or conductor.",
+"tags": [
+"terms"
+]
+},
+{
+"q": "What does the instruction \"D.C. al Fine\" tell the performer to do?",
+"a": [
+"Return to the start and end at Fine",
+"Jump to the coda and stop",
+"Repeat the last bar twice",
+"Play the section softly"
+],
+"d": 3,
+"x": "D.C. is short for da capo, meaning \"from the head\" in Italian.",
+"tags": [
+"terms"
+]
+},
+{
+"q": "Which time signature is also known as \"common time\"?",
+"a": [
+"4/4",
+"2/2",
+"3/4",
+"6/8"
+],
+"d": 3,
+"x": "It is often shown by a large letter C instead of numbers.",
+"tags": [
+"theory"
+]
+},
+{
+"q": "Whose company produced the Minimoog synthesizer, introduced in 1970?",
+"a": [
+"Robert Moog",
+"Don Buchla",
+"Tom Oberheim",
+"Dave Smith"
+],
+"d": 3,
+"x": "It was one of the first portable synthesizers and became standard in rock and jazz keyboards.",
+"tags": [
+"instruments",
+"electronic"
+]
+},
+{
+"q": "Which guitar company introduced the Les Paul model in 1952?",
+"a": [
+"Gibson",
+"Fender",
+"Gretsch",
+"Rickenbacker"
+],
+"d": 3,
+"x": "The guitar was designed with guitarist and inventor Les Paul, who also pioneered multitrack recording.",
+"tags": [
+"instruments"
+]
+},
+{
+"q": "Which Wagner opera contains the \"Ride of the Valkyries\"?",
+"a": [
+"Die Walkure",
+"Lohengrin",
+"Parsifal",
+"Tannhauser"
+],
+"d": 3,
+"x": "It is the second of the four Ring operas and was premiered in Munich in 1870.",
+"tags": [
+"opera"
+]
+},
+{
+"q": "In which Italian city was Antonio Vivaldi born?",
+"a": [
+"Venice",
+"Florence",
+"Rome",
+"Naples"
+],
+"d": 3,
+"x": "He worked for decades at a Venetian orphanage for girls, the Ospedale della Pieta.",
+"tags": [
+"classical"
+]
+},
+{
+"q": "In which German town was Johann Sebastian Bach born?",
+"a": [
+"Eisenach",
+"Leipzig",
+"Weimar",
+"Dresden"
+],
+"d": 3,
+"x": "He was born in 1685 and spent his last 27 years as a church musician in Leipzig.",
+"tags": [
+"classical"
+]
+},
+{
+"q": "In which German city was Beethoven born?",
+"a": [
+"Bonn",
+"Vienna",
+"Salzburg",
+"Cologne"
+],
+"d": 3,
+"x": "He moved to Vienna as a young man and lived there for most of his adult life.",
+"tags": [
+"classical"
+]
+},
+{
+"q": "In which German city was George Frideric Handel born?",
+"a": [
+"Halle",
+"Hamburg",
+"Dresden",
+"Leipzig"
+],
+"d": 3,
+"x": "He later became a British subject and is buried in Westminster Abbey.",
+"tags": [
+"classical"
+]
+},
+{
+"q": "Which French composer wrote the orchestral work La Mer?",
+"a": [
+"Claude Debussy",
+"Maurice Ravel",
+"Gabriel Faure",
+"Erik Satie"
+],
+"d": 3,
+"x": "The three symphonic sketches from 1905 were inspired by the sea, and the first edition cover used a famous Japanese wave print.",
+"tags": [
+"classical"
+]
+},
+{
+"q": "Which Mahler symphony is nicknamed the \"Symphony of a Thousand\"?",
+"a": [
+"The Eighth",
+"The Second",
+"The Fifth",
+"The Ninth"
+],
+"d": 3,
+"x": "It requires huge orchestral and choral forces, with about 1,000 performers at its 1910 premiere.",
+"tags": [
+"classical"
+]
+},
+{
+"q": "Which composer wrote The Lark Ascending for violin and orchestra?",
+"a": [
+"Ralph Vaughan Williams",
+"Gustav Holst",
+"Edward Elgar",
+"Frederick Delius"
+],
+"d": 3,
+"x": "He began the piece before the First World War and revised it in 1920.",
+"tags": [
+"classical"
+]
+},
+{
+"q": "For which Ibsen play did Grieg write \"In the Hall of the Mountain King\"?",
+"a": [
+"Peer Gynt",
+"A Doll's House",
+"Hedda Gabler",
+"Brand"
+],
+"d": 3,
+"x": "Grieg composed the incidental music for the 1876 production, and the piece gets faster and louder as it goes.",
+"tags": [
+"classical"
+]
+},
+{
+"q": "Which Argentine composer revolutionized tango with \"nuevo tango\"?",
+"a": [
+"Astor Piazzolla",
+"Carlos Gardel",
+"Osvaldo Pugliese",
+"Alberto Ginastera"
+],
+"d": 3,
+"x": "He blended tango with jazz and classical music, and his bandoneon playing became world famous.",
+"tags": [
+"genres"
+]
+},
+{
+"q": "Which Hungarian composer wrote the 1943 Concerto for Orchestra?",
+"a": [
+"Bela Bartok",
+"Zoltan Kodaly",
+"Gyorgy Ligeti",
+"Ernst von Dohnanyi"
+],
+"d": 3,
+"x": "He wrote it in the United States for the Boston Symphony Orchestra, and it became his most popular work.",
+"tags": [
+"classical"
+]
+},
+{
+"q": "Which band popularized the jangly Rickenbacker 12-string guitar with \"Mr. Tambourine Man\" in 1965?",
+"a": [
+"The Byrds",
+"The Beach Boys",
+"The Monkees",
+"The Turtles"
+],
+"d": 3,
+"x": "Their cover of the Bob Dylan song helped launch folk rock.",
+"tags": [
+"rock"
+]
+},
+{
+"q": "Which Canadian singer-songwriter wrote \"Hallelujah\" in 1984?",
+"a": [
+"Leonard Cohen",
+"Neil Young",
+"Gordon Lightfoot",
+"Bruce Cockburn"
+],
+"d": 3,
+"x": "The song first appeared on the album Various Positions and became famous through later cover versions.",
+"tags": [
+"folk"
+]
+},
+{
+"q": "Which Canadian singer-songwriter released the 1971 album Blue?",
+"a": [
+"Joni Mitchell",
+"Carole King",
+"Judy Collins",
+"Carly Simon"
+],
+"d": 3,
+"x": "The album's confessional style made it a landmark of singer-songwriter music.",
+"tags": [
+"albums",
+"folk"
+]
+},
+{
+"q": "The Rolling Stones recorded much of Exile on Main St. in 1971 in a villa in which country?",
+"a": [
+"France",
+"Spain",
+"Italy",
+"Switzerland"
+],
+"d": 3,
+"x": "They recorded in the basement of a villa called Nellcote on the French Riviera.",
+"tags": [
+"albums",
+"rock"
+]
+},
+{
+"q": "In which year was the first Eurovision Song Contest held?",
+"a": [
+"1956",
+"1960",
+"1952",
+"1964"
+],
+"d": 3,
+"x": "It took place in Lugano, Switzerland, with just seven countries taking part.",
+"tags": [
+"festivals"
+]
+},
+{
+"q": "In which country is the Montreux Jazz Festival held?",
+"a": [
+"Switzerland",
+"France",
+"Italy",
+"Belgium"
+],
+"d": 3,
+"x": "It was founded in 1967 on the shore of Lake Geneva and welcomes rock and pop acts as well as jazz.",
+"tags": [
+"festivals",
+"jazz"
+]
+},
+{
+"q": "Which Nashville venue is nicknamed the \"Mother Church of Country Music\"?",
+"a": [
+"The Ryman Auditorium",
+"The Bluebird Cafe",
+"The Station Inn",
+"Exit/In"
+],
+"d": 3,
+"x": "It hosted the Grand Ole Opry from 1943 to 1974.",
+"tags": [
+"venues",
+"country"
+]
+},
+{
+"q": "Which New York club was the home of punk bands such as the Ramones and Blondie in the 1970s?",
+"a": [
+"CBGB",
+"Studio 54",
+"The Cotton Club",
+"The Apollo"
+],
+"d": 3,
+"x": "The name stood for country, bluegrass and blues, the music its owner originally planned to host.",
+"tags": [
+"venues",
+"punk"
+]
+},
+{
+"q": "In which New York City neighborhood is the Apollo Theater?",
+"a": [
+"Harlem",
+"Brooklyn",
+"SoHo",
+"Greenwich Village"
+],
+"d": 3,
+"x": "Its Amateur Night has launched careers including Ella Fitzgerald's.",
+"tags": [
+"venues",
+"soul"
+]
+},
+{
+"q": "At which Liverpool club did The Beatles perform nearly 300 times in the early 1960s?",
+"a": [
+"The Cavern Club",
+"The Hacienda",
+"The Marquee",
+"The Star-Club"
+],
+"d": 3,
+"x": "The cellar club was where manager Brian Epstein first saw the band in 1961.",
+"tags": [
+"venues",
+"rock"
+]
+}
+]

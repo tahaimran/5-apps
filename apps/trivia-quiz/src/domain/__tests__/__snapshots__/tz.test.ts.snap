@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`local dates in any time zone gives every time zone the same Daily for the same local date 1`] = `
+[
+  "his-000127",
+  "geo-000118",
+  "fla-000066",
+  "mus-000085",
+  "gen-000285",
+  "lit-000272",
+  "spo-000104",
+  "log-000211",
+  "ani-000066",
+  "mov-000144",
+]
+`;

@@ -1,0 +1,1402 @@
+[
+{
+"q": "What is the atomic number of gold?",
+"a": [
+"79",
+"47",
+"82",
+"29"
+],
+"d": 3,
+"x": "Gold's atomic number is 79, meaning each atom has 79 protons. Silver is 47, lead is 82 and copper is 29.",
+"tags": [
+"chemistry"
+]
+},
+{
+"q": "Which metal has the highest melting point of all metals, about 3,400 C?",
+"a": [
+"Tungsten",
+"Titanium",
+"Iron",
+"Platinum"
+],
+"d": 3,
+"x": "Tungsten melts at about 3,422 C, which is why it was used for filaments in incandescent light bulbs.",
+"tags": [
+"chemistry"
+]
+},
+{
+"q": "Which moon of Jupiter is the most volcanically active body in the solar system?",
+"a": [
+"Io",
+"Europa",
+"Ganymede",
+"Callisto"
+],
+"d": 3,
+"x": "Io is squeezed and stretched by Jupiter's gravity, which heats its interior and drives hundreds of active volcanoes.",
+"tags": [
+"astronomy"
+]
+},
+{
+"q": "Which moon of Saturn shoots plumes of water ice from cracks near its south pole?",
+"a": [
+"Enceladus",
+"Titan",
+"Mimas",
+"Iapetus"
+],
+"d": 3,
+"x": "The Cassini spacecraft flew through Enceladus's geysers, finding salty water and organic molecules.",
+"tags": [
+"astronomy"
+]
+},
+{
+"q": "Who discovered the planet Uranus in 1781?",
+"a": [
+"William Herschel",
+"Galileo Galilei",
+"Giovanni Cassini",
+"Urbain Le Verrier"
+],
+"d": 3,
+"x": "Herschel first thought it was a comet. It was the first planet discovered with a telescope.",
+"tags": [
+"scientists"
+]
+},
+{
+"q": "What is the SI unit of magnetic flux density?",
+"a": [
+"Tesla",
+"Weber",
+"Gauss",
+"Henry"
+],
+"d": 3,
+"x": "The tesla honors Nikola Tesla. A typical MRI scanner uses a magnetic field of 1.5 to 3 tesla.",
+"tags": [
+"units"
+]
+},
+{
+"q": "What is the SI unit of radioactivity, equal to one decay per second?",
+"a": [
+"Becquerel",
+"Sievert",
+"Curie",
+"Gray"
+],
+"d": 3,
+"x": "The becquerel is named after Henri Becquerel. One becquerel is very small, so large sources are measured in megabecquerels.",
+"tags": [
+"units"
+]
+},
+{
+"q": "Which SI unit measures the absorbed dose of ionizing radiation?",
+"a": [
+"Gray",
+"Lumen",
+"Siemens",
+"Pascal"
+],
+"d": 3,
+"x": "One gray is one joule of radiation energy absorbed per kilogram of matter. It is named after physicist Louis Harold Gray.",
+"tags": [
+"units"
+]
+},
+{
+"q": "What is the SI unit of electrical capacitance?",
+"a": [
+"Farad",
+"Henry",
+"Weber",
+"Coulomb"
+],
+"d": 3,
+"x": "The farad is named after Michael Faraday. Most real capacitors are measured in microfarads or smaller.",
+"tags": [
+"units"
+]
+},
+{
+"q": "What is the SI unit of inductance?",
+"a": [
+"Henry",
+"Farad",
+"Tesla",
+"Siemens"
+],
+"d": 3,
+"x": "The henry is named after the American scientist Joseph Henry, who discovered self-induction in the 1830s.",
+"tags": [
+"units"
+]
+},
+{
+"q": "Which SI base unit measures luminous intensity?",
+"a": [
+"Candela",
+"Lumen",
+"Lux",
+"Watt"
+],
+"d": 3,
+"x": "The candela was originally defined using the light of a standard candle, hence the name.",
+"tags": [
+"units"
+]
+},
+{
+"q": "Which SI base unit measures the amount of a substance?",
+"a": [
+"Mole",
+"Gram",
+"Liter",
+"Kelvin"
+],
+"d": 3,
+"x": "One mole contains exactly 6.02214076 x 10^23 particles, a number known as Avogadro's constant.",
+"tags": [
+"units"
+]
+},
+{
+"q": "What is the freezing point of water on the Kelvin scale?",
+"a": [
+"273.15 K",
+"373.15 K",
+"100 K",
+"0 K"
+],
+"d": 3,
+"x": "A change of one kelvin is exactly the same size as a change of one degree Celsius. The two scales differ only in their zero point.",
+"tags": [
+"units"
+]
+},
+{
+"q": "Which part of the brain acts as the main relay station for sensory signals heading to the cortex?",
+"a": [
+"Thalamus",
+"Amygdala",
+"Hippocampus",
+"Pons"
+],
+"d": 3,
+"x": "Nearly all sensory information except smell passes through the thalamus on its way to the cerebral cortex.",
+"tags": [
+"human body"
+]
+},
+{
+"q": "Which cell organelle contains digestive enzymes that break down waste?",
+"a": [
+"Lysosome",
+"Ribosome",
+"Golgi apparatus",
+"Peroxisome"
+],
+"d": 3,
+"x": "Lysosomes contain about 50 types of enzymes and work best in acidic conditions.",
+"tags": [
+"biology"
+]
+},
+{
+"q": "Which enzyme unwinds the DNA double helix before replication?",
+"a": [
+"Helicase",
+"Ligase",
+"Polymerase",
+"Amylase"
+],
+"d": 3,
+"x": "Helicase breaks the hydrogen bonds between base pairs, working like a zipper being opened.",
+"tags": [
+"biology"
+]
+},
+{
+"q": "Which nitrogenous base is found in RNA instead of thymine?",
+"a": [
+"Uracil",
+"Adenine",
+"Cytosine",
+"Guanine"
+],
+"d": 3,
+"x": "RNA uses uracil in place of thymine, and pairs it with adenine.",
+"tags": [
+"biology"
+]
+},
+{
+"q": "What is the medical name for the collarbone?",
+"a": [
+"Clavicle",
+"Scapula",
+"Sternum",
+"Humerus"
+],
+"d": 3,
+"x": "The clavicle is the most commonly broken bone in children. Its name comes from the Latin for little key.",
+"tags": [
+"human body"
+]
+},
+{
+"q": "What is the longest nerve in the human body?",
+"a": [
+"Sciatic nerve",
+"Vagus nerve",
+"Optic nerve",
+"Femoral nerve"
+],
+"d": 3,
+"x": "The sciatic nerve runs from the lower back down each leg and is as thick as a finger.",
+"tags": [
+"human body"
+]
+},
+{
+"q": "Which of these is one of the three tiny bones of the middle ear?",
+"a": [
+"Incus",
+"Talus",
+"Ulna",
+"Hyoid"
+],
+"d": 3,
+"x": "The incus, malleus and stapes are also known as the anvil, hammer and stirrup, and they are the smallest bones in the body.",
+"tags": [
+"human body"
+]
+},
+{
+"q": "Vitamin B12 contains which metal ion at its center?",
+"a": [
+"Cobalt",
+"Iron",
+"Zinc",
+"Copper"
+],
+"d": 3,
+"x": "B12 is also called cobalamin because of the cobalt atom at its core. Only microorganisms can make it.",
+"tags": [
+"chemistry"
+]
+},
+{
+"q": "What is the most abundant protein in mammals?",
+"a": [
+"Collagen",
+"Keratin",
+"Albumin",
+"Insulin"
+],
+"d": 3,
+"x": "Collagen makes up about a quarter of the protein in the human body and gives skin, tendons and bones their strength.",
+"tags": [
+"biology"
+]
+},
+{
+"q": "Which gas is the third most abundant in Earth's dry atmosphere, at about 0.9 percent?",
+"a": [
+"Argon",
+"Carbon dioxide",
+"Neon",
+"Helium"
+],
+"d": 3,
+"x": "Argon is produced mainly by the radioactive decay of potassium-40 in Earth's crust.",
+"tags": [
+"earth science"
+]
+},
+{
+"q": "After oxygen, which element is the second most abundant in Earth's crust by mass?",
+"a": [
+"Silicon",
+"Aluminum",
+"Iron",
+"Calcium"
+],
+"d": 3,
+"x": "Silicon makes up about 28 percent of the crust, mostly locked in silicate minerals and quartz.",
+"tags": [
+"earth science"
+]
+},
+{
+"q": "What is the Mohs hardness of quartz?",
+"a": [
+"7",
+"5",
+"9",
+"3"
+],
+"d": 3,
+"x": "Quartz is harder than steel and glass. Only topaz, corundum and diamond score higher on the scale.",
+"tags": [
+"earth science"
+]
+},
+{
+"q": "Which scale has largely replaced the Richter scale for measuring large earthquakes?",
+"a": [
+"Moment magnitude scale",
+"Mercalli scale",
+"Mohs scale",
+"Fujita scale"
+],
+"d": 3,
+"x": "The moment magnitude scale measures the total energy released and does not saturate for the biggest quakes.",
+"tags": [
+"earth science"
+]
+},
+{
+"q": "Which type of seismic wave arrives first at a recording station?",
+"a": [
+"P-wave",
+"S-wave",
+"Love wave",
+"Rayleigh wave"
+],
+"d": 3,
+"x": "P stands for primary. These compression waves travel through solids and liquids, while slower S-waves cannot pass through liquid.",
+"tags": [
+"earth science"
+]
+},
+{
+"q": "In which hemisphere does the Coriolis effect deflect moving air to the right?",
+"a": [
+"Northern Hemisphere",
+"Southern Hemisphere",
+"Both equally",
+"Neither"
+],
+"d": 3,
+"x": "This deflection makes large storms spin counterclockwise in the Northern Hemisphere and clockwise in the Southern.",
+"tags": [
+"earth science"
+]
+},
+{
+"q": "Which cloud type is responsible for thunderstorms?",
+"a": [
+"Cumulonimbus",
+"Cirrostratus",
+"Altostratus",
+"Stratocumulus"
+],
+"d": 3,
+"x": "Cumulonimbus clouds can tower more than 12 km high and are the only cloud type that produces thunder and lightning.",
+"tags": [
+"earth science"
+]
+},
+{
+"q": "What is the boundary between the troposphere and the stratosphere called?",
+"a": [
+"Tropopause",
+"Stratopause",
+"Mesopause",
+"Ionopause"
+],
+"d": 3,
+"x": "Commercial jets often cruise near the tropopause, where the air is smooth and thin.",
+"tags": [
+"earth science"
+]
+},
+{
+"q": "In which atmospheric layer do most auroras occur?",
+"a": [
+"Thermosphere",
+"Stratosphere",
+"Troposphere",
+"Mesosphere"
+],
+"d": 3,
+"x": "Auroras glow roughly 100 to 300 km up, where charged particles from the Sun collide with oxygen and nitrogen.",
+"tags": [
+"earth science"
+]
+},
+{
+"q": "Which spacecraft was the first to enter interstellar space, in 2012?",
+"a": [
+"Voyager 1",
+"Pioneer 10",
+"Voyager 2",
+"New Horizons"
+],
+"d": 3,
+"x": "Voyager 1 was launched in 1977 and is the most distant human-made object from Earth.",
+"tags": [
+"space"
+]
+},
+{
+"q": "Which star appears brightest in Earth's night sky, not counting the Sun?",
+"a": [
+"Sirius",
+"Canopus",
+"Vega",
+"Rigel"
+],
+"d": 3,
+"x": "Sirius, in the constellation Canis Major, is about 8.6 light-years away and is actually a pair of stars.",
+"tags": [
+"astronomy"
+]
+},
+{
+"q": "What will the Sun become after its red giant phase ends?",
+"a": [
+"A white dwarf",
+"A black hole",
+"A neutron star",
+"A supernova"
+],
+"d": 3,
+"x": "The Sun is too small to explode as a supernova. It will shed its outer layers and leave a dense core about the size of Earth.",
+"tags": [
+"astronomy"
+]
+},
+{
+"q": "What is the boundary around a black hole beyond which nothing can escape called?",
+"a": [
+"Event horizon",
+"Singularity",
+"Accretion disk",
+"Photon sphere"
+],
+"d": 3,
+"x": "The event horizon is not a physical surface. It is the point where the escape velocity equals the speed of light.",
+"tags": [
+"astronomy"
+]
+},
+{
+"q": "Which astronomer's observations in the 1920s showed that the universe is expanding?",
+"a": [
+"Edwin Hubble",
+"Carl Sagan",
+"Fred Hoyle",
+"Harlow Shapley"
+],
+"d": 3,
+"x": "Hubble found that distant galaxies are receding faster the farther away they are, and published the relation in 1929.",
+"tags": [
+"scientists"
+]
+},
+{
+"q": "About how old is the universe?",
+"a": [
+"13.8 billion years",
+"4.6 billion years",
+"1.4 billion years",
+"138 billion years"
+],
+"d": 3,
+"x": "The estimate comes from measurements of the cosmic microwave background and the expansion rate of the universe.",
+"tags": [
+"astronomy"
+]
+},
+{
+"q": "About how old is the Earth?",
+"a": [
+"4.5 billion years",
+"1 billion years",
+"10 billion years",
+"13.8 billion years"
+],
+"d": 3,
+"x": "The age is derived from radiometric dating of meteorites and the oldest rocks, which give about 4.54 billion years.",
+"tags": [
+"earth science"
+]
+},
+{
+"q": "What did Arno Penzias and Robert Wilson accidentally discover in 1964?",
+"a": [
+"Cosmic microwave background",
+"Pulsars",
+"Dark matter",
+"Gravitational waves"
+],
+"d": 3,
+"x": "They first blamed the faint microwave hiss on pigeon droppings in their antenna. It turned out to be leftover radiation from the early universe.",
+"tags": [
+"scientists"
+]
+},
+{
+"q": "Which particle carries the electromagnetic force?",
+"a": [
+"Photon",
+"Gluon",
+"Neutrino",
+"Graviton"
+],
+"d": 3,
+"x": "Photons also make up visible light, and they have no mass or electric charge.",
+"tags": [
+"physics"
+]
+},
+{
+"q": "How many quarks make up a proton?",
+"a": [
+"Three",
+"Two",
+"Four",
+"Six"
+],
+"d": 3,
+"x": "A proton contains two up quarks and one down quark held together by gluons.",
+"tags": [
+"physics"
+]
+},
+{
+"q": "Which European research organization operates the Large Hadron Collider?",
+"a": [
+"CERN",
+"ESA",
+"DESY",
+"ITER"
+],
+"d": 3,
+"x": "The LHC's 27-kilometer ring lies beneath the border of France and Switzerland. The Higgs boson was found there in 2012.",
+"tags": [
+"physics"
+]
+},
+{
+"q": "Which scientist discovered electromagnetic induction in 1831?",
+"a": [
+"Michael Faraday",
+"James Clerk Maxwell",
+"Alessandro Volta",
+"Benjamin Franklin"
+],
+"d": 3,
+"x": "Faraday showed that a changing magnetic field creates an electric current, the principle behind generators and transformers.",
+"tags": [
+"scientists"
+]
+},
+{
+"q": "Who discovered in 1820 that an electric current produces a magnetic field?",
+"a": [
+"Hans Christian Orsted",
+"Andre-Marie Ampere",
+"Georg Ohm",
+"Heinrich Lenz"
+],
+"d": 3,
+"x": "Orsted noticed a compass needle twitch near a wire carrying current during a lecture demonstration.",
+"tags": [
+"scientists"
+]
+},
+{
+"q": "Which physicist proposed in 1913 that electrons orbit the nucleus in fixed energy levels?",
+"a": [
+"Niels Bohr",
+"Ernest Rutherford",
+"Louis de Broglie",
+"Wolfgang Pauli"
+],
+"d": 3,
+"x": "Bohr's model explained why hydrogen emits light only at specific colors.",
+"tags": [
+"scientists"
+]
+},
+{
+"q": "Whose gold foil experiment showed that atoms have a small, dense nucleus?",
+"a": [
+"Ernest Rutherford",
+"J.J. Thomson",
+"Robert Millikan",
+"John Dalton"
+],
+"d": 3,
+"x": "A few alpha particles bounced almost straight back, which Rutherford compared to a shell bouncing off tissue paper.",
+"tags": [
+"scientists"
+]
+},
+{
+"q": "Which element did Marie Curie name in honor of her homeland?",
+"a": [
+"Polonium",
+"Radium",
+"Francium",
+"Germanium"
+],
+"d": 3,
+"x": "Curie announced polonium in 1898, naming it after Poland, which was then partitioned between three empires.",
+"tags": [
+"scientists"
+]
+},
+{
+"q": "Which element with atomic number 99 is named after a famous physicist?",
+"a": [
+"Einsteinium",
+"Fermium",
+"Curium",
+"Nobelium"
+],
+"d": 3,
+"x": "Einsteinium was first found in the debris of the 1952 hydrogen bomb test, and was kept secret for several years.",
+"tags": [
+"chemistry"
+]
+},
+{
+"q": "Which element is the most electronegative?",
+"a": [
+"Fluorine",
+"Oxygen",
+"Chlorine",
+"Nitrogen"
+],
+"d": 3,
+"x": "Fluorine pulls electrons so strongly that it reacts with almost every other element, including some noble gases.",
+"tags": [
+"chemistry"
+]
+},
+{
+"q": "What is the approximate pH range of human stomach acid?",
+"a": [
+"1 to 2",
+"4 to 5",
+"6 to 7",
+"9 to 10"
+],
+"d": 3,
+"x": "Stomach acid is mostly hydrochloric acid, strong enough to dissolve some metals. A thick layer of mucus protects the stomach lining.",
+"tags": [
+"human body"
+]
+},
+{
+"q": "Which acid is used in lead-acid car batteries?",
+"a": [
+"Sulfuric acid",
+"Nitric acid",
+"Acetic acid",
+"Citric acid"
+],
+"d": 3,
+"x": "A lead-acid battery has plates of lead immersed in dilute sulfuric acid. The design dates from 1859.",
+"tags": [
+"chemistry"
+]
+},
+{
+"q": "Which noble gas has the lowest boiling point of all elements?",
+"a": [
+"Helium",
+"Neon",
+"Hydrogen",
+"Nitrogen"
+],
+"d": 3,
+"x": "Helium boils at about -269 C, only 4 degrees above absolute zero, and never freezes at normal pressure.",
+"tags": [
+"chemistry"
+]
+},
+{
+"q": "Which is the lightest metal?",
+"a": [
+"Lithium",
+"Sodium",
+"Magnesium",
+"Aluminum"
+],
+"d": 3,
+"x": "Lithium is so light that it floats on water, and it is used in rechargeable batteries.",
+"tags": [
+"chemistry"
+]
+},
+{
+"q": "The alloy bronze is made mainly of copper and which other metal?",
+"a": [
+"Tin",
+"Zinc",
+"Nickel",
+"Lead"
+],
+"d": 3,
+"x": "The Bronze Age began around 3300 BC when people learned that adding tin made copper harder.",
+"tags": [
+"chemistry"
+]
+},
+{
+"q": "The alloy brass is made mainly of copper and which other metal?",
+"a": [
+"Zinc",
+"Tin",
+"Silver",
+"Iron"
+],
+"d": 3,
+"x": "Brass is bright and easy to shape, and its sound qualities make it the traditional material for horns.",
+"tags": [
+"chemistry"
+]
+},
+{
+"q": "Which naturalist independently came up with the theory of evolution by natural selection, prompting Darwin to publish?",
+"a": [
+"Alfred Russel Wallace",
+"Thomas Huxley",
+"Jean-Baptiste Lamarck",
+"Joseph Hooker"
+],
+"d": 3,
+"x": "Wallace sent Darwin his essay from the Malay Archipelago in 1858, and their ideas were presented together to the Linnean Society.",
+"tags": [
+"scientists"
+]
+},
+{
+"q": "Which German chemist is said to have discovered the ring structure of benzene after a daydream?",
+"a": [
+"August Kekule",
+"Justus von Liebig",
+"Fritz Haber",
+"Robert Bunsen"
+],
+"d": 3,
+"x": "Kekule said he envisioned a snake biting its own tail in 1865, which gave him the idea of a closed ring of carbon atoms.",
+"tags": [
+"scientists"
+]
+},
+{
+"q": "Which French chemist is known as the father of modern chemistry and the law of conservation of mass?",
+"a": [
+"Antoine Lavoisier",
+"Joseph Priestley",
+"Robert Boyle",
+"Louis Pasteur"
+],
+"d": 3,
+"x": "Lavoisier named oxygen and hydrogen. He was guillotined during the French Revolution in 1794.",
+"tags": [
+"scientists"
+]
+},
+{
+"q": "Which Danish astronomer used Jupiter's moons to estimate the speed of light in 1676?",
+"a": [
+"Ole Romer",
+"Tycho Brahe",
+"Niels Bohr",
+"Hans Lippershey"
+],
+"d": 3,
+"x": "Romer noticed that eclipses of Io ran late when Jupiter was farther from Earth, proving that light takes time to travel.",
+"tags": [
+"scientists"
+]
+},
+{
+"q": "Which two Swiss astronomers discovered the first exoplanet orbiting a Sun-like star, in 1995?",
+"a": [
+"Mayor and Queloz",
+"Marcy and Butler",
+"Wolszczan and Frail",
+"Borucki and Koch"
+],
+"d": 3,
+"x": "Michel Mayor and Didier Queloz found 51 Pegasi b and shared the 2019 Nobel Prize in Physics for it.",
+"tags": [
+"scientists"
+]
+},
+{
+"q": "Which Greek scholar estimated the Earth's circumference around 240 BC using shadows?",
+"a": [
+"Eratosthenes",
+"Pythagoras",
+"Aristotle",
+"Hipparchus"
+],
+"d": 3,
+"x": "He compared the Sun's angle at two Egyptian cities and got a result within a few percent of the real value.",
+"tags": [
+"scientists"
+]
+},
+{
+"q": "Whose experiments with swan-neck flasks helped disprove spontaneous generation?",
+"a": [
+"Louis Pasteur",
+"Robert Koch",
+"Antonie van Leeuwenhoek",
+"Joseph Lister"
+],
+"d": 3,
+"x": "In the 1860s, Pasteur showed that broth stayed clear as long as airborne germs could not reach it.",
+"tags": [
+"scientists"
+]
+},
+{
+"q": "Which pair of Canadian researchers is credited with discovering insulin in 1921?",
+"a": [
+"Banting and Best",
+"Salk and Sabin",
+"Fleming and Florey",
+"Watson and Crick"
+],
+"d": 3,
+"x": "Frederick Banting and Charles Best worked in Toronto. Banting shared the 1923 Nobel Prize with J.J.R. Macleod.",
+"tags": [
+"scientists"
+]
+},
+{
+"q": "Which mathematician described an abstract model of computation in 1936, now called a Turing machine?",
+"a": [
+"Alan Turing",
+"John von Neumann",
+"Charles Babbage",
+"Claude Shannon"
+],
+"d": 3,
+"x": "Turing's model defined what it means for a problem to be computable. He also helped break the German Enigma code in World War II.",
+"tags": [
+"technology"
+]
+},
+{
+"q": "What does the abbreviation ASCII stand for?",
+"a": [
+"American Standard Code for Information Interchange",
+"Advanced System Code for Internet Integration",
+"Automatic Symbol Coding for Input Interfaces",
+"Applied Standard Computing and Information Interface"
+],
+"d": 3,
+"x": "ASCII assigns numbers to letters and symbols. The original version used 7 bits, giving 128 characters.",
+"tags": [
+"technology"
+]
+},
+{
+"q": "How many bits long is an IPv4 address?",
+"a": [
+"32",
+"16",
+"64",
+"128"
+],
+"d": 3,
+"x": "A 32-bit address allows about 4.3 billion unique addresses, which is why the longer 128-bit IPv6 was created.",
+"tags": [
+"technology"
+]
+},
+{
+"q": "The hexadecimal number system is base what?",
+"a": [
+"16",
+"8",
+"10",
+"12"
+],
+"d": 3,
+"x": "Hexadecimal uses the digits 0 to 9 and the letters A to F. Programmers use it because one hex digit equals exactly four bits.",
+"tags": [
+"technology"
+]
+},
+{
+"q": "How many meters are in one international nautical mile?",
+"a": [
+"1,852",
+"1,609",
+"1,000",
+"2,000"
+],
+"d": 3,
+"x": "A nautical mile equals one minute of latitude, and a speed of one nautical mile per hour is one knot.",
+"tags": [
+"units"
+]
+},
+{
+"q": "What is the SI unit of electric charge?",
+"a": [
+"Coulomb",
+"Ampere",
+"Volt",
+"Joule"
+],
+"d": 3,
+"x": "One ampere of current is one coulomb of charge flowing past a point each second.",
+"tags": [
+"units"
+]
+},
+{
+"q": "What is the approximate escape velocity from Earth's surface?",
+"a": [
+"11.2 km/s",
+"7.9 km/s",
+"3.0 km/s",
+"29.8 km/s"
+],
+"d": 3,
+"x": "An object must travel at about 11.2 km/s to break free of Earth's gravity without further propulsion. That is more than 40,000 km/h.",
+"tags": [
+"physics"
+]
+},
+{
+"q": "What scattering effect makes the daytime sky blue?",
+"a": [
+"Rayleigh scattering",
+"Doppler shift",
+"Total reflection",
+"Photoelectric effect"
+],
+"d": 3,
+"x": "Air molecules scatter short blue wavelengths much more strongly than long red ones, so blue light reaches your eyes from all directions.",
+"tags": [
+"physics"
+]
+},
+{
+"q": "Which gas law states that, at constant temperature, pressure and volume of a gas are inversely proportional?",
+"a": [
+"Boyle's law",
+"Charles's law",
+"Avogadro's law",
+"Dalton's law"
+],
+"d": 3,
+"x": "Robert Boyle published his law in 1662. It explains why a scuba diver's lungs expand while ascending.",
+"tags": [
+"physics"
+]
+},
+{
+"q": "Which cell organelle makes lipids and has no ribosomes attached?",
+"a": [
+"Smooth endoplasmic reticulum",
+"Rough endoplasmic reticulum",
+"Golgi apparatus",
+"Vacuole"
+],
+"d": 3,
+"x": "The smooth ER also helps detoxify chemicals, which is why liver cells have a lot of it.",
+"tags": [
+"biology"
+]
+},
+{
+"q": "To which biological kingdom do mushrooms belong?",
+"a": [
+"Fungi",
+"Plantae",
+"Protista",
+"Animalia"
+],
+"d": 3,
+"x": "Fungi are genetically closer to animals than to plants. They digest food outside their bodies and absorb it.",
+"tags": [
+"biology"
+]
+},
+{
+"q": "What term describes organisms that make their own food from simple substances?",
+"a": [
+"Autotrophs",
+"Heterotrophs",
+"Decomposers",
+"Parasites"
+],
+"d": 3,
+"x": "Plants, algae and some bacteria are autotrophs. Most make food using sunlight, while others use chemical energy.",
+"tags": [
+"biology"
+]
+},
+{
+"q": "Jellyfish belong to which animal phylum?",
+"a": [
+"Cnidaria",
+"Porifera",
+"Mollusca",
+"Echinodermata"
+],
+"d": 3,
+"x": "Cnidarians, including jellyfish, corals and sea anemones, have stinging cells called cnidocytes.",
+"tags": [
+"biology"
+]
+},
+{
+"q": "Which bird is the fastest animal in a dive, exceeding 300 km/h?",
+"a": [
+"Peregrine falcon",
+"Golden eagle",
+"Albatross",
+"Swift"
+],
+"d": 3,
+"x": "Peregrine falcons have been clocked at over 320 km/h during their hunting dives, called stoops.",
+"tags": [
+"biology"
+]
+},
+{
+"q": "What is the largest cell in the human body?",
+"a": [
+"Ovum",
+"Neuron",
+"Red blood cell",
+"Muscle fiber"
+],
+"d": 3,
+"x": "The ovum is about 0.1 mm across and just visible to the naked eye. Sperm cells are among the smallest.",
+"tags": [
+"human body"
+]
+},
+{
+"q": "Which glands sit on top of the kidneys and release adrenaline?",
+"a": [
+"Adrenal glands",
+"Thyroid glands",
+"Pituitary glands",
+"Salivary glands"
+],
+"d": 3,
+"x": "The adrenal glands also make cortisol, the hormone linked with the body's response to stress.",
+"tags": [
+"human body"
+]
+},
+{
+"q": "Which muscle is the largest in the human body?",
+"a": [
+"Gluteus maximus",
+"Quadriceps",
+"Biceps",
+"Latissimus dorsi"
+],
+"d": 3,
+"x": "The gluteus maximus is the main muscle for standing up from a seated position and climbing stairs.",
+"tags": [
+"human body"
+]
+},
+{
+"q": "What are the two upper chambers of the heart called?",
+"a": [
+"Atria",
+"Ventricles",
+"Valves",
+"Aortas"
+],
+"d": 3,
+"x": "The atria receive blood returning to the heart, and the stronger ventricles pump it out.",
+"tags": [
+"human body"
+]
+},
+{
+"q": "Which flap of tissue covers the windpipe when you swallow?",
+"a": [
+"Epiglottis",
+"Uvula",
+"Larynx",
+"Tonsil"
+],
+"d": 3,
+"x": "The epiglottis closes over the airway during swallowing, so food and drink slide down the esophagus instead.",
+"tags": [
+"human body"
+]
+},
+{
+"q": "Which white blood cells produce antibodies?",
+"a": [
+"B cells",
+"T cells",
+"Macrophages",
+"Neutrophils"
+],
+"d": 3,
+"x": "B cells mature in bone marrow, which is where the B comes from in the older name bursa-derived. Each B cell makes just one type of antibody.",
+"tags": [
+"human body"
+]
+},
+{
+"q": "Which hormone, also called epinephrine, prepares the body for fight or flight?",
+"a": [
+"Adrenaline",
+"Melatonin",
+"Oxytocin",
+"Estrogen"
+],
+"d": 3,
+"x": "Adrenaline speeds the heart, widens the airways and sends extra blood to the muscles within seconds.",
+"tags": [
+"human body"
+]
+},
+{
+"q": "Which English scientist first used the word cell for living things after viewing cork under a microscope in 1665?",
+"a": [
+"Robert Hooke",
+"Antonie van Leeuwenhoek",
+"Matthias Schleiden",
+"Rudolf Virchow"
+],
+"d": 3,
+"x": "Hooke thought the tiny compartments in cork resembled the small rooms, or cells, that monks lived in.",
+"tags": [
+"scientists"
+]
+},
+{
+"q": "Which three American physicists invented the transistor at Bell Labs in 1947?",
+"a": [
+"Bardeen, Brattain and Shockley",
+"Noyce, Kilby and Moore",
+"Hewlett, Packard and Jobs",
+"Edison, Tesla and Bell"
+],
+"d": 3,
+"x": "The transistor replaced bulky vacuum tubes and made modern electronics possible. The trio shared the 1956 Nobel Prize in Physics.",
+"tags": [
+"technology"
+]
+},
+{
+"q": "The Haber process is used to industrially produce which compound?",
+"a": [
+"Ammonia",
+"Sulfuric acid",
+"Chlorine",
+"Methanol"
+],
+"d": 3,
+"x": "The Haber process combines nitrogen from the air with hydrogen, making the fertilizer that helps feed billions of people.",
+"tags": [
+"chemistry"
+]
+},
+{
+"q": "What is the approximate temperature at the Sun's core?",
+"a": [
+"15 million C",
+"1.5 million C",
+"150 million C",
+"150,000 C"
+],
+"d": 3,
+"x": "At the core, hydrogen nuclei fuse into helium, releasing the energy that powers the Sun.",
+"tags": [
+"astronomy"
+]
+},
+{
+"q": "What is the larger of Mars's two moons?",
+"a": [
+"Phobos",
+"Deimos",
+"Charon",
+"Nereid"
+],
+"d": 3,
+"x": "Phobos orbits so close to Mars that it circles the planet three times a day and is slowly spiraling inward.",
+"tags": [
+"astronomy"
+]
+},
+{
+"q": "Which large moon of Neptune orbits in the opposite direction to the planet's rotation?",
+"a": [
+"Triton",
+"Nereid",
+"Proteus",
+"Larissa"
+],
+"d": 3,
+"x": "Triton's backward orbit suggests it was captured from the Kuiper Belt. It has nitrogen geysers and is one of the coldest known places in the solar system.",
+"tags": [
+"astronomy"
+]
+},
+{
+"q": "What was the name of the lander that touched down on comet 67P in 2014?",
+"a": [
+"Philae",
+"Huygens",
+"Pathfinder",
+"Beagle 2"
+],
+"d": 3,
+"x": "Philae was carried by the European probe Rosetta and made the first soft landing on a comet.",
+"tags": [
+"space"
+]
+},
+{
+"q": "How many hexagonal mirror segments make up the James Webb Space Telescope's primary mirror?",
+"a": [
+"18",
+"6",
+"36",
+"12"
+],
+"d": 3,
+"x": "The segments are coated in a thin layer of gold, which reflects infrared light well. The mirror unfolded after launch.",
+"tags": [
+"space"
+]
+},
+{
+"q": "What is the average distance from Earth to the Moon?",
+"a": [
+"About 384,000 km",
+"About 38,000 km",
+"About 150,000 km",
+"About 3,840,000 km"
+],
+"d": 3,
+"x": "Light takes about 1.3 seconds to travel from the Moon to Earth.",
+"tags": [
+"astronomy"
+]
+},
+{
+"q": "Roughly how long is one astronomical unit, the average distance from Earth to the Sun?",
+"a": [
+"150 million km",
+"15 million km",
+"1.5 billion km",
+"93 thousand km"
+],
+"d": 3,
+"x": "One astronomical unit is about 150 million km, or 93 million miles. Neptune orbits at about 30 AU.",
+"tags": [
+"astronomy"
+]
+},
+{
+"q": "What is Avogadro's number, approximately?",
+"a": [
+"6.02 x 10^23",
+"6.02 x 10^12",
+"3.00 x 10^8",
+"9.81 x 10^2"
+],
+"d": 3,
+"x": "It is the number of particles in one mole of a substance. 12 grams of carbon-12 contain this many atoms.",
+"tags": [
+"chemistry"
+]
+},
+{
+"q": "Which subatomic particle in an atom has the least mass?",
+"a": [
+"Electron",
+"Proton",
+"Neutron",
+"Nucleus"
+],
+"d": 3,
+"x": "A proton is about 1,836 times heavier than an electron.",
+"tags": [
+"physics"
+]
+},
+{
+"q": "Which element makes up the largest share of the human body's mass?",
+"a": [
+"Oxygen",
+"Carbon",
+"Hydrogen",
+"Nitrogen"
+],
+"d": 3,
+"x": "Oxygen is about 65 percent of body mass, mostly because the body is so rich in water. Carbon is next at about 18 percent.",
+"tags": [
+"human body"
+]
+},
+{
+"q": "What is the longest phase of the cell cycle called?",
+"a": [
+"Interphase",
+"Prophase",
+"Metaphase",
+"Telophase"
+],
+"d": 3,
+"x": "Cells spend most of their lives in interphase, growing and copying their DNA, and only a small fraction of time dividing.",
+"tags": [
+"biology"
+]
+},
+{
+"q": "Which British chemist isolated sodium and potassium by electrolysis in 1807?",
+"a": [
+"Humphry Davy",
+"John Dalton",
+"Joseph Priestley",
+"Henry Cavendish"
+],
+"d": 3,
+"x": "Davy reportedly danced around his lab with joy when he saw tiny globules of potassium form and burst into flame.",
+"tags": [
+"scientists"
+]
+},
+{
+"q": "Which Greek letter is the standard symbol for wavelength in physics?",
+"a": [
+"Lambda",
+"Omega",
+"Sigma",
+"Delta"
+],
+"d": 3,
+"x": "Wavelength, written as lambda, multiplied by frequency gives the speed of a wave.",
+"tags": [
+"physics"
+]
+}
+]

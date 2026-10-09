@@ -1,0 +1,1499 @@
+[
+{
+"q": "Which silent film won the Academy Award for Outstanding Picture at the very first Oscars ceremony?",
+"a": [
+"Wings",
+"7th Heaven",
+"The Racket",
+"The Crowd"
+],
+"d": 3,
+"x": "Wings, a First World War aviation drama, premiered in 1927 and won at the ceremony held in 1929.",
+"tags": [
+"awards",
+"film history"
+]
+},
+{
+"q": "Which film won Best Picture at the 1991 Oscars, beating Goodfellas?",
+"a": [
+"Dances with Wolves",
+"Ghost",
+"The Godfather Part III",
+"Awakenings"
+],
+"d": 3,
+"x": "Kevin Costner also won Best Director for it, his first time directing a feature film.",
+"tags": [
+"awards",
+"1990s"
+]
+},
+{
+"q": "Which British film about Olympic runners won Best Picture for 1981, beating Raiders of the Lost Ark?",
+"a": [
+"Chariots of Fire",
+"On Golden Pond",
+"Reds",
+"Atlantic City"
+],
+"d": 3,
+"x": "It follows two British runners at the 1924 Paris Olympics.",
+"tags": [
+"awards",
+"1980s"
+]
+},
+{
+"q": "Which romantic comedy won Best Picture at the March 1999 Oscars, beating Saving Private Ryan?",
+"a": [
+"Shakespeare in Love",
+"Elizabeth",
+"The Thin Red Line",
+"Life Is Beautiful"
+],
+"d": 3,
+"x": "Gwyneth Paltrow won Best Actress for her role in it.",
+"tags": [
+"awards",
+"1990s"
+]
+},
+{
+"q": "Which black-and-white, mostly silent French film won Best Picture at the 2012 Oscars?",
+"a": [
+"The Artist",
+"Hugo",
+"Midnight in Paris",
+"The Descendants"
+],
+"d": 3,
+"x": "Director Michel Hazanavicius won Best Director, and Jean Dujardin won Best Actor.",
+"tags": [
+"awards",
+"2010s"
+]
+},
+{
+"q": "Which Clint Eastwood Western won Best Picture at the 1993 Oscars?",
+"a": [
+"Unforgiven",
+"Pale Rider",
+"High Plains Drifter",
+"The Outlaw Josey Wales"
+],
+"d": 3,
+"x": "Gene Hackman won Best Supporting Actor, and Eastwood won Best Director.",
+"tags": [
+"awards",
+"westerns"
+]
+},
+{
+"q": "Which biopic won Best Picture at the 1983 Oscars, beating E.T. the Extra-Terrestrial?",
+"a": [
+"Gandhi",
+"Tootsie",
+"Missing",
+"The Verdict"
+],
+"d": 3,
+"x": "Ben Kingsley won Best Actor for playing the title role.",
+"tags": [
+"awards",
+"1980s"
+]
+},
+{
+"q": "Which Vietnam War film directed by Oliver Stone won Best Picture for 1986?",
+"a": [
+"Platoon",
+"Apocalypse Now",
+"Full Metal Jacket",
+"Born on the Fourth of July"
+],
+"d": 3,
+"x": "Stone drew on his own experience as a soldier in Vietnam.",
+"tags": [
+"awards",
+"war"
+]
+},
+{
+"q": "Which 1988 road drama won Best Picture and a Best Actor Oscar for Dustin Hoffman?",
+"a": [
+"Rain Man",
+"Mississippi Burning",
+"Working Girl",
+"The Accidental Tourist"
+],
+"d": 3,
+"x": "Barry Levinson directed it and won Best Director.",
+"tags": [
+"awards",
+"1980s"
+]
+},
+{
+"q": "Which Milos Forman film about Mozart and his rival Salieri won Best Picture for 1984?",
+"a": [
+"Amadeus",
+"Immortal Beloved",
+"Shine",
+"Farinelli"
+],
+"d": 3,
+"x": "It won eight Oscars, including Best Actor for F. Murray Abraham as Salieri.",
+"tags": [
+"awards",
+"1980s"
+]
+},
+{
+"q": "Which epic about the final Qing dynasty ruler of China won all nine Oscars it was nominated for?",
+"a": [
+"The Last Emperor",
+"Gandhi",
+"The Killing Fields",
+"Empire of the Sun"
+],
+"d": 3,
+"x": "Bernardo Bertolucci directed, and the crew was the first allowed to film inside the Forbidden City.",
+"tags": [
+"awards",
+"1980s"
+]
+},
+{
+"q": "Which 1989 film about an elderly Southern woman and her chauffeur won Best Picture?",
+"a": [
+"Driving Miss Daisy",
+"Born on the Fourth of July",
+"Dead Poets Society",
+"My Left Foot"
+],
+"d": 3,
+"x": "Jessica Tandy, aged 80, won Best Actress, which made her the oldest winner in that category at the time.",
+"tags": [
+"awards",
+"1980s"
+]
+},
+{
+"q": "Which Mel Gibson-directed epic about William Wallace won Best Picture for 1995?",
+"a": [
+"Braveheart",
+"Apollo 13",
+"Babe",
+"Sense and Sensibility"
+],
+"d": 3,
+"x": "Gibson also won the Oscar for Best Director.",
+"tags": [
+"awards",
+"1990s"
+]
+},
+{
+"q": "Which 1999 suburban drama directed by Sam Mendes won Best Picture?",
+"a": [
+"American Beauty",
+"The Sixth Sense",
+"The Insider",
+"The Green Mile"
+],
+"d": 3,
+"x": "It was Mendes' feature debut and won five Oscars.",
+"tags": [
+"awards",
+"1990s"
+]
+},
+{
+"q": "Which 2001 film about the mathematician John Nash won Best Picture?",
+"a": [
+"A Beautiful Mind",
+"Moulin Rouge!",
+"Gosford Park",
+"In the Bedroom"
+],
+"d": 3,
+"x": "Ron Howard won Best Director for it.",
+"tags": [
+"awards",
+"2000s"
+]
+},
+{
+"q": "Which Coen brothers film won Best Picture for 2007?",
+"a": [
+"No Country for Old Men",
+"Fargo",
+"The Big Lebowski",
+"O Brother, Where Art Thou?"
+],
+"d": 3,
+"x": "Javier Bardem won Best Supporting Actor for playing the relentless Anton Chigurh.",
+"tags": [
+"awards",
+"2000s"
+]
+},
+{
+"q": "For which 2006 crime film did Martin Scorsese finally win the Best Director Oscar?",
+"a": [
+"The Departed",
+"Goodfellas",
+"Gangs of New York",
+"The Aviator"
+],
+"d": 3,
+"x": "It is a remake of the Hong Kong thriller Infernal Affairs.",
+"tags": [
+"awards",
+"directors"
+]
+},
+{
+"q": "Which Iraq War film won Best Picture, making Kathryn Bigelow the first woman to win Best Director?",
+"a": [
+"The Hurt Locker",
+"Avatar",
+"Up in the Air",
+"Precious"
+],
+"d": 3,
+"x": "The Best Picture field expanded to ten nominees that year.",
+"tags": [
+"awards",
+"2000s"
+]
+},
+{
+"q": "Which 2010 film about King George VI's stammer won Best Picture?",
+"a": [
+"The King's Speech",
+"The Social Network",
+"Black Swan",
+"Inception"
+],
+"d": 3,
+"x": "Colin Firth won Best Actor for his performance as the king.",
+"tags": [
+"awards",
+"2010s"
+]
+},
+{
+"q": "Which black comedy about a washed-up superhero actor won Best Picture for 2014?",
+"a": [
+"Birdman",
+"Boyhood",
+"Whiplash",
+"The Grand Budapest Hotel"
+],
+"d": 3,
+"x": "Alejandro G. Iñárritu won Best Director, and much of the film is staged to look like one continuous shot.",
+"tags": [
+"awards",
+"2010s"
+]
+},
+{
+"q": "Which actor won the Best Actor Oscar three times, for My Left Foot, There Will Be Blood and Lincoln?",
+"a": [
+"Daniel Day-Lewis",
+"Jack Nicholson",
+"Dustin Hoffman",
+"Sean Penn"
+],
+"d": 3,
+"x": "He is the only performer to win Best Actor three times.",
+"tags": [
+"awards",
+"actors"
+]
+},
+{
+"q": "Which actress holds the record with four Best Actress Oscars?",
+"a": [
+"Katharine Hepburn",
+"Meryl Streep",
+"Bette Davis",
+"Ingrid Bergman"
+],
+"d": 3,
+"x": "Her wins span from 1934 to 1982 ceremonies, including Guess Who's Coming to Dinner and On Golden Pond.",
+"tags": [
+"awards",
+"actors"
+]
+},
+{
+"q": "Who became the first African American to win an Oscar, for a role in Gone with the Wind?",
+"a": [
+"Hattie McDaniel",
+"Dorothy Dandridge",
+"Lena Horne",
+"Ethel Waters"
+],
+"d": 3,
+"x": "She won Best Supporting Actress for playing Mammy at the 1940 ceremony.",
+"tags": [
+"awards",
+"1930s"
+]
+},
+{
+"q": "For which 1963 film did Sidney Poitier become the first Black actor to win Best Actor?",
+"a": [
+"Lilies of the Field",
+"In the Heat of the Night",
+"The Defiant Ones",
+"A Raisin in the Sun"
+],
+"d": 3,
+"x": "He played Homer Smith, a handyman who helps a group of nuns build a chapel.",
+"tags": [
+"awards",
+"1960s"
+]
+},
+{
+"q": "Which 1991 Disney film became the first animated feature nominated for Best Picture?",
+"a": [
+"Beauty and the Beast",
+"The Little Mermaid",
+"Aladdin",
+"The Lion King"
+],
+"d": 3,
+"x": "It lost to The Silence of the Lambs, but won Oscars for score and song.",
+"tags": [
+"awards",
+"animation"
+]
+},
+{
+"q": "Which film won the first Oscar for Best Animated Feature?",
+"a": [
+"Shrek",
+"Monsters, Inc.",
+"Ice Age",
+"Jimmy Neutron: Boy Genius"
+],
+"d": 3,
+"x": "The category was created for the 2001 films and the award was handed out in 2002.",
+"tags": [
+"awards",
+"animation"
+]
+},
+{
+"q": "Which Pixar film was the studio's first winner of Best Animated Feature?",
+"a": [
+"Finding Nemo",
+"Monsters, Inc.",
+"Toy Story 2",
+"A Bug's Life"
+],
+"d": 3,
+"x": "It took the Oscar at the 2004 ceremony.",
+"tags": [
+"awards",
+"pixar"
+]
+},
+{
+"q": "Which 2003 film swept all 11 of its Oscar nominations?",
+"a": [
+"The Lord of the Rings: The Return of the King",
+"Master and Commander: The Far Side of the World",
+"Mystic River",
+"Pirates of the Caribbean: The Curse of the Black Pearl"
+],
+"d": 3,
+"x": "Its wins included Best Picture and Best Director for Peter Jackson.",
+"tags": [
+"awards",
+"fantasy"
+]
+},
+{
+"q": "In Charlie Chaplin's 1936 film Modern Times, where does the Tramp struggle with an assembly line?",
+"a": [
+"A factory",
+"A shipyard",
+"A bakery",
+"A circus"
+],
+"d": 3,
+"x": "The film satirizes industrialization and uses music and sound effects with only a few sung nonsense words.",
+"tags": [
+"silent film",
+"classics"
+]
+},
+{
+"q": "Which German director made the silent sci-fi epic Metropolis (1927)?",
+"a": [
+"Fritz Lang",
+"F. W. Murnau",
+"Robert Wiene",
+"G. W. Pabst"
+],
+"d": 3,
+"x": "The film depicts a futuristic city divided between workers below and elites above.",
+"tags": [
+"film history",
+"directors"
+]
+},
+{
+"q": "Which Kurosawa film inspired Sergio Leone's A Fistful of Dollars?",
+"a": [
+"Yojimbo",
+"Rashomon",
+"Ran",
+"Throne of Blood"
+],
+"d": 3,
+"x": "Leone's 1964 Western was an unofficial remake, and Kurosawa received a share of profits after a legal dispute.",
+"tags": [
+"japan",
+"westerns"
+]
+},
+{
+"q": "Which Kurosawa film won the Golden Lion at Venice in 1951 and introduced Japanese cinema to the West?",
+"a": [
+"Rashomon",
+"Ikiru",
+"Ran",
+"Seven Samurai"
+],
+"d": 3,
+"x": "Its story of conflicting accounts of one event gave rise to the term 'Rashomon effect'.",
+"tags": [
+"japan",
+"film history"
+]
+},
+{
+"q": "Which Japanese director made Tokyo Story (1953)?",
+"a": [
+"Yasujiro Ozu",
+"Akira Kurosawa",
+"Kenji Mizoguchi",
+"Masaki Kobayashi"
+],
+"d": 3,
+"x": "It frequently ranks near the top of critics' lists of the greatest films ever made.",
+"tags": [
+"japan",
+"directors"
+]
+},
+{
+"q": "Which Indian director made Pather Panchali (1955), the first film of the Apu Trilogy?",
+"a": [
+"Satyajit Ray",
+"Raj Kapoor",
+"Guru Dutt",
+"Mehboob Khan"
+],
+"d": 3,
+"x": "The trilogy continues with Aparajito and The World of Apu.",
+"tags": [
+"india",
+"directors"
+]
+},
+{
+"q": "Which Bollywood film about a village cricket match was nominated for the Best Foreign Language Film Oscar in 2002?",
+"a": [
+"Lagaan",
+"Devdas",
+"Mother India",
+"Salaam Bombay!"
+],
+"d": 3,
+"x": "It is set in colonial India, and the villagers play the British to avoid paying a heavy tax.",
+"tags": [
+"india",
+"awards"
+]
+},
+{
+"q": "Which British director made Lawrence of Arabia (1962)?",
+"a": [
+"David Lean",
+"Carol Reed",
+"Michael Powell",
+"Ridley Scott"
+],
+"d": 3,
+"x": "Lean also directed The Bridge on the River Kwai and Doctor Zhivago.",
+"tags": [
+"epics",
+"directors"
+]
+},
+{
+"q": "Which actor won Best Actor for playing Colonel Nicholson in The Bridge on the River Kwai?",
+"a": [
+"Alec Guinness",
+"William Holden",
+"Peter O'Toole",
+"Richard Burton"
+],
+"d": 3,
+"x": "The story is set on the Burma-Siam railway during World War II.",
+"tags": [
+"awards",
+"war"
+]
+},
+{
+"q": "Which newspaper tycoon is Citizen Kane widely believed to be based on?",
+"a": [
+"William Randolph Hearst",
+"Joseph Pulitzer",
+"Rupert Murdoch",
+"Lord Beaverbrook"
+],
+"d": 3,
+"x": "Hearst tried to suppress the film, and his papers refused to run advertisements for it.",
+"tags": [
+"classics",
+"film history"
+]
+},
+{
+"q": "Which 1934 Frank Capra comedy was the first film to win all five top Oscars?",
+"a": [
+"It Happened One Night",
+"Mr. Deeds Goes to Town",
+"My Man Godfrey",
+"Cavalcade"
+],
+"d": 3,
+"x": "Clark Gable and Claudette Colbert starred as a runaway heiress and a reporter on a road trip.",
+"tags": [
+"awards",
+"1930s"
+]
+},
+{
+"q": "In It's a Wonderful Life (1946), what is the name of George Bailey's guardian angel?",
+"a": [
+"Clarence",
+"Gabriel",
+"Harry",
+"Gower"
+],
+"d": 3,
+"x": "He is described as an 'Angel Second Class' who still needs to earn his wings.",
+"tags": [
+"classics",
+"1940s"
+]
+},
+{
+"q": "Which actress screamed in the grip of King Kong in the 1933 original?",
+"a": [
+"Fay Wray",
+"Jean Harlow",
+"Mae West",
+"Carole Lombard"
+],
+"d": 3,
+"x": "Willis O'Brien's stop-motion animation brought Kong to life.",
+"tags": [
+"classics",
+"1930s"
+]
+},
+{
+"q": "Which director is credited on both Gone with the Wind and The Wizard of Oz, both released in 1939?",
+"a": [
+"Victor Fleming",
+"George Cukor",
+"King Vidor",
+"Michael Curtiz"
+],
+"d": 3,
+"x": "George Cukor was fired from Gone with the Wind early in production, and Fleming took over.",
+"tags": [
+"classics",
+"1930s"
+]
+},
+{
+"q": "Which 1954 Hitchcock film features a photographer with a broken leg spying on his neighbors?",
+"a": [
+"Rear Window",
+"Dial M for Murder",
+"Rope",
+"Strangers on a Train"
+],
+"d": 3,
+"x": "The entire story is set in one apartment and its courtyard; James Stewart and Grace Kelly star.",
+"tags": [
+"hitchcock",
+"classics"
+]
+},
+{
+"q": "Who composed the screeching all-strings score for Psycho (1960)?",
+"a": [
+"Bernard Herrmann",
+"John Williams",
+"Max Steiner",
+"Elmer Bernstein"
+],
+"d": 3,
+"x": "Herrmann also scored Citizen Kane and Vertigo.",
+"tags": [
+"composers",
+"hitchcock"
+]
+},
+{
+"q": "Which composer scored both Gone with the Wind and the original King Kong?",
+"a": [
+"Max Steiner",
+"Erich Korngold",
+"Dimitri Tiomkin",
+"Alfred Newman"
+],
+"d": 3,
+"x": "Steiner is regarded as a pioneer of the sweeping orchestral Hollywood film score.",
+"tags": [
+"composers",
+"1930s"
+]
+},
+{
+"q": "Which Italian composer wrote the main themes of The Godfather and scored many Fellini films?",
+"a": [
+"Nino Rota",
+"Ennio Morricone",
+"Riz Ortolani",
+"Piero Piccioni"
+],
+"d": 3,
+"x": "He won an Oscar for the score of The Godfather Part II.",
+"tags": [
+"composers",
+"italy"
+]
+},
+{
+"q": "Which Greek composer wrote the electronic score for Chariots of Fire?",
+"a": [
+"Vangelis",
+"Yanni",
+"Mikis Theodorakis",
+"Manos Hadjidakis"
+],
+"d": 3,
+"x": "The theme won the Oscar for Best Original Score and became a worldwide hit.",
+"tags": [
+"composers",
+"soundtracks"
+]
+},
+{
+"q": "Which composer wrote the music for all three Lord of the Rings films?",
+"a": [
+"Howard Shore",
+"Hans Zimmer",
+"James Horner",
+"Danny Elfman"
+],
+"d": 3,
+"x": "Shore won Oscars for the scores of The Fellowship of the Ring and The Return of the King.",
+"tags": [
+"composers",
+"fantasy"
+]
+},
+{
+"q": "Which composer wrote songs for The Little Mermaid, Beauty and the Beast and Aladdin?",
+"a": [
+"Alan Menken",
+"Randy Newman",
+"Elton John",
+"Phil Collins"
+],
+"d": 3,
+"x": "Lyricist Howard Ashman collaborated with him on The Little Mermaid and Beauty and the Beast.",
+"tags": [
+"composers",
+"animation"
+]
+},
+{
+"q": "Which singer-songwriter wrote 'You've Got a Friend in Me' for Toy Story?",
+"a": [
+"Randy Newman",
+"Elton John",
+"Phil Collins",
+"Harry Nilsson"
+],
+"d": 3,
+"x": "Newman went on to score many Pixar films.",
+"tags": [
+"composers",
+"pixar"
+]
+},
+{
+"q": "Which musician wrote and performed songs for Disney's Tarzan (1999)?",
+"a": [
+"Phil Collins",
+"Elton John",
+"Sting",
+"Peter Gabriel"
+],
+"d": 3,
+"x": "'You'll Be in My Heart' won the Oscar for Best Original Song.",
+"tags": [
+"composers",
+"animation"
+]
+},
+{
+"q": "Which composer wrote scores for early James Bond films and for Out of Africa?",
+"a": [
+"John Barry",
+"Monty Norman",
+"George Martin",
+"Bill Conti"
+],
+"d": 3,
+"x": "Barry also won an Oscar for the score of Dances with Wolves.",
+"tags": [
+"composers",
+"james bond"
+]
+},
+{
+"q": "Which surf guitarist's 'Misirlou' plays over the opening credits of Pulp Fiction?",
+"a": [
+"Dick Dale",
+"Chuck Berry",
+"Link Wray",
+"Duane Eddy"
+],
+"d": 3,
+"x": "Dale popularized the fast, reverb-heavy surf rock style in the early 1960s.",
+"tags": [
+"soundtracks",
+"1990s"
+]
+},
+{
+"q": "What was the first animated feature released by DreamWorks Animation?",
+"a": [
+"Antz",
+"Shrek",
+"The Prince of Egypt",
+"Chicken Run"
+],
+"d": 3,
+"x": "Antz arrived in 1998, weeks before Pixar's A Bug's Life.",
+"tags": [
+"animation",
+"dreamworks"
+]
+},
+{
+"q": "Which trio founded DreamWorks SKG in 1994?",
+"a": [
+"Spielberg, Katzenberg and Geffen",
+"Lucas, Coppola and Scorsese",
+"Zemeckis, Howard and Reitman",
+"Cameron, Bruckheimer and Bay"
+],
+"d": 3,
+"x": "SKG stands for the initials of the three founders' surnames.",
+"tags": [
+"studios",
+"animation"
+]
+},
+{
+"q": "What is the name of the hopping desk lamp featured in Pixar's logo animation?",
+"a": [
+"Luxo Jr.",
+"Tin Toy",
+"Andre",
+"Wally B."
+],
+"d": 3,
+"x": "The 1986 short Luxo Jr., directed by John Lasseter, earned an Oscar nomination.",
+"tags": [
+"animation",
+"pixar"
+]
+},
+{
+"q": "Whose novel did Hayao Miyazaki adapt as Howl's Moving Castle (2004)?",
+"a": [
+"Diana Wynne Jones",
+"Roald Dahl",
+"Neil Gaiman",
+"J. K. Rowling"
+],
+"d": 3,
+"x": "Jones was a British fantasy author who wrote many novels for young readers.",
+"tags": [
+"animation",
+"japan"
+]
+},
+{
+"q": "In which English city is Aardman Animations, creator of Wallace & Gromit, based?",
+"a": [
+"Bristol",
+"Manchester",
+"Leeds",
+"Oxford"
+],
+"d": 3,
+"x": "Aardman was founded in 1972, and Nick Park created Wallace and Gromit there.",
+"tags": [
+"animation",
+"british"
+]
+},
+{
+"q": "Which 2009 stop-motion film from Laika is based on a Neil Gaiman novella?",
+"a": [
+"Coraline",
+"ParaNorman",
+"Corpse Bride",
+"The Nightmare Before Christmas"
+],
+"d": 3,
+"x": "Henry Selick directed it, and he had also directed The Nightmare Before Christmas.",
+"tags": [
+"animation",
+"fantasy"
+]
+},
+{
+"q": "Which former Disney animator directed The Land Before Time (1988)?",
+"a": [
+"Don Bluth",
+"Ralph Bakshi",
+"John Musker",
+"Ron Clements"
+],
+"d": 3,
+"x": "Bluth also directed An American Tail (1986) and The Secret of NIMH (1982).",
+"tags": [
+"animation",
+"directors"
+]
+},
+{
+"q": "Which director made Who Framed Roger Rabbit (1988), mixing live action and cartoon characters?",
+"a": [
+"Robert Zemeckis",
+"Steven Spielberg",
+"Joe Dante",
+"Tim Burton"
+],
+"d": 3,
+"x": "Disney and Warner Bros. both loaned famous characters; Mickey Mouse and Bugs Bunny share a scene.",
+"tags": [
+"animation",
+"directors"
+]
+},
+{
+"q": "Which studio made the animated film Ice Age (2002)?",
+"a": [
+"Blue Sky Studios",
+"Illumination",
+"Pixar",
+"Sony Pictures Animation"
+],
+"d": 3,
+"x": "The acorn-chasing creature Scrat became the franchise's breakout character.",
+"tags": [
+"animation",
+"studios"
+]
+},
+{
+"q": "What is the technique called when a camera moves toward a subject while zooming out, warping the background?",
+"a": [
+"Dolly zoom",
+"Whip pan",
+"Dutch angle",
+"Rack focus"
+],
+"d": 3,
+"x": "It was made famous by Hitchcock's Vertigo and also appears in Jaws.",
+"tags": [
+"terminology",
+"hitchcock"
+]
+},
+{
+"q": "On a film set, what is a 'gaffer'?",
+"a": [
+"The chief electrician",
+"The sound mixer",
+"The head carpenter",
+"The stunt coordinator"
+],
+"d": 3,
+"x": "The gaffer works with the director of photography to plan the lighting.",
+"tags": [
+"terminology"
+]
+},
+{
+"q": "What is the 'Wilhelm scream' in films?",
+"a": [
+"A reused stock scream sound effect",
+"A 1930s horror film title",
+"A type of camera microphone",
+"A dubbing studio in Berlin"
+],
+"d": 3,
+"x": "First heard in Distant Drums (1951), it has appeared in Star Wars and the Indiana Jones films.",
+"tags": [
+"terminology",
+"sound"
+]
+},
+{
+"q": "Which French term describes the arrangement of everything visible within a film frame?",
+"a": [
+"Mise-en-scène",
+"Montage",
+"Cinematography",
+"Denouement"
+],
+"d": 3,
+"x": "It literally means 'placing on stage' and covers sets, lighting, costumes and actor positions.",
+"tags": [
+"terminology"
+]
+},
+{
+"q": "Which Soviet director made Battleship Potemkin (1925)?",
+"a": [
+"Sergei Eisenstein",
+"Dziga Vertov",
+"Andrei Tarkovsky",
+"Vsevolod Pudovkin"
+],
+"d": 3,
+"x": "Its Odessa Steps sequence is among the most imitated scenes in cinema.",
+"tags": [
+"film history",
+"directors"
+]
+},
+{
+"q": "Who directed the Italian neorealist classic Bicycle Thieves (1948)?",
+"a": [
+"Vittorio De Sica",
+"Roberto Rossellini",
+"Luchino Visconti",
+"Federico Fellini"
+],
+"d": 3,
+"x": "It was shot on location in Rome with non-professional actors.",
+"tags": [
+"italy",
+"film history"
+]
+},
+{
+"q": "Which Swedish director made The Seventh Seal (1957), in which a knight plays chess with Death?",
+"a": [
+"Ingmar Bergman",
+"Lars von Trier",
+"Bo Widerberg",
+"Lasse Hallström"
+],
+"d": 3,
+"x": "The image of the knight and Death at the chessboard became an icon of art-house cinema.",
+"tags": [
+"film history",
+"directors"
+]
+},
+{
+"q": "Which French director made Amélie (2001)?",
+"a": [
+"Jean-Pierre Jeunet",
+"Luc Besson",
+"François Ozon",
+"Michel Gondry"
+],
+"d": 3,
+"x": "Audrey Tautou stars, and the story is set in the Montmartre district of Paris.",
+"tags": [
+"france",
+"directors"
+]
+},
+{
+"q": "Which Italian director made Cinema Paradiso (1988)?",
+"a": [
+"Giuseppe Tornatore",
+"Gabriele Salvatores",
+"Roberto Benigni",
+"Bernardo Bertolucci"
+],
+"d": 3,
+"x": "It won the Oscar for Best Foreign Language Film.",
+"tags": [
+"italy",
+"awards"
+]
+},
+{
+"q": "Which Spanish director made All About My Mother (1999)?",
+"a": [
+"Pedro Almodóvar",
+"Luis Buñuel",
+"Alejandro Amenábar",
+"Carlos Saura"
+],
+"d": 3,
+"x": "The film won the Oscar for Best Foreign Language Film.",
+"tags": [
+"spain",
+"directors"
+]
+},
+{
+"q": "Who directed The Empire Strikes Back (1980)?",
+"a": [
+"Irvin Kershner",
+"George Lucas",
+"Richard Marquand",
+"Gary Kurtz"
+],
+"d": 3,
+"x": "Lucas wrote the story and produced the film but handed directing duties to Kershner.",
+"tags": [
+"star wars",
+"directors"
+]
+},
+{
+"q": "What is the name of the swamp planet where Luke Skywalker trains with Yoda?",
+"a": [
+"Dagobah",
+"Endor",
+"Kashyyyk",
+"Mustafar"
+],
+"d": 3,
+"x": "Yoda was operated and voiced by puppeteer Frank Oz.",
+"tags": [
+"star wars"
+]
+},
+{
+"q": "Han Solo claims the Millennium Falcon made the Kessel Run in less than how many parsecs?",
+"a": [
+"Twelve parsecs",
+"Six parsecs",
+"Nine parsecs",
+"Twenty parsecs"
+],
+"d": 3,
+"x": "A parsec is a unit of distance, not time, which fans have debated for decades.",
+"tags": [
+"star wars",
+"quotes"
+]
+},
+{
+"q": "What is the name of the commercial towing ship in Alien (1979)?",
+"a": [
+"Nostromo",
+"Sulaco",
+"Auriga",
+"Prometheus"
+],
+"d": 3,
+"x": "The ship's onboard computer is nicknamed 'Mother'.",
+"tags": [
+"sci-fi",
+"franchises"
+]
+},
+{
+"q": "In Terminator 2: Judgment Day (1991), what is the shape-shifting T-1000 made of?",
+"a": [
+"Liquid metal",
+"Hardened plastic",
+"Living tissue",
+"Solid titanium"
+],
+"d": 3,
+"x": "Its morphing effects, created by Industrial Light & Magic, were a landmark in computer animation.",
+"tags": [
+"sci-fi",
+"special effects"
+]
+},
+{
+"q": "What was the nickname of the mechanical shark used in Jaws?",
+"a": [
+"Bruce",
+"Larry",
+"Chuck",
+"Sammy"
+],
+"d": 3,
+"x": "It often malfunctioned in salt water, so Spielberg built suspense by showing the shark as little as possible.",
+"tags": [
+"classics",
+"special effects"
+]
+},
+{
+"q": "In A Clockwork Orange (1971), what is the invented slang language of the teenagers called?",
+"a": [
+"Nadsat",
+"Polari",
+"Cockney",
+"Newspeak"
+],
+"d": 3,
+"x": "Author Anthony Burgess created it by mixing English with Russian-influenced words.",
+"tags": [
+"kubrick",
+"terminology"
+]
+},
+{
+"q": "Apocalypse Now is loosely based on which novella by Joseph Conrad?",
+"a": [
+"Heart of Darkness",
+"Lord Jim",
+"Nostromo",
+"The Secret Agent"
+],
+"d": 3,
+"x": "Francis Ford Coppola moved the story from the Congo River to the Vietnam War.",
+"tags": [
+"war",
+"classics"
+]
+},
+{
+"q": "Which 1974 film became the first sequel to win Best Picture?",
+"a": [
+"The Godfather Part II",
+"Rocky II",
+"The French Connection II",
+"Superman II"
+],
+"d": 3,
+"x": "It also won Best Director for Francis Ford Coppola and Best Supporting Actor for Robert De Niro.",
+"tags": [
+"awards",
+"1970s"
+]
+},
+{
+"q": "Which author wrote Wiseguy, the nonfiction book adapted into Goodfellas?",
+"a": [
+"Nicholas Pileggi",
+"Mario Puzo",
+"Jimmy Breslin",
+"Gay Talese"
+],
+"d": 3,
+"x": "Pileggi co-wrote the screenplay with Martin Scorsese.",
+"tags": [
+"books",
+"1990s"
+]
+},
+{
+"q": "Which 1977 Spielberg film features a five-note musical greeting from visitors from space?",
+"a": [
+"Close Encounters of the Third Kind",
+"E.T. the Extra-Terrestrial",
+"Poltergeist",
+"The Sugarland Express"
+],
+"d": 3,
+"x": "Devils Tower in Wyoming plays a central role in the story.",
+"tags": [
+"sci-fi",
+"1970s"
+]
+},
+{
+"q": "Which 2000 Christopher Nolan thriller is told partly in reverse because of its hero's memory loss?",
+"a": [
+"Memento",
+"The Prestige",
+"Insomnia",
+"Following"
+],
+"d": 3,
+"x": "It was based on a short story by Nolan's brother Jonathan.",
+"tags": [
+"thrillers",
+"directors"
+]
+},
+{
+"q": "Despite its title, the 1996 Coen brothers film Fargo is mostly set in which US state?",
+"a": [
+"Minnesota",
+"North Dakota",
+"Wisconsin",
+"Montana"
+],
+"d": 3,
+"x": "Frances McDormand won the Best Actress Oscar for playing police chief Marge Gunderson.",
+"tags": [
+"awards",
+"1990s"
+]
+},
+{
+"q": "Which 2014 Wes Anderson comedy is set in the fictional Republic of Zubrowka?",
+"a": [
+"The Grand Budapest Hotel",
+"Moonrise Kingdom",
+"The Royal Tenenbaums",
+"Fantastic Mr. Fox"
+],
+"d": 3,
+"x": "It won four Oscars, including Best Original Score for Alexandre Desplat.",
+"tags": [
+"comedy",
+"2010s"
+]
+},
+{
+"q": "Over how many years was Richard Linklater's Boyhood (2014) filmed with the same cast?",
+"a": [
+"About 12 years",
+"About 7 years",
+"About 10 years",
+"About 15 years"
+],
+"d": 3,
+"x": "Filming took place in short sessions from 2002 to 2013, following the characters as they aged for real.",
+"tags": [
+"drama",
+"2010s"
+]
+},
+{
+"q": "Which silent film pioneer is honored in Martin Scorsese's Hugo (2011)?",
+"a": [
+"Georges Méliès",
+"Louis Lumière",
+"D. W. Griffith",
+"Buster Keaton"
+],
+"d": 3,
+"x": "His 1902 film A Trip to the Moon famously shows a rocket landing in the Moon's eye.",
+"tags": [
+"film history",
+"directors"
+]
+},
+{
+"q": "Which of the Marx Brothers never speaks in the team's films?",
+"a": [
+"Harpo",
+"Groucho",
+"Chico",
+"Zeppo"
+],
+"d": 3,
+"x": "Harpo communicated with horns and pantomime, and he also played the harp.",
+"tags": [
+"comedy",
+"classics"
+]
+},
+{
+"q": "Which 1975 British comedy parodies the legend of King Arthur, with coconuts standing in for horses?",
+"a": [
+"Monty Python and the Holy Grail",
+"Time Bandits",
+"Jabberwocky",
+"A Fish Called Wanda"
+],
+"d": 3,
+"x": "The tight budget meant the knights could not afford real horses.",
+"tags": [
+"comedy",
+"british"
+]
+},
+{
+"q": "Which 1956 John Ford Western stars John Wayne as Ethan Edwards, searching for his kidnapped niece?",
+"a": [
+"The Searchers",
+"Stagecoach",
+"Rio Bravo",
+"Shane"
+],
+"d": 3,
+"x": "It was filmed in Monument Valley on the Arizona-Utah border.",
+"tags": [
+"westerns",
+"classics"
+]
+},
+{
+"q": "Which 1939 John Ford Western made John Wayne a star?",
+"a": [
+"Stagecoach",
+"High Noon",
+"Shane",
+"Red River"
+],
+"d": 3,
+"x": "Thomas Mitchell won the Oscar for Best Supporting Actor for his role as the drunken doctor.",
+"tags": [
+"westerns",
+"1930s"
+]
+},
+{
+"q": "My Fair Lady (1964) is based on which play by George Bernard Shaw?",
+"a": [
+"Pygmalion",
+"Major Barbara",
+"Saint Joan",
+"Man and Superman"
+],
+"d": 3,
+"x": "Audrey Hepburn starred as Eliza Doolittle opposite Rex Harrison as Professor Higgins.",
+"tags": [
+"musicals",
+"1960s"
+]
+},
+{
+"q": "Which director won Oscars for directing both West Side Story and The Sound of Music?",
+"a": [
+"Robert Wise",
+"Vincente Minnelli",
+"George Cukor",
+"Stanley Donen"
+],
+"d": 3,
+"x": "Early in his career Wise also worked as an editor on Citizen Kane.",
+"tags": [
+"musicals",
+"directors"
+]
+},
+{
+"q": "Which director made Some Like It Hot, The Apartment and Sunset Boulevard?",
+"a": [
+"Billy Wilder",
+"Preston Sturges",
+"Ernst Lubitsch",
+"Howard Hawks"
+],
+"d": 3,
+"x": "The Apartment won Best Picture for 1960.",
+"tags": [
+"classics",
+"directors"
+]
+},
+{
+"q": "Which character in Sunset Boulevard says 'I am big. It's the pictures that got small'?",
+"a": [
+"Norma Desmond",
+"Blanche DuBois",
+"Margo Channing",
+"Scarlett O'Hara"
+],
+"d": 3,
+"x": "Gloria Swanson played the faded silent-film star in the 1950 film.",
+"tags": [
+"quotes",
+"classics"
+]
+},
+{
+"q": "Which 1954 Marlon Brando film features the line 'I coulda been a contender'?",
+"a": [
+"On the Waterfront",
+"A Streetcar Named Desire",
+"Rebel Without a Cause",
+"East of Eden"
+],
+"d": 3,
+"x": "It won eight Oscars, including Best Picture and Best Actor for Brando.",
+"tags": [
+"quotes",
+"classics"
+]
+},
+{
+"q": "Which actor played the Scarecrow in the 1939 film The Wizard of Oz?",
+"a": [
+"Ray Bolger",
+"Jack Haley",
+"Bert Lahr",
+"Frank Morgan"
+],
+"d": 3,
+"x": "Buddy Ebsen was first cast as the Tin Man but had to leave after a reaction to the aluminum makeup.",
+"tags": [
+"classics",
+"1930s"
+]
+},
+{
+"q": "What breed of dog played Dorothy's Toto in the 1939 film The Wizard of Oz?",
+"a": [
+"Cairn terrier",
+"Scottish terrier",
+"West Highland terrier",
+"Pomeranian"
+],
+"d": 3,
+"x": "The dog was a female named Terry, who later took the name Toto.",
+"tags": [
+"classics",
+"1930s"
+]
+},
+{
+"q": "Which actor played Police Chief Martin Brody in Jaws?",
+"a": [
+"Roy Scheider",
+"Richard Dreyfuss",
+"Robert Shaw",
+"Robert Duvall"
+],
+"d": 3,
+"x": "Scheider is credited with improvising the line 'You're gonna need a bigger boat.'",
+"tags": [
+"classics",
+"1970s"
+]
+}
+]

@@ -1,0 +1,1421 @@
+[
+{
+"q": "How many symphonies did Beethoven complete?",
+"a": [
+"Nine",
+"Seven",
+"Ten",
+"Twelve"
+],
+"d": 2,
+"x": "The Ninth premiered in Vienna in 1824, when he was almost completely deaf.",
+"tags": [
+"classical"
+]
+},
+{
+"q": "Which French composer wrote the orchestral piece Boléro?",
+"a": [
+"Maurice Ravel",
+"Claude Debussy",
+"Erik Satie",
+"Camille Saint-Saens"
+],
+"d": 2,
+"x": "Premiered in 1928 as a ballet, it repeats a single melody over a steady rhythm while the orchestration grows.",
+"tags": [
+"classical"
+]
+},
+{
+"q": "Which composer wrote the ballet The Rite of Spring?",
+"a": [
+"Igor Stravinsky",
+"Sergei Prokofiev",
+"Dmitri Shostakovich",
+"Sergei Rachmaninoff"
+],
+"d": 2,
+"x": "Its 1913 Paris premiere is remembered for an audience reaction so loud that the dancers struggled to hear the music.",
+"tags": [
+"classical",
+"ballet"
+]
+},
+{
+"q": "How many Brandenburg Concertos did J. S. Bach compose?",
+"a": [
+"Six",
+"Four",
+"Eight",
+"Twelve"
+],
+"d": 2,
+"x": "He sent them in 1721 to the Margrave of Brandenburg, as a bid for a court position.",
+"tags": [
+"classical"
+]
+},
+{
+"q": "Which English composer wrote the orchestral suite The Planets?",
+"a": [
+"Gustav Holst",
+"Edward Elgar",
+"Ralph Vaughan Williams",
+"Benjamin Britten"
+],
+"d": 2,
+"x": "It has seven movements and none for Earth; Pluto had not yet been discovered when he finished it in 1916.",
+"tags": [
+"classical"
+]
+},
+{
+"q": "Who composed Rhapsody in Blue, premiered in New York in 1924?",
+"a": [
+"George Gershwin",
+"Aaron Copland",
+"Leonard Bernstein",
+"Duke Ellington"
+],
+"d": 2,
+"x": "The piece opens with a famous rising clarinet glissando, and the composer played the piano part at the premiere.",
+"tags": [
+"classical",
+"jazz"
+]
+},
+{
+"q": "Which Verdi opera contains the aria \"La donna e mobile\"?",
+"a": [
+"Rigoletto",
+"La traviata",
+"Aida",
+"Otello"
+],
+"d": 2,
+"x": "The tenor sings it as the Duke of Mantua; the opera premiered in Venice in 1851.",
+"tags": [
+"opera"
+]
+},
+{
+"q": "Which Puccini opera contains the aria \"Nessun dorma\"?",
+"a": [
+"Turandot",
+"Tosca",
+"La Boheme",
+"Madama Butterfly"
+],
+"d": 2,
+"x": "Puccini died before finishing it in 1924, and Franco Alfano completed the final scenes.",
+"tags": [
+"opera"
+]
+},
+{
+"q": "In which Spanish city is Bizet's opera Carmen set?",
+"a": [
+"Seville",
+"Madrid",
+"Barcelona",
+"Granada"
+],
+"d": 2,
+"x": "Carmen premiered in Paris in 1875 to a mixed reception, and Bizet died a few months later.",
+"tags": [
+"opera"
+]
+},
+{
+"q": "Which Italian composer wrote the comic opera The Barber of Seville?",
+"a": [
+"Gioachino Rossini",
+"Gaetano Donizetti",
+"Vincenzo Bellini",
+"Giuseppe Verdi"
+],
+"d": 2,
+"x": "It premiered in Rome in 1816, and its lively overture is one of the best-known in opera.",
+"tags": [
+"opera"
+]
+},
+{
+"q": "Which composer wrote the \"New World\" Symphony?",
+"a": [
+"Antonin Dvorak",
+"Bedrich Smetana",
+"Johannes Brahms",
+"Leos Janacek"
+],
+"d": 2,
+"x": "He wrote it in 1893 while living in the United States, drawing on folk-like melodies.",
+"tags": [
+"classical"
+]
+},
+{
+"q": "In which country was the composer Frederic Chopin born?",
+"a": [
+"Poland",
+"France",
+"Hungary",
+"Austria"
+],
+"d": 2,
+"x": "He left Warsaw as a young man and spent most of his life in Paris.",
+"tags": [
+"classical"
+]
+},
+{
+"q": "Which English composer wrote the Enigma Variations?",
+"a": [
+"Edward Elgar",
+"Gustav Holst",
+"Henry Purcell",
+"William Walton"
+],
+"d": 2,
+"x": "The 14 variations from 1899 each portray one of the composer's friends.",
+"tags": [
+"classical"
+]
+},
+{
+"q": "Which orchestral instrument uses a double reed?",
+"a": [
+"Oboe",
+"Clarinet",
+"Flute",
+"Saxophone"
+],
+"d": 2,
+"x": "The oboe usually sounds the note A so that the whole orchestra can tune up.",
+"tags": [
+"instruments"
+]
+},
+{
+"q": "Which note does an orchestra usually tune to before a concert?",
+"a": [
+"A",
+"C",
+"E",
+"G"
+],
+"d": 2,
+"x": "The oboe plays the note, which is typically set at 440 vibrations per second.",
+"tags": [
+"instruments",
+"theory"
+]
+},
+{
+"q": "How many lines does a standard musical staff have?",
+"a": [
+"Five",
+"Four",
+"Six",
+"Eight"
+],
+"d": 2,
+"x": "Notes sit on the lines and in the spaces between them, with extra short lines added for very high or low notes.",
+"tags": [
+"theory"
+]
+},
+{
+"q": "Which major key has no sharps or flats in its key signature?",
+"a": [
+"C major",
+"G major",
+"F major",
+"A major"
+],
+"d": 2,
+"x": "On the piano it uses only the white keys, and its relative minor is A minor.",
+"tags": [
+"theory"
+]
+},
+{
+"q": "How many semitones are there in an octave?",
+"a": [
+"Twelve",
+"Eight",
+"Ten",
+"Seven"
+],
+"d": 2,
+"x": "Western music splits the octave into twelve equal steps called semitones or half steps.",
+"tags": [
+"theory"
+]
+},
+{
+"q": "Which dance is traditionally written in 3/4 time?",
+"a": [
+"Waltz",
+"March",
+"Polka",
+"Tango"
+],
+"d": 2,
+"x": "The strong-weak-weak pattern gives the waltz its gliding, swaying feel.",
+"tags": [
+"theory"
+]
+},
+{
+"q": "What does the term \"crescendo\" tell musicians to do?",
+"a": [
+"Gradually get louder",
+"Gradually slow down",
+"Suddenly play softly",
+"Play each note short"
+],
+"d": 2,
+"x": "The Italian word means \"growing\", and the opposite instruction is diminuendo.",
+"tags": [
+"terms"
+]
+},
+{
+"q": "Which pace does the Italian tempo marking \"andante\" describe?",
+"a": [
+"A moderate walking pace",
+"A very fast pace",
+"A very slow pace",
+"A lively running pace"
+],
+"d": 2,
+"x": "It comes from the Italian word for \"walking\".",
+"tags": [
+"terms"
+]
+},
+{
+"q": "What does the term \"staccato\" instruct a player to do?",
+"a": [
+"Play notes short and detached",
+"Play notes long and smooth",
+"Gradually get quieter",
+"Repeat the section"
+],
+"d": 2,
+"x": "It is marked with a dot above or below the note head, and its opposite is legato.",
+"tags": [
+"terms"
+]
+},
+{
+"q": "What does the term \"ritardando\" mean?",
+"a": [
+"Gradually slowing down",
+"Gradually speeding up",
+"Getting louder",
+"Playing smoothly"
+],
+"d": 2,
+"x": "It is often abbreviated rit. and is commonly found near the end of a piece.",
+"tags": [
+"terms"
+]
+},
+{
+"q": "Which US region is considered the birthplace of the blues?",
+"a": [
+"The Mississippi Delta",
+"The Appalachians",
+"The Texas Panhandle",
+"The New England coast"
+],
+"d": 2,
+"x": "The style grew from African American work songs and spirituals in the late 1800s and early 1900s.",
+"tags": [
+"genres"
+]
+},
+{
+"q": "In which country did bossa nova develop in the late 1950s?",
+"a": [
+"Brazil",
+"Portugal",
+"Cuba",
+"Argentina"
+],
+"d": 2,
+"x": "Joao Gilberto and Antonio Carlos Jobim blended samba with cool jazz harmony.",
+"tags": [
+"genres"
+]
+},
+{
+"q": "Which Caribbean island gave birth to ska in the late 1950s?",
+"a": [
+"Jamaica",
+"Cuba",
+"Trinidad",
+"Barbados"
+],
+"d": 2,
+"x": "Ska came first, then the slower rocksteady and reggae.",
+"tags": [
+"genres"
+]
+},
+{
+"q": "Which English city is widely seen as the birthplace of heavy metal?",
+"a": [
+"Birmingham",
+"Manchester",
+"Sheffield",
+"Liverpool"
+],
+"d": 2,
+"x": "Black Sabbath formed there in 1968, and their 1970 debut album set the template for heavy metal.",
+"tags": [
+"genres",
+"rock"
+]
+},
+{
+"q": "Which British punk band released \"Anarchy in the U.K.\" in 1976?",
+"a": [
+"Sex Pistols",
+"The Clash",
+"The Damned",
+"The Jam"
+],
+"d": 2,
+"x": "It was their debut single, and their only studio album followed in 1977.",
+"tags": [
+"punk"
+]
+},
+{
+"q": "Which US city is most closely associated with the grunge scene?",
+"a": [
+"Seattle",
+"Portland",
+"Los Angeles",
+"Denver"
+],
+"d": 2,
+"x": "The local label Sub Pop helped launch bands like Nirvana and Soundgarden.",
+"tags": [
+"genres",
+"rock"
+]
+},
+{
+"q": "Which saxophonist, nicknamed \"Bird\", was a founder of bebop?",
+"a": [
+"Charlie Parker",
+"John Coltrane",
+"Sonny Rollins",
+"Stan Getz"
+],
+"d": 2,
+"x": "He developed the fast, complex style in the 1940s alongside trumpeter Dizzy Gillespie.",
+"tags": [
+"jazz"
+]
+},
+{
+"q": "Which jazz trumpeter led the 1959 album Kind of Blue?",
+"a": [
+"Miles Davis",
+"Louis Armstrong",
+"Chet Baker",
+"Dizzy Gillespie"
+],
+"d": 2,
+"x": "It is a landmark of modal jazz, built on scales rather than fast chord changes.",
+"tags": [
+"jazz",
+"albums"
+]
+},
+{
+"q": "Dave Brubeck's \"Take Five\" is famous for using which time signature?",
+"a": [
+"5/4",
+"7/8",
+"6/8",
+"3/4"
+],
+"d": 2,
+"x": "The tune was composed by his saxophonist Paul Desmond and appeared on the 1959 album Time Out.",
+"tags": [
+"jazz",
+"theory"
+]
+},
+{
+"q": "In which year did The Rolling Stones release \"(I Can't Get No) Satisfaction\"?",
+"a": [
+"1965",
+"1963",
+"1967",
+"1969"
+],
+"d": 2,
+"x": "Keith Richards said he came up with the fuzz-guitar riff in his sleep and recorded it on a cassette.",
+"tags": [
+"rock"
+]
+},
+{
+"q": "Which city is home to Elvis Presley's mansion Graceland?",
+"a": [
+"Memphis",
+"Nashville",
+"Tupelo",
+"New Orleans"
+],
+"d": 2,
+"x": "The house opened to the public in 1982 and is one of the most visited homes in the United States.",
+"tags": [
+"rock",
+"venues"
+]
+},
+{
+"q": "Which rock and roll pioneer wrote and recorded \"Johnny B. Goode\"?",
+"a": [
+"Chuck Berry",
+"Little Richard",
+"Bo Diddley",
+"Fats Domino"
+],
+"d": 2,
+"x": "The 1958 song's guitar intro inspired countless players and was sent into space on the Voyager Golden Record.",
+"tags": [
+"rock"
+]
+},
+{
+"q": "Who founded Motown Records in 1959?",
+"a": [
+"Berry Gordy",
+"Quincy Jones",
+"Phil Spector",
+"Clive Davis"
+],
+"d": 2,
+"x": "He started the label with an $800 family loan and went on to sign Smokey Robinson and the Supremes.",
+"tags": [
+"soul"
+]
+},
+{
+"q": "Which soul singer was nicknamed the \"Godfather of Soul\"?",
+"a": [
+"James Brown",
+"Otis Redding",
+"Sam Cooke",
+"Wilson Pickett"
+],
+"d": 2,
+"x": "Hits like \"I Got You (I Feel Good)\" and his tight, rhythmic style helped pave the way for funk.",
+"tags": [
+"soul"
+]
+},
+{
+"q": "Which band released the 1977 album Rumours?",
+"a": [
+"Fleetwood Mac",
+"Steely Dan",
+"The Doobie Brothers",
+"Boston"
+],
+"d": 2,
+"x": "The album features \"Go Your Own Way\" and \"Dreams\" and won the Grammy for Album of the Year.",
+"tags": [
+"albums",
+"rock"
+]
+},
+{
+"q": "Which British band released the 1997 album OK Computer?",
+"a": [
+"Radiohead",
+"Blur",
+"Coldplay",
+"Muse"
+],
+"d": 2,
+"x": "The album includes the six-and-a-half-minute \"Paranoid Android\".",
+"tags": [
+"albums",
+"rock"
+]
+},
+{
+"q": "In which year was the Live Aid benefit concert held in London and Philadelphia?",
+"a": [
+"1985",
+"1982",
+"1988",
+"1991"
+],
+"d": 2,
+"x": "It was organized by Bob Geldof and Midge Ure and shown on TV around the world.",
+"tags": [
+"festivals"
+]
+},
+{
+"q": "In which US state is the Coachella music festival held?",
+"a": [
+"California",
+"Arizona",
+"Nevada",
+"Texas"
+],
+"d": 2,
+"x": "It takes place in the Coachella Valley and held its first edition in 1999.",
+"tags": [
+"festivals"
+]
+},
+{
+"q": "In which country is the Tomorrowland electronic dance festival held?",
+"a": [
+"Belgium",
+"Netherlands",
+"Germany",
+"Spain"
+],
+"d": 2,
+"x": "It takes place in the town of Boom and has run since 2005.",
+"tags": [
+"festivals"
+]
+},
+{
+"q": "In which country is the Salzburg Festival, founded in 1920, held?",
+"a": [
+"Austria",
+"Germany",
+"Switzerland",
+"Italy"
+],
+"d": 2,
+"x": "Its founders included the director Max Reinhardt and the composer Richard Strauss.",
+"tags": [
+"festivals"
+]
+},
+{
+"q": "Which Vienna hall hosts the famous New Year's Concert of the Vienna Philharmonic?",
+"a": [
+"The Musikverein",
+"The Konzerthaus",
+"The Staatsoper",
+"The Volksoper"
+],
+"d": 2,
+"x": "The concert takes place in the hall's gilded Golden Hall and features waltzes and polkas by the Strauss family.",
+"tags": [
+"venues",
+"classical"
+]
+},
+{
+"q": "Whose operas are performed at the Bayreuth Festival in Germany?",
+"a": [
+"Richard Wagner",
+"Giuseppe Verdi",
+"Richard Strauss",
+"Giacomo Puccini"
+],
+"d": 2,
+"x": "The composer founded the festival in 1876 and designed its theater, the Festspielhaus, himself.",
+"tags": [
+"festivals",
+"opera"
+]
+},
+{
+"q": "In which city is the Bolshoi Theatre, famous for ballet and opera?",
+"a": [
+"Moscow",
+"St. Petersburg",
+"Kyiv",
+"Warsaw"
+],
+"d": 2,
+"x": "Bolshoi means \"big\" in Russian, and the company dates back to 1776.",
+"tags": [
+"venues",
+"ballet"
+]
+},
+{
+"q": "Which songwriting duo created the musical Oklahoma! in 1943?",
+"a": [
+"Rodgers and Hammerstein",
+"Lerner and Loewe",
+"Gilbert and Sullivan",
+"Kander and Ebb"
+],
+"d": 2,
+"x": "It was their first collaboration and changed musical theater by weaving songs into the story.",
+"tags": [
+"musicals"
+]
+},
+{
+"q": "Which musical features the song \"Tradition\"?",
+"a": [
+"Fiddler on the Roof",
+"Cabaret",
+"Hello, Dolly!",
+"Guys and Dolls"
+],
+"d": 2,
+"x": "The 1964 show is set in the Russian village of Anatevka in 1905.",
+"tags": [
+"musicals"
+]
+},
+{
+"q": "In which country is the musical The Sound of Music set?",
+"a": [
+"Austria",
+"Switzerland",
+"Germany",
+"Hungary"
+],
+"d": 2,
+"x": "It is based on the von Trapp family singers and is set in and around Salzburg in the 1930s.",
+"tags": [
+"musicals"
+]
+},
+{
+"q": "In the musical Wicked, what is the first name of the green-skinned witch?",
+"a": [
+"Elphaba",
+"Glinda",
+"Nessarose",
+"Fiyero"
+],
+"d": 2,
+"x": "The name comes from the initials L-F-B of Oz author L. Frank Baum, and the show opened on Broadway in 2003.",
+"tags": [
+"musicals"
+]
+},
+{
+"q": "Which musical features the song \"Don't Cry for Me Argentina\"?",
+"a": [
+"Evita",
+"Cats",
+"Chess",
+"Aspects of Love"
+],
+"d": 2,
+"x": "Andrew Lloyd Webber and Tim Rice first released it as a concept album in 1976 before the stage show.",
+"tags": [
+"musicals"
+]
+},
+{
+"q": "Which woodwind instrument plays the highest notes in the orchestra?",
+"a": [
+"Piccolo",
+"Flute",
+"Oboe",
+"Clarinet"
+],
+"d": 2,
+"x": "The name is Italian for \"small\", and it sounds an octave higher than a regular flute.",
+"tags": [
+"instruments"
+]
+},
+{
+"q": "Which country is the home of the sitar?",
+"a": [
+"India",
+"Iran",
+"Turkey",
+"Indonesia"
+],
+"d": 2,
+"x": "Ravi Shankar introduced it to Western audiences, and George Harrison played one on \"Norwegian Wood\".",
+"tags": [
+"instruments"
+]
+},
+{
+"q": "In which country did the didgeridoo originate?",
+"a": [
+"Australia",
+"New Zealand",
+"Fiji",
+"Papua New Guinea"
+],
+"d": 2,
+"x": "Aboriginal Australians in the north of the country have played the long wooden tube for many centuries.",
+"tags": [
+"instruments"
+]
+},
+{
+"q": "In which country did the balalaika originate?",
+"a": [
+"Russia",
+"Poland",
+"Bulgaria",
+"Hungary"
+],
+"d": 2,
+"x": "The triangular-bodied folk instrument has three strings and is often played in ensembles.",
+"tags": [
+"instruments"
+]
+},
+{
+"q": "Which early electronic instrument is played without being touched?",
+"a": [
+"Theremin",
+"Mellotron",
+"Clavinet",
+"Ondes Martenot"
+],
+"d": 2,
+"x": "Russian inventor Leon Theremin created it around 1920, and the player's hands control pitch and volume in the air.",
+"tags": [
+"instruments"
+]
+},
+{
+"q": "Which Caribbean nation invented the steelpan, made from oil drums?",
+"a": [
+"Trinidad and Tobago",
+"Jamaica",
+"Cuba",
+"Barbados"
+],
+"d": 2,
+"x": "The instrument was developed in the 1930s and 1940s, as players discovered that dented oil drums could produce different pitches.",
+"tags": [
+"instruments"
+]
+},
+{
+"q": "What frequency is standard concert pitch for the note A?",
+"a": [
+"440 Hz",
+"220 Hz",
+"400 Hz",
+"528 Hz"
+],
+"d": 2,
+"x": "The 440 Hz standard was adopted internationally in 1939 so orchestras everywhere could tune alike.",
+"tags": [
+"theory"
+]
+},
+{
+"q": "Which key is the relative of C major, starting on its sixth note?",
+"a": [
+"A minor",
+"E minor",
+"D minor",
+"G minor"
+],
+"d": 2,
+"x": "A relative key uses the same key signature, so C major and this key both use only the white keys on a piano.",
+"tags": [
+"theory"
+]
+},
+{
+"q": "How many flats are in the key signature of F major?",
+"a": [
+"One",
+"Two",
+"Three",
+"None"
+],
+"d": 2,
+"x": "The single flat is B flat, which is why F major sounds slightly warmer than C major.",
+"tags": [
+"theory"
+]
+},
+{
+"q": "How many different notes does a triad contain?",
+"a": [
+"Three",
+"Two",
+"Four",
+"Five"
+],
+"d": 2,
+"x": "Triads are built by stacking thirds and form the basis of most Western harmony.",
+"tags": [
+"theory"
+]
+},
+{
+"q": "How many notes are in a pentatonic scale?",
+"a": [
+"Five",
+"Four",
+"Six",
+"Eight"
+],
+"d": 2,
+"x": "Pentatonic scales appear in folk music from Scotland to China, and rock guitarists use them for solos.",
+"tags": [
+"theory"
+]
+},
+{
+"q": "In which year did ABBA win the Eurovision Song Contest with \"Waterloo\"?",
+"a": [
+"1974",
+"1972",
+"1976",
+"1978"
+],
+"d": 2,
+"x": "The win launched the Swedish quartet to international fame.",
+"tags": [
+"pop",
+"festivals"
+]
+},
+{
+"q": "Who composed the music for the original Star Wars film in 1977?",
+"a": [
+"John Williams",
+"Hans Zimmer",
+"Jerry Goldsmith",
+"James Horner"
+],
+"d": 2,
+"x": "He recorded the score with the London Symphony Orchestra and won an Oscar for it.",
+"tags": [
+"film"
+]
+},
+{
+"q": "Which Italian composer wrote the music for The Good, the Bad and the Ugly?",
+"a": [
+"Ennio Morricone",
+"Nino Rota",
+"Andrea Bocelli",
+"Luciano Berio"
+],
+"d": 2,
+"x": "His whistling, electric guitar and twangy theme became the sound of the spaghetti western.",
+"tags": [
+"film"
+]
+},
+{
+"q": "Which composer wrote the score for the 1994 Disney film The Lion King?",
+"a": [
+"Hans Zimmer",
+"Alan Menken",
+"John Williams",
+"Randy Newman"
+],
+"d": 2,
+"x": "He won an Academy Award for the score; Elton John and Tim Rice wrote the songs.",
+"tags": [
+"film"
+]
+},
+{
+"q": "Which rap group teamed up with Aerosmith on a 1986 version of \"Walk This Way\"?",
+"a": [
+"Run-DMC",
+"Public Enemy",
+"Beastie Boys",
+"Salt-N-Pepa"
+],
+"d": 2,
+"x": "The collaboration helped bring rap to a wide rock audience.",
+"tags": [
+"hiphop"
+]
+},
+{
+"q": "Which singer released the 1971 album What's Going On?",
+"a": [
+"Marvin Gaye",
+"Stevie Wonder",
+"Al Green",
+"Smokey Robinson"
+],
+"d": 2,
+"x": "It was the first Motown album he produced himself, with a flowing suite-like structure.",
+"tags": [
+"soul",
+"albums"
+]
+},
+{
+"q": "Which band released the 1966 album Pet Sounds?",
+"a": [
+"The Beach Boys",
+"The Byrds",
+"The Monkees",
+"The Turtles"
+],
+"d": 2,
+"x": "Brian Wilson's ambitious production inspired The Beatles to make Sgt. Pepper.",
+"tags": [
+"albums",
+"rock"
+]
+},
+{
+"q": "Which band recorded \"Proud Mary\" in 1969?",
+"a": [
+"Creedence Clearwater Revival",
+"The Doors",
+"The Band",
+"Lynyrd Skynyrd"
+],
+"d": 2,
+"x": "The California band wrote about riverboats, though none of them had been on the Mississippi at that time.",
+"tags": [
+"rock"
+]
+},
+{
+"q": "Which trio wrote most of the Saturday Night Fever soundtrack songs in 1977?",
+"a": [
+"The Bee Gees",
+"The Jackson 5",
+"The Four Tops",
+"The Osmonds"
+],
+"d": 2,
+"x": "The brothers Barry, Robin and Maurice Gibb gave the disco era hits like \"Stayin' Alive\".",
+"tags": [
+"disco"
+]
+},
+{
+"q": "At which prison did Johnny Cash record a famous live album in 1968?",
+"a": [
+"Folsom Prison",
+"Alcatraz",
+"Sing Sing",
+"Rikers Island"
+],
+"d": 2,
+"x": "At Folsom Prison revived his career and was followed by a second prison album, At San Quentin.",
+"tags": [
+"country",
+"albums"
+]
+},
+{
+"q": "At which 1965 US festival did Bob Dylan play with an electric band for the first time in public?",
+"a": [
+"Newport Folk Festival",
+"Monterey Pop",
+"Woodstock",
+"Newport Jazz Festival"
+],
+"d": 2,
+"x": "Some of the folk audience booed, and the moment is often seen as a turning point in popular music.",
+"tags": [
+"festivals",
+"folk"
+]
+},
+{
+"q": "Jimi Hendrix burned his guitar on stage at which 1967 festival?",
+"a": [
+"Monterey Pop",
+"Woodstock",
+"Isle of Wight",
+"Newport Jazz"
+],
+"d": 2,
+"x": "The Monterey International Pop Festival also featured Janis Joplin and Otis Redding.",
+"tags": [
+"festivals",
+"rock"
+]
+},
+{
+"q": "In which country was the tenor Luciano Pavarotti born?",
+"a": [
+"Italy",
+"Spain",
+"France",
+"Austria"
+],
+"d": 2,
+"x": "He was a member of The Three Tenors, whose 1990 Rome concert became a huge hit.",
+"tags": [
+"opera"
+]
+},
+{
+"q": "Which Hungarian composer wrote the Hungarian Rhapsodies for piano?",
+"a": [
+"Franz Liszt",
+"Bela Bartok",
+"Zoltan Kodaly",
+"Franz Lehar"
+],
+"d": 2,
+"x": "He wrote 19 of them, inspired by Hungarian folk and Romani tunes.",
+"tags": [
+"classical"
+]
+},
+{
+"q": "Which composer wrote Carmina Burana, which opens with \"O Fortuna\"?",
+"a": [
+"Carl Orff",
+"Richard Strauss",
+"Paul Hindemith",
+"Kurt Weill"
+],
+"d": 2,
+"x": "The cantata from 1936 sets medieval poems found in a Bavarian monastery.",
+"tags": [
+"classical"
+]
+},
+{
+"q": "Which Russian composer wrote Peter and the Wolf?",
+"a": [
+"Sergei Prokofiev",
+"Igor Stravinsky",
+"Dmitri Shostakovich",
+"Modest Mussorgsky"
+],
+"d": 2,
+"x": "Written in 1936 to teach children about the orchestra, it gives each character its own instrument.",
+"tags": [
+"classical"
+]
+},
+{
+"q": "Which French composer wrote the piano piece \"Clair de Lune\"?",
+"a": [
+"Claude Debussy",
+"Maurice Ravel",
+"Gabriel Faure",
+"Georges Bizet"
+],
+"d": 2,
+"x": "It is the third movement of his Suite bergamasque and takes its name from a poem by Paul Verlaine.",
+"tags": [
+"classical"
+]
+},
+{
+"q": "Which composer wrote the famous Canon in D?",
+"a": [
+"Johann Pachelbel",
+"Johann Sebastian Bach",
+"George Frideric Handel",
+"Georg Philipp Telemann"
+],
+"d": 2,
+"x": "The German Baroque composer wrote it for three violins and continuo, and it is now a wedding favorite.",
+"tags": [
+"classical"
+]
+},
+{
+"q": "Which singer created the stage persona Ziggy Stardust?",
+"a": [
+"David Bowie",
+"Marc Bolan",
+"Lou Reed",
+"Alice Cooper"
+],
+"d": 2,
+"x": "He introduced the alien rock-star character on a 1972 concept album.",
+"tags": [
+"rock"
+]
+},
+{
+"q": "The 1997 album Buena Vista Social Club celebrated the music of which country?",
+"a": [
+"Cuba",
+"Mexico",
+"Brazil",
+"Puerto Rico"
+],
+"d": 2,
+"x": "Guitarist Ry Cooder recorded veteran musicians in Havana, and the project led to a hit documentary.",
+"tags": [
+"albums",
+"genres"
+]
+},
+{
+"q": "Which jazz bandleader and composer wrote \"Mood Indigo\" and led the orchestra at the Cotton Club?",
+"a": [
+"Duke Ellington",
+"Count Basie",
+"Benny Goodman",
+"Glenn Miller"
+],
+"d": 2,
+"x": "His orchestra broadcast from Harlem's Cotton Club in the late 1920s and made him a national star.",
+"tags": [
+"jazz"
+]
+},
+{
+"q": "In which year did the music channel MTV launch?",
+"a": [
+"1981",
+"1979",
+"1984",
+"1986"
+],
+"d": 2,
+"x": "The first video it played was \"Video Killed the Radio Star\" by The Buggles.",
+"tags": [
+"pop"
+]
+},
+{
+"q": "Which company launched the Walkman portable cassette player in 1979?",
+"a": [
+"Sony",
+"Panasonic",
+"Philips",
+"Toshiba"
+],
+"d": 2,
+"x": "It let people take their music anywhere and changed how people listened to music.",
+"tags": [
+"pop"
+]
+},
+{
+"q": "Which company introduced the Stratocaster electric guitar in 1954?",
+"a": [
+"Fender",
+"Gibson",
+"Martin",
+"Ibanez"
+],
+"d": 2,
+"x": "Founder Leo Fender designed the guitar with a contoured body and three pickups.",
+"tags": [
+"instruments"
+]
+},
+{
+"q": "Who invented the phonograph in 1877?",
+"a": [
+"Thomas Edison",
+"Alexander Graham Bell",
+"Emile Berliner",
+"Guglielmo Marconi"
+],
+"d": 2,
+"x": "His first recording was said to be a spoken nursery rhyme on tinfoil.",
+"tags": [
+"pop"
+]
+},
+{
+"q": "Which U2 album from 1987 includes \"With or Without You\"?",
+"a": [
+"The Joshua Tree",
+"Achtung Baby",
+"War",
+"Boy"
+],
+"d": 2,
+"x": "The album was inspired by the band's fascination with the American landscape.",
+"tags": [
+"albums",
+"rock"
+]
+},
+{
+"q": "Which band's drummer was Charlie Watts?",
+"a": [
+"The Rolling Stones",
+"The Who",
+"The Kinks",
+"The Animals"
+],
+"d": 2,
+"x": "He joined the band in 1963 and was known as a quiet jazz fan.",
+"tags": [
+"rock"
+]
+},
+{
+"q": "Which instrument did Earl Scruggs make famous in bluegrass with a three-finger picking style?",
+"a": [
+"Banjo",
+"Mandolin",
+"Fiddle",
+"Dobro"
+],
+"d": 2,
+"x": "His style was used in the theme to the 1960s TV show The Beverly Hillbillies.",
+"tags": [
+"country",
+"instruments"
+]
+},
+{
+"q": "Which New York band was fronted by singer Debbie Harry?",
+"a": [
+"Blondie",
+"Talking Heads",
+"Ramones",
+"Television"
+],
+"d": 2,
+"x": "The group emerged from the CBGB scene and had a hit with \"Heart of Glass\" in 1979.",
+"tags": [
+"rock"
+]
+},
+{
+"q": "Which band recorded \"Sweet Child o' Mine\" in 1987?",
+"a": [
+"Guns N' Roses",
+"Motley Crue",
+"Poison",
+"Def Leppard"
+],
+"d": 2,
+"x": "The song began as a guitar warm-up exercise by Slash.",
+"tags": [
+"rock"
+]
+},
+{
+"q": "Which band's 1981 hit was \"Don't Stop Believin'\"?",
+"a": [
+"Journey",
+"Foreigner",
+"Toto",
+"Styx"
+],
+"d": 2,
+"x": "The song saves its main chorus until near the end, which is unusual for a pop song.",
+"tags": [
+"rock"
+]
+},
+{
+"q": "Which Baroque composer wrote the Water Music?",
+"a": [
+"George Frideric Handel",
+"Johann Sebastian Bach",
+"Henry Purcell",
+"Georg Philipp Telemann"
+],
+"d": 2,
+"x": "It is said to have been first performed in 1717 on the River Thames for King George I.",
+"tags": [
+"classical"
+]
+},
+{
+"q": "Which country singer wrote \"Your Cheatin' Heart\" and \"I'm So Lonesome I Could Cry\"?",
+"a": [
+"Hank Williams",
+"Johnny Cash",
+"Merle Haggard",
+"George Jones"
+],
+"d": 2,
+"x": "He became a country music legend by the age of 29.",
+"tags": [
+"country"
+]
+},
+{
+"q": "Which Italian virtuoso was famous for his dazzling violin technique in the early 1800s?",
+"a": [
+"Niccolo Paganini",
+"Antonio Vivaldi",
+"Giuseppe Tartini",
+"Arcangelo Corelli"
+],
+"d": 2,
+"x": "His Caprices inspired later composers including Liszt and Rachmaninoff.",
+"tags": [
+"classical"
+]
+},
+{
+"q": "Which Beatle wrote \"Here Comes the Sun\"?",
+"a": [
+"George Harrison",
+"John Lennon",
+"Paul McCartney",
+"Ringo Starr"
+],
+"d": 2,
+"x": "It appeared on the 1969 album Abbey Road.",
+"tags": [
+"rock"
+]
+},
+{
+"q": "Which musical is set at the Kit Kat Club in Berlin?",
+"a": [
+"Cabaret",
+"Chicago",
+"Hair",
+"Rent"
+],
+"d": 2,
+"x": "The 1966 show, with songs by Kander and Ebb, takes place in the early 1930s.",
+"tags": [
+"musicals"
+]
+},
+{
+"q": "What is a short, recurring musical idea or theme in a piece called?",
+"a": [
+"A motif",
+"A coda",
+"A cadenza",
+"An interlude"
+],
+"d": 2,
+"x": "Wagner used the idea on a large scale with the leitmotif, a motif linked to a character or object.",
+"tags": [
+"theory"
+]
+},
+{
+"q": "Which brass instrument is played with a slide?",
+"a": [
+"Trombone",
+"Trumpet",
+"Tuba",
+"French horn"
+],
+"d": 2,
+"x": "A trombone changes pitch by moving its U-shaped slide in and out."
+}
+]

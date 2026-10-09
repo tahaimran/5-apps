@@ -1,0 +1,1439 @@
+[
+{
+"q": "How many players does one soccer team have on the field, including the goalkeeper?",
+"a": [
+"11",
+"10",
+"12",
+"9"
+],
+"d": 1,
+"x": "Each side fields ten outfield players and one goalkeeper. A team must keep at least seven players on the field to continue a match.",
+"tags": [
+"soccer",
+"rules"
+]
+},
+{
+"q": "Which city hosted the 2008 Summer Olympics?",
+"a": [
+"Beijing",
+"Seoul",
+"Tokyo",
+"Athens"
+],
+"d": 1,
+"x": "The opening ceremony took place at the Bird's Nest stadium on 08/08/08 at 8:08 pm, a date chosen because 8 is a lucky number in China.",
+"tags": [
+"olympics"
+]
+},
+{
+"q": "On which surface is the Wimbledon tennis tournament played?",
+"a": [
+"Grass",
+"Clay",
+"Hard court",
+"Carpet"
+],
+"d": 1,
+"x": "Wimbledon is the only Grand Slam still played on natural grass. Players are also required to wear almost entirely white clothing.",
+"tags": [
+"tennis"
+]
+},
+{
+"q": "How many interlocking rings appear on the Olympic flag?",
+"a": [
+"Five",
+"Four",
+"Six",
+"Seven"
+],
+"d": 1,
+"x": "The five rings represent the five inhabited continents joined together. The flag was introduced in 1914 and first flown at the 1920 Games.",
+"tags": [
+"olympics"
+]
+},
+{
+"q": "Which country won the first FIFA World Cup in 1930?",
+"a": [
+"Uruguay",
+"Brazil",
+"Argentina",
+"Italy"
+],
+"d": 1,
+"x": "Uruguay hosted and won the first tournament, beating neighbors Argentina 4-2 in the final in Montevideo.",
+"tags": [
+"soccer",
+"world cup"
+]
+},
+{
+"q": "In golf, what is a score of one stroke under par on a hole called?",
+"a": [
+"Birdie",
+"Eagle",
+"Bogey",
+"Albatross"
+],
+"d": 1,
+"x": "The term 'birdie' comes from early American slang, where 'bird' meant something excellent. It was coined around 1899 in Atlantic City.",
+"tags": [
+"golf"
+]
+},
+{
+"q": "Michael Jordan won six NBA championships with which team?",
+"a": [
+"Chicago Bulls",
+"Los Angeles Lakers",
+"Boston Celtics",
+"Detroit Pistons"
+],
+"d": 1,
+"x": "The Bulls won two separate runs of three straight titles, in 1991-93 and 1996-98. Jordan was Finals MVP every time.",
+"tags": [
+"basketball"
+]
+},
+{
+"q": "How many points is a touchdown worth in American football?",
+"a": [
+"Six",
+"Seven",
+"Five",
+"Three"
+],
+"d": 1,
+"x": "A touchdown is worth six points, and the team can then try for one or two extra points. Before 1912 a touchdown was worth only five points.",
+"tags": [
+"american football"
+]
+},
+{
+"q": "In which city were the first modern Olympic Games held in 1896?",
+"a": [
+"Athens",
+"Paris",
+"London",
+"Rome"
+],
+"d": 1,
+"x": "Athens was chosen to honor the ancient Games' Greek origins. About 240 athletes from 14 nations took part.",
+"tags": [
+"olympics"
+]
+},
+{
+"q": "How many holes are played in a standard full round of golf?",
+"a": [
+"18",
+"9",
+"12",
+"24"
+],
+"d": 1,
+"x": "The standard of 18 holes was set at St Andrews in Scotland in 1764, when the club reduced its course from 22 holes to 18.",
+"tags": [
+"golf"
+]
+},
+{
+"q": "Which sport is played with a shuttlecock?",
+"a": [
+"Badminton",
+"Tennis",
+"Squash",
+"Table tennis"
+],
+"d": 1,
+"x": "Badminton is named after Badminton House in England, where the game became popular in the 1870s. Its feathered shuttlecock traditionally has 16 feathers.",
+"tags": [
+"badminton"
+]
+},
+{
+"q": "What color card does a referee show to send a soccer player off the field?",
+"a": [
+"Red",
+"Yellow",
+"Blue",
+"Green"
+],
+"d": 1,
+"x": "Cards were introduced at the 1970 World Cup after English referee Ken Aston got the idea while stopped at a traffic light.",
+"tags": [
+"soccer",
+"rules"
+]
+},
+{
+"q": "How many players from each team are on the court at once in basketball?",
+"a": [
+"Five",
+"Six",
+"Four",
+"Seven"
+],
+"d": 1,
+"x": "Each team can use more than five players in a game through substitutions, but only five may be on the court at a time.",
+"tags": [
+"basketball",
+"rules"
+]
+},
+{
+"q": "Sumo wrestling is the traditional national sport of which country?",
+"a": [
+"Japan",
+"China",
+"South Korea",
+"Mongolia"
+],
+"d": 1,
+"x": "Sumo has been practiced in Japan for well over a thousand years and has Shinto religious roots. Bouts are often over in a few seconds.",
+"tags": [
+"sumo"
+]
+},
+{
+"q": "What is the official distance of a marathon?",
+"a": [
+"26.2 miles",
+"24.2 miles",
+"28.6 miles",
+"26.8 miles"
+],
+"d": 1,
+"x": "The exact distance is 26 miles 385 yards, or 42.195 kilometers. It was standardized after the 1908 London Olympics.",
+"tags": [
+"athletics"
+]
+},
+{
+"q": "How many bases are there on a baseball diamond, counting home plate?",
+"a": [
+"Four",
+"Three",
+"Five",
+"Six"
+],
+"d": 1,
+"x": "Runners must touch first, second and third base in order before reaching home plate to score. The bases are 90 feet apart.",
+"tags": [
+"baseball"
+]
+},
+{
+"q": "What was the birth name of the boxer Muhammad Ali?",
+"a": [
+"Cassius Clay",
+"Clarence Clay",
+"Charles Clay",
+"Cassius King"
+],
+"d": 1,
+"x": "He won Olympic light heavyweight gold in 1960 as Cassius Clay. He changed his name in 1964 after joining the Nation of Islam.",
+"tags": [
+"boxing"
+]
+},
+{
+"q": "The Tour de France is a famous race in which sport?",
+"a": [
+"Cycling",
+"Running",
+"Motor racing",
+"Rowing"
+],
+"d": 1,
+"x": "The first Tour de France was held in 1903. The race lasts about three weeks and covers more than 3,000 kilometers.",
+"tags": [
+"cycling"
+]
+},
+{
+"q": "Sprinter Usain Bolt represents which country?",
+"a": [
+"Jamaica",
+"United States",
+"Trinidad and Tobago",
+"Barbados"
+],
+"d": 1,
+"x": "Bolt won the 100 m and 200 m at both the 2008 and 2012 Olympics. He grew up in Trelawny, Jamaica, and first loved cricket.",
+"tags": [
+"athletics"
+]
+},
+{
+"q": "In which sport do two packs of forwards push against each other in a scrum?",
+"a": [
+"Rugby",
+"Basketball",
+"Lacrosse",
+"Handball"
+],
+"d": 1,
+"x": "The scrum is a way of restarting play after a minor rule break. In rugby union each pack has eight forwards.",
+"tags": [
+"rugby"
+]
+},
+{
+"q": "Which Olympic sport features events on the pommel horse and rings?",
+"a": [
+"Gymnastics",
+"Weightlifting",
+"Equestrian",
+"Wrestling"
+],
+"d": 1,
+"x": "These are two of the six apparatuses in men's artistic gymnastics. Gymnastics has been part of every modern Olympic Games since 1896.",
+"tags": [
+"olympics",
+"gymnastics"
+]
+},
+{
+"q": "How many players are in a cricket team on the field?",
+"a": [
+"11",
+"9",
+"12",
+"15"
+],
+"d": 1,
+"x": "Each side fields eleven players, including the wicketkeeper. Only two batters from the batting team are on the field at a time.",
+"tags": [
+"cricket"
+]
+},
+{
+"q": "Which country hosted the 2014 FIFA World Cup?",
+"a": [
+"Brazil",
+"Argentina",
+"Spain",
+"South Africa"
+],
+"d": 1,
+"x": "It was Brazil's second time hosting the men's tournament, after 1950. Germany beat Argentina 1-0 in the final at the Maracana.",
+"tags": [
+"soccer",
+"world cup"
+]
+},
+{
+"q": "Which city hosted the 2012 Summer Olympics?",
+"a": [
+"London",
+"Beijing",
+"Paris",
+"Sydney"
+],
+"d": 1,
+"x": "London became the first city to host the modern Summer Games three times, after 1908 and 1948.",
+"tags": [
+"olympics"
+]
+},
+{
+"q": "In which sport do teams compete in the Super Bowl?",
+"a": [
+"American football",
+"Baseball",
+"Ice hockey",
+"Basketball"
+],
+"d": 1,
+"x": "The first Super Bowl was played in January 1967. The winner receives the Vince Lombardi Trophy.",
+"tags": [
+"american football"
+]
+},
+{
+"q": "Which Olympic medal is awarded for second place?",
+"a": [
+"Silver",
+"Gold",
+"Bronze",
+"Platinum"
+],
+"d": 1,
+"x": "At the first modern Olympics in 1896 winners received silver medals and runners-up got bronze. Gold medals for winners began in 1904.",
+"tags": [
+"olympics"
+]
+},
+{
+"q": "Which team sport awards the Stanley Cup?",
+"a": [
+"Ice hockey",
+"Basketball",
+"Baseball",
+"Lacrosse"
+],
+"d": 1,
+"x": "The cup was donated in 1892 by Lord Stanley, the Governor General of Canada. Each winning team engraves its players' names on it.",
+"tags": [
+"ice hockey"
+]
+},
+{
+"q": "In which country did the sport of cricket originate?",
+"a": [
+"England",
+"Australia",
+"India",
+"South Africa"
+],
+"d": 1,
+"x": "Cricket was played in southern England by the 16th century. The first international match was played in 1844 between the United States and Canada.",
+"tags": [
+"cricket"
+]
+},
+{
+"q": "Tennis star Roger Federer comes from which country?",
+"a": [
+"Switzerland",
+"Germany",
+"Sweden",
+"Austria"
+],
+"d": 1,
+"x": "Federer was born in Basel in 1981. He won Wimbledon eight times over his career.",
+"tags": [
+"tennis"
+]
+},
+{
+"q": "Against which team did Diego Maradona score his 'Hand of God' goal in 1986?",
+"a": [
+"England",
+"West Germany",
+"Belgium",
+"Italy"
+],
+"d": 1,
+"x": "Minutes later in the same quarter-final he scored a famous solo goal after dribbling past most of the England side. Argentina won 2-1.",
+"tags": [
+"soccer",
+"world cup"
+]
+},
+{
+"q": "How long is a standard professional soccer match, not counting stoppage time?",
+"a": [
+"90 minutes",
+"80 minutes",
+"100 minutes",
+"70 minutes"
+],
+"d": 1,
+"x": "A match is two halves of 45 minutes each, with a short break at halftime. Referees add stoppage time for delays.",
+"tags": [
+"soccer",
+"rules"
+]
+},
+{
+"q": "How many players per team are on the court in a volleyball match?",
+"a": [
+"Six",
+"Five",
+"Seven",
+"Eight"
+],
+"d": 1,
+"x": "Teams rotate positions each time they win the serve. Volleyball was invented in 1895 in Massachusetts.",
+"tags": [
+"volleyball",
+"rules"
+]
+},
+{
+"q": "In tennis scoring, what does the term 'love' mean?",
+"a": [
+"Zero",
+"One point",
+"Advantage",
+"A tie"
+],
+"d": 1,
+"x": "The word likely comes from the French 'l'oeuf', meaning egg, because a zero looks like an egg. This origin story is popular but not fully proven.",
+"tags": [
+"tennis"
+]
+},
+{
+"q": "What is the maximum score in a single game of ten-pin bowling?",
+"a": [
+"300",
+"200",
+"250",
+"360"
+],
+"d": 1,
+"x": "A perfect game requires twelve consecutive strikes. Each frame can score up to 30 when strikes follow strikes.",
+"tags": [
+"bowling"
+]
+},
+{
+"q": "What shape is a standard boxing ring?",
+"a": [
+"Square",
+"Round",
+"Hexagonal",
+"Rectangular"
+],
+"d": 1,
+"x": "Despite the name 'ring', the ring is square, with ropes on four sides. The name comes from the earlier circles drawn by spectators.",
+"tags": [
+"boxing"
+]
+},
+{
+"q": "Which swimming stroke is most commonly used in freestyle events?",
+"a": [
+"Front crawl",
+"Backstroke",
+"Butterfly",
+"Breaststroke"
+],
+"d": 1,
+"x": "Freestyle lets swimmers use any stroke, but the front crawl is by far the fastest, so everyone chooses it.",
+"tags": [
+"swimming"
+]
+},
+{
+"q": "In which sport might you see a triple axel?",
+"a": [
+"Figure skating",
+"Gymnastics",
+"Diving",
+"Ski jumping"
+],
+"d": 1,
+"x": "The axel is the only common figure skating jump that takes off facing forward, so a triple axel has three and a half rotations.",
+"tags": [
+"winter sports"
+]
+},
+{
+"q": "What does the Olympic motto 'Citius, Altius, Fortius' mean?",
+"a": [
+"Faster, Higher, Stronger",
+"Bolder, Wiser, Braver",
+"Swifter, Calmer, Fairer",
+"Quicker, Taller, Mightier"
+],
+"d": 1,
+"x": "The Latin motto was proposed by Pierre de Coubertin and adopted in 1894. It was proposed by a friend, Father Henri Didon.",
+"tags": [
+"olympics"
+]
+},
+{
+"q": "In which Greek location is the Olympic flame lit before each Games?",
+"a": [
+"Olympia",
+"Sparta",
+"Delphi",
+"Corinth"
+],
+"d": 1,
+"x": "The flame is lit using a parabolic mirror and the Sun's rays, then carried by relay to the host city. The torch relay began in 1936.",
+"tags": [
+"olympics"
+]
+},
+{
+"q": "The 'All Blacks' is the nickname of which country's national rugby union team?",
+"a": [
+"New Zealand",
+"South Africa",
+"Australia",
+"Fiji"
+],
+"d": 1,
+"x": "The team is famous for performing the haka before matches. They wear an all-black uniform with a silver fern emblem.",
+"tags": [
+"rugby"
+]
+},
+{
+"q": "The Masters golf tournament is held each year at which course?",
+"a": [
+"Augusta National",
+"St Andrews",
+"Pebble Beach",
+"Pinehurst"
+],
+"d": 1,
+"x": "The winner is awarded a green jacket. The course is in Augusta, Georgia, and is famed for its azaleas.",
+"tags": [
+"golf"
+]
+},
+{
+"q": "Which small principality hosts a famous Formula One street race through its city?",
+"a": [
+"Monaco",
+"Andorra",
+"Liechtenstein",
+"San Marino"
+],
+"d": 1,
+"x": "The Monaco Grand Prix has been held since 1929 and is part of the unofficial Triple Crown of Motorsport.",
+"tags": [
+"motor racing"
+]
+},
+{
+"q": "Lionel Messi was born in which country?",
+"a": [
+"Argentina",
+"Spain",
+"Brazil",
+"Uruguay"
+],
+"d": 1,
+"x": "Messi was born in Rosario, Argentina, and moved to Barcelona at age 13. He won the Ballon d'Or several times before 2015.",
+"tags": [
+"soccer"
+]
+},
+{
+"q": "How many Grand Slam tennis tournaments are played each year?",
+"a": [
+"Four",
+"Three",
+"Five",
+"Six"
+],
+"d": 1,
+"x": "They are the Australian Open, French Open, Wimbledon and US Open. Winning all four in one calendar year is called a Grand Slam.",
+"tags": [
+"tennis"
+]
+},
+{
+"q": "What is it called when a soccer player scores three goals in one match?",
+"a": [
+"A hat-trick",
+"A treble-kick",
+"A triple strike",
+"A trio"
+],
+"d": 1,
+"x": "The term began in cricket, where a bowler who took three wickets in a row was awarded a new hat. It was later adopted by other sports.",
+"tags": [
+"soccer"
+]
+},
+{
+"q": "In golf, what is it called when a player sinks the ball in one stroke from the tee?",
+"a": [
+"Hole-in-one",
+"Albatross",
+"Eagle",
+"Ringer"
+],
+"d": 1,
+"x": "The odds of an ordinary golfer making a hole-in-one on a given par-3 are around 12,000 to one.",
+"tags": [
+"golf"
+]
+},
+{
+"q": "In which sport do England and Australia compete for the Ashes?",
+"a": [
+"Cricket",
+"Rugby",
+"Golf",
+"Tennis"
+],
+"d": 1,
+"x": "The Ashes series began in 1882, after a newspaper joked that English cricket had died and its ashes would be taken to Australia.",
+"tags": [
+"cricket"
+]
+},
+{
+"q": "In which sport is a home run scored?",
+"a": [
+"Baseball",
+"Cricket",
+"Softball",
+"Football"
+],
+"d": 1,
+"x": "A home run usually happens when the batter hits the ball over the outfield fence in fair territory, allowing everyone to circle the bases.",
+"tags": [
+"baseball"
+]
+},
+{
+"q": "Which Spanish city hosted the 1992 Summer Olympics?",
+"a": [
+"Barcelona",
+"Madrid",
+"Seville",
+"Valencia"
+],
+"d": 1,
+"x": "The 1992 Games were the first with NBA players in the US basketball team, known as the Dream Team.",
+"tags": [
+"olympics"
+]
+},
+{
+"q": "Which Australian city hosted the 2000 Summer Olympics?",
+"a": [
+"Sydney",
+"Melbourne",
+"Brisbane",
+"Perth"
+],
+"d": 1,
+"x": "Australia has hosted the Summer Games twice, in Melbourne in 1956 and in Sydney in 2000.",
+"tags": [
+"olympics"
+]
+},
+{
+"q": "Which US city hosted the 1996 Summer Olympics?",
+"a": [
+"Atlanta",
+"Los Angeles",
+"Chicago",
+"New York"
+],
+"d": 1,
+"x": "The 1996 Games marked the 100th anniversary of the modern Olympics. Muhammad Ali lit the Olympic cauldron.",
+"tags": [
+"olympics"
+]
+},
+{
+"q": "Which South Korean city hosted the 1988 Summer Olympics?",
+"a": [
+"Seoul",
+"Busan",
+"Incheon",
+"Daegu"
+],
+"d": 1,
+"x": "The Seoul Games included table tennis and tennis as full medal sports, the latter returning after a 64-year break.",
+"tags": [
+"olympics"
+]
+},
+{
+"q": "Which Japanese city hosted the 1998 Winter Olympics?",
+"a": [
+"Nagano",
+"Sapporo",
+"Osaka",
+"Kyoto"
+],
+"d": 1,
+"x": "Nagano was the second Japanese city to host the Winter Games, after Sapporo in 1972.",
+"tags": [
+"olympics",
+"winter sports"
+]
+},
+{
+"q": "Which Canadian city hosted the 2010 Winter Olympics?",
+"a": [
+"Vancouver",
+"Calgary",
+"Montreal",
+"Toronto"
+],
+"d": 1,
+"x": "Vancouver's Games were held in February 2010. Calgary had earlier hosted the 1988 Winter Olympics.",
+"tags": [
+"olympics",
+"winter sports"
+]
+},
+{
+"q": "Which two countries co-hosted the 2002 FIFA World Cup?",
+"a": [
+"Japan and South Korea",
+"China and Japan",
+"Thailand and Malaysia",
+"Australia and New Zealand"
+],
+"d": 1,
+"x": "It was the first World Cup held in Asia and the first with two hosts. Brazil beat Germany 2-0 in the final.",
+"tags": [
+"soccer",
+"world cup"
+]
+},
+{
+"q": "Which African country hosted the 2010 FIFA World Cup?",
+"a": [
+"South Africa",
+"Nigeria",
+"Egypt",
+"Morocco"
+],
+"d": 1,
+"x": "It was the first World Cup held on the African continent. The tournament is remembered for the loud sound of the vuvuzela horn.",
+"tags": [
+"soccer",
+"world cup"
+]
+},
+{
+"q": "Which country won the 2006 FIFA World Cup in Germany?",
+"a": [
+"Italy",
+"France",
+"Germany",
+"Portugal"
+],
+"d": 1,
+"x": "Italy beat France on penalties after a 1-1 draw in the Berlin final. It was Italy's fourth World Cup title.",
+"tags": [
+"soccer",
+"world cup"
+]
+},
+{
+"q": "Which country won the 2010 FIFA World Cup?",
+"a": [
+"Spain",
+"Netherlands",
+"Germany",
+"Uruguay"
+],
+"d": 1,
+"x": "Andres Iniesta scored the winning goal in extra time of the final. It was Spain's first World Cup title.",
+"tags": [
+"soccer",
+"world cup"
+]
+},
+{
+"q": "Which country won the 1966 FIFA World Cup on home soil?",
+"a": [
+"England",
+"West Germany",
+"Brazil",
+"Hungary"
+],
+"d": 1,
+"x": "England beat West Germany 4-2 after extra time at Wembley. It remains England's only men's World Cup title.",
+"tags": [
+"soccer",
+"world cup"
+]
+},
+{
+"q": "How many strikes make an out for a batter in baseball?",
+"a": [
+"Three",
+"Two",
+"Four",
+"Five"
+],
+"d": 1,
+"x": "The same batter also walks to first base after four balls. 'Three strikes and you're out' became a common saying in everyday English.",
+"tags": [
+"baseball",
+"rules"
+]
+},
+{
+"q": "How high above the floor is a regulation basketball hoop?",
+"a": [
+"10 feet",
+"8 feet",
+"9 feet",
+"12 feet"
+],
+"d": 1,
+"x": "The hoop has been 10 feet (3.05 m) high since Dr James Naismith nailed a peach basket to a gym balcony in 1891.",
+"tags": [
+"basketball",
+"rules"
+]
+},
+{
+"q": "How many players are in a rugby union team on the field?",
+"a": [
+"15",
+"13",
+"11",
+"12"
+],
+"d": 1,
+"x": "Rugby league has 13 players, and rugby sevens has seven. Union teams are split into eight forwards and seven backs.",
+"tags": [
+"rugby",
+"rules"
+]
+},
+{
+"q": "How many players per team, including the goalie, are on the ice in a standard ice hockey game?",
+"a": [
+"Six",
+"Five",
+"Seven",
+"Four"
+],
+"d": 1,
+"x": "Each team normally has five skaters plus a goaltender on the ice. Penalties can temporarily reduce a team's numbers.",
+"tags": [
+"ice hockey",
+"rules"
+]
+},
+{
+"q": "How many gold medals did swimmer Michael Phelps win at the 2008 Beijing Olympics?",
+"a": [
+"Eight",
+"Seven",
+"Six",
+"Nine"
+],
+"d": 1,
+"x": "Phelps broke Mark Spitz's single-Games record of seven golds from 1972. One of his wins came by just 0.01 seconds in the 100 m butterfly.",
+"tags": [
+"swimming",
+"olympics"
+]
+},
+{
+"q": "Which gymnast scored the first perfect 10 in Olympic history, in 1976?",
+"a": [
+"Nadia Comaneci",
+"Olga Korbut",
+"Simone Biles",
+"Mary Lou Retton"
+],
+"d": 1,
+"x": "Comaneci was only 14. The scoreboard could not display a 10.00, so it showed 1.00 instead.",
+"tags": [
+"gymnastics",
+"olympics"
+]
+},
+{
+"q": "Which American sprinter won four gold medals at the 1936 Berlin Olympics?",
+"a": [
+"Jesse Owens",
+"Carl Lewis",
+"Eddie Tolan",
+"Ralph Metcalfe"
+],
+"d": 1,
+"x": "Owens won the 100 m, 200 m, long jump and 4x100 m relay. His triumphs in Berlin disproved Nazi claims of racial superiority.",
+"tags": [
+"athletics",
+"olympics"
+]
+},
+{
+"q": "What color jersey does the Tour de France race leader wear?",
+"a": [
+"Yellow",
+"Green",
+"White",
+"Red"
+],
+"d": 1,
+"x": "The yellow jersey was introduced in 1919. It was chosen because the newspaper that organized the race was printed on yellow paper.",
+"tags": [
+"cycling"
+]
+},
+{
+"q": "Who invented basketball in 1891?",
+"a": [
+"James Naismith",
+"Abner Doubleday",
+"William Morgan",
+"Walter Camp"
+],
+"d": 1,
+"x": "Naismith was a Canadian-born physical education teacher in Springfield, Massachusetts. He wrote the original 13 rules of the game.",
+"tags": [
+"basketball"
+]
+},
+{
+"q": "The Kentucky Derby is a famous event in which sport?",
+"a": [
+"Horse racing",
+"Motor racing",
+"Greyhound racing",
+"Cycling"
+],
+"d": 1,
+"x": "It has been run at Churchill Downs in Louisville since 1875. The race lasts only about two minutes, earning it the nickname 'the most exciting two minutes in sports'.",
+"tags": [
+"horse racing"
+]
+},
+{
+"q": "In which sport do teams slide granite stones toward a target called the house?",
+"a": [
+"Curling",
+"Bowls",
+"Bobsleigh",
+"Shuffleboard"
+],
+"d": 1,
+"x": "Curling originated in Scotland in the 16th century. Teammates sweep the ice in front of the stone to guide it.",
+"tags": [
+"winter sports",
+"curling"
+]
+},
+{
+"q": "Judo originated in which country?",
+"a": [
+"Japan",
+"China",
+"South Korea",
+"Thailand"
+],
+"d": 1,
+"x": "Judo was founded in 1882 by Jigoro Kano and became an Olympic sport in 1964. The name means 'the gentle way'.",
+"tags": [
+"judo",
+"martial arts"
+]
+},
+{
+"q": "Taekwondo, a martial art and Olympic sport, originated in which country?",
+"a": [
+"Korea",
+"Japan",
+"Vietnam",
+"Mongolia"
+],
+"d": 1,
+"x": "Taekwondo emphasizes high kicks. It became an official Olympic sport at the Sydney Games in 2000.",
+"tags": [
+"taekwondo",
+"martial arts"
+]
+},
+{
+"q": "How often is the men's FIFA World Cup normally held?",
+"a": [
+"Every four years",
+"Every two years",
+"Every three years",
+"Every five years"
+],
+"d": 1,
+"x": "The tournament has been held every four years since 1930, except in 1942 and 1946, when it was cancelled because of World War II.",
+"tags": [
+"soccer",
+"world cup"
+]
+},
+{
+"q": "Which country had won the men's soccer World Cup five times by 2014?",
+"a": [
+"Brazil",
+"Germany",
+"Italy",
+"Argentina"
+],
+"d": 1,
+"x": "Brazil won in 1958, 1962, 1970, 1994 and 2002. It is the only team to have played in every World Cup tournament.",
+"tags": [
+"soccer",
+"world cup"
+]
+},
+{
+"q": "What color is a standard tennis ball in major professional tournaments?",
+"a": [
+"Yellow",
+"White",
+"Orange",
+"Green"
+],
+"d": 1,
+"x": "Yellow balls were introduced in 1972 because they are easier to see on television. Wimbledon adopted them in 1986.",
+"tags": [
+"tennis"
+]
+},
+{
+"q": "In baseball, what is the name of the player who throws the ball to the batter?",
+"a": [
+"Pitcher",
+"Catcher",
+"Shortstop",
+"Outfielder"
+],
+"d": 1,
+"x": "The pitcher throws from a raised mound 60 feet 6 inches from home plate. Fastballs can exceed 100 mph.",
+"tags": [
+"baseball"
+]
+},
+{
+"q": "In which country is the Wimbledon tennis tournament played?",
+"a": [
+"United Kingdom",
+"Australia",
+"United States",
+"France"
+],
+"d": 1,
+"x": "Wimbledon is held at the All England Club in southwest London. It is the oldest tennis tournament in the world, first played in 1877.",
+"tags": [
+"tennis"
+]
+},
+{
+"q": "Which surface is used for the French Open tennis tournament?",
+"a": [
+"Clay",
+"Grass",
+"Acrylic hard court",
+"Carpet"
+],
+"d": 1,
+"x": "The red clay courts at Roland Garros slow the ball and produce a higher bounce, making long rallies common.",
+"tags": [
+"tennis"
+]
+},
+{
+"q": "Babe Ruth is a legend of which sport?",
+"a": [
+"Baseball",
+"Basketball",
+"Boxing",
+"Golf"
+],
+"d": 1,
+"x": "Ruth began as a pitcher for the Boston Red Sox before becoming a legendary slugger for the New York Yankees. He was nicknamed 'the Sultan of Swat'.",
+"tags": [
+"baseball"
+]
+},
+{
+"q": "Which city hosted the 1984 Summer Olympics?",
+"a": [
+"Los Angeles",
+"Moscow",
+"Montreal",
+"Munich"
+],
+"d": 1,
+"x": "The 1984 Games were a financial success, run mostly with private funding and existing venues.",
+"tags": [
+"olympics"
+]
+},
+{
+"q": "The football clubs Real Madrid and Barcelona play in the top league of which country?",
+"a": [
+"Spain",
+"Italy",
+"Portugal",
+"Mexico"
+],
+"d": 1,
+"x": "Their rivalry is known as El Clasico. The top Spanish league is called La Liga.",
+"tags": [
+"soccer"
+]
+},
+{
+"q": "In which country do clubs like Manchester United and Arsenal play?",
+"a": [
+"England",
+"Scotland",
+"Ireland",
+"Wales"
+],
+"d": 1,
+"x": "The English Premier League started in 1992. English football clubs have a history that dates back to the 1800s.",
+"tags": [
+"soccer"
+]
+},
+{
+"q": "How many points is a free throw worth in basketball?",
+"a": [
+"One",
+"Two",
+"Three",
+"Four"
+],
+"d": 1,
+"x": "Free throws are awarded after certain fouls and are taken from the free throw line 15 feet from the backboard.",
+"tags": [
+"basketball",
+"rules"
+]
+},
+{
+"q": "How many points is a try worth in rugby union?",
+"a": [
+"Five",
+"Three",
+"Six",
+"Four"
+],
+"d": 1,
+"x": "A try is scored by grounding the ball over the opponents' try line. It was worth only one point in the 1870s.",
+"tags": [
+"rugby",
+"rules"
+]
+},
+{
+"q": "What is the cricket term for a batter being dismissed without scoring a run?",
+"a": [
+"A duck",
+"A goose",
+"A zero-ball",
+"A blank"
+],
+"d": 1,
+"x": "The term comes from the shape of the digit 0, which resembles a duck's egg. Being out first ball is called a golden duck.",
+"tags": [
+"cricket"
+]
+},
+{
+"q": "What may outfield soccer players not deliberately touch the ball with during play?",
+"a": [
+"Their hands or arms",
+"Their chest",
+"Their head",
+"Their knees"
+],
+"d": 1,
+"x": "Only the goalkeeper, inside their own penalty area, may handle the ball. Throw-ins are the other time hands are used.",
+"tags": [
+"soccer",
+"rules"
+]
+},
+{
+"q": "Which swimming stroke is named after an insect?",
+"a": [
+"Butterfly",
+"Backstroke",
+"Breaststroke",
+"Sidestroke"
+],
+"d": 1,
+"x": "Butterfly evolved from breaststroke in the 1930s and became its own Olympic event in 1956.",
+"tags": [
+"swimming"
+]
+},
+{
+"q": "In soccer, what is the name of the box-shaped area in front of each goal where a keeper can use their hands?",
+"a": [
+"Penalty area",
+"Center circle",
+"Technical area",
+"Corner arc"
+],
+"d": 1,
+"x": "Fouls by defenders inside this area result in a penalty kick. It extends 18 yards from the goal line.",
+"tags": [
+"soccer",
+"rules"
+]
+},
+{
+"q": "Which country won the 1998 FIFA World Cup on home soil?",
+"a": [
+"France",
+"Brazil",
+"Italy",
+"Croatia"
+],
+"d": 1,
+"x": "France beat Brazil 3-0 in the final in Paris. Zinedine Zidane scored twice with his head.",
+"tags": [
+"soccer",
+"world cup"
+]
+},
+{
+"q": "In which Australian city is the Australian Open tennis tournament held?",
+"a": [
+"Melbourne",
+"Sydney",
+"Perth",
+"Adelaide"
+],
+"d": 1,
+"x": "The tournament is played at Melbourne Park in January, the height of the Australian summer.",
+"tags": [
+"tennis"
+]
+},
+{
+"q": "In which sport do competitors race around gates in a slalom event?",
+"a": [
+"Alpine skiing",
+"Speed skating",
+"Bobsleigh",
+"Biathlon"
+],
+"d": 1,
+"x": "Skiers must pass between pairs of poles in the correct order. Missing a gate means disqualification.",
+"tags": [
+"winter sports"
+]
+},
+{
+"q": "How many players does a baseball team have on the field when playing defense?",
+"a": [
+"Nine",
+"Eight",
+"Ten",
+"Eleven"
+],
+"d": 1,
+"x": "These are the pitcher, catcher, four infielders and three outfielders. Some leagues add a tenth fielder known as a designated hitter at bat only.",
+"tags": [
+"baseball",
+"rules"
+]
+},
+{
+"q": "How long is an Olympic-size swimming pool?",
+"a": [
+"50 meters",
+"25 meters",
+"100 meters",
+"75 meters"
+],
+"d": 1,
+"x": "The pool is also 25 meters wide and at least 2 meters deep. Shorter 25-meter pools are used in short-course competitions.",
+"tags": [
+"swimming",
+"rules"
+]
+},
+{
+"q": "What is the name for a score of two strokes under par on a golf hole?",
+"a": [
+"Eagle",
+"Birdie",
+"Albatross",
+"Bogey"
+],
+"d": 1,
+"x": "After the 'birdie' became popular, golfers chose a larger bird for the next-lower score. An 'albatross' is three under par.",
+"tags": [
+"golf"
+]
+},
+{
+"q": "Which weight division is the heaviest in professional boxing's traditional classes?",
+"a": [
+"Heavyweight",
+"Cruiserweight",
+"Super middleweight",
+"Light heavyweight"
+],
+"d": 1,
+"x": "Heavyweight boxers have no upper weight limit. Champions in this division have often been regarded as the toughest men in sports.",
+"tags": [
+"boxing"
+]
+},
+{
+"q": "How many periods are played in a standard ice hockey game?",
+"a": [
+"Three",
+"Two",
+"Four",
+"Five"
+],
+"d": 1,
+"x": "Each period lasts 20 minutes in professional games. Tied games may go to overtime or a shootout.",
+"tags": [
+"ice hockey",
+"rules"
+]
+},
+{
+"q": "Which track and field event involves throwing a heavy metal ball?",
+"a": [
+"Shot put",
+"Discus throw",
+"Javelin throw",
+"Hammer throw"
+],
+"d": 1,
+"x": "The men's Olympic shot weighs 7.26 kg (16 lb). It must be pushed from the shoulder, not thrown like a baseball.",
+"tags": [
+"athletics"
+]
+},
+{
+"q": "Brazil's national soccer team is famous for wearing which color shirt?",
+"a": [
+"Yellow",
+"Blue",
+"Green",
+"White"
+],
+"d": 1,
+"x": "The famous yellow shirt was introduced after the 1950 World Cup loss, when the old all-white kit was dropped following a design contest.",
+"tags": [
+"soccer"
+]
+},
+{
+"q": "Which Olympic event combines swimming, cycling and running?",
+"a": [
+"Triathlon",
+"Decathlon",
+"Pentathlon",
+"Biathlon"
+],
+"d": 1,
+"x": "The triathlon made its Olympic debut at the 2000 Sydney Games. The standard Olympic distance is a 1.5 km swim, 40 km ride and 10 km run.",
+"tags": [
+"olympics",
+"triathlon"
+]
+},
+{
+"q": "In which sport are the terms 'deuce' and 'advantage' used?",
+"a": [
+"Tennis",
+"Golf",
+"Cricket",
+"Boxing"
+],
+"d": 1,
+"x": "Deuce means the game is tied at 40-40, and a player must win two points in a row to take the game.",
+"tags": [
+"tennis"
+]
+}
+]

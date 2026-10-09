@@ -1,0 +1,1454 @@
+[
+{
+"q": "Who wrote the 1850 novel The Scarlet Letter?",
+"a": [
+"Nathaniel Hawthorne",
+"Herman Melville",
+"Henry James",
+"Edgar Allan Poe"
+],
+"d": 2,
+"x": "Set in Puritan Boston, it follows Hester Prynne, who must wear a scarlet 'A'. Hawthorne added a preface about finding the old manuscript in a customs house.",
+"tags": [
+"american",
+"novel"
+]
+},
+{
+"q": "Who wrote the anti-slavery novel Uncle Tom's Cabin?",
+"a": [
+"Harriet Beecher Stowe",
+"Louisa May Alcott",
+"Frederick Douglass",
+"Emily Dickinson"
+],
+"d": 2,
+"x": "Published in 1852, it sold hundreds of thousands of copies within a few years and stirred anti-slavery feeling in the North.",
+"tags": [
+"american",
+"novel"
+]
+},
+{
+"q": "What is the name of Don Quixote's loyal squire?",
+"a": [
+"Sancho Panza",
+"Rocinante",
+"Dulcinea",
+"Sansón Carrasco"
+],
+"d": 2,
+"x": "Sancho is a simple farmer who joins Don Quixote hoping to be rewarded with the governorship of an island.",
+"tags": [
+"spanish",
+"character"
+]
+},
+{
+"q": "Who wrote The Adventures of Pinocchio?",
+"a": [
+"Carlo Collodi",
+"Italo Calvino",
+"Giovanni Boccaccio",
+"Umberto Eco"
+],
+"d": 2,
+"x": "Collodi serialized the tale in an Italian children's magazine from 1881. It has been translated into over 200 languages.",
+"tags": [
+"children",
+"italian"
+]
+},
+{
+"q": "Which Welsh poet wrote 'Do not go gentle into that good night'?",
+"a": [
+"Dylan Thomas",
+"R. S. Thomas",
+"Ted Hughes",
+"Philip Larkin"
+],
+"d": 2,
+"x": "Thomas wrote the poem for his dying father in 1951. He is also known for the radio play Under Milk Wood.",
+"tags": [
+"poetry",
+"quotation"
+]
+},
+{
+"q": "Who wrote the Russian novel The Master and Margarita?",
+"a": [
+"Mikhail Bulgakov",
+"Vladimir Nabokov",
+"Maxim Gorky",
+"Boris Pasternak"
+],
+"d": 2,
+"x": "Bulgakov wrote it in secret in the 1930s. It was not published until the 1960s, long after his death, and features a devil visiting Moscow.",
+"tags": [
+"russian",
+"novel"
+]
+},
+{
+"q": "Which Colombian author wrote One Hundred Years of Solitude?",
+"a": [
+"Gabriel Garcia Marquez",
+"Mario Vargas Llosa",
+"Julio Cortazar",
+"Carlos Fuentes"
+],
+"d": 2,
+"x": "Published in 1967, the novel tells of the Buendia family in the town of Macondo. Garcia Marquez won the Nobel Prize in 1982.",
+"tags": [
+"latin american",
+"nobel"
+]
+},
+{
+"q": "Which Nigerian author wrote Things Fall Apart?",
+"a": [
+"Chinua Achebe",
+"Wole Soyinka",
+"Ben Okri",
+"Ngugi wa Thiong'o"
+],
+"d": 2,
+"x": "Published in 1958, it is among the most widely read African novels. Its title comes from a poem by W. B. Yeats.",
+"tags": [
+"african",
+"novel"
+]
+},
+{
+"q": "In Victor Hugo's Notre-Dame de Paris, what is the hunchbacked bell-ringer called?",
+"a": [
+"Quasimodo",
+"Claude Frollo",
+"Jean Valjean",
+"Pierre Gringoire"
+],
+"d": 2,
+"x": "Hugo's 1831 novel helped revive interest in the neglected Notre-Dame cathedral and spurred its restoration.",
+"tags": [
+"french",
+"character"
+]
+},
+{
+"q": "Which Shakespeare play features the magician Prospero?",
+"a": [
+"The Tempest",
+"A Midsummer Night's Dream",
+"Cymbeline",
+"The Winter's Tale"
+],
+"d": 2,
+"x": "Prospero is the exiled Duke of Milan who lives on an island with his daughter Miranda. The play is thought to be among Shakespeare's last.",
+"tags": [
+"shakespeare"
+]
+},
+{
+"q": "Who is the scheming villain who manipulates Othello?",
+"a": [
+"Iago",
+"Cassio",
+"Brabantio",
+"Roderigo"
+],
+"d": 2,
+"x": "Iago plants the false idea that Othello's wife Desdemona is unfaithful. He is one of Shakespeare's most notorious villains.",
+"tags": [
+"shakespeare",
+"character"
+]
+},
+{
+"q": "In King Lear, which daughter refuses to flatter her father with grand speeches?",
+"a": [
+"Cordelia",
+"Goneril",
+"Regan",
+"Ophelia"
+],
+"d": 2,
+"x": "Cordelia says she loves Lear as a daughter should. He banishes her, a decision that leads to disaster.",
+"tags": [
+"shakespeare"
+]
+},
+{
+"q": "In which year did William Shakespeare die?",
+"a": [
+"1616",
+"1599",
+"1603",
+"1625"
+],
+"d": 2,
+"x": "Tradition says he died on April 23, 1616, which was also his birthday. Cervantes died the same year.",
+"tags": [
+"shakespeare"
+]
+},
+{
+"q": "The subtitle of Mary Shelley's Frankenstein refers to which figure from Greek myth?",
+"a": [
+"Prometheus",
+"Icarus",
+"Orpheus",
+"Pandora"
+],
+"d": 2,
+"x": "The full title is Frankenstein; or, The Modern Prometheus. Prometheus stole fire from the gods and gave it to humans.",
+"tags": [
+"myth",
+"gothic"
+]
+},
+{
+"q": "What term describes a novel told through letters?",
+"a": [
+"Epistolary",
+"Picaresque",
+"Allegorical",
+"Pastoral"
+],
+"d": 2,
+"x": "Samuel Richardson's Pamela and Clarissa are classic examples. Dracula and Frankenstein also use letters and journals in their telling.",
+"tags": [
+"literary term"
+]
+},
+{
+"q": "What is a word that imitates the sound it describes, such as 'buzz' or 'sizzle', called?",
+"a": [
+"Onomatopoeia",
+"Alliteration",
+"Metonymy",
+"Hyperbole"
+],
+"d": 2,
+"x": "The term comes from Greek words meaning 'name-making'. Comics use onomatopoeia heavily for sound effects.",
+"tags": [
+"literary term"
+]
+},
+{
+"q": "How many syllables are in a standard line of iambic pentameter?",
+"a": [
+"Ten",
+"Eight",
+"Twelve",
+"Fourteen"
+],
+"d": 2,
+"x": "Each line has five iambs, with an unstressed then stressed syllable. Shakespeare used it for much of his verse.",
+"tags": [
+"literary term",
+"poetry"
+]
+},
+{
+"q": "Which Romantic poet wrote 'Ode on a Grecian Urn'?",
+"a": [
+"John Keats",
+"Percy Bysshe Shelley",
+"Samuel Taylor Coleridge",
+"William Blake"
+],
+"d": 2,
+"x": "Keats wrote it in 1819. It ends with the line 'Beauty is truth, truth beauty.' He died of tuberculosis aged 25.",
+"tags": [
+"poetry"
+]
+},
+{
+"q": "In Coleridge's The Rime of the Ancient Mariner, what type of bird does the mariner shoot?",
+"a": [
+"An albatross",
+"A raven",
+"A seagull",
+"A cormorant"
+],
+"d": 2,
+"x": "The dead bird is hung around his neck as punishment. This is the origin of the phrase 'an albatross around one's neck.'",
+"tags": [
+"poetry"
+]
+},
+{
+"q": "Which poet wrote 'The Tyger', which begins 'Tyger Tyger, burning bright'?",
+"a": [
+"William Blake",
+"William Wordsworth",
+"Lord Byron",
+"Alfred Tennyson"
+],
+"d": 2,
+"x": "Blake published it in his 1794 collection Songs of Experience. He also engraved and painted his own books.",
+"tags": [
+"poetry"
+]
+},
+{
+"q": "Which American poet wrote 'The Road Not Taken'?",
+"a": [
+"Robert Frost",
+"Carl Sandburg",
+"Walt Whitman",
+"Wallace Stevens"
+],
+"d": 2,
+"x": "Frost published it in 1916. It begins 'Two roads diverged in a yellow wood' and is often misread as a poem about bold individualism.",
+"tags": [
+"poetry",
+"american"
+]
+},
+{
+"q": "In which US state did Emily Dickinson spend almost her entire life?",
+"a": [
+"Massachusetts",
+"Vermont",
+"Connecticut",
+"New York"
+],
+"d": 2,
+"x": "She lived in Amherst, Massachusetts. Only a handful of her nearly 1,800 poems were published while she was alive.",
+"tags": [
+"poetry",
+"american"
+]
+},
+{
+"q": "Which poet published the collection Leaves of Grass in 1855?",
+"a": [
+"Walt Whitman",
+"Ralph Waldo Emerson",
+"Henry David Thoreau",
+"Edgar Allan Poe"
+],
+"d": 2,
+"x": "Whitman revised and expanded the book throughout his life. He paid for the first edition himself.",
+"tags": [
+"poetry",
+"american"
+]
+},
+{
+"q": "Which Edgar Allan Poe story from 1841 is often called the first modern detective story?",
+"a": [
+"The Murders in the Rue Morgue",
+"The Tell-Tale Heart",
+"The Purloined Letter",
+"The Fall of the House of Usher"
+],
+"d": 2,
+"x": "It introduced the brilliant amateur detective C. Auguste Dupin, a model for Sherlock Holmes.",
+"tags": [
+"detective",
+"american"
+]
+},
+{
+"q": "Where is the novel Wuthering Heights set?",
+"a": [
+"The Yorkshire moors",
+"The Cornish coast",
+"The Scottish Highlands",
+"The Lake District"
+],
+"d": 2,
+"x": "The Bronte sisters grew up at Haworth in Yorkshire, on the edge of the wild moors that shaped the novel's atmosphere.",
+"tags": [
+"novel",
+"gothic"
+]
+},
+{
+"q": "What name did Thomas Hardy give to the region of southwest England in his novels?",
+"a": [
+"Wessex",
+"Mercia",
+"Northumbria",
+"East Anglia"
+],
+"d": 2,
+"x": "Hardy's Wessex is based on Dorset and neighboring counties. The name revived the old Anglo-Saxon kingdom.",
+"tags": [
+"english",
+"novel"
+]
+},
+{
+"q": "Under which pen name did Charlotte Bronte publish Jane Eyre?",
+"a": [
+"Currer Bell",
+"Ellis Bell",
+"Acton Bell",
+"George Eliot"
+],
+"d": 2,
+"x": "The three Bronte sisters all used male-sounding pseudonyms with the initials C, E and A.",
+"tags": [
+"pen name"
+]
+},
+{
+"q": "What was the real name of the novelist who wrote as George Eliot?",
+"a": [
+"Mary Ann Evans",
+"Elizabeth Gaskell",
+"Mary Shelley",
+"Frances Burney"
+],
+"d": 2,
+"x": "Evans chose a male pen name so her fiction would be taken seriously. Her works include Middlemarch and Silas Marner.",
+"tags": [
+"pen name"
+]
+},
+{
+"q": "What was Mark Twain's real name?",
+"a": [
+"Samuel Clemens",
+"Charles Dodgson",
+"Eric Blair",
+"William Porter"
+],
+"d": 2,
+"x": "The name 'Mark Twain' comes from a riverboat call meaning two fathoms deep. Clemens was once a Mississippi riverboat pilot.",
+"tags": [
+"pen name"
+]
+},
+{
+"q": "What was George Orwell's real name?",
+"a": [
+"Eric Blair",
+"Edward Morgan",
+"Evelyn Waugh",
+"Eugene Brown"
+],
+"d": 2,
+"x": "Blair took the pen name Orwell after the River Orwell in Suffolk. He was born in India in 1903.",
+"tags": [
+"pen name"
+]
+},
+{
+"q": "Who is the orphan hero of Dickens's novel Great Expectations?",
+"a": [
+"Pip",
+"Oliver",
+"Nicholas",
+"Martin"
+],
+"d": 2,
+"x": "Pip rises from a village blacksmith's apprentice to a gentleman in London. The novel was serialized in 1860-61.",
+"tags": [
+"dickens",
+"character"
+]
+},
+{
+"q": "What does Don Quixote famously attack, believing them to be giants?",
+"a": [
+"Windmills",
+"Castles",
+"Sheep",
+"Wine skins"
+],
+"d": 2,
+"x": "The scene gave English the phrase 'tilting at windmills', meaning to fight imaginary enemies.",
+"tags": [
+"spanish",
+"quotation"
+]
+},
+{
+"q": "In The Lord of the Rings, in which land does Mount Doom lie?",
+"a": [
+"Mordor",
+"Gondor",
+"Rohan",
+"Isengard"
+],
+"d": 2,
+"x": "Mordor is the realm of the Dark Lord Sauron. The Ring can only be destroyed in the fires where it was forged.",
+"tags": [
+"fantasy"
+]
+},
+{
+"q": "Who wrote the science fiction epic Dune?",
+"a": [
+"Frank Herbert",
+"Isaac Asimov",
+"Arthur C. Clarke",
+"Robert Heinlein"
+],
+"d": 2,
+"x": "Published in 1965, it is set on the desert planet Arrakis and is often cited as the best-selling science fiction novel.",
+"tags": [
+"science fiction"
+]
+},
+{
+"q": "Which author formulated the fictional Three Laws of Robotics?",
+"a": [
+"Isaac Asimov",
+"Philip K. Dick",
+"Karel Capek",
+"Ray Bradbury"
+],
+"d": 2,
+"x": "The first law says a robot may not harm a human. Asimov explored the laws in stories collected in I, Robot.",
+"tags": [
+"science fiction"
+]
+},
+{
+"q": "In The Hitchhiker's Guide to the Galaxy, what is the answer to life, the universe and everything?",
+"a": [
+"42",
+"7",
+"108",
+"1"
+],
+"d": 2,
+"x": "The supercomputer Deep Thought takes 7.5 million years to compute it. Then it points out that nobody knew what the question was.",
+"tags": [
+"science fiction"
+]
+},
+{
+"q": "Who wrote A Wizard of Earthsea?",
+"a": [
+"Ursula K. Le Guin",
+"Madeleine L'Engle",
+"Anne McCaffrey",
+"Marion Zimmer Bradley"
+],
+"d": 2,
+"x": "Published in 1968, it follows the young wizard Ged. Le Guin's book helped establish modern fantasy for young readers.",
+"tags": [
+"fantasy"
+]
+},
+{
+"q": "Who wrote the cyberpunk novel Neuromancer?",
+"a": [
+"William Gibson",
+"Philip K. Dick",
+"Neal Stephenson",
+"Bruce Sterling"
+],
+"d": 2,
+"x": "Published in 1984, it won the Hugo, Nebula and Philip K. Dick awards. It popularized the idea of cyberspace.",
+"tags": [
+"science fiction"
+]
+},
+{
+"q": "Which Philip K. Dick novel inspired the film Blade Runner?",
+"a": [
+"Do Androids Dream of Electric Sheep?",
+"A Scanner Darkly",
+"The Man in the High Castle",
+"Ubik"
+],
+"d": 2,
+"x": "The 1968 novel follows a bounty hunter chasing rogue androids. The 1982 film changed much of the plot.",
+"tags": [
+"science fiction"
+]
+},
+{
+"q": "Which H. G. Wells novel features the Eloi and the Morlocks?",
+"a": [
+"The Time Machine",
+"The Invisible Man",
+"The Island of Doctor Moreau",
+"The First Men in the Moon"
+],
+"d": 2,
+"x": "Published in 1895, it describes two human descendants living in the year 802,701.",
+"tags": [
+"science fiction"
+]
+},
+{
+"q": "Which ancient Greek storyteller is traditionally credited with fables like The Tortoise and the Hare?",
+"a": [
+"Aesop",
+"Homer",
+"Herodotus",
+"Hesiod"
+],
+"d": 2,
+"x": "Aesop is said to have lived around 600 BC and possibly been a slave. Many fables credited to him were collected long after his time.",
+"tags": [
+"fable"
+]
+},
+{
+"q": "What were the first names of the Brothers Grimm?",
+"a": [
+"Jacob and Wilhelm",
+"Johann and Friedrich",
+"Hans and Karl",
+"Ludwig and Georg"
+],
+"d": 2,
+"x": "They collected German folk tales and published them from 1812. They were also scholars of language and wrote a German dictionary.",
+"tags": [
+"fairy tale"
+]
+},
+{
+"q": "Which French author published Cinderella and Puss in Boots in a 1697 collection?",
+"a": [
+"Charles Perrault",
+"Jean de La Fontaine",
+"Voltaire",
+"Alexandre Dumas"
+],
+"d": 2,
+"x": "His Tales of Mother Goose helped create the fairy-tale genre in literature. It included Sleeping Beauty and Little Red Riding Hood.",
+"tags": [
+"fairy tale"
+]
+},
+{
+"q": "In which city is the famous statue of Hans Christian Andersen's Little Mermaid?",
+"a": [
+"Copenhagen",
+"Stockholm",
+"Oslo",
+"Amsterdam"
+],
+"d": 2,
+"x": "The bronze statue on the waterfront was unveiled in 1913. It is only about 1.25 meters tall.",
+"tags": [
+"fairy tale"
+]
+},
+{
+"q": "Which sailor of One Thousand and One Nights goes on seven fantastic voyages?",
+"a": [
+"Sinbad",
+"Aladdin",
+"Ali Baba",
+"Haroun"
+],
+"d": 2,
+"x": "Sinbad's tales feature giant birds and sea monsters. They were added to the collection by later translators and storytellers.",
+"tags": [
+"arabic",
+"myth"
+]
+},
+{
+"q": "In Greek myth, who flew too close to the sun on wings made of wax and feathers?",
+"a": [
+"Icarus",
+"Daedalus",
+"Perseus",
+"Phaethon"
+],
+"d": 2,
+"x": "His father Daedalus built the wings to escape Crete. Icarus ignored his warning and fell into the sea.",
+"tags": [
+"myth"
+]
+},
+{
+"q": "Which Greek hero beheaded the Gorgon Medusa?",
+"a": [
+"Perseus",
+"Theseus",
+"Heracles",
+"Jason"
+],
+"d": 2,
+"x": "Perseus used a polished shield as a mirror to avoid her stone-turning gaze. Pegasus sprang from her blood.",
+"tags": [
+"myth"
+]
+},
+{
+"q": "Which monster lived in the Labyrinth on Crete in Greek myth?",
+"a": [
+"The Minotaur",
+"The Hydra",
+"The Chimera",
+"The Cyclops"
+],
+"d": 2,
+"x": "The Minotaur had a bull's head and a man's body. The hero Theseus killed it with help from Ariadne's thread.",
+"tags": [
+"myth"
+]
+},
+{
+"q": "What is the name of Thor's hammer in Norse mythology?",
+"a": [
+"Mjolnir",
+"Gungnir",
+"Excalibur",
+"Gram"
+],
+"d": 2,
+"x": "Mjolnir was made by dwarves. The Norse god of thunder used it against the giants.",
+"tags": [
+"myth",
+"norse"
+]
+},
+{
+"q": "Which Norse god is known as a shape-shifting trickster?",
+"a": [
+"Loki",
+"Odin",
+"Baldr",
+"Heimdall"
+],
+"d": 2,
+"x": "Loki fathered monsters such as the wolf Fenrir. In the myths he helps the gods at times and opposes them at others.",
+"tags": [
+"myth",
+"norse"
+]
+},
+{
+"q": "Which Roman poet wrote the Aeneid?",
+"a": [
+"Virgil",
+"Ovid",
+"Horace",
+"Lucretius"
+],
+"d": 2,
+"x": "The epic tells of the Trojan hero Aeneas and the founding of Rome. Virgil died in 19 BC before finishing revisions.",
+"tags": [
+"epic",
+"roman"
+]
+},
+{
+"q": "Which Roman poet wrote the Metamorphoses?",
+"a": [
+"Ovid",
+"Virgil",
+"Catullus",
+"Horace"
+],
+"d": 2,
+"x": "Ovid's poem retells myths of transformation, from Daphne becoming a laurel tree to Narcissus becoming a flower.",
+"tags": [
+"myth",
+"roman"
+]
+},
+{
+"q": "In which ancient region was the Epic of Gilgamesh composed?",
+"a": [
+"Mesopotamia",
+"Egypt",
+"Persia",
+"Anatolia"
+],
+"d": 2,
+"x": "The poem was written on clay tablets in cuneiform. It is one of the oldest surviving works of literature.",
+"tags": [
+"epic",
+"ancient"
+]
+},
+{
+"q": "Which ancient Indian epic tells the story of Rama and his wife Sita?",
+"a": [
+"The Ramayana",
+"The Mahabharata",
+"The Panchatantra",
+"The Shahnameh"
+],
+"d": 2,
+"x": "Traditionally credited to the sage Valmiki, it has been retold across South and Southeast Asia in many languages.",
+"tags": [
+"epic",
+"indian"
+]
+},
+{
+"q": "Which Chinese classic novel features the Monkey King, Sun Wukong?",
+"a": [
+"Journey to the West",
+"Dream of the Red Chamber",
+"Water Margin",
+"Romance of the Three Kingdoms"
+],
+"d": 2,
+"x": "The 16th-century novel follows a monk's pilgrimage to India to fetch sacred texts. It is one of China's Four Great Classical Novels.",
+"tags": [
+"chinese",
+"novel"
+]
+},
+{
+"q": "Which German writer wrote the drama Faust?",
+"a": [
+"Johann Wolfgang von Goethe",
+"Friedrich Schiller",
+"Thomas Mann",
+"Hermann Hesse"
+],
+"d": 2,
+"x": "Goethe worked on Faust for most of his adult life, finishing the second part in the year he died, 1832.",
+"tags": [
+"german",
+"drama"
+]
+},
+{
+"q": "Pushkin's Eugene Onegin is unusual because it is a novel written in what form?",
+"a": [
+"Verse",
+"Letters",
+"Diary entries",
+"Prose poems"
+],
+"d": 2,
+"x": "Pushkin called it a 'novel in verse' and wrote it in a special 14-line stanza now known as the Onegin stanza.",
+"tags": [
+"russian",
+"poetry"
+]
+},
+{
+"q": "In which year did Ernest Hemingway win the Nobel Prize in Literature?",
+"a": [
+"1954",
+"1949",
+"1961",
+"1947"
+],
+"d": 2,
+"x": "The Swedish Academy cited his mastery of narrative art, shown in The Old Man and the Sea. He was in Cuba and did not travel to Stockholm.",
+"tags": [
+"nobel"
+]
+},
+{
+"q": "Who in 1907 became the first English-language writer to win the Nobel Prize in Literature?",
+"a": [
+"Rudyard Kipling",
+"Thomas Hardy",
+"W. B. Yeats",
+"George Bernard Shaw"
+],
+"d": 2,
+"x": "Kipling was 41 and remains the youngest-ever winner of the prize in literature.",
+"tags": [
+"nobel"
+]
+},
+{
+"q": "Which Indian poet became the first non-European to win the Nobel Prize in Literature, in 1913?",
+"a": [
+"Rabindranath Tagore",
+"Mulk Raj Anand",
+"R. K. Narayan",
+"Kalidasa"
+],
+"d": 2,
+"x": "Tagore was honored for Gitanjali. He also wrote the lyrics of the national anthems of India and Bangladesh.",
+"tags": [
+"nobel",
+"indian"
+]
+},
+{
+"q": "Which author of Beloved won the 1993 Nobel Prize in Literature?",
+"a": [
+"Toni Morrison",
+"Alice Walker",
+"Maya Angelou",
+"Zora Neale Hurston"
+],
+"d": 2,
+"x": "Morrison was the first African American woman to receive the Nobel Prize in Literature. Beloved won the Pulitzer Prize in 1988.",
+"tags": [
+"nobel",
+"american"
+]
+},
+{
+"q": "What term describes the repetition of the same initial consonant sound, as in 'Peter Piper picked a peck'?",
+"a": [
+"Alliteration",
+"Assonance",
+"Hyperbole",
+"Metonymy"
+],
+"d": 2,
+"x": "Alliteration is common in tongue twisters, poetry and advertising slogans. Old English poetry such as Beowulf relied on it.",
+"tags": [
+"literary term"
+]
+},
+{
+"q": "What term describes a story whose characters and events symbolize deeper meanings, as in Animal Farm?",
+"a": [
+"Allegory",
+"Parody",
+"Elegy",
+"Irony"
+],
+"d": 2,
+"x": "Pilgrim's Progress by John Bunyan is another famous allegory. Its characters have names like Christian and Mr. Worldly Wiseman.",
+"tags": [
+"literary term"
+]
+},
+{
+"q": "How many lines does a limerick have?",
+"a": [
+"Five",
+"Four",
+"Six",
+"Eight"
+],
+"d": 2,
+"x": "Limericks follow an AABBA rhyme scheme and are usually humorous. Edward Lear popularized the form in the 1800s.",
+"tags": [
+"poetry",
+"form"
+]
+},
+{
+"q": "In Edward Lear's poem, what color is the boat in which the Owl and the Pussy-cat go to sea?",
+"a": [
+"Pea-green",
+"Sky-blue",
+"Rose-pink",
+"Golden-yellow"
+],
+"d": 2,
+"x": "They sail with honey and plenty of money wrapped in a five-pound note, then marry on a hill where the bong-tree grows.",
+"tags": [
+"poetry",
+"children"
+]
+},
+{
+"q": "Which Lewis Carroll poem begins 'Twas brillig, and the slithy toves'?",
+"a": [
+"Jabberwocky",
+"The Hunting of the Snark",
+"The Walrus and the Carpenter",
+"How Doth the Little Crocodile"
+],
+"d": 2,
+"x": "It appears in Through the Looking-Glass. Carroll's invented words, like chortle and galumphing, have entered English.",
+"tags": [
+"poetry",
+"children"
+]
+},
+{
+"q": "Which T. S. Eliot poetry collection inspired the musical Cats?",
+"a": [
+"Old Possum's Book of Practical Cats",
+"Four Quartets",
+"Prufrock and Other Observations",
+"Ash-Wednesday"
+],
+"d": 2,
+"x": "Eliot published it in 1939 and signed it with his nickname, Old Possum. Andrew Lloyd Webber set it to music in 1981.",
+"tags": [
+"poetry"
+]
+},
+{
+"q": "Which 1922 poem by T. S. Eliot begins 'April is the cruellest month'?",
+"a": [
+"The Waste Land",
+"The Hollow Men",
+"The Love Song of J. Alfred Prufrock",
+"Gerontion"
+],
+"d": 2,
+"x": "Ezra Pound heavily edited the draft, cutting it down to a landmark of modernist poetry.",
+"tags": [
+"poetry",
+"quotation"
+]
+},
+{
+"q": "Which Oscar Wilde play features the formidable Lady Bracknell?",
+"a": [
+"The Importance of Being Earnest",
+"An Ideal Husband",
+"Lady Windermere's Fan",
+"Salome"
+],
+"d": 2,
+"x": "The 1895 comedy is subtitled 'A Trivial Comedy for Serious People.' Lady Bracknell famously exclaims 'A handbag?'",
+"tags": [
+"drama"
+]
+},
+{
+"q": "Which George Bernard Shaw play inspired the musical My Fair Lady?",
+"a": [
+"Pygmalion",
+"Major Barbara",
+"Saint Joan",
+"Man and Superman"
+],
+"d": 2,
+"x": "Shaw's 1913 play follows a phonetics professor teaching a flower seller to speak like a lady. Its title comes from a Greek myth.",
+"tags": [
+"drama"
+]
+},
+{
+"q": "Which Russian playwright wrote The Seagull and Uncle Vanya?",
+"a": [
+"Anton Chekhov",
+"Maxim Gorky",
+"Nikolai Gogol",
+"Ivan Turgenev"
+],
+"d": 2,
+"x": "Chekhov was also a medical doctor. His plays, including Three Sisters, are staples of world theater.",
+"tags": [
+"drama",
+"russian"
+]
+},
+{
+"q": "Which Norwegian dramatist wrote A Doll's House?",
+"a": [
+"Henrik Ibsen",
+"August Strindberg",
+"Knut Hamsun",
+"Bjornstjerne Bjornson"
+],
+"d": 2,
+"x": "Premiered in 1879, the play caused controversy when its heroine Nora walked out on her family in the final scene.",
+"tags": [
+"drama"
+]
+},
+{
+"q": "Which Arthur Miller play is set during the Salem witch trials?",
+"a": [
+"The Crucible",
+"Death of a Salesman",
+"All My Sons",
+"A View from the Bridge"
+],
+"d": 2,
+"x": "Written in 1953, it used the 1692 trials as an allegory for McCarthyism in the United States.",
+"tags": [
+"drama",
+"american"
+]
+},
+{
+"q": "Which Tennessee Williams play features the character Blanche DuBois?",
+"a": [
+"A Streetcar Named Desire",
+"Cat on a Hot Tin Roof",
+"The Glass Menagerie",
+"Sweet Bird of Youth"
+],
+"d": 2,
+"x": "The 1947 play won the Pulitzer Prize for Drama. Marlon Brando starred in the 1951 film adaptation.",
+"tags": [
+"drama",
+"american"
+]
+},
+{
+"q": "Which Irish writer wrote the play Waiting for Godot?",
+"a": [
+"Samuel Beckett",
+"James Joyce",
+"Sean O'Casey",
+"Brendan Behan"
+],
+"d": 2,
+"x": "Beckett first wrote it in French in the early 1950s. It features two men waiting for someone who never arrives.",
+"tags": [
+"drama",
+"nobel"
+]
+},
+{
+"q": "Which Dickens novel opens with 'It was the best of times, it was the worst of times'?",
+"a": [
+"A Tale of Two Cities",
+"Hard Times",
+"Great Expectations",
+"Bleak House"
+],
+"d": 2,
+"x": "The 1859 novel is set in London and Paris before and during the French Revolution.",
+"tags": [
+"dickens",
+"quotation"
+]
+},
+{
+"q": "Which novel opens with the line 'Call me Ishmael.'?",
+"a": [
+"Moby-Dick",
+"Treasure Island",
+"The Scarlet Letter",
+"Billy Budd"
+],
+"d": 2,
+"x": "Melville's 1851 whaling novel sold poorly during his lifetime. Its opening is among the most famous in American literature.",
+"tags": [
+"american",
+"quotation"
+]
+},
+{
+"q": "Which novel begins 'Happy families are all alike; every unhappy family is unhappy in its own way'?",
+"a": [
+"Anna Karenina",
+"War and Peace",
+"Madame Bovary",
+"The Brothers Karamazov"
+],
+"d": 2,
+"x": "Tolstoy's 1878 novel opens with this line. It follows a married woman whose affair challenges Russian high society.",
+"tags": [
+"russian",
+"quotation"
+]
+},
+{
+"q": "Which Beat Generation author wrote On the Road?",
+"a": [
+"Jack Kerouac",
+"Allen Ginsberg",
+"William S. Burroughs",
+"Ken Kesey"
+],
+"d": 2,
+"x": "Published in 1957, it was reportedly typed on a single long scroll of paper in just a few weeks.",
+"tags": [
+"american",
+"novel"
+]
+},
+{
+"q": "Which author wrote the World War II satire Catch-22?",
+"a": [
+"Joseph Heller",
+"Kurt Vonnegut",
+"Norman Mailer",
+"Thomas Pynchon"
+],
+"d": 2,
+"x": "Published in 1961, the novel gave English the phrase 'catch-22' for a no-win situation with contradictory rules.",
+"tags": [
+"american",
+"novel"
+]
+},
+{
+"q": "Which horror writer wrote The Shining?",
+"a": [
+"Stephen King",
+"Dean Koontz",
+"Anne Rice",
+"Peter Straub"
+],
+"d": 2,
+"x": "King's 1977 novel is set in the isolated Overlook Hotel. Stanley Kubrick adapted it into a 1980 film.",
+"tags": [
+"horror"
+]
+},
+{
+"q": "Which French author wrote The Stranger?",
+"a": [
+"Albert Camus",
+"Jean-Paul Sartre",
+"Andre Gide",
+"Marcel Proust"
+],
+"d": 2,
+"x": "Published in 1942, the novel opens with the narrator Meursault learning of his mother's death. Camus won the Nobel Prize in 1957.",
+"tags": [
+"french",
+"nobel"
+]
+},
+{
+"q": "Which author wrote the 1981 novel Midnight's Children?",
+"a": [
+"Salman Rushdie",
+"V. S. Naipaul",
+"Arundhati Roy",
+"Vikram Seth"
+],
+"d": 2,
+"x": "It won the Booker Prize in 1981 and again earned the Booker of Bookers award in 1993. Its narrator was born at the moment of India's independence.",
+"tags": [
+"novel"
+]
+},
+{
+"q": "In which city did Franz Kafka live most of his life?",
+"a": [
+"Prague",
+"Vienna",
+"Berlin",
+"Budapest"
+],
+"d": 2,
+"x": "Kafka was born in Prague in 1883 and wrote in German. Most of his major works were published after his death.",
+"tags": [
+"german"
+]
+},
+{
+"q": "Which Hemingway novel, set in the Spanish Civil War, takes its title from a John Donne meditation?",
+"a": [
+"For Whom the Bell Tolls",
+"A Farewell to Arms",
+"The Sun Also Rises",
+"To Have and Have Not"
+],
+"d": 2,
+"x": "Donne's lines include 'never send to know for whom the bell tolls; it tolls for thee.' Hemingway published the novel in 1940.",
+"tags": [
+"american",
+"novel"
+]
+},
+{
+"q": "What is the title of Lewis Carroll's 1871 sequel to Alice's Adventures in Wonderland?",
+"a": [
+"Through the Looking-Glass",
+"Alice in the Mirror",
+"Down the Rabbit Hole",
+"Alice Underground"
+],
+"d": 2,
+"x": "The sequel's world is based on a chess game. Carroll's original draft of the first book was titled Alice's Adventures Under Ground.",
+"tags": [
+"children"
+]
+},
+{
+"q": "What are the workers in Willy Wonka's chocolate factory called?",
+"a": [
+"Oompa-Loompas",
+"Gremlins",
+"Wombles",
+"Borrowers"
+],
+"d": 2,
+"x": "In Dahl's first version of the book, the factory workers were African pygmies. He revised them into the orange-skinned Oompa-Loompas in later editions.",
+"tags": [
+"children"
+]
+},
+{
+"q": "What is the name of Bilbo Baggins's sword in The Hobbit?",
+"a": [
+"Sting",
+"Glamdring",
+"Orcrist",
+"Anduril"
+],
+"d": 2,
+"x": "The elvish blade glows blue when orcs or goblins are near. Bilbo later gives it to his nephew Frodo.",
+"tags": [
+"fantasy"
+]
+},
+{
+"q": "What is the name of Mr. Darcy's estate in Pride and Prejudice?",
+"a": [
+"Pemberley",
+"Netherfield",
+"Longbourn",
+"Rosings"
+],
+"d": 2,
+"x": "Elizabeth Bennet's visit to Pemberley changes her opinion of Darcy. Netherfield is the house rented by Mr. Bingley.",
+"tags": [
+"novel",
+"english"
+]
+},
+{
+"q": "In Little Women, which March sister dreams of being a writer?",
+"a": [
+"Jo",
+"Meg",
+"Beth",
+"Amy"
+],
+"d": 2,
+"x": "Jo is based on Louisa May Alcott herself. Her real name is Josephine.",
+"tags": [
+"novel",
+"american"
+]
+},
+{
+"q": "What is the name of Phileas Fogg's French valet in Around the World in Eighty Days?",
+"a": [
+"Passepartout",
+"D'Artagnan",
+"Aramis",
+"Pierrot"
+],
+"d": 2,
+"x": "Passepartout means 'goes everywhere' in French. He is Fogg's loyal companion on the whole wager.",
+"tags": [
+"french",
+"character"
+]
+},
+{
+"q": "In The Count of Monte Cristo, in which prison is Edmond Dantes held?",
+"a": [
+"Chateau d'If",
+"The Bastille",
+"Alcatraz",
+"Newgate"
+],
+"d": 2,
+"x": "The Chateau d'If is a real island fortress off Marseille. Dumas's story made it a world-famous tourist site.",
+"tags": [
+"french",
+"novel"
+]
+},
+{
+"q": "What is Sherlock Holmes's fictional London address?",
+"a": [
+"221B Baker Street",
+"22B Bishop Street",
+"221A Oxford Street",
+"211B Park Lane"
+],
+"d": 2,
+"x": "When the stories were written, no 221 existed on Baker Street. A museum now stands at the address.",
+"tags": [
+"detective"
+]
+},
+{
+"q": "What nationality is Agatha Christie's detective Hercule Poirot?",
+"a": [
+"Belgian",
+"French",
+"Swiss",
+"Dutch"
+],
+"d": 2,
+"x": "Poirot is a retired Belgian police officer living in England. He debuted in 1920 in The Mysterious Affair at Styles.",
+"tags": [
+"detective",
+"character"
+]
+},
+{
+"q": "In Orwell's 1984, who is the leader whose face appears on posters saying 'is watching you'?",
+"a": [
+"Big Brother",
+"Emmanuel Goldstein",
+"O'Brien",
+"Napoleon"
+],
+"d": 2,
+"x": "Big Brother is the figurehead of the Party. The slogan on the posters says 'Big Brother is watching you.'",
+"tags": [
+"dystopia",
+"character"
+]
+},
+{
+"q": "Which poet wrote 'Ozymandias'?",
+"a": [
+"Percy Bysshe Shelley",
+"Lord Byron",
+"William Wordsworth",
+"Alfred Tennyson"
+],
+"d": 2,
+"x": "Shelley wrote it in 1817 about a ruined statue of a once-great king in the desert. The poem reflects on the fading of power.",
+"tags": [
+"poetry"
+]
+},
+{
+"q": "Which poet wrote 'The Charge of the Light Brigade'?",
+"a": [
+"Alfred Tennyson",
+"Rudyard Kipling",
+"Robert Browning",
+"Lord Byron"
+],
+"d": 2,
+"x": "Tennyson wrote it in 1854 shortly after reading a newspaper report of the doomed cavalry attack in the Crimean War.",
+"tags": [
+"poetry"
+]
+},
+{
+"q": "Who is the teenage narrator of The Catcher in the Rye?",
+"a": [
+"Holden Caulfield",
+"Nick Carraway",
+"Jay Gatsby",
+"Atticus Finch"
+],
+"d": 2,
+"x": "Holden recounts a few days in New York after being expelled from his prep school, Pencey.",
+"tags": [
+"american",
+"character"
+]
+},
+{
+"q": "In The Hobbit, who loses the magic ring to Bilbo after a game of riddles in the dark?",
+"a": [
+"Gollum",
+"Thorin",
+"Beorn",
+"Radagast"
+],
+"d": 2,
+"x": "Gollum bets the ring against Bilbo in the riddle game. Bilbo wins by asking 'What have I got in my pocket?'",
+"tags": [
+"fantasy",
+"character"
+]
+},
+{
+"q": "Which Charles Dickens story features the miser Ebenezer Scrooge?",
+"a": [
+"A Christmas Carol",
+"Oliver Twist",
+"Great Expectations",
+"Hard Times"
+],
+"d": 2,
+"x": "Three ghosts visit Scrooge on Christmas Eve and change his heart."
+}
+]

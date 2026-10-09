@@ -1,0 +1,1458 @@
+[
+{
+"q": "Which country is traditionally the home of pizza?",
+"a": [
+"Italy",
+"France",
+"Greece",
+"Spain"
+],
+"d": 1,
+"x": "Modern pizza took shape in Naples, where flatbreads with tomato became a cheap street food in the 1700s and 1800s.",
+"tags": [
+"italy",
+"pizza"
+]
+},
+{
+"q": "Which country is sushi traditionally associated with?",
+"a": [
+"Japan",
+"China",
+"Thailand",
+"Korea"
+],
+"d": 1,
+"x": "The word sushi refers to the vinegared rice, not the fish. The dish began as a way of preserving fish in fermented rice.",
+"tags": [
+"japan",
+"sushi"
+]
+},
+{
+"q": "What fruit is the main ingredient of guacamole?",
+"a": [
+"Avocado",
+"Lime",
+"Tomato",
+"Mango"
+],
+"d": 1,
+"x": "The name comes from the Aztec Nahuatl word ahuacamolli, which roughly means 'avocado sauce'.",
+"tags": [
+"mexico",
+"fruit"
+]
+},
+{
+"q": "Which fruit is dried to make raisins?",
+"a": [
+"Grapes",
+"Plums",
+"Figs",
+"Apricots"
+],
+"d": 1,
+"x": "Raisins are traditionally sun-dried. Sultanas and currants are also dried grapes, just of different varieties.",
+"tags": [
+"fruit"
+]
+},
+{
+"q": "What is tofu made from?",
+"a": [
+"Soybeans",
+"Chickpeas",
+"Rice",
+"Wheat"
+],
+"d": 1,
+"x": "Tofu is made by curdling soy milk and pressing the curds into blocks, much like making cheese.",
+"tags": [
+"soy",
+"asia"
+]
+},
+{
+"q": "Which country is feta cheese traditionally from?",
+"a": [
+"Greece",
+"Italy",
+"Turkey",
+"Bulgaria"
+],
+"d": 1,
+"x": "Traditional feta is brined and made mostly from sheep's milk, sometimes mixed with goat's milk.",
+"tags": [
+"cheese",
+"greece"
+]
+},
+{
+"q": "What sweet food do bees make from flower nectar?",
+"a": [
+"Honey",
+"Molasses",
+"Maple syrup",
+"Agave syrup"
+],
+"d": 1,
+"x": "Bees fan the nectar with their wings to evaporate water, and enzymes turn it into honey stored in the comb.",
+"tags": [
+"sweets"
+]
+},
+{
+"q": "Which legume is the main ingredient in hummus?",
+"a": [
+"Chickpeas",
+"Lentils",
+"Black beans",
+"Green peas"
+],
+"d": 1,
+"x": "Hummus is the Arabic word for chickpeas. The dip is blended with tahini, lemon juice and garlic.",
+"tags": [
+"middle east",
+"legumes"
+]
+},
+{
+"q": "Which costly spice consists of the dried stigmas of a crocus flower?",
+"a": [
+"Saffron",
+"Turmeric",
+"Paprika",
+"Cardamom"
+],
+"d": 1,
+"x": "Each crocus flower gives just three stigmas, all picked by hand, which is why saffron is so expensive.",
+"tags": [
+"spices"
+]
+},
+{
+"q": "Which Italian dish layers flat pasta sheets with meat sauce and bechamel?",
+"a": [
+"Lasagna",
+"Ravioli",
+"Cannelloni",
+"Gnocchi"
+],
+"d": 1,
+"x": "The word lasagna may come from the Greek lasanon, meaning a cooking pot, or from the Latin lasanum.",
+"tags": [
+"italy",
+"pasta"
+]
+},
+{
+"q": "Which nut is the main ingredient of marzipan?",
+"a": [
+"Almonds",
+"Cashews",
+"Pistachios",
+"Hazelnuts"
+],
+"d": 1,
+"x": "Marzipan is a paste of ground almonds and sugar, often shaped into tiny fruits or used to cover cakes.",
+"tags": [
+"sweets",
+"nuts"
+]
+},
+{
+"q": "Which country is the long, thin baguette a symbol of?",
+"a": [
+"France",
+"Belgium",
+"Italy",
+"Spain"
+],
+"d": 1,
+"x": "A French decree in 1993 set rules for the 'traditional baguette': only flour, water, salt and yeast.",
+"tags": [
+"bread",
+"france"
+]
+},
+{
+"q": "Which gas, made by yeast, makes bread dough rise?",
+"a": [
+"Carbon dioxide",
+"Oxygen",
+"Nitrogen",
+"Hydrogen"
+],
+"d": 1,
+"x": "Yeast ferments sugars in the dough and releases carbon dioxide, which gets trapped in the gluten and puffs up the loaf.",
+"tags": [
+"baking"
+]
+},
+{
+"q": "Which vegetable is fermented to make sauerkraut?",
+"a": [
+"Cabbage",
+"Beets",
+"Turnips",
+"Radishes"
+],
+"d": 1,
+"x": "Sauerkraut means 'sour cabbage' in German. Sailors ate it on long voyages because it kept well.",
+"tags": [
+"germany",
+"vegetables"
+]
+},
+{
+"q": "What is the dried seaweed sheet used to wrap sushi rolls called?",
+"a": [
+"Nori",
+"Kombu",
+"Wakame",
+"Hijiki"
+],
+"d": 1,
+"x": "Nori is made by shredding red algae and pressing it into sheets, much like making paper, then toasting it.",
+"tags": [
+"japan",
+"seaweed"
+]
+},
+{
+"q": "Which seeds are roasted and ground to make chocolate?",
+"a": [
+"Cacao beans",
+"Coffee beans",
+"Vanilla pods",
+"Cola nuts"
+],
+"d": 1,
+"x": "Cacao beans are the seeds of a fruit that grows straight from the trunk and branches of the cacao tree.",
+"tags": [
+"chocolate"
+]
+},
+{
+"q": "What is the Italian word for ice cream?",
+"a": [
+"Gelato",
+"Sorbetto",
+"Granita",
+"Biscotti"
+],
+"d": 1,
+"x": "Gelato is churned slowly, so it holds less air than American ice cream, and is served a little warmer.",
+"tags": [
+"italy",
+"dessert"
+]
+},
+{
+"q": "Which vegetable is famous for making eyes water when it is cut?",
+"a": [
+"Onion",
+"Celery",
+"Potato",
+"Pepper"
+],
+"d": 1,
+"x": "Cutting an onion releases a sulfur gas that reacts with the moisture in your eyes and irritates them.",
+"tags": [
+"vegetables"
+]
+},
+{
+"q": "Which grain is the staple food of much of Asia?",
+"a": [
+"Rice",
+"Barley",
+"Rye",
+"Oats"
+],
+"d": 1,
+"x": "Rice has been farmed for thousands of years, and in many Asian languages the word for rice also means 'meal'.",
+"tags": [
+"grains",
+"asia"
+]
+},
+{
+"q": "Which country is the traditional home of kimchi?",
+"a": [
+"Korea",
+"Japan",
+"China",
+"Vietnam"
+],
+"d": 1,
+"x": "Kimchi is fermented vegetables, most often napa cabbage, seasoned with chili, garlic and ginger.",
+"tags": [
+"korea",
+"fermented"
+]
+},
+{
+"q": "Which kitchen tool is commonly used to flip pancakes?",
+"a": [
+"Spatula",
+"Whisk",
+"Ladle",
+"Colander"
+],
+"d": 1,
+"x": "A thin, flexible spatula slides under delicate foods without tearing them.",
+"tags": [
+"tools"
+]
+},
+{
+"q": "Which kitchen tool do you use to drain boiled pasta?",
+"a": [
+"Colander",
+"Whisk",
+"Rolling pin",
+"Ladle"
+],
+"d": 1,
+"x": "A colander is a bowl full of holes. The word comes from the Latin colare, meaning 'to strain'.",
+"tags": [
+"tools"
+]
+},
+{
+"q": "Which tool is used to roll dough out flat?",
+"a": [
+"Rolling pin",
+"Pastry brush",
+"Ladle",
+"Peeler"
+],
+"d": 1,
+"x": "Rolling pins can be wood, marble, glass or steel. Some bakers even chill them for flakier pastry.",
+"tags": [
+"tools",
+"baking"
+]
+},
+{
+"q": "Which vegetable are French fries made from?",
+"a": [
+"Potatoes",
+"Carrots",
+"Parsnips",
+"Sweet corn"
+],
+"d": 1,
+"x": "Belgians and French both claim the fry. In the United States they are called French fries, in Britain they are chips.",
+"tags": [
+"potato"
+]
+},
+{
+"q": "Which fruit wears its seeds on the outside of its skin?",
+"a": [
+"Strawberry",
+"Raspberry",
+"Blueberry",
+"Cherry"
+],
+"d": 1,
+"x": "A strawberry has roughly 200 tiny seeds on its surface. Each one is really a separate little fruit.",
+"tags": [
+"fruit"
+]
+},
+{
+"q": "Which Mexican flatbread is made from corn or wheat flour?",
+"a": [
+"Tortilla",
+"Naan",
+"Pita",
+"Chapati"
+],
+"d": 1,
+"x": "Corn tortillas date back to the Aztecs and earlier, who made the dough from corn treated with lime.",
+"tags": [
+"mexico",
+"bread"
+]
+},
+{
+"q": "Which Indian flatbread is traditionally baked in a clay oven called a tandoor?",
+"a": [
+"Naan",
+"Tortilla",
+"Pita",
+"Focaccia"
+],
+"d": 1,
+"x": "Naan dough is stuck to the hot wall of the tandoor, where it puffs up and blisters in minutes.",
+"tags": [
+"india",
+"bread"
+]
+},
+{
+"q": "Which Spanish rice dish is traditionally colored and flavored with saffron?",
+"a": [
+"Paella",
+"Risotto",
+"Jambalaya",
+"Pilaf"
+],
+"d": 1,
+"x": "The word paella also names the wide, shallow pan the dish is cooked in over an open fire.",
+"tags": [
+"spain",
+"rice"
+]
+},
+{
+"q": "Which creamy Italian rice dish is stirred slowly while hot broth is added?",
+"a": [
+"Risotto",
+"Paella",
+"Biryani",
+"Congee"
+],
+"d": 1,
+"x": "Risotto rice releases starch as it is stirred, which gives the dish its creamy texture without any cream.",
+"tags": [
+"italy",
+"rice"
+]
+},
+{
+"q": "Which popular drink comes from steeping leaves in hot water and is often served with lemon?",
+"a": [
+"Tea",
+"Coffee",
+"Cocoa",
+"Cider"
+],
+"d": 1,
+"x": "After water, tea is said to be the most widely drunk beverage in the world.",
+"tags": [
+"tea"
+]
+},
+{
+"q": "Which country is famous for maple syrup and has a maple leaf on its flag?",
+"a": [
+"Canada",
+"Norway",
+"Sweden",
+"Australia"
+],
+"d": 1,
+"x": "Maple sap is boiled until most of its water has evaporated. Quebec is the biggest syrup-making region.",
+"tags": [
+"canada",
+"sweets"
+]
+},
+{
+"q": "Which herb is the main ingredient in Genoese pesto?",
+"a": [
+"Basil",
+"Parsley",
+"Mint",
+"Sage"
+],
+"d": 1,
+"x": "Classic pesto also contains pine nuts, garlic, olive oil and hard cheese, crushed together in a mortar.",
+"tags": [
+"italy",
+"herbs"
+]
+},
+{
+"q": "Which cheese is traditionally melted on a Margherita pizza?",
+"a": [
+"Mozzarella",
+"Cheddar",
+"Gouda",
+"Brie"
+],
+"d": 1,
+"x": "Mozzarella is a stretchy cheese. Its name comes from the Italian verb mozzare, meaning 'to cut off'.",
+"tags": [
+"cheese",
+"italy"
+]
+},
+{
+"q": "Which meat is traditionally used to make bacon?",
+"a": [
+"Pork",
+"Beef",
+"Lamb",
+"Chicken"
+],
+"d": 1,
+"x": "Bacon is usually cut from the belly or back of a pig and then cured with salt and often smoked.",
+"tags": [
+"meat"
+]
+},
+{
+"q": "Which Japanese noodle soup is topped with sliced pork and a soft egg?",
+"a": [
+"Ramen",
+"Pho",
+"Laksa",
+"Wonton soup"
+],
+"d": 1,
+"x": "Ramen's wheat noodles came to Japan from China. Regional broths include miso, soy sauce and pork bone.",
+"tags": [
+"japan",
+"noodles"
+]
+},
+{
+"q": "Which country is pho, a beef noodle soup, from?",
+"a": [
+"Vietnam",
+"Cambodia",
+"Laos",
+"Myanmar"
+],
+"d": 1,
+"x": "Pho is traditionally eaten at breakfast in Vietnam, with fresh herbs, lime and bean sprouts on the side.",
+"tags": [
+"vietnam",
+"noodles"
+]
+},
+{
+"q": "Which country is the traditional home of the taco?",
+"a": [
+"Mexico",
+"Spain",
+"Peru",
+"Cuba"
+],
+"d": 1,
+"x": "A taco is just a tortilla wrapped around a filling. Tacos al pastor were inspired by Lebanese immigrants' shawarma.",
+"tags": [
+"mexico"
+]
+},
+{
+"q": "Which vitamin are oranges especially well known for?",
+"a": [
+"Vitamin C",
+"Vitamin A",
+"Vitamin D",
+"Vitamin K"
+],
+"d": 1,
+"x": "Sailors once carried citrus fruit on long voyages to prevent scurvy, a disease caused by a lack of vitamin C.",
+"tags": [
+"nutrition",
+"fruit"
+]
+},
+{
+"q": "Which mineral, found in milk and cheese, is important for strong bones?",
+"a": [
+"Calcium",
+"Iron",
+"Sodium",
+"Zinc"
+],
+"d": 1,
+"x": "About 99 percent of the body's calcium is stored in the bones and teeth.",
+"tags": [
+"nutrition"
+]
+},
+{
+"q": "Which animal does mutton come from?",
+"a": [
+"Sheep",
+"Goat",
+"Cow",
+"Pig"
+],
+"d": 1,
+"x": "Mutton comes from an adult sheep. Meat from a young sheep is called lamb.",
+"tags": [
+"meat"
+]
+},
+{
+"q": "What is meat from a young calf called?",
+"a": [
+"Veal",
+"Venison",
+"Mutton",
+"Pork"
+],
+"d": 1,
+"x": "Veal is paler and more tender than beef. Wiener schnitzel is traditionally made from it.",
+"tags": [
+"meat"
+]
+},
+{
+"q": "Venison is meat from which animal?",
+"a": [
+"Deer",
+"Wild boar",
+"Rabbit",
+"Duck"
+],
+"d": 1,
+"x": "The word venison comes from the Latin venari, meaning 'to hunt'.",
+"tags": [
+"meat"
+]
+},
+{
+"q": "Which fried chickpea ball is a popular street food across the Middle East?",
+"a": [
+"Falafel",
+"Kebab",
+"Kibbeh",
+"Shawarma"
+],
+"d": 1,
+"x": "Falafel is often stuffed into pita bread with salad and tahini sauce.",
+"tags": [
+"middle east",
+"street food"
+]
+},
+{
+"q": "Which country is traditionally famous for fondue, a pot of melted cheese?",
+"a": [
+"Switzerland",
+"Belgium",
+"Denmark",
+"Poland"
+],
+"d": 1,
+"x": "The word fondue is French for 'melted'. Diners dip bread cubes on long forks into a shared pot.",
+"tags": [
+"cheese",
+"switzerland"
+]
+},
+{
+"q": "Edam and Gouda cheeses come from which country?",
+"a": [
+"The Netherlands",
+"Belgium",
+"Denmark",
+"Switzerland"
+],
+"d": 1,
+"x": "Both cheeses are named after Dutch towns. Edam is usually sold in a ball coated in red wax.",
+"tags": [
+"cheese"
+]
+},
+{
+"q": "What is the yellow center of an egg called?",
+"a": [
+"Yolk",
+"Albumen",
+"Shell membrane",
+"Chalaza"
+],
+"d": 1,
+"x": "The yolk holds most of an egg's fat and vitamins, while the white is mostly protein and water.",
+"tags": [
+"eggs"
+]
+},
+{
+"q": "Real mozzarella di bufala is made from the milk of which animal?",
+"a": [
+"Water buffalo",
+"Cow",
+"Goat",
+"Sheep"
+],
+"d": 1,
+"x": "Italian water buffalo milk is richer than cow's milk, which gives the cheese its creamy flavor.",
+"tags": [
+"cheese",
+"italy"
+]
+},
+{
+"q": "Which compound makes chili peppers taste hot?",
+"a": [
+"Capsaicin",
+"Piperine",
+"Allicin",
+"Menthol"
+],
+"d": 1,
+"x": "Capsaicin is concentrated in the white ribs inside the pepper, not in the seeds themselves.",
+"tags": [
+"spices",
+"science"
+]
+},
+{
+"q": "Vanilla is the seed pod of which type of flower?",
+"a": [
+"Orchid",
+"Lily",
+"Rose",
+"Jasmine"
+],
+"d": 1,
+"x": "Vanilla is the only edible fruit that comes from the orchid family, which has more than 25,000 species.",
+"tags": [
+"spices"
+]
+},
+{
+"q": "Which hot drink is made from ground roasted beans and served as espresso or latte?",
+"a": [
+"Coffee",
+"Hot cocoa",
+"Matcha",
+"Chai"
+],
+"d": 1,
+"x": "Coffee beans are really seeds from the cherry-like fruit of the coffee plant.",
+"tags": [
+"coffee"
+]
+},
+{
+"q": "Which Italian coffee drink has equal parts espresso, steamed milk and milk foam?",
+"a": [
+"Cappuccino",
+"Americano",
+"Ristretto",
+"Lungo"
+],
+"d": 1,
+"x": "The drink is named after Capuchin friars, whose brown robes resembled the color of the coffee.",
+"tags": [
+"coffee",
+"italy"
+]
+},
+{
+"q": "In Italian cooking, what does 'al dente' mean when applied to pasta?",
+"a": [
+"Firm to the bite",
+"Very soft",
+"Lightly salted",
+"Freshly made"
+],
+"d": 1,
+"x": "Al dente literally means 'to the tooth'. Pasta cooked this way also digests more slowly than soft pasta.",
+"tags": [
+"italy",
+"cooking terms"
+]
+},
+{
+"q": "What is it called to cook food gently in liquid just below boiling point?",
+"a": [
+"Simmering",
+"Searing",
+"Grilling",
+"Frying"
+],
+"d": 1,
+"x": "A simmer shows small, slow bubbles at the surface, while a full boil bubbles vigorously.",
+"tags": [
+"cooking terms"
+]
+},
+{
+"q": "Which tropical fruit is known for its spiky husk and very strong smell?",
+"a": [
+"Durian",
+"Papaya",
+"Guava",
+"Lychee"
+],
+"d": 1,
+"x": "Durian smells so pungent that it is banned from many hotels and public transport in Southeast Asia.",
+"tags": [
+"fruit",
+"asia"
+]
+},
+{
+"q": "Which fruit is filled with ruby-red, juicy seeds called arils?",
+"a": [
+"Pomegranate",
+"Fig",
+"Persimmon",
+"Kiwi"
+],
+"d": 1,
+"x": "A single pomegranate can hold several hundred arils, each wrapped around one seed.",
+"tags": [
+"fruit"
+]
+},
+{
+"q": "Traditional caviar is the salted roe of which fish?",
+"a": [
+"Sturgeon",
+"Cod",
+"Herring",
+"Tuna"
+],
+"d": 1,
+"x": "The best-known caviar comes from sturgeon in the Caspian and Black Seas.",
+"tags": [
+"seafood"
+]
+},
+{
+"q": "Which orange root vegetable is rich in beta-carotene?",
+"a": [
+"Carrot",
+"Radish",
+"Turnip",
+"Celeriac"
+],
+"d": 1,
+"x": "The body turns beta-carotene into vitamin A. Carrots were originally purple or yellow before orange ones were bred.",
+"tags": [
+"vegetables",
+"nutrition"
+]
+},
+{
+"q": "Which Italian dumplings are traditionally made from potato and flour?",
+"a": [
+"Gnocchi",
+"Ravioli",
+"Tortellini",
+"Arancini"
+],
+"d": 1,
+"x": "Gnocchi are boiled until they float to the surface and are served with sauce or butter.",
+"tags": [
+"italy",
+"pasta"
+]
+},
+{
+"q": "Which country is famous for haggis, a savory pudding of sheep offal and oats?",
+"a": [
+"Scotland",
+"Ireland",
+"Wales",
+"England"
+],
+"d": 1,
+"x": "Haggis is traditionally served on Burns Night with mashed turnips and potatoes.",
+"tags": [
+"uk",
+"traditions"
+]
+},
+{
+"q": "Which country is known for the classic dish of battered fish and fried potatoes?",
+"a": [
+"United Kingdom",
+"Ireland",
+"Canada",
+"Australia"
+],
+"d": 1,
+"x": "Fish and chip shops spread across Britain in the 1860s, and the dish became a staple of working-class meals.",
+"tags": [
+"uk"
+]
+},
+{
+"q": "Which dairy product is made by churning cream?",
+"a": [
+"Butter",
+"Yogurt",
+"Kefir",
+"Whey"
+],
+"d": 1,
+"x": "Churning breaks up the fat globules in cream until they clump together, leaving buttermilk behind.",
+"tags": [
+"dairy"
+]
+},
+{
+"q": "Which dairy food is made by fermenting milk with live bacterial cultures?",
+"a": [
+"Yogurt",
+"Butter",
+"Cream",
+"Ghee"
+],
+"d": 1,
+"x": "The bacteria turn milk's lactose into lactic acid, which thickens the milk and gives yogurt its tang.",
+"tags": [
+"dairy"
+]
+},
+{
+"q": "Which ingredient makes up the bulk of most bread dough?",
+"a": [
+"Flour",
+"Sugar",
+"Butter",
+"Yeast"
+],
+"d": 1,
+"x": "Bread flour contains more protein than cake flour, which helps build a strong, chewy structure.",
+"tags": [
+"baking"
+]
+},
+{
+"q": "What spicy green paste is traditionally served with sushi?",
+"a": [
+"Wasabi",
+"Pesto",
+"Tahini",
+"Chutney"
+],
+"d": 1,
+"x": "Much of the wasabi sold abroad is actually horseradish dyed green. Real wasabi is a rare, hard-to-grow plant.",
+"tags": [
+"japan",
+"condiments"
+]
+},
+{
+"q": "Which fermented soybean paste is the base of a famous Japanese soup?",
+"a": [
+"Miso",
+"Tahini",
+"Hoisin",
+"Sambal"
+],
+"d": 1,
+"x": "Miso is made by fermenting soybeans with salt and a mold called koji, sometimes with rice or barley added.",
+"tags": [
+"japan",
+"fermented"
+]
+},
+{
+"q": "Which golden spice gives curry its yellow color?",
+"a": [
+"Turmeric",
+"Cumin",
+"Paprika",
+"Cinnamon"
+],
+"d": 1,
+"x": "Turmeric is the root of a plant in the ginger family. Its color comes from a compound called curcumin.",
+"tags": [
+"spices",
+"india"
+]
+},
+{
+"q": "In a restaurant kitchen, what is 'mise en place'?",
+"a": [
+"Having all ingredients prepared and in place",
+"A kind of French knife",
+"A slow-cooked sauce",
+"The chef's special dish"
+],
+"d": 1,
+"x": "Mise en place is French for 'putting in place'. Chefs prepare everything before cooking starts.",
+"tags": [
+"cooking terms",
+"france"
+]
+},
+{
+"q": "Which Italian dessert layers ladyfingers soaked in coffee with mascarpone cream?",
+"a": [
+"Tiramisu",
+"Cannoli",
+"Panna cotta",
+"Zabaglione"
+],
+"d": 1,
+"x": "Tiramisu means 'pick me up' in Italian, a nod to the caffeine in the coffee-soaked cookies.",
+"tags": [
+"italy",
+"dessert"
+]
+},
+{
+"q": "Which fruit, often treated as a vegetable, is the main ingredient of ketchup?",
+"a": [
+"Tomato",
+"Red pepper",
+"Beet",
+"Apple"
+],
+"d": 1,
+"x": "Tomatoes are botanically fruits. Early ketchups were made from mushrooms, walnuts or fish instead.",
+"tags": [
+"condiments"
+]
+},
+{
+"q": "Which French pastry is shaped like a crescent and made of buttery layers?",
+"a": [
+"Croissant",
+"Brioche",
+"Eclair",
+"Madeleine"
+],
+"d": 1,
+"x": "The croissant's flaky texture comes from folding butter into the dough again and again, a process called lamination.",
+"tags": [
+"france",
+"pastry"
+]
+},
+{
+"q": "Which pastry is made of choux dough, filled with cream and topped with icing?",
+"a": [
+"Eclair",
+"Croissant",
+"Strudel",
+"Danish"
+],
+"d": 1,
+"x": "Choux pastry puffs up in the oven with no yeast or baking powder, using only steam.",
+"tags": [
+"france",
+"pastry"
+]
+},
+{
+"q": "Which delicate French sandwich cookie comes in pastel colors and is made with almond flour?",
+"a": [
+"Macaron",
+"Madeleine",
+"Biscotti",
+"Shortbread"
+],
+"d": 1,
+"x": "A good macaron has a smooth shell and a ruffled edge at its base, called the 'foot'.",
+"tags": [
+"france",
+"dessert"
+]
+},
+{
+"q": "Which sweet pastry is made of thin phyllo layers, chopped nuts and syrup?",
+"a": [
+"Baklava",
+"Strudel",
+"Churro",
+"Danish"
+],
+"d": 1,
+"x": "Baklava is popular from Greece and Turkey to the Levant, and a good one can have 30 or more layers of phyllo.",
+"tags": [
+"dessert",
+"middle east"
+]
+},
+{
+"q": "Which Spanish fried-dough pastry is often dipped in thick hot chocolate?",
+"a": [
+"Churros",
+"Beignets",
+"Donuts",
+"Crullers"
+],
+"d": 1,
+"x": "Churros are piped through a star-shaped nozzle, which creates their signature ridges.",
+"tags": [
+"spain",
+"dessert"
+]
+},
+{
+"q": "Which U.S. holiday is traditionally celebrated with roast turkey and pumpkin pie?",
+"a": [
+"Thanksgiving",
+"Independence Day",
+"Labor Day",
+"Memorial Day"
+],
+"d": 1,
+"x": "Thanksgiving is celebrated on the fourth Thursday of November in the United States.",
+"tags": [
+"traditions",
+"usa"
+]
+},
+{
+"q": "At Spain's yearly food-fight festival in Buñol, what do people throw?",
+"a": [
+"Tomatoes",
+"Oranges",
+"Eggs",
+"Grapes"
+],
+"d": 1,
+"x": "La Tomatina has taken place on the last Wednesday of August, and trucks bring in over a hundred tons of ripe tomatoes.",
+"tags": [
+"festivals",
+"spain"
+]
+},
+{
+"q": "Which hard Italian cheese is traditionally grated over pasta?",
+"a": [
+"Parmesan",
+"Ricotta",
+"Brie",
+"Mascarpone"
+],
+"d": 1,
+"x": "Real Parmigiano Reggiano is aged for at least a year and carries a stamp of origin on its rind.",
+"tags": [
+"cheese",
+"italy"
+]
+},
+{
+"q": "Which spice comes from the inner bark of a tree and is rolled into quills?",
+"a": [
+"Cinnamon",
+"Cloves",
+"Nutmeg",
+"Star anise"
+],
+"d": 1,
+"x": "As the bark dries, it curls into the familiar rolled sticks. It has been traded for over 4,000 years.",
+"tags": [
+"spices"
+]
+},
+{
+"q": "Which tropical fruit is the signature topping on Hawaiian pizza?",
+"a": [
+"Pineapple",
+"Mango",
+"Papaya",
+"Coconut"
+],
+"d": 1,
+"x": "Despite the name, Hawaiian pizza was invented in Ontario, Canada, by a Greek-born restaurateur in 1962.",
+"tags": [
+"pizza",
+"fruit"
+]
+},
+{
+"q": "Which tart red berry is traditionally made into a sauce for roast turkey?",
+"a": [
+"Cranberry",
+"Blueberry",
+"Gooseberry",
+"Raspberry"
+],
+"d": 1,
+"x": "Cranberries grow on low vines in bogs, and farmers often flood the bog to harvest them as they float.",
+"tags": [
+"fruit",
+"usa"
+]
+},
+{
+"q": "Which cereal grain is used to make tortilla chips and polenta?",
+"a": [
+"Corn",
+"Rice",
+"Oats",
+"Rye"
+],
+"d": 1,
+"x": "Corn is also called maize. It was first domesticated in Mexico thousands of years ago.",
+"tags": [
+"grains"
+]
+},
+{
+"q": "Which type of lettuce is traditionally used in a Caesar salad?",
+"a": [
+"Romaine",
+"Iceberg",
+"Butterhead",
+"Arugula"
+],
+"d": 1,
+"x": "Romaine leaves are sturdy enough to hold up to the thick dressing of a Caesar salad.",
+"tags": [
+"salad",
+"vegetables"
+]
+},
+{
+"q": "Which Indian dish layers rice with spiced meat or vegetables?",
+"a": [
+"Biryani",
+"Risotto",
+"Sushi",
+"Pilaf"
+],
+"d": 1,
+"x": "Biryani is cooked slowly, sometimes sealed with dough so the steam stays inside.",
+"tags": [
+"india",
+"rice"
+]
+},
+{
+"q": "Which creamy sauce is made by whisking egg yolk and oil together?",
+"a": [
+"Mayonnaise",
+"Ketchup",
+"Bechamel",
+"Mustard"
+],
+"d": 1,
+"x": "Mayonnaise is an emulsion, which means tiny droplets of oil are held in suspension by the egg yolk.",
+"tags": [
+"condiments"
+]
+},
+{
+"q": "Which vegetable is pickled to make gherkins?",
+"a": [
+"Cucumber",
+"Zucchini",
+"Pepper",
+"Carrot"
+],
+"d": 1,
+"x": "Gherkins are small, bumpy cucumbers. The word comes from a Dutch term for 'little cucumber'.",
+"tags": [
+"vegetables"
+]
+},
+{
+"q": "Which leafy green vegetable made Popeye the cartoon sailor strong?",
+"a": [
+"Spinach",
+"Kale",
+"Cabbage",
+"Lettuce"
+],
+"d": 1,
+"x": "Spinach is a leafy vegetable that gets cooked down a lot: a big pile of raw leaves wilts to just a few spoonfuls.",
+"tags": [
+"vegetables"
+]
+},
+{
+"q": "Which part of a chicken is the drumstick?",
+"a": [
+"The lower leg",
+"The wing",
+"The breast",
+"The back"
+],
+"d": 1,
+"x": "Chicken legs have two parts, the drumstick and the thigh, and both are dark meat.",
+"tags": [
+"meat"
+]
+},
+{
+"q": "Which kitchen tool is used to beat eggs or whip cream?",
+"a": [
+"Whisk",
+"Spatula",
+"Ladle",
+"Tongs"
+],
+"d": 1,
+"x": "A whisk's wire loops add air to a mixture, which makes it lighter and fluffier.",
+"tags": [
+"tools"
+]
+},
+{
+"q": "What do Americans call the fresh leaves of the coriander plant?",
+"a": [
+"Cilantro",
+"Parsley",
+"Dill",
+"Chervil"
+],
+"d": 1,
+"x": "Cilantro is Spanish for coriander. Some people find it tastes like soap because of a genetic trait.",
+"tags": [
+"herbs"
+]
+},
+{
+"q": "What are the individual segments of a garlic bulb called?",
+"a": [
+"Cloves",
+"Pods",
+"Bulbils",
+"Scales"
+],
+"d": 1,
+"x": "A bulb of garlic usually holds about ten to twenty cloves wrapped in papery skin.",
+"tags": [
+"vegetables"
+]
+},
+{
+"q": "Which fruit comes in varieties such as Granny Smith and Gala?",
+"a": [
+"Apple",
+"Pear",
+"Plum",
+"Peach"
+],
+"d": 1,
+"x": "There are thousands of apple varieties worldwide, and they can range from very sweet to very sour.",
+"tags": [
+"fruit"
+]
+},
+{
+"q": "Sushi rice is seasoned with which sour ingredient?",
+"a": [
+"Rice vinegar",
+"Lemon juice",
+"Soy sauce",
+"Fish sauce"
+],
+"d": 1,
+"x": "Vinegar was originally used to speed up the fermentation of sushi, and now it adds flavor to the rice.",
+"tags": [
+"japan",
+"sushi"
+]
+},
+{
+"q": "Which fast cooking method uses a hot wok and constant tossing of the food?",
+"a": [
+"Stir-frying",
+"Poaching",
+"Braising",
+"Steaming"
+],
+"d": 1,
+"x": "Stir-frying cooks small pieces of food quickly over very high heat, keeping vegetables crisp.",
+"tags": [
+"china",
+"cooking terms"
+]
+},
+{
+"q": "Which kitchen tool is used to remove the skin of potatoes and carrots?",
+"a": [
+"Peeler",
+"Mandoline",
+"Grater",
+"Zester"
+],
+"d": 1,
+"x": "Swivel-blade vegetable peelers became common in the 1900s, which made kitchen prep much faster.",
+"tags": [
+"tools"
+]
+},
+{
+"q": "Which natural sugar is found in milk?",
+"a": [
+"Lactose",
+"Fructose",
+"Maltose",
+"Sucrose"
+],
+"d": 1,
+"x": "Lactose is made of two simpler sugars, glucose and galactose, joined together.",
+"tags": [
+"nutrition",
+"dairy"
+]
+},
+{
+"q": "Which sour yellow citrus fruit is often squeezed over fish?",
+"a": [
+"Lemon",
+"Lime",
+"Grapefruit",
+"Orange"
+],
+"d": 1,
+"x": "Lemon juice is acidic, so it can brighten flavors and also stops cut apples from turning brown.",
+"tags": [
+"fruit"
+]
+},
+{
+"q": "Which sugary treat is made by spinning heated sugar into fine threads, often sold at fairs?",
+"a": [
+"Cotton candy",
+"Toffee",
+"Nougat",
+"Fudge"
+],
+"d": 1,
+"x": "Cotton candy is called candy floss in Britain. A spinning machine forces melted sugar through tiny holes.",
+"tags": [
+"sweets"
+]
+},
+{
+"q": "Which fruit is dried to make prunes?",
+"a": [
+"Plums",
+"Grapes",
+"Apricots",
+"Cherries"
+],
+"d": 1,
+"x": "Not every plum can be made into a prune. Only certain firm, high-sugar varieties dry well without fermenting.",
+"tags": [
+"fruit"
+]
+},
+{
+"q": "Which everyday seasoning is harvested by evaporating seawater or mined from underground?",
+"a": [
+"Salt",
+"Sugar",
+"Black pepper",
+"Baking soda"
+],
+"d": 1,
+"x": "Humans have used salt for thousands of years, and it was once so valuable that it was used as money.",
+"tags": [
+"seasoning"
+]
+},
+{
+"q": "Which dark, salty condiment is brewed from fermented soybeans and wheat?",
+"a": [
+"Soy sauce",
+"Fish sauce",
+"Worcestershire sauce",
+"Hoisin sauce"
+],
+"d": 1,
+"x": "Soy sauce originated in China more than 2,000 years ago and later became a staple of Japanese cooking.",
+"tags": [
+"asia",
+"condiments"
+]
+}
+]

@@ -1,0 +1,1498 @@
+[
+{
+"q": "Which country's flag has a single red maple leaf on a white square between two red bars?",
+"a": [
+"Canada",
+"Austria",
+"Peru",
+"Switzerland"
+],
+"d": 1,
+"x": "Red and white have been Canada's official colors since 1921, and the leaf design has flown since 1965.",
+"tags": [
+"flags",
+"north-america"
+]
+},
+{
+"q": "A red disc on a plain white field is the national flag of which Asian country?",
+"a": [
+"Japan",
+"South Korea",
+"Laos",
+"Vietnam"
+],
+"d": 1,
+"x": "Japan is called the Land of the Rising Sun, and the red disc stands for the sun.",
+"tags": [
+"flags",
+"asia"
+]
+},
+{
+"q": "How many stars appear on the flag of the United States?",
+"a": [
+"50",
+"48",
+"52",
+"51"
+],
+"d": 1,
+"x": "There is one star for each state; the 50th was added in 1960 after Hawaii joined the Union.",
+"tags": [
+"flags",
+"north-america"
+]
+},
+{
+"q": "How many stripes does the flag of the United States have?",
+"a": [
+"13",
+"10",
+"15",
+"50"
+],
+"d": 1,
+"x": "The seven red and six white stripes stand for the original thirteen colonies.",
+"tags": [
+"flags",
+"north-america"
+]
+},
+{
+"q": "Which country has the only national flag that is not a rectangle or square?",
+"a": [
+"Nepal",
+"Bhutan",
+"Sri Lanka",
+"Mongolia"
+],
+"d": 1,
+"x": "Nepal's flag is made of two stacked triangular pennants, topped with a moon and a sun.",
+"tags": [
+"flags",
+"asia"
+]
+},
+{
+"q": "A green cedar tree on a white band between two red bands appears on the flag of which country?",
+"a": [
+"Lebanon",
+"Syria",
+"Jordan",
+"Tunisia"
+],
+"d": 1,
+"x": "The cedar is a national symbol of the country and is mentioned many times in ancient texts.",
+"tags": [
+"flags",
+"asia"
+]
+},
+{
+"q": "Which Himalayan kingdom's flag shows a white dragon across a yellow and orange field?",
+"a": [
+"Bhutan",
+"Nepal",
+"Mongolia",
+"Sri Lanka"
+],
+"d": 1,
+"x": "The dragon is called Druk, which is also the local name of the country, 'Land of the Thunder Dragon.'",
+"tags": [
+"flags",
+"asia"
+]
+},
+{
+"q": "Which country's flag is square, showing a white cross on a red background?",
+"a": [
+"Switzerland",
+"Denmark",
+"Austria",
+"England"
+],
+"d": 1,
+"x": "Switzerland and Vatican City are the only two sovereign states with square national flags.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "The Dannebrog, a white cross on a red field, is often called the oldest continuously used national flag of which country?",
+"a": [
+"Denmark",
+"Sweden",
+"Norway",
+"Finland"
+],
+"d": 1,
+"x": "Its name means 'Danish cloth,' and it inspired the other Nordic cross flags.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "Which country's green flag has a yellow diamond with a blue globe in the middle?",
+"a": [
+"Brazil",
+"Argentina",
+"Portugal",
+"Bolivia"
+],
+"d": 1,
+"x": "The globe carries the motto 'Ordem e Progresso,' meaning 'Order and Progress.'",
+"tags": [
+"flags",
+"south-america"
+]
+},
+{
+"q": "An eagle perched on a cactus and holding a snake appears on the flag of which country?",
+"a": [
+"Mexico",
+"Colombia",
+"Bolivia",
+"Egypt"
+],
+"d": 1,
+"x": "The emblem recalls the Aztec legend of an eagle on a cactus marking the site of their capital.",
+"tags": [
+"flags",
+"north-america"
+]
+},
+{
+"q": "Which country has a vertical tricolor of green, white and red with no emblem?",
+"a": [
+"Italy",
+"Hungary",
+"Ireland",
+"Nigeria"
+],
+"d": 1,
+"x": "Its design was inspired by the French tricolor in the late 1700s.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "Which country's flag is made of three horizontal bands of black, red and gold?",
+"a": [
+"Germany",
+"Belgium",
+"Austria",
+"Estonia"
+],
+"d": 1,
+"x": "These colors are linked to the 1848 liberal movement for German unity.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "Which country's flag has vertical bands of blue, white and red, with blue next to the flagpole?",
+"a": [
+"France",
+"Netherlands",
+"Russia",
+"Paraguay"
+],
+"d": 1,
+"x": "Blue and red are the colors of Paris, and white was the color of the royal house; they were joined in 1789.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "Which country's flag has vertical stripes of green, white and orange, with green at the hoist?",
+"a": [
+"Ireland",
+"Ivory Coast",
+"Niger",
+"Italy"
+],
+"d": 1,
+"x": "The white band stands for peace between the green and orange traditions on the island.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "Which country's flag has red and yellow horizontal bands, with the yellow band twice as wide as each red one?",
+"a": [
+"Spain",
+"Portugal",
+"Andorra",
+"Belgium"
+],
+"d": 1,
+"x": "A coat of arms with the Pillars of Hercules sits on the yellow stripe near the hoist.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "The Union Jack combines the crosses of St George, St Andrew and which other saint?",
+"a": [
+"St Patrick",
+"St David",
+"St Peter",
+"St Michael"
+],
+"d": 1,
+"x": "St Patrick's red diagonal cross was added in 1801 to represent Ireland.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "How many horizontal stripes does the flag of Greece have?",
+"a": [
+"Nine",
+"Seven",
+"Eleven",
+"Thirteen"
+],
+"d": 1,
+"x": "Blue and white stripes alternate, with a white cross in the blue canton. A popular tale links the nine stripes to the syllables of 'Freedom or Death.'",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "Which country's flag is white with two blue horizontal stripes and a blue six-pointed star?",
+"a": [
+"Israel",
+"Greece",
+"Uruguay",
+"Finland"
+],
+"d": 1,
+"x": "The stripes echo a Jewish prayer shawl, the tallit.",
+"tags": [
+"flags",
+"asia"
+]
+},
+{
+"q": "Which country's flag has saffron, white and green bands with a navy blue wheel in the middle?",
+"a": [
+"India",
+"Niger",
+"Ireland",
+"Ivory Coast"
+],
+"d": 1,
+"x": "The wheel is the Ashoka Chakra, taken from an ancient pillar of the emperor Ashoka.",
+"tags": [
+"flags",
+"asia"
+]
+},
+{
+"q": "Which country's red flag has one large yellow star and four smaller ones in the upper left corner?",
+"a": [
+"China",
+"Vietnam",
+"Turkey",
+"Morocco"
+],
+"d": 1,
+"x": "Adopted in 1949, it is nicknamed the Five-star Red Flag.",
+"tags": [
+"flags",
+"asia"
+]
+},
+{
+"q": "Which Southeast Asian country's flag is red with one large yellow five-pointed star?",
+"a": [
+"Vietnam",
+"Laos",
+"Thailand",
+"Cambodia"
+],
+"d": 1,
+"x": "In Vietnamese the flag is called 'co do sao vang,' the red flag with a yellow star.",
+"tags": [
+"flags",
+"asia"
+]
+},
+{
+"q": "Which Caribbean country's flag has five blue and white stripes and a red triangle holding a white star?",
+"a": [
+"Cuba",
+"Costa Rica",
+"Panama",
+"Chile"
+],
+"d": 1,
+"x": "The single star earned it the nickname 'La Estrella Solitaria,' the Lone Star.",
+"tags": [
+"flags",
+"caribbean"
+]
+},
+{
+"q": "Which country's flag is a gold diagonal cross dividing it into green and black triangles?",
+"a": [
+"Jamaica",
+"Trinidad and Tobago",
+"Guyana",
+"Bahamas"
+],
+"d": 1,
+"x": "Jamaica's is the only national flag that uses none of red, white or blue.",
+"tags": [
+"flags",
+"caribbean"
+]
+},
+{
+"q": "Which country's green flag shows white Arabic script above a sword?",
+"a": [
+"Saudi Arabia",
+"Iran",
+"Pakistan",
+"Algeria"
+],
+"d": 1,
+"x": "The script is the Shahada, the Islamic declaration of faith.",
+"tags": [
+"flags",
+"asia"
+]
+},
+{
+"q": "Which country's red, white and black tricolor has a golden eagle in the center?",
+"a": [
+"Egypt",
+"Yemen",
+"Iraq",
+"Syria"
+],
+"d": 1,
+"x": "The emblem is called the Eagle of Saladin, after the medieval sultan.",
+"tags": [
+"flags",
+"africa"
+]
+},
+{
+"q": "Which country's flag has a sideways Y-shaped band that merges into a single horizontal stripe?",
+"a": [
+"South Africa",
+"Kenya",
+"Zimbabwe",
+"Namibia"
+],
+"d": 1,
+"x": "Adopted in 1994, the Y is often read as diverse groups coming together.",
+"tags": [
+"flags",
+"africa"
+]
+},
+{
+"q": "Which African country has an assault rifle on its flag?",
+"a": [
+"Mozambique",
+"Angola",
+"Kenya",
+"Zimbabwe"
+],
+"d": 1,
+"x": "The rifle sits on a red star alongside a hoe and an open book.",
+"tags": [
+"flags",
+"africa"
+]
+},
+{
+"q": "Which Caribbean island's flag shows a purple parrot inside a red disc?",
+"a": [
+"Dominica",
+"Grenada",
+"Haiti",
+"Dominican Republic"
+],
+"d": 1,
+"x": "The bird is the Sisserou parrot, which is found only on this island.",
+"tags": [
+"flags",
+"caribbean"
+]
+},
+{
+"q": "Which island nation's flag has a golden lion holding a sword on a maroon panel?",
+"a": [
+"Sri Lanka",
+"Singapore",
+"Maldives",
+"Bangladesh"
+],
+"d": 1,
+"x": "Four bo leaves fill the corners of the maroon panel.",
+"tags": [
+"flags",
+"asia"
+]
+},
+{
+"q": "Which Mediterranean island's flag shows a copper-colored map of the island above two olive branches?",
+"a": [
+"Cyprus",
+"Malta",
+"Greece",
+"Turkey"
+],
+"d": 1,
+"x": "The copper color alludes to the island's ancient copper mining, and the branches stand for peace.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "Which country's flag has a Union Jack in the corner and four red stars with white borders on blue?",
+"a": [
+"New Zealand",
+"Australia",
+"Fiji",
+"Tuvalu"
+],
+"d": 1,
+"x": "The four stars form the Southern Cross constellation.",
+"tags": [
+"flags",
+"oceania"
+]
+},
+{
+"q": "Which Nordic country's flag is a yellow cross on a blue field?",
+"a": [
+"Sweden",
+"Finland",
+"Norway",
+"Iceland"
+],
+"d": 1,
+"x": "Blue and gold come from the national coat of arms, which shows three gold crowns on blue.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "Which country's white flag with a blue cross is meant to recall its lakes and snow?",
+"a": [
+"Finland",
+"Sweden",
+"Greece",
+"Estonia"
+],
+"d": 1,
+"x": "Finland is known as the land of a thousand lakes.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "Which Nordic country's red flag has a blue cross outlined in white?",
+"a": [
+"Norway",
+"Denmark",
+"Sweden",
+"Iceland"
+],
+"d": 1,
+"x": "The cross is off-center, with the vertical bar closer to the hoist, a typical Nordic cross layout.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "Which island nation's blue flag has a red cross edged in white?",
+"a": [
+"Iceland",
+"Norway",
+"Sweden",
+"Finland"
+],
+"d": 1,
+"x": "A common explanation is red for volcanic fire, white for ice and blue for the mountains.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "Which country's tricolor runs white, blue, red from top to bottom?",
+"a": [
+"Russia",
+"Netherlands",
+"France",
+"Slovakia"
+],
+"d": 1,
+"x": "Horizontal white, blue and red bands have flown over the country in various forms for centuries.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "Which country's flag has just two horizontal bands, white above red?",
+"a": [
+"Poland",
+"Indonesia",
+"Monaco",
+"Austria"
+],
+"d": 1,
+"x": "The colors come from the white eagle on a red shield in the Polish coat of arms.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "Which country's flag is made of two horizontal bands, blue above yellow?",
+"a": [
+"Ukraine",
+"Kazakhstan",
+"Moldova",
+"Romania"
+],
+"d": 1,
+"x": "The colors are commonly said to show a blue sky over golden wheat fields.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "Which country's flag has three equal horizontal bands of red, white and red?",
+"a": [
+"Austria",
+"Peru",
+"Poland",
+"Switzerland"
+],
+"d": 1,
+"x": "According to legend, a duke's white tunic was stained red with blood except under his belt.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "Which country's flag has vertical bands of black, yellow and red?",
+"a": [
+"Belgium",
+"Germany",
+"Romania",
+"Lithuania"
+],
+"d": 1,
+"x": "The colors come from the arms of the Duchy of Brabant, a black lion on gold.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "Which country's flag is split into green and red, with a yellow armillary sphere on the border?",
+"a": [
+"Portugal",
+"Spain",
+"Brazil",
+"Morocco"
+],
+"d": 1,
+"x": "The armillary sphere is a navigation instrument that recalls the Age of Discovery.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "Which South American country's flag has a white star on a blue square in the top left, plus white and red stripes?",
+"a": [
+"Chile",
+"Peru",
+"Uruguay",
+"Bolivia"
+],
+"d": 1,
+"x": "Blue is said to stand for the sky, white for the snowy Andes and red for blood shed for independence.",
+"tags": [
+"flags",
+"south-america"
+]
+},
+{
+"q": "Which country's flag has a yellow band twice as tall as the blue and red bands below, with no emblem?",
+"a": [
+"Colombia",
+"Venezuela",
+"Ecuador",
+"Romania"
+],
+"d": 1,
+"x": "A popular reading is yellow for gold, blue for the seas and red for blood shed for independence.",
+"tags": [
+"flags",
+"south-america"
+]
+},
+{
+"q": "Which African country's flag has three vertical bands in green, white and green?",
+"a": [
+"Nigeria",
+"Ghana",
+"Niger",
+"Ivory Coast"
+],
+"d": 1,
+"x": "Green stands for agriculture and white for peace.",
+"tags": [
+"flags",
+"africa"
+]
+},
+{
+"q": "Which African country's red, gold and green flag has a black star in the center?",
+"a": [
+"Ghana",
+"Senegal",
+"Cameroon",
+"Ethiopia"
+],
+"d": 1,
+"x": "The black star symbolizes African freedom, and the national football team is nicknamed the Black Stars.",
+"tags": [
+"flags",
+"africa"
+]
+},
+{
+"q": "Which country's green flag has a white vertical stripe at the hoist and a white crescent and star?",
+"a": [
+"Pakistan",
+"Algeria",
+"Turkey",
+"Bangladesh"
+],
+"d": 1,
+"x": "The white stripe is for religious minorities, and the green field for the Muslim majority.",
+"tags": [
+"flags",
+"asia"
+]
+},
+{
+"q": "Which country's flag is dark green with a red disc placed slightly off-center?",
+"a": [
+"Bangladesh",
+"Japan",
+"Pakistan",
+"Sri Lanka"
+],
+"d": 1,
+"x": "The disc is shifted toward the hoist so that it looks centered when the flag is flying.",
+"tags": [
+"flags",
+"asia"
+]
+},
+{
+"q": "Which country's flag has five horizontal stripes of red, white, blue, white and red, with the blue band twice as wide?",
+"a": [
+"Thailand",
+"Costa Rica",
+"Laos",
+"Cambodia"
+],
+"d": 1,
+"x": "The central blue stripe is associated with the monarchy.",
+"tags": [
+"flags",
+"asia"
+]
+},
+{
+"q": "Which country's flag has a white crescent beside five white stars above a white band, with a red band on top?",
+"a": [
+"Singapore",
+"Malaysia",
+"Indonesia",
+"Turkey"
+],
+"d": 1,
+"x": "Red is for brotherhood and white for purity.",
+"tags": [
+"flags",
+"asia"
+]
+},
+{
+"q": "How many red and white stripes does the flag of Malaysia have?",
+"a": [
+"14",
+"13",
+"11",
+"12"
+],
+"d": 1,
+"x": "The stripes match the 13 states plus the federal territory, and the star in the canton has 14 points.",
+"tags": [
+"flags",
+"asia"
+]
+},
+{
+"q": "A white crescent and five-pointed star on a plain red field form the flag of which country?",
+"a": [
+"Turkey",
+"Tunisia",
+"Algeria",
+"Azerbaijan"
+],
+"d": 1,
+"x": "Moon-and-star symbols were used long before the modern republic, in the Ottoman era.",
+"tags": [
+"flags",
+"asia"
+]
+},
+{
+"q": "Which Southeast Asian country's flag has a white triangle holding a sun and three stars?",
+"a": [
+"Philippines",
+"Thailand",
+"Indonesia",
+"Vietnam"
+],
+"d": 1,
+"x": "The sun's eight rays honor the first eight provinces that rose against Spain.",
+"tags": [
+"flags",
+"asia"
+]
+},
+{
+"q": "Which UK nation's flag shows a red dragon on a green and white background?",
+"a": [
+"Wales",
+"Scotland",
+"England",
+"Northern Ireland"
+],
+"d": 1,
+"x": "The Welsh dragon is not represented in the Union Jack, which uses only English, Scottish and Irish crosses.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "Which UK nation's flag is a white diagonal cross on a blue field?",
+"a": [
+"Scotland",
+"Wales",
+"England",
+"Northern Ireland"
+],
+"d": 1,
+"x": "It shows the saltire, the X-shaped cross on which St Andrew was said to have been crucified.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "The flag of the United Nations shows a world map framed by which plant?",
+"a": [
+"Olive branches",
+"Laurel wreaths",
+"Palm fronds",
+"Oak leaves"
+],
+"d": 1,
+"x": "Olive branches are a classic symbol of peace; the white emblem sits on a light blue field.",
+"tags": [
+"flags",
+"organizations"
+]
+},
+{
+"q": "In flag terms, what name is given to a flag with three bands of different colors?",
+"a": [
+"Tricolor",
+"Triptych",
+"Trident",
+"Triumvirate"
+],
+"d": 1,
+"x": "The French Tricolore made the design famous, but many countries use three-band flags.",
+"tags": [
+"flags",
+"vexillology"
+]
+},
+{
+"q": "What does waving a plain white flag traditionally signal?",
+"a": [
+"Surrender or truce",
+"Danger ahead",
+"Quarantine",
+"The start of a race"
+],
+"d": 1,
+"x": "Under international law, a white flag signals a wish to negotiate or surrender.",
+"tags": [
+"flags",
+"history"
+]
+},
+{
+"q": "In motor racing, what does the black-and-white checkered flag signal?",
+"a": [
+"The end of the race",
+"A pit stop",
+"A crash ahead",
+"The start of the race"
+],
+"d": 1,
+"x": "The first driver to cross the line under the checkered flag wins the race.",
+"tags": [
+"flags",
+"sport"
+]
+},
+{
+"q": "Which Balkan country's red flag has a black double-headed eagle?",
+"a": [
+"Albania",
+"Serbia",
+"Montenegro",
+"North Macedonia"
+],
+"d": 1,
+"x": "Its local name, Shqiperia, is often translated as 'land of the eagles.'",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "Which Mediterranean country's flag has a small George Cross in the upper left corner?",
+"a": [
+"Malta",
+"Cyprus",
+"Croatia",
+"Tunisia"
+],
+"d": 1,
+"x": "The George Cross was awarded to the island for its bravery in World War II.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "Which Pacific country's flag has a bird of paradise and the Southern Cross on a red and black field?",
+"a": [
+"Papua New Guinea",
+"Solomon Islands",
+"Fiji",
+"Vanuatu"
+],
+"d": 1,
+"x": "The bird is a raggiana bird-of-paradise, and the field is divided diagonally.",
+"tags": [
+"flags",
+"oceania"
+]
+},
+{
+"q": "A broken trident appears on the flag of which Caribbean island?",
+"a": [
+"Barbados",
+"Bahamas",
+"Antigua and Barbuda",
+"Trinidad and Tobago"
+],
+"d": 1,
+"x": "The blue bands stand for the ocean and sky, and the gold band for the sand.",
+"tags": [
+"flags",
+"caribbean"
+]
+},
+{
+"q": "Which South American country's flag has light blue and white stripes and a golden sun with a face at the center?",
+"a": [
+"Argentina",
+"Uruguay",
+"Honduras",
+"Guatemala"
+],
+"d": 1,
+"x": "The sun is the Sun of May, recalling the 1810 May Revolution.",
+"tags": [
+"flags",
+"south-america"
+]
+},
+{
+"q": "Which country's blue flag has a Union Jack in the corner and a large seven-pointed star below it?",
+"a": [
+"Australia",
+"New Zealand",
+"Fiji",
+"Tuvalu"
+],
+"d": 1,
+"x": "The big star is the Commonwealth Star, with one point for the states and one for the territories.",
+"tags": [
+"flags",
+"oceania"
+]
+},
+{
+"q": "The flag of which country has a red and blue circle surrounded by four black trigrams?",
+"a": [
+"South Korea",
+"Japan",
+"Mongolia",
+"Vietnam"
+],
+"d": 1,
+"x": "The circle, the taegeuk, balances yin and yang, while the trigrams stand for heaven, earth, fire and water.",
+"tags": [
+"flags",
+"asia"
+]
+},
+{
+"q": "Which country's flag was inaugurated in February 1965 after a long parliamentary debate?",
+"a": [
+"Canada",
+"Australia",
+"New Zealand",
+"South Africa"
+],
+"d": 1,
+"x": "It replaced the Red Ensign, which had carried a Union Jack in the corner.",
+"tags": [
+"flags",
+"north-america"
+]
+},
+{
+"q": "Which country's flag is nicknamed the Union Jack?",
+"a": [
+"United Kingdom",
+"Australia",
+"Ireland",
+"Canada"
+],
+"d": 1,
+"x": "The flag is officially called the Union Flag, though 'Union Jack' is the popular name.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "Which country's flag has horizontal red, white and green bands from top to bottom, with no emblem?",
+"a": [
+"Hungary",
+"Italy",
+"Bulgaria",
+"Iran"
+],
+"d": 1,
+"x": "Red, white and green also appear in the colors of the national coat of arms.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "Which Baltic country's flag has horizontal bands of blue, black and white from top to bottom?",
+"a": [
+"Estonia",
+"Latvia",
+"Lithuania",
+"Finland"
+],
+"d": 1,
+"x": "Blue is often linked to sky and lakes, black to the soil and white to striving for light.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "Which Baltic country's flag has yellow, green and red horizontal bands?",
+"a": [
+"Lithuania",
+"Latvia",
+"Estonia",
+"Bulgaria"
+],
+"d": 1,
+"x": "Yellow is explained as the sun and fields, green as forests and red as blood shed for the nation.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "Which country's flag has horizontal bands of white, green and red from top to bottom?",
+"a": [
+"Bulgaria",
+"Hungary",
+"Lithuania",
+"Tajikistan"
+],
+"d": 1,
+"x": "It follows the Pan-Slavic pattern but swaps blue for green.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "Which North African country's red flag has a green five-pointed star made of interlaced lines?",
+"a": [
+"Morocco",
+"Algeria",
+"Tunisia",
+"Egypt"
+],
+"d": 1,
+"x": "The green star is known as the Seal of Solomon.",
+"tags": [
+"flags",
+"africa"
+]
+},
+{
+"q": "Which East African country's flag features a Maasai shield and two crossed spears?",
+"a": [
+"Kenya",
+"Uganda",
+"Tanzania",
+"Ethiopia"
+],
+"d": 1,
+"x": "Black stands for the people, red for the blood shed in the struggle and green for the land.",
+"tags": [
+"flags",
+"africa"
+]
+},
+{
+"q": "A stone bird sits on a red star in the flag of which southern African country?",
+"a": [
+"Zimbabwe",
+"Zambia",
+"Botswana",
+"Malawi"
+],
+"d": 1,
+"x": "The bird is based on soapstone carvings found at the ruins of Great Zimbabwe.",
+"tags": [
+"flags",
+"africa"
+]
+},
+{
+"q": "Which country's flag has a black triangle at the hoist beside bands of aquamarine, gold and aquamarine?",
+"a": [
+"Bahamas",
+"Jamaica",
+"Barbados",
+"Trinidad and Tobago"
+],
+"d": 1,
+"x": "Aquamarine stands for the sea and gold for the sunny sand.",
+"tags": [
+"flags",
+"caribbean"
+]
+},
+{
+"q": "Which twin-island country's flag has a black diagonal band edged in white on a red field?",
+"a": [
+"Trinidad and Tobago",
+"Jamaica",
+"Namibia",
+"Tanzania"
+],
+"d": 1,
+"x": "The black band runs from the upper hoist corner down to the lower fly corner.",
+"tags": [
+"flags",
+"caribbean"
+]
+},
+{
+"q": "Which Pacific country's light blue flag has a Union Jack and a shield with a lion?",
+"a": [
+"Fiji",
+"Tuvalu",
+"Samoa",
+"Tonga"
+],
+"d": 1,
+"x": "The shield also shows sugar cane, a coconut palm and a dove of peace.",
+"tags": [
+"flags",
+"oceania"
+]
+},
+{
+"q": "Which Southeast Asian country's flag has a white disc on a wide blue band between two red bands?",
+"a": [
+"Laos",
+"Thailand",
+"Cambodia",
+"Vietnam"
+],
+"d": 1,
+"x": "A common explanation is that the white disc is the moon over the Mekong River.",
+"tags": [
+"flags",
+"asia"
+]
+},
+{
+"q": "Which tiny state's square flag is half yellow, half white, with crossed keys on the white half?",
+"a": [
+"Vatican City",
+"San Marino",
+"Monaco",
+"Andorra"
+],
+"d": 1,
+"x": "Yellow and white are the papal colors, and the keys are those of St Peter.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "How many gold stars form the circle on the flag of the European Union?",
+"a": [
+"12",
+"15",
+"27",
+"28"
+],
+"d": 1,
+"x": "The number is fixed at twelve as a symbol of unity and does not change with the number of members.",
+"tags": [
+"flags",
+"organizations"
+]
+},
+{
+"q": "Which Asian country's flag shows a famous temple, Angkor Wat?",
+"a": [
+"Cambodia",
+"Thailand",
+"Laos",
+"Myanmar"
+],
+"d": 1,
+"x": "It is one of the very few national flags to show a building.",
+"tags": [
+"flags",
+"asia"
+]
+},
+{
+"q": "Which South American country's flag has red, white and red vertical bands?",
+"a": [
+"Peru",
+"Chile",
+"Bolivia",
+"Paraguay"
+],
+"d": 1,
+"x": "Besides the plain civil flag, the state flag carries a coat of arms with a vicuna and a cinchona tree.",
+"tags": [
+"flags",
+"south-america"
+]
+},
+{
+"q": "What does it usually mean when a flag is flown at half-mast?",
+"a": [
+"Mourning or respect",
+"A national holiday",
+"A ship in distress",
+"Surrender"
+],
+"d": 1,
+"x": "Lowering the flag partway is a sign of mourning for a death or tragedy.",
+"tags": [
+"flags",
+"history"
+]
+},
+{
+"q": "What emblem is on the pirate flag known as the Jolly Roger?",
+"a": [
+"A skull and crossbones",
+"An anchor and sword",
+"A shark and cutlass",
+"A ship and cannon"
+],
+"d": 1,
+"x": "Pirate captains often had their own variants, some adding an hourglass.",
+"tags": [
+"flags",
+"history"
+]
+},
+{
+"q": "What color is the background of the Olympic flag?",
+"a": [
+"White",
+"Light blue",
+"Gold",
+"Black"
+],
+"d": 1,
+"x": "The five colored rings stand out on a plain white field.",
+"tags": [
+"flags",
+"olympics"
+]
+},
+{
+"q": "Which country's flag is known as Old Glory?",
+"a": [
+"United States",
+"Canada",
+"United Kingdom",
+"Australia"
+],
+"d": 1,
+"x": "The nickname is said to date back to the 1820s, long before the flag reached 50 stars.",
+"tags": [
+"flags",
+"north-america"
+]
+},
+{
+"q": "Which country's flag is a red cross on a white field, known as St George's Cross?",
+"a": [
+"England",
+"Switzerland",
+"Georgia",
+"Denmark"
+],
+"d": 1,
+"x": "St George's Cross forms the red part at the center of the Union Jack.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "Which mythical creature appears on the flags of both Bhutan and Wales?",
+"a": [
+"Dragon",
+"Griffin",
+"Phoenix",
+"Unicorn"
+],
+"d": 1,
+"x": "Bhutan's white dragon and Wales' red dragon are two of the most famous flag creatures.",
+"tags": [
+"flags",
+"animals"
+]
+},
+{
+"q": "Which bird of prey appears on the flags of Mexico, Egypt and Albania?",
+"a": [
+"Eagle",
+"Falcon",
+"Hawk",
+"Condor"
+],
+"d": 1,
+"x": "Eagles are among the most common animals on national flags.",
+"tags": [
+"flags",
+"animals"
+]
+},
+{
+"q": "The red disc on Japan's flag represents which heavenly body?",
+"a": [
+"The sun",
+"The moon",
+"Mars",
+"The Earth"
+],
+"d": 1,
+"x": "Japan's name in Japanese means 'origin of the sun.'",
+"tags": [
+"flags",
+"asia"
+]
+},
+{
+"q": "Which country's flag has white and red bands with a blue triangle at the hoist?",
+"a": [
+"Czech Republic",
+"Slovakia",
+"Slovenia",
+"Croatia"
+],
+"d": 1,
+"x": "The blue wedge was added when Czechoslovakia created its flag in 1920.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "Which country's flag has green, white and red bands and a red emblem in the center spelling out the word Allah?",
+"a": [
+"Iran",
+"Iraq",
+"Tajikistan",
+"Bulgaria"
+],
+"d": 1,
+"x": "The phrase 'Allahu Akbar' is repeated along the borders of the green and red bands.",
+"tags": [
+"flags",
+"asia"
+]
+},
+{
+"q": "Which Central American country's flag has four quarters, with a blue star and a red star on white?",
+"a": [
+"Panama",
+"Costa Rica",
+"Honduras",
+"Guatemala"
+],
+"d": 1,
+"x": "The top-left quarter has a blue star and the bottom-right quarter a red star.",
+"tags": [
+"flags",
+"central-america"
+]
+},
+{
+"q": "Which country's red, white and blue flag has a red-and-white checkerboard shield in the middle?",
+"a": [
+"Croatia",
+"Serbia",
+"Slovenia",
+"Slovakia"
+],
+"d": 1,
+"x": "The checkerboard, called the sahovnica, is a very old symbol of the country.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "Which Mediterranean country's flag has a white cross in a blue canton and blue and white stripes?",
+"a": [
+"Greece",
+"Cyprus",
+"Malta",
+"Italy"
+],
+"d": 1,
+"x": "Its colors are said to evoke the blue sea and the white of the waves and clouds.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "Which country's vertical green, white and red flag has an eagle emblem in the center band?",
+"a": [
+"Mexico",
+"Italy",
+"Hungary",
+"Iran"
+],
+"d": 1,
+"x": "The eagle emblem is the only thing separating it from Italy's flag at a glance.",
+"tags": [
+"flags",
+"north-america"
+]
+},
+{
+"q": "Which Nordic country's flag is a white cross on a red field, with the cross reaching all four edges?",
+"a": [
+"Denmark",
+"Norway",
+"Finland",
+"Iceland"
+],
+"d": 1,
+"x": "The Dannebrog is the model for every other Nordic cross flag.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "Which South American country's flag has an arc of white stars on its blue band?",
+"a": [
+"Venezuela",
+"Colombia",
+"Ecuador",
+"Bolivia"
+],
+"d": 1,
+"x": "The stars sit in the middle band of yellow, blue and red.",
+"tags": [
+"flags",
+"south-america"
+]
+},
+{
+"q": "Which country's flag is a red circle on a plain white background?",
+"a": [
+"Japan",
+"Bangladesh",
+"Palau",
+"Laos"
+],
+"d": 1,
+"x": "Japan's flag is called Nisshoki, or Hinomaru, meaning circle of the sun."
+}
+]

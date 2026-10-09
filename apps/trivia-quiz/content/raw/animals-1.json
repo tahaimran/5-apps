@@ -1,0 +1,1415 @@
+[
+{
+"q": "What is a baby cat called?",
+"a": [
+"Kitten",
+"Cub",
+"Pup",
+"Foal"
+],
+"d": 1,
+"x": "Kittens are born blind and deaf, and open their eyes after about one to two weeks.",
+"tags": [
+"baby-animals"
+]
+},
+{
+"q": "What is a baby dog called?",
+"a": [
+"Puppy",
+"Kit",
+"Calf",
+"Joey"
+],
+"d": 1,
+"x": "Puppies sleep up to 18 to 20 hours a day while they grow.",
+"tags": [
+"baby-animals"
+]
+},
+{
+"q": "What is a baby kangaroo called?",
+"a": [
+"Joey",
+"Cub",
+"Kid",
+"Chick"
+],
+"d": 1,
+"x": "A newborn joey is about the size of a jellybean and crawls into its mother's pouch.",
+"tags": [
+"baby-animals",
+"marsupials"
+]
+},
+{
+"q": "Which animal is known as the king of the jungle?",
+"a": [
+"Lion",
+"Tiger",
+"Leopard",
+"Gorilla"
+],
+"d": 1,
+"x": "Despite the nickname, lions mostly live in grasslands and savannas, not jungles.",
+"tags": [
+"mammals"
+]
+},
+{
+"q": "Which bird is famous for being unable to fly and living in Antarctica?",
+"a": [
+"Penguin",
+"Albatross",
+"Pelican",
+"Puffin"
+],
+"d": 1,
+"x": "Penguins use their wings as flippers to swim fast underwater.",
+"tags": [
+"birds"
+]
+},
+{
+"q": "What do pandas mainly eat?",
+"a": [
+"Bamboo",
+"Fish",
+"Berries",
+"Insects"
+],
+"d": 1,
+"x": "A giant panda can eat 26 to 84 pounds of bamboo every day.",
+"tags": [
+"diet",
+"mammals"
+]
+},
+{
+"q": "Which animal has a long trunk?",
+"a": [
+"Elephant",
+"Rhinoceros",
+"Hippopotamus",
+"Giraffe"
+],
+"d": 1,
+"x": "An elephant's trunk has tens of thousands of muscle units and can lift heavy logs or pick up a single peanut.",
+"tags": [
+"mammals"
+]
+},
+{
+"q": "Which animal is the tallest in the world?",
+"a": [
+"Giraffe",
+"Elephant",
+"Ostrich",
+"Camel"
+],
+"d": 1,
+"x": "A giraffe has the same number of neck bones as a human: seven.",
+"tags": [
+"mammals"
+]
+},
+{
+"q": "What do you call a baby frog?",
+"a": [
+"Tadpole",
+"Larva",
+"Nymph",
+"Fry"
+],
+"d": 1,
+"x": "Tadpoles breathe with gills and later develop lungs and legs as they become frogs.",
+"tags": [
+"amphibians",
+"baby-animals"
+]
+},
+{
+"q": "What is a baby cow called?",
+"a": [
+"Calf",
+"Foal",
+"Lamb",
+"Piglet"
+],
+"d": 1,
+"x": "A calf can usually stand within an hour of being born.",
+"tags": [
+"baby-animals",
+"farm"
+]
+},
+{
+"q": "What is a baby horse called?",
+"a": [
+"Foal",
+"Calf",
+"Kid",
+"Cub"
+],
+"d": 1,
+"x": "Foals can stand and walk within a few hours of birth.",
+"tags": [
+"baby-animals",
+"farm"
+]
+},
+{
+"q": "What is a baby sheep called?",
+"a": [
+"Lamb",
+"Kid",
+"Calf",
+"Piglet"
+],
+"d": 1,
+"x": "Lambs can recognize their mother's call within a few days of birth.",
+"tags": [
+"baby-animals",
+"farm"
+]
+},
+{
+"q": "What is a baby pig called?",
+"a": [
+"Piglet",
+"Kit",
+"Cub",
+"Lamb"
+],
+"d": 1,
+"x": "Piglets are born with sharp teeth, which breeders often notice at birth.",
+"tags": [
+"baby-animals",
+"farm"
+]
+},
+{
+"q": "What is a baby goat called?",
+"a": [
+"Kid",
+"Lamb",
+"Calf",
+"Foal"
+],
+"d": 1,
+"x": "Goat kids can walk within minutes of being born.",
+"tags": [
+"baby-animals",
+"farm"
+]
+},
+{
+"q": "What is a baby bear called?",
+"a": [
+"Cub",
+"Pup",
+"Kitten",
+"Calf"
+],
+"d": 1,
+"x": "Bear cubs are born tiny, often weighing less than a pound, while their mothers hibernate.",
+"tags": [
+"baby-animals",
+"mammals"
+]
+},
+{
+"q": "Which sea creature has eight arms?",
+"a": [
+"Octopus",
+"Starfish",
+"Jellyfish",
+"Crab"
+],
+"d": 1,
+"x": "An octopus has three hearts and blue blood.",
+"tags": [
+"marine-life"
+]
+},
+{
+"q": "What type of animal is a dolphin?",
+"a": [
+"Mammal",
+"Fish",
+"Reptile",
+"Amphibian"
+],
+"d": 1,
+"x": "Dolphins breathe air through a blowhole and nurse their young with milk.",
+"tags": [
+"marine-life",
+"classification"
+]
+},
+{
+"q": "What type of animal is a penguin?",
+"a": [
+"Bird",
+"Mammal",
+"Fish",
+"Reptile"
+],
+"d": 1,
+"x": "Penguins are birds with dense, waterproof feathers, even though they cannot fly.",
+"tags": [
+"classification"
+]
+},
+{
+"q": "Which animal lays the biggest egg of any living bird?",
+"a": [
+"Ostrich",
+"Emu",
+"Eagle",
+"Swan"
+],
+"d": 1,
+"x": "An ostrich egg weighs about three pounds, roughly the same as two dozen chicken eggs.",
+"tags": [
+"birds"
+]
+},
+{
+"q": "What do caterpillars turn into?",
+"a": [
+"Butterflies or moths",
+"Beetles",
+"Dragonflies",
+"Bees"
+],
+"d": 1,
+"x": "Inside the chrysalis or cocoon, the caterpillar's body is almost completely reorganized.",
+"tags": [
+"insects"
+]
+},
+{
+"q": "Which animal produces honey?",
+"a": [
+"Honeybee",
+"Wasp",
+"Ant",
+"Beetle"
+],
+"d": 1,
+"x": "A honeybee makes only about a twelfth of a teaspoon of honey in its whole lifetime.",
+"tags": [
+"insects"
+]
+},
+{
+"q": "Which large cat has black stripes on orange fur?",
+"a": [
+"Tiger",
+"Lion",
+"Cheetah",
+"Jaguar"
+],
+"d": 1,
+"x": "Every tiger's stripe pattern is unique, like a human fingerprint.",
+"tags": [
+"mammals"
+]
+},
+{
+"q": "Which animal is known for carrying its home on its back?",
+"a": [
+"Snail",
+"Beetle",
+"Crab",
+"Lizard"
+],
+"d": 1,
+"x": "A snail's shell grows with it and is made of calcium carbonate.",
+"tags": [
+"invertebrates"
+]
+},
+{
+"q": "Which animal is the fastest on land over short distances?",
+"a": [
+"Cheetah",
+"Lion",
+"Horse",
+"Greyhound"
+],
+"d": 1,
+"x": "A cheetah can reach about 60 to 70 miles per hour in short bursts.",
+"tags": [
+"mammals"
+]
+},
+{
+"q": "What is the name for a female chicken?",
+"a": [
+"Hen",
+"Rooster",
+"Cob",
+"Drake"
+],
+"d": 1,
+"x": "A hen can lay about 250 to 300 eggs a year in good conditions.",
+"tags": [
+"birds",
+"farm"
+]
+},
+{
+"q": "What is a male deer called?",
+"a": [
+"Buck",
+"Boar",
+"Ram",
+"Bull"
+],
+"d": 1,
+"x": "Bucks grow and shed a new set of antlers each year.",
+"tags": [
+"mammals"
+]
+},
+{
+"q": "Which animal has black and white stripes?",
+"a": [
+"Zebra",
+"Horse",
+"Donkey",
+"Okapi"
+],
+"d": 1,
+"x": "No two zebras have exactly the same stripe pattern.",
+"tags": [
+"mammals"
+]
+},
+{
+"q": "Which animal is known for changing color to blend in with surroundings?",
+"a": [
+"Chameleon",
+"Iguana",
+"Gecko",
+"Python"
+],
+"d": 1,
+"x": "Chameleons also change color to communicate mood and regulate temperature.",
+"tags": [
+"reptiles"
+]
+},
+{
+"q": "Which animal sleeps hanging upside down in caves?",
+"a": [
+"Bat",
+"Owl",
+"Sloth",
+"Opossum"
+],
+"d": 1,
+"x": "Bats can lock their feet in a gripping position so they hang without using muscle effort.",
+"tags": [
+"mammals"
+]
+},
+{
+"q": "What do cows eat?",
+"a": [
+"Grass and hay",
+"Meat",
+"Fish",
+"Insects"
+],
+"d": 1,
+"x": "Cows are ruminants with a four-part stomach that helps them digest plants.",
+"tags": [
+"diet",
+"farm"
+]
+},
+{
+"q": "Which bird is known for its colorful tail feathers fanned in display?",
+"a": [
+"Peacock",
+"Crow",
+"Sparrow",
+"Pigeon"
+],
+"d": 1,
+"x": "Only the male peafowl, the peacock, has the dramatic train of feathers.",
+"tags": [
+"birds"
+]
+},
+{
+"q": "Which bird is known for hooting at night?",
+"a": [
+"Owl",
+"Parrot",
+"Robin",
+"Duck"
+],
+"d": 1,
+"x": "Owls can rotate their heads about 270 degrees.",
+"tags": [
+"birds"
+]
+},
+{
+"q": "Which animal is known as man's best friend?",
+"a": [
+"Dog",
+"Cat",
+"Horse",
+"Parrot"
+],
+"d": 1,
+"x": "Dogs were domesticated from wolves at least 15,000 years ago.",
+"tags": [
+"mammals"
+]
+},
+{
+"q": "What is a group of lions called?",
+"a": [
+"Pride",
+"Pack",
+"Herd",
+"Flock"
+],
+"d": 1,
+"x": "A pride is often made up of related females, their cubs, and a few adult males.",
+"tags": [
+"group-names"
+]
+},
+{
+"q": "What is a group of wolves called?",
+"a": [
+"Pack",
+"Pride",
+"Flock",
+"Swarm"
+],
+"d": 1,
+"x": "A wolf pack is usually a family: a breeding pair and their offspring.",
+"tags": [
+"group-names"
+]
+},
+{
+"q": "What is a group of fish called?",
+"a": [
+"School",
+"Herd",
+"Pack",
+"Colony"
+],
+"d": 1,
+"x": "Swimming in schools helps fish avoid predators and find food.",
+"tags": [
+"group-names"
+]
+},
+{
+"q": "What is a group of cows usually called?",
+"a": [
+"Herd",
+"School",
+"Pride",
+"Flock"
+],
+"d": 1,
+"x": "Cattle in a herd form social bonds and have preferred companions.",
+"tags": [
+"group-names"
+]
+},
+{
+"q": "What is a group of birds flying together often called?",
+"a": [
+"Flock",
+"Herd",
+"Pack",
+"Troop"
+],
+"d": 1,
+"x": "Flying in a flock can save energy and gives more eyes to watch for danger.",
+"tags": [
+"group-names"
+]
+},
+{
+"q": "Which sea animal has a hard shell, claws, and walks sideways?",
+"a": [
+"Crab",
+"Shrimp",
+"Starfish",
+"Seal"
+],
+"d": 1,
+"x": "Crabs walk sideways because of how their legs' joints bend.",
+"tags": [
+"marine-life"
+]
+},
+{
+"q": "Which animal is known for its black-and-white fur and for living in bamboo forests of China?",
+"a": [
+"Giant panda",
+"Polar bear",
+"Snow leopard",
+"Red panda"
+],
+"d": 1,
+"x": "Giant pandas live in a few mountain ranges in central China.",
+"tags": [
+"mammals"
+]
+},
+{
+"q": "Which animal is the largest living species of bear that lives in the Arctic?",
+"a": [
+"Polar bear",
+"Grizzly bear",
+"Black bear",
+"Sun bear"
+],
+"d": 1,
+"x": "A polar bear's skin is black under its translucent, hollow-looking fur.",
+"tags": [
+"mammals"
+]
+},
+{
+"q": "Which sea mammal is known for its tusks and lives in the Arctic?",
+"a": [
+"Walrus",
+"Sea lion",
+"Manatee",
+"Seal"
+],
+"d": 1,
+"x": "Walrus tusks are elongated canine teeth and can grow over three feet long.",
+"tags": [
+"marine-life",
+"mammals"
+]
+},
+{
+"q": "Which animal is a monotreme that lays eggs and has a duck-like bill?",
+"a": [
+"Platypus",
+"Beaver",
+"Otter",
+"Mole"
+],
+"d": 1,
+"x": "Male platypuses have venomous spurs on their hind legs.",
+"tags": [
+"mammals"
+]
+},
+{
+"q": "Which animal hops and carries its young in a pouch?",
+"a": [
+"Kangaroo",
+"Rabbit",
+"Squirrel",
+"Hare"
+],
+"d": 1,
+"x": "A kangaroo cannot walk backward easily, which is one reason it appears on Australia's coat of arms.",
+"tags": [
+"marsupials"
+]
+},
+{
+"q": "Which animal eats mainly eucalyptus leaves?",
+"a": [
+"Koala",
+"Kangaroo",
+"Wombat",
+"Possum"
+],
+"d": 1,
+"x": "Koalas sleep around 18 to 22 hours a day because eucalyptus gives little energy.",
+"tags": [
+"diet",
+"marsupials"
+]
+},
+{
+"q": "Which insect is known for building hills and living in a colony with a queen?",
+"a": [
+"Ant",
+"Ladybug",
+"Moth",
+"Mosquito"
+],
+"d": 1,
+"x": "Some ant colonies have millions of individuals working together.",
+"tags": [
+"insects"
+]
+},
+{
+"q": "Which insect glows in the dark on summer nights?",
+"a": [
+"Firefly",
+"Ladybug",
+"Grasshopper",
+"Cricket"
+],
+"d": 1,
+"x": "Fireflies are actually beetles that make light through a chemical reaction.",
+"tags": [
+"insects"
+]
+},
+{
+"q": "Which animal is the national bird symbol of the United States?",
+"a": [
+"Bald eagle",
+"Wild turkey",
+"Red cardinal",
+"Peregrine falcon"
+],
+"d": 1,
+"x": "The bald eagle's head is not actually bald; the name comes from an older meaning of 'white-headed'.",
+"tags": [
+"birds"
+]
+},
+{
+"q": "Which reptile has a hard shell and can pull its head inside?",
+"a": [
+"Turtle",
+"Lizard",
+"Crocodile",
+"Snake"
+],
+"d": 1,
+"x": "A turtle's shell is part of its skeleton, fused to its ribs and spine.",
+"tags": [
+"reptiles"
+]
+},
+{
+"q": "Which reptile has no legs and moves by slithering?",
+"a": [
+"Snake",
+"Gecko",
+"Iguana",
+"Newt"
+],
+"d": 1,
+"x": "Snakes smell by flicking their forked tongues to collect scent particles.",
+"tags": [
+"reptiles"
+]
+},
+{
+"q": "What sound does a cow make?",
+"a": [
+"Moo",
+"Baa",
+"Oink",
+"Neigh"
+],
+"d": 1,
+"x": "Cows have regional 'accents' in their moos, according to some farm studies.",
+"tags": [
+"farm"
+]
+},
+{
+"q": "Which animal gives us wool?",
+"a": [
+"Sheep",
+"Cow",
+"Pig",
+"Horse"
+],
+"d": 1,
+"x": "Sheep have been raised for wool for at least 8,000 years.",
+"tags": [
+"farm"
+]
+},
+{
+"q": "What color are flamingos, mostly?",
+"a": [
+"Pink",
+"Blue",
+"Green",
+"Yellow"
+],
+"d": 1,
+"x": "Flamingos get their pink color from pigments in the algae and shrimp they eat.",
+"tags": [
+"birds",
+"diet"
+]
+},
+{
+"q": "Which animal is known for its very long neck and spotted coat in the African savanna?",
+"a": [
+"Giraffe",
+"Okapi",
+"Llama",
+"Gazelle"
+],
+"d": 1,
+"x": "A giraffe's tongue can be up to about 20 inches long.",
+"tags": [
+"mammals"
+]
+},
+{
+"q": "Which sea creature has a star-shaped body?",
+"a": [
+"Starfish",
+"Jellyfish",
+"Seahorse",
+"Eel"
+],
+"d": 1,
+"x": "Starfish, properly called sea stars, can regrow lost arms.",
+"tags": [
+"marine-life"
+]
+},
+{
+"q": "Which sea creature has stinging tentacles and a bell-shaped body with no brain?",
+"a": [
+"Jellyfish",
+"Squid",
+"Sea cucumber",
+"Clam"
+],
+"d": 1,
+"x": "Jellyfish are about 95 percent water and have existed for hundreds of millions of years.",
+"tags": [
+"marine-life"
+]
+},
+{
+"q": "Which large shark is famous for a dorsal fin that appears in the movie Jaws?",
+"a": [
+"Great white shark",
+"Whale shark",
+"Hammerhead shark",
+"Nurse shark"
+],
+"d": 1,
+"x": "Great whites can detect tiny electrical fields from prey using special pores.",
+"tags": [
+"marine-life"
+]
+},
+{
+"q": "Which fish is known for its striped orange body and living in anemones, like Nemo?",
+"a": [
+"Clownfish",
+"Angelfish",
+"Goldfish",
+"Pufferfish"
+],
+"d": 1,
+"x": "Clownfish have a mucus coating that protects them from the anemone's stings.",
+"tags": [
+"marine-life"
+]
+},
+{
+"q": "Which insect makes silk to build a cocoon and is raised for fabric?",
+"a": [
+"Silkworm",
+"Honeybee",
+"Beetle",
+"Cricket"
+],
+"d": 1,
+"x": "A single silkworm cocoon can be unwound into a thread nearly a mile long.",
+"tags": [
+"insects"
+]
+},
+{
+"q": "Which animal spends its life in trees, moves very slowly, and hangs upside down?",
+"a": [
+"Sloth",
+"Koala",
+"Monkey",
+"Lemur"
+],
+"d": 1,
+"x": "Algae sometimes grow in a sloth's fur, giving it a greenish tint.",
+"tags": [
+"mammals"
+]
+},
+{
+"q": "Which primate is the closest living relative of humans, along with the bonobo?",
+"a": [
+"Chimpanzee",
+"Gorilla",
+"Orangutan",
+"Baboon"
+],
+"d": 1,
+"x": "Humans and chimpanzees share about 98 to 99 percent of their DNA.",
+"tags": [
+"mammals"
+]
+},
+{
+"q": "What is a male lion known for having?",
+"a": [
+"A mane",
+"Stripes",
+"A horn",
+"A trunk"
+],
+"d": 1,
+"x": "A darker, fuller mane often signals a healthier, stronger male.",
+"tags": [
+"mammals"
+]
+},
+{
+"q": "What is a female pig called?",
+"a": [
+"Sow",
+"Boar",
+"Hen",
+"Ewe"
+],
+"d": 1,
+"x": "A sow can have two litters a year, each with ten or more piglets.",
+"tags": [
+"farm"
+]
+},
+{
+"q": "What is a female sheep called?",
+"a": [
+"Ewe",
+"Sow",
+"Doe",
+"Mare"
+],
+"d": 1,
+"x": "Ewes usually give birth to one or two lambs in spring.",
+"tags": [
+"farm"
+]
+},
+{
+"q": "What is a female horse called?",
+"a": [
+"Mare",
+"Ewe",
+"Doe",
+"Sow"
+],
+"d": 1,
+"x": "A mare carries her foal for about 11 months.",
+"tags": [
+"farm"
+]
+},
+{
+"q": "Which animal is the national symbol of Australia, seen on its coat of arms with the emu?",
+"a": [
+"Kangaroo",
+"Koala",
+"Wombat",
+"Dingo"
+],
+"d": 1,
+"x": "Both animals were chosen because neither can easily move backward.",
+"tags": [
+"marsupials"
+]
+},
+{
+"q": "Which animal says 'quack'?",
+"a": [
+"Duck",
+"Goose",
+"Swan",
+"Chicken"
+],
+"d": 1,
+"x": "Ducks have waterproof feathers thanks to oil from a gland near the tail.",
+"tags": [
+"birds"
+]
+},
+{
+"q": "Which animal makes webs to catch its food?",
+"a": [
+"Spider",
+"Ant",
+"Beetle",
+"Worm"
+],
+"d": 1,
+"x": "Spider silk is stronger than steel of the same thickness.",
+"tags": [
+"arachnids"
+]
+},
+{
+"q": "What do herbivores eat?",
+"a": [
+"Plants",
+"Meat",
+"Both plants and meat",
+"Insects only"
+],
+"d": 1,
+"x": "Cows, rabbits, and elephants are all herbivores.",
+"tags": [
+"diet"
+]
+},
+{
+"q": "What do we call animals that eat only meat?",
+"a": [
+"Carnivores",
+"Herbivores",
+"Omnivores",
+"Insectivores"
+],
+"d": 1,
+"x": "Cats and hawks are examples of animals built for a meat-based diet.",
+"tags": [
+"diet"
+]
+},
+{
+"q": "What do we call animals that eat both plants and meat?",
+"a": [
+"Omnivores",
+"Carnivores",
+"Herbivores",
+"Decomposers"
+],
+"d": 1,
+"x": "Bears, pigs, and humans are omnivores.",
+"tags": [
+"diet"
+]
+},
+{
+"q": "What is the process called when some animals sleep through winter?",
+"a": [
+"Hibernation",
+"Migration",
+"Camouflage",
+"Evolution"
+],
+"d": 1,
+"x": "During hibernation, an animal's heart rate and body temperature drop dramatically.",
+"tags": [
+"behavior"
+]
+},
+{
+"q": "What is it called when birds travel long distances each year to warmer places?",
+"a": [
+"Migration",
+"Hibernation",
+"Adaptation",
+"Pollination"
+],
+"d": 1,
+"x": "Arctic terns migrate from the Arctic to Antarctica and back each year.",
+"tags": [
+"behavior",
+"birds"
+]
+},
+{
+"q": "Which animal is a pet that purrs and chases mice?",
+"a": [
+"Cat",
+"Rabbit",
+"Hamster",
+"Ferret"
+],
+"d": 1,
+"x": "Cats purr at a frequency of roughly 25 to 150 hertz.",
+"tags": [
+"mammals"
+]
+},
+{
+"q": "Which huge dinosaur had a long neck and ate plants, like Brachiosaurus?",
+"a": [
+"Sauropod",
+"Raptor",
+"Theropod",
+"Ankylosaur"
+],
+"d": 1,
+"x": "Sauropods were the largest land animals ever to walk the Earth.",
+"tags": [
+"dinosaurs"
+]
+},
+{
+"q": "Which dinosaur is famous for its giant head and tiny arms and is often called the 'tyrant lizard king'?",
+"a": [
+"Tyrannosaurus rex",
+"Triceratops",
+"Stegosaurus",
+"Velociraptor"
+],
+"d": 1,
+"x": "T. rex had a bite force among the strongest of any land animal ever.",
+"tags": [
+"dinosaurs"
+]
+},
+{
+"q": "Which dinosaur had three horns on its face and a large bony frill?",
+"a": [
+"Triceratops",
+"Stegosaurus",
+"Brachiosaurus",
+"Spinosaurus"
+],
+"d": 1,
+"x": "Its name means 'three-horned face'.",
+"tags": [
+"dinosaurs"
+]
+},
+{
+"q": "Which dinosaur had bony plates along its back and spikes on its tail?",
+"a": [
+"Stegosaurus",
+"Triceratops",
+"Allosaurus",
+"Diplodocus"
+],
+"d": 1,
+"x": "Stegosaurus had a brain about the size of a lime.",
+"tags": [
+"dinosaurs"
+]
+},
+{
+"q": "Which extinct hairy relative of the elephant lived during the Ice Age?",
+"a": [
+"Woolly mammoth",
+"Saber-toothed cat",
+"Giant sloth",
+"Mastodon"
+],
+"d": 1,
+"x": "Woolly mammoths lived alongside early humans and survived on Wrangel Island until about 4,000 years ago.",
+"tags": [
+"prehistoric"
+]
+},
+{
+"q": "What do we call scientists who study fossils of ancient life?",
+"a": [
+"Paleontologists",
+"Entomologists",
+"Zoologists",
+"Ornithologists"
+],
+"d": 1,
+"x": "Paleontologists learn about dinosaurs from fossilized bones, eggs, and footprints.",
+"tags": [
+"science"
+]
+},
+{
+"q": "Which animal's milk is used to make most of the cheese and butter in stores?",
+"a": [
+"Cow",
+"Camel",
+"Horse",
+"Deer"
+],
+"d": 1,
+"x": "A dairy cow can produce more than 6 gallons of milk a day.",
+"tags": [
+"farm"
+]
+},
+{
+"q": "Which animal is the largest member of the cat family?",
+"a": [
+"Tiger",
+"Lion",
+"Jaguar",
+"Leopard"
+],
+"d": 1,
+"x": "Siberian tigers can weigh over 600 pounds.",
+"tags": [
+"mammals"
+]
+},
+{
+"q": "Which animal gives a black ink-like cloud to escape predators?",
+"a": [
+"Octopus",
+"Starfish",
+"Seahorse",
+"Turtle"
+],
+"d": 1,
+"x": "The ink also dulls a predator's sense of smell.",
+"tags": [
+"marine-life"
+]
+},
+{
+"q": "Which animal builds dams out of sticks and logs?",
+"a": [
+"Beaver",
+"Otter",
+"Muskrat",
+"Raccoon"
+],
+"d": 1,
+"x": "Beaver teeth never stop growing, and orange enamel makes them extra hard.",
+"tags": [
+"mammals",
+"behavior"
+]
+},
+{
+"q": "Which animal can regrow its tail if it is lost?",
+"a": [
+"Lizard",
+"Frog",
+"Rat",
+"Squirrel"
+],
+"d": 1,
+"x": "Many lizards detach their tail on purpose to escape a predator.",
+"tags": [
+"reptiles"
+]
+},
+{
+"q": "Which sea animal is a mammal and sings long songs underwater, with a hump on its back?",
+"a": [
+"Humpback whale",
+"Great white shark",
+"Manta ray",
+"Sea turtle"
+],
+"d": 1,
+"x": "Male humpbacks sing complex songs that can last for 10 to 20 minutes.",
+"tags": [
+"marine-life"
+]
+},
+{
+"q": "What is the main food of a hummingbird?",
+"a": [
+"Nectar",
+"Seeds",
+"Fish",
+"Worms"
+],
+"d": 1,
+"x": "Hummingbirds can flap their wings dozens of times per second and even hover.",
+"tags": [
+"birds",
+"diet"
+]
+},
+{
+"q": "Which animal is covered in sharp quills for protection?",
+"a": [
+"Porcupine",
+"Rabbit",
+"Raccoon",
+"Beaver"
+],
+"d": 1,
+"x": "A porcupine can have around 30,000 quills.",
+"tags": [
+"mammals"
+]
+},
+{
+"q": "Which animal is known for storing fat in one or two humps in the desert?",
+"a": [
+"Camel",
+"Llama",
+"Ostrich",
+"Donkey"
+],
+"d": 1,
+"x": "A camel can drink over 30 gallons of water in about 15 minutes.",
+"tags": [
+"mammals"
+]
+},
+{
+"q": "What is a female deer called?",
+"a": [
+"Doe",
+"Ewe",
+"Sow",
+"Mare"
+],
+"d": 1,
+"x": "Does usually give birth to one or two spotted fawns in late spring.",
+"tags": [
+"mammals"
+]
+},
+{
+"q": "What is a male chicken called?",
+"a": [
+"Rooster",
+"Hen",
+"Drake",
+"Gander"
+],
+"d": 1,
+"x": "Roosters are known for crowing at dawn, but they can crow at other times too.",
+"tags": [
+"farm",
+"birds"
+]
+},
+{
+"q": "Which animal is the largest living land animal?",
+"a": [
+"African elephant",
+"Hippopotamus",
+"White rhinoceros",
+"Giraffe"
+],
+"d": 1,
+"x": "A big male African elephant can weigh about 6 tons.",
+"tags": [
+"mammals"
+]
+},
+{
+"q": "In the fable, which animal beats the hare in a race?",
+"a": [
+"Tortoise",
+"Snail",
+"Frog",
+"Turtle dove"
+],
+"d": 1,
+"x": "The tale of the tortoise and the hare is attributed to Aesop.",
+"tags": [
+"culture"
+]
+},
+{
+"q": "What is a baby duck called?",
+"a": [
+"Duckling",
+"Gosling",
+"Cygnet",
+"Chick"
+],
+"d": 1,
+"x": "Ducklings can swim within hours of hatching.",
+"tags": [
+"baby-animals",
+"birds"
+]
+},
+{
+"q": "What is a baby hen or rooster called when it first hatches?",
+"a": [
+"Chick",
+"Squab",
+"Poult",
+"Cygnet"
+],
+"d": 1,
+"x": "A chick starts peeping inside the egg a day or so before hatching.",
+"tags": [
+"baby-animals",
+"farm"
+]
+},
+{
+"q": "What color is a polar bear's fur?",
+"a": [
+"White",
+"Black",
+"Brown",
+"Gray"
+],
+"d": 1,
+"x": "Each hair is actually clear and hollow; it only looks white because it scatters light.",
+"tags": [
+"mammals"
+]
+},
+{
+"q": "What gas do fish take from the water through their gills?",
+"a": [
+"Oxygen",
+"Carbon dioxide",
+"Nitrogen",
+"Hydrogen"
+],
+"d": 1,
+"x": "Gills pull dissolved oxygen out of water as it flows over thin, blood-rich filaments.",
+"tags": [
+"fish",
+"anatomy"
+]
+},
+{
+"q": "Which flightless bird lives in Antarctica?",
+"a": [
+"Penguin",
+"Ostrich",
+"Emu",
+"Kiwi"
+],
+"d": 1,
+"x": "Penguins use their wings as flippers for swimming in the icy sea."
+},
+{
+"q": "How many hearts does an octopus have?",
+"a": [
+"Three",
+"Two",
+"Four",
+"One"
+],
+"d": 1,
+"x": "Two hearts pump blood through the gills and one pumps it around the body."
+},
+{
+"q": "Which sea animal has eight arms and can squirt ink?",
+"a": [
+"Octopus",
+"Starfish",
+"Jellyfish",
+"Seahorse"
+],
+"d": 1,
+"x": "An octopus squirts a cloud of ink to confuse predators while it escapes."
+}
+]

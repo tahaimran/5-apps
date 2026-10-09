@@ -1,0 +1,1484 @@
+[
+{
+"q": "Which French chef, known as the 'king of chefs', organized professional kitchens into the brigade system?",
+"a": [
+"Auguste Escoffier",
+"Paul Bocuse",
+"Alain Ducasse",
+"Joel Robuchon"
+],
+"d": 3,
+"x": "Escoffier's brigade divided a kitchen into stations such as saucier and patissier, a model still used today.",
+"tags": [
+"chefs",
+"france"
+]
+},
+{
+"q": "Which Japanese chemist identified umami as a basic taste in 1908?",
+"a": [
+"Kikunae Ikeda",
+"Masaharu Ando",
+"Hiroshi Tanaka",
+"Shozo Sato"
+],
+"d": 3,
+"x": "Ikeda isolated glutamate from kombu seaweed broth, which led to the invention of MSG.",
+"tags": [
+"science",
+"japan"
+]
+},
+{
+"q": "Which Frenchman developed the method of preserving food in sealed containers, a forerunner of canning?",
+"a": [
+"Nicolas Appert",
+"Louis Pasteur",
+"Brillat-Savarin",
+"Marie-Antoine Careme"
+],
+"d": 3,
+"x": "Appert won a prize offered by Napoleon's government for a way to feed armies, and he published his method in 1810.",
+"tags": [
+"history",
+"preservation"
+]
+},
+{
+"q": "For which Australian soprano did Escoffier create a dessert of peaches and vanilla ice cream?",
+"a": [
+"Nellie Melba",
+"Joan Sutherland",
+"Kiri Te Kanawa",
+"Maria Callas"
+],
+"d": 3,
+"x": "Melba toast is also named after her, as she ate thin crisp toast while she was ill.",
+"tags": [
+"chefs",
+"history"
+]
+},
+{
+"q": "Which Italian-born restaurateur is credited with inventing the famous salad of romaine, croutons and Parmesan in 1920s Tijuana?",
+"a": [
+"Caesar Cardini",
+"Giuseppe Garibaldi",
+"Carlo Pellegrino",
+"Paolo Sartori"
+],
+"d": 3,
+"x": "Cardini ran a restaurant in Tijuana, Mexico, and the salad was named after him, not after Julius Caesar.",
+"tags": [
+"history",
+"salad"
+]
+},
+{
+"q": "What is the minimum aging time for authentic Parmigiano Reggiano?",
+"a": [
+"12 months",
+"3 months",
+"6 months",
+"24 months"
+],
+"d": 3,
+"x": "Many wheels are aged for two years or more, which gives them a crumbly texture and crunchy crystals.",
+"tags": [
+"cheese",
+"italy"
+]
+},
+{
+"q": "Manchego cheese is traditionally made from the milk of which animal?",
+"a": [
+"Manchega sheep",
+"Cow",
+"Goat",
+"Water buffalo"
+],
+"d": 3,
+"x": "The cheese comes from the La Mancha region of Spain, and its pattern on the rind recalls the grass molds once used.",
+"tags": [
+"cheese",
+"spain"
+]
+},
+{
+"q": "According to legend, which Ethiopian goat herder discovered coffee?",
+"a": [
+"Kaldi",
+"Ras Tafari",
+"Menelik",
+"Haile"
+],
+"d": 3,
+"x": "The tale says Kaldi noticed his goats dancing with energy after eating red berries from a certain shrub.",
+"tags": [
+"coffee",
+"history"
+]
+},
+{
+"q": "Which ethnic group of Sumatra is traditionally credited with creating the slow-cooked dish rendang?",
+"a": [
+"Minangkabau",
+"Javanese",
+"Balinese",
+"Batak"
+],
+"d": 3,
+"x": "Rendang is simmered in coconut milk and spices until the liquid cooks away and the meat turns dark and dry.",
+"tags": [
+"indonesia"
+]
+},
+{
+"q": "The Japanese santoku kitchen knife's name is usually translated as what?",
+"a": [
+"Three virtues",
+"Sharp edge",
+"Master slicer",
+"Golden blade"
+],
+"d": 3,
+"x": "The three virtues refer to its ability to slice, dice and mince, or to handle meat, fish and vegetables.",
+"tags": [
+"tools",
+"japan"
+]
+},
+{
+"q": "Which French magistrate wrote the 1825 book 'The Physiology of Taste'?",
+"a": [
+"Jean Anthelme Brillat-Savarin",
+"Auguste Escoffier",
+"Marie-Antoine Careme",
+"Francois Pierre La Varenne"
+],
+"d": 3,
+"x": "Brillat-Savarin is famous for the line 'Tell me what you eat, and I will tell you what you are'.",
+"tags": [
+"history",
+"france"
+]
+},
+{
+"q": "Which classic French sauce is made from brown stock and a brown roux?",
+"a": [
+"Espagnole",
+"Veloute",
+"Hollandaise",
+"Bechamel"
+],
+"d": 3,
+"x": "Espagnole is the base for demi-glace, which chefs make by simmering it with more brown stock until it reduces.",
+"tags": [
+"sauces",
+"france"
+]
+},
+{
+"q": "Which compound is responsible for the tingling, numbing sensation of Sichuan peppercorns?",
+"a": [
+"Sanshool",
+"Capsaicin",
+"Piperine",
+"Allicin"
+],
+"d": 3,
+"x": "Sichuan peppercorns are not related to black pepper or chilies, and in Chinese they are called huajiao.",
+"tags": [
+"spices",
+"china"
+]
+},
+{
+"q": "Which sulfur compound forms when garlic cloves are crushed or chopped?",
+"a": [
+"Allicin",
+"Capsaicin",
+"Curcumin",
+"Piperine"
+],
+"d": 3,
+"x": "Allicin gives fresh garlic its sharp smell and forms when two substances inside the clove meet after cutting.",
+"tags": [
+"science",
+"vegetables"
+]
+},
+{
+"q": "Which substance in egg yolk helps oil and water blend together in mayonnaise?",
+"a": [
+"Lecithin",
+"Gluten",
+"Pectin",
+"Casein"
+],
+"d": 3,
+"x": "Lecithin molecules have one end that likes water and another that likes oil, so they hold the two together.",
+"tags": [
+"science",
+"sauces"
+]
+},
+{
+"q": "What is the process of soaking corn in limewater called, which makes tortillas easier to make and more nutritious?",
+"a": [
+"Nixtamalization",
+"Fermentation",
+"Malting",
+"Blanching"
+],
+"d": 3,
+"x": "The process dates back to ancient Mesoamerica and frees the niacin in corn, which the body could not otherwise absorb easily.",
+"tags": [
+"mexico",
+"science"
+]
+},
+{
+"q": "Which Spanish chef led the influential elBulli restaurant, known for molecular gastronomy?",
+"a": [
+"Ferran Adria",
+"Jose Andres",
+"Juan Mari Arzak",
+"Joan Roca"
+],
+"d": 3,
+"x": "ElBulli sat on the Costa Brava and closed in 2011, after Adria had made foams and edible spheres famous.",
+"tags": [
+"chefs",
+"spain"
+]
+},
+{
+"q": "What was the fermented fish sauce that ancient Romans used as a staple seasoning?",
+"a": [
+"Garum",
+"Liquamen salsa",
+"Passum",
+"Defrutum"
+],
+"d": 3,
+"x": "Garum was made by salting fish guts and leaving them in the sun, and it was a major trade product.",
+"tags": [
+"history",
+"rome"
+]
+},
+{
+"q": "The oldest surviving Roman cookbook, 'De re coquinaria', is traditionally attributed to whom?",
+"a": [
+"Apicius",
+"Cato",
+"Columella",
+"Pliny"
+],
+"d": 3,
+"x": "The recipes call for lots of garum and spices, including pepper, which was imported from India.",
+"tags": [
+"history",
+"rome"
+]
+},
+{
+"q": "The word 'ketchup' is thought to come from a Hokkien Chinese word for what kind of sauce?",
+"a": [
+"Fish sauce",
+"Soy sauce",
+"Tomato sauce",
+"Vinegar"
+],
+"d": 3,
+"x": "The word ke-tsiap referred to a fermented fish brine, which British sailors brought home and adapted.",
+"tags": [
+"history",
+"condiments"
+]
+},
+{
+"q": "Which salty little fish is a key ingredient of Worcestershire sauce?",
+"a": [
+"Anchovies",
+"Sardines",
+"Herring",
+"Smelt"
+],
+"d": 3,
+"x": "The sauce is aged in barrels for months, which mellows the fishy flavor into a savory depth.",
+"tags": [
+"condiments",
+"uk"
+]
+},
+{
+"q": "Which Louisiana island is the home of Tabasco hot sauce?",
+"a": [
+"Avery Island",
+"Grand Isle",
+"Marsh Island",
+"Catahoula Island"
+],
+"d": 3,
+"x": "The McIlhenny family has made the sauce on the island since the 1860s and ages the pepper mash in barrels.",
+"tags": [
+"usa",
+"condiments"
+]
+},
+{
+"q": "Sriracha sauce is named after a coastal town in which country?",
+"a": [
+"Thailand",
+"Vietnam",
+"Laos",
+"Malaysia"
+],
+"d": 3,
+"x": "Si Racha is a port town on the Gulf of Thailand, and the sauce first became popular locally as a dip for seafood.",
+"tags": [
+"thailand",
+"condiments"
+]
+},
+{
+"q": "What is the Japanese name for the pickled ginger served with sushi?",
+"a": [
+"Gari",
+"Shoga",
+"Tsukemono",
+"Umeboshi"
+],
+"d": 3,
+"x": "Gari is eaten between pieces of sushi to refresh the palate.",
+"tags": [
+"japan",
+"sushi"
+]
+},
+{
+"q": "Which dried fermented tuna relative is shaved to flavor Japanese dashi broth?",
+"a": [
+"Bonito (katsuobushi)",
+"Tobiko",
+"Furikake",
+"Panko"
+],
+"d": 3,
+"x": "A block of katsuobushi is as hard as wood and is shaved into thin, aromatic flakes.",
+"tags": [
+"japan",
+"seafood"
+]
+},
+{
+"q": "Which European country's traders are traditionally credited with introducing tempura-style frying to Japan?",
+"a": [
+"Portugal",
+"Spain",
+"Netherlands",
+"France"
+],
+"d": 3,
+"x": "The word tempura may come from the Portuguese tempero, meaning seasoning, or from 'Ember Days' fasting times.",
+"tags": [
+"japan",
+"history"
+]
+},
+{
+"q": "Nutmeg and mace come from trees native to which Indonesian islands?",
+"a": [
+"The Banda Islands",
+"The Komodo Islands",
+"The Gili Islands",
+"The Riau Islands"
+],
+"d": 3,
+"x": "The Dutch fought bitterly for control of the Banda Islands in the 1600s to hold the nutmeg monopoly.",
+"tags": [
+"spices",
+"history"
+]
+},
+{
+"q": "Which country is the source of 'true' cinnamon, Cinnamomum verum?",
+"a": [
+"Sri Lanka",
+"Indonesia",
+"Vietnam",
+"China"
+],
+"d": 3,
+"x": "Sri Lankan cinnamon is lighter and more delicate than the cassia cinnamon sold in most supermarkets.",
+"tags": [
+"spices"
+]
+},
+{
+"q": "Who, as a 12-year-old in 1841, devised the hand-pollination method that made vanilla farming practical outside Mexico?",
+"a": [
+"Edmond Albius",
+"Pierre Poivre",
+"Jean Lafitte",
+"Henri Nestle"
+],
+"d": 3,
+"x": "Albius lived on Reunion Island, and his method is still used on vanilla farms today.",
+"tags": [
+"spices",
+"history"
+]
+},
+{
+"q": "Which Swiss chocolatier invented milk chocolate in 1875?",
+"a": [
+"Daniel Peter",
+"Rodolphe Lindt",
+"Jean Tobler",
+"Philippe Suchard"
+],
+"d": 3,
+"x": "Peter used the condensed milk invented by his neighbor Henri Nestle to make the first milk chocolate.",
+"tags": [
+"chocolate",
+"history"
+]
+},
+{
+"q": "Which Yemeni port city gave its name to a coffee-and-chocolate flavor?",
+"a": [
+"Mocha",
+"Aden",
+"Hodeidah",
+"Sanaa"
+],
+"d": 3,
+"x": "Mocha was once the world's chief port for the coffee trade, long before coffee was grown elsewhere.",
+"tags": [
+"coffee",
+"history"
+]
+},
+{
+"q": "Pu-erh, a fermented tea pressed into cakes, comes from which Chinese province?",
+"a": [
+"Yunnan",
+"Fujian",
+"Zhejiang",
+"Sichuan"
+],
+"d": 3,
+"x": "Pu-erh is pressed into cakes that can be aged for decades.",
+"tags": [
+"tea",
+"china"
+]
+},
+{
+"q": "Which duchess is credited with popularizing afternoon tea in England in the 1840s?",
+"a": [
+"Anna, Duchess of Bedford",
+"Victoria, Duchess of Kent",
+"Georgiana, Duchess of Devonshire",
+"Sarah, Duchess of Marlborough"
+],
+"d": 3,
+"x": "She felt hungry in the late afternoon, since dinner was served late, and began having tea and snacks in her room.",
+"tags": [
+"tea",
+"history"
+]
+},
+{
+"q": "In the 1893 case Nix v. Hedden, what did the U.S. Supreme Court classify the tomato as for tariff purposes?",
+"a": [
+"A vegetable",
+"A fruit",
+"A legume",
+"A berry"
+],
+"d": 3,
+"x": "Botanically it is a fruit, but the court ruled that in common usage it was served with dinner like a vegetable.",
+"tags": [
+"history",
+"usa"
+]
+},
+{
+"q": "The kiwifruit was originally marketed under what name before it was renamed for export?",
+"a": [
+"Chinese gooseberry",
+"Fuzzy plum",
+"Green peach",
+"Silk fig"
+],
+"d": 3,
+"x": "New Zealand exporters renamed the fruit after their national bird, the kiwi, in the 1950s.",
+"tags": [
+"fruit",
+"history"
+]
+},
+{
+"q": "Which banana variety dominated world exports until Panama disease devastated it in the mid-1900s?",
+"a": [
+"Gros Michel",
+"Lady Finger",
+"Blue Java",
+"Red Dacca"
+],
+"d": 3,
+"x": "The Cavendish banana replaced it because it resisted the disease.",
+"tags": [
+"fruit",
+"history"
+]
+},
+{
+"q": "The wild ancestor of the domestic apple grows in the mountains of which country?",
+"a": [
+"Kazakhstan",
+"Turkey",
+"Switzerland",
+"Georgia"
+],
+"d": 3,
+"x": "Malus sieversii still grows in the Tian Shan range, and the Kazakh city of Almaty means 'father of apples'.",
+"tags": [
+"fruit",
+"history"
+]
+},
+{
+"q": "Himalayan pink salt is mined mainly in which country?",
+"a": [
+"Pakistan",
+"Nepal",
+"India",
+"Tibet"
+],
+"d": 3,
+"x": "The salt comes from the Khewra mine, which is one of the biggest salt mines in the world.",
+"tags": [
+"seasoning"
+]
+},
+{
+"q": "About how many gallons of maple sap are boiled down to make one gallon of syrup?",
+"a": [
+"About 40",
+"About 10",
+"About 20",
+"About 100"
+],
+"d": 3,
+"x": "The sap is only about 2 percent sugar, so most of the water has to boil off.",
+"tags": [
+"sweets"
+]
+},
+{
+"q": "Which famous New York hotel gave its name to a salad of apples, celery, grapes and walnuts?",
+"a": [
+"Waldorf-Astoria",
+"The Plaza",
+"The Algonquin",
+"The Chelsea"
+],
+"d": 3,
+"x": "Oscar Tschirky, the hotel's maitre d', introduced the salad in the 1890s.",
+"tags": [
+"usa",
+"history"
+]
+},
+{
+"q": "Which cured pork cheek is the traditional meat in authentic spaghetti carbonara?",
+"a": [
+"Guanciale",
+"Pancetta",
+"Prosciutto",
+"Mortadella"
+],
+"d": 3,
+"x": "Guanciale has more fat than bacon and gives the sauce a richer flavor than other cured pork.",
+"tags": [
+"italy",
+"pasta"
+]
+},
+{
+"q": "What do the Iberian pigs behind the finest jamon iberico de bellota feast on?",
+"a": [
+"Acorns",
+"Chestnuts",
+"Olives",
+"Barley"
+],
+"d": 3,
+"x": "Bellota is Spanish for acorn. The pigs roam oak woodlands and can eat over 10 kilograms a day.",
+"tags": [
+"spain",
+"meat"
+]
+},
+{
+"q": "Cassoulet, a slow-baked casserole of white beans, sausage and duck, comes from which French region?",
+"a": [
+"Languedoc",
+"Normandy",
+"Alsace",
+"Brittany"
+],
+"d": 3,
+"x": "The dish is named after the cassole, the clay pot it is cooked in.",
+"tags": [
+"france"
+]
+},
+{
+"q": "Which region of France is famous for buckwheat galettes and sweet crepes?",
+"a": [
+"Brittany",
+"Provence",
+"Alsace",
+"Burgundy"
+],
+"d": 3,
+"x": "Buckwheat grows well in Brittany's poor soil, which is why savory galettes became the local staple.",
+"tags": [
+"france"
+]
+},
+{
+"q": "Ratatouille, the vegetable stew, originated in which region of France?",
+"a": [
+"Provence",
+"Normandy",
+"Burgundy",
+"Alsace"
+],
+"d": 3,
+"x": "Ratatouille contains summer vegetables, such as tomatoes, eggplant, zucchini and peppers.",
+"tags": [
+"france",
+"vegetables"
+]
+},
+{
+"q": "Traditional Irish soda bread rises thanks to baking soda reacting with which tangy ingredient?",
+"a": [
+"Buttermilk",
+"Vinegar",
+"Lemon juice",
+"Yogurt"
+],
+"d": 3,
+"x": "The recipe developed in 19th-century Ireland, where soft wheat flour was low in gluten and bakers wanted a quick bread without yeast.",
+"tags": [
+"bread",
+"ireland"
+]
+},
+{
+"q": "The Sachertorte, a famous chocolate cake with apricot jam, comes from which city?",
+"a": [
+"Vienna",
+"Salzburg",
+"Prague",
+"Budapest"
+],
+"d": 3,
+"x": "The cake was created in 1832 by Franz Sacher, a 16-year-old apprentice, for Prince Metternich.",
+"tags": [
+"austria",
+"dessert"
+]
+},
+{
+"q": "Pasteis de nata, Portugal's custard tarts, are most closely linked to which Lisbon district?",
+"a": [
+"Belem",
+"Alfama",
+"Bairro Alto",
+"Chiado"
+],
+"d": 3,
+"x": "Monks at the Jeronimos Monastery in Belem began selling the tarts in the early 1800s.",
+"tags": [
+"portugal",
+"dessert"
+]
+},
+{
+"q": "Australian lamingtons are sponge cakes coated in chocolate and rolled in what?",
+"a": [
+"Desiccated coconut",
+"Crushed peanuts",
+"Powdered sugar",
+"Sprinkles"
+],
+"d": 3,
+"x": "The cake is thought to be named after Lord Lamington, a Governor of Queensland in the late 1800s.",
+"tags": [
+"australia",
+"dessert"
+]
+},
+{
+"q": "West African fufu is traditionally made by pounding which starchy ingredients?",
+"a": [
+"Cassava or yams",
+"Rice or beans",
+"Millet or sorghum",
+"Corn or oats"
+],
+"d": 3,
+"x": "Fufu is rolled into a ball and used to scoop up soups and stews.",
+"tags": [
+"africa"
+]
+},
+{
+"q": "Dosa, the South Indian crepe, is made from a fermented batter of rice and which lentil?",
+"a": [
+"Urad dal",
+"Red lentils",
+"Chickpeas",
+"Mung beans"
+],
+"d": 3,
+"x": "The batter ferments overnight, making the dosa tangy and crisp.",
+"tags": [
+"india"
+]
+},
+{
+"q": "Mapo tofu, a spicy dish of tofu with ground meat, comes from which Chinese province?",
+"a": [
+"Sichuan",
+"Guangdong",
+"Hunan",
+"Zhejiang"
+],
+"d": 3,
+"x": "The dish is thought to have been created in the 1800s in Chengdu, and it has a tingly, numbing heat.",
+"tags": [
+"china"
+]
+},
+{
+"q": "Takoyaki, the octopus-filled batter balls, are a street food from which Japanese city?",
+"a": [
+"Osaka",
+"Kyoto",
+"Sapporo",
+"Nagoya"
+],
+"d": 3,
+"x": "Takoyaki are cooked in a special pan with half-sphere molds and turned with picks.",
+"tags": [
+"japan",
+"street food"
+]
+},
+{
+"q": "Which tart red spice is a key ingredient in the Middle Eastern blend za'atar?",
+"a": [
+"Sumac",
+"Paprika",
+"Saffron",
+"Cayenne"
+],
+"d": 3,
+"x": "Sumac comes from the dried berries of a shrub and gives a lemony tang.",
+"tags": [
+"spices",
+"middle east"
+]
+},
+{
+"q": "The name of the Italian cheese ricotta means what?",
+"a": [
+"Recooked",
+"Soft cheese",
+"Whey curd",
+"Little cloud"
+],
+"d": 3,
+"x": "Ricotta is made by heating the whey left over from making other cheeses a second time.",
+"tags": [
+"cheese",
+"italy"
+]
+},
+{
+"q": "What baking term describes resting flour and water together before adding salt and yeast?",
+"a": [
+"Autolyse",
+"Proofing",
+"Scoring",
+"Laminating"
+],
+"d": 3,
+"x": "The technique was popularized by French bakery expert Raymond Calvel and improves dough structure.",
+"tags": [
+"baking"
+]
+},
+{
+"q": "Which pre-ferment of equal parts flour and water, traditionally linked to Poland, is used in baguettes?",
+"a": [
+"Poolish",
+"Biga",
+"Levain",
+"Sponge cake"
+],
+"d": 3,
+"x": "Viennese bakers brought the method to Paris in the 1800s, and it gives bread a nutty flavor and open crumb.",
+"tags": [
+"baking",
+"bread"
+]
+},
+{
+"q": "Which spice is a typical part of Chinese five-spice powder, along with star anise, cloves, cinnamon and fennel?",
+"a": [
+"Sichuan pepper",
+"Nutmeg",
+"Cardamom",
+"Allspice"
+],
+"d": 3,
+"x": "The five-spice blend is meant to balance the five flavors of sweet, sour, bitter, pungent and salty.",
+"tags": [
+"spices",
+"china"
+]
+},
+{
+"q": "Which anise-scented herb is a defining flavor of sauce bearnaise?",
+"a": [
+"Tarragon",
+"Basil",
+"Sage",
+"Thyme"
+],
+"d": 3,
+"x": "Bearnaise is hollandaise with a reduction of vinegar, shallots and tarragon, and it is classic with steak.",
+"tags": [
+"herbs",
+"sauces"
+]
+},
+{
+"q": "Broccoli, cabbage and kale are all cultivated forms of which wild plant?",
+"a": [
+"Wild cabbage",
+"Wild mustard",
+"Wild radish",
+"Wild turnip"
+],
+"d": 3,
+"x": "Farmers bred the same species into different shapes, which is why they are all Brassica oleracea.",
+"tags": [
+"vegetables",
+"science"
+]
+},
+{
+"q": "Globe artichokes are the unopened flower buds of what kind of plant?",
+"a": [
+"A thistle",
+"A lily",
+"A sunflower",
+"A cactus"
+],
+"d": 3,
+"x": "If left on the plant, the bud blooms into a large purple flower.",
+"tags": [
+"vegetables"
+]
+},
+{
+"q": "The cashew tree is native to which country?",
+"a": [
+"Brazil",
+"India",
+"Vietnam",
+"Nigeria"
+],
+"d": 3,
+"x": "Portuguese traders carried cashews from Brazil to India and Africa in the 1500s.",
+"tags": [
+"nuts",
+"history"
+]
+},
+{
+"q": "Which French chef, nicknamed 'the king of chefs and chef of kings', cooked for Napoleon's circle and the British Prince Regent?",
+"a": [
+"Marie-Antoine Careme",
+"Auguste Escoffier",
+"Paul Bocuse",
+"Fernand Point"
+],
+"d": 3,
+"x": "Careme was a pioneer of haute cuisine and designed towering pastry centerpieces.",
+"tags": [
+"chefs",
+"history"
+]
+},
+{
+"q": "In which California city is Alice Waters' influential restaurant Chez Panisse?",
+"a": [
+"Berkeley",
+"San Francisco",
+"Los Angeles",
+"Napa"
+],
+"d": 3,
+"x": "Chez Panisse opened in 1971 and helped launch the movement for local, seasonal ingredients.",
+"tags": [
+"chefs",
+"usa"
+]
+},
+{
+"q": "Which Danish city is home to the restaurant Noma, co-founded by chef Rene Redzepi?",
+"a": [
+"Copenhagen",
+"Aarhus",
+"Odense",
+"Aalborg"
+],
+"d": 3,
+"x": "Noma helped shape the New Nordic movement, which focuses on local and foraged ingredients.",
+"tags": [
+"chefs",
+"denmark"
+]
+},
+{
+"q": "Which Victorian author published 'The Book of Household Management' in 1861?",
+"a": [
+"Isabella Beeton",
+"Eliza Acton",
+"Hannah Glasse",
+"Elizabeth Raffald"
+],
+"d": 3,
+"x": "Mrs Beeton's book was a bestseller, giving advice on cooking, servants and household budgets.",
+"tags": [
+"history",
+"uk"
+]
+},
+{
+"q": "The Italian town of Ivrea is famous for an annual battle in which people throw what?",
+"a": [
+"Oranges",
+"Eggs",
+"Tomatoes",
+"Flour"
+],
+"d": 3,
+"x": "The Battle of the Oranges is part of the Carnival of Ivrea, with teams on foot attacking carts.",
+"tags": [
+"festivals",
+"italy"
+]
+},
+{
+"q": "In which English county is the annual cheese-rolling event at Cooper's Hill held?",
+"a": [
+"Gloucestershire",
+"Somerset",
+"Cheshire",
+"Derbyshire"
+],
+"d": 3,
+"x": "Competitors chase a wheel of Double Gloucester cheese down a steep hillside, and the first to the bottom wins it.",
+"tags": [
+"festivals",
+"uk"
+]
+},
+{
+"q": "The town of Alba, famous for its white truffle fair, is in which Italian region?",
+"a": [
+"Piedmont",
+"Tuscany",
+"Sicily",
+"Veneto"
+],
+"d": 3,
+"x": "White truffles from the Alba area are among the most prized foods and cannot be farmed.",
+"tags": [
+"italy",
+"fungi"
+]
+},
+{
+"q": "The Microplane grater began life as what kind of tool?",
+"a": [
+"A woodworking rasp",
+"A cheese slicer",
+"A metal file for knives",
+"A paint scraper"
+],
+"d": 3,
+"x": "A home cook reportedly grated citrus zest with one of the woodworking tools, and the company then marketed it for kitchens.",
+"tags": [
+"tools",
+"history"
+]
+},
+{
+"q": "Which French physicist invented an early pressure cooker, called the 'steam digester', in 1679?",
+"a": [
+"Denis Papin",
+"Blaise Pascal",
+"Nicolas Appert",
+"Antoine Lavoisier"
+],
+"d": 3,
+"x": "Papin's invention raised water's boiling point by trapping steam, which cooked food faster and softened bones.",
+"tags": [
+"tools",
+"history"
+]
+},
+{
+"q": "The knife cut 'brunoise' produces what?",
+"a": [
+"Tiny cubes of about 3 millimeters",
+"Long thin matchsticks",
+"Thin ribbons of leaves",
+"Paper-thin slices"
+],
+"d": 3,
+"x": "A brunoise is made by cutting julienne strips crosswise into tiny cubes.",
+"tags": [
+"cooking terms"
+]
+},
+{
+"q": "A duck confit is meat that has been slowly cooked in what?",
+"a": [
+"Its own fat",
+"Red wine",
+"Salted water",
+"Milk"
+],
+"d": 3,
+"x": "Confit is an old preservation method, as the meat was stored under a layer of fat that sealed out air.",
+"tags": [
+"cooking terms",
+"france"
+]
+},
+{
+"q": "The French cooking term 'saute' literally means what?",
+"a": [
+"Jumped",
+"Browned",
+"Tossed",
+"Stirred"
+],
+"d": 3,
+"x": "It refers to how food jumps in a hot pan as it is tossed.",
+"tags": [
+"cooking terms",
+"france"
+]
+},
+{
+"q": "Which process of heating and cooling chocolate gives it a glossy shine and a crisp snap?",
+"a": [
+"Tempering",
+"Conching",
+"Winnowing",
+"Refining"
+],
+"d": 3,
+"x": "Tempering aligns the fat crystals in cocoa butter into a stable form, so the bar does not turn dull or crumbly.",
+"tags": [
+"chocolate",
+"cooking terms"
+]
+},
+{
+"q": "A bain-marie is used in cooking to do what?",
+"a": [
+"Heat food gently in a water bath",
+"Sift flour finely",
+"Carve meat",
+"Whip cream"
+],
+"d": 3,
+"x": "Setting a bowl over simmering water keeps delicate sauces and chocolate from scorching.",
+"tags": [
+"cooking terms"
+]
+},
+{
+"q": "Which vitamin, abundant in leafy greens, is needed for blood to clot?",
+"a": [
+"Vitamin K",
+"Vitamin A",
+"Vitamin B6",
+"Vitamin E"
+],
+"d": 3,
+"x": "The K comes from the German word Koagulation, and the vitamin is found in kale, spinach and broccoli.",
+"tags": [
+"nutrition"
+]
+},
+{
+"q": "Which B vitamin is found naturally almost only in animal products?",
+"a": [
+"B12",
+"B1",
+"B6",
+"B9"
+],
+"d": 3,
+"x": "People who follow plant-based diets usually get B12 from fortified foods.",
+"tags": [
+"nutrition"
+]
+},
+{
+"q": "Mozzarella belongs to the 'pasta filata' family of cheeses. What does pasta filata mean?",
+"a": [
+"Spun paste",
+"Pressed curd",
+"Fresh milk",
+"Aged wheel"
+],
+"d": 3,
+"x": "The curd is heated and stretched like taffy, which gives these cheeses their stringy texture.",
+"tags": [
+"cheese",
+"italy"
+]
+},
+{
+"q": "Kobe beef takes its name from a city in which Japanese prefecture?",
+"a": [
+"Hyogo",
+"Kyoto",
+"Hokkaido",
+"Nagano"
+],
+"d": 3,
+"x": "Kobe beef comes from Tajima-gyu cattle, a strain of Wagyu raised in Hyogo Prefecture.",
+"tags": [
+"japan",
+"meat"
+]
+},
+{
+"q": "The Maori earth oven, where food is cooked with heated stones underground, is called what?",
+"a": [
+"Hangi",
+"Umu",
+"Lovo",
+"Imu"
+],
+"d": 3,
+"x": "Food is wrapped and lowered onto hot stones, then covered with soil and left to steam for hours.",
+"tags": [
+"new zealand",
+"traditions"
+]
+},
+{
+"q": "Bobotie, a baked dish of spiced minced meat with an egg topping, is a classic of which country?",
+"a": [
+"South Africa",
+"Kenya",
+"Morocco",
+"Nigeria"
+],
+"d": 3,
+"x": "Bobotie draws on Cape Malay cooking, and it is traditionally served with yellow rice.",
+"tags": [
+"africa"
+]
+},
+{
+"q": "Smorrebrod, the open-faced sandwich on rye bread, is a classic of which country?",
+"a": [
+"Denmark",
+"Finland",
+"Iceland",
+"Netherlands"
+],
+"d": 3,
+"x": "Danish smorrebrod are piled with toppings like herring, roast beef and egg, and eaten with a knife and fork.",
+"tags": [
+"denmark"
+]
+},
+{
+"q": "Black pepper is native to the Malabar Coast of which country?",
+"a": [
+"India",
+"Indonesia",
+"Madagascar",
+"Brazil"
+],
+"d": 3,
+"x": "Pepper was once so valuable in Europe that it was sometimes counted peppercorn by peppercorn as currency.",
+"tags": [
+"spices",
+"history"
+]
+},
+{
+"q": "Traditional balsamic vinegar of Modena is made by slowly cooking down the juice of which fruit?",
+"a": [
+"Grapes",
+"Apples",
+"Figs",
+"Dates"
+],
+"d": 3,
+"x": "The cooked grape must is aged for at least 12 years in a series of barrels made of different woods.",
+"tags": [
+"italy",
+"condiments"
+]
+},
+{
+"q": "Which grain is used to make the Ethiopian flatbread injera?",
+"a": [
+"Teff",
+"Sorghum",
+"Millet",
+"Barley"
+],
+"d": 3,
+"x": "Teff is one of the world's smallest grains, and injera batter is fermented for several days.",
+"tags": [
+"ethiopia",
+"bread"
+]
+},
+{
+"q": "Which compound gives saffron its golden-yellow color?",
+"a": [
+"Crocin",
+"Curcumin",
+"Carotene",
+"Lycopene"
+],
+"d": 3,
+"x": "Crocin is a water-soluble pigment, which is why saffron threads turn a dish yellow when steeped.",
+"tags": [
+"spices",
+"science"
+]
+},
+{
+"q": "What is a smoke-dried jalapeno pepper called?",
+"a": [
+"Chipotle",
+"Ancho",
+"Guajillo",
+"Pasilla"
+],
+"d": 3,
+"x": "Chipotle comes from the Nahuatl word for smoked chili, and the peppers are often sold in adobo sauce.",
+"tags": [
+"mexico",
+"spices"
+]
+},
+{
+"q": "Which grain is traditionally used to make Scandinavian knackebrod crispbread?",
+"a": [
+"Rye",
+"Oats",
+"Corn",
+"Rice"
+],
+"d": 3,
+"x": "Rye grows well in cool northern climates, and crispbread keeps for months without going stale.",
+"tags": [
+"bread",
+"scandinavia"
+]
+},
+{
+"q": "In which decade was the Italian ciabatta loaf developed?",
+"a": [
+"The 1980s",
+"The 1930s",
+"The 1880s",
+"The 1780s"
+],
+"d": 3,
+"x": "A baker from the Veneto region created ciabatta in 1982 as an Italian answer to the French baguette.",
+"tags": [
+"bread",
+"italy"
+]
+},
+{
+"q": "Which Austrian crescent-shaped pastry is traditionally seen as an ancestor of the croissant?",
+"a": [
+"Kipferl",
+"Strudel",
+"Krapfen",
+"Gugelhupf"
+],
+"d": 3,
+"x": "Kipferl had existed in Austria for centuries before it reached France and was reinvented with laminated dough.",
+"tags": [
+"pastry",
+"history"
+]
+},
+{
+"q": "The French word 'eclair' literally means what?",
+"a": [
+"Lightning",
+"Cloud",
+"Thunder",
+"Spark"
+],
+"d": 3,
+"x": "One theory says the pastry is so delicious that it vanishes as fast as a flash of lightning.",
+"tags": [
+"pastry",
+"france"
+]
+},
+{
+"q": "Which cracked wheat is the main grain in tabbouleh?",
+"a": [
+"Bulgur",
+"Couscous",
+"Freekeh",
+"Semolina"
+],
+"d": 3,
+"x": "Tabbouleh originated in the mountains of Lebanon and Syria and is mostly parsley, with a little bulgur.",
+"tags": [
+"middle east",
+"grains"
+]
+},
+{
+"q": "In which animal's stomach is haggis traditionally boiled?",
+"a": [
+"Sheep",
+"Cow",
+"Pig",
+"Goat"
+],
+"d": 3,
+"x": "Modern haggis is often cooked in an artificial casing instead.",
+"tags": [
+"scotland",
+"meat"
+]
+},
+{
+"q": "Currywurst, sausage with curry-flavored ketchup, is a famous street food from which German city?",
+"a": [
+"Berlin",
+"Munich",
+"Hamburg",
+"Cologne"
+],
+"d": 3,
+"x": "Herta Heuwer is said to have invented currywurst in Berlin in 1949, using ingredients from British soldiers.",
+"tags": [
+"germany",
+"street food"
+]
+},
+{
+"q": "Tahdig is the prized crispy layer formed at the bottom of a pot of what in Persian cooking?",
+"a": [
+"Rice",
+"Bread",
+"Potatoes",
+"Noodles"
+],
+"d": 3,
+"x": "Tahdig means 'bottom of the pot' in Persian and is often served flipped out in one golden piece.",
+"tags": [
+"iran",
+"rice"
+]
+},
+{
+"q": "Mastic, a resin used to flavor Greek sweets and chewing gum, comes from trees on which Greek island?",
+"a": [
+"Chios",
+"Crete",
+"Rhodes",
+"Corfu"
+],
+"d": 3,
+"x": "Mastic trees grow in southern Chios, and the resin is collected from cuts in the bark, drying into small tears.",
+"tags": [
+"greece",
+"spices"
+]
+},
+{
+"q": "Which French novelist's memory of dipping a madeleine into tea sparked a famous book series?",
+"a": [
+"Marcel Proust",
+"Victor Hugo",
+"Emile Zola",
+"Gustave Flaubert"
+],
+"d": 3,
+"x": "The scene appears in 'In Search of Lost Time', where the taste of the cake brings back childhood memories.",
+"tags": [
+"literature",
+"france"
+]
+},
+{
+"q": "The cheese dish raclette takes its name from a French verb meaning what?",
+"a": [
+"To scrape",
+"To melt",
+"To stretch",
+"To grate"
+],
+"d": 3,
+"x": "A half wheel of cheese is melted near heat and the soft layer is scraped onto potatoes.",
+"tags": [
+"cheese",
+"switzerland"
+]
+},
+{
+"q": "The Turkish word 'dolma' refers to foods that are what?",
+"a": [
+"Stuffed",
+"Pickled",
+"Smoked",
+"Skewered"
+],
+"d": 3,
+"x": "Dolma are vegetables or leaves, such as grape leaves and peppers, filled with rice, herbs or meat.",
+"tags": [
+"turkey"
+]
+}
+]

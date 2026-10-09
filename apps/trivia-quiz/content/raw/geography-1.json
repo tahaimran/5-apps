@@ -1,0 +1,1481 @@
+[
+{
+"q": "What is the capital of France?",
+"a": [
+"Paris",
+"Lyon",
+"Marseille",
+"Nice"
+],
+"d": 1,
+"x": "Paris sits on the Seine and has been France's political center for more than a thousand years.",
+"tags": [
+"capitals",
+"europe"
+]
+},
+{
+"q": "Which is the largest ocean on Earth?",
+"a": [
+"Pacific Ocean",
+"Atlantic Ocean",
+"Indian Ocean",
+"Arctic Ocean"
+],
+"d": 1,
+"x": "The Pacific covers about a third of the planet's surface, more than all of Earth's land combined.",
+"tags": [
+"oceans"
+]
+},
+{
+"q": "Which famous river flows north through Egypt into the Mediterranean Sea?",
+"a": [
+"Nile",
+"Congo",
+"Niger",
+"Zambezi"
+],
+"d": 1,
+"x": "Almost all Egyptians live within a few miles of this river, whose annual floods once made desert soil fertile.",
+"tags": [
+"rivers",
+"africa"
+]
+},
+{
+"q": "Which mountain has the highest peak above sea level?",
+"a": [
+"Mount Everest",
+"K2",
+"Kangchenjunga",
+"Mount Kilimanjaro"
+],
+"d": 1,
+"x": "Everest rises about 8,849 meters (29,032 feet) in the Himalayas.",
+"tags": [
+"mountains"
+]
+},
+{
+"q": "What is the capital of Japan?",
+"a": [
+"Tokyo",
+"Osaka",
+"Kyoto",
+"Nagoya"
+],
+"d": 1,
+"x": "Tokyo replaced Kyoto as the imperial capital in 1868 and was originally called Edo.",
+"tags": [
+"capitals",
+"asia"
+]
+},
+{
+"q": "On which continent is Egypt located?",
+"a": [
+"Africa",
+"Asia",
+"Europe",
+"South America"
+],
+"d": 1,
+"x": "Egypt is mostly in northeast Africa, but its Sinai Peninsula extends into Asia.",
+"tags": [
+"continents"
+]
+},
+{
+"q": "What is the largest hot desert in the world?",
+"a": [
+"Sahara",
+"Gobi",
+"Kalahari",
+"Arabian Desert"
+],
+"d": 1,
+"x": "It stretches across much of North Africa and is roughly the size of the United States.",
+"tags": [
+"deserts",
+"africa"
+]
+},
+{
+"q": "What is the capital of Australia?",
+"a": [
+"Canberra",
+"Sydney",
+"Melbourne",
+"Brisbane"
+],
+"d": 1,
+"x": "Canberra was purpose-built as a compromise between rivals Sydney and Melbourne.",
+"tags": [
+"capitals",
+"oceania"
+]
+},
+{
+"q": "In which city would you find the ancient Colosseum?",
+"a": [
+"Rome",
+"Athens",
+"Naples",
+"Florence"
+],
+"d": 1,
+"x": "The Colosseum opened around 80 AD and could hold tens of thousands of spectators.",
+"tags": [
+"landmarks",
+"europe"
+]
+},
+{
+"q": "What is the capital of Canada?",
+"a": [
+"Ottawa",
+"Toronto",
+"Vancouver",
+"Montreal"
+],
+"d": 1,
+"x": "Ottawa was chosen as capital in 1857 partly because it sits on the border between English and French Canada.",
+"tags": [
+"capitals",
+"north-america"
+]
+},
+{
+"q": "In which country is the Inca citadel of Machu Picchu?",
+"a": [
+"Peru",
+"Chile",
+"Bolivia",
+"Ecuador"
+],
+"d": 1,
+"x": "Machu Picchu was built in the 1400s high in the Andes and was rediscovered by the wider world in 1911.",
+"tags": [
+"landmarks",
+"south-america"
+]
+},
+{
+"q": "Which is the smallest continent by land area?",
+"a": [
+"Australia",
+"Europe",
+"Antarctica",
+"South America"
+],
+"d": 1,
+"x": "Australia is also a single country, and it is sometimes grouped with nearby islands under the name Oceania.",
+"tags": [
+"continents"
+]
+},
+{
+"q": "Which sea separates southern Europe from North Africa?",
+"a": [
+"Mediterranean Sea",
+"Black Sea",
+"Red Sea",
+"Baltic Sea"
+],
+"d": 1,
+"x": "The name comes from Latin words meaning 'middle of the land'.",
+"tags": [
+"seas"
+]
+},
+{
+"q": "Which country is shaped like a boot?",
+"a": [
+"Italy",
+"Greece",
+"Portugal",
+"Croatia"
+],
+"d": 1,
+"x": "Italy's 'boot' appears to kick the island of Sicily.",
+"tags": [
+"countries",
+"europe"
+]
+},
+{
+"q": "What is the capital of Brazil?",
+"a": [
+"Brasília",
+"Rio de Janeiro",
+"São Paulo",
+"Salvador"
+],
+"d": 1,
+"x": "Brasília was built from scratch in the late 1950s and inaugurated as the capital in 1960.",
+"tags": [
+"capitals",
+"south-america"
+]
+},
+{
+"q": "Which river runs through the city of London?",
+"a": [
+"Thames",
+"Severn",
+"Mersey",
+"Trent"
+],
+"d": 1,
+"x": "The Thames is the longest river entirely within England.",
+"tags": [
+"rivers",
+"europe"
+]
+},
+{
+"q": "In which country is the Great Wall found?",
+"a": [
+"China",
+"Japan",
+"Mongolia",
+"India"
+],
+"d": 1,
+"x": "Its various sections were built over many centuries and together stretch thousands of miles.",
+"tags": [
+"landmarks",
+"asia"
+]
+},
+{
+"q": "What is the capital of Spain?",
+"a": [
+"Madrid",
+"Barcelona",
+"Seville",
+"Valencia"
+],
+"d": 1,
+"x": "Madrid sits near the center of the Iberian Peninsula and is one of Europe's highest capital cities.",
+"tags": [
+"capitals",
+"europe"
+]
+},
+{
+"q": "Niagara Falls lies on the border between the United States and which country?",
+"a": [
+"Canada",
+"Mexico",
+"Cuba",
+"Greenland"
+],
+"d": 1,
+"x": "The falls sit between New York State and the Canadian province of Ontario.",
+"tags": [
+"landmarks",
+"north-america"
+]
+},
+{
+"q": "Which country has the largest land area in the world?",
+"a": [
+"Russia",
+"Canada",
+"China",
+"United States"
+],
+"d": 1,
+"x": "It spans eleven time zones and covers parts of both Europe and Asia.",
+"tags": [
+"countries"
+]
+},
+{
+"q": "What is the capital of Egypt?",
+"a": [
+"Cairo",
+"Alexandria",
+"Luxor",
+"Giza"
+],
+"d": 1,
+"x": "Cairo lies on the Nile close to the great pyramids of Giza.",
+"tags": [
+"capitals",
+"africa"
+]
+},
+{
+"q": "In which country is Mount Kilimanjaro, Africa's highest mountain?",
+"a": [
+"Tanzania",
+"Kenya",
+"Uganda",
+"Ethiopia"
+],
+"d": 1,
+"x": "Kilimanjaro is a dormant volcano rising to about 5,895 meters and is famous for its shrinking snowcap.",
+"tags": [
+"mountains",
+"africa"
+]
+},
+{
+"q": "What is the world's largest island that is not a continent?",
+"a": [
+"Greenland",
+"Madagascar",
+"Borneo",
+"Iceland"
+],
+"d": 1,
+"x": "Most of Greenland is covered by a vast ice sheet.",
+"tags": [
+"islands"
+]
+},
+{
+"q": "In which city does the Statue of Liberty stand?",
+"a": [
+"New York City",
+"Boston",
+"Philadelphia",
+"Washington, D.C."
+],
+"d": 1,
+"x": "France gave the statue to the United States, and it was dedicated in 1886.",
+"tags": [
+"landmarks",
+"north-america"
+]
+},
+{
+"q": "What is the capital of Germany?",
+"a": [
+"Berlin",
+"Munich",
+"Hamburg",
+"Frankfurt"
+],
+"d": 1,
+"x": "Berlin was divided by a wall from 1961 to 1989 during the Cold War.",
+"tags": [
+"capitals",
+"europe"
+]
+},
+{
+"q": "Which country holds the largest share of the Amazon rainforest?",
+"a": [
+"Brazil",
+"Peru",
+"Colombia",
+"Venezuela"
+],
+"d": 1,
+"x": "Roughly 60 percent of the Amazon rainforest lies inside this one country.",
+"tags": [
+"countries",
+"south-america"
+]
+},
+{
+"q": "In which country is the Taj Mahal?",
+"a": [
+"India",
+"Pakistan",
+"Bangladesh",
+"Nepal"
+],
+"d": 1,
+"x": "The marble mausoleum in Agra was built in the 1600s by Emperor Shah Jahan for his wife.",
+"tags": [
+"landmarks",
+"asia"
+]
+},
+{
+"q": "Which ocean lies between Africa and Australia?",
+"a": [
+"Indian Ocean",
+"Atlantic Ocean",
+"Pacific Ocean",
+"Southern Ocean"
+],
+"d": 1,
+"x": "It is the only major ocean named after a country.",
+"tags": [
+"oceans"
+]
+},
+{
+"q": "What is the capital of Russia?",
+"a": [
+"Moscow",
+"Saint Petersburg",
+"Kazan",
+"Novosibirsk"
+],
+"d": 1,
+"x": "The Kremlin and Red Square sit at the heart of this capital.",
+"tags": [
+"capitals",
+"europe"
+]
+},
+{
+"q": "Which is the largest US state by area?",
+"a": [
+"Alaska",
+"Texas",
+"California",
+"Montana"
+],
+"d": 1,
+"x": "Alaska is more than twice the size of Texas.",
+"tags": [
+"united-states"
+]
+},
+{
+"q": "How many continents are there in the commonly taught model?",
+"a": [
+"7",
+"5",
+"6",
+"8"
+],
+"d": 1,
+"x": "They are Africa, Antarctica, Asia, Australia/Oceania, Europe, North America and South America.",
+"tags": [
+"continents"
+]
+},
+{
+"q": "What is the capital of Mexico?",
+"a": [
+"Mexico City",
+"Guadalajara",
+"Cancún",
+"Monterrey"
+],
+"d": 1,
+"x": "The city was built on top of the Aztec capital Tenochtitlan, which stood on a lake.",
+"tags": [
+"capitals",
+"north-america"
+]
+},
+{
+"q": "What is the capital of Argentina?",
+"a": [
+"Buenos Aires",
+"Córdoba",
+"Rosario",
+"Mendoza"
+],
+"d": 1,
+"x": "Its name means 'fair winds' in Spanish.",
+"tags": [
+"capitals",
+"south-america"
+]
+},
+{
+"q": "Which desert spans northern China and southern Mongolia?",
+"a": [
+"Gobi",
+"Thar",
+"Atacama",
+"Mojave"
+],
+"d": 1,
+"x": "Parts of the Gobi are famous for dinosaur fossil discoveries.",
+"tags": [
+"deserts",
+"asia"
+]
+},
+{
+"q": "How many Great Lakes are there in North America?",
+"a": [
+"Five",
+"Three",
+"Four",
+"Seven"
+],
+"d": 1,
+"x": "The group is Superior, Michigan, Huron, Erie and Ontario, and together they hold about a fifth of the world's fresh surface water.",
+"tags": [
+"lakes",
+"north-america"
+]
+},
+{
+"q": "What is the capital of Turkey?",
+"a": [
+"Ankara",
+"Istanbul",
+"Izmir",
+"Antalya"
+],
+"d": 1,
+"x": "Many people guess Istanbul, but Ankara has been the capital since 1923.",
+"tags": [
+"capitals",
+"asia"
+]
+},
+{
+"q": "What is the capital of the United Kingdom?",
+"a": [
+"London",
+"Manchester",
+"Edinburgh",
+"Birmingham"
+],
+"d": 1,
+"x": "The city has been a major settlement since Roman times, when it was called Londinium.",
+"tags": [
+"capitals",
+"europe"
+]
+},
+{
+"q": "Which canal links the Atlantic and Pacific Oceans through Central America?",
+"a": [
+"Panama Canal",
+"Suez Canal",
+"Kiel Canal",
+"Erie Canal"
+],
+"d": 1,
+"x": "It opened in 1914 and saves ships a long voyage around the tip of South America.",
+"tags": [
+"landmarks",
+"north-america"
+]
+},
+{
+"q": "In which country is Mount Fuji, a famous snow-capped volcano?",
+"a": [
+"Japan",
+"South Korea",
+"Philippines",
+"Indonesia"
+],
+"d": 1,
+"x": "Mount Fuji is Japan's tallest peak at about 3,776 meters and last erupted in 1707.",
+"tags": [
+"mountains",
+"asia"
+]
+},
+{
+"q": "Which continent is the coldest on Earth?",
+"a": [
+"Antarctica",
+"Asia",
+"North America",
+"Europe"
+],
+"d": 1,
+"x": "Antarctica holds around 90 percent of the world's ice.",
+"tags": [
+"continents"
+]
+},
+{
+"q": "What is the capital of China?",
+"a": [
+"Beijing",
+"Shanghai",
+"Hong Kong",
+"Guangzhou"
+],
+"d": 1,
+"x": "The Forbidden City, once the home of emperors, sits at the center of the capital.",
+"tags": [
+"capitals",
+"asia"
+]
+},
+{
+"q": "Marrakech is a famous city in which country?",
+"a": [
+"Morocco",
+"Tunisia",
+"Egypt",
+"Algeria"
+],
+"d": 1,
+"x": "Its old walled city, the medina, is known for the Jemaa el-Fnaa square.",
+"tags": [
+"cities",
+"africa"
+]
+},
+{
+"q": "What is the capital of Greece?",
+"a": [
+"Athens",
+"Thessaloniki",
+"Sparta",
+"Corinth"
+],
+"d": 1,
+"x": "The Parthenon on the Acropolis overlooks the city, which is named after the goddess Athena.",
+"tags": [
+"capitals",
+"europe"
+]
+},
+{
+"q": "Which river carries more water to the sea than any other in the world?",
+"a": [
+"Amazon",
+"Nile",
+"Mississippi",
+"Yangtze"
+],
+"d": 1,
+"x": "Its discharge is greater than that of the next several largest rivers combined.",
+"tags": [
+"rivers",
+"south-america"
+]
+},
+{
+"q": "What is the capital of South Korea?",
+"a": [
+"Seoul",
+"Busan",
+"Incheon",
+"Pyongyang"
+],
+"d": 1,
+"x": "Seoul is split by the Han River and its metro area is home to roughly half the country's people.",
+"tags": [
+"capitals",
+"asia"
+]
+},
+{
+"q": "What is the capital of Sweden?",
+"a": [
+"Stockholm",
+"Gothenburg",
+"Malmö",
+"Uppsala"
+],
+"d": 1,
+"x": "The city is built across 14 islands where Lake Mälaren meets the Baltic Sea.",
+"tags": [
+"capitals",
+"europe"
+]
+},
+{
+"q": "Which is the largest continent by area?",
+"a": [
+"Asia",
+"Africa",
+"North America",
+"Europe"
+],
+"d": 1,
+"x": "Asia covers about 30 percent of Earth's land and includes both the highest and lowest points on land.",
+"tags": [
+"continents"
+]
+},
+{
+"q": "Which body of water is so salty that swimmers float effortlessly on its surface?",
+"a": [
+"Dead Sea",
+"Black Sea",
+"Caspian Sea",
+"Red Sea"
+],
+"d": 1,
+"x": "Its shoreline is the lowest dry land on Earth, more than 400 meters below sea level.",
+"tags": [
+"seas",
+"asia"
+]
+},
+{
+"q": "What is the capital of Portugal?",
+"a": [
+"Lisbon",
+"Porto",
+"Faro",
+"Coimbra"
+],
+"d": 1,
+"x": "Lisbon is one of Europe's oldest capitals and is built on seven hills.",
+"tags": [
+"capitals",
+"europe"
+]
+},
+{
+"q": "The Great Barrier Reef lies off the coast of which Australian state?",
+"a": [
+"Queensland",
+"Western Australia",
+"Victoria",
+"Tasmania"
+],
+"d": 1,
+"x": "It is the largest coral reef system on Earth and can be seen from space.",
+"tags": [
+"landmarks",
+"oceania"
+]
+},
+{
+"q": "What is the capital of Kenya?",
+"a": [
+"Nairobi",
+"Mombasa",
+"Kisumu",
+"Nakuru"
+],
+"d": 1,
+"x": "Nairobi is unusual for having a national park with wild lions within city limits.",
+"tags": [
+"capitals",
+"africa"
+]
+},
+{
+"q": "What is the capital of Thailand?",
+"a": [
+"Bangkok",
+"Phuket",
+"Chiang Mai",
+"Pattaya"
+],
+"d": 1,
+"x": "Its full ceremonial name is one of the longest place names in the world.",
+"tags": [
+"capitals",
+"asia"
+]
+},
+{
+"q": "Which mountain range runs along the western edge of South America?",
+"a": [
+"Andes",
+"Rockies",
+"Alps",
+"Himalayas"
+],
+"d": 1,
+"x": "At around 7,000 km, it is the longest continental mountain range in the world.",
+"tags": [
+"mountains",
+"south-america"
+]
+},
+{
+"q": "What is the capital of Ireland?",
+"a": [
+"Dublin",
+"Cork",
+"Galway",
+"Belfast"
+],
+"d": 1,
+"x": "Dublin takes its name from the Irish words for 'black pool'.",
+"tags": [
+"capitals",
+"europe"
+]
+},
+{
+"q": "Which US city is nicknamed the Windy City?",
+"a": [
+"Chicago",
+"Boston",
+"Seattle",
+"San Francisco"
+],
+"d": 1,
+"x": "It sits on the shore of Lake Michigan.",
+"tags": [
+"cities",
+"united-states"
+]
+},
+{
+"q": "Which river flows through the heart of Paris?",
+"a": [
+"Seine",
+"Loire",
+"Rhône",
+"Garonne"
+],
+"d": 1,
+"x": "Notre-Dame cathedral stands on an island in the middle of this river.",
+"tags": [
+"rivers",
+"europe"
+]
+},
+{
+"q": "What is the capital of Norway?",
+"a": [
+"Oslo",
+"Bergen",
+"Trondheim",
+"Stavanger"
+],
+"d": 1,
+"x": "The city sits at the head of a long fjord and has been the capital since about 1300.",
+"tags": [
+"capitals",
+"europe"
+]
+},
+{
+"q": "Which is the smallest of the world's five oceans?",
+"a": [
+"Arctic Ocean",
+"Indian Ocean",
+"Southern Ocean",
+"Atlantic Ocean"
+],
+"d": 1,
+"x": "Much of its surface is covered by sea ice for part of the year.",
+"tags": [
+"oceans"
+]
+},
+{
+"q": "What is the capital of Cuba?",
+"a": [
+"Havana",
+"Santiago",
+"Varadero",
+"Trinidad"
+],
+"d": 1,
+"x": "Havana is famous for its classic American cars from the 1950s.",
+"tags": [
+"capitals",
+"north-america"
+]
+},
+{
+"q": "What is the capital of Poland?",
+"a": [
+"Warsaw",
+"Kraków",
+"Gdańsk",
+"Wrocław"
+],
+"d": 1,
+"x": "Warsaw's Old Town was rebuilt almost entirely after World War II.",
+"tags": [
+"capitals",
+"europe"
+]
+},
+{
+"q": "In which US state is Mount Rushmore?",
+"a": [
+"South Dakota",
+"Wyoming",
+"Montana",
+"Colorado"
+],
+"d": 1,
+"x": "The presidential faces carved in granite are each about 18 meters (60 feet) tall.",
+"tags": [
+"landmarks",
+"united-states"
+]
+},
+{
+"q": "What is the capital of the Netherlands?",
+"a": [
+"Amsterdam",
+"Rotterdam",
+"The Hague",
+"Utrecht"
+],
+"d": 1,
+"x": "Amsterdam is famous for its canals, and the government actually sits in The Hague.",
+"tags": [
+"capitals",
+"europe"
+]
+},
+{
+"q": "Cape Town is a major city in which country?",
+"a": [
+"South Africa",
+"Namibia",
+"Kenya",
+"Zimbabwe"
+],
+"d": 1,
+"x": "The city sits below the flat-topped Table Mountain.",
+"tags": [
+"cities",
+"africa"
+]
+},
+{
+"q": "Which tiny country lies entirely inside the city of Rome?",
+"a": [
+"Vatican City",
+"San Marino",
+"Monaco",
+"Andorra"
+],
+"d": 1,
+"x": "At roughly 0.44 square kilometers, it is the smallest country in the world.",
+"tags": [
+"countries",
+"europe"
+]
+},
+{
+"q": "The Grand Canyon is located in which US state?",
+"a": [
+"Arizona",
+"Nevada",
+"Utah",
+"New Mexico"
+],
+"d": 1,
+"x": "The canyon is up to 29 km wide and about 1.8 km deep in places.",
+"tags": [
+"landmarks",
+"united-states"
+]
+},
+{
+"q": "What is the capital of Peru?",
+"a": [
+"Lima",
+"Cusco",
+"Arequipa",
+"Trujillo"
+],
+"d": 1,
+"x": "Lima is on the Pacific coast and is one of the world's driest capital cities.",
+"tags": [
+"capitals",
+"south-america"
+]
+},
+{
+"q": "What is the capital of Chile?",
+"a": [
+"Santiago",
+"Valparaíso",
+"Concepción",
+"Antofagasta"
+],
+"d": 1,
+"x": "The city lies in a valley with the snowy Andes visible on clear days.",
+"tags": [
+"capitals",
+"south-america"
+]
+},
+{
+"q": "On which continent is Brazil located?",
+"a": [
+"South America",
+"North America",
+"Africa",
+"Europe"
+],
+"d": 1,
+"x": "Brazil covers nearly half of South America and borders every other country on the continent except Chile and Ecuador.",
+"tags": [
+"continents"
+]
+},
+{
+"q": "What is the capital of Switzerland?",
+"a": [
+"Bern",
+"Zurich",
+"Geneva",
+"Basel"
+],
+"d": 1,
+"x": "Zurich is the largest city, but Bern is the seat of the federal government.",
+"tags": [
+"capitals",
+"europe"
+]
+},
+{
+"q": "What is the capital of Austria?",
+"a": [
+"Vienna",
+"Salzburg",
+"Innsbruck",
+"Graz"
+],
+"d": 1,
+"x": "The city on the Danube was once the capital of the sprawling Habsburg Empire.",
+"tags": [
+"capitals",
+"europe"
+]
+},
+{
+"q": "What is the capital of Saudi Arabia?",
+"a": [
+"Riyadh",
+"Jeddah",
+"Mecca",
+"Dammam"
+],
+"d": 1,
+"x": "Riyadh lies in the middle of the Arabian Peninsula, far from the coast.",
+"tags": [
+"capitals",
+"asia"
+]
+},
+{
+"q": "What is the capital of Nigeria?",
+"a": [
+"Abuja",
+"Lagos",
+"Kano",
+"Ibadan"
+],
+"d": 1,
+"x": "Abuja replaced Lagos as the capital in 1991.",
+"tags": [
+"capitals",
+"africa"
+]
+},
+{
+"q": "Which sea, named for a color, lies north of Turkey?",
+"a": [
+"Black Sea",
+"Red Sea",
+"White Sea",
+"Yellow Sea"
+],
+"d": 1,
+"x": "It connects to the Mediterranean through the Bosphorus and Dardanelles straits.",
+"tags": [
+"seas"
+]
+},
+{
+"q": "The Mississippi River empties into which body of water?",
+"a": [
+"Gulf of Mexico",
+"Atlantic Ocean",
+"Lake Michigan",
+"Pacific Ocean"
+],
+"d": 1,
+"x": "Its muddy delta in Louisiana is constantly reshaped by silt carried from the heart of the continent.",
+"tags": [
+"rivers",
+"north-america"
+]
+},
+{
+"q": "What is the capital of New Zealand?",
+"a": [
+"Wellington",
+"Auckland",
+"Christchurch",
+"Queenstown"
+],
+"d": 1,
+"x": "Wellington is the southernmost national capital in the world and sits at the foot of the North Island.",
+"tags": [
+"capitals",
+"oceania"
+]
+},
+{
+"q": "Which US state is made up entirely of islands?",
+"a": [
+"Hawaii",
+"Alaska",
+"Florida",
+"Maine"
+],
+"d": 1,
+"x": "The state's main islands are the tops of volcanoes that rose from the ocean floor.",
+"tags": [
+"united-states",
+"islands"
+]
+},
+{
+"q": "What is the capital of Denmark?",
+"a": [
+"Copenhagen",
+"Aarhus",
+"Odense",
+"Aalborg"
+],
+"d": 1,
+"x": "The famous Little Mermaid statue sits on the city's waterfront.",
+"tags": [
+"capitals",
+"europe"
+]
+},
+{
+"q": "Madagascar lies off the east coast of which continent?",
+"a": [
+"Africa",
+"Asia",
+"Australia",
+"South America"
+],
+"d": 1,
+"x": "It is the world's fourth-largest island and home to lemurs found nowhere else.",
+"tags": [
+"islands"
+]
+},
+{
+"q": "What is the capital of Finland?",
+"a": [
+"Helsinki",
+"Tampere",
+"Turku",
+"Oulu"
+],
+"d": 1,
+"x": "Helsinki sits on the Gulf of Finland, and ferries link it to Tallinn in about two hours.",
+"tags": [
+"capitals",
+"europe"
+]
+},
+{
+"q": "What is the capital of Vietnam?",
+"a": [
+"Hanoi",
+"Ho Chi Minh City",
+"Da Nang",
+"Hue"
+],
+"d": 1,
+"x": "Hanoi is more than a thousand years old and sits on the Red River.",
+"tags": [
+"capitals",
+"asia"
+]
+},
+{
+"q": "What is the name of the imaginary line that circles Earth halfway between the poles?",
+"a": [
+"Equator",
+"Prime Meridian",
+"Tropic of Cancer",
+"Arctic Circle"
+],
+"d": 1,
+"x": "It sits at 0 degrees latitude and splits the planet into the Northern and Southern Hemispheres.",
+"tags": [
+"physical-geography"
+]
+},
+{
+"q": "What is the name of the line of 0 degrees longitude?",
+"a": [
+"Prime Meridian",
+"Equator",
+"International Date Line",
+"Tropic of Capricorn"
+],
+"d": 1,
+"x": "It passes through Greenwich in London and is the starting point for measuring longitude.",
+"tags": [
+"physical-geography",
+"time-zones"
+]
+},
+{
+"q": "In which Spanish city is the Sagrada Familia basilica?",
+"a": [
+"Barcelona",
+"Madrid",
+"Seville",
+"Bilbao"
+],
+"d": 1,
+"x": "Architect Antoni Gaudí began work on it in 1883, and construction has continued for well over a century.",
+"tags": [
+"landmarks",
+"europe"
+]
+},
+{
+"q": "Which Italian city is famous for being built on canals instead of streets?",
+"a": [
+"Venice",
+"Milan",
+"Turin",
+"Bologna"
+],
+"d": 1,
+"x": "Venice is spread across more than 100 small islands in a lagoon.",
+"tags": [
+"cities",
+"europe"
+]
+},
+{
+"q": "Hollywood, home of the US film industry, is a district of which city?",
+"a": [
+"Los Angeles",
+"San Diego",
+"Las Vegas",
+"San Francisco"
+],
+"d": 1,
+"x": "The famous hillside sign was originally built in 1923 to advertise a housing development.",
+"tags": [
+"cities",
+"united-states"
+]
+},
+{
+"q": "Which city is the Golden Gate Bridge in?",
+"a": [
+"San Francisco",
+"Seattle",
+"Portland",
+"San Diego"
+],
+"d": 1,
+"x": "The bridge opened in 1937 and is painted a color called International Orange.",
+"tags": [
+"landmarks",
+"united-states"
+]
+},
+{
+"q": "In which US state are the Everglades, a huge subtropical wetland?",
+"a": [
+"Florida",
+"Louisiana",
+"Georgia",
+"South Carolina"
+],
+"d": 1,
+"x": "This slow-moving 'river of grass' is home to alligators and crocodiles living side by side.",
+"tags": [
+"united-states",
+"physical-geography"
+]
+},
+{
+"q": "Which Great Lake is the largest by surface area?",
+"a": [
+"Lake Superior",
+"Lake Michigan",
+"Lake Huron",
+"Lake Erie"
+],
+"d": 1,
+"x": "It is the largest freshwater lake in the world by surface area.",
+"tags": [
+"lakes",
+"north-america"
+]
+},
+{
+"q": "What is the capital of Hungary?",
+"a": [
+"Budapest",
+"Debrecen",
+"Szeged",
+"Pécs"
+],
+"d": 1,
+"x": "The city was formed in 1873 by merging Buda, Pest and Óbuda on the Danube.",
+"tags": [
+"capitals",
+"europe"
+]
+},
+{
+"q": "What is the capital of Iran?",
+"a": [
+"Tehran",
+"Isfahan",
+"Shiraz",
+"Tabriz"
+],
+"d": 1,
+"x": "The city lies at the foot of the Alborz mountains.",
+"tags": [
+"capitals",
+"asia"
+]
+},
+{
+"q": "What is the capital of Iraq?",
+"a": [
+"Baghdad",
+"Basra",
+"Mosul",
+"Erbil"
+],
+"d": 1,
+"x": "Founded in 762 AD, it was once among the largest cities in the world.",
+"tags": [
+"capitals",
+"asia"
+]
+},
+{
+"q": "What is the capital of Colombia?",
+"a": [
+"Bogotá",
+"Medellín",
+"Cali",
+"Cartagena"
+],
+"d": 1,
+"x": "Bogotá sits at about 2,600 meters on a high Andean plateau.",
+"tags": [
+"capitals",
+"south-america"
+]
+},
+{
+"q": "What is the capital of Jamaica?",
+"a": [
+"Kingston",
+"Montego Bay",
+"Port Antonio",
+"Ocho Rios"
+],
+"d": 1,
+"x": "Kingston has one of the largest natural harbors in the Western Hemisphere.",
+"tags": [
+"capitals",
+"north-america"
+]
+},
+{
+"q": "In which ocean is the region known as the Bermuda Triangle?",
+"a": [
+"Atlantic Ocean",
+"Pacific Ocean",
+"Indian Ocean",
+"Arctic Ocean"
+],
+"d": 1,
+"x": "It is a loosely defined area near Florida, Bermuda and Puerto Rico that is famous for legends, though no more ships vanish there than elsewhere.",
+"tags": [
+"oceans"
+]
+},
+{
+"q": "Australia lies in which hemisphere?",
+"a": [
+"Southern Hemisphere",
+"Northern Hemisphere",
+"Arctic Hemisphere",
+"Polar Hemisphere"
+],
+"d": 1,
+"x": "Seasons are flipped there, so Christmas falls in the middle of summer.",
+"tags": [
+"physical-geography"
+]
+},
+{
+"q": "Seattle's Space Needle stands in which US state?",
+"a": [
+"Washington",
+"Oregon",
+"Idaho",
+"Montana"
+],
+"d": 1,
+"x": "It was built for the 1962 World's Fair and is about 184 meters tall.",
+"tags": [
+"landmarks",
+"united-states"
+]
+},
+{
+"q": "Mount Everest is part of which mountain range?",
+"a": [
+"Himalayas",
+"Andes",
+"Alps",
+"Rocky Mountains"
+],
+"d": 1,
+"x": "The name means 'abode of snow' in Sanskrit, and the range holds nine of the ten tallest peaks on Earth.",
+"tags": [
+"mountains",
+"asia"
+]
+},
+{
+"q": "Which island country has Reykjavik as its capital?",
+"a": [
+"Iceland",
+"Ireland",
+"Greenland",
+"Faroe Islands"
+],
+"d": 1,
+"x": "It is the world's northernmost capital of a sovereign state and sits on the Mid-Atlantic Ridge.",
+"tags": [
+"countries",
+"islands"
+]
+},
+{
+"q": "Which two countries share the longest international land border in the world?",
+"a": [
+"Canada and the United States",
+"Russia and Kazakhstan",
+"China and Mongolia",
+"Argentina and Chile"
+],
+"d": 1,
+"x": "The border runs about 8,890 km, including the line between Alaska and Canada.",
+"tags": [
+"borders"
+]
+},
+{
+"q": "Which US state is nicknamed the Lone Star State?",
+"a": [
+"Texas",
+"Oklahoma",
+"Nevada",
+"Arizona"
+],
+"d": 1,
+"x": "The nickname comes from the single star on the state flag, a symbol of its time as an independent republic.",
+"tags": [
+"united-states"
+]
+}
+]

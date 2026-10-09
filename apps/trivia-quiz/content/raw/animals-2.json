@@ -1,0 +1,1434 @@
+[
+{
+"q": "What is a group of crows called?",
+"a": [
+"Murder",
+"Parliament",
+"Gaggle",
+"Colony"
+],
+"d": 2,
+"x": "Crows are among the smartest birds and can recognize individual human faces.",
+"tags": [
+"group-names",
+"birds"
+]
+},
+{
+"q": "What is a group of owls called?",
+"a": [
+"Parliament",
+"Murder",
+"Skulk",
+"Pod"
+],
+"d": 2,
+"x": "The term likely comes from the owl's long association with wisdom.",
+"tags": [
+"group-names",
+"birds"
+]
+},
+{
+"q": "What is a group of whales called?",
+"a": [
+"Pod",
+"Flock",
+"Troop",
+"Shoal"
+],
+"d": 2,
+"x": "Orca pods can last for generations, led by older females.",
+"tags": [
+"group-names",
+"marine-life"
+]
+},
+{
+"q": "What is a group of flamingos called?",
+"a": [
+"Flamboyance",
+"Skulk",
+"Business",
+"Troop"
+],
+"d": 2,
+"x": "Flamingos gather in huge groups, sometimes numbering in the thousands.",
+"tags": [
+"group-names",
+"birds"
+]
+},
+{
+"q": "What is a group of baboons or monkeys on the move often called?",
+"a": [
+"Troop",
+"Pack",
+"Bloat",
+"Sounder"
+],
+"d": 2,
+"x": "A baboon troop can include anywhere from a few dozen to over a hundred individuals.",
+"tags": [
+"group-names",
+"mammals"
+]
+},
+{
+"q": "What is a baby swan called?",
+"a": [
+"Cygnet",
+"Gosling",
+"Duckling",
+"Eaglet"
+],
+"d": 2,
+"x": "Cygnets are often gray or brownish, becoming white as they mature.",
+"tags": [
+"baby-animals",
+"birds"
+]
+},
+{
+"q": "What is a baby goose called?",
+"a": [
+"Gosling",
+"Cygnet",
+"Squab",
+"Poult"
+],
+"d": 2,
+"x": "Goslings can walk, swim, and feed themselves within a day of hatching.",
+"tags": [
+"baby-animals",
+"birds"
+]
+},
+{
+"q": "What is a baby pigeon called?",
+"a": [
+"Squab",
+"Poult",
+"Fledgling",
+"Cygnet"
+],
+"d": 2,
+"x": "Both parents feed squabs with a nutrient-rich 'crop milk'.",
+"tags": [
+"baby-animals",
+"birds"
+]
+},
+{
+"q": "What is a baby echidna or platypus called?",
+"a": [
+"Puggle",
+"Joey",
+"Hoglet",
+"Cria"
+],
+"d": 2,
+"x": "Both echidnas and platypuses are egg-laying mammals called monotremes.",
+"tags": [
+"baby-animals",
+"mammals"
+]
+},
+{
+"q": "What is a baby alpaca or llama called?",
+"a": [
+"Cria",
+"Foal",
+"Kid",
+"Calf"
+],
+"d": 2,
+"x": "A cria usually weighs 15 to 20 pounds at birth and can stand within an hour.",
+"tags": [
+"baby-animals",
+"mammals"
+]
+},
+{
+"q": "What is a baby hedgehog called?",
+"a": [
+"Hoglet",
+"Piglet",
+"Kit",
+"Pup"
+],
+"d": 2,
+"x": "Hoglets are born with soft, white spines under the skin that harden soon afterward.",
+"tags": [
+"baby-animals",
+"mammals"
+]
+},
+{
+"q": "What is a baby beaver or rabbit commonly called?",
+"a": [
+"Kit",
+"Cub",
+"Hoglet",
+"Pinkie"
+],
+"d": 2,
+"x": "Baby rabbits are born blind and hairless in a nest lined with their mother's fur.",
+"tags": [
+"baby-animals",
+"mammals"
+]
+},
+{
+"q": "Which bird can fly backward?",
+"a": [
+"Hummingbird",
+"Swallow",
+"Kingfisher",
+"Sparrow"
+],
+"d": 2,
+"x": "Hummingbirds rotate their wings in a figure-eight pattern to hover and fly backward.",
+"tags": [
+"birds"
+]
+},
+{
+"q": "Which marsupial is native to Tasmania and is known for a loud screeching sound?",
+"a": [
+"Tasmanian devil",
+"Quokka",
+"Koala",
+"Numbat"
+],
+"d": 2,
+"x": "A Tasmanian devil's bite is among the strongest of any mammal relative to its size.",
+"tags": [
+"marsupials"
+]
+},
+{
+"q": "Which ocean animal is the only mammal to have a tusk-like spiraled tooth, often called the 'unicorn of the sea'?",
+"a": [
+"Narwhal",
+"Beluga",
+"Orca",
+"Dugong"
+],
+"d": 2,
+"x": "The tusk is a long canine tooth that can reach about 10 feet.",
+"tags": [
+"marine-life"
+]
+},
+{
+"q": "What is the only mammal capable of true flight?",
+"a": [
+"Bat",
+"Flying squirrel",
+"Sugar glider",
+"Colugo"
+],
+"d": 2,
+"x": "Flying squirrels and gliders only glide; bats flap their wings to fly.",
+"tags": [
+"mammals"
+]
+},
+{
+"q": "Which animal's fingerprints are so similar to a human's they can confuse crime scene investigators?",
+"a": [
+"Koala",
+"Chimpanzee",
+"Gorilla",
+"Raccoon"
+],
+"d": 2,
+"x": "Koalas evolved human-like fingerprints independently, a case of convergent evolution.",
+"tags": [
+"mammals",
+"science"
+]
+},
+{
+"q": "What is the term for animals that are active mainly at night?",
+"a": [
+"Nocturnal",
+"Diurnal",
+"Crepuscular",
+"Sedentary"
+],
+"d": 2,
+"x": "Owls, bats, and many cats are nocturnal and have adaptations for dim light.",
+"tags": [
+"behavior"
+]
+},
+{
+"q": "What is the term for animals that are most active at dawn and dusk?",
+"a": [
+"Crepuscular",
+"Nocturnal",
+"Diurnal",
+"Dormant"
+],
+"d": 2,
+"x": "Rabbits and many deer species are crepuscular.",
+"tags": [
+"behavior"
+]
+},
+{
+"q": "Which mammal lays eggs?",
+"a": [
+"Echidna",
+"Armadillo",
+"Hedgehog",
+"Pangolin"
+],
+"d": 2,
+"x": "Along with the platypus, echidnas are the only living egg-laying mammals.",
+"tags": [
+"mammals"
+]
+},
+{
+"q": "What is the name of the process by which a caterpillar becomes a butterfly?",
+"a": [
+"Metamorphosis",
+"Migration",
+"Molting",
+"Pollination"
+],
+"d": 2,
+"x": "Complete metamorphosis has four stages: egg, larva, pupa, and adult.",
+"tags": [
+"insects"
+]
+},
+{
+"q": "What do you call an animal that eats mainly insects?",
+"a": [
+"Insectivore",
+"Piscivore",
+"Frugivore",
+"Herbivore"
+],
+"d": 2,
+"x": "Anteaters, shrews, and many bats are insectivores.",
+"tags": [
+"diet"
+]
+},
+{
+"q": "What do you call an animal that eats mainly fruit?",
+"a": [
+"Frugivore",
+"Insectivore",
+"Carnivore",
+"Granivore"
+],
+"d": 2,
+"x": "Fruit bats and toucans are frugivores that help spread seeds.",
+"tags": [
+"diet"
+]
+},
+{
+"q": "What do you call an animal that mainly eats fish?",
+"a": [
+"Piscivore",
+"Frugivore",
+"Folivore",
+"Nectarivore"
+],
+"d": 2,
+"x": "Pelicans, seals, and ospreys are piscivores.",
+"tags": [
+"diet"
+]
+},
+{
+"q": "Which bird lays its eggs in other birds' nests?",
+"a": [
+"Cuckoo",
+"Robin",
+"Swallow",
+"Finch"
+],
+"d": 2,
+"x": "Some cuckoo chicks push the host's eggs out of the nest after hatching.",
+"tags": [
+"birds",
+"behavior"
+]
+},
+{
+"q": "Which snake is the longest venomous snake in the world?",
+"a": [
+"King cobra",
+"Black mamba",
+"Inland taipan",
+"Gaboon viper"
+],
+"d": 2,
+"x": "King cobras can grow to about 18 feet and mostly eat other snakes.",
+"tags": [
+"reptiles"
+]
+},
+{
+"q": "What is the largest living reptile?",
+"a": [
+"Saltwater crocodile",
+"Komodo dragon",
+"Green anaconda",
+"Leatherback turtle"
+],
+"d": 2,
+"x": "Saltwater crocodiles can exceed 17 feet and live from India through Southeast Asia to northern Australia.",
+"tags": [
+"reptiles"
+]
+},
+{
+"q": "What is the largest living lizard?",
+"a": [
+"Komodo dragon",
+"Nile monitor",
+"Green iguana",
+"Gila monster"
+],
+"d": 2,
+"x": "Komodo dragons live on a few Indonesian islands and can grow up to about 10 feet long.",
+"tags": [
+"reptiles"
+]
+},
+{
+"q": "Which amphibian can regrow lost limbs and is native to Mexico?",
+"a": [
+"Axolotl",
+"Bullfrog",
+"Newt",
+"Hellbender"
+],
+"d": 2,
+"x": "Axolotls keep their larval features, like external gills, throughout their lives.",
+"tags": [
+"amphibians"
+]
+},
+{
+"q": "Which group do frogs, toads, and salamanders belong to?",
+"a": [
+"Amphibians",
+"Reptiles",
+"Mammals",
+"Fish"
+],
+"d": 2,
+"x": "The word amphibian means 'two lives', for their water and land phases.",
+"tags": [
+"classification",
+"amphibians"
+]
+},
+{
+"q": "Which fish is known for carrying its eggs in a male's pouch?",
+"a": [
+"Seahorse",
+"Salmon",
+"Eel",
+"Tuna"
+],
+"d": 2,
+"x": "Male seahorses become pregnant, and may give birth to hundreds or even over a thousand young.",
+"tags": [
+"marine-life"
+]
+},
+{
+"q": "Which sea creature is the largest living species of fish?",
+"a": [
+"Whale shark",
+"Great white shark",
+"Ocean sunfish",
+"Blue marlin"
+],
+"d": 2,
+"x": "Whale sharks can grow to over 40 feet but filter-feed on plankton.",
+"tags": [
+"marine-life"
+]
+},
+{
+"q": "Which fish migrates from the ocean to rivers to spawn, often upstream?",
+"a": [
+"Salmon",
+"Cod",
+"Haddock",
+"Mackerel"
+],
+"d": 2,
+"x": "Many salmon return to the stream where they were born, guided partly by smell.",
+"tags": [
+"fish",
+"behavior"
+]
+},
+{
+"q": "Which bird of prey is known as the fastest animal in a dive?",
+"a": [
+"Peregrine falcon",
+"Golden eagle",
+"Bald eagle",
+"Osprey"
+],
+"d": 2,
+"x": "A peregrine falcon in a dive can exceed 200 miles per hour.",
+"tags": [
+"birds"
+]
+},
+{
+"q": "What do bees do that helps plants reproduce?",
+"a": [
+"Pollinate flowers",
+"Fertilize soil",
+"Disperse seeds",
+"Eat pests"
+],
+"d": 2,
+"x": "Bees pollinate a large share of the crops people eat, including apples and almonds.",
+"tags": [
+"insects"
+]
+},
+{
+"q": "What do honeybees do to tell their hive-mates where flowers are?",
+"a": [
+"Waggle dance",
+"Hum a tune",
+"Leave scent trails",
+"Tap antennae"
+],
+"d": 2,
+"x": "Karl von Frisch won a Nobel Prize for decoding the waggle dance.",
+"tags": [
+"insects",
+"behavior"
+]
+},
+{
+"q": "What are the three body parts of an insect?",
+"a": [
+"Head, thorax, abdomen",
+"Head, tail, wings",
+"Head, trunk, limbs",
+"Cephalothorax, abdomen, tail"
+],
+"d": 2,
+"x": "The thorax is where an insect's legs and wings attach.",
+"tags": [
+"insects",
+"classification"
+]
+},
+{
+"q": "What is the study of birds called?",
+"a": [
+"Ornithology",
+"Entomology",
+"Herpetology",
+"Ichthyology"
+],
+"d": 2,
+"x": "The word comes from the Greek 'ornis', meaning bird.",
+"tags": [
+"science"
+]
+},
+{
+"q": "What is the study of insects called?",
+"a": [
+"Entomology",
+"Ornithology",
+"Herpetology",
+"Mycology"
+],
+"d": 2,
+"x": "There are more known species of insects than all other animal groups combined.",
+"tags": [
+"science"
+]
+},
+{
+"q": "What is the study of reptiles and amphibians called?",
+"a": [
+"Herpetology",
+"Ichthyology",
+"Mammalogy",
+"Arachnology"
+],
+"d": 2,
+"x": "The name comes from a Greek word meaning 'creeping thing'.",
+"tags": [
+"science"
+]
+},
+{
+"q": "What is the study of fish called?",
+"a": [
+"Ichthyology",
+"Herpetology",
+"Ornithology",
+"Malacology"
+],
+"d": 2,
+"x": "Ichthyologists study about 35,000 known fish species.",
+"tags": [
+"science"
+]
+},
+{
+"q": "Which bird makes the longest known annual migration, flying from pole to pole?",
+"a": [
+"Arctic tern",
+"Albatross",
+"Swallow",
+"Goose"
+],
+"d": 2,
+"x": "Arctic terns see more daylight than any other animal, since they chase summer at both poles.",
+"tags": [
+"birds",
+"migration"
+]
+},
+{
+"q": "Which butterfly is famous for migrating thousands of miles across North America?",
+"a": [
+"Monarch",
+"Swallowtail",
+"Painted lady",
+"Morpho"
+],
+"d": 2,
+"x": "No single monarch makes the whole trip; it takes several generations.",
+"tags": [
+"insects",
+"migration"
+]
+},
+{
+"q": "Which animal produces cube-shaped droppings?",
+"a": [
+"Wombat",
+"Beaver",
+"Capybara",
+"Aardvark"
+],
+"d": 2,
+"x": "Their intestines have uneven elasticity, shaping the waste into cubes.",
+"tags": [
+"marsupials"
+]
+},
+{
+"q": "Which mammal is covered in bony armor-like plates and can roll into a ball, found in the Americas?",
+"a": [
+"Armadillo",
+"Pangolin",
+"Hedgehog",
+"Anteater"
+],
+"d": 2,
+"x": "Only the three-banded armadillos can roll fully into a tight ball.",
+"tags": [
+"mammals"
+]
+},
+{
+"q": "Which scaly mammal is found in Africa and Asia and rolls up when threatened?",
+"a": [
+"Pangolin",
+"Armadillo",
+"Aardvark",
+"Echidna"
+],
+"d": 2,
+"x": "Pangolins are the only mammals covered in true scales, which are made of keratin.",
+"tags": [
+"mammals"
+]
+},
+{
+"q": "What is the main food of an aardvark?",
+"a": [
+"Ants and termites",
+"Fruit",
+"Fish",
+"Leaves"
+],
+"d": 2,
+"x": "Aardvarks use a sticky tongue that can reach about a foot into termite mounds.",
+"tags": [
+"diet",
+"mammals"
+]
+},
+{
+"q": "Which South American rodent is the largest rodent in the world?",
+"a": [
+"Capybara",
+"Beaver",
+"Paca",
+"Porcupine"
+],
+"d": 2,
+"x": "Capybaras are semi-aquatic and can weigh over 100 pounds.",
+"tags": [
+"mammals"
+]
+},
+{
+"q": "Which Australian bird is flightless and the second-tallest living bird?",
+"a": [
+"Emu",
+"Cassowary",
+"Kiwi",
+"Rhea"
+],
+"d": 2,
+"x": "Emus can run about 30 miles per hour.",
+"tags": [
+"birds"
+]
+},
+{
+"q": "Which flightless bird is the national symbol of New Zealand?",
+"a": [
+"Kiwi",
+"Kakapo",
+"Emu",
+"Penguin"
+],
+"d": 2,
+"x": "A kiwi lays an egg that is about a quarter of its body weight.",
+"tags": [
+"birds"
+]
+},
+{
+"q": "Which Arctic mammal changes its fur from brown to white in winter?",
+"a": [
+"Arctic fox",
+"Polar bear",
+"Muskox",
+"Walrus"
+],
+"d": 2,
+"x": "The seasonal color change provides camouflage in snow.",
+"tags": [
+"adaptations",
+"mammals"
+]
+},
+{
+"q": "What is the main purpose of a camel's hump?",
+"a": [
+"Storing fat",
+"Storing water",
+"Cooling the body",
+"Holding air"
+],
+"d": 2,
+"x": "Fat in the hump can be metabolized for energy when food is scarce.",
+"tags": [
+"adaptations",
+"mammals"
+]
+},
+{
+"q": "How many humps does a Bactrian camel have?",
+"a": [
+"Two",
+"One",
+"Three",
+"Four"
+],
+"d": 2,
+"x": "Dromedary camels have one hump, and Bactrian camels live in Central Asia.",
+"tags": [
+"mammals"
+]
+},
+{
+"q": "Which large African mammal spends the day in water and is often called a 'river horse'?",
+"a": [
+"Hippopotamus",
+"Rhinoceros",
+"Buffalo",
+"Warthog"
+],
+"d": 2,
+"x": "The word hippopotamus comes from Greek words meaning 'river horse'.",
+"tags": [
+"mammals"
+]
+},
+{
+"q": "What is the term for animals that are cold-blooded?",
+"a": [
+"Ectotherms",
+"Endotherms",
+"Homeotherms",
+"Exotherms"
+],
+"d": 2,
+"x": "Reptiles rely on external heat, so they bask in the sun to warm up.",
+"tags": [
+"classification"
+]
+},
+{
+"q": "What type of animal is a whale shark?",
+"a": [
+"Fish",
+"Mammal",
+"Reptile",
+"Mollusk"
+],
+"d": 2,
+"x": "Whale sharks are fish despite their name and filter-feed on plankton.",
+"tags": [
+"marine-life",
+"classification"
+]
+},
+{
+"q": "What group of animals do octopuses, squid, and snails all belong to?",
+"a": [
+"Mollusks",
+"Echinoderms",
+"Crustaceans",
+"Arachnids"
+],
+"d": 2,
+"x": "Mollusks are soft-bodied animals, and many have a shell.",
+"tags": [
+"classification",
+"marine-life"
+]
+},
+{
+"q": "To which animal group do crabs, lobsters, and shrimp belong?",
+"a": [
+"Crustaceans",
+"Mollusks",
+"Echinoderms",
+"Cnidarians"
+],
+"d": 2,
+"x": "Crustaceans have jointed legs and a hard exoskeleton.",
+"tags": [
+"classification",
+"marine-life"
+]
+},
+{
+"q": "To which animal group do starfish and sea urchins belong?",
+"a": [
+"Echinoderms",
+"Cnidarians",
+"Mollusks",
+"Arthropods"
+],
+"d": 2,
+"x": "Echinoderms typically show five-part radial symmetry.",
+"tags": [
+"classification",
+"marine-life"
+]
+},
+{
+"q": "What is the primary diet of a blue whale?",
+"a": [
+"Krill",
+"Squid",
+"Seals",
+"Large fish"
+],
+"d": 2,
+"x": "A blue whale can eat up to about 4 tons of krill in a day during feeding season.",
+"tags": [
+"diet",
+"marine-life"
+]
+},
+{
+"q": "How do dolphins find food in murky water?",
+"a": [
+"Echolocation",
+"Electric sensing",
+"Infrared vision",
+"Magnetic fields"
+],
+"d": 2,
+"x": "Dolphins send out clicks and listen for the echoes to map their surroundings.",
+"tags": [
+"adaptations",
+"marine-life"
+]
+},
+{
+"q": "What do bats use to navigate and find insects in the dark?",
+"a": [
+"Echolocation",
+"Infrared sight",
+"Magnetism",
+"Whiskers"
+],
+"d": 2,
+"x": "Many bats can find an insect the size of a mosquito using sound alone.",
+"tags": [
+"adaptations",
+"mammals"
+]
+},
+{
+"q": "What do you call the long, sticky thread a spider makes?",
+"a": [
+"Silk",
+"Wool",
+"Fur",
+"Cord"
+],
+"d": 2,
+"x": "Some spiders can make several different types of silk.",
+"tags": [
+"arachnids"
+]
+},
+{
+"q": "Which arachnid has a venomous curved tail stinger?",
+"a": [
+"Scorpion",
+"Tick",
+"Mite",
+"Harvestman"
+],
+"d": 2,
+"x": "Some scorpions glow blue-green under ultraviolet light.",
+"tags": [
+"arachnids"
+]
+},
+{
+"q": "Which small feathered dinosaur, whose name means 'swift seizer', lived in Mongolia?",
+"a": [
+"Velociraptor",
+"Allosaurus",
+"Gallimimus",
+"Diplodocus"
+],
+"d": 2,
+"x": "Real Velociraptors were about the size of a turkey and covered in feathers.",
+"tags": [
+"dinosaurs"
+]
+},
+{
+"q": "Which long-necked dinosaur with a whip-like tail lived in Jurassic North America?",
+"a": [
+"Diplodocus",
+"Triceratops",
+"Ankylosaurus",
+"Iguanodon"
+],
+"d": 2,
+"x": "Diplodocus had a very long whip-like tail.",
+"tags": [
+"dinosaurs"
+]
+},
+{
+"q": "Which armored dinosaur had a club on the end of its tail?",
+"a": [
+"Ankylosaurus",
+"Stegosaurus",
+"Triceratops",
+"Parasaurolophus"
+],
+"d": 2,
+"x": "Ankylosaurus was covered in bony plates and had armored eyelids.",
+"tags": [
+"dinosaurs"
+]
+},
+{
+"q": "What event is widely believed to have ended the age of non-avian dinosaurs about 66 million years ago?",
+"a": [
+"An asteroid impact",
+"An ice age",
+"A plague",
+"A flood"
+],
+"d": 2,
+"x": "The Chicxulub crater in Mexico marks the impact site.",
+"tags": [
+"dinosaurs"
+]
+},
+{
+"q": "Which living animals are the direct descendants of dinosaurs?",
+"a": [
+"Birds",
+"Crocodiles",
+"Lizards",
+"Turtles"
+],
+"d": 2,
+"x": "Birds evolved from small feathered theropod dinosaurs.",
+"tags": [
+"dinosaurs",
+"birds"
+]
+},
+{
+"q": "Which prehistoric big cat is known for its enormous upper canine teeth?",
+"a": [
+"Smilodon",
+"Panthera",
+"Dire wolf",
+"Megalodon"
+],
+"d": 2,
+"x": "Smilodon, the saber-toothed cat, lived in the Americas until about 10,000 years ago.",
+"tags": [
+"prehistoric"
+]
+},
+{
+"q": "What was Megalodon?",
+"a": [
+"A giant prehistoric shark",
+"A marine reptile",
+"A prehistoric whale",
+"A giant squid"
+],
+"d": 2,
+"x": "Megalodon lived millions of years ago and is known mostly from its huge teeth.",
+"tags": [
+"prehistoric"
+]
+},
+{
+"q": "Which animal was the first to be cloned from an adult cell?",
+"a": [
+"Dolly the sheep",
+"Snuppy the dog",
+"Mira the goat",
+"Copy Cat"
+],
+"d": 2,
+"x": "Dolly was born in 1996 at the Roslin Institute in Scotland.",
+"tags": [
+"science"
+]
+},
+{
+"q": "Which animal did Jane Goodall study in Tanzania?",
+"a": [
+"Chimpanzees",
+"Gorillas",
+"Orangutans",
+"Baboons"
+],
+"d": 2,
+"x": "Goodall discovered that chimpanzees make and use tools.",
+"tags": [
+"science",
+"mammals"
+]
+},
+{
+"q": "Which primate did Dian Fossey study in Rwanda?",
+"a": [
+"Mountain gorillas",
+"Chimpanzees",
+"Orangutans",
+"Lemurs"
+],
+"d": 2,
+"x": "Fossey founded the Karisoke Research Center in Rwanda in 1967.",
+"tags": [
+"science",
+"mammals"
+]
+},
+{
+"q": "Which scientist's finches in the Galapagos helped inspire his theory of natural selection?",
+"a": [
+"Charles Darwin",
+"Gregor Mendel",
+"Carl Linnaeus",
+"Louis Pasteur"
+],
+"d": 2,
+"x": "Darwin visited the Galapagos in 1835 aboard HMS Beagle.",
+"tags": [
+"science"
+]
+},
+{
+"q": "Which scientist created the system of naming species with two Latin names?",
+"a": [
+"Carl Linnaeus",
+"Charles Darwin",
+"Alfred Wallace",
+"Jean Lamarck"
+],
+"d": 2,
+"x": "The two-part system is called binomial nomenclature, and he published it in the 1700s.",
+"tags": [
+"science",
+"classification"
+]
+},
+{
+"q": "What is the scientific genus and species name for modern humans called?",
+"a": [
+"Homo sapiens",
+"Homo erectus",
+"Pan troglodytes",
+"Homo habilis"
+],
+"d": 2,
+"x": "Homo sapiens means 'wise human' in Latin.",
+"tags": [
+"classification"
+]
+},
+{
+"q": "What sound does a donkey make?",
+"a": [
+"Bray",
+"Whinny",
+"Bleat",
+"Low"
+],
+"d": 2,
+"x": "A donkey's bray can be heard from miles away across open land.",
+"tags": [
+"farm"
+]
+},
+{
+"q": "What is the term for a male bee that doesn't work and mates with the queen?",
+"a": [
+"Drone",
+"Worker",
+"Nurse",
+"Scout"
+],
+"d": 2,
+"x": "Drones do not have stingers and die after mating.",
+"tags": [
+"insects"
+]
+},
+{
+"q": "What is the chief food source for a mosquito's larvae?",
+"a": [
+"Microorganisms in water",
+"Blood",
+"Nectar",
+"Leaves"
+],
+"d": 2,
+"x": "Only adult female mosquitoes need blood, for developing eggs.",
+"tags": [
+"insects"
+]
+},
+{
+"q": "Which bird has the largest wingspan among living birds in the albatross family?",
+"a": [
+"Wandering albatross",
+"Andean condor",
+"Bald eagle",
+"Pelican"
+],
+"d": 2,
+"x": "The wandering albatross has a wingspan of about 11 feet and can glide for hours.",
+"tags": [
+"birds"
+]
+},
+{
+"q": "What is the main purpose of a porcupine fish inflating itself?",
+"a": [
+"Deterring predators",
+"Attracting mates",
+"Breathing air",
+"Moving faster"
+],
+"d": 2,
+"x": "Inflating makes the fish too large to swallow and raises its spines.",
+"tags": [
+"fish",
+"adaptations"
+]
+},
+{
+"q": "What is a male duck called?",
+"a": [
+"Drake",
+"Gander",
+"Cob",
+"Tom"
+],
+"d": 2,
+"x": "Male ducks often have brighter plumage than females during the breeding season.",
+"tags": [
+"birds"
+]
+},
+{
+"q": "What is a female fox called?",
+"a": [
+"Vixen",
+"Jenny",
+"Doe",
+"Queen"
+],
+"d": 2,
+"x": "A vixen typically gives birth to a litter of about four or five kits.",
+"tags": [
+"mammals"
+]
+},
+{
+"q": "What is a male swan called?",
+"a": [
+"Cob",
+"Drake",
+"Gander",
+"Tom"
+],
+"d": 2,
+"x": "A female swan is a pen, and pairs often stay together for many years.",
+"tags": [
+"birds"
+]
+},
+{
+"q": "What is a female donkey called?",
+"a": [
+"Jenny",
+"Mare",
+"Filly",
+"Sow"
+],
+"d": 2,
+"x": "A male donkey is called a jack.",
+"tags": [
+"farm"
+]
+},
+{
+"q": "What is the name for an eagle's large nest built on a cliff or tall tree?",
+"a": [
+"Eyrie",
+"Lodge",
+"Warren",
+"Holt"
+],
+"d": 2,
+"x": "Some eagles reuse and add to the same eyrie for decades.",
+"tags": [
+"birds"
+]
+},
+{
+"q": "What is a beaver's home built in or beside a pond called?",
+"a": [
+"Lodge",
+"Warren",
+"Sett",
+"Drey"
+],
+"d": 2,
+"x": "Beaver lodges have underwater entrances that keep predators out.",
+"tags": [
+"mammals"
+]
+},
+{
+"q": "What is a rabbit's network of underground burrows called?",
+"a": [
+"Warren",
+"Lodge",
+"Holt",
+"Den"
+],
+"d": 2,
+"x": "A single warren can house dozens of rabbits.",
+"tags": [
+"mammals"
+]
+},
+{
+"q": "Which big cat is the only one that lives in social groups?",
+"a": [
+"Lion",
+"Tiger",
+"Leopard",
+"Jaguar"
+],
+"d": 2,
+"x": "Lionesses in a pride often hunt cooperatively.",
+"tags": [
+"mammals"
+]
+},
+{
+"q": "Which deer species is unusual because both males and females grow antlers?",
+"a": [
+"Reindeer",
+"Moose",
+"White-tailed deer",
+"Red deer"
+],
+"d": 2,
+"x": "Reindeer, called caribou in North America, use antlers to dig for food in snow.",
+"tags": [
+"mammals"
+]
+},
+{
+"q": "Which land mammal has the longest pregnancy, about 22 months?",
+"a": [
+"Elephant",
+"Rhinoceros",
+"Giraffe",
+"Camel"
+],
+"d": 2,
+"x": "A newborn elephant calf can weigh around 200 pounds.",
+"tags": [
+"mammals"
+]
+},
+{
+"q": "How many wings does a bee have?",
+"a": [
+"Four",
+"Two",
+"Six",
+"Eight"
+],
+"d": 2,
+"x": "A bee's front and back wings hook together in flight.",
+"tags": [
+"insects"
+]
+},
+{
+"q": "Which animal's soft undercoat is used to make cashmere?",
+"a": [
+"Goat",
+"Sheep",
+"Llama",
+"Rabbit"
+],
+"d": 2,
+"x": "Cashmere comes from the fine undercoat of cashmere goats.",
+"tags": [
+"farm"
+]
+},
+{
+"q": "What do tadpoles use to breathe underwater?",
+"a": [
+"Gills",
+"Lungs",
+"Skin only",
+"Spiracles"
+],
+"d": 2,
+"x": "Tadpoles develop lungs as they turn into adult frogs.",
+"tags": [
+"amphibians"
+]
+},
+{
+"q": "Which animal lives in an underground home called a sett?",
+"a": [
+"Badger",
+"Fox",
+"Otter",
+"Hare"
+],
+"d": 2,
+"x": "Badger setts can be used for generations and have many tunnels.",
+"tags": [
+"mammals"
+]
+},
+{
+"q": "Which snake warns enemies by shaking a tail made of loosely linked keratin segments?",
+"a": [
+"Rattlesnake",
+"Cobra",
+"Python",
+"Garter snake"
+],
+"d": 2,
+"x": "A new rattle segment is added each time the snake sheds its skin.",
+"tags": [
+"reptiles"
+]
+},
+{
+"q": "Which continent is the only place emperor penguins breed in the wild?",
+"a": [
+"Antarctica",
+"South America",
+"Africa",
+"Australia"
+],
+"d": 2,
+"x": "Emperors breed on sea ice in the harsh Antarctic winter.",
+"tags": [
+"birds"
+]
+},
+{
+"q": "What is the home of a honeybee colony called?",
+"a": [
+"Hive",
+"Nest",
+"Lodge",
+"Drey"
+],
+"d": 2,
+"x": "A hive can hold tens of thousands of bees in summer.",
+"tags": [
+"insects"
+]
+},
+{
+"q": "Which desert animal stores fat, not water, in its hump?",
+"a": [
+"Camel",
+"Llama",
+"Fennec fox",
+"Meerkat"
+],
+"d": 2,
+"x": "A camel's hump holds fat that can be turned into energy and water when food is scarce."
+}
+]

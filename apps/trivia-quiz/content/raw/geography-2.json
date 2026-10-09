@@ -1,0 +1,1488 @@
+[
+{
+"q": "What is the capital of Morocco?",
+"a": [
+"Rabat",
+"Casablanca",
+"Fez",
+"Tangier"
+],
+"d": 2,
+"x": "Casablanca is bigger and better known, but Rabat is the seat of government.",
+"tags": [
+"capitals",
+"africa"
+]
+},
+{
+"q": "What is the capital of Ghana?",
+"a": [
+"Accra",
+"Kumasi",
+"Tamale",
+"Takoradi"
+],
+"d": 2,
+"x": "Ghana was the first sub-Saharan African country to gain independence from colonial rule, in 1957.",
+"tags": [
+"capitals",
+"africa"
+]
+},
+{
+"q": "What is the capital of Ethiopia?",
+"a": [
+"Addis Ababa",
+"Asmara",
+"Nairobi",
+"Khartoum"
+],
+"d": 2,
+"x": "Its name means 'new flower' in Amharic, and it sits at about 2,350 meters above sea level.",
+"tags": [
+"capitals",
+"africa"
+]
+},
+{
+"q": "What is the capital of Pakistan?",
+"a": [
+"Islamabad",
+"Karachi",
+"Lahore",
+"Peshawar"
+],
+"d": 2,
+"x": "Islamabad was purpose-built in the 1960s, replacing Karachi as the capital.",
+"tags": [
+"capitals",
+"asia"
+]
+},
+{
+"q": "What is the capital of the Philippines?",
+"a": [
+"Manila",
+"Cebu City",
+"Davao",
+"Quezon City"
+],
+"d": 2,
+"x": "Manila lies on Luzon, the largest of the country's more than 7,000 islands.",
+"tags": [
+"capitals",
+"asia"
+]
+},
+{
+"q": "What is the capital of Bangladesh?",
+"a": [
+"Dhaka",
+"Chittagong",
+"Sylhet",
+"Khulna"
+],
+"d": 2,
+"x": "The city lies on the delta where the Ganges and Brahmaputra rivers meet the sea.",
+"tags": [
+"capitals",
+"asia"
+]
+},
+{
+"q": "What is the capital of Venezuela?",
+"a": [
+"Caracas",
+"Maracaibo",
+"Valencia",
+"Barquisimeto"
+],
+"d": 2,
+"x": "Caracas sits in a valley just inland from the Caribbean coast.",
+"tags": [
+"capitals",
+"south-america"
+]
+},
+{
+"q": "What is the capital of Ecuador?",
+"a": [
+"Quito",
+"Guayaquil",
+"Cuenca",
+"Ambato"
+],
+"d": 2,
+"x": "At roughly 2,850 meters, Quito is one of the highest capitals in the world.",
+"tags": [
+"capitals",
+"south-america"
+]
+},
+{
+"q": "What is the capital of Belgium?",
+"a": [
+"Brussels",
+"Antwerp",
+"Bruges",
+"Ghent"
+],
+"d": 2,
+"x": "Brussels is also the main headquarters of the European Union institutions.",
+"tags": [
+"capitals",
+"europe"
+]
+},
+{
+"q": "What is the capital of the Czech Republic?",
+"a": [
+"Prague",
+"Brno",
+"Ostrava",
+"Plzeň"
+],
+"d": 2,
+"x": "Prague's historic center is crowded with spires and is known as the City of a Hundred Spires.",
+"tags": [
+"capitals",
+"europe"
+]
+},
+{
+"q": "What is the capital of Romania?",
+"a": [
+"Bucharest",
+"Cluj-Napoca",
+"Timișoara",
+"Brașov"
+],
+"d": 2,
+"x": "Its massive Palace of the Parliament is among the heaviest and largest administrative buildings on Earth.",
+"tags": [
+"capitals",
+"europe"
+]
+},
+{
+"q": "What is the capital of Nepal?",
+"a": [
+"Kathmandu",
+"Pokhara",
+"Lhasa",
+"Thimphu"
+],
+"d": 2,
+"x": "Kathmandu sits in a valley at about 1,400 meters, with Himalayan peaks visible on clear days.",
+"tags": [
+"capitals",
+"asia"
+]
+},
+{
+"q": "What is the capital of Mongolia?",
+"a": [
+"Ulaanbaatar",
+"Karakorum",
+"Darkhan",
+"Erdenet"
+],
+"d": 2,
+"x": "It is often called the coldest national capital on Earth.",
+"tags": [
+"capitals",
+"asia"
+]
+},
+{
+"q": "What is the capital of Cambodia?",
+"a": [
+"Phnom Penh",
+"Siem Reap",
+"Battambang",
+"Sihanoukville"
+],
+"d": 2,
+"x": "The city sits where the Mekong, Tonlé Sap and Bassac rivers meet.",
+"tags": [
+"capitals",
+"asia"
+]
+},
+{
+"q": "What is the capital of Uruguay?",
+"a": [
+"Montevideo",
+"Punta del Este",
+"Salto",
+"Colonia"
+],
+"d": 2,
+"x": "Around half of Uruguay's people live in or near its capital on the Río de la Plata.",
+"tags": [
+"capitals",
+"south-america"
+]
+},
+{
+"q": "What is the capital of Senegal?",
+"a": [
+"Dakar",
+"Bamako",
+"Conakry",
+"Banjul"
+],
+"d": 2,
+"x": "Dakar sits on the Cap-Vert peninsula, the westernmost point of mainland Africa.",
+"tags": [
+"capitals",
+"africa"
+]
+},
+{
+"q": "What is the capital of Zimbabwe?",
+"a": [
+"Harare",
+"Bulawayo",
+"Mutare",
+"Gweru"
+],
+"d": 2,
+"x": "Harare is known as the Sunshine City and lies on a high plateau.",
+"tags": [
+"capitals",
+"africa"
+]
+},
+{
+"q": "What is the capital of Afghanistan?",
+"a": [
+"Kabul",
+"Kandahar",
+"Herat",
+"Mazar-i-Sharif"
+],
+"d": 2,
+"x": "The city sits in a narrow valley ringed by the Hindu Kush mountains.",
+"tags": [
+"capitals",
+"asia"
+]
+},
+{
+"q": "What is the capital of Malaysia?",
+"a": [
+"Kuala Lumpur",
+"George Town",
+"Johor Bahru",
+"Kota Kinabalu"
+],
+"d": 2,
+"x": "The name means 'muddy confluence' in Malay, after the rivers where it was founded.",
+"tags": [
+"capitals",
+"asia"
+]
+},
+{
+"q": "What is the longest river in Europe?",
+"a": [
+"Volga",
+"Danube",
+"Rhine",
+"Dnieper"
+],
+"d": 2,
+"x": "It flows about 3,500 km through Russia and empties into the Caspian Sea.",
+"tags": [
+"rivers",
+"europe"
+]
+},
+{
+"q": "Which is the largest lake in Africa by area?",
+"a": [
+"Lake Victoria",
+"Lake Tanganyika",
+"Lake Malawi",
+"Lake Chad"
+],
+"d": 2,
+"x": "It is shared by Uganda, Kenya and Tanzania and is the main reservoir of the White Nile.",
+"tags": [
+"lakes",
+"africa"
+]
+},
+{
+"q": "Which strait separates Spain from Morocco at the entrance to the Mediterranean?",
+"a": [
+"Strait of Gibraltar",
+"Bosphorus",
+"Strait of Hormuz",
+"Bering Strait"
+],
+"d": 2,
+"x": "At its narrowest the strait is only about 14 km wide.",
+"tags": [
+"straits"
+]
+},
+{
+"q": "In which country is Aconcagua, the highest mountain in the Americas?",
+"a": [
+"Argentina",
+"Chile",
+"Peru",
+"Bolivia"
+],
+"d": 2,
+"x": "At about 6,960 meters, it is also the highest mountain outside Asia.",
+"tags": [
+"mountains",
+"south-america"
+]
+},
+{
+"q": "Which lake in Siberia is the deepest in the world?",
+"a": [
+"Lake Baikal",
+"Lake Superior",
+"Lake Ladoga",
+"Lake Onega"
+],
+"d": 2,
+"x": "It is over 1,600 meters deep and holds roughly a fifth of the world's unfrozen fresh water.",
+"tags": [
+"lakes",
+"asia"
+]
+},
+{
+"q": "In which country is the Atacama Desert, one of the driest places on Earth?",
+"a": [
+"Chile",
+"Argentina",
+"Peru",
+"Mexico"
+],
+"d": 2,
+"x": "Some weather stations there have never recorded rainfall.",
+"tags": [
+"deserts",
+"south-america"
+]
+},
+{
+"q": "Which is the largest desert in the world when measured by total area?",
+"a": [
+"Antarctic Desert",
+"Sahara",
+"Arabian Desert",
+"Gobi"
+],
+"d": 2,
+"x": "A desert is defined by low precipitation, not heat, and Antarctica is extremely dry.",
+"tags": [
+"deserts"
+]
+},
+{
+"q": "Which river flows through Vienna, Budapest and Belgrade?",
+"a": [
+"Danube",
+"Rhine",
+"Elbe",
+"Vistula"
+],
+"d": 2,
+"x": "It flows through or along the borders of ten countries, more than any other river in the world.",
+"tags": [
+"rivers",
+"europe"
+]
+},
+{
+"q": "Which river flows through the Iraqi capital, Baghdad?",
+"a": [
+"Tigris",
+"Jordan",
+"Euphrates",
+"Orontes"
+],
+"d": 2,
+"x": "Together with the Euphrates, it defined ancient Mesopotamia, whose name means 'land between the rivers'.",
+"tags": [
+"rivers",
+"asia"
+]
+},
+{
+"q": "Which river flows through the Indian holy city of Varanasi?",
+"a": [
+"Ganges",
+"Indus",
+"Brahmaputra",
+"Godavari"
+],
+"d": 2,
+"x": "The city's riverfront steps, called ghats, draw pilgrims from across India.",
+"tags": [
+"rivers",
+"asia"
+]
+},
+{
+"q": "What is the longest river in Asia?",
+"a": [
+"Yangtze",
+"Yellow River",
+"Mekong",
+"Ganges"
+],
+"d": 2,
+"x": "It runs about 6,300 km from the Tibetan Plateau to the East China Sea near Shanghai.",
+"tags": [
+"rivers",
+"asia"
+]
+},
+{
+"q": "The delta of which river forms the rice bowl of southern Vietnam?",
+"a": [
+"Mekong",
+"Red River",
+"Irrawaddy",
+"Salween"
+],
+"d": 2,
+"x": "The river begins in the Tibetan Plateau and flows through six countries.",
+"tags": [
+"rivers",
+"asia"
+]
+},
+{
+"q": "About how many degrees of longitude does one standard time zone span?",
+"a": [
+"15",
+"10",
+"30",
+"24"
+],
+"d": 2,
+"x": "Earth turns 360 degrees in 24 hours, so each hour of time corresponds to 15 degrees.",
+"tags": [
+"time-zones"
+]
+},
+{
+"q": "What does the abbreviation GMT stand for?",
+"a": [
+"Greenwich Mean Time",
+"Global Meridian Time",
+"General Mean Time",
+"Greater Metropolitan Time"
+],
+"d": 2,
+"x": "It is named for the Royal Observatory in Greenwich, London, where the Prime Meridian was set in 1884.",
+"tags": [
+"time-zones"
+]
+},
+{
+"q": "Which is the largest Greek island?",
+"a": [
+"Crete",
+"Rhodes",
+"Corfu",
+"Lesbos"
+],
+"d": 2,
+"x": "Crete was home to the Minoan civilization, one of Europe's earliest advanced cultures.",
+"tags": [
+"islands",
+"europe"
+]
+},
+{
+"q": "Which island, divided between Indonesia and a Pacific nation, is the second-largest in the world?",
+"a": [
+"New Guinea",
+"Borneo",
+"Sumatra",
+"Madagascar"
+],
+"d": 2,
+"x": "Only Greenland is bigger, and the island is known for extraordinary biodiversity and hundreds of languages.",
+"tags": [
+"islands",
+"oceania"
+]
+},
+{
+"q": "Which is the largest island in the Caribbean?",
+"a": [
+"Cuba",
+"Hispaniola",
+"Jamaica",
+"Puerto Rico"
+],
+"d": 2,
+"x": "It is more than 1,200 km long, roughly the distance from New York City to Atlanta.",
+"tags": [
+"islands",
+"north-america"
+]
+},
+{
+"q": "Which country is the largest in Africa by land area?",
+"a": [
+"Algeria",
+"Sudan",
+"Democratic Republic of the Congo",
+"Libya"
+],
+"d": 2,
+"x": "Most of this country lies in the Sahara, and its population clusters along the Mediterranean coast.",
+"tags": [
+"countries",
+"africa"
+]
+},
+{
+"q": "Which small kingdom is completely surrounded by South Africa?",
+"a": [
+"Lesotho",
+"Eswatini",
+"Botswana",
+"Namibia"
+],
+"d": 2,
+"x": "It is sometimes called the Kingdom in the Sky because its lowest point is above 1,400 meters.",
+"tags": [
+"countries",
+"borders"
+]
+},
+{
+"q": "Which of these European countries has no coastline?",
+"a": [
+"Austria",
+"Portugal",
+"Belgium",
+"Croatia"
+],
+"d": 2,
+"x": "Austria is one of about 14 landlocked countries in Europe, and it is dominated by the Alps.",
+"tags": [
+"countries",
+"europe"
+]
+},
+{
+"q": "Petra, the ancient rose-red city carved into rock, is in which country?",
+"a": [
+"Jordan",
+"Syria",
+"Saudi Arabia",
+"Oman"
+],
+"d": 2,
+"x": "It was the capital of the Nabataeans, who grew wealthy on the incense trade.",
+"tags": [
+"landmarks",
+"asia"
+]
+},
+{
+"q": "Angkor Wat, the world's largest religious monument, is in which country?",
+"a": [
+"Cambodia",
+"Thailand",
+"Laos",
+"Myanmar"
+],
+"d": 2,
+"x": "The temple complex was built in the 1100s and appears on the country's national flag.",
+"tags": [
+"landmarks",
+"asia"
+]
+},
+{
+"q": "In which Brazilian city does the Christ the Redeemer statue overlook the bay?",
+"a": [
+"Rio de Janeiro",
+"São Paulo",
+"Salvador",
+"Recife"
+],
+"d": 2,
+"x": "The statue stands on Corcovado mountain, is about 30 meters tall, and was completed in 1931.",
+"tags": [
+"landmarks",
+"south-america"
+]
+},
+{
+"q": "In which city is the Burj Khalifa, the world's tallest building?",
+"a": [
+"Dubai",
+"Abu Dhabi",
+"Doha",
+"Riyadh"
+],
+"d": 2,
+"x": "The tower rises over 828 meters and opened in 2010.",
+"tags": [
+"landmarks",
+"asia"
+]
+},
+{
+"q": "In which Australian territory is the giant sandstone monolith Uluru?",
+"a": [
+"Northern Territory",
+"Western Australia",
+"South Australia",
+"Queensland"
+],
+"d": 2,
+"x": "Uluru rises about 348 meters above the desert plain and changes color at sunrise and sunset.",
+"tags": [
+"landmarks",
+"oceania"
+]
+},
+{
+"q": "Mount Etna, one of the world's most active volcanoes, is on which island?",
+"a": [
+"Sicily",
+"Sardinia",
+"Crete",
+"Malta"
+],
+"d": 2,
+"x": "It has erupted regularly for thousands of years, and its slopes grow vineyards and orchards.",
+"tags": [
+"mountains",
+"europe"
+]
+},
+{
+"q": "Which narrow strait runs through the middle of Istanbul?",
+"a": [
+"Bosphorus",
+"Dardanelles",
+"Strait of Messina",
+"Kerch Strait"
+],
+"d": 2,
+"x": "It separates the European and Asian parts of Turkey and links the Black Sea to the Sea of Marmara.",
+"tags": [
+"straits"
+]
+},
+{
+"q": "Which canal connects the Mediterranean Sea to the Red Sea?",
+"a": [
+"Suez Canal",
+"Panama Canal",
+"Corinth Canal",
+"Kiel Canal"
+],
+"d": 2,
+"x": "Opened in 1869, it spares ships the long trip around Africa.",
+"tags": [
+"landmarks",
+"africa"
+]
+},
+{
+"q": "Victoria Falls lies on which river?",
+"a": [
+"Zambezi",
+"Limpopo",
+"Orange",
+"Okavango"
+],
+"d": 2,
+"x": "Locals call the falls Mosi-oa-Tunya, 'the smoke that thunders'.",
+"tags": [
+"rivers",
+"africa"
+]
+},
+{
+"q": "Along with Brazil, which country shares the spectacular Iguazu Falls?",
+"a": [
+"Argentina",
+"Paraguay",
+"Uruguay",
+"Bolivia"
+],
+"d": 2,
+"x": "The falls consist of roughly 275 separate cascades spread across nearly 3 km.",
+"tags": [
+"landmarks",
+"south-america"
+]
+},
+{
+"q": "In which country is Angel Falls, the world's tallest uninterrupted waterfall?",
+"a": [
+"Venezuela",
+"Guyana",
+"Brazil",
+"Colombia"
+],
+"d": 2,
+"x": "The water drops about 979 meters, so far that much of it turns to mist before reaching the bottom.",
+"tags": [
+"landmarks",
+"south-america"
+]
+},
+{
+"q": "In which US state is Death Valley?",
+"a": [
+"California",
+"Nevada",
+"Arizona",
+"Utah"
+],
+"d": 2,
+"x": "Furnace Creek in the valley once recorded 134 degrees F (56.7 C), among the hottest air temperatures ever measured.",
+"tags": [
+"united-states",
+"deserts"
+]
+},
+{
+"q": "Which river forms much of the border between Texas and Mexico?",
+"a": [
+"Rio Grande",
+"Colorado",
+"Pecos",
+"Red River"
+],
+"d": 2,
+"x": "Its name is Spanish for 'big river', although in Mexico it is called the Río Bravo.",
+"tags": [
+"rivers",
+"borders"
+]
+},
+{
+"q": "Which Canadian province is the largest by area?",
+"a": [
+"Quebec",
+"Ontario",
+"British Columbia",
+"Alberta"
+],
+"d": 2,
+"x": "It is more than twice the size of France.",
+"tags": [
+"countries",
+"north-america"
+]
+},
+{
+"q": "What is the capital of the Australian island state of Tasmania?",
+"a": [
+"Hobart",
+"Launceston",
+"Darwin",
+"Perth"
+],
+"d": 2,
+"x": "Hobart is Australia's second-oldest capital city, after Sydney.",
+"tags": [
+"capitals",
+"oceania"
+]
+},
+{
+"q": "What is the highest mountain in the Alps?",
+"a": [
+"Mont Blanc",
+"Matterhorn",
+"Eiger",
+"Jungfrau"
+],
+"d": 2,
+"x": "At roughly 4,800 meters, it rises on the border between France and Italy.",
+"tags": [
+"mountains",
+"europe"
+]
+},
+{
+"q": "Which pyramid-shaped peak sits on the Swiss-Italian border?",
+"a": [
+"Matterhorn",
+"Mont Blanc",
+"Eiger",
+"Dolomites"
+],
+"d": 2,
+"x": "It was first climbed in 1865, but four of the seven climbers in the first party died on the descent.",
+"tags": [
+"mountains",
+"europe"
+]
+},
+{
+"q": "Which mountain range forms the border between France and Spain?",
+"a": [
+"Pyrenees",
+"Apennines",
+"Carpathians",
+"Cantabrians"
+],
+"d": 2,
+"x": "The tiny country of Andorra is tucked inside this range.",
+"tags": [
+"mountains",
+"europe"
+]
+},
+{
+"q": "Which mountain range runs across Morocco, Algeria and Tunisia?",
+"a": [
+"Atlas Mountains",
+"Drakensberg",
+"Ethiopian Highlands",
+"Ahaggar"
+],
+"d": 2,
+"x": "The range separates the Mediterranean and Atlantic coasts from the Sahara.",
+"tags": [
+"mountains",
+"africa"
+]
+},
+{
+"q": "Which high-altitude lake straddles the border between Peru and Bolivia?",
+"a": [
+"Lake Titicaca",
+"Lake Maracaibo",
+"Lake Poopó",
+"Lake Nicaragua"
+],
+"d": 2,
+"x": "At roughly 3,800 meters, it is one of the highest navigable lakes in the world.",
+"tags": [
+"lakes",
+"south-america"
+]
+},
+{
+"q": "Which lake in Utah is the largest salt lake in the Western Hemisphere?",
+"a": [
+"Great Salt Lake",
+"Mono Lake",
+"Salton Sea",
+"Lake Tahoe"
+],
+"d": 2,
+"x": "It is a remnant of an ancient lake and is often much saltier than the ocean.",
+"tags": [
+"lakes",
+"united-states"
+]
+},
+{
+"q": "Which strait separates Russia from Alaska?",
+"a": [
+"Bering Strait",
+"Davis Strait",
+"Denmark Strait",
+"Strait of Juan de Fuca"
+],
+"d": 2,
+"x": "At its narrowest the strait is about 85 km wide, with two small islands in the middle.",
+"tags": [
+"straits"
+]
+},
+{
+"q": "Which cape at the southern tip of South America, in Chile, was long feared by sailors?",
+"a": [
+"Cape Horn",
+"Cape Agulhas",
+"Cape Canaveral",
+"Cape Finisterre"
+],
+"d": 2,
+"x": "Sailors long feared its storms and huge waves.",
+"tags": [
+"physical-geography",
+"south-america"
+]
+},
+{
+"q": "Which tropic passes through the middle of India?",
+"a": [
+"Tropic of Cancer",
+"Tropic of Capricorn",
+"Arctic Circle",
+"Equator"
+],
+"d": 2,
+"x": "It lies about 23.4 degrees north of the equator and marks the northern limit of the overhead sun.",
+"tags": [
+"physical-geography",
+"asia"
+]
+},
+{
+"q": "Which line of latitude lies about 23.4 degrees south of the equator?",
+"a": [
+"Tropic of Capricorn",
+"Tropic of Cancer",
+"Antarctic Circle",
+"Prime Meridian"
+],
+"d": 2,
+"x": "It passes through Australia, Chile, Brazil, Namibia and Madagascar.",
+"tags": [
+"physical-geography"
+]
+},
+{
+"q": "Which Spanish island group off the northwest African coast is a popular holiday destination?",
+"a": [
+"Canary Islands",
+"Balearic Islands",
+"Azores",
+"Madeira"
+],
+"d": 2,
+"x": "The volcanic archipelago includes Tenerife, home to Spain's highest peak, Teide.",
+"tags": [
+"islands",
+"europe"
+]
+},
+{
+"q": "Greenland is an autonomous territory belonging to which country?",
+"a": [
+"Denmark",
+"Norway",
+"Iceland",
+"Canada"
+],
+"d": 2,
+"x": "Greenland is the world's largest island, yet fewer than 60,000 people live there.",
+"tags": [
+"islands",
+"countries"
+]
+},
+{
+"q": "Easter Island, famous for its giant moai statues, belongs to which country?",
+"a": [
+"Chile",
+"Peru",
+"New Zealand",
+"Australia"
+],
+"d": 2,
+"x": "It lies in the Pacific about 3,700 km west of the South American coast, one of the most remote inhabited islands.",
+"tags": [
+"islands",
+"south-america"
+]
+},
+{
+"q": "Valletta is the capital of which Mediterranean island country?",
+"a": [
+"Malta",
+"Cyprus",
+"Monaco",
+"San Marino"
+],
+"d": 2,
+"x": "It is one of the smallest capitals in the European Union.",
+"tags": [
+"capitals",
+"islands"
+]
+},
+{
+"q": "Bali is an island province of which country?",
+"a": [
+"Indonesia",
+"Philippines",
+"Thailand",
+"Malaysia"
+],
+"d": 2,
+"x": "The country has more than 17,000 islands, and Bali is known for its rice terraces and temples.",
+"tags": [
+"islands",
+"asia"
+]
+},
+{
+"q": "Corsica, the birthplace of Napoleon, belongs to which country?",
+"a": [
+"France",
+"Italy",
+"Spain",
+"Greece"
+],
+"d": 2,
+"x": "The island lies closer to Italy than France but has been French since 1768.",
+"tags": [
+"islands",
+"europe"
+]
+},
+{
+"q": "What is the largest island of Japan?",
+"a": [
+"Honshu",
+"Hokkaido",
+"Kyushu",
+"Shikoku"
+],
+"d": 2,
+"x": "Tokyo, Kyoto, Osaka and Mount Fuji are all on this island.",
+"tags": [
+"islands",
+"asia"
+]
+},
+{
+"q": "Which sea lies between Italy and the Balkan Peninsula?",
+"a": [
+"Adriatic Sea",
+"Aegean Sea",
+"Ionian Sea",
+"Tyrrhenian Sea"
+],
+"d": 2,
+"x": "Venice and Dubrovnik are among the historic ports on its shores.",
+"tags": [
+"seas",
+"europe"
+]
+},
+{
+"q": "Which sea separates northeast Africa from the Arabian Peninsula?",
+"a": [
+"Red Sea",
+"Arabian Sea",
+"Caspian Sea",
+"Black Sea"
+],
+"d": 2,
+"x": "It is one of the warmest and saltiest seas in the world and is known for coral reefs.",
+"tags": [
+"seas"
+]
+},
+{
+"q": "Spain and Portugal share which peninsula?",
+"a": [
+"Iberian Peninsula",
+"Balkan Peninsula",
+"Scandinavian Peninsula",
+"Apennine Peninsula"
+],
+"d": 2,
+"x": "The Pyrenees block it off from the rest of Europe.",
+"tags": [
+"physical-geography",
+"europe"
+]
+},
+{
+"q": "Which river flows through Rome?",
+"a": [
+"Tiber",
+"Arno",
+"Po",
+"Adige"
+],
+"d": 2,
+"x": "According to legend, Rome was founded on its banks by Romulus in 753 BC.",
+"tags": [
+"rivers",
+"europe"
+]
+},
+{
+"q": "Which river flows past the German city of Cologne and its cathedral?",
+"a": [
+"Rhine",
+"Elbe",
+"Main",
+"Weser"
+],
+"d": 2,
+"x": "The Rhine is a major European shipping route running from the Swiss Alps to the North Sea.",
+"tags": [
+"rivers",
+"europe"
+]
+},
+{
+"q": "Which river carved the Grand Canyon?",
+"a": [
+"Colorado River",
+"Columbia River",
+"Snake River",
+"Missouri River"
+],
+"d": 2,
+"x": "Geologists estimate the river has been cutting the canyon for several million years.",
+"tags": [
+"rivers",
+"united-states"
+]
+},
+{
+"q": "Which river flows past both Kinshasa and Brazzaville, the world's two closest national capitals?",
+"a": [
+"Congo River",
+"Niger River",
+"Zambezi River",
+"Limpopo River"
+],
+"d": 2,
+"x": "It is the deepest river in the world and Africa's second-longest.",
+"tags": [
+"rivers",
+"africa"
+]
+},
+{
+"q": "Which mountain range is the traditional boundary between Europe and Asia in Russia?",
+"a": [
+"Ural Mountains",
+"Caucasus",
+"Carpathians",
+"Altai"
+],
+"d": 2,
+"x": "The range runs roughly 2,500 km from the Arctic Ocean south toward Kazakhstan.",
+"tags": [
+"mountains",
+"europe"
+]
+},
+{
+"q": "Which mountain range runs along the eastern United States?",
+"a": [
+"Appalachian Mountains",
+"Rocky Mountains",
+"Sierra Nevada",
+"Cascades"
+],
+"d": 2,
+"x": "They are among the oldest mountains on Earth and once rivaled the Himalayas in height.",
+"tags": [
+"mountains",
+"united-states"
+]
+},
+{
+"q": "The 'Ring of Fire' circles which ocean?",
+"a": [
+"Pacific Ocean",
+"Atlantic Ocean",
+"Indian Ocean",
+"Arctic Ocean"
+],
+"d": 2,
+"x": "About 75 percent of the world's volcanoes and most of its earthquakes occur along this horseshoe-shaped belt.",
+"tags": [
+"physical-geography"
+]
+},
+{
+"q": "What is a narrow strip of land connecting two larger land masses called?",
+"a": [
+"Isthmus",
+"Peninsula",
+"Archipelago",
+"Strait"
+],
+"d": 2,
+"x": "The Isthmus of Panama connects North and South America.",
+"tags": [
+"physical-geography"
+]
+},
+{
+"q": "What is the name for the triangular deposit of silt formed at the mouth of a river?",
+"a": [
+"Delta",
+"Estuary",
+"Lagoon",
+"Fjord"
+],
+"d": 2,
+"x": "The Greek letter delta gave the landform its name because of its shape.",
+"tags": [
+"physical-geography"
+]
+},
+{
+"q": "What is the name for a cold, treeless region with permanently frozen subsoil?",
+"a": [
+"Tundra",
+"Savanna",
+"Steppe",
+"Taiga"
+],
+"d": 2,
+"x": "The word comes from a Finnish term meaning 'treeless plain'.",
+"tags": [
+"physical-geography"
+]
+},
+{
+"q": "What was the name of the supercontinent that existed around 300 million years ago?",
+"a": [
+"Pangaea",
+"Gondwana",
+"Laurasia",
+"Rodinia"
+],
+"d": 2,
+"x": "The name means 'all lands' in Greek, and it began splitting apart about 200 million years ago.",
+"tags": [
+"physical-geography"
+]
+},
+{
+"q": "Which warm ocean current carries heat from the Gulf of Mexico toward Europe?",
+"a": [
+"Gulf Stream",
+"Humboldt Current",
+"Kuroshio Current",
+"Benguela Current"
+],
+"d": 2,
+"x": "It helps keep winters in northwest Europe milder than other places at the same latitude.",
+"tags": [
+"oceans",
+"physical-geography"
+]
+},
+{
+"q": "On a map, what do lines joining points of equal elevation represent?",
+"a": [
+"Contour lines",
+"Isobars",
+"Meridians",
+"Latitude lines"
+],
+"d": 2,
+"x": "The closer together the lines are, the steeper the terrain.",
+"tags": [
+"physical-geography"
+]
+},
+{
+"q": "Which 6th-century domed building, once a cathedral, dominates the skyline of Istanbul?",
+"a": [
+"Hagia Sophia",
+"Blue Mosque",
+"Topkapi Palace",
+"Galata Tower"
+],
+"d": 2,
+"x": "Completed in 537 AD, its giant dome was the largest in the world for about a thousand years.",
+"tags": [
+"landmarks",
+"asia"
+]
+},
+{
+"q": "The Alhambra palace complex stands in which Spanish city?",
+"a": [
+"Granada",
+"Córdoba",
+"Toledo",
+"Seville"
+],
+"d": 2,
+"x": "The name comes from Arabic and means 'the red one', after the color of its walls.",
+"tags": [
+"landmarks",
+"europe"
+]
+},
+{
+"q": "In which country is the prehistoric monument Stonehenge?",
+"a": [
+"England",
+"Scotland",
+"Wales",
+"Ireland"
+],
+"d": 2,
+"x": "The giant stones were put in place about 4,500 years ago, and some were hauled from Wales.",
+"tags": [
+"landmarks",
+"europe"
+]
+},
+{
+"q": "Neuschwanstein Castle, which inspired Disney's castle, is in which German state?",
+"a": [
+"Bavaria",
+"Saxony",
+"Hesse",
+"Baden-Württemberg"
+],
+"d": 2,
+"x": "King Ludwig II built it in the late 1800s, and it overlooks the Alps.",
+"tags": [
+"landmarks",
+"europe"
+]
+},
+{
+"q": "The hexagonal basalt columns of the Giant's Causeway are located in which part of the UK?",
+"a": [
+"Northern Ireland",
+"Scotland",
+"Wales",
+"Cornwall"
+],
+"d": 2,
+"x": "The 40,000 columns were formed by an ancient volcanic eruption around 60 million years ago.",
+"tags": [
+"landmarks",
+"europe"
+]
+},
+{
+"q": "The Okavango Delta, a huge inland wetland, is in which country?",
+"a": [
+"Botswana",
+"Zambia",
+"Mozambique",
+"Angola"
+],
+"d": 2,
+"x": "The river ends not in the sea but in the Kalahari Desert, flooding seasonally and attracting wildlife.",
+"tags": [
+"physical-geography",
+"africa"
+]
+},
+{
+"q": "The legendary desert trading city of Timbuktu is in which country?",
+"a": [
+"Mali",
+"Niger",
+"Chad",
+"Mauritania"
+],
+"d": 2,
+"x": "It was a medieval center of Islamic learning and the end of caravan routes across the Sahara.",
+"tags": [
+"cities",
+"africa"
+]
+},
+{
+"q": "Which Asian city-state sits at the southern tip of the Malay Peninsula?",
+"a": [
+"Singapore",
+"Hong Kong",
+"Macau",
+"Brunei"
+],
+"d": 2,
+"x": "It is made up of one main island and more than 60 smaller islets.",
+"tags": [
+"countries",
+"asia"
+]
+},
+{
+"q": "Which tiny principality on the French Riviera is known for its Grand Prix and casino?",
+"a": [
+"Monaco",
+"Andorra",
+"Liechtenstein",
+"Luxembourg"
+],
+"d": 2,
+"x": "It is the second-smallest country in the world, after Vatican City.",
+"tags": [
+"countries",
+"europe"
+]
+},
+{
+"q": "The Gateway Arch rises over which US city on the Mississippi River?",
+"a": [
+"St. Louis",
+"Memphis",
+"New Orleans",
+"Kansas City"
+],
+"d": 2,
+"x": "At 630 feet (192 meters), it is the tallest arch in the world.",
+"tags": [
+"landmarks",
+"united-states"
+]
+},
+{
+"q": "Crater Lake, the deepest lake in the United States, is in which state?",
+"a": [
+"Oregon",
+"Washington",
+"Idaho",
+"California"
+],
+"d": 2,
+"x": "It fills the crater of a collapsed volcano and is famous for its deep blue water.",
+"tags": [
+"lakes",
+"united-states"
+]
+},
+{
+"q": "Which Italian city is home to a famous Leaning Tower?",
+"a": [
+"Pisa",
+"Florence",
+"Siena",
+"Verona"
+],
+"d": 2,
+"x": "The tower began to lean during construction in the 12th century because of soft ground.",
+"tags": [
+"landmarks",
+"europe"
+]
+},
+{
+"q": "In which French region is the island abbey of Mont-Saint-Michel?",
+"a": [
+"Normandy",
+"Brittany",
+"Provence",
+"Alsace"
+],
+"d": 2,
+"x": "The abbey is cut off by the sea at high tide, which can rise among the fastest in Europe.",
+"tags": [
+"landmarks",
+"europe"
+]
+}
+]

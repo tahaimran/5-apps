@@ -1,0 +1,1502 @@
+[
+{
+"q": "Which Gulf country's maroon flag has a white serrated edge with nine points?",
+"a": [
+"Qatar",
+"Bahrain",
+"Kuwait",
+"Oman"
+],
+"d": 3,
+"x": "The maroon is said to come from a traditional dye that darkens in the heat of the sun.",
+"tags": [
+"flags",
+"asia"
+]
+},
+{
+"q": "Which Gulf kingdom's red flag has a white serrated band at the hoist with five points?",
+"a": [
+"Bahrain",
+"Qatar",
+"Kuwait",
+"Oman"
+],
+"d": 3,
+"x": "The five points are said to stand for the five pillars of Islam.",
+"tags": [
+"flags",
+"asia"
+]
+},
+{
+"q": "Which Central Asian country's flag has blue, white and green bands, a crescent and 12 stars?",
+"a": [
+"Uzbekistan",
+"Kazakhstan",
+"Azerbaijan",
+"Turkmenistan"
+],
+"d": 3,
+"x": "Thin red lines separate the three main bands.",
+"tags": [
+"flags",
+"asia"
+]
+},
+{
+"q": "Which Central Asian country's red, white and green flag has a golden crown with seven stars?",
+"a": [
+"Tajikistan",
+"Uzbekistan",
+"Kyrgyzstan",
+"Hungary"
+],
+"d": 3,
+"x": "The white stripe is wider than the red and green stripes.",
+"tags": [
+"flags",
+"asia"
+]
+},
+{
+"q": "Which Pacific country's red and green flag has a sideways yellow Y and a boar's tusk emblem?",
+"a": [
+"Vanuatu",
+"Solomon Islands",
+"Fiji",
+"Papua New Guinea"
+],
+"d": 3,
+"x": "The curled boar's tusk and crossed namele leaves are prized symbols of traditional culture.",
+"tags": [
+"flags",
+"oceania"
+]
+},
+{
+"q": "Which country's blue and green flag has a yellow diagonal stripe and five white stars?",
+"a": [
+"Solomon Islands",
+"Vanuatu",
+"Tuvalu",
+"Fiji"
+],
+"d": 3,
+"x": "The five stars originally stood for the country's five main districts.",
+"tags": [
+"flags",
+"oceania"
+]
+},
+{
+"q": "Which Pacific country's flag has orange and white diagonal bands and a white star with 24 points?",
+"a": [
+"Marshall Islands",
+"Nauru",
+"Micronesia",
+"Palau"
+],
+"d": 3,
+"x": "The 24 points stand for the 24 municipalities, and the two diagonal bands suggest the sunrise.",
+"tags": [
+"flags",
+"oceania"
+]
+},
+{
+"q": "Which South American country's flag shows a different emblem on each side?",
+"a": [
+"Paraguay",
+"Bolivia",
+"Peru",
+"Uruguay"
+],
+"d": 3,
+"x": "The front shows the national arms with the May Star, and the back shows the Treasury seal with a lion.",
+"tags": [
+"flags",
+"south-america"
+]
+},
+{
+"q": "Which South American country's flag has nine blue and white stripes and a sun in the top left?",
+"a": [
+"Uruguay",
+"Argentina",
+"Paraguay",
+"Honduras"
+],
+"d": 3,
+"x": "The sun is the Sun of May, and nine stripes stand for the original departments.",
+"tags": [
+"flags",
+"south-america"
+]
+},
+{
+"q": "Which Central American country's flag has two men holding tools within a ring of leaves?",
+"a": [
+"Belize",
+"Guatemala",
+"Panama",
+"Honduras"
+],
+"d": 3,
+"x": "It is one of the few national flags to show human figures.",
+"tags": [
+"flags",
+"central-america"
+]
+},
+{
+"q": "Which country's blue, yellow and red flag has an eagle holding a cross and an aurochs' head in the center?",
+"a": [
+"Moldova",
+"Romania",
+"Andorra",
+"Chad"
+],
+"d": 3,
+"x": "The aurochs' head is an ancient symbol of the region's heritage.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "Which kingdom surrounded by South Africa has a flag with a black traditional hat?",
+"a": [
+"Lesotho",
+"Eswatini",
+"Botswana",
+"Zambia"
+],
+"d": 3,
+"x": "The hat, called the mokorotlo, is a traditional Basotho design.",
+"tags": [
+"flags",
+"africa"
+]
+},
+{
+"q": "Which Central African country's flag is divided diagonally into green, yellow and red?",
+"a": [
+"Republic of the Congo",
+"Democratic Republic of the Congo",
+"Gabon",
+"Cameroon"
+],
+"d": 3,
+"x": "The yellow diagonal band separates the green triangle at the top from the red one at the bottom.",
+"tags": [
+"flags",
+"africa"
+]
+},
+{
+"q": "Which West African country's flag has five green and yellow stripes, a red canton and a white star?",
+"a": [
+"Togo",
+"Ghana",
+"Benin",
+"Burkina Faso"
+],
+"d": 3,
+"x": "The white star sits in the red canton at the hoist.",
+"tags": [
+"flags",
+"africa"
+]
+},
+{
+"q": "Which Arab country has a plain horizontal tricolor of red, white and black with no emblem?",
+"a": [
+"Yemen",
+"Egypt",
+"Syria",
+"Iraq"
+],
+"d": 3,
+"x": "It uses the Pan-Arab colors without any emblem or star.",
+"tags": [
+"flags",
+"asia"
+]
+},
+{
+"q": "Which tiny Alpine principality added a golden crown to its blue and red flag after a clash at the 1936 Olympics?",
+"a": [
+"Liechtenstein",
+"Monaco",
+"Andorra",
+"San Marino"
+],
+"d": 3,
+"x": "Officials noticed that its flag was identical to Haiti's, so a crown was added in 1937.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "In which year did the Union Flag gain St Patrick's red saltire?",
+"a": [
+"1801",
+"1707",
+"1603",
+"1922"
+],
+"d": 3,
+"x": "The flag took its present form when Ireland joined Great Britain in the United Kingdom.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "In which year was the Hinomaru officially made Japan's national flag by law?",
+"a": [
+"1999",
+"1868",
+"1945",
+"1964"
+],
+"d": 3,
+"x": "The red-disc design had been used for centuries before it was given legal status.",
+"tags": [
+"flags",
+"asia"
+]
+},
+{
+"q": "In what year did Israel formally adopt its flag?",
+"a": [
+"1948",
+"1947",
+"1949",
+"1952"
+],
+"d": 3,
+"x": "The design had been used by the Zionist movement since the late 1800s.",
+"tags": [
+"flags",
+"asia"
+]
+},
+{
+"q": "In which year was India's tricolor adopted by the Constituent Assembly?",
+"a": [
+"1947",
+"1930",
+"1948",
+"1950"
+],
+"d": 3,
+"x": "It was adopted a few weeks before independence on August 15.",
+"tags": [
+"flags",
+"asia"
+]
+},
+{
+"q": "Which heraldist designed South Africa's flag, introduced on April 27, 1994?",
+"a": [
+"Frederick Brownell",
+"Nelson Mandela",
+"Desmond Tutu",
+"Walter Sisulu"
+],
+"d": 3,
+"x": "Brownell was the state herald, and the flag was meant as a temporary design that stayed in use.",
+"tags": [
+"flags",
+"africa"
+]
+},
+{
+"q": "On Brazil's flag, the stars depict the sky over which city on the day the republic was proclaimed?",
+"a": [
+"Rio de Janeiro",
+"Brasilia",
+"Sao Paulo",
+"Salvador"
+],
+"d": 3,
+"x": "The date was November 15, 1889, and each star stands for a state.",
+"tags": [
+"flags",
+"south-america"
+]
+},
+{
+"q": "Which Indian Ocean country's flag has four stripes, a green triangle, a white crescent and four stars?",
+"a": [
+"Comoros",
+"Mauritius",
+"Seychelles",
+"Madagascar"
+],
+"d": 3,
+"x": "The four stars and four stripes stand for the four main islands.",
+"tags": [
+"flags",
+"africa"
+]
+},
+{
+"q": "Which Gulf sultanate's flag has an emblem of crossed swords over a dagger?",
+"a": [
+"Oman",
+"Kuwait",
+"Bahrain",
+"Yemen"
+],
+"d": 3,
+"x": "The flag has white, red and green bands and a vertical red band at the hoist.",
+"tags": [
+"flags",
+"asia"
+]
+},
+{
+"q": "Which country's flag has bo leaves in the corners of a maroon panel?",
+"a": [
+"Sri Lanka",
+"Bangladesh",
+"Bhutan",
+"Myanmar"
+],
+"d": 3,
+"x": "The bo tree is sacred to Buddhists, who form the majority of the population.",
+"tags": [
+"flags",
+"asia"
+]
+},
+{
+"q": "Bhutan's flag is divided diagonally into which two colors?",
+"a": [
+"Yellow and orange",
+"Red and white",
+"Blue and green",
+"Black and gold"
+],
+"d": 3,
+"x": "Yellow stands for the king's secular authority, and orange for Buddhist spiritual tradition.",
+"tags": [
+"flags",
+"asia"
+]
+},
+{
+"q": "On Singapore's flag, the five stars stand for democracy, peace, progress, justice and what?",
+"a": [
+"Equality",
+"Freedom",
+"Unity",
+"Prosperity"
+],
+"d": 3,
+"x": "The stars are arranged in a circle beside a white crescent that symbolizes a young nation on the rise.",
+"tags": [
+"flags",
+"asia"
+]
+},
+{
+"q": "On Pakistan's flag, the crescent stands for progress, and the star stands for what?",
+"a": [
+"Light and knowledge",
+"Peace and prosperity",
+"Unity and faith",
+"Courage and honor"
+],
+"d": 3,
+"x": "The crescent and star sit in the middle of the green field.",
+"tags": [
+"flags",
+"asia"
+]
+},
+{
+"q": "Which general designed Argentina's flag in 1812?",
+"a": [
+"Manuel Belgrano",
+"Jose de San Martin",
+"Simon Bolivar",
+"Bernardo O'Higgins"
+],
+"d": 3,
+"x": "Belgrano raised it for the first time on the banks of the Parana River.",
+"tags": [
+"flags",
+"south-america"
+]
+},
+{
+"q": "Which Venezuelan revolutionary designed the ancestor of the yellow, blue and red flags of Gran Colombia?",
+"a": [
+"Francisco de Miranda",
+"Simon Bolivar",
+"Antonio de Sucre",
+"Jose de San Martin"
+],
+"d": 3,
+"x": "Miranda flew his tricolor in 1806 during an expedition to free Venezuela.",
+"tags": [
+"flags",
+"south-america"
+]
+},
+{
+"q": "Which Irish nationalist presented the green, white and orange tricolor in 1848?",
+"a": [
+"Thomas Francis Meagher",
+"Daniel O'Connell",
+"Robert Emmet",
+"Wolfe Tone"
+],
+"d": 3,
+"x": "He had seen the French tricolor on a visit to France and wanted a flag to unite the island.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "At which Olympic Games was the five-ring Olympic flag first flown?",
+"a": [
+"Antwerp 1920",
+"Stockholm 1912",
+"Paris 1924",
+"Berlin 1936"
+],
+"d": 3,
+"x": "The flag was designed in 1913, but the First World War delayed its first appearance.",
+"tags": [
+"flags",
+"olympics"
+]
+},
+{
+"q": "Which organization first adopted the circle of twelve gold stars on blue in 1955?",
+"a": [
+"The Council of Europe",
+"The United Nations",
+"NATO",
+"The Red Cross"
+],
+"d": 3,
+"x": "The European Communities took up the same flag in 1985.",
+"tags": [
+"flags",
+"organizations"
+]
+},
+{
+"q": "Which country is notable for having a national flag with none of red, white or blue?",
+"a": [
+"Jamaica",
+"Brazil",
+"Mauritania",
+"Libya"
+],
+"d": 3,
+"x": "It uses only gold, green and black.",
+"tags": [
+"flags",
+"caribbean"
+]
+},
+{
+"q": "Nepal's crimson flag is bordered in which color?",
+"a": [
+"Deep blue",
+"Gold",
+"White",
+"Green"
+],
+"d": 3,
+"x": "The two pennants carry a white moon and a white sun.",
+"tags": [
+"flags",
+"asia"
+]
+},
+{
+"q": "What does 'Y Ddraig Goch,' the Welsh name for the Welsh flag, mean?",
+"a": [
+"The Red Dragon",
+"The Green Valley",
+"The Golden Cross",
+"The White Hart"
+],
+"d": 3,
+"x": "The red dragon has been linked to Wales for well over a thousand years.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "Which Indian Ocean island nation's flag has five oblique bands in blue, yellow, red, white and green?",
+"a": [
+"Seychelles",
+"Mauritius",
+"Comoros",
+"Madagascar"
+],
+"d": 3,
+"x": "The bands fan out from the lower hoist corner.",
+"tags": [
+"flags",
+"africa"
+]
+},
+{
+"q": "Which island nation's blue flag has a circle of ten yellow stars?",
+"a": [
+"Cabo Verde",
+"Mauritius",
+"Seychelles",
+"Comoros"
+],
+"d": 3,
+"x": "The ten stars stand for the main islands of the archipelago.",
+"tags": [
+"flags",
+"africa"
+]
+},
+{
+"q": "Which island country's flag has a red triangle with two black stars and green and yellow stripes?",
+"a": [
+"Sao Tome and Principe",
+"Cabo Verde",
+"Guinea-Bissau",
+"Equatorial Guinea"
+],
+"d": 3,
+"x": "The two stars stand for the two main islands.",
+"tags": [
+"flags",
+"africa"
+]
+},
+{
+"q": "Which country's flag has a black diagonal band with two white stars between green and red triangles?",
+"a": [
+"Saint Kitts and Nevis",
+"Saint Lucia",
+"Trinidad and Tobago",
+"Antigua and Barbuda"
+],
+"d": 3,
+"x": "The two stars stand for the two islands that make up the nation.",
+"tags": [
+"flags",
+"caribbean"
+]
+},
+{
+"q": "Which West African country's flag has a red vertical band with a black star beside yellow and green bands?",
+"a": [
+"Guinea-Bissau",
+"Guinea",
+"Mali",
+"Senegal"
+],
+"d": 3,
+"x": "The black star is a symbol of African unity, as on Ghana's flag.",
+"tags": [
+"flags",
+"africa"
+]
+},
+{
+"q": "Which northeast African country's flag has red, white and black bands with a green triangle at the hoist?",
+"a": [
+"Sudan",
+"Eritrea",
+"Jordan",
+"Kuwait"
+],
+"d": 3,
+"x": "The red, white, black and green are all Pan-Arab colors.",
+"tags": [
+"flags",
+"africa"
+]
+},
+{
+"q": "In vexillology, what is a 'fimbriation'?",
+"a": [
+"A thin border separating two colors",
+"A swallow-tailed fly",
+"A cord holding the flag",
+"A frayed edge"
+],
+"d": 3,
+"x": "A white fimbriation edges the blue cross on Norway's flag.",
+"tags": [
+"flags",
+"vexillology"
+]
+},
+{
+"q": "The word vexillology comes from which Latin word?",
+"a": [
+"Vexillum",
+"Vexare",
+"Velarium",
+"Venator"
+],
+"d": 3,
+"x": "A vexillum was a Roman military banner hung from a crossbar.",
+"tags": [
+"flags",
+"vexillology"
+]
+},
+{
+"q": "A flag with a V-shaped notch cut into the fly is described by which term?",
+"a": [
+"Swallowtail",
+"Pennant",
+"Gonfalon",
+"Bicolor"
+],
+"d": 3,
+"x": "Ceremonial flags and naval signals often use this shape.",
+"tags": [
+"flags",
+"vexillology"
+]
+},
+{
+"q": "The wheel on India's flag is taken from a lion capital found at which site?",
+"a": [
+"Sarnath",
+"Delhi",
+"Agra",
+"Varanasi"
+],
+"d": 3,
+"x": "The capital dates from the era of the emperor Ashoka.",
+"tags": [
+"flags",
+"asia"
+]
+},
+{
+"q": "The eagle on Mexico's flag recalls the legend of the founding of which Aztec city?",
+"a": [
+"Tenochtitlan",
+"Teotihuacan",
+"Chichen Itza",
+"Cusco"
+],
+"d": 3,
+"x": "Tenochtitlan stood where Mexico City is today.",
+"tags": [
+"flags",
+"north-america"
+]
+},
+{
+"q": "What does the Greek flag's nickname 'Galanolefki' mean?",
+"a": [
+"Blue and white",
+"Sea and sun",
+"Cross and sea",
+"Freedom or death"
+],
+"d": 3,
+"x": "Another name, Kyanolefko, has the same meaning.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "Which weapons are crossed behind the Maasai shield on Kenya's flag?",
+"a": [
+"Two spears",
+"Two swords",
+"Two machetes",
+"Two arrows"
+],
+"d": 3,
+"x": "The white lines around the stripes are called fimbriations.",
+"tags": [
+"flags",
+"africa"
+]
+},
+{
+"q": "Which country's flag is, by tradition, never flown at half-mast because it bears the Islamic creed?",
+"a": [
+"Saudi Arabia",
+"Iran",
+"Pakistan",
+"Algeria"
+],
+"d": 3,
+"x": "The Shahada text on the flag is considered too sacred to be lowered.",
+"tags": [
+"flags",
+"asia"
+]
+},
+{
+"q": "What do the olive branches on Cyprus' flag symbolize?",
+"a": [
+"Peace",
+"Prosperity",
+"Independence",
+"Fertility"
+],
+"d": 3,
+"x": "The branches are meant to show harmony between the island's communities.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "Which Pacific country's light blue flag has a Union Jack and nine yellow stars?",
+"a": [
+"Tuvalu",
+"Fiji",
+"Samoa",
+"Kiribati"
+],
+"d": 3,
+"x": "The stars are arranged like the layout of the nine islands.",
+"tags": [
+"flags",
+"oceania"
+]
+},
+{
+"q": "How many green stars ring the parrot on Dominica's flag?",
+"a": [
+"Ten",
+"Eight",
+"Twelve",
+"Nine"
+],
+"d": 3,
+"x": "The stars stand for the ten parishes of the island.",
+"tags": [
+"flags",
+"caribbean"
+]
+},
+{
+"q": "How many stars appear on Grenada's flag?",
+"a": [
+"Seven",
+"Five",
+"Six",
+"Nine"
+],
+"d": 3,
+"x": "Six are in the border, and one is on the central red disc.",
+"tags": [
+"flags",
+"caribbean"
+]
+},
+{
+"q": "What motto is written on the ribbon beneath the arms on Haiti's flag?",
+"a": [
+"Union makes strength",
+"Liberty or death",
+"God and country",
+"Unity and faith"
+],
+"d": 3,
+"x": "The French original is 'L'Union fait la force.'",
+"tags": [
+"flags",
+"caribbean"
+]
+},
+{
+"q": "Which Andean volcano appears on the coat of arms on Ecuador's flag?",
+"a": [
+"Chimborazo",
+"Cotopaxi",
+"Aconcagua",
+"Misti"
+],
+"d": 3,
+"x": "Chimborazo is Ecuador's highest mountain.",
+"tags": [
+"flags",
+"south-america"
+]
+},
+{
+"q": "Mount Triglav on Slovenia's flag belongs to which mountain range?",
+"a": [
+"The Julian Alps",
+"The Dolomites",
+"The Carpathians",
+"The Dinaric Alps"
+],
+"d": 3,
+"x": "Triglav is the highest peak in Slovenia and is a national symbol.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "How many times is 'Allahu Akbar' written along the edges of the bands on Iran's flag?",
+"a": [
+"22",
+"12",
+"24",
+"32"
+],
+"d": 3,
+"x": "It appears 11 times on the green band and 11 times on the red band.",
+"tags": [
+"flags",
+"asia"
+]
+},
+{
+"q": "Which Arab kingdom's flag has a red triangle containing a white seven-pointed star?",
+"a": [
+"Jordan",
+"Kuwait",
+"Sudan",
+"Oman"
+],
+"d": 3,
+"x": "The star's seven points stand for the first seven verses of the Quran's opening chapter.",
+"tags": [
+"flags",
+"asia"
+]
+},
+{
+"q": "The three stars on the Philippine flag stand for Luzon, the Visayas and which island group?",
+"a": [
+"Mindanao",
+"Palawan",
+"Cebu",
+"Samar"
+],
+"d": 3,
+"x": "The white triangle also holds a sun with eight rays.",
+"tags": [
+"flags",
+"asia"
+]
+},
+{
+"q": "Which Central American country's flag has five stripes and a coat of arms on a white circle to the left?",
+"a": [
+"Costa Rica",
+"Honduras",
+"Panama",
+"El Salvador"
+],
+"d": 3,
+"x": "The wide red center band is flanked by white and blue stripes.",
+"tags": [
+"flags",
+"central-america"
+]
+},
+{
+"q": "Which West African country has vertical bands of red, yellow and green with no emblem, red at the hoist?",
+"a": [
+"Guinea",
+"Mali",
+"Senegal",
+"Ghana"
+],
+"d": 3,
+"x": "It is the mirror image of Mali's flag.",
+"tags": [
+"flags",
+"africa"
+]
+},
+{
+"q": "Which East African country's flag has a sky blue top half and a golden sun in the upper fly?",
+"a": [
+"Rwanda",
+"Somalia",
+"Uganda",
+"Djibouti"
+],
+"d": 3,
+"x": "The sun has 24 rays.",
+"tags": [
+"flags",
+"africa"
+]
+},
+{
+"q": "Which East African country's flag has black, red and green stripes with a blue triangle and a gold star?",
+"a": [
+"South Sudan",
+"Sudan",
+"Kenya",
+"Eritrea"
+],
+"d": 3,
+"x": "White fimbriations separate the three stripes.",
+"tags": [
+"flags",
+"africa"
+]
+},
+{
+"q": "In flag design, what is a 'charge'?",
+"a": [
+"A symbol placed on the field",
+"A border stripe",
+"A diagonal band",
+"A pole ornament"
+],
+"d": 3,
+"x": "The maple leaf on Canada's flag is a charge.",
+"tags": [
+"flags",
+"vexillology"
+]
+},
+{
+"q": "What name is given to the national flag flown by a ship?",
+"a": [
+"Ensign",
+"Pennant",
+"Gonfalon",
+"Burgee"
+],
+"d": 3,
+"x": "The Red Ensign and White Ensign are famous British examples.",
+"tags": [
+"flags",
+"vexillology"
+]
+},
+{
+"q": "A small flag flown from the bow of a ship is called a what?",
+"a": [
+"Jack",
+"Banner",
+"Guidon",
+"Streamer"
+],
+"d": 3,
+"x": "The 'Union Jack' is thought by many to take its name from this use.",
+"tags": [
+"flags",
+"vexillology"
+]
+},
+{
+"q": "Which Danish king's army was said to see the Dannebrog fall from the sky?",
+"a": [
+"Valdemar II",
+"Christian IV",
+"Frederick III",
+"Canute"
+],
+"d": 3,
+"x": "The legend is set at the Battle of Lindanise in Estonia in 1219.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "Which Scottish village is linked to the legend of a white cross appearing in the sky that inspired the saltire?",
+"a": [
+"Athelstaneford",
+"Stirling",
+"Bannockburn",
+"Culloden"
+],
+"d": 3,
+"x": "The village in East Lothian calls itself the birthplace of the Scottish flag.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "How many horizontal rows of stars are on the 50-star US flag?",
+"a": [
+"Nine",
+"Five",
+"Ten",
+"Seven"
+],
+"d": 3,
+"x": "The rows alternate between six stars and five stars.",
+"tags": [
+"flags",
+"north-america"
+]
+},
+{
+"q": "Who is generally credited with designing India's national flag in its original form?",
+"a": [
+"Pingali Venkayya",
+"Jawaharlal Nehru",
+"Bal Gangadhar Tilak",
+"Sarojini Naidu"
+],
+"d": 3,
+"x": "Venkayya was an Indian freedom fighter from Andhra Pradesh.",
+"tags": [
+"flags",
+"asia"
+]
+},
+{
+"q": "How many blue stripes does the flag of Cuba have?",
+"a": [
+"Three",
+"Two",
+"Four",
+"Five"
+],
+"d": 3,
+"x": "Three blue and two white stripes alternate, with the red triangle at the hoist.",
+"tags": [
+"flags",
+"caribbean"
+]
+},
+{
+"q": "How many blue stripes does the flag of Greece have?",
+"a": [
+"Five",
+"Four",
+"Six",
+"Nine"
+],
+"d": 3,
+"x": "Five blue and four white stripes make up the nine bands.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "What is the Malaysian flag called in Malay, a name that means 'Stripes of Glory'?",
+"a": [
+"Jalur Gemilang",
+"Merah Putih",
+"Sang Saka",
+"Bendera Raya"
+],
+"d": 3,
+"x": "The name was chosen for the flag in 1997.",
+"tags": [
+"flags",
+"asia"
+]
+},
+{
+"q": "In which Italian city was the tricolor first adopted as a flag in 1797?",
+"a": [
+"Reggio Emilia",
+"Rome",
+"Turin",
+"Florence"
+],
+"d": 3,
+"x": "Italy celebrates Tricolore Day on January 7 each year.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "Whose volunteer corps wore black, red and gold in 1813, helping inspire Germany's flag colors?",
+"a": [
+"The Lutzow Free Corps",
+"The Prussian Guard",
+"The Hanseatic League",
+"The Teutonic Order"
+],
+"d": 3,
+"x": "Its uniforms were black with red trim and gold buttons.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "In which year did France formally adopt its vertical blue, white and red tricolor?",
+"a": [
+"1794",
+"1789",
+"1804",
+"1830"
+],
+"d": 3,
+"x": "The National Convention set the vertical order of the colors in February 1794.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "A legend about Austria's red-white-red colors is set during the siege of which city?",
+"a": [
+"Acre",
+"Vienna",
+"Jerusalem",
+"Constantinople"
+],
+"d": 3,
+"x": "It tells of Duke Leopold V, whose white tunic was stained with blood except under his belt.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "In which year did Iceland adopt its flag as the banner of an independent republic?",
+"a": [
+"1944",
+"1918",
+"1904",
+"1874"
+],
+"d": 3,
+"x": "The republic was founded on June 17, 1944.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "Which state's admission in 1959 first brought the US flag to 49 stars?",
+"a": [
+"Alaska",
+"Hawaii",
+"Arizona",
+"Oklahoma"
+],
+"d": 3,
+"x": "The 49-star flag lasted only one year, until Hawaii joined.",
+"tags": [
+"flags",
+"north-america"
+]
+},
+{
+"q": "Which king ordered the first Union Flag, joining the English and Scottish crosses, in 1606?",
+"a": [
+"James I",
+"Henry VIII",
+"Charles II",
+"George III"
+],
+"d": 3,
+"x": "He was already James VI of Scotland, and his crowns were joined in 1603.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "The map on the United Nations emblem is centered on which point?",
+"a": [
+"The North Pole",
+"The Equator",
+"The South Pole",
+"New York"
+],
+"d": 3,
+"x": "The map is framed by olive branches and shows all inhabited continents.",
+"tags": [
+"flags",
+"organizations"
+]
+},
+{
+"q": "What is a flag with two equal horizontal bands of different colors called?",
+"a": [
+"Bicolor",
+"Duotone",
+"Biband",
+"Diptych"
+],
+"d": 3,
+"x": "Poland's, Ukraine's and Indonesia's flags are bicolors.",
+"tags": [
+"flags",
+"vexillology"
+]
+},
+{
+"q": "Which American coined the word 'vexillology' in 1957?",
+"a": [
+"Whitney Smith",
+"Betsy Ross",
+"Francis Scott Key",
+"Frank Lloyd Wright"
+],
+"d": 3,
+"x": "Smith also helped found the first international society for flag studies.",
+"tags": [
+"flags",
+"vexillology"
+]
+},
+{
+"q": "Which Central African country's flag has a blue triangle at the hoist and a tree on its arms?",
+"a": [
+"Equatorial Guinea",
+"Gabon",
+"Cameroon",
+"Chad"
+],
+"d": 3,
+"x": "The tree is a silk-cotton tree, and the horizontal bands are green, white and red.",
+"tags": [
+"flags",
+"africa"
+]
+},
+{
+"q": "Which East African country's flag has a white saltire and three red stars in a white disc?",
+"a": [
+"Burundi",
+"Rwanda",
+"Uganda",
+"Tanzania"
+],
+"d": 3,
+"x": "The saltire divides the flag into red and green triangles.",
+"tags": [
+"flags",
+"africa"
+]
+},
+{
+"q": "Which Central African country's sky blue flag has a red diagonal stripe edged in yellow and a yellow star?",
+"a": [
+"Democratic Republic of the Congo",
+"Republic of the Congo",
+"Gabon",
+"Rwanda"
+],
+"d": 3,
+"x": "The star sits in the upper hoist corner.",
+"tags": [
+"flags",
+"africa"
+]
+},
+{
+"q": "Which West African country's flag has a blue band edged in white between red and green bands?",
+"a": [
+"Gambia",
+"Senegal",
+"Sierra Leone",
+"Liberia"
+],
+"d": 3,
+"x": "The blue stands for the river that runs through the country.",
+"tags": [
+"flags",
+"africa"
+]
+},
+{
+"q": "Which animal holds a cocoa pod on the shield of Fiji's flag?",
+"a": [
+"A lion",
+"A dove",
+"A tiger",
+"An eagle"
+],
+"d": 3,
+"x": "The shield also shows sugar cane and a coconut palm.",
+"tags": [
+"flags",
+"oceania"
+]
+},
+{
+"q": "The Southern Cross on Papua New Guinea's flag is made up of how many stars?",
+"a": [
+"Five",
+"Four",
+"Seven",
+"Six"
+],
+"d": 3,
+"x": "They are the stars of the Southern Cross, set on the black half.",
+"tags": [
+"flags",
+"oceania"
+]
+},
+{
+"q": "Which Caribbean country's blue flag has a gold triangle edged in white, with black and white triangles?",
+"a": [
+"Saint Lucia",
+"Saint Kitts and Nevis",
+"Bahamas",
+"Grenada"
+],
+"d": 3,
+"x": "The triangles represent the island's volcanic peaks.",
+"tags": [
+"flags",
+"caribbean"
+]
+},
+{
+"q": "The 1917 tricolor of which country replaced an older red flag bearing a white elephant?",
+"a": [
+"Thailand",
+"Laos",
+"Cambodia",
+"Myanmar"
+],
+"d": 3,
+"x": "The country was then known as Siam, and the new flag was introduced by King Vajiravudh.",
+"tags": [
+"flags",
+"asia"
+]
+},
+{
+"q": "After the monarchy fell in 1910, Portugal's flag changed from blue and white to which two main colors?",
+"a": [
+"Green and red",
+"Red and yellow",
+"Green and white",
+"Blue and red"
+],
+"d": 3,
+"x": "The republic chose the colors of the revolutionaries.",
+"tags": [
+"flags",
+"europe"
+]
+},
+{
+"q": "What book lies open at the center of the Dominican Republic's flag?",
+"a": [
+"The Bible",
+"The Constitution",
+"The Declaration",
+"The Almanac"
+],
+"d": 3,
+"x": "It is one of the few national flags to show a book of scripture.",
+"tags": [
+"flags",
+"caribbean"
+]
+},
+{
+"q": "Angkor Wat, shown on Cambodia's flag, was built by which empire?",
+"a": [
+"The Khmer Empire",
+"The Thai Empire",
+"The Champa Kingdom",
+"The Srivijaya Empire"
+],
+"d": 3,
+"x": "It was built in the early 1100s as a Hindu temple.",
+"tags": [
+"flags",
+"asia"
+]
+},
+{
+"q": "In which year was China's five-star red flag adopted?",
+"a": [
+"1949",
+"1912",
+"1945",
+"1953"
+],
+"d": 3,
+"x": "It was chosen at the founding of the People's Republic, in the fall of 1949.",
+"tags": [
+"flags",
+"asia"
+]
+},
+{
+"q": "How many rays does the Sun of May have on Argentina's flag?",
+"a": [
+"32",
+"16",
+"24",
+"12"
+],
+"d": 3,
+"x": "The rays alternate between straight and wavy.",
+"tags": [
+"flags",
+"south-america"
+]
+},
+{
+"q": "Honduras shows a cluster of blue stars on its white band; how many are there?",
+"a": [
+"Five",
+"Three",
+"Seven",
+"Nine"
+],
+"d": 3,
+"x": "They stand for the five states of the old Federal Republic of Central America.",
+"tags": [
+"flags",
+"central-america"
+]
+},
+{
+"q": "Samoa's blue canton holds a constellation of how many white stars?",
+"a": [
+"Five",
+"Four",
+"Six",
+"Seven"
+],
+"d": 3,
+"x": "They form the Southern Cross on a blue canton.",
+"tags": [
+"flags",
+"oceania"
+]
+},
+{
+"q": "How many horizontal stripes does Uganda's flag have?",
+"a": [
+"Six",
+"Five",
+"Seven",
+"Eight"
+],
+"d": 3,
+"x": "The pattern is black, yellow and red, repeated twice.",
+"tags": [
+"flags",
+"africa"
+]
+}
+]

@@ -1,0 +1,1406 @@
+[
+{
+"q": "What comes next in the series: 1, 50, 4, 45, 7, 40, ?",
+"a": [
+"10",
+"73",
+"5",
+"11"
+],
+"d": 2,
+"x": "Two interleaved series. One starts at 1 and adds 3 each time; the other starts at 50 and subtracts 5 each time. The next term is 10.",
+"tags": [
+"series",
+"alternating"
+]
+},
+{
+"q": "What comes next in the series: 3, 2, 7, 8, 11, 14, 15, ?",
+"a": [
+"20",
+"16",
+"24",
+"21"
+],
+"d": 2,
+"x": "Two interleaved series. One starts at 3 and adds 4 each time; the other starts at 2 and adds 6 each time. The next term is 20.",
+"tags": [
+"series",
+"alternating"
+]
+},
+{
+"q": "What comes next in the series: 6, 60, 12, 54, 18, 48, ?",
+"a": [
+"24",
+"78",
+"18",
+"25"
+],
+"d": 2,
+"x": "Two interleaved series. One starts at 6 and adds 6 each time; the other starts at 60 and subtracts 6 each time. The next term is 24.",
+"tags": [
+"series",
+"alternating"
+]
+},
+{
+"q": "What comes next in the series: 3, 4, 6, 9, 13, 18, ?",
+"a": [
+"24",
+"23",
+"25",
+"26"
+],
+"d": 2,
+"x": "The gaps grow by 1 each time: 1, 2, 3... The next gap is 6, so 18 + 6 = 24.",
+"tags": [
+"series"
+]
+},
+{
+"q": "What comes next in the series: 1, 3, 7, 15, 31, ?",
+"a": [
+"63",
+"62",
+"47",
+"64"
+],
+"d": 2,
+"x": "Each term is the previous x 2 plus 1: 31 x 2 + 1 = 63.",
+"tags": [
+"series"
+]
+},
+{
+"q": "What comes next in the series: 2, 5, 14, 41, 122, ?",
+"a": [
+"365",
+"366",
+"203",
+"364"
+],
+"d": 2,
+"x": "Each term is the previous x 3 minus 1: 122 x 3 - 1 = 365.",
+"tags": [
+"series"
+]
+},
+{
+"q": "What comes next in the series: 5, 7, 11, 19, 35, ?",
+"a": [
+"67",
+"70",
+"51",
+"68"
+],
+"d": 2,
+"x": "Each term is the previous x 2 minus 3: 35 x 2 - 3 = 67.",
+"tags": [
+"series"
+]
+},
+{
+"q": "What comes next in the series: 1, 1, 2, 3, 5, 8, 13, ?",
+"a": [
+"21",
+"22",
+"20",
+"18"
+],
+"d": 2,
+"x": "Each term is the sum of the two before it: 8 + 13 = 21.",
+"tags": [
+"series"
+]
+},
+{
+"q": "What comes next in the series: 3, 4, 7, 11, 18, 29, 47, ?",
+"a": [
+"76",
+"77",
+"75",
+"65"
+],
+"d": 2,
+"x": "Each term is the sum of the two before it: 29 + 47 = 76.",
+"tags": [
+"series"
+]
+},
+{
+"q": "What comes next in the series: 2, 5, 10, 17, 26, ?",
+"a": [
+"37",
+"35",
+"36",
+"38"
+],
+"d": 2,
+"x": "Each term is a square plus 1: 1+1, 4+1, 9+1, 16+1, 25+1. The next is 36 + 1 = 37.",
+"tags": [
+"series"
+]
+},
+{
+"q": "What comes next in the series: 2, 3, 5, 7, 11, ?",
+"a": [
+"13",
+"12",
+"14",
+"15"
+],
+"d": 2,
+"x": "These are the prime numbers in order. The next prime after 11 is 13.",
+"tags": [
+"series",
+"primes"
+]
+},
+{
+"q": "What letter comes next: A, B, D, G, K, P, ?",
+"a": [
+"V",
+"W",
+"U",
+"X"
+],
+"d": 2,
+"x": "Positions move by 1, 2, 3, 4, 5 so the next step is 6: P goes to V.",
+"tags": [
+"letters"
+]
+},
+{
+"q": "What letter comes next: C, D, F, I, M, ?",
+"a": [
+"R",
+"S",
+"Q",
+"T"
+],
+"d": 2,
+"x": "Positions move by 1, 2, 3, 4 so the next step is 5: M goes to R.",
+"tags": [
+"letters"
+]
+},
+{
+"q": "What letter comes next: E, G, J, N, S, ?",
+"a": [
+"Y",
+"Z",
+"X",
+"A"
+],
+"d": 2,
+"x": "Positions move by 2, 3, 4, 5 so the next step is 6: S goes to Y.",
+"tags": [
+"letters"
+]
+},
+{
+"q": "What letter comes next: A, Z, B, Y, C, X, ?",
+"a": [
+"D",
+"W",
+"E",
+"Z"
+],
+"d": 2,
+"x": "Two interleaved series: A, B, C go forward and Z, Y, X go backward. The next term is D.",
+"tags": [
+"letters"
+]
+},
+{
+"q": "What comes next: A1, B2, C3, D4, ?",
+"a": [
+"E5",
+"E4",
+"F5",
+"D5"
+],
+"d": 2,
+"x": "Letters go A, B, C, D, E and numbers go 1, 2, 3, 4, 5.",
+"tags": [
+"letters"
+]
+},
+{
+"q": "What comes next: AB, CD, EF, GH, ?",
+"a": [
+"IJ",
+"HI",
+"IK",
+"JK"
+],
+"d": 2,
+"x": "Each pair continues the alphabet from where the last pair stopped: after GH comes IJ.",
+"tags": [
+"letters"
+]
+},
+{
+"q": "A $80 jacket is 25% off. What is the sale price?",
+"a": [
+"$60",
+"$20",
+"$55",
+"$75"
+],
+"d": 2,
+"x": "25% of 80 is 20. 80 - 20 = 60.",
+"tags": [
+"percent"
+]
+},
+{
+"q": "A $50 game is on sale for 40% off. What do you pay?",
+"a": [
+"$30",
+"$20",
+"$10",
+"$40"
+],
+"d": 2,
+"x": "40% of 50 is 20. 50 - 20 = 30.",
+"tags": [
+"percent"
+]
+},
+{
+"q": "A phone costs $200 plus 10% tax. What is the total?",
+"a": [
+"$220",
+"$210",
+"$202",
+"$20"
+],
+"d": 2,
+"x": "10% of 200 is 20, so the total is 200 + 20 = 220.",
+"tags": [
+"percent"
+]
+},
+{
+"q": "What is 15% of 60?",
+"a": [
+"9",
+"6",
+"15",
+"90"
+],
+"d": 2,
+"x": "10% of 60 is 6 and 5% is 3. 6 + 3 = 9.",
+"tags": [
+"percent"
+]
+},
+{
+"q": "20% of what number is 12?",
+"a": [
+"60",
+"2.4",
+"240",
+"32"
+],
+"d": 2,
+"x": "20% is one fifth. So the number is 12 x 5 = 60.",
+"tags": [
+"percent"
+]
+},
+{
+"q": "30% of what number is 45?",
+"a": [
+"150",
+"13.5",
+"135",
+"75"
+],
+"d": 2,
+"x": "30% of N = 45 so 10% = 15, and N = 150.",
+"tags": [
+"percent"
+]
+},
+{
+"q": "In a class of 40 students, 35% are boys. How many girls are there?",
+"a": [
+"26",
+"14",
+"35",
+"65"
+],
+"d": 2,
+"x": "35% of 40 = 14 boys. Girls: 40 - 14 = 26.",
+"tags": [
+"percent"
+]
+},
+{
+"q": "A town of 2,000 people grows by 5%. What is the new population?",
+"a": [
+"2,100",
+"2,005",
+"2,050",
+"2,500"
+],
+"d": 2,
+"x": "5% of 2,000 is 100, so 2,000 + 100 = 2,100.",
+"tags": [
+"percent"
+]
+},
+{
+"q": "A test has 50 questions. Mia gets 80% right. How many does she get wrong?",
+"a": [
+"10",
+"40",
+"8",
+"20"
+],
+"d": 2,
+"x": "80% of 50 = 40 right. Wrong: 50 - 40 = 10.",
+"tags": [
+"percent"
+]
+},
+{
+"q": "What percent of 80 is 20?",
+"a": [
+"25%",
+"20%",
+"40%",
+"4%"
+],
+"d": 2,
+"x": "20 / 80 = 1/4 = 25%.",
+"tags": [
+"percent"
+]
+},
+{
+"q": "A shirt is $40. A coupon takes off 10%, then a $2 discount is applied. What is the final price?",
+"a": [
+"$34",
+"$36",
+"$38",
+"$32"
+],
+"d": 2,
+"x": "10% of 40 = 4, so 36. Then 36 - 2 = 34.",
+"tags": [
+"percent"
+]
+},
+{
+"q": "Four numbers have a mean of 12. Three of them are 10, 12 and 14. What is the fourth?",
+"a": [
+"12",
+"10",
+"14",
+"16"
+],
+"d": 2,
+"x": "Total = 4 x 12 = 48. The three add up to 36, so the fourth is 48 - 36 = 12.",
+"tags": [
+"average"
+]
+},
+{
+"q": "The mean of 5 numbers is 8. Four of them add up to 31. What is the fifth?",
+"a": [
+"9",
+"8",
+"7",
+"10"
+],
+"d": 2,
+"x": "Total = 5 x 8 = 40. 40 - 31 = 9.",
+"tags": [
+"average"
+]
+},
+{
+"q": "What is the mean of 4, 8, 9 and 15?",
+"a": [
+"9",
+"8",
+"10",
+"36"
+],
+"d": 2,
+"x": "The sum is 36, and 36 / 4 = 9.",
+"tags": [
+"average"
+]
+},
+{
+"q": "Scores of 70, 80 and 90 have been recorded. What score on a fourth test makes the mean 85?",
+"a": [
+"100",
+"85",
+"90",
+"95"
+],
+"d": 2,
+"x": "Needed total = 4 x 85 = 340. Current total is 240, so you need 100.",
+"tags": [
+"average"
+]
+},
+{
+"q": "How long does it take to drive 150 miles at 50 miles per hour?",
+"a": [
+"3 hours",
+"2 hours",
+"4 hours",
+"2.5 hours"
+],
+"d": 2,
+"x": "Time = distance / speed = 150 / 50 = 3 hours.",
+"tags": [
+"speed"
+]
+},
+{
+"q": "A cyclist rides 12 miles per hour for 2.5 hours. How far does she go?",
+"a": [
+"30 miles",
+"24 miles",
+"14.5 miles",
+"36 miles"
+],
+"d": 2,
+"x": "Distance = speed x time = 12 x 2.5 = 30 miles.",
+"tags": [
+"speed"
+]
+},
+{
+"q": "A train goes 240 miles in 4 hours. How far does it go in 6 hours at the same speed?",
+"a": [
+"360 miles",
+"300 miles",
+"480 miles",
+"400 miles"
+],
+"d": 2,
+"x": "Speed = 240 / 4 = 60 mph. In 6 hours: 6 x 60 = 360 miles.",
+"tags": [
+"speed"
+]
+},
+{
+"q": "Walking at 4 mph, how many minutes does it take to walk 2 miles?",
+"a": [
+"30",
+"20",
+"40",
+"50"
+],
+"d": 2,
+"x": "2 miles / 4 mph = 0.5 hour = 30 minutes.",
+"tags": [
+"speed"
+]
+},
+{
+"q": "If 4 workers paint a fence in 6 hours, how long would 8 workers take at the same rate?",
+"a": [
+"3 hours",
+"12 hours",
+"2 hours",
+"4 hours"
+],
+"d": 2,
+"x": "Twice the workers means half the time: 6 / 2 = 3 hours.",
+"tags": [
+"work"
+]
+},
+{
+"q": "A tap fills a 60-liter tank at 5 liters per minute. How many minutes to fill it?",
+"a": [
+"12",
+"10",
+"15",
+"300"
+],
+"d": 2,
+"x": "60 / 5 = 12 minutes.",
+"tags": [
+"work"
+]
+},
+{
+"q": "If today is Tuesday, which weekday will it be in 30 days?",
+"a": [
+"Thursday",
+"Friday",
+"Wednesday",
+"Saturday"
+],
+"d": 2,
+"x": "30 = 4 weeks plus 2 days. Tuesday plus 2 days is Thursday.",
+"tags": [
+"calendar"
+]
+},
+{
+"q": "If today is Thursday, which weekday will it be in 45 days?",
+"a": [
+"Sunday",
+"Monday",
+"Saturday",
+"Tuesday"
+],
+"d": 2,
+"x": "45 = 6 weeks plus 3 days. Thursday plus 3 days is Sunday.",
+"tags": [
+"calendar"
+]
+},
+{
+"q": "If today is Monday, which weekday will it be in 100 days?",
+"a": [
+"Wednesday",
+"Thursday",
+"Tuesday",
+"Friday"
+],
+"d": 2,
+"x": "100 = 14 weeks plus 2 days. Monday plus 2 days is Wednesday.",
+"tags": [
+"calendar"
+]
+},
+{
+"q": "If today is Saturday, which weekday will it be in 20 days?",
+"a": [
+"Friday",
+"Saturday",
+"Thursday",
+"Sunday"
+],
+"d": 2,
+"x": "20 = 2 weeks plus 6 days. Saturday plus 6 days is Friday.",
+"tags": [
+"calendar"
+]
+},
+{
+"q": "If today is Wednesday, which weekday will it be in 59 days?",
+"a": [
+"Saturday",
+"Sunday",
+"Friday",
+"Monday"
+],
+"d": 2,
+"x": "59 = 8 weeks plus 3 days. Wednesday plus 3 days is Saturday.",
+"tags": [
+"calendar"
+]
+},
+{
+"q": "If today is Friday, which weekday will it be in 52 days?",
+"a": [
+"Monday",
+"Tuesday",
+"Sunday",
+"Wednesday"
+],
+"d": 2,
+"x": "52 = 7 weeks plus 3 days. Friday plus 3 days is Monday.",
+"tags": [
+"calendar"
+]
+},
+{
+"q": "In a non-leap year, January 1 is a Wednesday. What day is February 1?",
+"a": [
+"Saturday",
+"Friday",
+"Sunday",
+"Thursday"
+],
+"d": 2,
+"x": "January has 31 days = 4 weeks + 3 days. Wednesday + 3 = Saturday.",
+"tags": [
+"calendar"
+]
+},
+{
+"q": "If March 1 is a Monday in a non-leap year, what day is April 1?",
+"a": [
+"Thursday",
+"Wednesday",
+"Friday",
+"Monday"
+],
+"d": 2,
+"x": "March has 31 days = 4 weeks + 3 days. Monday + 3 = Thursday.",
+"tags": [
+"calendar"
+]
+},
+{
+"q": "How many days are there from March 3 to March 29, counting March 29 but not March 3?",
+"a": [
+"26",
+"25",
+"27",
+"29"
+],
+"d": 2,
+"x": "29 - 3 = 26.",
+"tags": [
+"calendar"
+]
+},
+{
+"q": "The day before the day after tomorrow is Friday. What day is today?",
+"a": [
+"Thursday",
+"Wednesday",
+"Friday",
+"Saturday"
+],
+"d": 2,
+"x": "\"Day before the day after tomorrow\" is tomorrow. Tomorrow is Friday, so today is Thursday.",
+"tags": [
+"calendar"
+]
+},
+{
+"q": "A train leaves at 10:40 AM and the trip takes 2 hours 35 minutes. When does it arrive?",
+"a": [
+"1:15 PM",
+"1:05 PM",
+"12:15 PM",
+"1:35 PM"
+],
+"d": 2,
+"x": "10:40 + 2:00 = 12:40; plus 35 minutes = 1:15 PM.",
+"tags": [
+"clock"
+]
+},
+{
+"q": "What is the angle between the hour and minute hands at exactly 3:00?",
+"a": [
+"90 degrees",
+"60 degrees",
+"120 degrees",
+"180 degrees"
+],
+"d": 2,
+"x": "The 12 hour marks split 360 degrees into 30 each. 3 marks apart = 90 degrees.",
+"tags": [
+"clock"
+]
+},
+{
+"q": "What is the angle between the hour and minute hands at exactly 6:00?",
+"a": [
+"180 degrees",
+"90 degrees",
+"120 degrees",
+"150 degrees"
+],
+"d": 2,
+"x": "At 6:00 the hands point in opposite directions: 6 x 30 = 180 degrees.",
+"tags": [
+"clock"
+]
+},
+{
+"q": "What time is 14:45 on a 24-hour clock in 12-hour time?",
+"a": [
+"2:45 PM",
+"4:45 PM",
+"2:45 AM",
+"1:45 PM"
+],
+"d": 2,
+"x": "14 - 12 = 2, so 14:45 is 2:45 PM.",
+"tags": [
+"clock"
+]
+},
+{
+"q": "How many minutes are there from 8:50 AM to 11:20 AM?",
+"a": [
+"150",
+"130",
+"170",
+"140"
+],
+"d": 2,
+"x": "8:50 to 11:00 is 130 minutes, plus 20 = 150.",
+"tags": [
+"clock"
+]
+},
+{
+"q": "A clock chimes once at 1 o'clock, twice at 2 o'clock, and so on. How many chimes from 1 to 4 o'clock inclusive?",
+"a": [
+"10",
+"4",
+"12",
+"24"
+],
+"d": 2,
+"x": "1 + 2 + 3 + 4 = 10.",
+"tags": [
+"clock"
+]
+},
+{
+"q": "A clock loses 5 minutes every hour. After 6 real hours, how many minutes behind is it?",
+"a": [
+"30",
+"11",
+"60",
+"25"
+],
+"d": 2,
+"x": "6 x 5 = 30 minutes.",
+"tags": [
+"clock"
+]
+},
+{
+"q": "How many times a day (24 hours) does the minute hand point straight up at 12?",
+"a": [
+"24",
+"12",
+"48",
+"60"
+],
+"d": 2,
+"x": "It points at 12 once per hour, so 24 times.",
+"tags": [
+"clock"
+]
+},
+{
+"q": "5 people each shake hands once with every other person. How many handshakes happen?",
+"a": [
+"10",
+"20",
+"15",
+"16"
+],
+"d": 2,
+"x": "Each of 5 shakes 4 hands, but each handshake is counted twice: 5 x 4 / 2 = 10.",
+"tags": [
+"counting"
+]
+},
+{
+"q": "8 people each shake hands once with every other person. How many handshakes happen?",
+"a": [
+"28",
+"56",
+"36",
+"49"
+],
+"d": 2,
+"x": "Each of 8 shakes 7 hands, but each handshake is counted twice: 8 x 7 / 2 = 28.",
+"tags": [
+"counting"
+]
+},
+{
+"q": "10 people each shake hands once with every other person. How many handshakes happen?",
+"a": [
+"45",
+"90",
+"55",
+"81"
+],
+"d": 2,
+"x": "Each of 10 shakes 9 hands, but each handshake is counted twice: 10 x 9 / 2 = 45.",
+"tags": [
+"counting"
+]
+},
+{
+"q": "How many diagonals does a square have?",
+"a": [
+"2",
+"4",
+"1",
+"0"
+],
+"d": 2,
+"x": "A square has 2 diagonals, one joining each pair of opposite corners.",
+"tags": [
+"counting"
+]
+},
+{
+"q": "How many different 2-letter orders can be made from the letters A, B and C using each letter once?",
+"a": [
+"6",
+"3",
+"9",
+"4"
+],
+"d": 2,
+"x": "There are 3 choices for the first letter and 2 for the second: 3 x 2 = 6.",
+"tags": [
+"counting"
+]
+},
+{
+"q": "A shirt comes in 3 colors and 4 sizes. How many different shirts are there?",
+"a": [
+"12",
+"7",
+"3",
+"81"
+],
+"d": 2,
+"x": "3 x 4 = 12 combinations.",
+"tags": [
+"counting"
+]
+},
+{
+"q": "If BED is written as CFE, how is CAT written in the same code?",
+"a": [
+"DBU",
+"ECV",
+"CAT",
+"BZS"
+],
+"d": 2,
+"x": "The code moves each letter 1 place forward in the alphabet, so CAT becomes DBU.",
+"tags": [
+"code"
+]
+},
+{
+"q": "If BED is written as DGF, how is DOG written in the same code?",
+"a": [
+"FQI",
+"GRJ",
+"EPH",
+"BME"
+],
+"d": 2,
+"x": "The code moves each letter 2 places forward in the alphabet, so DOG becomes FQI.",
+"tags": [
+"code"
+]
+},
+{
+"q": "If BED is written as CFE, how is SUN written in the same code?",
+"a": [
+"TVO",
+"UWP",
+"SUN",
+"RTM"
+],
+"d": 2,
+"x": "The code moves each letter 1 place forward in the alphabet, so SUN becomes TVO.",
+"tags": [
+"code"
+]
+},
+{
+"q": "If BED is written as EHG, how is MAP written in the same code?",
+"a": [
+"PDS",
+"QET",
+"OCR",
+"JXM"
+],
+"d": 2,
+"x": "The code moves each letter 3 places forward in the alphabet, so MAP becomes PDS.",
+"tags": [
+"code"
+]
+},
+{
+"q": "If A=1, B=2, C=3 and so on, what is the sum of the letters in the word \"CAB\"?",
+"a": [
+"6",
+"5",
+"7",
+"9"
+],
+"d": 2,
+"x": "C=3, A=1, B=2. 3 + 1 + 2 = 6.",
+"tags": [
+"code"
+]
+},
+{
+"q": "If A=1, B=2, C=3 and so on, what is the value of the word \"BED\"?",
+"a": [
+"11",
+"10",
+"12",
+"9"
+],
+"d": 2,
+"x": "B=2, E=5, D=4. 2 + 5 + 4 = 11.",
+"tags": [
+"code"
+]
+},
+{
+"q": "If A=1, B=2 and so on, which letter has the value equal to 3 times the value of E?",
+"a": [
+"O",
+"N",
+"P",
+"M"
+],
+"d": 2,
+"x": "E = 5, 3 x 5 = 15, and the 15th letter is O.",
+"tags": [
+"code"
+]
+},
+{
+"q": "Ann is 3 times as old as Ben. In 6 years the sum of their ages will be 52. How old is Ben now?",
+"a": [
+"10",
+"8",
+"12",
+"13"
+],
+"d": 2,
+"x": "Now: Ben b, Ann 3b. In 6 years: (3b+6)+(b+6)=52, 4b=40, b=10.",
+"tags": [
+"age"
+]
+},
+{
+"q": "A mother is 27 years older than her son. In 3 years she will be 4 times his age. How old is the son now?",
+"a": [
+"6",
+"5",
+"8",
+"9"
+],
+"d": 2,
+"x": "Son s: s+27+3 = 4(s+3), so s+30 = 4s+12, 18 = 3s, s = 6.",
+"tags": [
+"age"
+]
+},
+{
+"q": "Two sisters are 4 years apart. Their ages add up to 20. How old is the older sister?",
+"a": [
+"12",
+"10",
+"8",
+"14"
+],
+"d": 2,
+"x": "Ages x and x+4: 2x+4 = 20, x = 8. The older is 12.",
+"tags": [
+"age"
+]
+},
+{
+"q": "Dan is twice as old as his brother. Together they are 18. How old is Dan?",
+"a": [
+"12",
+"6",
+"9",
+"14"
+],
+"d": 2,
+"x": "Brother b, Dan 2b: 3b = 18, b = 6, Dan = 12.",
+"tags": [
+"age"
+]
+},
+{
+"q": "Ann is taller than Bo. Dee is shorter than Cy. Bo is taller than Cy. Who is the second tallest?",
+"a": [
+"Bo",
+"Ann",
+"Cy",
+"Dee"
+],
+"d": 2,
+"x": "The clues give the chain Ann > Bo > Cy > Dee (taller). The second tallest is Bo.",
+"tags": [
+"ordering"
+]
+},
+{
+"q": "Kim is older than Max. Lee is younger than Raj. Max is older than Raj. Who is the youngest?",
+"a": [
+"Lee",
+"Kim",
+"Max",
+"Raj"
+],
+"d": 2,
+"x": "The clues give the chain Kim > Max > Raj > Lee (older). The youngest is Lee.",
+"tags": [
+"ordering"
+]
+},
+{
+"q": "Ian is faster than Fay. Pat is slower than Zoe. Fay is faster than Zoe. Who is the second fastest?",
+"a": [
+"Fay",
+"Ian",
+"Zoe",
+"Pat"
+],
+"d": 2,
+"x": "The clues give the chain Ian > Fay > Zoe > Pat (faster). The second fastest is Fay.",
+"tags": [
+"ordering"
+]
+},
+{
+"q": "Jon is heavier than Ivy. Gus is lighter than Hal. Ivy is heavier than Hal. Who is the lightest?",
+"a": [
+"Gus",
+"Jon",
+"Ivy",
+"Hal"
+],
+"d": 2,
+"x": "The clues give the chain Jon > Ivy > Hal > Gus (heavier). The lightest is Gus.",
+"tags": [
+"ordering"
+]
+},
+{
+"q": "All zibs are yons. All yons are quas. Which must be true of every zib?",
+"a": [
+"It is a qua",
+"It is not a yon",
+"Some quas are not yons",
+"It is not a qua"
+],
+"d": 2,
+"x": "Zib -> yon -> qua, so every zib is a qua.",
+"tags": [
+"deduction"
+]
+},
+{
+"q": "All cats purr. Felix is a cat. What follows?",
+"a": [
+"Felix purrs",
+"Felix is not a cat",
+"All purring things are cats",
+"Felix does not purr"
+],
+"d": 2,
+"x": "Every cat purrs and Felix is a cat, so Felix purrs. The reverse is not stated.",
+"tags": [
+"deduction"
+]
+},
+{
+"q": "If it rains, the match is canceled. The match was not canceled. What can we conclude?",
+"a": [
+"It did not rain",
+"It rained",
+"It rained and was canceled",
+"Nothing can be said"
+],
+"d": 2,
+"x": "If rain always cancels the match, then no cancellation means no rain.",
+"tags": [
+"deduction"
+]
+},
+{
+"q": "No fish can fly. A trout is a fish. What follows?",
+"a": [
+"A trout cannot fly",
+"A trout can fly",
+"A trout is a bird",
+"Some fish can fly"
+],
+"d": 2,
+"x": "No fish can fly, and a trout is a fish, so a trout cannot fly.",
+"tags": [
+"deduction"
+]
+},
+{
+"q": "Three boxes hold a total of 30 apples. Box 1 has 4 more than box 2, and box 2 has 4 more than box 3. How many are in box 1?",
+"a": [
+"14",
+"10",
+"12",
+"16"
+],
+"d": 2,
+"x": "Box 3 = x, box 2 = x+4, box 1 = x+8: 3x+12 = 30, x = 6, so box 1 has 14.",
+"tags": [
+"deduction"
+]
+},
+{
+"q": "Only one of three keys opens a lock. You have tried two wrong keys. What is the chance the third key works?",
+"a": [
+"100%",
+"50%",
+"33%",
+"25%"
+],
+"d": 2,
+"x": "Only one key works, and the other two are ruled out, so the third must work.",
+"tags": [
+"deduction"
+]
+},
+{
+"q": "A snail climbs 3 feet up a 10-foot wall each day and slips 2 feet at night. On which day does it reach the top?",
+"a": [
+"Day 8",
+"Day 10",
+"Day 7",
+"Day 9"
+],
+"d": 2,
+"x": "It gains 1 ft per full day. After 7 days it is at 7 ft. On day 8 it climbs 3 to reach 10 ft before slipping.",
+"tags": [
+"riddle"
+]
+},
+{
+"q": "A rope is cut into 4 equal pieces with 3 cuts. How many cuts make 7 equal pieces?",
+"a": [
+"6",
+"7",
+"8",
+"5"
+],
+"d": 2,
+"x": "Pieces = cuts + 1 for a rope, so 7 pieces need 6 cuts.",
+"tags": [
+"counting"
+]
+},
+{
+"q": "A fence has posts every 5 feet in a straight line, 8 posts in all. How long is the fence?",
+"a": [
+"35 feet",
+"40 feet",
+"30 feet",
+"45 feet"
+],
+"d": 2,
+"x": "8 posts have 7 gaps. 7 x 5 = 35 feet.",
+"tags": [
+"counting"
+]
+},
+{
+"q": "How many months of the year have at least 28 days?",
+"a": [
+"All 12",
+"Only 1",
+"2",
+"7"
+],
+"d": 2,
+"x": "Every month has 28 or more days (February has 28 or 29).",
+"tags": [
+"riddle"
+]
+},
+{
+"q": "What is the next number in the pattern: 2, 4, 3, 6, 5, 10, 9, ?",
+"a": [
+"18",
+"7",
+"12",
+"20"
+],
+"d": 2,
+"x": "The series alternates: x2 then -1. 9 x 2 = 18.",
+"tags": [
+"series"
+]
+},
+{
+"q": "How many letters are between the first letter and the last letter of the word QUESTION?",
+"a": [
+"6",
+"8",
+"7",
+"5"
+],
+"d": 2,
+"x": "QUESTION has 8 letters. Leave out the first and last: 8 - 2 = 6.",
+"tags": [
+"word-logic"
+]
+},
+{
+"q": "The letters of the alphabet are numbered 1 to 26. Which letter is exactly halfway between D and N?",
+"a": [
+"I",
+"H",
+"J",
+"K"
+],
+"d": 2,
+"x": "D = 4, N = 14, the midpoint is 9, which is I.",
+"tags": [
+"word-logic"
+]
+},
+{
+"q": "Pen is to ink as car is to what?",
+"a": [
+"fuel",
+"wheel",
+"road",
+"driver"
+],
+"d": 2,
+"x": "Ink is what a pen uses up to work; fuel is what a car uses up to run.",
+"tags": [
+"analogy"
+]
+},
+{
+"q": "Odd one out: 8, 27, 64, 50, 125?",
+"a": [
+"50",
+"8",
+"27",
+"64"
+],
+"d": 2,
+"x": "8, 27, 64 and 125 are cubes (2, 3, 4, 5 cubed). 50 is not a cube.",
+"tags": [
+"odd-one-out"
+]
+},
+{
+"q": "Which is the odd one out: 21, 35, 49, 51, 63?",
+"a": [
+"51",
+"21",
+"35",
+"49"
+],
+"d": 2,
+"x": "21, 35, 49 and 63 are multiples of 7. 51 is not (7 x 7 = 49, 7 x 8 = 56).",
+"tags": [
+"odd-one-out"
+]
+},
+{
+"q": "Which is the odd one out: 3, 6, 9, 14, 15?",
+"a": [
+"14",
+"3",
+"9",
+"15"
+],
+"d": 2,
+"x": "3, 6, 9 and 15 are multiples of 3. 14 is not.",
+"tags": [
+"odd-one-out"
+]
+},
+{
+"q": "Which is the odd one out: 12, 18, 24, 30, 35?",
+"a": [
+"35",
+"12",
+"18",
+"30"
+],
+"d": 2,
+"x": "12, 18, 24 and 30 are multiples of 6 (and even). 35 is not.",
+"tags": [
+"odd-one-out"
+]
+},
+{
+"q": "Which position is the odd one out: April, June, January, September?",
+"a": [
+"Position 3",
+"Position 1",
+"Position 2",
+"Position 4"
+],
+"d": 2,
+"x": "April, June and September have 30 days. January has 31.",
+"tags": [
+"odd-one-out"
+]
+},
+{
+"q": "Which position is the odd one out: Square, Cube, Circle, Triangle?",
+"a": [
+"Position 2",
+"Position 1",
+"Position 3",
+"Position 4"
+],
+"d": 2,
+"x": "The others are flat 2D shapes. A cube is a solid 3D shape.",
+"tags": [
+"odd-one-out"
+]
+},
+{
+"q": "Cow is to calf as sheep is to what?",
+"a": [
+"lamb",
+"wool",
+"ram",
+"goat"
+],
+"d": 2,
+"x": "A calf is the young of a cow; a lamb is the young of a sheep.",
+"tags": [
+"analogy"
+]
+},
+{
+"q": "Page is to book as brick is to what?",
+"a": [
+"wall",
+"house",
+"clay",
+"cement"
+],
+"d": 2,
+"x": "A page is one unit that makes up a book; a brick makes up a wall.",
+"tags": [
+"analogy"
+]
+},
+{
+"q": "Hand is to arm as foot is to what?",
+"a": [
+"leg",
+"toe",
+"shoe",
+"knee"
+],
+"d": 2,
+"x": "A hand is at the end of an arm; a foot is at the end of a leg.",
+"tags": [
+"analogy"
+]
+}
+]

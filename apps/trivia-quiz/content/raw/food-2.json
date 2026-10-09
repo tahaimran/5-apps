@@ -1,0 +1,1464 @@
+[
+{
+"q": "Which Italian pasta shape's name means 'little ears'?",
+"a": [
+"Orecchiette",
+"Penne",
+"Rigatoni",
+"Conchiglie"
+],
+"d": 2,
+"x": "Orecchiette come from Puglia in southern Italy and are traditionally shaped by pressing dough with a thumb.",
+"tags": [
+"italy",
+"pasta"
+]
+},
+{
+"q": "Which pasta's name means 'little tongues' in Italian?",
+"a": [
+"Linguine",
+"Fusilli",
+"Tagliatelle",
+"Cavatappi"
+],
+"d": 2,
+"x": "Linguine are flat but narrower than fettuccine, and they are classically served with seafood or pesto.",
+"tags": [
+"italy",
+"pasta"
+]
+},
+{
+"q": "Which tube-shaped pasta has diagonally cut ends, like a pen nib?",
+"a": [
+"Penne",
+"Fusilli",
+"Orzo",
+"Farfalle"
+],
+"d": 2,
+"x": "The name penne comes from the Italian word for 'quills' or 'feathers'.",
+"tags": [
+"italy",
+"pasta"
+]
+},
+{
+"q": "Which French blue cheese is made from sheep's milk and aged in caves?",
+"a": [
+"Roquefort",
+"Brie",
+"Camembert",
+"Gruyere"
+],
+"d": 2,
+"x": "Roquefort is aged in natural limestone caves in southern France, where a special mold gives it its blue veins.",
+"tags": [
+"cheese",
+"france"
+]
+},
+{
+"q": "Which soft, white-rind cheese is traditionally made in Normandy, France?",
+"a": [
+"Camembert",
+"Roquefort",
+"Emmental",
+"Raclette"
+],
+"d": 2,
+"x": "Camembert is traditionally sold in a round wooden box, which helped it travel in the 1800s.",
+"tags": [
+"cheese",
+"france"
+]
+},
+{
+"q": "Which Swiss cheese is famous for the large holes in it?",
+"a": [
+"Emmental",
+"Gruyere",
+"Appenzeller",
+"Raclette"
+],
+"d": 2,
+"x": "The holes, called eyes, are formed by gas bubbles that bacteria produce while the cheese ripens.",
+"tags": [
+"cheese",
+"switzerland"
+]
+},
+{
+"q": "Which Mediterranean island is famous for halloumi cheese?",
+"a": [
+"Cyprus",
+"Crete",
+"Sicily",
+"Malta"
+],
+"d": 2,
+"x": "Halloumi has a high melting point, so it can be grilled or fried without turning into a puddle.",
+"tags": [
+"cheese"
+]
+},
+{
+"q": "In which English county is the village that gave Cheddar cheese its name?",
+"a": [
+"Somerset",
+"Devon",
+"Yorkshire",
+"Kent"
+],
+"d": 2,
+"x": "The Cheddar Gorge caves in Somerset were once used to age the cheese at a steady cool temperature.",
+"tags": [
+"cheese",
+"uk"
+]
+},
+{
+"q": "Which fresh Indian cheese is made by curdling hot milk with an acid and pressing it?",
+"a": [
+"Paneer",
+"Halloumi",
+"Ricotta",
+"Feta"
+],
+"d": 2,
+"x": "Paneer does not melt when heated, so it is cubed and cooked in curries such as palak paneer.",
+"tags": [
+"cheese",
+"india"
+]
+},
+{
+"q": "Which enzyme is traditionally used to curdle milk when making cheese?",
+"a": [
+"Rennet",
+"Lactase",
+"Amylase",
+"Zymase"
+],
+"d": 2,
+"x": "Rennet traditionally comes from the stomach lining of young calves, though vegetarian substitutes are now common.",
+"tags": [
+"cheese",
+"science"
+]
+},
+{
+"q": "Dim sum, small dishes served with tea, belongs to which regional Chinese cuisine?",
+"a": [
+"Cantonese",
+"Sichuan",
+"Hunan",
+"Shandong"
+],
+"d": 2,
+"x": "In Guangdong the custom of eating dim sum with tea is called yum cha, which means 'drink tea'.",
+"tags": [
+"china"
+]
+},
+{
+"q": "Which Hawaiian dish consists of cubed raw fish tossed with soy sauce and sesame oil?",
+"a": [
+"Poke",
+"Laulau",
+"Loco moco",
+"Haupia"
+],
+"d": 2,
+"x": "Poke means 'to slice or cut' in Hawaiian.",
+"tags": [
+"hawaii",
+"seafood"
+]
+},
+{
+"q": "Which fermented soybean cake is a traditional food of Indonesia?",
+"a": [
+"Tempeh",
+"Tofu",
+"Natto",
+"Seitan"
+],
+"d": 2,
+"x": "Tempeh is made by binding cooked soybeans together with a mold, which creates a firm, nutty cake.",
+"tags": [
+"indonesia",
+"soy"
+]
+},
+{
+"q": "Which Korean chili paste is fermented and slightly sweet?",
+"a": [
+"Gochujang",
+"Harissa",
+"Sambal",
+"Sriracha"
+],
+"d": 2,
+"x": "Gochujang is made from chili powder, glutinous rice, fermented soybeans and salt.",
+"tags": [
+"korea",
+"condiments"
+]
+},
+{
+"q": "Which fiery red chili paste is a staple of Tunisian and North African cooking?",
+"a": [
+"Harissa",
+"Gochujang",
+"Chimichurri",
+"Sriracha"
+],
+"d": 2,
+"x": "Harissa is made from chilies, garlic, olive oil and spices such as caraway and coriander.",
+"tags": [
+"north africa",
+"condiments"
+]
+},
+{
+"q": "Which herb is the main ingredient in Argentine chimichurri sauce?",
+"a": [
+"Parsley",
+"Basil",
+"Cilantro",
+"Mint"
+],
+"d": 2,
+"x": "Chimichurri is typically made with parsley, garlic, oregano, vinegar and oil, and served over grilled meat.",
+"tags": [
+"argentina",
+"herbs"
+]
+},
+{
+"q": "Which spice is the dried flower bud of a tree and is often stuck into baked hams?",
+"a": [
+"Cloves",
+"Allspice",
+"Star anise",
+"Mace"
+],
+"d": 2,
+"x": "Cloves contain eugenol, an oil that gives them their strong, warming scent.",
+"tags": [
+"spices"
+]
+},
+{
+"q": "Which coffee species is generally described as smoother and sweeter than robusta?",
+"a": [
+"Arabica",
+"Liberica",
+"Excelsa",
+"Maragogype"
+],
+"d": 2,
+"x": "Arabica plants prefer high altitudes and contain less caffeine than robusta.",
+"tags": [
+"coffee"
+]
+},
+{
+"q": "What is the finely ground powdered green tea used in the Japanese tea ceremony called?",
+"a": [
+"Matcha",
+"Sencha",
+"Gyokuro",
+"Hojicha"
+],
+"d": 2,
+"x": "For matcha, tea plants are shaded before harvest, which increases their chlorophyll and gives a rich green color.",
+"tags": [
+"japan",
+"tea"
+]
+},
+{
+"q": "Which citrus oil gives Earl Grey tea its distinctive flavor?",
+"a": [
+"Bergamot",
+"Lemon",
+"Orange",
+"Yuzu"
+],
+"d": 2,
+"x": "Bergamot is a small, pear-shaped citrus fruit grown mostly in southern Italy.",
+"tags": [
+"tea",
+"citrus"
+]
+},
+{
+"q": "Darjeeling tea is grown in the hills of which country?",
+"a": [
+"India",
+"Sri Lanka",
+"China",
+"Nepal"
+],
+"d": 2,
+"x": "Darjeeling is called the 'champagne of teas' and is grown in the Himalayan foothills of West Bengal.",
+"tags": [
+"tea",
+"india"
+]
+},
+{
+"q": "Black, green and oolong teas all come from the leaves of which plant?",
+"a": [
+"Camellia sinensis",
+"Mentha piperita",
+"Aspalathus linearis",
+"Matricaria chamomilla"
+],
+"d": 2,
+"x": "The difference between the types is how much the leaves are oxidized after picking.",
+"tags": [
+"tea"
+]
+},
+{
+"q": "Rooibos, a caffeine-free herbal tea, is grown in which country?",
+"a": [
+"South Africa",
+"Kenya",
+"Brazil",
+"Argentina"
+],
+"d": 2,
+"x": "Rooibos means 'red bush' in Afrikaans and grows naturally in the Cederberg mountains.",
+"tags": [
+"tea"
+]
+},
+{
+"q": "Bubble tea, with chewy tapioca pearls, was first made in which place?",
+"a": [
+"Taiwan",
+"Japan",
+"Thailand",
+"Hong Kong"
+],
+"d": 2,
+"x": "Bubble tea began in Taiwan in the 1980s and quickly spread across the world.",
+"tags": [
+"tea",
+"drinks"
+]
+},
+{
+"q": "What is the fruit of the coffee plant, which holds the coffee seeds, commonly called?",
+"a": [
+"A cherry",
+"A berry pod",
+"A coffee nut",
+"A kernel"
+],
+"d": 2,
+"x": "Coffee cherries start green and turn red when ripe, and each usually contains two seeds.",
+"tags": [
+"coffee"
+]
+},
+{
+"q": "Which Italian flatbread is dimpled and topped with olive oil and herbs?",
+"a": [
+"Focaccia",
+"Ciabatta",
+"Grissini",
+"Piadina"
+],
+"d": 2,
+"x": "Focaccia is related to pizza. Its dimples catch the olive oil, which pools there during baking.",
+"tags": [
+"bread",
+"italy"
+]
+},
+{
+"q": "Which French bread is enriched with butter and eggs, giving it a rich, soft crumb?",
+"a": [
+"Brioche",
+"Baguette",
+"Boule",
+"Ficelle"
+],
+"d": 2,
+"x": "Because it holds so much butter, brioche dough must be handled cold and is often mixed for a long time.",
+"tags": [
+"bread",
+"france"
+]
+},
+{
+"q": "Which protein network gives bread dough its stretch and structure?",
+"a": [
+"Gluten",
+"Casein",
+"Collagen",
+"Albumin"
+],
+"d": 2,
+"x": "Kneading dough aligns the gluten strands, which trap the gas made by yeast.",
+"tags": [
+"baking",
+"science"
+]
+},
+{
+"q": "Which raising agent needs an acidic ingredient such as buttermilk to work?",
+"a": [
+"Baking soda",
+"Baking powder",
+"Yeast",
+"Cornstarch"
+],
+"d": 2,
+"x": "Baking powder already contains a dry acid, but baking soda needs one to release its bubbles.",
+"tags": [
+"baking",
+"science"
+]
+},
+{
+"q": "What baker's term describes the final rise of shaped dough before baking?",
+"a": [
+"Proofing",
+"Kneading",
+"Scoring",
+"Folding"
+],
+"d": 2,
+"x": "Bakers test whether dough is proofed by pressing it gently: it should spring back slowly.",
+"tags": [
+"baking"
+]
+},
+{
+"q": "What is it called to boil vegetables briefly and then plunge them into ice water?",
+"a": [
+"Blanching",
+"Poaching",
+"Braising",
+"Searing"
+],
+"d": 2,
+"x": "The ice bath stops the cooking and helps vegetables keep their bright color.",
+"tags": [
+"cooking terms"
+]
+},
+{
+"q": "Which knife cut produces thin matchstick-sized strips?",
+"a": [
+"Julienne",
+"Dice",
+"Chiffonade",
+"Mince"
+],
+"d": 2,
+"x": "A julienne cut typically measures about 3 millimeters thick, though the size varies by recipe.",
+"tags": [
+"cooking terms",
+"france"
+]
+},
+{
+"q": "What does the French cooking term 'sous vide' literally mean?",
+"a": [
+"Under vacuum",
+"Slow and low",
+"Pan-fried",
+"Boiled twice"
+],
+"d": 2,
+"x": "In sous vide cooking, food is sealed in a bag and cooked in a precisely heated water bath.",
+"tags": [
+"cooking terms",
+"france"
+]
+},
+{
+"q": "Which mixture of flour and fat is used to thicken sauces such as bechamel?",
+"a": [
+"Roux",
+"Mirepoix",
+"Bouquet garni",
+"Marinade"
+],
+"d": 2,
+"x": "A roux can be cooked white, blond or brown, and the darker it gets, the less thickening power it has.",
+"tags": [
+"cooking terms",
+"sauces"
+]
+},
+{
+"q": "Which trio of onion, carrot and celery forms the flavor base of many French dishes?",
+"a": [
+"Mirepoix",
+"Roux",
+"Sofrito",
+"Gremolata"
+],
+"d": 2,
+"x": "Italian cooks use a similar base called soffritto, and in Spain it is called sofrito.",
+"tags": [
+"cooking terms",
+"france"
+]
+},
+{
+"q": "What do chefs call adding liquid to a hot pan to loosen the browned bits stuck to it?",
+"a": [
+"Deglazing",
+"Dredging",
+"Basting",
+"Folding"
+],
+"d": 2,
+"x": "Those browned bits, called fond, are packed with flavor and make the base of a pan sauce.",
+"tags": [
+"cooking terms"
+]
+},
+{
+"q": "A pestle is paired with which kitchen vessel to crush spices?",
+"a": [
+"Mortar",
+"Colander",
+"Tagine",
+"Skillet"
+],
+"d": 2,
+"x": "The mortar and pestle is one of the oldest kitchen tools and has been used for thousands of years.",
+"tags": [
+"tools"
+]
+},
+{
+"q": "Which North African cooking pot has a distinctive cone-shaped lid?",
+"a": [
+"Tagine",
+"Wok",
+"Dutch oven",
+"Paella pan"
+],
+"d": 2,
+"x": "The cone lets steam rise, condense and trickle back down, keeping the stew moist as it simmers.",
+"tags": [
+"tools",
+"north africa"
+]
+},
+{
+"q": "Which of these fruits is botanically a berry?",
+"a": [
+"Banana",
+"Strawberry",
+"Raspberry",
+"Blackberry"
+],
+"d": 2,
+"x": "Botanists define a berry as a fleshy fruit with seeds inside. Strawberries and raspberries do not qualify.",
+"tags": [
+"fruit"
+]
+},
+{
+"q": "The grapefruit is a natural hybrid of the sweet orange and which other fruit?",
+"a": [
+"Pomelo",
+"Lemon",
+"Lime",
+"Tangerine"
+],
+"d": 2,
+"x": "The grapefruit first appeared in Barbados in the 1700s and got its name from the way it grows in grape-like clusters.",
+"tags": [
+"fruit",
+"citrus"
+]
+},
+{
+"q": "Which tropical fruit is the largest that grows on trees?",
+"a": [
+"Jackfruit",
+"Durian",
+"Breadfruit",
+"Papaya"
+],
+"d": 2,
+"x": "A single jackfruit can weigh over 40 kilograms (about 90 pounds).",
+"tags": [
+"fruit"
+]
+},
+{
+"q": "Which vegetable gives the soup borscht its deep red color?",
+"a": [
+"Beet",
+"Tomato",
+"Red cabbage",
+"Radish"
+],
+"d": 2,
+"x": "Borscht is eaten across Eastern Europe, and recipes vary widely from town to town.",
+"tags": [
+"vegetables"
+]
+},
+{
+"q": "Capers are the pickled version of which part of the caper bush?",
+"a": [
+"Flower buds",
+"Seeds",
+"Roots",
+"Leaves"
+],
+"d": 2,
+"x": "If the buds are left to bloom and fruit, they become caperberries, which are also pickled.",
+"tags": [
+"vegetables",
+"mediterranean"
+]
+},
+{
+"q": "The vanilla orchid is native to which country?",
+"a": [
+"Mexico",
+"Madagascar",
+"India",
+"Brazil"
+],
+"d": 2,
+"x": "Vanilla is native to Mexico, but today Madagascar grows most of the world's vanilla.",
+"tags": [
+"spices"
+]
+},
+{
+"q": "The Latin name of the cacao tree, Theobroma, means 'food of the what'?",
+"a": [
+"Gods",
+"Kings",
+"Earth",
+"Sun"
+],
+"d": 2,
+"x": "The Swedish scientist Carl Linnaeus gave the cacao tree this name in 1753.",
+"tags": [
+"chocolate"
+]
+},
+{
+"q": "Which American chef introduced French cooking to U.S. audiences with the TV show 'The French Chef'?",
+"a": [
+"Julia Child",
+"Martha Stewart",
+"Emeril Lagasse",
+"Paula Deen"
+],
+"d": 2,
+"x": "Julia Child's cookbook 'Mastering the Art of French Cooking' came out in 1961.",
+"tags": [
+"chefs",
+"france"
+]
+},
+{
+"q": "Which chef and TV host wrote the 2000 book 'Kitchen Confidential'?",
+"a": [
+"Anthony Bourdain",
+"Gordon Ramsay",
+"Jamie Oliver",
+"Wolfgang Puck"
+],
+"d": 2,
+"x": "The book was a candid look at restaurant kitchens and launched Bourdain's career as a travel and food writer.",
+"tags": [
+"chefs"
+]
+},
+{
+"q": "In which region did potatoes originate before reaching Europe?",
+"a": [
+"The Andes",
+"Central Asia",
+"The Himalayas",
+"Ireland"
+],
+"d": 2,
+"x": "Farmers in the Andes grew thousands of potato varieties long before Spanish explorers brought them to Europe.",
+"tags": [
+"history",
+"vegetables"
+]
+},
+{
+"q": "Which French scientist gave his name to the heating process that makes milk safer to drink?",
+"a": [
+"Louis Pasteur",
+"Antoine Lavoisier",
+"Marie Curie",
+"Claude Bernard"
+],
+"d": 2,
+"x": "Pasteur developed the process in the 1860s, first to keep wine from spoiling.",
+"tags": [
+"history",
+"science"
+]
+},
+{
+"q": "Which noodles are traditionally eaten in Japan on New Year's Eve?",
+"a": [
+"Soba",
+"Ramen",
+"Udon",
+"Somen"
+],
+"d": 2,
+"x": "The tradition is called toshikoshi soba, and the long noodles stand for a long life.",
+"tags": [
+"japan",
+"traditions"
+]
+},
+{
+"q": "The meringue dessert pavlova is named after a famous ballerina from which country?",
+"a": [
+"Russia",
+"Poland",
+"France",
+"Italy"
+],
+"d": 2,
+"x": "Anna Pavlova toured Australia and New Zealand in the 1920s, and both countries claim the dessert.",
+"tags": [
+"dessert",
+"history"
+]
+},
+{
+"q": "Which Italian queen is the Margherita pizza traditionally said to be named after?",
+"a": [
+"Margherita of Savoy",
+"Elena of Montenegro",
+"Maria Jose of Belgium",
+"Adelaide of Savoy"
+],
+"d": 2,
+"x": "The legend says a Neapolitan pizza maker made a pizza in 1889 with red, white and green toppings to match the flag.",
+"tags": [
+"pizza",
+"history"
+]
+},
+{
+"q": "What is the maximum number of stars in the Michelin Guide's restaurant rating?",
+"a": [
+"Three",
+"Four",
+"Five",
+"Ten"
+],
+"d": 2,
+"x": "Three stars means 'exceptional cuisine, worth a special journey'.",
+"tags": [
+"restaurants"
+]
+},
+{
+"q": "The Michelin Guide was first published by a company that made what?",
+"a": [
+"Tires",
+"Cutlery",
+"Ovens",
+"Cookbooks"
+],
+"d": 2,
+"x": "The French Michelin brothers started the guide in 1900 to encourage drivers to travel, and so wear out their tires.",
+"tags": [
+"restaurants",
+"history"
+]
+},
+{
+"q": "What is the name of the browning reaction between amino acids and sugars that gives seared steak its flavor?",
+"a": [
+"Maillard reaction",
+"Caramelization",
+"Fermentation",
+"Emulsification"
+],
+"d": 2,
+"x": "It is named for the French chemist Louis-Camille Maillard, who described it in 1912.",
+"tags": [
+"science",
+"cooking terms"
+]
+},
+{
+"q": "Which natural substance in fruit helps jam set into a gel?",
+"a": [
+"Pectin",
+"Gelatin",
+"Lecithin",
+"Glucose"
+],
+"d": 2,
+"x": "Apples and citrus peels are rich in pectin, which is why they are often added to jams made from low-pectin fruit.",
+"tags": [
+"science",
+"fruit"
+]
+},
+{
+"q": "Which gelling agent made from red algae is a vegetarian alternative to gelatin?",
+"a": [
+"Agar",
+"Gelatin",
+"Pectin",
+"Xanthan gum"
+],
+"d": 2,
+"x": "Agar sets at room temperature and is used widely in Asian desserts.",
+"tags": [
+"science"
+]
+},
+{
+"q": "Botanically, peanuts belong to which plant group?",
+"a": [
+"Legumes",
+"Tree nuts",
+"Grains",
+"Berries"
+],
+"d": 2,
+"x": "Peanut pods develop underground, and the plant is a close relative of peas and beans.",
+"tags": [
+"nuts",
+"science"
+]
+},
+{
+"q": "Couscous is made from tiny granules of which ingredient?",
+"a": [
+"Semolina",
+"Rice",
+"Corn",
+"Barley"
+],
+"d": 2,
+"x": "Couscous is a staple of North African cooking and is traditionally steamed over a stew.",
+"tags": [
+"north africa",
+"grains"
+]
+},
+{
+"q": "Shakshuka consists of eggs poached in a sauce of which main ingredients?",
+"a": [
+"Tomatoes and peppers",
+"Cream and mushrooms",
+"Beans and bacon",
+"Coconut and curry"
+],
+"d": 2,
+"x": "Shakshuka is popular across North Africa and the Middle East, and it is usually eaten with bread for dipping.",
+"tags": [
+"middle east",
+"eggs"
+]
+},
+{
+"q": "Baba ganoush is a smoky dip made mostly from which vegetable?",
+"a": [
+"Eggplant",
+"Zucchini",
+"Pumpkin",
+"Cauliflower"
+],
+"d": 2,
+"x": "The eggplant is charred over a flame until its skin blackens, which gives the dip its smoky taste.",
+"tags": [
+"middle east",
+"vegetables"
+]
+},
+{
+"q": "Tahini is a paste made from ground what?",
+"a": [
+"Sesame seeds",
+"Sunflower seeds",
+"Chickpeas",
+"Almonds"
+],
+"d": 2,
+"x": "Tahini is used in hummus and in the sweet candy halva.",
+"tags": [
+"middle east"
+]
+},
+{
+"q": "Which clarified butter is a staple of Indian cooking?",
+"a": [
+"Ghee",
+"Paneer",
+"Dahi",
+"Lassi"
+],
+"d": 2,
+"x": "Ghee is made by simmering butter and removing the milk solids, so it can be heated to a high temperature.",
+"tags": [
+"india",
+"dairy"
+]
+},
+{
+"q": "Which Vietnamese sandwich is served on a baguette-style roll?",
+"a": [
+"Banh mi",
+"Banh xeo",
+"Goi cuon",
+"Cha gio"
+],
+"d": 2,
+"x": "Banh mi combines French bread with Vietnamese fillings such as pickled carrot, cilantro and chili.",
+"tags": [
+"vietnam"
+]
+},
+{
+"q": "Which Indonesian dish is made by frying cooked rice with sweet soy sauce?",
+"a": [
+"Nasi goreng",
+"Pad thai",
+"Bibimbap",
+"Congee"
+],
+"d": 2,
+"x": "Nasi goreng means 'fried rice' in Indonesian and Malay and is often topped with a fried egg.",
+"tags": [
+"indonesia",
+"rice"
+]
+},
+{
+"q": "Adobo, meat braised in vinegar, soy sauce and garlic, is often called the national dish of which country?",
+"a": [
+"The Philippines",
+"Thailand",
+"Malaysia",
+"Vietnam"
+],
+"d": 2,
+"x": "Vinegar preserved the meat in the tropical climate before refrigeration existed.",
+"tags": [
+"philippines"
+]
+},
+{
+"q": "Which Chinese city is famous for its crisp, lacquered roast duck?",
+"a": [
+"Beijing",
+"Shanghai",
+"Guangzhou",
+"Chengdu"
+],
+"d": 2,
+"x": "The duck is carved in front of diners and served with thin pancakes, scallions and sweet bean sauce.",
+"tags": [
+"china"
+]
+},
+{
+"q": "Bibimbap, a Korean rice bowl, literally means what?",
+"a": [
+"Mixed rice",
+"Spicy rice",
+"Fried rice",
+"Sweet rice"
+],
+"d": 2,
+"x": "The bowl is topped with vegetables, meat and egg, then mixed together with gochujang before eating.",
+"tags": [
+"korea",
+"rice"
+]
+},
+{
+"q": "Fugu is the Japanese name for which fish whose organs are poisonous if prepared wrongly?",
+"a": [
+"Pufferfish",
+"Eel",
+"Mackerel",
+"Flounder"
+],
+"d": 2,
+"x": "In Japan, fugu chefs need special training and a license to prepare the fish.",
+"tags": [
+"japan",
+"seafood"
+]
+},
+{
+"q": "Mochi, a chewy Japanese treat, is made by pounding what?",
+"a": [
+"Glutinous rice",
+"Sweet potato",
+"Wheat",
+"Soybeans"
+],
+"d": 2,
+"x": "Mochi is traditionally pounded with a wooden mallet in a large mortar, especially around New Year.",
+"tags": [
+"japan",
+"dessert"
+]
+},
+{
+"q": "Feijoada, a stew of black beans and pork, is traditionally considered a national dish of which country?",
+"a": [
+"Brazil",
+"Argentina",
+"Chile",
+"Colombia"
+],
+"d": 2,
+"x": "Feijoada is traditionally served with rice, sliced orange and toasted cassava flour.",
+"tags": [
+"brazil"
+]
+},
+{
+"q": "Which Canadian province is the home of poutine, fries topped with cheese curds and gravy?",
+"a": [
+"Quebec",
+"Ontario",
+"Alberta",
+"Nova Scotia"
+],
+"d": 2,
+"x": "Poutine appeared in rural Quebec in the late 1950s. Fresh cheese curds should squeak when you bite them.",
+"tags": [
+"canada"
+]
+},
+{
+"q": "Gumbo and jambalaya are signature dishes of which U.S. state?",
+"a": [
+"Louisiana",
+"Texas",
+"Georgia",
+"Florida"
+],
+"d": 2,
+"x": "Both dishes blend French, Spanish and West African cooking traditions found in Louisiana.",
+"tags": [
+"usa"
+]
+},
+{
+"q": "Pesto, the basil and pine nut sauce, comes from which Italian city?",
+"a": [
+"Genoa",
+"Naples",
+"Bologna",
+"Florence"
+],
+"d": 2,
+"x": "The name pesto comes from the Genoese word for 'to pound', a reference to the mortar and pestle.",
+"tags": [
+"italy",
+"sauces"
+]
+},
+{
+"q": "Panettone, the tall sweet bread with candied fruit, is associated with which Italian city?",
+"a": [
+"Milan",
+"Rome",
+"Venice",
+"Turin"
+],
+"d": 2,
+"x": "Panettone is traditionally baked at Christmas, and its dough can take more than a day to rise.",
+"tags": [
+"italy",
+"bread"
+]
+},
+{
+"q": "Which short-grain rice is the classic choice for making risotto?",
+"a": [
+"Arborio",
+"Basmati",
+"Jasmine",
+"Wild rice"
+],
+"d": 2,
+"x": "Arborio rice is named for a town in the Piedmont region and is rich in starch.",
+"tags": [
+"italy",
+"rice"
+]
+},
+{
+"q": "Paella traditionally comes from which Spanish region?",
+"a": [
+"Valencia",
+"Catalonia",
+"Galicia",
+"Andalusia"
+],
+"d": 2,
+"x": "The original Valencian paella contained rabbit, chicken and green beans, not seafood.",
+"tags": [
+"spain",
+"rice"
+]
+},
+{
+"q": "Which French port city is the home of bouillabaisse fish stew?",
+"a": [
+"Marseille",
+"Bordeaux",
+"Nice",
+"Lyon"
+],
+"d": 2,
+"x": "Bouillabaisse started as a humble stew that fishermen made from the bony fish they could not sell.",
+"tags": [
+"france",
+"seafood"
+]
+},
+{
+"q": "Which region of northeastern France gave its name to a savory egg-and-bacon tart?",
+"a": [
+"Lorraine",
+"Provence",
+"Brittany",
+"Burgundy"
+],
+"d": 2,
+"x": "The name quiche comes from the German word Kuchen, meaning 'cake'.",
+"tags": [
+"france"
+]
+},
+{
+"q": "What kind of organism is a truffle?",
+"a": [
+"A fungus",
+"A root vegetable",
+"A seaweed",
+"A nut"
+],
+"d": 2,
+"x": "Truffles grow underground near tree roots and are traditionally found with the help of trained dogs or pigs.",
+"tags": [
+"fungi"
+]
+},
+{
+"q": "Which spice defines the flavor and red color of Hungarian goulash?",
+"a": [
+"Paprika",
+"Saffron",
+"Turmeric",
+"Cayenne"
+],
+"d": 2,
+"x": "Hungary grows many varieties of paprika, from sweet to hot.",
+"tags": [
+"hungary",
+"spices"
+]
+},
+{
+"q": "Traditional Wiener schnitzel from Vienna is made from which meat?",
+"a": [
+"Veal",
+"Pork",
+"Chicken",
+"Lamb"
+],
+"d": 2,
+"x": "In Austria, a schnitzel must be made from veal to be called 'Wiener' schnitzel.",
+"tags": [
+"austria",
+"meat"
+]
+},
+{
+"q": "In Spain, what is a tortilla espanola made from?",
+"a": [
+"Potatoes and eggs",
+"Corn flour",
+"Wheat flour and lard",
+"Beans and cheese"
+],
+"d": 2,
+"x": "Unlike a Mexican tortilla, the Spanish version is a thick omelet that is often served in slices as tapas.",
+"tags": [
+"spain",
+"eggs"
+]
+},
+{
+"q": "Which pastry is traditionally eaten during China's Mid-Autumn Festival?",
+"a": [
+"Mooncake",
+"Fortune cookie",
+"Egg tart",
+"Spring roll"
+],
+"d": 2,
+"x": "Mooncakes are often filled with lotus seed paste and a salted egg yolk that represents the full moon.",
+"tags": [
+"festivals",
+"china"
+]
+},
+{
+"q": "Macadamia nuts are native to which country?",
+"a": [
+"Australia",
+"Hawaii",
+"Brazil",
+"Mexico"
+],
+"d": 2,
+"x": "Macadamias grew wild in the rainforests of eastern Australia before Hawaii began growing them in the 1800s.",
+"tags": [
+"nuts"
+]
+},
+{
+"q": "What do Britons call a zucchini?",
+"a": [
+"Courgette",
+"Aubergine",
+"Marrow",
+"Gourd"
+],
+"d": 2,
+"x": "Courgette comes from French. The two names describe the same vegetable.",
+"tags": [
+"vegetables",
+"language"
+]
+},
+{
+"q": "In most of the world outside North America, what is corn usually called?",
+"a": [
+"Maize",
+"Millet",
+"Sorghum",
+"Wheat"
+],
+"d": 2,
+"x": "Maize comes from the Taino word mahiz. In Britain, 'corn' once meant any cereal grain.",
+"tags": [
+"grains",
+"language"
+]
+},
+{
+"q": "Bay leaves come from which tree?",
+"a": [
+"Laurel",
+"Olive",
+"Fig",
+"Oak"
+],
+"d": 2,
+"x": "Bay laurel leaves flavor soups and stews, and are removed before serving because they stay tough.",
+"tags": [
+"herbs"
+]
+},
+{
+"q": "Paprika is made by grinding dried what?",
+"a": [
+"Red peppers",
+"Tomatoes",
+"Beets",
+"Radishes"
+],
+"d": 2,
+"x": "Paprika comes in sweet, hot and smoked varieties, depending on the peppers used.",
+"tags": [
+"spices"
+]
+},
+{
+"q": "Which part of the ginger plant do we eat?",
+"a": [
+"The rhizome",
+"The fruit",
+"The leaves",
+"The flower"
+],
+"d": 2,
+"x": "A rhizome is an underground stem, which looks like a root.",
+"tags": [
+"spices"
+]
+},
+{
+"q": "Which dark, sticky syrup is a by-product of refining sugar?",
+"a": [
+"Molasses",
+"Golden syrup",
+"Maple syrup",
+"Honey"
+],
+"d": 2,
+"x": "Blackstrap molasses is what is left after the third boiling of sugar cane juice.",
+"tags": [
+"sweets"
+]
+},
+{
+"q": "What does the Scoville scale measure?",
+"a": [
+"The heat of chili peppers",
+"The sweetness of fruit",
+"The acidity of vinegar",
+"The saltiness of broth"
+],
+"d": 2,
+"x": "The scale is named for the American pharmacist Wilbur Scoville, who devised it in 1912.",
+"tags": [
+"spices",
+"science"
+]
+},
+{
+"q": "Which vitamin does the body make when skin is exposed to sunlight?",
+"a": [
+"Vitamin D",
+"Vitamin C",
+"Vitamin B12",
+"Vitamin E"
+],
+"d": 2,
+"x": "Vitamin D also occurs in a few foods such as egg yolks and oily fish.",
+"tags": [
+"nutrition"
+]
+},
+{
+"q": "Which mineral, abundant in bananas, helps nerves and muscles function?",
+"a": [
+"Potassium",
+"Iron",
+"Calcium",
+"Iodine"
+],
+"d": 2,
+"x": "Potassium is also plentiful in potatoes, beans and avocados.",
+"tags": [
+"nutrition"
+]
+},
+{
+"q": "Which compound gives black pepper its sharp bite?",
+"a": [
+"Piperine",
+"Capsaicin",
+"Allicin",
+"Curcumin"
+],
+"d": 2,
+"x": "The name of the compound comes from Piper nigrum, the Latin name of the pepper vine.",
+"tags": [
+"spices",
+"science"
+]
+},
+{
+"q": "What is the thin outer colored layer of citrus peel, grated for flavor, called?",
+"a": [
+"Zest",
+"Pith",
+"Rind",
+"Pulp"
+],
+"d": 2,
+"x": "The white layer just below the zest is the pith, which tastes bitter and is usually avoided.",
+"tags": [
+"cooking terms",
+"citrus"
+]
+},
+{
+"q": "Which cold tomato soup is a specialty of Andalusia in southern Spain?",
+"a": [
+"Gazpacho",
+"Minestrone",
+"Ramen",
+"Goulash"
+],
+"d": 2,
+"x": "Gazpacho is blended raw vegetables, olive oil and vinegar, and is often served on hot summer days.",
+"tags": [
+"spain",
+"soup"
+]
+},
+{
+"q": "Which type of cookware needs a layer of baked-on oil, called seasoning, to stay non-stick?",
+"a": [
+"Cast iron",
+"Stainless steel",
+"Glass",
+"Ceramic"
+],
+"d": 2,
+"x": "With care, a seasoned cast-iron pan can last for generations and be handed down in families.",
+"tags": [
+"tools"
+]
+},
+{
+"q": "The mango is native to which region of the world?",
+"a": [
+"South Asia",
+"South America",
+"East Africa",
+"Southern Europe"
+],
+"d": 2,
+"x": "Mangoes have been grown in India for thousands of years, and the mango is that country's national fruit.",
+"tags": [
+"fruit"
+]
+},
+{
+"q": "Braising combines which two cooking methods?",
+"a": [
+"Searing, then slow cooking in liquid",
+"Boiling, then frying",
+"Smoking, then roasting",
+"Steaming, then baking"
+],
+"d": 2,
+"x": "Braising turns tough cuts of meat tender, as the connective tissue melts in the hot liquid.",
+"tags": [
+"cooking terms"
+]
+}
+]
