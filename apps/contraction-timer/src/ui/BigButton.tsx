@@ -6,7 +6,7 @@ export interface BigButtonProps {
   label: string;
   onPress: () => void;
   /** `primary` is the single obvious action; `secondary` is an outlined button. */
-  variant?: 'primary' | 'secondary';
+  variant?: 'primary' | 'secondary' | 'danger';
   /** 64dp tall instead of 56dp (plan §7.3: primary buttons). */
   tall?: boolean;
   disabled?: boolean;
@@ -19,6 +19,7 @@ export interface BigButtonProps {
 export function BigButton({ label, onPress, variant = 'primary', tall, disabled, accessibilityHint, accessibilityLabel, style }: BigButtonProps) {
   const { colors, radius, type, touchTarget } = useTheme();
   const primary = variant === 'primary';
+  const danger = variant === 'danger';
   return (
     <Pressable
       accessibilityRole="button"
@@ -34,14 +35,14 @@ export function BigButton({ label, onPress, variant = 'primary', tall, disabled,
           borderRadius: radius.md + 2,
           backgroundColor: primary ? colors.primary : 'transparent',
           // The outline is the text color, not the fill: night's dark red fill alone would vanish on black.
-          borderColor: colors.text,
+          borderColor: danger ? colors.danger : colors.text,
           borderWidth: 2,
           opacity: disabled ? 0.5 : 1,
         },
         style,
       ]}
     >
-      <AppText style={[type.bodyLarge, { color: primary ? colors.onPrimary : colors.text, fontWeight: '700' }]}>{label}</AppText>
+      <AppText style={[type.bodyLarge, { color: primary ? colors.onPrimary : danger ? colors.danger : colors.text, fontWeight: '700' }]}>{label}</AppText>
     </Pressable>
   );
 }

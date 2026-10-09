@@ -3,7 +3,7 @@ import { Alert, View } from 'react-native';
 import { router } from 'expo-router';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
-import { defaultDraft, draftEdd, draftError, DueDateForm, type DueDraft } from '@/components/DueDateForm';
+import { defaultDraft, draftEdd, draftError, draftSavable, DueDateForm, type DueDraft } from '@/components/DueDateForm';
 import { gestationOn } from '@/domain/dueDate';
 import { usePregnancy } from '@/hooks/usePregnancy';
 import { useProfile } from '@/store/profile';
@@ -21,15 +21,16 @@ export default function DueDate() {
   const profile = useProfile((s) => s.profile);
   const [draft, setDraft] = useState<DueDraft>(() =>
     profile.dateMode && profile.inputDate
-      ? { mode: profile.dateMode, date: profile.inputDate, cycleLength: profile.cycleLength ?? 28, ivfEmbryoDay: profile.ivfEmbryoDay ?? 5 }
+      ? { mode: profile.dateMode, date: profile.inputDate, cycleLength: profile.cycleLength ?? 28, ivfEmbryoDay: profile.ivfEmbryoDay ?? 5, touched: true }
       : defaultDraft('edd', today),
   );
   const [saved, setSaved] = useState(false);
   const error = draftError(draft, today);
-  const result = error ? null : { edd: draftEdd(draft), g: gestationOn(draftEdd(draft), today) };
+  const savable = draftSavable(draft, today);
+  const result = error || !draft.touched ? null : { edd: draftEdd(draft), g: gestationOn(draftEdd(draft), today) };
 
   const save = () => {
-    if (error) return;
+    if (!savable) return;
     useProfile.getState().setDue({ mode: draft.mode, date: draft.date, cycleLength: draft.cycleLength, ivfEmbryoDay: draft.ivfEmbryoDay });
     setSaved(true);
   };
@@ -65,7 +66,7 @@ export default function DueDate() {
         </View>
       ) : null}
       {saved ? <Toast message={t('due.saved')} /> : null}
-      <BigButton tall label={t('due.save')} disabled={!!error} onPress={save} />
+      <BigButton tall label={t('due.save')} disabled={!savable} onPress={save} />
       {edd ? <BigButton variant="secondary" label={t('due.remove')} onPress={remove} /> : null}
     </Screen>
   );

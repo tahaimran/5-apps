@@ -28,6 +28,13 @@ import HospitalBag from '../../app/(tabs)/pregnancy/hospital-bag';
 import BirthPlan from '../../app/(tabs)/pregnancy/birth-plan';
 import { useProfile } from '@/store/profile';
 import { useChecklists } from '@/store/checklists';
+import Settings from '../../app/(tabs)/more/settings';
+import Privacy from '../../app/(tabs)/more/privacy';
+import AboutScreen from '../../app/(tabs)/more/about';
+import DisclaimerScreen from '../../app/(tabs)/more/disclaimer';
+import AlertRule from '../../app/modals/alert-rule';
+import Onboarding from '../../app/onboarding';
+import { useSettings } from '@/store/settings';
 import { RowEditor } from '@/features/history/RowEditor';
 import { useSessions } from '@/store/sessions';
 
@@ -51,6 +58,8 @@ afterEach(async () => {
 const screens: [string, () => ReactElement, (() => void) | null][] = [
   ['Timer', () => <TimerHome />, null],
   ['Timer (contraction running)', () => <TimerHome />, () => void useSessions.getState().tap(Date.now() - 42_000)],
+  ['Timer (partner mode)', () => <TimerHome />, () => useSettings.getState().update({ partnerMode: true })],
+  ['Timer (partner mode, running)', () => <TimerHome />, () => { useSettings.getState().update({ partnerMode: true }); useSessions.getState().tap(Date.now() - 42_000); }],
   ['History', () => <History />, () => void seedSession('s1', 3_600_000)],
   ['Session detail', () => <SessionDetail />, () => { seedSession('s1', 3_600_000); mockParams.current = { id: 's1' }; }],
   ['Row editor', () => <RowEditor sessionId="s1" target={{ mode: 'add', startedAt: Date.now() - 600_000 }} onClose={() => undefined} onDeleted={() => undefined} />, () => void seedSession('s1', 3_600_000)],
@@ -67,6 +76,13 @@ const screens: [string, () => ReactElement, (() => void) | null][] = [
   ['Hospital bag', () => <HospitalBag />, null],
   ['Birth plan', () => <BirthPlan />, null],
   ['More', () => <MoreHome />, null],
+  ['Settings', () => <Settings />, null],
+  ['Settings (reminder on, imperial)', () => <Settings />, () => useSettings.getState().update({ units: 'imperial', kickReminder: { enabled: true, hour: 20, minute: 0 } })],
+  ['Pattern rule (custom)', () => <AlertRule />, () => useSettings.getState().update({ rule: { preset: 'custom', intervalMaxMin: 6, durationMinSec: 45, sustainMin: 50 } })],
+  ['Privacy and ads', () => <Privacy />, null],
+  ['About', () => <AboutScreen />, null],
+  ['Disclaimer', () => <DisclaimerScreen />, null],
+  ['Onboarding', () => <Onboarding />, null],
   ['Tabs', () => <TabsLayout />, null],
 ];
 

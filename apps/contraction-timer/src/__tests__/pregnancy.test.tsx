@@ -118,10 +118,23 @@ describe('a week card', () => {
 });
 
 describe('the due date calculator (plan F11)', () => {
+  it('never saves a starting date the person did not set', async () => {
+    const ui = await render(wrap(<DueDate />));
+    expect(ui.texts()).toContain('Use the buttons to set the date. Nothing is saved until you do.');
+    const save = () => ui.root.findAll((n) => n.props.accessibilityLabel === 'Save due date' && typeof n.props.onPress === 'function')[0];
+    expect(save().props.disabled).toBe(true);
+    await ui.press('First day of my last period'); // choosing how it is known is not choosing a date
+    expect(save().props.disabled).toBe(true);
+    expect(useProfile.getState().profile.edd).toBeUndefined();
+    await ui.press('First day of your last period: one day earlier');
+    expect(save().props.disabled).toBe(false);
+  });
+
   it('works out the due date from the last period with a 28-day cycle and shows the live sentence', async () => {
     mockParams.current = {};
     const ui = await render(wrap(<DueDate />));
     await ui.press('First day of my last period');
+    await ui.press('First day of your last period: one day earlier');
     expect(ui.texts().some((x) => /^You're about \d+ weeks? and \d+ days?\. Due around \d+ \w+\.$/.test(x))).toBe(true);
     expect(ui.texts()).toContain('Usual cycle length');
   });
@@ -129,8 +142,9 @@ describe('the due date calculator (plan F11)', () => {
     const ui = await render(wrap(<DueDate />));
     // start 60 days ahead; move to 2026-11-12 by day steps would be long, so set through the store route instead:
     await ui.press('I know my due date');
+    await ui.press('Due date: one day later');
     await ui.press('Save due date');
-    expect(useProfile.getState().profile.edd).toBe('2026-12-08');
+    expect(useProfile.getState().profile.edd).toBe('2026-12-09');
     expect(ui.texts()).toContain('Due date saved');
     expect(db.get('profile')?.dateMode).toBe('edd');
   });
@@ -154,6 +168,8 @@ describe('the due date calculator (plan F11)', () => {
     const ui = await render(wrap(<DueDate />));
     await ui.press('IVF transfer date');
     await ui.press('Day 3');
+    await ui.press('Transfer date: one day later');
+    await ui.press('Transfer date: one day earlier');
     await ui.press('Save due date');
     const p = useProfile.getState().profile;
     expect(p.dateMode).toBe('ivf');
@@ -163,6 +179,7 @@ describe('the due date calculator (plan F11)', () => {
   it('changes the cycle length for the last-period route within 21–45', async () => {
     const ui = await render(wrap(<DueDate />));
     await ui.press('First day of my last period');
+    await ui.press('First day of your last period: one day later');
     for (let i = 0; i < 30; i++) await ui.press('Cycle one day longer').catch(() => undefined);
     await ui.press('Save due date');
     expect(useProfile.getState().profile.cycleLength).toBe(45);

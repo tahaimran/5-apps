@@ -56,7 +56,8 @@
     "nightMode": "Night mode",
     "nightModeOn": "Night mode, on",
     "partnerMode": "Partner mode",
-    "stopped": "Contraction stopped, {time}"
+    "stopped": "Contraction stopped, {time}",
+    "exitPartner": "Exit partner mode"
   },
   "kicks": {
     "title": "Kicks",
@@ -120,7 +121,23 @@
     "bagNudgeOpen": "Open the hospital bag list"
   },
   "more": {
-    "title": "More"
+    "title": "More",
+    "settings": "Settings",
+    "privacy": "Privacy and ads",
+    "disclaimer": "Not medical advice",
+    "rate": "Rate this app",
+    "feedback": "Send feedback",
+    "about": "About",
+    "adRules": "Ad rules (development builds only)",
+    "delete": "Delete all data",
+    "deleteTitle": "Delete all data?",
+    "deleteBody": "This removes your sessions, kick counts, due date, checklists and settings from this phone. It cannot be undone.",
+    "deleteContinue": "Continue",
+    "deleteSureTitle": "Are you sure?",
+    "deleteSureBody": "Everything will be erased and the app will start again from the beginning.",
+    "deleteConfirm": "Delete everything",
+    "feedbackSubject": "Contraction Timer feedback",
+    "feedbackBody": "App version: {version}\nAndroid version: {android}\n\nMy feedback:\n"
   },
   "time": {
     "second": "{n} second",
@@ -431,7 +448,8 @@
     "removeBody": "Your week, days to go and weekly cards will go away until you add it again.",
     "removeConfirm": "Remove",
     "today": "Today",
-    "later": "I'll add this later"
+    "later": "I'll add this later",
+    "setDateHint": "Use the buttons to set the date. Nothing is saved until you do."
   },
   "lists": {
     "bagTitle": "Hospital bag",
@@ -478,5 +496,114 @@
   },
   "weekly": {
     "body": "Week {n}: baby is about the size of a {size} {emoji}"
+  },
+  "onboarding": {
+    "welcomeTitle": "Hi there. Let's keep this simple.",
+    "welcomeBody": "Time contractions with one big button, count your baby's kicks, and keep a clear summary ready for your midwife or doctor. Everything stays on this phone.",
+    "getStarted": "Get started",
+    "skip": "Skip",
+    "disclaimerTitle": "A quick, important note",
+    "disclaimerBody": "This app helps you keep track. It isn't a medical device and doesn't give medical advice. Your midwife, doctor or hospital always knows best. If you're worried — about pain, bleeding, your waters, or your baby moving less — call them or emergency services right away.",
+    "understand": "I understand",
+    "continue": "Continue",
+    "howFarTitle": "How far along are you?",
+    "later": "I'll add this later",
+    "firstTitle": "Is this your first baby?",
+    "firstYes": "Yes, my first",
+    "firstNo": "I've done this before",
+    "firstPartner": "I'm the partner",
+    "firstFooter": "This only changes tips. You can change it anytime.",
+    "needsTitle": "What would help most right now?",
+    "needTimer": "Timing contractions",
+    "needKicks": "Counting kicks",
+    "needTracking": "Following my pregnancy week by week",
+    "remindMe": "Remind me to count kicks every day at {time}",
+    "remindLabel": "Remind me to count kicks every day",
+    "remindDenied": "No problem. You can turn reminders on later in More.",
+    "remindBlocked": "Notifications are turned off for this app in your phone's settings. You can change that later in More.",
+    "allSet": "All set",
+    "progress": "Step {current} of {total}",
+    "coachMark": "When a contraction starts, tap here. That's it.",
+    "coachDismiss": "Got it"
+  },
+  "disclaimerSheet": {
+    "title": "A quick, important note",
+    "later": "Remind me later"
+  },
+  "settings": {
+    "title": "Settings",
+    "alertsSection": "Pattern alert",
+    "alerts": "Pattern alerts",
+    "alertsHint": "A soft message when your recent contractions match the rule you chose. It never says you are in labor.",
+    "rule": "Pattern rule: {rule}",
+    "ruleHint": "Change the rule",
+    "lookSection": "Look",
+    "theme": "Colors",
+    "themeSystem": "Match my phone",
+    "themeLight": "Light",
+    "themeDark": "Dark",
+    "themeNight": "Night (red, for the dark)",
+    "partner": "Partner mode",
+    "partnerHint": "Bigger text and fewer buttons on the Timer, for whoever is holding the phone.",
+    "feelSection": "Feel and format",
+    "haptics": "Vibration",
+    "hapticsHint": "A buzz when you start and stop, and when your kicks are counted.",
+    "clock24h": "24-hour clock",
+    "units": "Sizes in the week cards",
+    "unitsMetric": "Centimetres and grams",
+    "unitsImperial": "Inches and pounds",
+    "kicksSection": "Kicks and reminders",
+    "kickTarget": "Kick count target",
+    "kickTargetValue": "{n} movements",
+    "kickTargetLess": "Target one movement lower",
+    "kickTargetMore": "Target one movement higher",
+    "kickReminder": "Daily kick reminder",
+    "weekly": "Weekly size card",
+    "weeklyHint": "A note once a week on how big your baby is. It needs notifications to be allowed on your phone.",
+    "reminderRow": "{state}. Tap to change"
+  },
+  "rule": {
+    "title": "Pattern rule",
+    "intro": "Pick the rule your provider gave you. The app only compares your numbers with it.",
+    "p511": "5-1-1",
+    "p411": "4-1-1",
+    "p311": "3-1-1",
+    "custom": "My own rule",
+    "describe": "Contractions {interval} minutes apart or less, {length} seconds long or more, for {sustain} minutes.",
+    "note": "Always follow what your provider told you, and call them whenever you are worried, whatever the app shows.",
+    "interval": "Minutes apart, at most",
+    "intervalValue": "{n} min",
+    "intervalLess": "One minute less apart",
+    "intervalMore": "One minute more apart",
+    "length": "Seconds long, at least",
+    "lengthValue": "{n} s",
+    "lengthLess": "Five seconds shorter",
+    "lengthMore": "Five seconds longer",
+    "sustain": "For how many minutes",
+    "sustainValue": "{n} min",
+    "sustainLess": "Ten minutes shorter",
+    "sustainMore": "Ten minutes longer",
+    "save": "Use this rule"
+  },
+  "privacy": {
+    "title": "Privacy and ads",
+    "onDevice": "Everything you enter stays on this phone: your contractions, kick counts, due date, notes and checklists. There is no account and no cloud, and nothing is sent to us.",
+    "sharing": "A summary leaves your phone only when you share it, and only to the app you choose.",
+    "ads": "The app is supported by ads from Google AdMob. There are no ads on the Timer or Kicks screens, and no full-screen ads while you are timing contractions or counting kicks, or for a while afterwards. To show ads, Google may receive your phone's advertising ID, approximate location and how you use ads. None of your health entries are sent.",
+    "notifications": "Reminders are made on your phone. The app asks for permission only when you turn one on.",
+    "choices": "Where the law requires it, you can change your ad choices below.",
+    "privacyChoices": "Change my ad choices",
+    "policy": "Privacy policy"
+  },
+  "disclaimerScreen": {
+    "title": "Medical disclaimer",
+    "general": "The week cards, sizes and tips are general information. The pattern alert only compares your numbers with a rule you chose. Neither can tell you whether you or your baby are well. Your midwife, doctor or hospital can."
+  },
+  "about": {
+    "title": "About",
+    "name": "Contraction Timer & Kick Count",
+    "version": "Version {version}",
+    "body": "A calm contraction timer, kick counter and due date tool. It works offline, with no account.",
+    "local": "Your data stays on this phone."
   }
 }

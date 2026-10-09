@@ -38,6 +38,7 @@ function Root() {
       <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: colors.background } }}>
         <Stack.Screen name="onboarding" options={{ gestureEnabled: false }} />
         <Stack.Screen name="modals/share-summary" options={{ presentation: 'modal' }} />
+        <Stack.Screen name="modals/alert-rule" options={{ presentation: 'modal' }} />
       </Stack>
     </>
   );

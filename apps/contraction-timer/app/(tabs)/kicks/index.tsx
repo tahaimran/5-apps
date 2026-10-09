@@ -8,6 +8,7 @@ import { dateKeyFor } from '@/domain/dateKey';
 import { elapsedKick, isComplete, softLimitReached, timeToTarget } from '@/domain/kicks';
 import { timerHaptics } from '@/features/timer/haptics';
 import { useNow } from '@/hooks/useNow';
+import { recordPositiveMoment } from '@/features/review/ask';
 import { useKicks } from '@/store/kicks';
 import { useMeta } from '@/store/meta';
 import { useProfile } from '@/store/profile';
@@ -114,8 +115,13 @@ export default function Kicks() {
               tall
               label={t('kicks.save')}
               onPress={() => {
-                useKicks.getState().finish(Date.now());
+                const saved = useKicks.getState().finish(Date.now());
                 flash(t('kicks.saved'));
+                // A count that reached its target is a good moment (ASO.md §7), unless it had run into the 2-hour message.
+                if (saved) {
+                  const softAt = useMeta.getState().meta.lastKickSoftLimitAt;
+                  void recordPositiveMoment('kickTarget', { hitSoftLimit: softAt !== undefined && softAt >= saved.startedAt });
+                }
               }}
             />
           ) : (

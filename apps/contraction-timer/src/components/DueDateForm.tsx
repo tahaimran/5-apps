@@ -14,13 +14,21 @@ export interface DueDraft {
   date: DateKey;
   cycleLength: number;
   ivfEmbryoDay: 3 | 5;
+  /**
+   * The person has set the date (moved it, or it came from what they saved before). A preset starting date is only a
+   * place to begin: it is never saved or shared until this is true.
+   */
+  touched: boolean;
 }
 
 /** A sensible starting date for each way of entering it, so the first screen already shows a plausible answer. */
 export function defaultDraft(mode: DateMode, today: DateKey): DueDraft {
   const date = mode === 'edd' ? addDays(today, 60) : mode === 'lmp' ? addDays(today, -84) : mode === 'conception' ? addDays(today, -70) : addDays(today, -56);
-  return { mode, date, cycleLength: CYCLE_LIMITS.default, ivfEmbryoDay: 5 };
+  return { mode, date, cycleLength: CYCLE_LIMITS.default, ivfEmbryoDay: 5, touched: false };
 }
+
+/** True when the draft can be saved: the date was set by the person and it passes the plan's limits. */
+export const draftSavable = (d: DueDraft, today: DateKey): boolean => d.touched && draftError(d, today) === null;
 
 export const draftError = (d: DueDraft, today: DateKey): DueError | null => validateDue({ mode: d.mode, date: d.date, cycleLength: d.cycleLength, ivfEmbryoDay: d.ivfEmbryoDay }, today);
 export const draftEdd = (d: DueDraft): DateKey => eddFrom({ mode: d.mode, date: d.date, cycleLength: d.cycleLength, ivfEmbryoDay: d.ivfEmbryoDay });
@@ -109,7 +117,7 @@ export function DueDateForm({ draft, onChange, today, grouped }: { draft: DueDra
         />
       ) : null}
 
-      <DateStepper label={t(FIELD[draft.mode])} value={draft.date} onChange={(date) => change({ date })} />
+      <DateStepper label={t(FIELD[draft.mode])} value={draft.date} onChange={(date) => change({ date, touched: true })} />
 
       {draft.mode === 'lmp' ? (
         <View style={{ gap: spacing.xs }}>
@@ -133,7 +141,9 @@ export function DueDateForm({ draft, onChange, today, grouped }: { draft: DueDra
         </View>
       ) : null}
 
-      {error ? (
+      {!draft.touched ? (
+        <AppText style={[type.bodyLarge, { color: colors.textMuted }]}>{t('due.setDateHint')}</AppText>
+      ) : error ? (
         <AppText accessibilityLiveRegion="assertive" style={[type.bodyLarge, { color: colors.danger, fontWeight: '600' }]}>{t(`due.errors.${error}`)}</AppText>
       ) : (
         <View accessibilityLiveRegion="polite" style={{ gap: spacing.xs }}>

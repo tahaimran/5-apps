@@ -6,6 +6,7 @@ import { useTheme } from '@shared/theme';
 import { checklistText, groupsOf, progressOf } from '@/domain/checklists';
 import type { ChecklistId } from '@/domain/types';
 import { shareText } from '@/export/share';
+import { recordPositiveMoment } from '@/features/review/ask';
 import { useChecklist } from '@/hooks/useChecklist';
 import { useChecklists } from '@/store/checklists';
 import { AppText } from '@/ui/AppText';
@@ -54,7 +55,12 @@ export function ChecklistScreen({ id, title, intro, progressText, share, footer,
                 accessibilityRole="checkbox"
                 accessibilityLabel={t('lists.toggleLabel', { label: item.label, state: t(item.checked ? 'lists.checked' : 'lists.unchecked') })}
                 accessibilityState={{ checked: item.checked }}
-                onPress={() => store().toggle(id, item.id)}
+                onPress={() => {
+                  const was = progressOf(list).percent;
+                  store().toggle(id, item.id);
+                  const now = progressOf(store().lists[id] ?? list).percent;
+                  if (was < 100 && now === 100) void recordPositiveMoment('checklistComplete');
+                }}
                 style={({ pressed }) => ({ flex: 1, minHeight: 64, flexDirection: 'row', alignItems: 'center', gap: spacing.md, padding: spacing.md, borderRadius: radius.lg, borderWidth: 1, borderColor: colors.border, backgroundColor: pressed ? colors.surfaceAlt : colors.surface })}
               >
                 <MaterialCommunityIcons accessible={false} name={item.checked ? 'checkbox-marked' : 'checkbox-blank-outline'} size={32} color={colors.text} />

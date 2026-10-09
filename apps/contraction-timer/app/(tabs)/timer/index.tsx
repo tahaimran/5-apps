@@ -2,7 +2,8 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { router } from 'expo-router';
 import { AccessibilityInfo, Pressable, View } from 'react-native';
 import { t } from '@shared/i18n';
-import { useTheme } from '@shared/theme';
+import { useOnboardingComplete } from '@shared/onboarding';
+import { ThemeProvider, useTheme } from '@shared/theme';
 import { clockSetBack, elapsedOf, idleStatus, isLongRunning } from '@/domain/session';
 import { evaluatePattern, bannerVisible } from '@/domain/pattern';
 import { lastContraction, openContraction, windowStats } from '@/domain/stats';
@@ -15,10 +16,12 @@ import { TimerHeader } from '@/features/timer/TimerHeader';
 import { useKeepAwakeWhile } from '@/features/timer/useKeepAwake';
 import { useClockWatch } from '@/hooks/useClockWatch';
 import { useFocused, useNow } from '@/hooks/useNow';
+import { useMeta } from '@/store/meta';
 import { useProfile } from '@/store/profile';
 import { useSessions } from '@/store/sessions';
 import { useSettings } from '@/store/settings';
 import { useAppColors } from '@/theme/mode';
+import { FONT_SCALE, palette, PARTNER_SCALE, TOUCH_TARGET } from '@/theme/tokens';
 import { AppText } from '@/ui/AppText';
 import { BigButton } from '@/ui/BigButton';
 import { mmss, spoken } from '@/ui/format';
@@ -27,8 +30,13 @@ import { Sheet } from '@/ui/Sheet';
 import { Toast } from '@/ui/Toast';
 
 const TOAST_MS = 5000;
+/** The disclaimer sheet is offered once per launch. */
+let disclaimerShownThisLaunch = false;
+export const resetDisclaimerSheetForTests = () => {
+  disclaimerShownThisLaunch = false;
+};
 
-export default function TimerScreen() {
+function TimerContent() {
   const { colors, spacing, type, radius } = useTheme();
   const app = useAppColors();
   const active = useSessions((s) => s.active);
@@ -55,6 +63,18 @@ export default function TimerScreen() {
   const [touching, setTouching] = useState(false);
   const [undoOpen, setUndoOpen] = useState(false);
   const [howOpen, setHowOpen] = useState(false);
+  const meta = useMeta((s) => s.meta);
+  const onboarded = useOnboardingComplete();
+  // Plan §6 "Landing": a one-time hint around the button. It sits in the space the running time uses, so nothing moves.
+  const showCoach = onboarded && !active && meta.coachMarkShownAt === undefined && !partner;
+  // Plan §6: after Skip the disclaimer comes as a sheet on the first visit, once per launch, and never over a session.
+  const [disclaimerOpen, setDisclaimerOpen] = useState(false);
+  useEffect(() => {
+    if (onboarded && meta.disclaimerAckAt === undefined && !useSessions.getState().active && !disclaimerShownThisLaunch) {
+      disclaimerShownThisLaunch = true;
+      setDisclaimerOpen(true);
+    }
+  }, [onboarded, meta.disclaimerAckAt]);
 
   const showToast = useCallback((message: string) => {
     setToast(message);
@@ -80,6 +100,7 @@ export default function TimerScreen() {
   useClockWatch(!!active && focused, () => showToast(t('timer.clockChanged')));
 
   const onTap = () => {
+    if (meta.coachMarkShownAt === undefined) useMeta.getState().update({ coachMarkShownAt: Date.now() });
     const before = useSessions.getState().active;
     // Read the clock at the tap, and warn when it is behind the last thing that was saved.
     const at = Date.now();
@@ -100,7 +121,7 @@ export default function TimerScreen() {
 
   return (
     <Screen scrollEnabled={!touching}>
-      <TimerHeader />
+      <TimerHeader hideTools={partner && !!open} />
       <AppText
         accessibilityLiveRegion="polite"
         style={[type.bodyLarge, { color: colors.textMuted, textAlign: 'center', marginTop: spacing.md }]}
@@ -113,6 +134,17 @@ export default function TimerScreen() {
 
       {/* The running time. Its space is kept while resting so the button does not jump. */}
       <View style={{ minHeight: 96, justifyContent: 'center' }} accessible={!!open} accessibilityLabel={open ? t('timer.elapsedLabel', { time: spoken(elapsed) }) : undefined}>
+        {showCoach ? (
+          <Pressable
+            accessibilityRole="button"
+            accessibilityLabel={t('onboarding.coachDismiss')}
+            accessibilityHint={t('onboarding.coachMark')}
+            onPress={() => useMeta.getState().update({ coachMarkShownAt: Date.now() })}
+            style={{ minHeight: 72, justifyContent: 'center', padding: spacing.md, borderRadius: radius.lg, borderWidth: 2, borderColor: colors.text, backgroundColor: colors.surface }}
+          >
+            <AppText style={[type.bodyLarge, { color: colors.text, textAlign: 'center', fontWeight: '700' }]}>{t('onboarding.coachMark')}</AppText>
+          </Pressable>
+        ) : null}
         {open ? (
           <AppText
             adjustsFontSizeToFit
@@ -184,6 +216,20 @@ export default function TimerScreen() {
         <BigButton variant="secondary" label={t('common.cancel')} onPress={() => setUndoOpen(false)} />
       </Sheet>
 
+      <Sheet visible={disclaimerOpen} onClose={() => setDisclaimerOpen(false)}>
+        <AppText accessibilityRole="header" style={[type.title, { color: colors.text, fontWeight: '700' }]}>{t('disclaimerSheet.title')}</AppText>
+        <AppText style={[type.bodyLarge, { color: colors.text }]}>{t('onboarding.disclaimerBody')}</AppText>
+        <BigButton
+          tall
+          label={t('onboarding.understand')}
+          onPress={() => {
+            useMeta.getState().acknowledgeDisclaimer();
+            setDisclaimerOpen(false);
+          }}
+        />
+        <BigButton variant="secondary" label={t('disclaimerSheet.later')} onPress={() => setDisclaimerOpen(false)} />
+      </Sheet>
+
       <Sheet visible={howOpen} onClose={() => setHowOpen(false)}>
         <AppText accessibilityRole="header" style={[type.title, { color: colors.text, fontWeight: '700' }]}>{t('timer.howTitle')}</AppText>
         {(['howBody1', 'howBody2', 'howBody3'] as const).map((k) => (
@@ -192,5 +238,15 @@ export default function TimerScreen() {
         <BigButton tall label={t('common.done')} onPress={() => setHowOpen(false)} />
       </Sheet>
     </Screen>
+  );
+}
+
+/** Plan §7: in Partner mode the Timer's type is 1.4 times bigger, and the secondary controls go. */
+export default function TimerScreen() {
+  const partner = useSettings((s) => s.settings.partnerMode);
+  return (
+    <ThemeProvider palette={palette} fontScale={FONT_SCALE * (partner ? PARTNER_SCALE : 1)} touchTarget={TOUCH_TARGET}>
+      <TimerContent />
+    </ThemeProvider>
   );
 }

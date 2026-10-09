@@ -9,7 +9,13 @@ import { IDLE_PROMPT_MS } from '@/domain/session';
 import { reloadSessionsFromDisk, useSessions } from '@/store/sessions';
 import { series, sessionOf, MINUTE, SECOND } from '@/testing/fixtures';
 import { RULE_PRESETS } from '@/domain/defaults';
+import { sharedStore } from '@shared/storage';
+import { useMeta } from '@/store/meta';
 import { useSettings } from '@/store/settings';
+import { resetDisclaimerSheetForTests } from '../../app/(tabs)/timer/index';
+import TabsLayout from '../../app/(tabs)/_layout';
+import { toggleNight, getThemePref } from '@/theme/mode';
+import { useProfile } from '@/store/profile';
 import { FONT_SCALE, palette, TOUCH_TARGET } from '@/theme/tokens';
 import TimerScreen from '../../app/(tabs)/timer/index';
 
@@ -24,12 +30,18 @@ const advance = (ms: number) => act(async () => void jest.advanceTimersByTime(ms
 beforeEach(() => {
   jest.useFakeTimers({ now: NOW, doNotFake: ['nextTick', 'setImmediate'] });
   resetApp();
+  // an onboarded, acknowledged person by default; the first-run cases below undo this
+  sharedStore.set('onboarding.completedAt', 1);
+  useMeta.getState().update({ disclaimerAckAt: 1, coachMarkShownAt: 1 });
+  resetDisclaimerSheetForTests();
   (Haptics.impactAsync as jest.Mock).mockClear();
   (Haptics.notificationAsync as jest.Mock).mockClear();
 });
 afterEach(async () => {
   await cleanup();
   jest.useRealTimers();
+  sharedStore.remove('onboarding.completedAt');
+  sharedStore.remove('theme.mode');
 });
 
 describe('the Timer screen', () => {
@@ -291,5 +303,123 @@ describe('the pattern banner (plan §5.1, F5)', () => {
     await advance(1100);
     const labels = ui.root.findAll((n) => typeof n.props.accessibilityLabel === 'string' && typeof n.type === 'string').map((n) => n.props.accessibilityLabel as string);
     expect(labels.findIndex((l) => l.startsWith('Stop contraction') || l === 'Start contraction')).toBeLessThan(labels.indexOf('Dismiss'));
+  });
+});
+
+describe('Partner mode (plan §4, §7, F15)', () => {
+  it('shows "Tell me when it starts", the partner instruction, bigger digits, and none of the secondary strip', async () => {
+    useSettings.getState().update({ partnerMode: true });
+    const ui = await render(wrap());
+    expect(ui.texts()).toContain('Tell me when it starts');
+    expect(ui.texts()).toContain('Tap when the contraction begins.');
+    await ui.press('Start contraction');
+    await advance(1000);
+    await ui.press(/^Stop contraction/).catch(() => undefined);
+    await advance(60_000);
+    expect(ui.byLabel(/^Last hour/)).toHaveLength(0);
+    expect(ui.texts()).not.toContain('Last contraction');
+  });
+
+  it('scales the Timer\'s type by 1.4 and the digits to 100sp', async () => {
+    useSettings.getState().update({ partnerMode: true });
+    const ui = await render(wrap());
+    await ui.press('Start contraction');
+    const digits = ui.root.findAll((n) => (n.type as unknown) === 'Text' && n.props.adjustsFontSizeToFit === true)[0];
+    const flat = (require('react-native') as typeof import('react-native')).StyleSheet.flatten(digits.props.style);
+    expect(flat.fontSize).toBeCloseTo(72 * 1.4, 5);
+  });
+
+  it('while a contraction runs only an "Exit partner mode" chip is left of the header, and it leaves partner mode', async () => {
+    useSettings.getState().update({ partnerMode: true });
+    const ui = await render(wrap());
+    expect(ui.byLabel('Night mode')).toHaveLength(1);
+    await ui.press('Start contraction');
+    expect(ui.byLabel('Exit partner mode')).toHaveLength(1);
+    expect(ui.byLabel('Night mode')).toHaveLength(0);
+    expect(ui.byLabel('History')).toHaveLength(0);
+    await ui.press('Exit partner mode');
+    expect(useSettings.getState().settings.partnerMode).toBe(false);
+    expect(ui.byLabel('History')).toHaveLength(1);
+  });
+
+  it('hides the tab bar while a contraction runs in Partner mode, and only then', async () => {
+    const tabs = async () => {
+      const ui = await render(<ThemeProvider palette={palette} fontScale={FONT_SCALE} touchTarget={TOUCH_TARGET}><TabsLayout /></ThemeProvider>);
+      return ui;
+    };
+    const barHidden = (ui: Awaited<ReturnType<typeof render>>) => {
+      const el = ui.root.findAll((n) => n.props.screenOptions)[0];
+      return el.props.screenOptions.tabBarStyle.display === 'none';
+    };
+    useSettings.getState().update({ partnerMode: true });
+    let ui = await tabs();
+    expect(barHidden(ui)).toBe(false);
+    await cleanup();
+    useSessions.getState().tap(NOW);
+    ui = await tabs();
+    expect(barHidden(ui)).toBe(true);
+    await cleanup();
+    useSettings.getState().update({ partnerMode: false });
+    ui = await tabs();
+    expect(barHidden(ui)).toBe(false);
+  });
+});
+
+describe('Night mode, one tap from the Timer (plan F16)', () => {
+  it('switches to Night and back to what it was', async () => {
+    const ui = await render(wrap());
+    await act(async () => void sharedStore.set('theme.mode', 'dark'));
+    await ui.press('Night mode');
+    expect(getThemePref()).toBe('night');
+    expect(ui.byLabel('Night mode, on')).toHaveLength(1);
+    await ui.press('Night mode, on');
+    expect(getThemePref()).toBe('dark');
+    void toggleNight;
+  });
+});
+
+describe('first run after Skip (plan §6)', () => {
+  it('offers the disclaimer as a sheet, once, with "I understand" saving the acknowledgement', async () => {
+    useMeta.getState().update({ disclaimerAckAt: undefined });
+    let ui = await render(wrap());
+    expect(ui.texts()).toContain('A quick, important note');
+    expect(ui.texts().some((x) => x.startsWith("This app helps you keep track."))).toBe(true);
+    await ui.press('Remind me later');
+    await cleanup();
+    ui = await render(wrap()); // the same launch: not again
+    expect(ui.texts()).not.toContain('A quick, important note');
+    resetDisclaimerSheetForTests(); // the next launch
+    await cleanup();
+    ui = await render(wrap());
+    await ui.press('I understand');
+    expect(useMeta.getState().meta.disclaimerAckAt).toBe(NOW);
+  });
+
+  it('never covers a session that is running', async () => {
+    useMeta.getState().update({ disclaimerAckAt: undefined });
+    useSessions.getState().tap(NOW - 60_000);
+    const ui = await render(wrap());
+    expect(ui.texts()).not.toContain('A quick, important note');
+  });
+
+  it('shows the one-time hint around the button, in the space of the running time, and a tap on the button dismisses it', async () => {
+    useMeta.getState().update({ coachMarkShownAt: undefined });
+    const ui = await render(wrap());
+    expect(ui.texts()).toContain("When a contraction starts, tap here. That's it.");
+    await ui.press('Start contraction');
+    expect(useMeta.getState().meta.coachMarkShownAt).toBe(NOW);
+    await cleanup();
+    useSessions.getState().reset();
+    const again = await render(wrap());
+    expect(again.texts()).not.toContain("When a contraction starts, tap here. That's it.");
+  });
+
+  it('shows the "How this works" link for a first baby and when nothing was answered, and hides it for "I\'ve done this before"', async () => {
+    let ui = await render(wrap());
+    expect(ui.byLabel('How this works')).toHaveLength(1);
+    await cleanup();
+    useProfile.getState().update({ firstBaby: 'no' });
+    ui = await render(wrap());
+    expect(ui.byLabel('How this works')).toHaveLength(0);
   });
 });
