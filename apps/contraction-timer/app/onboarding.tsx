@@ -10,6 +10,9 @@ import { applyOnboardingAnswers, clearOnboardingResume } from '@/features/onboar
 import { buildSteps } from '@/features/onboarding/steps';
 import { db } from '@/store/storage';
 
+/** If the consent form never answers (a stuck network call), the first screen must not wait for ever. */
+export const CONSENT_WAIT_MS = 10_000;
+
 export default function Onboarding() {
   const { colors } = useTheme();
   useAdScreen('onboarding');
@@ -43,7 +46,7 @@ export default function Onboarding() {
           // Plan §6: the consent form (when the region requires one) comes after the last screen and before the Timer.
           // After Skip it waits until the person first leaves the Timer, so it never covers the button.
           if (skipped.current) go();
-          else void startAds().finally(go);
+          else void Promise.race([startAds(), new Promise<void>((resolve) => setTimeout(resolve, CONSENT_WAIT_MS))]).finally(go);
         }}
       />
     </SafeAreaView>

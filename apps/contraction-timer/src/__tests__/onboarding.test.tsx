@@ -194,6 +194,15 @@ describe('finishing', () => {
     expect(db.get('onboarding.resume')).toBeUndefined();
   });
 
+  it('does not leave the person waiting for ever if the consent form never answers', async () => {
+    mockStartAds.mockImplementationOnce(() => new Promise(() => undefined));
+    const ui = await render(wrap());
+    await through(ui, "I've done this before", ['Timing contractions']);
+    expect(mockRouter.replace).not.toHaveBeenCalled();
+    await act(async () => void jest.advanceTimersByTime(10_000));
+    expect(mockRouter.replace).toHaveBeenCalledWith('/timer');
+  });
+
   it('"I\'m the partner" turns Partner mode on', async () => {
     const ui = await render(wrap());
     await through(ui, "I'm the partner", ['Timing contractions']);

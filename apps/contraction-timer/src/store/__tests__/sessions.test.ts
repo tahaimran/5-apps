@@ -114,7 +114,7 @@ describe('ending and the idle rules', () => {
     expect(useSessions.getState().active).toBeNull();
     expect(db.get('activeSession')).toBeNull();
     expect(db.get(`session.${ended.id}`)).toMatchObject({ endedAt: NOW + 40 * SECOND });
-    expect(useMeta.getState().meta.lastSessionEndedAt).toBe(NOW + 40 * SECOND);
+    expect(useMeta.getState().meta.lastSessionEndedAt).toBe(NOW + 2 * MINUTE); // when it was closed, not when the last contraction ended
   });
   it('asks after 2 hours and ends by itself after 6, at the time of the last contraction', () => {
     tapAt(0);

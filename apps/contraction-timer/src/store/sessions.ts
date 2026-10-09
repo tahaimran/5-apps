@@ -140,7 +140,9 @@ export const useSessions = create<SessionsState>((set, get) => {
       // Written in this order so a kill in between leaves the session in the history or still open, never lost.
       file(ended);
       writeActive(null);
-      useMeta.getState().update({ lastSessionEndedAt: ended.endedAt ?? now });
+      // The moment the session was closed (by hand or by the idle rule), not the time of its last contraction: the ad and rating
+      // quiet times count from when the person stopped using the timer.
+      useMeta.getState().update({ lastSessionEndedAt: now });
       return ended;
     },
     keepActive: (now = Date.now()) => {

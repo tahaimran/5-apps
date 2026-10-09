@@ -37,6 +37,8 @@ export default function Kicks() {
   const onboardingDay = useMeta((s) => s.meta.onboardingDay);
   const now = useNow(!!active, 500);
   const [sheet, setSheet] = useState(false);
+  // Locks the page's scrolling while a finger is on the counter, so a thumb that slides a little cannot turn a tap into a scroll.
+  const [touching, setTouching] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const flash = (message: string) => {
@@ -70,7 +72,7 @@ export default function Kicks() {
   const size = KICK_BUTTON;
 
   return (
-    <Screen>
+    <Screen scrollEnabled={!touching}>
       <View style={{ flexDirection: 'row', alignItems: 'center', gap: spacing.sm }}>
         <AppText accessibilityRole="header" style={[type.headline, { color: colors.text, fontWeight: '700', flex: 1 }]}>{t('kicks.title')}</AppText>
         <IconButton icon="history" label={t('kicks.history')} onPress={() => router.push('/kicks/history')} />
@@ -96,6 +98,8 @@ export default function Kicks() {
             accessibilityLabel={t('kicks.countLabel', { n: active.taps.length, target: active.target })}
             disabled={reached}
             onPress={onCount}
+            onPressIn={() => setTouching(true)}
+            onPressOut={() => setTouching(false)}
             hitSlop={24}
             style={({ pressed }) => ({ alignSelf: 'center', width: size + 20, height: size + 20, borderRadius: (size + 20) / 2, borderWidth: 4, borderColor: colors.text, backgroundColor: reached ? app.active : colors.primary, alignItems: 'center', justifyContent: 'center', opacity: pressed ? 0.85 : 1, transform: [{ scale: pressed ? 0.97 : 1 }] })}
           >

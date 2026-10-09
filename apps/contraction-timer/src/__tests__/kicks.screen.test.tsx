@@ -126,6 +126,18 @@ describe('the Kicks tab', () => {
     expect(ui.byLabel('Count a movement. 1 of 10 so far')).toHaveLength(1);
   });
 
+  it('stops the page scrolling while a finger is on the counter, and lets it scroll again afterwards', async () => {
+    const ui = await render(wrap(<Kicks />));
+    await ui.press('Start counting movements');
+    const scroller = () => ui.root.findAll((n) => typeof n.props.scrollEnabled === 'boolean' && typeof n.type === 'string')[0];
+    const counter = ui.root.findAll((n) => typeof n.props.onPressIn === 'function' && /^Count a movement/.test(String(n.props.accessibilityLabel)))[0];
+    expect(scroller().props.scrollEnabled).toBe(true);
+    await act(async () => counter.props.onPressIn());
+    expect(scroller().props.scrollEnabled).toBe(false);
+    await act(async () => counter.props.onPressOut());
+    expect(scroller().props.scrollEnabled).toBe(true);
+  });
+
   it('opens the history', async () => {
     const ui = await render(wrap(<Kicks />));
     await ui.press('History');
