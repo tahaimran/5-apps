@@ -1,0 +1,55 @@
+{
+  "_comment": "Copy to ADMOB_IDS.local.json (git-ignored) and fill in. Never commit real IDs. Fill app IDs as ca-app-pub-XXXXXXXXXXXXXXXX~YYYYYYYYYY and unit IDs as ca-app-pub-XXXXXXXXXXXXXXXX/ZZZZZZZZZZ.",
+  "publisherId": "",
+  "apps": {
+    "habit-tracker": {
+      "EXPO_PUBLIC_ADMOB_ANDROID_APP_ID": "",
+      "EXPO_PUBLIC_ADMOB_TODAY_BOTTOM": "",
+      "EXPO_PUBLIC_ADMOB_STATS_LIST": "",
+      "EXPO_PUBLIC_ADMOB_LEAVE_STATS": "",
+      "EXPO_PUBLIC_ADMOB_AFTER_EDIT": "",
+      "EXPO_PUBLIC_ADMOB_STREAK_FREEZE": "",
+      "EXPO_PUBLIC_ADMOB_THEME_UNLOCK": "",
+      "EXPO_PUBLIC_ADMOB_APP_OPEN_WARM": ""
+    },
+    "water-reminder": {
+      "EXPO_PUBLIC_ADMOB_ANDROID_APP_ID": "",
+      "EXPO_PUBLIC_ADMOB_HOME_UNDER_RING": "",
+      "EXPO_PUBLIC_ADMOB_HISTORY_LIST": "",
+      "EXPO_PUBLIC_ADMOB_HISTORY_EXIT": "",
+      "EXPO_PUBLIC_ADMOB_GARDEN_UNLOCK_SKIN": "",
+      "EXPO_PUBLIC_ADMOB_STREAK_FREEZE": "",
+      "EXPO_PUBLIC_ADMOB_APP_OPEN_WARM": ""
+    },
+    "word-search": {
+      "EXPO_PUBLIC_ADMOB_ANDROID_APP_ID": "",
+      "EXPO_PUBLIC_ADMOB_HOME_BANNER": "",
+      "EXPO_PUBLIC_ADMOB_PACKS_BANNER": "",
+      "EXPO_PUBLIC_ADMOB_LEVEL_COMPLETE": "",
+      "EXPO_PUBLIC_ADMOB_HINT_REFILL": "",
+      "EXPO_PUBLIC_ADMOB_APP_OPEN": ""
+    },
+    "trivia-quiz": {
+      "EXPO_PUBLIC_ADMOB_ANDROID_APP_ID": "",
+      "EXPO_PUBLIC_ADMOB_MENU": "",
+      "EXPO_PUBLIC_ADMOB_ROUND_END": "",
+      "EXPO_PUBLIC_ADMOB_LIFELINE": "",
+      "EXPO_PUBLIC_ADMOB_EXTRA_LIFE": "",
+      "EXPO_PUBLIC_ADMOB_DOUBLE_XP": "",
+      "EXPO_PUBLIC_ADMOB_STREAK_RESTORE": "",
+      "EXPO_PUBLIC_ADMOB_APP_OPEN": "",
+      "EXPO_PUBLIC_ADMOB_RESULTS_NATIVE": ""
+    },
+    "contraction-timer": {
+      "EXPO_PUBLIC_ADMOB_ANDROID_APP_ID": "",
+      "EXPO_PUBLIC_ADMOB_HISTORY_BANNER": "",
+      "EXPO_PUBLIC_ADMOB_WEEK_BANNER": "",
+      "EXPO_PUBLIC_ADMOB_CHECKLIST_BANNER": "",
+      "EXPO_PUBLIC_ADMOB_WEEK_NATIVE": "",
+      "EXPO_PUBLIC_ADMOB_PDF_THEME_REWARD": "",
+      "EXPO_PUBLIC_ADMOB_CHECKLIST_TEMPLATE_REWARD": "",
+      "EXPO_PUBLIC_ADMOB_WEEK_CLOSE_INTERSTITIAL": "",
+      "EXPO_PUBLIC_ADMOB_APP_OPEN": ""
+    }
+  }
+}

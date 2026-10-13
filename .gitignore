@@ -9,3 +9,6 @@ google-service-account*.json
 android/
 ios/
 .remember/
+
+# Real AdMob IDs (see docs/admob/)
+docs/admob/*.local.json
