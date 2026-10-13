@@ -22,8 +22,8 @@ Status (2026-10-09): the code checks pass (TypeScript has no errors, expo-doctor
 17. - [ ] Register your own phone as a test device in AdMob so real ads never count as your own clicks.
 
 ## 2. Set up money (AdMob)
-- [ ] Create the app in AdMob (Android, not yet listed on Play).
-- [ ] Create the ad units: 1 banner, 1 native, 2 interstitial (full-screen), 2 rewarded (watch-to-earn), 1 app-open.
+- [x] Create the app in AdMob (Android, not yet listed on Play).
+- [x] Create the ad units: 1 banner, 1 native, 2 interstitial (full-screen), 2 rewarded (watch-to-earn), 1 app-open.
 - [ ] Add each real ID as an EAS environment variable with `eas env:create` (never put them in git):
   - [ ] `EXPO_PUBLIC_ADMOB_ANDROID_APP_ID` (the app ID, `ca-app-pub-...~...`)
   - [ ] `EXPO_PUBLIC_ADMOB_TODAY_BOTTOM` (banner)
@@ -33,9 +33,9 @@ Status (2026-10-09): the code checks pass (TypeScript has no errors, expo-doctor
   - [ ] `EXPO_PUBLIC_ADMOB_STREAK_FREEZE` (rewarded)
   - [ ] `EXPO_PUBLIC_ADMOB_APP_OPEN_WARM` (app-open)
   - [ ] `EXPO_PUBLIC_ADMOB_THEME_UNLOCK` (rewarded; optional for now, premium themes are not built yet)
-- [ ] In AdMob, set the max ad content rating to **T** and block sensitive categories.
+- [x] In AdMob, set the max ad content rating to **T** and block sensitive categories.
 - [ ] Set up the GDPR consent message (EU privacy form) in AdMob → Privacy & messaging.
-- [ ] Replace `pub-0000000000000000` in `store/app-ads.txt` with your publisher ID (AdMob → Settings → Account information).
+- [x] Replace `pub-0000000000000000` in `store/app-ads.txt` with your publisher ID (AdMob → Settings → Account information).
 - [ ] Host `app-ads.txt` at the root of your developer website (e.g. `https://yoursite.com/app-ads.txt`) and wait for AdMob to verify it.
 
 ## 3. Things you must write or host

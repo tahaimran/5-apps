@@ -1,0 +1,4 @@
+# app-ads.txt — host at https://<developer-website>/app-ads.txt (the domain listed in Play Console).
+# Publisher ID: AdMob → Settings → Account information. Same line for all 5 apps.
+# Add one line per mediation partner once mediation is enabled (after ~1k DAU, docs/ADMOB_PLAYBOOK.md §4).
+google.com, pub-4070584433937766, DIRECT, f08c47fec0942fa0
