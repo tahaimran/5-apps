@@ -11,4 +11,4 @@ ios/
 .remember/
 
 # Real AdMob IDs (see docs/admob/)
-docs/admob/*.local.json
+docs/admob/*.local.*

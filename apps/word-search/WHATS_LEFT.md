@@ -33,16 +33,16 @@ Tip: in a development build, Settings → "Ad rules (development builds only)" s
 27. - [ ] If you can, try a cheap Android 10 phone, a mid Android 13 phone and a tablet (Samsung/Xiaomi/Pixel for reminders).
 
 ## 2. Set up money (AdMob)
-- [ ] Create the app in AdMob (Android, "not yet published").
-- [ ] Create 5 ad units: home banner, packs banner, interstitial (full-screen), rewarded (hint video), app open.
+- [x] Create the app in AdMob (Android, "not yet published").
+- [x] Create 5 ad units: home banner, packs banner, interstitial (full-screen), rewarded (hint video), app open.
 - [ ] Add these as EAS environment variables (`eas env:create`), never in git:
   - `EXPO_PUBLIC_ADMOB_ANDROID_APP_ID` (the app ID, `ca-app-pub-…~…`)
   - `EXPO_PUBLIC_ADMOB_HOME_BANNER`, `EXPO_PUBLIC_ADMOB_PACKS_BANNER`
   - `EXPO_PUBLIC_ADMOB_LEVEL_COMPLETE` (interstitial), `EXPO_PUBLIC_ADMOB_HINT_REFILL` (rewarded), `EXPO_PUBLIC_ADMOB_APP_OPEN`
 - [ ] Register your own phone as a test device in AdMob (so you never click your own real ads).
-- [ ] Set max ad content rating to G or PG and block gambling and dating ad categories in AdMob.
+- [x] Set max ad content rating to G or PG and block gambling and dating ad categories in AdMob.
 - [ ] Set up the EU consent message (GDPR) in AdMob's Privacy & messaging page.
-- [ ] Write app-ads.txt (a file proving you own the ad slots): `google.com, pub-<your publisher id>, DIRECT, f08c47fec0942fa0`.
+- [x] Write app-ads.txt (a file proving you own the ad slots): `google.com, pub-<your publisher id>, DIRECT, f08c47fec0942fa0`.
 - [ ] Host app-ads.txt at the root of the website you list in Play Console.
 - [ ] Later (once over ~1k daily users): add mediation (other ad networks bidding): Meta, AppLovin, Unity; then list each in app-ads.txt, privacy policy and Data safety.
 

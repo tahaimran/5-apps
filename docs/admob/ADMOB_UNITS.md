@@ -157,3 +157,21 @@ get-rich-quick, politics, religion, drugs and supplements, astrology, shocking c
   package for an unlisted app, so the browser task is not blocked, but confirm the final name before the first Play upload.
 - **Contraction Timer** has the same note about its final package name.
 - **Reward amounts** above are labels shown in AdMob only. The app code decides what is granted.
+
+---
+
+## Status (2026-10-13)
+
+Done in the AdMob console: 5 apps and 34 ad units created, content ratings and blocking controls applied, US state
+regulations message published. Publisher `pub-4070584433937766` (appears in `apps/*/store/app-ads.txt`, which is public
+by design). Real app and unit IDs are in the git-ignored `ADMOB_IDS.local.json`; the matching
+`eas-env-create.local.sh` (also git-ignored) sets them as EAS environment variables.
+
+**Blocking state (applied in AdMob; do not change in code or docs without checking AdMob).** All 5 apps block: Dating,
+Leisure Gambling, Social Casino Games, Alcohol & Substance Abuse, Alcoholic Beverages, Credit & Lending, Astrology &
+Horoscopes, References to Sex, Sensationalism, Politics, Religion. Also blocked: Sipling adds Drugs & Supplements and
+Weight Loss; Contraction Timer blocks all 11 sensitive categories. Max ad content rating: Habit T, Sipling T,
+Word Search PG, Quizora T, Contraction Timer G.
+
+Still open: GDPR (EEA+UK) message (needs a privacy policy URL per app first), test device ID, final Sipling and
+Contraction Timer package names, linking AdMob apps to Play listings, Play Data safety, hosting `app-ads.txt`, mediation at ~1k DAU.

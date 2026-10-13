@@ -36,16 +36,16 @@ Install the preview APK, then check each item. Full list: `RELEASE.md` section 4
 - [ ] 25. If you can, try a cheap old phone (Android 8–10), a newer one and a large 6.7" one.
 
 ## 2. Set up money (AdMob)
-- [ ] Create the app in AdMob (Android, package `com.fiveapps.contractiontimer`). Decide the final package name first; it can never change after the first upload.
-- [ ] Create 8 ad units: 4 banners, 1 native, 2 rewarded, 1 interstitial, 1 app open (one per placement below).
+- [x] Create the app in AdMob (Android, package `com.fiveapps.contractiontimer`). Decide the final package name first; it can never change after the first upload.
+- [x] Create 8 ad units: 4 banners, 1 native, 2 rewarded, 1 interstitial, 1 app open (one per placement below).
 - [ ] Run `eas env:create` (stores secrets in EAS, not git) for each of:
   `EXPO_PUBLIC_ADMOB_ANDROID_APP_ID`, `EXPO_PUBLIC_ADMOB_HISTORY_BANNER`, `EXPO_PUBLIC_ADMOB_WEEK_BANNER`,
   `EXPO_PUBLIC_ADMOB_CHECKLIST_BANNER`, `EXPO_PUBLIC_ADMOB_WEEK_NATIVE`, `EXPO_PUBLIC_ADMOB_PDF_THEME_REWARD`,
   `EXPO_PUBLIC_ADMOB_CHECKLIST_TEMPLATE_REWARD`, `EXPO_PUBLIC_ADMOB_WEEK_CLOSE_INTERSTITIAL`, `EXPO_PUBLIC_ADMOB_APP_OPEN`.
 - [ ] Never put real IDs in git. Until set, the app uses Google's test IDs.
 - [ ] Register your phone as a test device in AdMob, so you never click your own real ads.
-- [ ] Block sensitive ad categories in AdMob: dating, gambling, alcohol, sexual and reproductive health, weight loss, cosmetic procedures, get-rich-quick, politics, religion, drugs and supplements, astrology, shocking content, personal loans.
-- [ ] Set the maximum ad content rating to **G** in AdMob.
+- [x] Block sensitive ad categories in AdMob: dating, gambling, alcohol, sexual and reproductive health, weight loss, cosmetic procedures, get-rich-quick, politics, religion, drugs and supplements, astrology, shocking content, personal loans.
+- [x] Set the maximum ad content rating to **G** in AdMob.
 - [ ] Host `app-ads.txt` (a file proving you own the ads) at the root of your developer website, with your AdMob publisher line.
 
 ## 3. Things you must write, host or get reviewed

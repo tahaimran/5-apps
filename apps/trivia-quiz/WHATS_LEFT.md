@@ -30,10 +30,10 @@ Status (2026-10-09): the code checks pass (type check clean, expo-doctor 21/21, 
 21. [ ] If possible, test on a cheap old phone (2 GB, Android 9): starts in under 2 seconds, smooth animations.
 
 ## 2. Set up money (AdMob)
-- [ ] Create the Quizora app in AdMob (Android).
-- [ ] Create 8 ad units: menu (banner), round_end (interstitial), lifeline, extra_life, double_xp, streak_restore (rewarded), app_open, results_native (native).
+- [x] Create the Quizora app in AdMob (Android).
+- [x] Create 8 ad units: menu (banner), round_end (interstitial), lifeline, extra_life, double_xp, streak_restore (rewarded), app_open, results_native (native).
 - [ ] Put the real IDs in EAS environment variables (never in git): `EXPO_PUBLIC_ADMOB_ANDROID_APP_ID`, `EXPO_PUBLIC_ADMOB_MENU`, `EXPO_PUBLIC_ADMOB_ROUND_END`, `EXPO_PUBLIC_ADMOB_LIFELINE`, `EXPO_PUBLIC_ADMOB_EXTRA_LIFE`, `EXPO_PUBLIC_ADMOB_DOUBLE_XP`, `EXPO_PUBLIC_ADMOB_STREAK_RESTORE`, `EXPO_PUBLIC_ADMOB_APP_OPEN`, `EXPO_PUBLIC_ADMOB_RESULTS_NATIVE`.
-- [ ] Set "Max ad content rating" to T in AdMob, and block sensitive categories (gambling, dating).
+- [x] Set "Max ad content rating" to T in AdMob, and block sensitive categories (gambling, dating).
 - [ ] Publish `app-ads.txt` (a file proving you own the ads) at `https://<your-site>/app-ads.txt` with `google.com, pub-<your id>, DIRECT, f08c47fec0942fa0`, then verify it in AdMob.
 - [ ] After the app is on Play, link the AdMob app to the Play listing.
 
