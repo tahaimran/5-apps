@@ -29,6 +29,10 @@ import { useSettings } from '@/store/settings';
 import { useToday } from '@/store/today';
 import { palette } from '@/theme/tokens';
 
+// The first test in this file renders full screens and pays Jest's one-time module transform
+// cost, which takes ~6s on a cold cache (0.5s warm) and tripped the 5s default.
+jest.setTimeout(20_000);
+
 const TODAY = '2026-10-08' as DayKey;
 const themed = (el: ReactElement) => <ThemeProvider palette={palette}>{el}</ThemeProvider>;
 const add = (id: string, createdAt: DayKey = TODAY) => useHabits.getState().addHabit({ ...draftFromTemplate(templateById(id)!, TODAY), createdAt });
