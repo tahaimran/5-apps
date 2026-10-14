@@ -94,6 +94,41 @@ describe('initNotifications', () => {
     expect(mockN.handler).toHaveBeenCalledTimes(1);
     expect(mockN.channel).toHaveBeenCalledTimes(1);
   });
+  it('makes a concurrent caller wait until the channel exists', async () => {
+    withOS('android');
+    const n = load();
+    let created!: () => void;
+    mockN.channel.mockImplementationOnce(() => new Promise<null>((r) => (created = () => r(null))));
+    const first = n.initNotifications();
+    let secondDone = false;
+    const second = n.initNotifications().then(() => (secondDone = true));
+    await Promise.resolve();
+    await Promise.resolve();
+    expect(secondDone).toBe(false);
+    created();
+    await Promise.all([first, second]);
+    expect(secondDone).toBe(true);
+    expect(mockN.channel).toHaveBeenCalledTimes(1);
+  });
+  it('retries a channel that failed to be created', async () => {
+    withOS('android');
+    const n = load();
+    mockN.channel.mockRejectedValueOnce(new Error('binder died'));
+    await expect(n.initNotifications()).rejects.toThrow('binder died');
+    await n.initNotifications();
+    expect(mockN.channel).toHaveBeenCalledTimes(2);
+  });
+  it('still creates channels that an earlier call did not list', async () => {
+    withOS('android');
+    const n = load();
+    await n.initNotifications(); // e.g. a permission prompt ran first, with the default channel only
+    await n.initNotifications([
+      { id: 'reminders', name: 'Reminders' },
+      { id: 'summary', name: 'Summary' },
+    ]);
+    expect(mockN.channel.mock.calls.map((c) => c[0])).toEqual(['reminders', 'summary']);
+    expect(mockN.handler).toHaveBeenCalledTimes(1);
+  });
   it('shows banners in the foreground without sound', async () => {
     await load().initNotifications();
     const handler = mockN.handler.mock.calls[0][0] as { handleNotification: () => Promise<Record<string, boolean>> };

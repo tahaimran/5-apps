@@ -17,6 +17,9 @@ import { useDayRollover } from '@/store/today';
 import { palette } from '@/theme/tokens';
 import '@/bootstrap';
 
+// A render error anywhere shows a retry screen instead of closing the app in release builds.
+export { CrashScreen as ErrorBoundary } from '@shared/errors';
+
 /** The "Large text" setting adds a 1.2x multiplier on top of the system font scale (plan §7.2). */
 const LARGE_TEXT = 1.2;
 

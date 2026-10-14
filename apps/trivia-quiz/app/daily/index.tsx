@@ -16,7 +16,7 @@ export default function DailyEntry() {
     if (played) return;
     const id = startDaily();
     if (id) router.replace({ pathname: '/quiz/[sessionId]', params: { sessionId: id } });
-    else router.replace('/(tabs)');
+    else router.dismissTo('/(tabs)');
   }, [played]);
   useRound((s) => s.sessionId);
   return played ? <Redirect href="/daily/result" /> : null;

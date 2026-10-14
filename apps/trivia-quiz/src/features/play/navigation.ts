@@ -13,4 +13,5 @@ export const replaceWithRound = (sessionId: string | null): boolean => {
   return true;
 };
 
-export const goHome = () => router.replace('/(tabs)');
+/** Back to an existing Home in the stack (replace would stack another tab navigator each round). */
+export const goHome = () => router.dismissTo('/(tabs)');

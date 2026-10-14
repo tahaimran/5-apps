@@ -75,7 +75,7 @@ describe('a Category round, end to end', () => {
     expect(r.byLabel('10 right out of 10')).toHaveLength(1);
     expect(r.texts().join(' ')).toContain('+200');
     await r.press('Home');
-    expect(mockRouter.replace).toHaveBeenCalledWith('/(tabs)');
+    expect(mockRouter.dismissTo).toHaveBeenCalledWith('/(tabs)');
   });
 });
 

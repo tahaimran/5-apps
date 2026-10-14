@@ -18,6 +18,9 @@ import { startWidgetSync } from '@/widget/sync';
 import { palette } from '@/theme/tokens';
 import '@/bootstrap';
 
+// A render error anywhere shows a retry screen instead of closing the app in release builds.
+export { CrashScreen as ErrorBoundary } from '@shared/errors';
+
 function Root() {
   const { mode, colors } = useTheme();
   const onboardingDone = useOnboardingComplete();
@@ -56,7 +59,8 @@ function Root() {
         <Stack.Screen name="habit/new" options={{ presentation: 'modal' }} />
         <Stack.Screen name="habit/[id]/edit" options={{ presentation: 'modal' }} />
         <Stack.Screen name="templates" options={{ presentation: 'modal' }} />
-        <Stack.Screen name="note/[date]" options={{ presentation: 'formSheet', sheetGrabberVisible: true }} />
+        {/* Not formSheet: an Android form sheet with a header and keyboard is an unstable react-native-screens path. */}
+        <Stack.Screen name="note/[date]" options={{ presentation: 'modal' }} />
       </Stack>
     </>
   );

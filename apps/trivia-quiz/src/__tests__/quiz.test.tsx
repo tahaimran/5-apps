@@ -123,7 +123,7 @@ describe('leaving a round', () => {
     await r.press('Quit round');
     await r.press('Quit');
     expect(useRound.getState().state).toBeNull();
-    expect(mockRouter.replace).toHaveBeenCalledWith('/(tabs)');
+    expect(mockRouter.dismissTo).toHaveBeenCalledWith('/(tabs)');
   });
 
   it('opens the quit sheet on Android Back instead of leaving', async () => {

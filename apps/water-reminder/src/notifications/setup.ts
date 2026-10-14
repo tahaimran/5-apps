@@ -15,7 +15,7 @@ let channelsDone: Promise<void> | null = null;
 /**
  * Android channels (plan §10.1): "Water reminders" (high, with the drop sound and a short
  * vibration) and "Gentle reminders" (low, silent). Needs to run before the first permission
- * request, because the shared helper only creates its default channel on the first call.
+ * request, so the first channel creation already has the sound and importance above.
  */
 export function setupChannels(): Promise<void> {
   channelsDone ??= initNotifications([
@@ -28,7 +28,10 @@ export function setupChannels(): Promise<void> {
       lockscreenVisibility: Notifications.AndroidNotificationVisibility.PUBLIC,
     },
     { id: CHANNEL_GENTLE, name: t('notify.channelGentle'), importance: Notifications.AndroidImportance.LOW, sound: null },
-  ]);
+  ]).catch((e: unknown) => {
+    channelsDone = null; // retry on the next call instead of remembering the failure
+    throw e;
+  });
   return channelsDone;
 }
 

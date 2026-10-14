@@ -1,6 +1,6 @@
 import { useCallback, useEffect } from 'react';
 import { AccessibilityInfo, StyleSheet, Text, View } from 'react-native';
-import Animated, { FadeInDown, FadeOut, useReducedMotion } from 'react-native-reanimated';
+import Animated, { FadeInDown, useReducedMotion } from 'react-native-reanimated';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
 import { useCelebration } from '@/store/celebrations';
@@ -33,7 +33,6 @@ export function CelebrationHost() {
       <Animated.View
         key={`toast-${current.id}`}
         entering={reduced ? undefined : FadeInDown.duration(220)}
-        exiting={FadeOut.duration(200)}
         style={[styles.toast, { backgroundColor: colors.text, borderRadius: radius.md, padding: spacing.md, top: spacing.xl }]}
       >
         <Text style={[type.bodyLarge, { color: colors.background, fontWeight: '700', textAlign: 'center' }]}>{message}</Text>

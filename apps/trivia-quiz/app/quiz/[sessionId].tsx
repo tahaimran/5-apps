@@ -176,7 +176,7 @@ export default function Quiz() {
   const quit = () => {
     setQuitOpen(false);
     useRound.getState().clear();
-    router.replace('/(tabs)');
+    router.dismissTo('/(tabs)');
   };
   void mode;
 

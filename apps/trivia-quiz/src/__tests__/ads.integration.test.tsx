@@ -252,7 +252,7 @@ describe('interstitial between rounds (plan §12)', () => {
     await tap(ui, 'Home');
     expect(shown('interstitial')).toHaveLength(1);
     await closeAd();
-    expect(mockRouter.replace).toHaveBeenCalledWith('/(tabs)');
+    expect(mockRouter.dismissTo).toHaveBeenCalledWith('/(tabs)');
   });
 
   it('does not show after the 1st round, and goes straight on', async () => {
@@ -346,7 +346,7 @@ describe('interstitial between rounds (plan §12)', () => {
     expect(mockReview.request).toHaveBeenCalledTimes(1);
     await tap(ui, 'Home');
     expect(shown('interstitial')).toHaveLength(0);
-    expect(mockRouter.replace).toHaveBeenCalledWith('/(tabs)');
+    expect(mockRouter.dismissTo).toHaveBeenCalledWith('/(tabs)');
   });
 
   it('never leaves the Daily result through an interstitial', async () => {

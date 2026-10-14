@@ -78,6 +78,25 @@ describe('plurals', () => {
     mockLocale.current = 'ru';
     expect([1, 2, 5, 21].map((n) => t('items', { count: n }))).toEqual(['1 предмет', '2 предмета', '5 предметов', '21 предмет']);
   });
+  describe('on a JS engine without Intl.PluralRules (Hermes on Android)', () => {
+    const original = Intl.PluralRules;
+    beforeEach(() => {
+      (Intl as { PluralRules?: unknown }).PluralRules = undefined;
+    });
+    afterEach(() => {
+      (Intl as { PluralRules?: unknown }).PluralRules = original;
+    });
+    it('does not throw and still picks one / other', () => {
+      mockLocale.current = 'de'; // a language no other test has cached rules for
+      expect(t('items', { count: 1 })).toBe('1 item');
+      expect(t('items', { count: 2 })).toBe('2 items');
+      expect(t('items', { count: 0 })).toBe('0 items');
+    });
+  });
+  it('does not throw when PluralRules rejects the locale', () => {
+    mockLocale.current = 'not a locale!';
+    expect(t('items', { count: 1 })).toBe('1 item');
+  });
 });
 
 describe('locales', () => {

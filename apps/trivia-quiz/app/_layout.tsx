@@ -22,6 +22,9 @@ import { palette, TOUCH_TARGET } from '@/theme/tokens';
 import { FONT_BOLD, FONT_MEDIUM, FONT_REGULAR, FONT_SEMIBOLD } from '@/ui/AppText';
 import '@/bootstrap';
 
+// A render error anywhere shows a retry screen instead of closing the app in release builds.
+export { CrashScreen as ErrorBoundary } from '@shared/errors';
+
 void SplashScreen.preventAutoHideAsync().catch(() => undefined);
 
 function Root() {

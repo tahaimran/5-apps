@@ -24,7 +24,28 @@ export interface PermissionReason {
   notNow?: string;
 }
 
-let initialized = false;
+let handlerSet = false;
+/** One creation per channel id: concurrent callers wait on it, and a failed one is retried next call. */
+const channelsCreated = new Map<string, Promise<unknown>>();
+
+const createChannel = (c: ChannelConfig) => {
+  let created = channelsCreated.get(c.id);
+  if (!created) {
+    created = Notifications.setNotificationChannelAsync(c.id, {
+      name: c.name,
+      description: c.description,
+      importance: c.importance ?? Notifications.AndroidImportance.DEFAULT,
+      ...(c.sound !== undefined && { sound: c.sound }),
+      ...(c.vibrationPattern && { vibrationPattern: c.vibrationPattern }),
+      ...(c.lockscreenVisibility !== undefined && { lockscreenVisibility: c.lockscreenVisibility }),
+    }).catch((e: unknown) => {
+      channelsCreated.delete(c.id);
+      throw e;
+    });
+    channelsCreated.set(c.id, created);
+  }
+  return created;
+};
 
 /**
  * Creates the Android channels (a default "reminders" channel plus any the app lists) and
@@ -33,27 +54,19 @@ let initialized = false;
 export async function initNotifications(
   channels: ChannelConfig[] = [{ id: DEFAULT_CHANNEL_ID, name: 'Reminders' }],
 ): Promise<void> {
-  if (initialized) return;
-  initialized = true;
-  Notifications.setNotificationHandler({
-    handleNotification: async () => ({
-      shouldShowBanner: true,
-      shouldShowList: true,
-      shouldPlaySound: false,
-      shouldSetBadge: false,
-    }),
-  });
+  if (!handlerSet) {
+    handlerSet = true;
+    Notifications.setNotificationHandler({
+      handleNotification: async () => ({
+        shouldShowBanner: true,
+        shouldShowList: true,
+        shouldPlaySound: false,
+        shouldSetBadge: false,
+      }),
+    });
+  }
   if (Platform.OS === 'android') {
-    for (const c of channels) {
-      await Notifications.setNotificationChannelAsync(c.id, {
-        name: c.name,
-        description: c.description,
-        importance: c.importance ?? Notifications.AndroidImportance.DEFAULT,
-        ...(c.sound !== undefined && { sound: c.sound }),
-        ...(c.vibrationPattern && { vibrationPattern: c.vibrationPattern }),
-        ...(c.lockscreenVisibility !== undefined && { lockscreenVisibility: c.lockscreenVisibility }),
-      });
-    }
+    for (const c of channels) await createChannel(c);
   }
 }
 
