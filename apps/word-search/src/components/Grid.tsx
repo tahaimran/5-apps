@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { memo, useEffect, useMemo, useRef, useState } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import Animated, { useAnimatedProps, useReducedMotion, useSharedValue, withTiming } from 'react-native-reanimated';
@@ -30,7 +30,7 @@ export interface GridProps {
 }
 
 /** The stroke that appears when a word is found; draws itself in unless Reduce Motion is on. */
-function FoundStroke({ x1, y1, x2, y2, stroke, width, opacity, animate }: { x1: number; y1: number; x2: number; y2: number; stroke: string; width: number; opacity: number; animate: boolean }) {
+const FoundStroke = memo(function FoundStroke({ x1, y1, x2, y2, stroke, width, opacity, animate }: { x1: number; y1: number; x2: number; y2: number; stroke: string; width: number; opacity: number; animate: boolean }) {
   const reduced = useReducedMotion();
   const progress = useSharedValue(animate && !reduced ? 0 : 1);
   useEffect(() => {
@@ -50,7 +50,7 @@ function FoundStroke({ x1, y1, x2, y2, stroke, width, opacity, animate }: { x1: 
       strokeLinecap="round"
     />
   );
-}
+});
 
 /**
  * The letter grid (plan §5.3, §8.4): one gesture surface over the whole grid, not one per cell.

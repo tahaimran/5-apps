@@ -127,6 +127,8 @@ export function OnboardingFlow({ steps, onDone, labels, allowSkip = true, initia
     setBusy(true);
     try {
       await step.onContinue?.(ctx);
+    } catch {
+      // e.g. a permission request failed: move on anyway rather than strand the user on this step
     } finally {
       setBusy(false);
     }

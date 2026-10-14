@@ -96,7 +96,7 @@ export default function DailyResult() {
         <View style={{ width: '100%', gap: spacing.md }}>
           <BigButton tall label={t('daily.share')} onPress={share} />
           <BigButton label={t('daily.playLevel')} onPress={() => router.replace('/classic')} />
-          <BigButton variant="secondary" label={t('results.home')} onPress={() => router.replace('/(tabs)')} />
+          <BigButton variant="secondary" label={t('results.home')} onPress={() => router.dismissTo('/(tabs)')} />
         </View>
       </ScrollView>
       <ReminderSheet visible={askOpen} onClose={() => setAskOpen(false)} />

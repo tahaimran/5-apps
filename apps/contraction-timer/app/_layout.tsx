@@ -19,6 +19,9 @@ import { useMeta } from '@/store/meta';
 import { FONT_SCALE, palette, TOUCH_TARGET } from '@/theme/tokens';
 import '@/bootstrap';
 
+// A render error anywhere shows a retry screen instead of closing the app in release builds.
+export { CrashScreen as ErrorBoundary } from '@shared/errors';
+
 void SplashScreen.preventAutoHideAsync().catch(() => undefined);
 
 /** One cold start is one launch, even if the root remounts. */

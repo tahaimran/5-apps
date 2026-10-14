@@ -363,10 +363,13 @@ describe('onContinue', () => {
   });
   it('still moves on if the action fails, and re-enables the button', async () => {
     const f = await start([{ key: 'a', title: 'A', onContinue: async () => { throw new Error('denied'); } }, { key: 'b', title: 'B' }]);
+    const button = () => f.root.findAll((n) => n.props.accessibilityLabel === 'Next' && typeof n.props.onPress === 'function')[0];
     await act(async () => {
-      await f.root.findAll((n) => n.props.accessibilityLabel === 'Next' && typeof n.props.onPress === 'function')[0].props.onPress().catch(() => undefined);
+      await button().props.onPress(); // must not reject: nothing upstream would catch it
     });
-    expect(f.texts()).toBeDefined();
+    expect(f.texts()).toContain('"B"');
+    const done = f.root.findAll((n) => n.props.accessibilityLabel === 'Get started' && typeof n.props.onPress === 'function')[0];
+    expect(done.props.disabled).toBe(false);
   });
   it('runs on the last step before finishing', async () => {
     const order: string[] = [];

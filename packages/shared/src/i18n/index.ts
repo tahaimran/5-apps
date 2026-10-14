@@ -27,11 +27,29 @@ const lookup = (bundle: Bundle | undefined, key: string): string | undefined => 
 
 const currentLanguage = (): string => getLocales()[0]?.languageCode ?? FALLBACK;
 
+const pluralRules = new Map<string, Intl.PluralRules | null>();
+
+/**
+ * CLDR plural category for `count`. Hermes on Android has no `Intl.PluralRules`, and a bad
+ * locale makes it throw, so fall back to the English one / other rule instead of crashing render.
+ */
+function pluralCategory(language: string, count: number): string {
+  if (!pluralRules.has(language)) {
+    let rules: Intl.PluralRules | null = null;
+    try {
+      if (typeof Intl !== 'undefined' && typeof Intl.PluralRules === 'function') rules = new Intl.PluralRules(language);
+    } catch {
+      rules = null;
+    }
+    pluralRules.set(language, rules);
+  }
+  return pluralRules.get(language)?.select(count) ?? (count === 1 ? 'one' : 'other');
+}
+
 function translate(language: string, key: string, params?: TParams): string {
   let template: string | undefined;
   // Plural forms: `key_one` / `key_other` chosen by params.count.
-  const suffix =
-    typeof params?.count === 'number' ? `_${new Intl.PluralRules(language).select(params.count)}` : '';
+  const suffix = typeof params?.count === 'number' ? `_${pluralCategory(language, params.count)}` : '';
   for (const lang of [language, FALLBACK]) {
     template =
       (suffix ? lookup(bundles[lang], key + suffix) : undefined) ??

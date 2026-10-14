@@ -229,6 +229,7 @@ export const mockRouter = {
   replace: jest.fn(),
   back: jest.fn(),
   dismissAll: jest.fn(),
+  dismissTo: jest.fn(),
   canGoBack: () => true,
 };
 export const mockParams: { current: Record<string, string> } = { current: {} };

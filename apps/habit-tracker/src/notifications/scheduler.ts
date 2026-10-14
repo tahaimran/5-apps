@@ -22,7 +22,10 @@ export function setupNotifications(): Promise<void> {
     await Notifications.setNotificationCategoryAsync(CATEGORY_DONE, [
       { identifier: 'done', buttonTitle: t('notify.done'), options: { opensAppToForeground: false } },
     ]);
-  })();
+  })().catch((e: unknown) => {
+    setupDone = null; // retry on the next call instead of remembering the failure
+    throw e;
+  });
   return setupDone;
 }
 
