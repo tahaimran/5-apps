@@ -34,3 +34,10 @@ jest.mock('expo-haptics', () => ({
   ImpactFeedbackStyle: { Light: 'light', Medium: 'medium' },
   NotificationFeedbackType: { Success: 'success', Warning: 'warning', Error: 'error' },
 }));
+
+// Animation, drawing and audio modules (the UI kit, onboarding and sound modules use them).
+jest.mock('react-native-reanimated', () => require('./animation').reanimatedMock());
+jest.mock('react-native-worklets', () => require('./animation').workletsMock());
+jest.mock('react-native-svg', () => require('./animation').svgMock());
+jest.mock('expo-linear-gradient', () => require('./animation').linearGradientMock());
+jest.mock('expo-audio', () => require('./animation').audioMock());

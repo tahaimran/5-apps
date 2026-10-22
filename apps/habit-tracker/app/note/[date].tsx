@@ -1,24 +1,20 @@
 import { useState } from 'react';
-import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
+import { StyleSheet, Text, TextInput, View } from 'react-native';
 import { Stack, router, useLocalSearchParams } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
+import { PressableScale } from '@shared/ui';
 import { parseDayKey } from '@/domain/dayKey';
 import type { DayKey, DayNote } from '@/domain/types';
 import { NOTE_MAX, useNotes } from '@/store/notes';
 import { PrimaryButton } from '@/ui/controls';
+import { MoodIcon } from '@/ui/mood';
 
-const MOODS: { value: 1 | 2 | 3 | 4 | 5; emoji: string }[] = [
-  { value: 1, emoji: '😞' },
-  { value: 2, emoji: '😕' },
-  { value: 3, emoji: '😐' },
-  { value: 4, emoji: '🙂' },
-  { value: 5, emoji: '😄' },
-];
+const MOODS = [1, 2, 3, 4, 5] as const;
 
 export default function NoteScreen() {
-  const { colors, spacing, radius, type, touchTarget } = useTheme();
+  const { colors, spacing, radius, type, touchTarget, shadow } = useTheme();
   const { date } = useLocalSearchParams<{ date: string }>();
   const day = date as DayKey;
   const existing = useNotes((s) => s.notes[day]);
@@ -34,33 +30,35 @@ export default function NoteScreen() {
     <SafeAreaView style={{ flex: 1, backgroundColor: colors.background }} edges={['bottom']}>
       <Stack.Screen options={{ title: t('note.title'), headerShown: true }} />
       <View style={{ padding: spacing.lg, gap: spacing.lg }}>
-        <Text accessibilityRole="header" style={[type.title, { color: colors.text }]}>{title}</Text>
+        <Text accessibilityRole="header" style={[type.title, { color: colors.text, fontWeight: '700' }]}>{title}</Text>
 
         <View style={{ gap: spacing.sm }}>
-          <Text style={[type.caption, { color: colors.textMuted, fontWeight: '600', textTransform: 'uppercase' }]}>{t('note.mood')}</Text>
+          <Text style={[type.body, { color: colors.text, fontWeight: '700' }]}>{t('note.mood')}</Text>
           <View style={styles.moods}>
             {MOODS.map((m) => {
-              const selected = mood === m.value;
+              const selected = mood === m;
               return (
-                <Pressable
-                  key={m.value}
+                <PressableScale
+                  key={m}
                   accessibilityRole="button"
-                  accessibilityLabel={t(`note.moods.${m.value}`)}
+                  accessibilityLabel={t(`note.moods.${m}`)}
                   accessibilityState={{ selected }}
-                  onPress={() => setMood(selected ? undefined : m.value)}
+                  onPress={() => setMood(selected ? undefined : m)}
+                  scaleTo={0.88}
                   style={[
                     styles.mood,
                     {
-                      width: touchTarget + 8,
-                      height: touchTarget + 8,
-                      borderRadius: radius.md,
-                      backgroundColor: selected ? colors.primary + '26' : colors.surface,
-                      borderColor: selected ? colors.primary : colors.border,
+                      minWidth: touchTarget,
+                      height: touchTarget + 12,
+                      borderRadius: radius.lg,
+                      backgroundColor: selected ? colors.primary : colors.surface,
+                      borderColor: selected ? colors.primary : 'transparent',
                     },
+                    selected ? null : shadow(1),
                   ]}
                 >
-                  <Text style={{ fontSize: 26 }}>{m.emoji}</Text>
-                </Pressable>
+                  <MoodIcon mood={m} size={28} color={selected ? colors.onPrimary : colors.textMuted} />
+                </PressableScale>
               );
             })}
           </View>
@@ -83,9 +81,9 @@ export default function NoteScreen() {
                 backgroundColor: colors.surface,
                 borderColor: colors.border,
                 borderWidth: 1,
-                borderRadius: radius.md,
-                padding: spacing.md,
-                minHeight: 140,
+                borderRadius: radius.lg,
+                padding: spacing.lg,
+                minHeight: 160,
               },
             ]}
           />
@@ -106,5 +104,5 @@ export default function NoteScreen() {
 
 const styles = StyleSheet.create({
   moods: { flexDirection: 'row', gap: 8 },
-  mood: { alignItems: 'center', justifyContent: 'center', borderWidth: 1 },
+  mood: { flex: 1, alignItems: 'center', justifyContent: 'center', borderWidth: 2 },
 });

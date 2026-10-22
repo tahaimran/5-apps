@@ -132,6 +132,7 @@ function cleanSettings(v: unknown): Settings {
   if (v.weekStartsOn === 0 || v.weekStartsOn === 1) s.weekStartsOn = v.weekStartsOn;
   if (v.dayEndsAtHour === 0 || v.dayEndsAtHour === 1 || v.dayEndsAtHour === 2 || v.dayEndsAtHour === 3 || v.dayEndsAtHour === 4) s.dayEndsAtHour = v.dayEndsAtHour;
   if (typeof v.haptics === 'boolean') s.haptics = v.haptics;
+  if (typeof v.sounds === 'boolean') s.sounds = v.sounds;
   for (const key of ['dailySummary', 'eveningNudge'] as const) {
     const x = v[key];
     if (isObj(x) && typeof x.enabled === 'boolean' && isStr(x.time) && HHMM.test(x.time)) s[key] = { enabled: x.enabled, time: x.time };

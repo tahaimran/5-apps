@@ -6,14 +6,14 @@
   },
   "today": {
     "greeting": {
-      "morning": "Good morning, let's go",
-      "afternoon": "Good afternoon, keep going",
-      "evening": "Good evening, finish strong"
+      "morning": "Good morning",
+      "afternoon": "Good afternoon",
+      "evening": "Good evening"
     },
     "emptyTitle": "No habits yet",
     "emptyBody": "Pick one to start. You can add more anytime.",
     "quickAdd": "Add {name}",
-    "allDoneTitle": "Perfect day! 🔥",
+    "allDoneTitle": "Perfect day",
     "allDoneBody": "Everything checked off. See you tomorrow.",
     "restDay": "Nothing scheduled today. Enjoy the rest.",
     "editingDay": "Editing {date}",
@@ -42,7 +42,17 @@
     "browse": "Browse all templates",
     "moveUp": "Move up",
     "moveDown": "Move down",
-    "details": "Open details"
+    "details": "Open details",
+    "backToToday": "Back to today",
+    "hero": {
+      "start": "Fresh start",
+      "going": "Nice momentum",
+      "almost": "Almost there",
+      "past": "Catching up",
+      "progress": "{done} of {total} habits done",
+      "streak_one": "{count}-day streak",
+      "streak_other": "{count}-day streak"
+    }
   },
   "stats": {
     "empty": "Stats appear after your first check-in.",
@@ -59,7 +69,10 @@
     "last7": "7 days",
     "last30": "30 days",
     "checkIns": "Check-ins",
-    "streakLine": "{current} · best {best}"
+    "streakLine": "{current} · best {best}",
+    "bestNow": "Longest streak now",
+    "weekDone_one": "{count} check-in",
+    "weekDone_other": "{count} check-ins"
   },
   "settings": {
     "title": "Settings",
@@ -91,7 +104,16 @@
     "privacy": "Privacy choices",
     "privacyPolicy": "Privacy policy",
     "rate": "Rate us",
-    "freezes": "Streak freezes"
+    "freezes": "Streak freezes",
+    "sections": {
+      "appearance": "Appearance",
+      "week": "Your week",
+      "feel": "Sound & feel",
+      "more": "More"
+    },
+    "sounds": "Sounds",
+    "soundsHint": "Soft sounds when you check things off",
+    "hapticsHint": "Gentle vibrations on taps"
   },
   "templates": {
     "drink-water": {
@@ -373,13 +395,13 @@
     }
   },
   "celebrate": {
-    "first": "Day 1 🔥 Your streak starts now.",
-    "milestoneDays_one": "{count}-day streak! 🔥 {name}",
-    "milestoneDays_other": "{count}-day streak! 🔥 {name}",
-    "milestoneWeeks_one": "{count}-week streak! 🔥 {name}",
-    "milestoneWeeks_other": "{count}-week streak! 🔥 {name}",
-    "perfectDay": "Perfect day! 🔥",
-    "freezeUsed": "A streak freeze protected your streaks. ❄️"
+    "first": "Day 1. Your streak starts now.",
+    "milestoneDays_one": "{count}-day streak on {name}",
+    "milestoneDays_other": "{count}-day streak on {name}",
+    "milestoneWeeks_one": "{count}-week streak on {name}",
+    "milestoneWeeks_other": "{count}-week streak on {name}",
+    "perfectDay": "Perfect day. Everything checked off.",
+    "freezeUsed": "A streak freeze protected your streaks."
   },
   "widget": {
     "header": "Today · {done}/{total}",
@@ -482,7 +504,7 @@
     "title": "Streak freezes",
     "count": "{count} of 2 held",
     "body": "A freeze protects your streaks on a day you miss.",
-    "watch": "▶ Watch ad: +1 freeze",
+    "watch": "Watch an ad for +1 freeze",
     "earned": "Streak freeze added.",
     "unavailable": "No reward this time. The ad may not be available, or it was closed early. Try again in a bit.",
     "limit": "You've earned one today. Come back tomorrow.",

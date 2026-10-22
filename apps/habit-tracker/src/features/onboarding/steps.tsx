@@ -1,24 +1,52 @@
 import { useEffect } from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import Animated, { useAnimatedStyle, useReducedMotion, useSharedValue, withRepeat, withSequence, withTiming } from 'react-native-reanimated';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient';
+import Ban from 'lucide-react-native/icons/ban';
+import BellRing from 'lucide-react-native/icons/bell-ring';
+import Brain from 'lucide-react-native/icons/brain';
+import CircleCheck from 'lucide-react-native/icons/circle-check';
+import Droplet from 'lucide-react-native/icons/droplet';
+import Dumbbell from 'lucide-react-native/icons/dumbbell';
+import FlameIcon from 'lucide-react-native/icons/flame';
+import GraduationCap from 'lucide-react-native/icons/graduation-cap';
+import Moon from 'lucide-react-native/icons/moon';
+import MoonStar from 'lucide-react-native/icons/moon-star';
+import Sun from 'lucide-react-native/icons/sun';
+import Sunrise from 'lucide-react-native/icons/sunrise';
+import Zap from 'lucide-react-native/icons/zap';
 import { ensureNotificationPermission } from '@shared/notify';
 import { t } from '@shared/i18n';
 import type { OnboardingStep, StepContext } from '@shared/onboarding';
 import { useTheme } from '@shared/theme';
+import { PressableScale, type IconComponent } from '@shared/ui';
 import { goals as goalList, rankTemplates } from '@/data/onboarding';
 import type { GoalId } from '@/data/templates';
 import { templateById } from '@/data/templates';
 import { invalidateNotificationPlan } from '@/notifications/scheduler';
+import { extraColorsFor, habitColors } from '@/theme/tokens';
+import { readableOn } from '@/theme/contrast';
 import { Chip, TimeStepper } from '@/ui/controls';
+import { HabitIcon } from '@/ui/icons';
+
+/** Goal chips get line icons (the emoji in data/onboarding.ts are not rendered). */
+const GOAL_ICONS: Record<GoalId, IconComponent> = {
+  fit: Dumbbell,
+  sleep: MoonStar,
+  productive: Zap,
+  mind: Brain,
+  quit: Ban,
+  learn: GraduationCap,
+  healthier: Droplet,
+};
 
 export type ReminderAnswer = { mode: 'suggested' } | { mode: 'preset' | 'custom'; time: string } | { mode: 'none' };
 
 export const MAX_STARTERS = 3;
 export const REMINDER_PRESETS = [
-  { key: 'morning', emoji: '🌅', time: '08:00' },
-  { key: 'afternoon', emoji: '☀️', time: '13:00' },
-  { key: 'evening', emoji: '🌙', time: '20:00' },
+  { key: 'morning', icon: Sunrise, time: '08:00' },
+  { key: 'afternoon', icon: Sun, time: '13:00' },
+  { key: 'evening', icon: Moon, time: '20:00' },
 ] as const;
 
 const goalsOf = (ctx: Pick<StepContext, 'answers'>) => (ctx.answers.goals as GoalId[] | undefined) ?? [];
@@ -33,19 +61,27 @@ export function reminderTimeFor(answers: StepContext['answers']): string {
   return first?.reminder ?? '20:00';
 }
 
+/** The welcome illustration: an ember orb that breathes, with a soft halo pulsing behind it. */
 function Flame() {
   const reduced = useReducedMotion();
-  const scale = useSharedValue(1);
+  const { mode } = useTheme();
+  const ember = extraColorsFor(mode).ember;
+  const breathe = useSharedValue(0);
   useEffect(() => {
     if (reduced) return;
-    scale.value = withRepeat(withSequence(withTiming(1.18, { duration: 700 }), withTiming(1, { duration: 700 })), -1);
-  }, [reduced, scale]);
-  const style = useAnimatedStyle(() => ({ transform: [{ scale: scale.value }] }));
-  const { colors } = useTheme();
+    breathe.set(withRepeat(withSequence(withTiming(1, { duration: 1100 }), withTiming(0, { duration: 1100 })), -1));
+  }, [reduced, breathe]);
+  const orb = useAnimatedStyle(() => ({ transform: [{ scale: 1 + breathe.get() * 0.06 }] }));
+  const halo = useAnimatedStyle(() => ({ opacity: 0.18 + breathe.get() * 0.22, transform: [{ scale: 1.15 + breathe.get() * 0.2 }] }));
   return (
-    <Animated.View style={[styles.flame, style]} accessible accessibilityLabel={t('onboarding.flame')}>
-      <MaterialCommunityIcons name="fire" size={96} color={colors.accent} />
-    </Animated.View>
+    <View style={styles.flame} accessible accessibilityLabel={t('onboarding.flame')}>
+      <Animated.View style={[styles.halo, { backgroundColor: ember[0] }, halo]} />
+      <Animated.View style={orb}>
+        <LinearGradient colors={ember} start={{ x: 0.2, y: 0 }} end={{ x: 0.8, y: 1 }} style={styles.orb}>
+          <FlameIcon size={64} color="#FFFFFF" fill="#FFFFFF" strokeWidth={1.5} />
+        </LinearGradient>
+      </Animated.View>
+    </View>
   );
 }
 
@@ -55,14 +91,14 @@ function GoalsStep({ ctx }: { ctx: StepContext }) {
   return (
     <View style={styles.wrap}>
       {goalList.map((g) => (
-        <Chip key={g.id} label={`${g.emoji} ${t(`onboarding.goals.${g.id}`)}`} selected={chosen.includes(g.id)} onPress={() => toggle(g.id)} />
+        <Chip key={g.id} icon={GOAL_ICONS[g.id]} label={t(`onboarding.goals.${g.id}`)} selected={chosen.includes(g.id)} onPress={() => toggle(g.id)} />
       ))}
     </View>
   );
 }
 
 function StartersStep({ ctx }: { ctx: StepContext }) {
-  const { colors, radius, spacing, type, touchTarget } = useTheme();
+  const { colors, radius, spacing, type, touchTarget, shadow } = useTheme();
   const chosen = (ctx.value as string[] | undefined) ?? [];
   const options = rankTemplates(goalsOf(ctx));
   const toggle = (id: string) => {
@@ -78,28 +114,36 @@ function StartersStep({ ctx }: { ctx: StepContext }) {
         const selected = chosen.includes(tpl.id);
         const disabled = !selected && chosen.length >= MAX_STARTERS;
         return (
-          <Pressable
+          <PressableScale
             key={tpl.id}
             accessibilityRole="checkbox"
             accessibilityState={{ checked: selected, disabled }}
             accessibilityLabel={t(`templates.${tpl.id}.name`)}
             onPress={() => toggle(tpl.id)}
+            scaleTo={0.98}
             style={[
               styles.starter,
               {
                 minHeight: touchTarget + 8,
                 borderRadius: radius.md,
                 padding: spacing.md,
-                backgroundColor: selected ? colors.primary + '1A' : colors.surface,
-                borderColor: selected ? colors.primary : colors.border,
+                backgroundColor: selected ? colors.primarySoft : colors.surface,
+                borderColor: selected ? colors.primary : 'transparent',
                 opacity: disabled ? 0.45 : 1,
               },
+              selected ? null : shadow(1),
             ]}
           >
-            <MaterialCommunityIcons name={tpl.icon as never} size={24} color={colors.text} />
+            <View style={[styles.tplTile, { backgroundColor: habitColors[tpl.color], borderRadius: radius.md }]}>
+              <HabitIcon name={tpl.icon} size={22} color={readableOn(habitColors[tpl.color])} />
+            </View>
             <Text style={[type.bodyLarge, { color: colors.text, flex: 1, fontWeight: '600' }]}>{t(`templates.${tpl.id}.name`)}</Text>
-            {selected && <MaterialCommunityIcons name="check-circle" size={24} color={colors.primary} />}
-          </Pressable>
+            {selected ? (
+              <CircleCheck size={24} color={colors.primary} fill={colors.primarySoft} strokeWidth={2.25} />
+            ) : (
+              <View style={[styles.emptyCheck, { borderColor: colors.border }]} />
+            )}
+          </PressableScale>
         );
       })}
     </View>
@@ -116,7 +160,8 @@ function ReminderStep({ ctx }: { ctx: StepContext }) {
         {REMINDER_PRESETS.map((p) => (
           <Chip
             key={p.key}
-            label={`${p.emoji} ${t(`onboarding.${p.key}`)} ${p.time}`}
+            icon={p.icon}
+            label={`${t(`onboarding.${p.key}`)} ${p.time}`}
             selected={answer.mode === 'preset' && answer.time === p.time}
             onPress={() => ctx.setValue({ mode: 'preset', time: p.time })}
           />
@@ -130,10 +175,12 @@ function ReminderStep({ ctx }: { ctx: StepContext }) {
 }
 
 function PermissionStep({ ctx }: { ctx: StepContext }) {
-  const { colors, radius, spacing, type } = useTheme();
+  const { colors, radius, spacing, type, shadow } = useTheme();
   return (
-    <View style={[styles.card, { backgroundColor: colors.surface, borderColor: colors.border, borderRadius: radius.md, padding: spacing.xl, gap: spacing.md }]}>
-      <MaterialCommunityIcons name="bell-ring-outline" size={40} color={colors.primary} />
+    <View style={[styles.card, { backgroundColor: colors.surface, borderRadius: radius.xl, padding: spacing.xl, gap: spacing.lg }, shadow(2)]}>
+      <View style={[styles.bell, { backgroundColor: colors.primarySoft }]}>
+        <BellRing size={30} color={colors.primary} strokeWidth={2.25} />
+      </View>
       <Text style={[type.bodyLarge, { color: colors.text }]}>{t('onboarding.permissionBody', { time: reminderTimeFor(ctx.answers) })}</Text>
     </View>
   );
@@ -200,8 +247,13 @@ export function buildSteps(onPermission: (granted: boolean) => void): Onboarding
 }
 
 const styles = StyleSheet.create({
-  flame: { alignSelf: 'center', marginBottom: 16 },
+  flame: { alignSelf: 'center', marginTop: 24, marginBottom: 40, width: 150, height: 150, alignItems: 'center', justifyContent: 'center' },
+  halo: { position: 'absolute', width: 150, height: 150, borderRadius: 75 },
+  orb: { width: 128, height: 128, borderRadius: 64, alignItems: 'center', justifyContent: 'center' },
+  tplTile: { width: 44, height: 44, alignItems: 'center', justifyContent: 'center' },
+  emptyCheck: { width: 22, height: 22, borderRadius: 11, borderWidth: 2, margin: 1 },
+  bell: { width: 60, height: 60, borderRadius: 20, alignItems: 'center', justifyContent: 'center' },
   wrap: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
-  starter: { flexDirection: 'row', alignItems: 'center', gap: 12, borderWidth: 1 },
-  card: { borderWidth: StyleSheet.hairlineWidth, alignItems: 'flex-start' },
+  starter: { flexDirection: 'row', alignItems: 'center', gap: 12, borderWidth: 2 },
+  card: { alignItems: 'flex-start' },
 });

@@ -1,46 +1,62 @@
-import type { Palette, ThemeMode } from '@shared/theme';
+import type { FontFamilies, Palette, ThemeMode } from '@shared/theme';
 
-/** Brand palette from DEVELOPMENT_PLAN.md §7 mapped onto the shared theme tokens. */
+/**
+ * "Ember" palette: cool lavender-white surfaces, a deep violet brand and an ember accent for
+ * streaks. The violet gradient hero card on Today is the one loud element; everything else stays quiet.
+ */
 export const palette: Partial<Record<ThemeMode, Partial<Palette>>> = {
   light: {
-    background: '#FAF8F5',
+    background: '#F6F5FA',
     surface: '#FFFFFF',
-    surfaceAlt: '#F1EEE9',
-    text: '#1B1D22',
-    textMuted: '#5C6370',
-    border: '#E4E0DA',
-    primary: '#6C4CF1',
+    surfaceAlt: '#EEECF4',
+    text: '#17151F',
+    textMuted: '#5E5A6E',
+    border: '#E3E0EC',
+    primary: '#5B3DF5',
     onPrimary: '#FFFFFF',
-    success: '#1F9D61',
-    accent: '#FF7A1A', // streak flame
-    danger: '#C73535', // darkened from the plan's #D23B3B to reach 4.5:1 on the cream background
+    primarySoft: '#ECE8FF',
+    success: '#0F9F5F',
+    accent: '#F2620F', // streak ember
+    danger: '#C7372F',
+    shadow: '#2A1F66',
   },
   dark: {
-    background: '#0F1115',
-    surface: '#181B21',
-    surfaceAlt: '#21252D',
-    text: '#F2F3F5',
-    textMuted: '#A3A9B5',
-    border: '#2C313A',
-    primary: '#8B73FF',
-    onPrimary: '#0F1115',
+    background: '#100E17',
+    surface: '#1A1724',
+    surfaceAlt: '#24202F',
+    text: '#F3F1F8',
+    textMuted: '#A9A4BA',
+    border: '#2E2A3B',
+    primary: '#8B78FF',
+    onPrimary: '#100E17',
+    primarySoft: '#2A2350',
     success: '#3DD68C',
-    accent: '#FF9A4D',
+    accent: '#FF8A4C',
     danger: '#FF6B6B',
+    shadow: '#000000',
   },
 };
+
+/** Embedded by the expo-font plugin in app.config.ts. */
+export const fonts: FontFamilies = { body: 'Figtree', display: 'Bricolage' };
 
 /** App-only colors that have no slot in the shared palette. */
 export const extraColors = {
   light: {
     warning: '#C77700',
     frozen: '#8FD3FF',
-    heat: ['#EBE8E3', '#C9BEFB', '#A08BF7', '#7A5DF2', '#5534D6'],
+    heat: ['#ECEAF2', '#D3CAFE', '#A996FB', '#7E62F6', '#5B3DF5'],
+    /** Today's hero card. */
+    hero: ['#6E50FF', '#4524DA'] as const,
+    /** The streak flame chip. */
+    ember: ['#FF9A3D', '#F2620F'] as const,
   },
   dark: {
     warning: '#F2B84B',
     frozen: '#5BB6E8',
-    heat: ['#22262E', '#3A2F73', '#5340B0', '#7058E6', '#9C88FF'],
+    heat: ['#24202F', '#3B2F7A', '#5640B8', '#7059EE', '#9C88FF'],
+    hero: ['#5B3DF5', '#341BA8'] as const,
+    ember: ['#FF9A3D', '#E8580A'] as const,
   },
 } as const;
 

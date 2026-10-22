@@ -5,6 +5,7 @@ export const defaultSettings: Settings = {
   weekStartsOn: 1,
   dayEndsAtHour: 0,
   haptics: true,
+  sounds: true,
   dailySummary: { enabled: false, time: '08:00' },
   eveningNudge: { enabled: true, time: '20:30' },
 };

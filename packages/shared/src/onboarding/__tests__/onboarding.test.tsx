@@ -384,7 +384,11 @@ describe('accessibility', () => {
   it('gives every control a label and a 48dp target', async () => {
     const f = await start(steps3);
     await f.press('Next');
-    const controls = f.root.findAll((n) => typeof n.props.onPress === 'function' && typeof n.type !== 'string');
+    // Wrappers like <Button label> pass their label down; check the components that own the role.
+    const controls = f.root.findAll(
+      (n) => typeof n.props.onPress === 'function' && typeof n.type !== 'string' && n.props.accessibilityRole !== undefined,
+    );
+    expect(controls.length).toBeGreaterThan(0);
     for (const control of controls) {
       expect(typeof control.props.accessibilityLabel).toBe('string');
       expect(control.props.accessibilityRole).toBe('button');

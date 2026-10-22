@@ -1,8 +1,21 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import Animated, { FadeIn, useAnimatedStyle, useReducedMotion, useSharedValue, withTiming } from 'react-native-reanimated';
 import { sharedStore } from '../storage';
 import { t } from '../i18n';
 import { useHaptics, useTheme } from '../theme';
+import { Button, EASE_OUT } from '../ui';
+
+/** One progress dot; the current one stretches into a pill. */
+function Dot({ active, color, idle }: { active: boolean; color: string; idle: string }) {
+  const reduced = useReducedMotion();
+  const w = useSharedValue(active ? 22 : 8);
+  useEffect(() => {
+    w.set(reduced ? (active ? 22 : 8) : withTiming(active ? 22 : 8, { duration: 240, easing: EASE_OUT }));
+  }, [active, reduced, w]);
+  const style = useAnimatedStyle(() => ({ width: w.get() }));
+  return <Animated.View style={[styles.dot, { backgroundColor: active ? color : idle }, style]} />;
+}
 
 export type Answers = Record<string, unknown>;
 
@@ -89,6 +102,7 @@ export function useOnboardingComplete(): boolean {
 export function OnboardingFlow({ steps, onDone, labels, allowSkip = true, initial, onProgress, onSkip }: OnboardingFlowProps) {
   const { colors, spacing, radius, type, touchTarget } = useTheme();
   const haptics = useHaptics();
+  const reduced = useReducedMotion();
   const [index, setIndex] = useState(initial?.index ?? 0);
   const [answers, setAnswers] = useState<Answers>(initial?.answers ?? {});
   const [busy, setBusy] = useState(false);
@@ -166,13 +180,7 @@ export function OnboardingFlow({ steps, onDone, labels, allowSkip = true, initia
           accessibilityLabel={t('shared.onboarding.progress', { current: index + 1, total: visible.length })}
         >
           {visible.map((s, i) => (
-            <View
-              key={s.key}
-              style={[
-                styles.dot,
-                { backgroundColor: i === index ? colors.primary : colors.border, width: i === index ? 20 : 8 },
-              ]}
-            />
+            <Dot key={s.key} active={i === index} color={colors.primary} idle={colors.border} />
           ))}
         </View>
         <View style={[styles.side, targetStyle, { alignItems: 'flex-end' }]}>
@@ -190,33 +198,26 @@ export function OnboardingFlow({ steps, onDone, labels, allowSkip = true, initia
       </View>
 
       <ScrollView contentContainerStyle={{ padding: spacing.xl, flexGrow: 1 }} keyboardShouldPersistTaps="handled">
-        {step.media}
-        {step.title && <Text style={[type.headline, { color: colors.text }]} accessibilityRole="header">{step.title}</Text>}
-        {step.body && <Text style={[type.bodyLarge, { color: colors.textMuted, marginTop: spacing.md }]}>{step.body}</Text>}
-        {step.render && <View style={{ marginTop: spacing.xl }}>{step.render(ctx)}</View>}
+        {/* Keyed by step so each one fades in; occasional, so a standard entrance is fine. */}
+        <Animated.View key={step.key} entering={reduced ? undefined : FadeIn.duration(260).easing(EASE_OUT)}>
+          {step.media}
+          {step.title && (
+            <Text style={[type.headline, { color: colors.text, fontWeight: '800' }]} accessibilityRole="header">
+              {step.title}
+            </Text>
+          )}
+          {step.body && <Text style={[type.bodyLarge, { color: colors.textMuted, marginTop: spacing.md }]}>{step.body}</Text>}
+          {step.render && <View style={{ marginTop: spacing.xl }}>{step.render(ctx)}</View>}
+        </Animated.View>
       </ScrollView>
 
-      <View style={{ padding: spacing.lg }}>
-        <Pressable
-          accessibilityRole="button"
-          accessibilityLabel={step.cta ?? (isLast ? text.done : text.next)}
-          accessibilityState={{ disabled: !allowed || busy }}
-          disabled={!allowed || busy}
+      <View style={{ padding: spacing.lg, gap: spacing.xs }}>
+        <Button
+          label={step.cta ?? (isLast ? text.done : text.next)}
           onPress={advance}
-          style={[
-            styles.primary,
-            {
-              backgroundColor: colors.primary,
-              borderRadius: radius.pill,
-              minHeight: Math.max(touchTarget, 52),
-              opacity: allowed ? 1 : 0.4,
-            },
-          ]}
-        >
-          <Text style={[type.bodyLarge, { color: colors.onPrimary, fontWeight: '700' }]}>
-            {step.cta ?? (isLast ? text.done : text.next)}
-          </Text>
-        </Pressable>
+          disabled={!allowed}
+          loading={busy}
+        />
         {step.secondary && (
           <Pressable
             accessibilityRole="button"

@@ -62,7 +62,7 @@ describe('Today screen', () => {
     await ui.press('Mark done');
     expect(habits.useHabits.getState().entries[id][TODAY].value).toBe(1);
     expect(celebration.useCelebration.getState().current).toMatchObject({ kind: 'first' });
-    expect(ui.texts().some((t) => t.includes('1/1'))).toBe(true);
+    expect(ui.texts()).toContain('1 of 1 habits done');
     expect(ui.texts()).not.toContain('Done it already today? Tap to check it off.');
   });
 
@@ -105,7 +105,7 @@ describe('Today screen', () => {
     const ui = await render(element());
     await ui.press('Mark done');
     await ui.press('Mark done');
-    expect(ui.texts()).toContain('Perfect day! 🔥');
+    expect(ui.texts()).toContain('Perfect day');
   });
 
   it('opens the editor from the add button and the detail from a row', async () => {

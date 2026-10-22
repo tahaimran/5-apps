@@ -1,10 +1,11 @@
 import { useMemo, useState } from 'react';
 import { Modal, Pressable, SectionList, StyleSheet, Text, View } from 'react-native';
 import { Stack, router } from 'expo-router';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import ChevronRight from 'lucide-react-native/icons/chevron-right';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
+import { PressableScale } from '@shared/ui';
 import { templates, type Template } from '@/data/templates';
 import { categories } from '@/domain/categories';
 import { draftFromTemplate } from '@/features/habit-editor/drafts';
@@ -13,6 +14,8 @@ import { useToday } from '@/store/today';
 import { PrimaryButton, TextButton, TextField } from '@/ui/controls';
 import { scheduleLabel } from '@/ui/format';
 import { habitColors } from '@/theme/tokens';
+import { readableOn } from '@/theme/contrast';
+import { HabitIcon } from '@/ui/icons';
 
 const targetLabel = (tpl: Template) =>
   tpl.type === 'count'
@@ -24,7 +27,7 @@ const targetLabel = (tpl: Template) =>
 const summary = (tpl: Template) => `${targetLabel(tpl)} · ${scheduleLabel(tpl.schedule)}`;
 
 export default function Templates() {
-  const { colors, spacing, radius, type, touchTarget } = useTheme();
+  const { colors, spacing, radius, type, touchTarget, shadow } = useTheme();
   const today = useToday((s) => s.today);
   const addHabit = useHabits((s) => s.addHabit);
   const [query, setQuery] = useState('');
@@ -60,43 +63,45 @@ export default function Templates() {
       <SectionList
         sections={sections}
         keyExtractor={(tpl) => tpl.id}
-        contentContainerStyle={{ padding: spacing.lg, paddingTop: 0, gap: spacing.sm }}
+        contentContainerStyle={{ padding: spacing.lg, paddingTop: 0 }}
         stickySectionHeadersEnabled={false}
         ListEmptyComponent={
           <Text style={[type.body, { color: colors.textMuted }]}>{t('templatesScreen.empty', { query })}</Text>
         }
         renderSectionHeader={({ section }) => (
-          <Text accessibilityRole="header" style={[type.title, { color: colors.text, marginTop: spacing.lg }]}>
+          <Text accessibilityRole="header" style={[type.title, { color: colors.text, fontWeight: '700', marginTop: spacing.lg, marginBottom: spacing.xs }]}>
             {section.title}
           </Text>
         )}
         renderItem={({ item }) => (
-          <Pressable
+          <PressableScale
             accessibilityRole="button"
             accessibilityLabel={`${t(`templates.${item.id}.name`)}. ${summary(item)}`}
             onPress={() => setPreview(item)}
-            style={[styles.card, { backgroundColor: colors.surface, borderColor: colors.border, borderRadius: radius.md, padding: spacing.md, minHeight: touchTarget + 16 }]}
+            scaleTo={0.98}
+            style={[styles.card, { backgroundColor: colors.surface, borderRadius: radius.lg, padding: spacing.md, minHeight: touchTarget + 20, marginBottom: spacing.sm }, shadow(1)]}
           >
-            <View style={[styles.tile, { backgroundColor: habitColors[item.color] + '26', borderRadius: radius.md }]}>
-              <MaterialCommunityIcons name={item.icon as never} size={24} color={habitColors[item.color]} />
+            <View style={[styles.tile, { backgroundColor: habitColors[item.color] + '1F', borderRadius: radius.md }]}>
+              <HabitIcon name={item.icon} size={22} color={habitColors[item.color]} />
             </View>
             <View style={{ flex: 1 }}>
               <Text style={[type.bodyLarge, { color: colors.text, fontWeight: '600' }]}>{t(`templates.${item.id}.name`)}</Text>
               <Text style={[type.caption, { color: colors.textMuted }]}>{summary(item)}</Text>
             </View>
-            <MaterialCommunityIcons name="chevron-right" size={22} color={colors.textMuted} />
-          </Pressable>
+            <ChevronRight size={20} color={colors.textMuted} />
+          </PressableScale>
         )}
       />
 
-      <Modal visible={preview !== null} transparent animationType="slide" onRequestClose={() => setPreview(null)}>
+      <Modal visible={preview !== null} transparent animationType="slide" statusBarTranslucent navigationBarTranslucent onRequestClose={() => setPreview(null)}>
         <Pressable accessibilityLabel={t('common.close')} style={styles.scrim} onPress={() => setPreview(null)} />
         {preview && (
-          <View style={[styles.sheet, { backgroundColor: colors.surface, borderTopLeftRadius: radius.lg, borderTopRightRadius: radius.lg, padding: spacing.xl, gap: spacing.md }]}>
-            <View style={[styles.tile, { backgroundColor: habitColors[preview.color] + '26', borderRadius: radius.md }]}>
-              <MaterialCommunityIcons name={preview.icon as never} size={24} color={habitColors[preview.color]} />
+          <View style={[styles.sheet, { backgroundColor: colors.surface, borderTopLeftRadius: radius.xl, borderTopRightRadius: radius.xl, padding: spacing.xl, gap: spacing.md }]}>
+            <View style={[styles.grabber, { backgroundColor: colors.border }]} />
+            <View style={[styles.bigTile, { backgroundColor: habitColors[preview.color], borderRadius: radius.lg }]}>
+              <HabitIcon name={preview.icon} size={30} color={readableOn(habitColors[preview.color])} />
             </View>
-            <Text accessibilityRole="header" style={[type.headline, { color: colors.text }]}>{t(`templates.${preview.id}.name`)}</Text>
+            <Text accessibilityRole="header" style={[type.headline, { color: colors.text, fontWeight: '800' }]}>{t(`templates.${preview.id}.name`)}</Text>
             <Text style={[type.body, { color: colors.textMuted }]}>{summary(preview)}</Text>
             <Text style={[type.body, { color: colors.textMuted }]}>{t('templatesScreen.reminderAt', { time: preview.reminder })}</Text>
             <PrimaryButton label={t('templatesScreen.addHabit')} onPress={() => add(preview)} />
@@ -116,8 +121,10 @@ export default function Templates() {
 }
 
 const styles = StyleSheet.create({
-  card: { flexDirection: 'row', alignItems: 'center', gap: 12, borderWidth: StyleSheet.hairlineWidth },
-  tile: { width: 40, height: 40, alignItems: 'center', justifyContent: 'center' },
-  scrim: { flex: 1, backgroundColor: '#00000066' },
-  sheet: {},
+  card: { flexDirection: 'row', alignItems: 'center', gap: 12 },
+  tile: { width: 44, height: 44, alignItems: 'center', justifyContent: 'center' },
+  bigTile: { width: 64, height: 64, alignItems: 'center', justifyContent: 'center' },
+  grabber: { alignSelf: 'center', width: 40, height: 5, borderRadius: 3, marginTop: -8, marginBottom: 8 },
+  scrim: { flex: 1, backgroundColor: '#0000007A' },
+  sheet: { paddingBottom: 40 },
 });

@@ -2,7 +2,7 @@
   "name": "@shared/core",
   "version": "1.0.0",
   "private": true,
-  "description": "Code reused by all 5 apps: consent, ads, storage, onboarding, theme, i18n, review, notify, crosspromo.",
+  "description": "Code reused by all 5 apps: consent, ads, storage, onboarding, theme, ui, sound, i18n, review, notify, crosspromo.",
   "scripts": {
     "typecheck": "tsc --noEmit",
     "test": "jest",
@@ -11,9 +11,12 @@
   "peerDependencies": {
     "expo": "*",
     "react": "*",
-    "react-native": "*"
+    "react-native": "*",
+    "react-native-reanimated": "*",
+    "react-native-svg": "*"
   },
   "dependencies": {
+    "expo-audio": "*",
     "expo-file-system": "*",
     "expo-haptics": "*",
     "expo-localization": "*",

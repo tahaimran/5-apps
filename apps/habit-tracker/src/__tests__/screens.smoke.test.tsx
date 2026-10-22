@@ -177,8 +177,9 @@ describe('habit detail and archive', () => {
     for (const d of ['2026-10-06', '2026-10-07', '2026-10-08']) useHabits.getState().setValue(id, d as DayKey, 1);
     mockParams.current = { id };
     const ui = await render(themed(<HabitDetail />));
-    expect(ui.texts()).toContain('3 days');
-    expect(ui.texts()).toContain('Total check-ins');
+    // The streak shows as a big number; its spoken label carries the unit.
+    expect(ui.byLabel('Current streak: 3 days')).not.toHaveLength(0);
+    expect(ui.texts()).toContain('Total check-ins: 3');
     await ui.press('Archive');
     expect(useHabits.getState().habits[id].archivedAt).toBe(TODAY);
     expect(mockRouter.back).toHaveBeenCalled();
@@ -251,7 +252,7 @@ describe('settings', () => {
   it('shows the streak freeze count and the rewarded button with its value', async () => {
     const ui = await render(themed(<Settings />));
     expect(ui.texts()).toContain('0 of 2 held');
-    expect(ui.texts()).toContain('▶ Watch ad: +1 freeze');
+    expect(ui.texts()).toContain('Watch an ad for +1 freeze');
   });
 });
 

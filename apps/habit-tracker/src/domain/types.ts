@@ -53,6 +53,8 @@ export interface Settings {
   weekStartsOn: 0 | 1;
   dayEndsAtHour: 0 | 1 | 2 | 3 | 4;
   haptics: boolean;
+  /** Short UI sounds on check-offs and celebrations. */
+  sounds: boolean;
   dailySummary: { enabled: boolean; time: string };
   eveningNudge: { enabled: boolean; time: string };
 }

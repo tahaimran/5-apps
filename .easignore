@@ -1,0 +1,19 @@
+node_modules/
+.expo/
+dist/
+*.jks
+*.keystore
+google-service-account*.json
+.env*
+!.env.example
+android/
+ios/
+.remember/
+
+# Real AdMob IDs (see docs/admob/)
+docs/admob/*.local.*
+
+# Local agent tooling (symlinks break the EAS upload on Windows)
+.agents/
+.claude/
+skills-lock.json

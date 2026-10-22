@@ -15,16 +15,11 @@ jest.mock('react-native-mmkv', () => ({
     };
   },
 }));
-jest.mock('react-native-reanimated', () => ({
-  __esModule: true,
-  default: { View: 'View' },
-  useSharedValue: (v: number) => ({ value: v }),
-  useAnimatedStyle: () => ({}),
-  useReducedMotion: () => true,
-  withRepeat: (v: unknown) => v,
-  withSequence: (...v: unknown[]) => v[0],
-  withTiming: (v: unknown) => v,
-}));
+const animation = '../../../../../../packages/shared/src/testing/animation';
+jest.mock('react-native-reanimated', () => require(animation).reanimatedMock());
+jest.mock('react-native-worklets', () => require(animation).workletsMock());
+jest.mock('react-native-svg', () => require(animation).svgMock());
+jest.mock('expo-linear-gradient', () => require(animation).linearGradientMock());
 jest.mock('@expo/vector-icons', () => ({ MaterialCommunityIcons: () => null }));
 jest.mock('expo-file-system', () => ({ File: class {}, Paths: {} }));
 const mockEnsure = jest.fn(async () => true);

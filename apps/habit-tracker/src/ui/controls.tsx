@@ -1,17 +1,22 @@
-import type { ReactNode } from 'react';
-import { Pressable, StyleSheet, Text, TextInput, View, type KeyboardTypeOptions } from 'react-native';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { useEffect, useState, type ReactNode } from 'react';
+import { StyleSheet, Text, TextInput, View, type KeyboardTypeOptions } from 'react-native';
+import Animated, { useAnimatedStyle, useReducedMotion, useSharedValue, withTiming } from 'react-native-reanimated';
+import Minus from 'lucide-react-native/icons/minus';
+import Plus from 'lucide-react-native/icons/plus';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
+import { Button, EASE_OUT, PressableScale, type IconComponent } from '@shared/ui';
+import { HabitIcon } from './icons';
 
-export function Field({ label, error, children }: { label: string; error?: string; children: ReactNode }) {
+export function Field({ label, error, hint, children }: { label: string; error?: string; hint?: string; children: ReactNode }) {
   const { colors, spacing, type } = useTheme();
   return (
     <View style={{ gap: spacing.sm }}>
-      <Text style={[type.caption, { color: colors.textMuted, fontWeight: '600', textTransform: 'uppercase' }]}>{label}</Text>
+      <Text style={[type.body, { color: colors.text, fontWeight: '700' }]}>{label}</Text>
       {children}
+      {hint && !error ? <Text style={[type.caption, { color: colors.textMuted }]}>{hint}</Text> : null}
       {error ? (
-        <Text accessibilityLiveRegion="polite" style={[type.caption, { color: colors.danger }]}>
+        <Text accessibilityLiveRegion="polite" style={[type.caption, { color: colors.danger, fontWeight: '600' }]}>
           {error}
         </Text>
       ) : null}
@@ -27,10 +32,12 @@ export interface TextFieldProps {
   maxLength?: number;
   keyboardType?: KeyboardTypeOptions;
   invalid?: boolean;
+  multiline?: boolean;
 }
 
-export function TextField({ value, onChangeText, label, placeholder, maxLength, keyboardType, invalid }: TextFieldProps) {
+export function TextField({ value, onChangeText, label, placeholder, maxLength, keyboardType, invalid, multiline }: TextFieldProps) {
   const { colors, radius, type, touchTarget } = useTheme();
+  const [focused, setFocused] = useState(false);
   return (
     <TextInput
       value={value}
@@ -40,16 +47,23 @@ export function TextField({ value, onChangeText, label, placeholder, maxLength, 
       placeholderTextColor={colors.textMuted}
       maxLength={maxLength}
       keyboardType={keyboardType}
+      multiline={multiline}
+      onFocus={() => setFocused(true)}
+      onBlur={() => setFocused(false)}
+      cursorColor={colors.primary}
+      selectionColor={colors.primary + '55'}
       style={[
-        type.body,
+        type.bodyLarge,
         {
           color: colors.text,
           backgroundColor: colors.surface,
-          borderColor: invalid ? colors.danger : colors.border,
-          borderWidth: 1,
-          borderRadius: radius.md,
-          minHeight: touchTarget,
-          paddingHorizontal: 12,
+          borderColor: invalid ? colors.danger : focused ? colors.primary : colors.border,
+          borderWidth: focused || invalid ? 2 : 1,
+          borderRadius: radius.md + 2,
+          minHeight: touchTarget + 6,
+          paddingHorizontal: 16,
+          paddingVertical: 10,
+          textAlignVertical: multiline ? 'top' : 'center',
         },
       ]}
     />
@@ -65,16 +79,19 @@ export function Chip({
   label: string;
   selected: boolean;
   onPress: () => void;
-  icon?: string;
+  /** A Lucide component, or a stored habit icon name. */
+  icon?: IconComponent | string;
 }) {
   const { colors, radius, type, touchTarget } = useTheme();
   const fg = selected ? colors.onPrimary : colors.text;
+  const Icon = typeof icon === 'string' ? null : icon;
   return (
-    <Pressable
+    <PressableScale
       accessibilityRole="button"
       accessibilityState={{ selected }}
       accessibilityLabel={label}
       onPress={onPress}
+      scaleTo={0.94}
       style={[
         styles.chip,
         {
@@ -86,12 +103,13 @@ export function Chip({
         },
       ]}
     >
-      {icon ? <MaterialCommunityIcons name={icon as never} size={18} color={fg} /> : null}
+      {typeof icon === 'string' ? <HabitIcon name={icon} size={18} color={fg} /> : Icon ? <Icon size={18} color={fg} strokeWidth={2.25} /> : null}
       <Text style={[type.body, { color: fg, fontWeight: '600' }]}>{label}</Text>
-    </Pressable>
+    </PressableScale>
   );
 }
 
+/** Radio group with a sliding pill under the selected option. */
 export function Segmented<T extends string>({
   options,
   value,
@@ -101,22 +119,44 @@ export function Segmented<T extends string>({
   value: T;
   onChange: (v: T) => void;
 }) {
-  const { colors, radius, type, touchTarget } = useTheme();
+  const { colors, radius, type, touchTarget, shadow } = useTheme();
+  const reduced = useReducedMotion();
+  const [width, setWidth] = useState(0);
+  const index = Math.max(0, options.findIndex((o) => o.value === value));
+  const segment = width > 0 ? (width - 8) / options.length : 0;
+  const x = useSharedValue(index * segment);
+  useEffect(() => {
+    x.set(reduced || segment === 0 ? index * segment : withTiming(index * segment, { duration: 220, easing: EASE_OUT }));
+  }, [index, segment, reduced, x]);
+  const pill = useAnimatedStyle(() => ({ transform: [{ translateX: x.get() }] }));
   return (
-    <View style={[styles.segmented, { backgroundColor: colors.surfaceAlt, borderRadius: radius.md }]} accessibilityRole="radiogroup">
+    <View
+      onLayout={(e) => setWidth(e.nativeEvent.layout.width)}
+      style={[styles.segmented, { backgroundColor: colors.surfaceAlt, borderRadius: radius.md + 4 }]}
+      accessibilityRole="radiogroup"
+    >
+      {segment > 0 && (
+        <Animated.View
+          pointerEvents="none"
+          style={[styles.indicator, { width: segment, borderRadius: radius.md, backgroundColor: colors.surface }, shadow(1), pill]}
+        />
+      )}
       {options.map((o) => {
         const selected = o.value === value;
         return (
-          <Pressable
+          <PressableScale
             key={o.value}
             accessibilityRole="radio"
             accessibilityState={{ selected }}
             accessibilityLabel={o.label}
             onPress={() => onChange(o.value)}
-            style={[styles.segment, { minHeight: touchTarget, borderRadius: radius.md - 2, backgroundColor: selected ? colors.surface : 'transparent' }]}
+            scaleTo={0.96}
+            style={[styles.segment, { minHeight: touchTarget }]}
           >
-            <Text style={[type.body, { color: selected ? colors.text : colors.textMuted, fontWeight: selected ? '700' : '500' }]}>{o.label}</Text>
-          </Pressable>
+            <Text style={[type.body, { color: selected ? colors.text : colors.textMuted, fontWeight: selected ? '700' : '500' }]} numberOfLines={1}>
+              {o.label}
+            </Text>
+          </PressableScale>
         );
       })}
     </View>
@@ -145,77 +185,53 @@ export function Stepper({
   increaseLabel: string;
 }) {
   const { colors, radius, type, touchTarget } = useTheme();
-  const btn = { width: touchTarget, height: touchTarget, alignItems: 'center' as const, justifyContent: 'center' as const };
+  const btn = { width: touchTarget, height: touchTarget, borderRadius: touchTarget / 2, alignItems: 'center' as const, justifyContent: 'center' as const };
   return (
-    <View style={[styles.stepper, { borderColor: colors.border, borderRadius: radius.md, backgroundColor: colors.surface }]}>
-      <Pressable
+    <View style={[styles.stepper, { borderRadius: radius.pill, backgroundColor: colors.surfaceAlt }]}>
+      <PressableScale
         accessibilityRole="button"
         accessibilityLabel={decreaseLabel}
         disabled={value <= min}
         onPress={() => onChange(Math.max(min, value - step))}
-        style={[btn, { opacity: value <= min ? 0.3 : 1 }]}
+        scaleTo={0.88}
+        style={[btn, { backgroundColor: colors.surface, opacity: value <= min ? 0.35 : 1 }]}
       >
-        <MaterialCommunityIcons name="minus" size={22} color={colors.text} />
-      </Pressable>
-      <Text accessibilityLabel={`${label} ${format(value)}`} style={[type.bodyLarge, { color: colors.text, fontWeight: '700', minWidth: 64, textAlign: 'center' }]}>
+        <Minus size={20} color={colors.text} strokeWidth={2.5} />
+      </PressableScale>
+      <Text
+        accessibilityLabel={`${label} ${format(value)}`}
+        style={[type.bodyLarge, { color: colors.text, fontWeight: '700', minWidth: 72, textAlign: 'center', paddingHorizontal: 8 }]}
+      >
         {format(value)}
       </Text>
-      <Pressable
+      <PressableScale
         accessibilityRole="button"
         accessibilityLabel={increaseLabel}
         disabled={value >= max}
         onPress={() => onChange(Math.min(max, value + step))}
-        style={[btn, { opacity: value >= max ? 0.3 : 1 }]}
+        scaleTo={0.88}
+        style={[btn, { backgroundColor: colors.surface, opacity: value >= max ? 0.35 : 1 }]}
       >
-        <MaterialCommunityIcons name="plus" size={22} color={colors.text} />
-      </Pressable>
+        <Plus size={20} color={colors.text} strokeWidth={2.5} />
+      </PressableScale>
     </View>
   );
 }
 
-export function PrimaryButton({ label, onPress, disabled }: { label: string; onPress: () => void; disabled?: boolean }) {
-  const { colors, radius, type, touchTarget } = useTheme();
-  return (
-    <Pressable
-      accessibilityRole="button"
-      accessibilityLabel={label}
-      accessibilityState={{ disabled: !!disabled }}
-      disabled={disabled}
-      onPress={onPress}
-      style={{
-        backgroundColor: colors.primary,
-        borderRadius: radius.pill,
-        minHeight: Math.max(touchTarget, 52),
-        alignItems: 'center',
-        justifyContent: 'center',
-        paddingHorizontal: 24,
-        opacity: disabled ? 0.4 : 1,
-      }}
-    >
-      <Text style={[type.bodyLarge, { color: colors.onPrimary, fontWeight: '700' }]}>{label}</Text>
-    </Pressable>
-  );
+export function PrimaryButton({ label, onPress, disabled, icon }: { label: string; onPress: () => void; disabled?: boolean; icon?: IconComponent }) {
+  return <Button label={label} onPress={onPress} disabled={disabled} icon={icon} />;
 }
 
 export function TextButton({ label, onPress, danger }: { label: string; onPress: () => void; danger?: boolean }) {
-  const { colors, type, touchTarget } = useTheme();
-  return (
-    <Pressable
-      accessibilityRole="button"
-      accessibilityLabel={label}
-      onPress={onPress}
-      style={{ minHeight: touchTarget, minWidth: touchTarget, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 12 }}
-    >
-      <Text style={[type.body, { color: danger ? colors.danger : colors.primary, fontWeight: '600' }]}>{label}</Text>
-    </Pressable>
-  );
+  return <Button label={label} onPress={onPress} variant={danger ? 'danger' : 'ghost'} block={false} />;
 }
 
 const styles = StyleSheet.create({
-  chip: { flexDirection: 'row', alignItems: 'center', gap: 6, paddingHorizontal: 14, borderWidth: 1, justifyContent: 'center' },
-  segmented: { flexDirection: 'row', padding: 2 },
-  segment: { flex: 1, alignItems: 'center', justifyContent: 'center' },
-  stepper: { flexDirection: 'row', alignItems: 'center', borderWidth: 1, alignSelf: 'flex-start' },
+  chip: { flexDirection: 'row', alignItems: 'center', gap: 8, paddingHorizontal: 16, borderWidth: 1, justifyContent: 'center' },
+  segmented: { flexDirection: 'row', padding: 4 },
+  indicator: { position: 'absolute', top: 4, bottom: 4, left: 4 },
+  segment: { flex: 1, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 4 },
+  stepper: { flexDirection: 'row', alignItems: 'center', alignSelf: 'flex-start', padding: 4, gap: 4 },
 });
 
 /** Hour and minute (15-minute steps) as "HH:mm". */
@@ -224,7 +240,7 @@ export function TimeStepper({ value, onChange, label }: { value: string; onChang
   const [hour, minute] = value.split(':').map(Number);
   const pad = (n: number) => String(n).padStart(2, '0');
   return (
-    <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }} accessibilityLabel={`${label} ${value}`}>
+    <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8, flexWrap: 'wrap' }} accessibilityLabel={`${label} ${value}`}>
       <Stepper
         value={hour}
         min={0}
@@ -235,7 +251,7 @@ export function TimeStepper({ value, onChange, label }: { value: string; onChang
         decreaseLabel={t('editor.earlier')}
         increaseLabel={t('editor.later')}
       />
-      <Text style={[type.bodyLarge, { color: colors.text }]}>:</Text>
+      <Text style={[type.title, { color: colors.textMuted }]}>:</Text>
       <Stepper
         value={minute}
         min={0}

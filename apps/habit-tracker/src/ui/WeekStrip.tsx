@@ -1,7 +1,8 @@
 import { useRef } from 'react';
-import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
+import { PressableScale, ProgressRing } from '@shared/ui';
 import { parseDayKey } from '@/domain/dayKey';
 import type { DayProgress } from '@/domain/percent';
 import type { DayKey } from '@/domain/types';
@@ -14,6 +15,9 @@ export interface WeekStripProps {
   onSelect: (day: DayKey) => void;
 }
 
+const RING = 38;
+
+/** Mon–Sun with a small completion ring around each date; the selected day is a filled pill. */
 export function WeekStrip({ days, today, selected, progress, onSelect }: WeekStripProps) {
   const { colors, spacing, radius, type, touchTarget } = useTheme();
   const scroll = useRef<ScrollView>(null);
@@ -32,10 +36,12 @@ export function WeekStrip({ days, today, selected, progress, onSelect }: WeekStr
         const isFuture = day > today;
         const isSelected = day === selected;
         const p = progress[day];
-        const full = !!p && p.total > 0 && p.done === p.total;
+        const ratio = p && p.total > 0 ? p.done / p.total : 0;
+        const full = ratio === 1;
         const longDate = date.toLocaleDateString(undefined, { weekday: 'long', month: 'short', day: 'numeric' });
+        const fg = isSelected ? colors.onPrimary : colors.text;
         return (
-          <Pressable
+          <PressableScale
             key={day}
             disabled={isFuture}
             onPress={() => onSelect(day)}
@@ -44,31 +50,32 @@ export function WeekStrip({ days, today, selected, progress, onSelect }: WeekStr
             accessibilityLabel={
               p && p.total > 0 ? t('today.a11y.day', { date: longDate, done: p.done, total: p.total }) : t('today.a11y.dayNone', { date: longDate })
             }
+            scaleTo={0.92}
             style={[
               styles.day,
               {
-                minHeight: touchTarget + 16,
+                minHeight: touchTarget + 30,
                 minWidth: touchTarget,
-                borderRadius: radius.md,
-                backgroundColor: isSelected ? colors.primary : colors.surface,
-                borderColor: day === today ? colors.primary : colors.border,
-                opacity: isFuture ? 0.4 : 1,
+                borderRadius: radius.lg,
+                backgroundColor: isSelected ? colors.primary : 'transparent',
+                opacity: isFuture ? 0.45 : 1,
               },
             ]}
           >
-            <Text style={[type.caption, { color: isSelected ? colors.onPrimary : colors.textMuted }]}>
+            <Text style={[type.caption, { color: isSelected ? colors.onPrimary : colors.textMuted, fontWeight: '600' }]}>
               {date.toLocaleDateString(undefined, { weekday: 'narrow' })}
             </Text>
-            <Text style={[type.body, { color: isSelected ? colors.onPrimary : colors.text, fontWeight: '600' }]}>
-              {date.getDate()}
-            </Text>
-            <View
-              style={[
-                styles.dot,
-                { backgroundColor: full ? colors.success : p && p.done > 0 ? colors.accent : 'transparent' },
-              ]}
-            />
-          </Pressable>
+            <ProgressRing
+              size={RING}
+              strokeWidth={3}
+              progress={ratio}
+              color={isSelected ? colors.onPrimary : full ? colors.success : colors.primary}
+              trackColor={isSelected ? colors.onPrimary + '40' : colors.surfaceAlt}
+            >
+              <Text style={[type.body, { color: fg, fontWeight: day === today || isSelected ? '700' : '500' }]}>{date.getDate()}</Text>
+            </ProgressRing>
+            <View style={[styles.dot, { backgroundColor: day === today && !isSelected ? colors.primary : 'transparent' }]} />
+          </PressableScale>
         );
       })}
     </ScrollView>
@@ -77,6 +84,6 @@ export function WeekStrip({ days, today, selected, progress, onSelect }: WeekStr
 
 const styles = StyleSheet.create({
   strip: { flexGrow: 1 },
-  day: { flex: 1, alignItems: 'center', justifyContent: 'center', borderWidth: 1 },
-  dot: { width: 6, height: 6, borderRadius: 3, marginTop: 2 },
+  day: { flex: 1, alignItems: 'center', justifyContent: 'center', gap: 4, paddingVertical: 6 },
+  dot: { width: 5, height: 5, borderRadius: 3 },
 });

@@ -1,12 +1,11 @@
-// The JSON glyph map avoids loading the font runtime in Jest.
-import glyphMap from '@expo/vector-icons/build/vendor/react-native-vector-icons/glyphmaps/MaterialCommunityIcons.json';
+jest.mock('react-native-svg', () => require('../../../../../packages/shared/src/testing/animation').svgMock());
+import { hasHabitIcon } from '@/ui/icons';
 import en from '@/i18n/en.json';
 import { categoryIds } from '@/domain/categories';
 import { habitColors } from '@/theme/tokens';
 import { habitIcons } from '../icons';
 import { templates, templatesIn } from '../templates';
 
-const glyphs = glyphMap as Record<string, number>;
 const names = (en as { templates: Record<string, { name: string; unit?: string }> }).templates;
 
 describe('templates', () => {
@@ -22,7 +21,7 @@ describe('templates', () => {
   });
   it('uses real icons and palette colors', () => {
     for (const t of templates) {
-      expect(glyphs[t.icon]).toBeDefined();
+      expect(hasHabitIcon(t.icon)).toBe(true);
       expect(habitColors[t.color]).toBeDefined();
     }
   });
@@ -47,6 +46,6 @@ describe('editor icons', () => {
   it('offers 60 unique, valid icons', () => {
     expect(habitIcons).toHaveLength(60);
     expect(new Set(habitIcons).size).toBe(60);
-    for (const i of habitIcons) expect(glyphs[i]).toBeDefined();
+    for (const i of habitIcons) expect(hasHabitIcon(i)).toBe(true);
   });
 });

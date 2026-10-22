@@ -1,9 +1,16 @@
 import { useState } from 'react';
 import { Alert, StyleSheet, Text, View } from 'react-native';
 import { Stack, router, useLocalSearchParams } from 'expo-router';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import Archive from 'lucide-react-native/icons/archive';
+import ArchiveRestore from 'lucide-react-native/icons/archive-restore';
+import Check from 'lucide-react-native/icons/check';
+import Flame from 'lucide-react-native/icons/flame';
+import Pencil from 'lucide-react-native/icons/pencil';
+import Snowflake from 'lucide-react-native/icons/snowflake';
+import Trophy from 'lucide-react-native/icons/trophy';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
+import { Button, Card, ProgressRing } from '@shared/ui';
 import { addDays, parseDayKey } from '@/domain/dayKey';
 import { isScheduledOn } from '@/domain/schedule';
 import type { DayKey } from '@/domain/types';
@@ -17,8 +24,10 @@ import { computeStreaks } from '@/domain/streaks';
 import { useHabits } from '@/store/habits';
 import { useSettings } from '@/store/settings';
 import { useToday } from '@/store/today';
+import { extraColorsFor } from '@/theme/tokens';
+import { readableOn } from '@/theme/contrast';
+import { HabitIcon } from '@/ui/icons';
 import { Screen } from '@/ui/Screen';
-import { PrimaryButton, TextButton } from '@/ui/controls';
 import { scheduleLabel } from '@/ui/format';
 
 const RECENT_DAYS = 14;
@@ -26,7 +35,7 @@ const RECENT_DAYS = 14;
 const pct = (v: number | null) => (v === null ? t('detail.noData') : `${Math.round(v * 100)}%`);
 
 export default function HabitDetail() {
-  const { colors, spacing, radius, type } = useTheme();
+  const { colors, spacing, radius, type, mode } = useTheme();
   const { id } = useLocalSearchParams<{ id: string }>();
   const habit = useHabits((s) => s.habits[id]);
   const entries = useHabits((s) => s.entries[id]);
@@ -82,94 +91,148 @@ export default function HabitDetail() {
       },
     ]);
 
-  const stat = (label: string, value: string) => (
-    <View style={[styles.stat, { backgroundColor: colors.surface, borderColor: colors.border, borderRadius: radius.md, padding: spacing.md }]} accessible accessibilityLabel={`${label}: ${value}`}>
-      <Text style={[type.caption, { color: colors.textMuted }]}>{label}</Text>
-      <Text style={[type.title, { color: colors.text, fontWeight: '700' }]}>{value}</Text>
-    </View>
-  );
+  const completion = [
+    { label: t('detail.last7'), value: habitCompletion(habit, e, today, 7, weekStartsOn) },
+    { label: t('detail.last30'), value: habitCompletion(habit, e, today, 30, weekStartsOn) },
+    { label: t('detail.allTime'), value: habitCompletion(habit, e, today, 'all', weekStartsOn) },
+  ];
 
   return (
-    <Screen>
-      <Stack.Screen options={{ title: habit.name, headerShown: true }} />
-      <View style={[styles.band, { backgroundColor: habit.color + '26', borderRadius: radius.lg, padding: spacing.lg }]}>
-        <View style={[styles.bandIcon, { backgroundColor: habit.color, borderRadius: radius.md }]}>
-          <MaterialCommunityIcons name={habit.icon as never} size={28} color="#FFFFFF" />
+    <Screen edges={[]}>
+      <Stack.Screen options={{ title: '', headerShown: true }} />
+
+      <View style={[styles.hero, { backgroundColor: habit.color + '1F', borderRadius: radius.xl, padding: spacing.xl, gap: spacing.lg }]}>
+        <View style={styles.heroTop}>
+          <View style={[styles.heroIcon, { backgroundColor: habit.color, borderRadius: radius.lg }]}>
+            <HabitIcon name={habit.icon} size={30} color={readableOn(habit.color)} />
+          </View>
+          <View style={styles.flex}>
+            <Text accessibilityRole="header" style={[type.headline, { color: colors.text, fontWeight: '800' }]}>{habit.name}</Text>
+            <Text style={[type.body, { color: colors.textMuted, fontWeight: '500' }]}>{scheduleLabel(habit.schedule)}</Text>
+          </View>
         </View>
-        <View style={{ flex: 1 }}>
-          <Text accessibilityRole="header" style={[type.title, { color: colors.text }]}>{habit.name}</Text>
-          <Text style={[type.body, { color: colors.textMuted }]}>{scheduleLabel(habit.schedule)}</Text>
+        <View style={styles.streaks}>
+          <View style={styles.streakBlock} accessible accessibilityLabel={`${t('detail.currentStreak')}: ${t(unitKey, { count: streak.current })}`}>
+            <View style={styles.streakValue}>
+              <Flame size={26} color={colors.accent} fill={colors.accent} strokeWidth={2} />
+              <Text style={[type.display, { color: colors.text, fontWeight: '800' }]}>{streak.current}</Text>
+            </View>
+            <Text style={[type.caption, { color: colors.textMuted, fontWeight: '600' }]}>{t('detail.currentStreak')}</Text>
+          </View>
+          <View style={[styles.vrule, { backgroundColor: colors.text + '1A' }]} />
+          <View style={styles.streakBlock} accessible accessibilityLabel={`${t('detail.bestStreak')}: ${t(unitKey, { count: streak.best })}`}>
+            <View style={styles.streakValue}>
+              <Trophy size={24} color={colors.textMuted} strokeWidth={2} />
+              <Text style={[type.display, { color: colors.text, fontWeight: '800' }]}>{streak.best}</Text>
+            </View>
+            <Text style={[type.caption, { color: colors.textMuted, fontWeight: '600' }]}>{t('detail.bestStreak')}</Text>
+          </View>
         </View>
       </View>
 
       {archived && (
-        <View style={{ backgroundColor: colors.surfaceAlt, borderRadius: radius.md, padding: spacing.md }}>
+        <Card level={0} style={{ backgroundColor: colors.surfaceAlt }}>
           <Text style={[type.body, { color: colors.text }]}>{t('detail.archivedBanner')}</Text>
-        </View>
+        </Card>
       )}
 
-      <View style={styles.statRow}>
-        {stat(t('detail.currentStreak'), t(unitKey, { count: streak.current }))}
-        {stat(t('detail.bestStreak'), t(unitKey, { count: streak.best }))}
-      </View>
-
-      <Text accessibilityRole="header" style={[type.bodyLarge, { color: colors.text, fontWeight: '600', marginTop: spacing.md }]}>
-        {t('detail.completion')}
-      </Text>
-      <View style={styles.statRow}>
-        {stat(t('detail.last7'), pct(habitCompletion(habit, e, today, 7, weekStartsOn)))}
-        {stat(t('detail.last30'), pct(habitCompletion(habit, e, today, 30, weekStartsOn)))}
-        {stat(t('detail.allTime'), pct(habitCompletion(habit, e, today, 'all', weekStartsOn)))}
-      </View>
-
-      {stat(t('detail.totalCheckIns'), String(totalCheckIns(habit, e)))}
-
-      <Heatmap
-        habit={habit}
-        entries={e}
-        today={today}
-        weekStartsOn={weekStartsOn}
-        selected={picked?.day ?? null}
-        onSelect={setPicked}
-      />
-      <Text accessibilityLiveRegion="polite" style={[type.body, { color: colors.textMuted }]}>
-        {picked ? `${dayLabel(picked.day)} · ${statusFor(picked.day)}` : habit.createdAt >= addDays(today, -7) ? t('detail.newHabit') : t('heatmap.pick')}
-      </Text>
-
-      <Text accessibilityRole="header" style={[type.bodyLarge, { color: colors.text, fontWeight: '600', marginTop: spacing.md }]}>
-        {t('detail.recent')}
-      </Text>
-      {recent.map((day) => (
-        <View key={day} style={[styles.recentRow, { borderColor: colors.border }]} accessible accessibilityLabel={t('detail.recentRow', { date: dayLabel(day), status: statusFor(day) })}>
-          <Text style={[type.body, { color: colors.text }]}>{dayLabel(day)}</Text>
-          <Text style={[type.body, { color: colors.textMuted }]}>{statusFor(day)}</Text>
-          {notes[day] && <Text style={[type.caption, { color: colors.textMuted }]} numberOfLines={1}>{notes[day].text}</Text>}
+      <Card style={{ gap: spacing.lg }}>
+        <View style={styles.rowBetween}>
+          <Text accessibilityRole="header" style={[type.title, { color: colors.text, fontWeight: '700' }]}>{t('detail.completion')}</Text>
+          <Text style={[type.caption, { color: colors.textMuted, fontWeight: '600' }]}>
+            {t('detail.totalCheckIns')}: {totalCheckIns(habit, e)}
+          </Text>
         </View>
-      ))}
+        <View style={styles.rings}>
+          {completion.map((c) => (
+            <View key={c.label} style={styles.ringCell} accessible accessibilityLabel={`${c.label}: ${pct(c.value)}`}>
+              <ProgressRing size={76} strokeWidth={8} progress={c.value ?? 0} color={habit.color} trackColor={colors.surfaceAlt}>
+                <Text style={[type.body, { color: colors.text, fontWeight: '800' }]}>{pct(c.value)}</Text>
+              </ProgressRing>
+              <Text style={[type.caption, { color: colors.textMuted, fontWeight: '600' }]}>{c.label}</Text>
+            </View>
+          ))}
+        </View>
+      </Card>
 
-      <View style={{ gap: spacing.sm, marginTop: spacing.lg }}>
-        {!archived && <PrimaryButton label={t('detail.edit')} onPress={() => router.push({ pathname: '/habit/[id]/edit', params: { id } })} />}
+      <Card style={{ gap: spacing.md }}>
+        <Heatmap
+          habit={habit}
+          entries={e}
+          today={today}
+          weekStartsOn={weekStartsOn}
+          selected={picked?.day ?? null}
+          onSelect={setPicked}
+        />
+        <Text accessibilityLiveRegion="polite" style={[type.body, { color: colors.textMuted }]}>
+          {picked ? t('detail.recentRow', { date: dayLabel(picked.day), status: statusFor(picked.day) }) : habit.createdAt >= addDays(today, -7) ? t('detail.newHabit') : t('heatmap.pick')}
+        </Text>
+      </Card>
+
+      <Text accessibilityRole="header" style={[type.title, { color: colors.text, fontWeight: '700' }]}>{t('detail.recent')}</Text>
+      <Card padded={false} style={{ overflow: 'hidden' }}>
+        {recent.map((day, i) => {
+          const done = isComplete(habit, e[day]);
+          const frozen = !done && !!e[day]?.frozen;
+          return (
+            <View
+              key={day}
+              style={[styles.recentRow, { paddingHorizontal: spacing.lg, gap: spacing.md, borderTopWidth: i === 0 ? 0 : StyleSheet.hairlineWidth, borderColor: colors.border }]}
+              accessible
+              accessibilityLabel={t('detail.recentRow', { date: dayLabel(day), status: statusFor(day) })}
+            >
+              <View
+                style={[
+                  styles.status,
+                  { backgroundColor: done ? habit.color : frozen ? extraColorsFor(mode).frozen + '44' : colors.surfaceAlt },
+                ]}
+              >
+                {done ? <Check size={16} color={readableOn(habit.color)} strokeWidth={3} /> : frozen ? <Snowflake size={14} color={colors.text} /> : null}
+              </View>
+              <View style={styles.flex}>
+                <Text style={[type.body, { color: colors.text, fontWeight: '600' }]}>{dayLabel(day)}</Text>
+                {notes[day] && <Text style={[type.caption, { color: colors.textMuted }]} numberOfLines={1}>{notes[day].text}</Text>}
+              </View>
+              <Text style={[type.body, { color: done ? colors.text : colors.textMuted }]}>{statusFor(day)}</Text>
+            </View>
+          );
+        })}
+      </Card>
+
+      <View style={{ gap: spacing.sm, marginTop: spacing.sm }}>
+        {!archived && <Button label={t('detail.edit')} icon={Pencil} onPress={() => router.push({ pathname: '/habit/[id]/edit', params: { id } })} />}
         {archived ? (
-          <PrimaryButton label={t('detail.unarchive')} onPress={() => unarchiveHabit(id)} />
+          <Button label={t('detail.unarchive')} icon={ArchiveRestore} onPress={() => unarchiveHabit(id)} />
         ) : (
-          <TextButton
+          <Button
             label={t('detail.archive')}
+            icon={Archive}
+            variant="secondary"
+            block
             onPress={() => {
               archiveHabit(id, today);
               router.back();
             }}
           />
         )}
-        <TextButton label={t('detail.delete')} danger onPress={confirmDelete} />
+        <Button label={t('detail.delete')} variant="danger" block onPress={confirmDelete} />
       </View>
     </Screen>
   );
 }
 
 const styles = StyleSheet.create({
-  band: { flexDirection: 'row', alignItems: 'center', gap: 12 },
-  bandIcon: { width: 56, height: 56, alignItems: 'center', justifyContent: 'center' },
-  statRow: { flexDirection: 'row', gap: 8 },
-  stat: { flex: 1, borderWidth: StyleSheet.hairlineWidth },
-  recentRow: { paddingVertical: 8, borderBottomWidth: StyleSheet.hairlineWidth, gap: 2 },
+  flex: { flex: 1 },
+  hero: {},
+  heroTop: { flexDirection: 'row', alignItems: 'center', gap: 16 },
+  heroIcon: { width: 64, height: 64, alignItems: 'center', justifyContent: 'center' },
+  streaks: { flexDirection: 'row', alignItems: 'center' },
+  streakBlock: { flex: 1, gap: 2 },
+  streakValue: { flexDirection: 'row', alignItems: 'center', gap: 6 },
+  vrule: { width: 1, alignSelf: 'stretch', marginHorizontal: 16 },
+  rowBetween: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 8 },
+  rings: { flexDirection: 'row', justifyContent: 'space-between' },
+  ringCell: { alignItems: 'center', gap: 8, flex: 1 },
+  recentRow: { flexDirection: 'row', alignItems: 'center', minHeight: 56, paddingVertical: 8 },
+  status: { width: 28, height: 28, borderRadius: 14, alignItems: 'center', justifyContent: 'center' },
 });

@@ -1,16 +1,22 @@
 import { memo, useEffect, useState } from 'react';
 import { Pressable, StyleSheet, Text, View, type AccessibilityActionEvent } from 'react-native';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import Animated, { useAnimatedStyle, useReducedMotion, useSharedValue, withTiming } from 'react-native-reanimated';
+import Check from 'lucide-react-native/icons/check';
+import Minus from 'lucide-react-native/icons/minus';
+import Pause from 'lucide-react-native/icons/pause';
+import Play from 'lucide-react-native/icons/play';
+import Plus from 'lucide-react-native/icons/plus';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
+import { EASE_OUT, PressableScale, ProgressRing } from '@shared/ui';
 import { isComplete } from '@/domain/completion';
 import { elapsedSeconds, formatClock, isRunning } from '@/domain/timer';
 import { readableOn } from '@/theme/contrast';
-import { PopOnChange, StreakBadge } from './motion';
+import { CheckButton } from './CheckButton';
+import { HabitIcon } from './icons';
+import { StreakBadge } from './motion';
 import type { StreakResult } from '@/domain/streaks';
 import type { Entry, Habit } from '@/domain/types';
-
-type IconName = keyof typeof MaterialCommunityIcons.glyphMap;
 
 export const TIMER_QUICK_ADD_MINUTES = 5;
 
@@ -49,6 +55,21 @@ function useNow(active: boolean): number {
   return active ? now : Date.now();
 }
 
+/** Slim progress bar under a count or timer habit. The fill is absolute and childless, so it can animate width. */
+function ProgressBar({ progress, color, track }: { progress: number; color: string; track: string }) {
+  const reduced = useReducedMotion();
+  const value = useSharedValue(progress);
+  useEffect(() => {
+    value.set(reduced ? progress : withTiming(progress, { duration: 380, easing: EASE_OUT }));
+  }, [progress, reduced, value]);
+  const fill = useAnimatedStyle(() => ({ width: `${Math.min(1, value.get()) * 100}%` }));
+  return (
+    <View style={[styles.bar, { backgroundColor: track }]} importantForAccessibility="no-hide-descendants">
+      <Animated.View style={[styles.barFill, { backgroundColor: color }, fill]} />
+    </View>
+  );
+}
+
 function HabitRowBase({
   habit,
   entry,
@@ -62,7 +83,7 @@ function HabitRowBase({
   onLongPress,
   onMove,
 }: HabitRowProps) {
-  const { colors, spacing, radius, type, touchTarget } = useTheme();
+  const { colors, spacing, radius, type, touchTarget, shadow } = useTheme();
   const running = isRunning(entry);
   const now = useNow(running);
   const isCount = habit.type === 'count';
@@ -70,8 +91,8 @@ function HabitRowBase({
   const complete = isComplete(habit, entry, now);
   const value = entry?.value ?? 0;
   const seconds = elapsedSeconds(entry, now);
-  const fill = complete ? colors.success : habit.color;
-  const timerFill = complete && !running ? colors.success : habit.color;
+  const progress = isCount ? value / habit.target : isTimer ? seconds / (habit.target * 60) : complete ? 1 : 0;
+  const accent = complete && !running ? colors.success : habit.color;
 
   const detail = isCount
     ? t('today.countProgress', { value, target: habit.target, unit: habit.unit ?? '' })
@@ -102,13 +123,8 @@ function HabitRowBase({
     }
   };
 
-  const button = {
-    width: touchTarget,
-    height: touchTarget,
-    borderRadius: touchTarget / 2,
-    alignItems: 'center' as const,
-    justifyContent: 'center' as const,
-  };
+  const ring = touchTarget;
+  const round = { width: ring, height: ring, borderRadius: ring / 2, alignItems: 'center' as const, justifyContent: 'center' as const };
 
   return (
     <View
@@ -132,94 +148,89 @@ function HabitRowBase({
           : []),
       ]}
       onAccessibilityAction={onAction}
-      style={[
-        styles.row,
-        { backgroundColor: colors.surface, borderColor: colors.border, borderRadius: radius.md, padding: spacing.md, gap: spacing.sm },
-      ]}
+      style={[styles.row, { backgroundColor: colors.surface, borderRadius: radius.lg, padding: spacing.md, gap: spacing.md }, shadow(1)]}
     >
       <Pressable
         onPress={onOpen}
         onLongPress={onLongPress}
         delayLongPress={250}
-        style={[styles.main, { gap: spacing.md, minHeight: touchTarget }]}
+        style={({ pressed }) => [styles.main, { gap: spacing.md, minHeight: touchTarget, opacity: pressed ? 0.6 : 1 }]}
         importantForAccessibility="no"
       >
-        <View style={[styles.tile, { backgroundColor: habit.color + '26', borderRadius: radius.md }]}>
-          <MaterialCommunityIcons name={habit.icon as IconName} size={24} color={habit.color} />
+        {/* The tile turns solid once the habit is done today. */}
+        <View style={[styles.tile, { backgroundColor: complete ? habit.color : habit.color + '1F', borderRadius: radius.md + 2 }]}>
+          <HabitIcon name={habit.icon} size={24} color={complete ? readableOn(habit.color) : habit.color} strokeWidth={2.1} />
         </View>
         <View style={styles.body}>
           <Text style={[type.bodyLarge, { color: colors.text, fontWeight: '600' }]} numberOfLines={2}>
             {habit.name}
           </Text>
-          {(hint || detail) && (
-            <Text style={[type.caption, { color: running ? colors.primary : colors.textMuted }]}>{hint ?? detail}</Text>
-          )}
+          <View style={styles.meta}>
+            {(hint || detail) && (
+              <Text style={[type.caption, { color: running ? colors.primary : colors.textMuted, fontWeight: '500' }]}>{hint ?? detail}</Text>
+            )}
+            <StreakBadge streak={streak} />
+          </View>
+          {(isCount || isTimer) && <ProgressBar progress={progress} color={accent} track={colors.surfaceAlt} />}
         </View>
       </Pressable>
 
-      <StreakBadge streak={streak} />
-
       {isCount && (
         <View style={styles.controls}>
-          <Pressable
+          <PressableScale
             accessibilityRole="button"
             accessibilityLabel={t('today.decrease')}
             disabled={value <= 0}
             onPress={() => onAdjust(-1)}
-            style={[button, { opacity: value <= 0 ? 0.3 : 1 }]}
+            scaleTo={0.88}
+            style={[round, { opacity: value <= 0 ? 0.3 : 1 }]}
           >
-            <MaterialCommunityIcons name="minus" size={22} color={colors.text} />
-          </Pressable>
-          <Pressable
-            accessibilityRole="button"
-            accessibilityLabel={t('today.increase')}
-            onPress={() => onAdjust(1)}
-            style={[button, { backgroundColor: fill }]}
-          >
-            <MaterialCommunityIcons name={complete ? 'check' : 'plus'} size={22} color={readableOn(fill)} />
-          </Pressable>
+            <Minus size={20} color={colors.textMuted} strokeWidth={2.5} />
+          </PressableScale>
+          <PressableScale accessibilityRole="button" accessibilityLabel={t('today.increase')} onPress={() => onAdjust(1)} scaleTo={0.88} style={round}>
+            <ProgressRing size={ring} strokeWidth={3.5} progress={progress} color={accent} trackColor={colors.surfaceAlt}>
+              <View style={[styles.inner, { backgroundColor: complete ? accent : habit.color + '1F' }]}>
+                {complete ? <Check size={20} color={readableOn(accent)} strokeWidth={3} /> : <Plus size={20} color={habit.color} strokeWidth={2.75} />}
+              </View>
+            </ProgressRing>
+          </PressableScale>
         </View>
       )}
 
       {isTimer && (
         <View style={styles.controls}>
-          <Pressable
+          <PressableScale
             accessibilityRole="button"
             accessibilityLabel={t('timer.addLabel', { minutes: TIMER_QUICK_ADD_MINUTES })}
             onPress={() => onAddMinutes(TIMER_QUICK_ADD_MINUTES)}
-            style={[button, { width: touchTarget + 8 }]}
+            scaleTo={0.9}
+            style={[round, { width: ring + 4 }]}
           >
-            <Text style={[type.caption, { color: colors.textMuted, fontWeight: '700' }]}>
-              {t('timer.add', { minutes: TIMER_QUICK_ADD_MINUTES })}
-            </Text>
-          </Pressable>
-          <Pressable
+            <Text style={[type.caption, { color: colors.textMuted, fontWeight: '700' }]}>{t('timer.add', { minutes: TIMER_QUICK_ADD_MINUTES })}</Text>
+          </PressableScale>
+          <PressableScale
             accessibilityRole="button"
             accessibilityLabel={t(running ? 'timer.pause' : 'timer.start')}
             onPress={onTimerToggle}
-            style={[button, { backgroundColor: timerFill }]}
+            scaleTo={0.88}
+            style={round}
           >
-            <MaterialCommunityIcons name={running ? 'pause' : complete ? 'check' : 'play'} size={22} color={readableOn(timerFill)} />
-          </Pressable>
+            <ProgressRing size={ring} strokeWidth={3.5} progress={progress} color={accent} trackColor={colors.surfaceAlt}>
+              <View style={[styles.inner, { backgroundColor: running || complete ? accent : habit.color + '1F' }]}>
+                {running ? (
+                  <Pause size={18} color={readableOn(accent)} strokeWidth={2.75} fill={readableOn(accent)} />
+                ) : complete ? (
+                  <Check size={20} color={readableOn(accent)} strokeWidth={3} />
+                ) : (
+                  <Play size={18} color={habit.color} strokeWidth={2.5} fill={habit.color} />
+                )}
+              </View>
+            </ProgressRing>
+          </PressableScale>
         </View>
       )}
 
-      {!isCount && !isTimer && (
-        <PopOnChange active={complete}>
-          <Pressable
-            accessibilityRole="checkbox"
-            accessibilityLabel={t(complete ? 'today.uncheck' : 'today.check')}
-            accessibilityState={{ checked: complete }}
-            onPress={onToggle}
-            style={[
-              button,
-              { borderWidth: 2, borderColor: complete ? colors.success : colors.border, backgroundColor: complete ? colors.success : 'transparent' },
-            ]}
-          >
-            {complete && <MaterialCommunityIcons name="check" size={26} color={readableOn(colors.success)} />}
-          </Pressable>
-        </PopOnChange>
-      )}
+      {!isCount && !isTimer && <CheckButton checked={complete} color={habit.color} onPress={onToggle} />}
     </View>
   );
 }
@@ -227,10 +238,13 @@ function HabitRowBase({
 export const HabitRow = memo(HabitRowBase);
 
 const styles = StyleSheet.create({
-  row: { flexDirection: 'row', alignItems: 'center', borderWidth: StyleSheet.hairlineWidth },
+  row: { flexDirection: 'row', alignItems: 'center' },
   main: { flex: 1, flexDirection: 'row', alignItems: 'center' },
-  tile: { width: 40, height: 40, alignItems: 'center', justifyContent: 'center' },
-  body: { flex: 1 },
-  streak: { flexDirection: 'row', alignItems: 'center', gap: 2 },
-  controls: { flexDirection: 'row', alignItems: 'center' },
+  tile: { width: 48, height: 48, alignItems: 'center', justifyContent: 'center' },
+  body: { flex: 1, gap: 4 },
+  meta: { flexDirection: 'row', alignItems: 'center', gap: 10, flexWrap: 'wrap' },
+  controls: { flexDirection: 'row', alignItems: 'center', gap: 2 },
+  inner: { width: 36, height: 36, borderRadius: 18, alignItems: 'center', justifyContent: 'center' },
+  bar: { height: 6, borderRadius: 3, overflow: 'hidden', marginTop: 4 },
+  barFill: { position: 'absolute', left: 0, top: 0, bottom: 0, borderRadius: 3 },
 });

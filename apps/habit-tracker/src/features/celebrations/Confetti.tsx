@@ -1,9 +1,11 @@
 import { useEffect, useMemo } from 'react';
 import { StyleSheet, useWindowDimensions } from 'react-native';
-import Animated, { Easing, runOnJS, useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
+import Animated, { Easing, useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
+import { scheduleOnRN } from 'react-native-worklets';
 
-const COLORS = ['#7C5CFF', '#22C55E', '#F97316', '#EC4899', '#0EA5E9', '#EAB308'];
-const COUNT = 36;
+// Brand violet and ember lead; the rest are habit colors so a burst always looks like the app.
+const COLORS = ['#5B3DF5', '#FF8A3D', '#22C55E', '#EC4899', '#0EA5E9', '#EAB308', '#8B78FF'];
+const COUNT = 44;
 const DURATION = 1700;
 
 interface Piece {
@@ -56,9 +58,9 @@ export function Confetti({ onDone }: { onDone: () => void }) {
   );
 
   useEffect(() => {
-    progress.value = withTiming(1, { duration: DURATION, easing: Easing.out(Easing.quad) }, (finished) => {
-      if (finished) runOnJS(onDone)();
-    });
+    progress.set(withTiming(1, { duration: DURATION, easing: Easing.out(Easing.quad) }, (finished) => {
+      if (finished) scheduleOnRN(onDone);
+    }));
   }, [progress, onDone]);
 
   return (

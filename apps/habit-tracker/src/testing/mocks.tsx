@@ -91,29 +91,12 @@ jest.mock('react-native-google-mobile-ads', () => ({
 jest.mock('@expo/vector-icons', () => ({ MaterialCommunityIcons: () => null }));
 jest.mock('react-native-safe-area-context', () => require('react-native-safe-area-context/jest/mock').default);
 jest.mock('react-native-gesture-handler', () => ({ GestureHandlerRootView: ({ children }: { children: React.ReactNode }) => children }));
-jest.mock('react-native-reanimated', () => {
-  const React = require('react');
-  const { View } = require('react-native');
-  const passthrough = (v: unknown) => v;
-  const Animated = { View, createAnimatedComponent: passthrough };
-  return {
-    __esModule: true,
-    default: Animated,
-    ...Animated,
-    useSharedValue: (v: unknown) => ({ value: v }),
-    useAnimatedStyle: () => ({}),
-    useReducedMotion: () => true,
-    withRepeat: passthrough,
-    withSequence: (...v: unknown[]) => v[0],
-    withTiming: passthrough,
-    withSpring: passthrough,
-    runOnJS: (f: unknown) => f,
-    Easing: { out: passthrough, quad: passthrough },
-    FadeInDown: { duration: () => undefined },
-    FadeOut: { duration: () => undefined },
-    __react: React,
-  };
-});
+// Animation, drawing and audio: the shared stand-ins (packages/shared/src/testing/animation.ts).
+jest.mock('react-native-reanimated', () => require('../../../../packages/shared/src/testing/animation').reanimatedMock());
+jest.mock('react-native-worklets', () => require('../../../../packages/shared/src/testing/animation').workletsMock());
+jest.mock('react-native-svg', () => require('../../../../packages/shared/src/testing/animation').svgMock());
+jest.mock('expo-linear-gradient', () => require('../../../../packages/shared/src/testing/animation').linearGradientMock());
+jest.mock('expo-audio', () => require('../../../../packages/shared/src/testing/animation').audioMock());
 jest.mock('react-native-reorderable-list', () => {
   const React = require('react');
   const { FlatList } = require('react-native');

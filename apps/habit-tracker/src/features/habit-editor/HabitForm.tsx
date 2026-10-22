@@ -1,16 +1,19 @@
 import { useEffect, useRef, useState } from 'react';
 import { Alert, Pressable, ScrollView, StyleSheet, Switch, Text, View } from 'react-native';
 import { useNavigation } from 'expo-router';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import Check from 'lucide-react-native/icons/check';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
+import { Card, PressableScale } from '@shared/ui';
 import { habitIcons } from '@/data/icons';
 import { categories } from '@/domain/categories';
 import { addDays, daysBetween, parseDayKey } from '@/domain/dayKey';
 import type { DayKey, Schedule, Weekday } from '@/domain/types';
 import { COUNT_MAX, NAME_MAX, TIMER_MAX_MINUTES, validateDraft, type HabitDraft } from '@/domain/validate';
+import { readableOn } from '@/theme/contrast';
 import { habitColors } from '@/theme/tokens';
+import { HabitIcon } from '@/ui/icons';
 import { Chip, Field, PrimaryButton, Segmented, Stepper, TextField, TimeStepper } from '@/ui/controls';
 
 export interface HabitFormProps {
@@ -30,7 +33,7 @@ const weekdayName = (d: Weekday) =>
   new Date(2026, 9, 4 + d).toLocaleDateString(undefined, { weekday: 'short' }); // 2026-10-04 is a Sunday
 
 export function HabitForm({ initial, today, submitLabel, onSubmit, header }: HabitFormProps) {
-  const { colors, spacing, radius, type, touchTarget } = useTheme();
+  const { colors, spacing, radius, type, touchTarget, shadow } = useTheme();
   const navigation = useNavigation();
   const [draft, setDraft] = useState<HabitDraft>(initial);
   const [touched, setTouched] = useState(false);
@@ -88,6 +91,16 @@ export function HabitForm({ initial, today, submitLabel, onSubmit, header }: Hab
       <ScrollView contentContainerStyle={{ padding: spacing.lg, gap: spacing.xl }} keyboardShouldPersistTaps="handled">
         {header}
 
+        {/* Live preview: the row as it will look on Today. */}
+        <Card style={[styles.preview, { gap: spacing.md }]}>
+          <View style={[styles.previewTile, { backgroundColor: draft.color, borderRadius: radius.md + 2 }]}>
+            <HabitIcon name={draft.icon} size={26} color={readableOn(draft.color)} />
+          </View>
+          <Text style={[type.title, { color: draft.name ? colors.text : colors.textMuted, fontWeight: '700', flex: 1 }]} numberOfLines={2}>
+            {draft.name || t('editor.namePlaceholder')}
+          </Text>
+        </Card>
+
         <Field label={t('editor.name')} error={nameError}>
           <TextField
             value={draft.name}
@@ -107,25 +120,27 @@ export function HabitForm({ initial, today, submitLabel, onSubmit, header }: Hab
             {habitIcons.map((icon) => {
               const selected = icon === draft.icon;
               return (
-                <Pressable
+                <PressableScale
                   key={icon}
                   accessibilityRole="button"
                   accessibilityLabel={t('editor.iconLabel', { name: icon.replace(/-/g, ' ') })}
                   accessibilityState={{ selected }}
                   onPress={() => patch({ icon })}
+                  scaleTo={0.88}
                   style={[
                     styles.iconCell,
                     {
-                      width: touchTarget,
-                      height: touchTarget,
-                      borderRadius: radius.md,
-                      backgroundColor: selected ? draft.color + '33' : colors.surface,
-                      borderColor: selected ? draft.color : colors.border,
+                      width: touchTarget + 4,
+                      height: touchTarget + 4,
+                      borderRadius: radius.md + 2,
+                      backgroundColor: selected ? draft.color + '26' : colors.surface,
+                      borderColor: selected ? draft.color : 'transparent',
                     },
+                    selected ? null : shadow(1),
                   ]}
                 >
-                  <MaterialCommunityIcons name={icon} size={24} color={selected ? draft.color : colors.textMuted} />
-                </Pressable>
+                  <HabitIcon name={icon} size={24} color={selected ? draft.color : colors.textMuted} />
+                </PressableScale>
               );
             })}
           </View>
@@ -136,16 +151,19 @@ export function HabitForm({ initial, today, submitLabel, onSubmit, header }: Hab
             {Object.values(habitColors).map((color, i) => {
               const selected = color === draft.color;
               return (
-                <Pressable
+                <PressableScale
                   key={color}
                   accessibilityRole="button"
                   accessibilityLabel={t('editor.colorLabel', { index: i + 1 })}
                   accessibilityState={{ selected }}
                   onPress={() => patch({ color })}
-                  style={[styles.swatch, { width: touchTarget, height: touchTarget, borderRadius: touchTarget / 2, backgroundColor: color, borderColor: selected ? colors.text : 'transparent' }]}
+                  scaleTo={0.85}
+                  style={[styles.swatch, { width: touchTarget, height: touchTarget, borderRadius: touchTarget / 2, borderColor: selected ? color : 'transparent' }]}
                 >
-                  {selected && <MaterialCommunityIcons name="check" size={22} color="#FFFFFF" />}
-                </Pressable>
+                  <View style={[styles.swatchFill, { backgroundColor: color }]}>
+                    {selected && <Check size={20} color={readableOn(color)} strokeWidth={3} />}
+                  </View>
+                </PressableScale>
               );
             })}
           </View>
@@ -280,6 +298,9 @@ export function HabitForm({ initial, today, submitLabel, onSubmit, header }: Hab
 const styles = StyleSheet.create({
   wrap: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
   row: { flexDirection: 'row', alignItems: 'center', gap: 8 },
-  iconCell: { alignItems: 'center', justifyContent: 'center', borderWidth: 1 },
-  swatch: { alignItems: 'center', justifyContent: 'center', borderWidth: 3 },
+  iconCell: { alignItems: 'center', justifyContent: 'center', borderWidth: 2 },
+  swatch: { alignItems: 'center', justifyContent: 'center', borderWidth: 2.5, padding: 3 },
+  swatchFill: { flex: 1, alignSelf: 'stretch', borderRadius: 999, alignItems: 'center', justifyContent: 'center' },
+  preview: { flexDirection: 'row', alignItems: 'center' },
+  previewTile: { width: 56, height: 56, alignItems: 'center', justifyContent: 'center' },
 });

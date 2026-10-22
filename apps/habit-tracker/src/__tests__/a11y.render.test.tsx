@@ -128,7 +128,7 @@ describe('screens are readable by a screen reader', () => {
   it('the progress ring and week days have spoken labels', async () => {
     add('make-bed');
     const ui = await render(themed(<Today />));
-    expect(ui.byLabel('0 of 1 habits done')).not.toHaveLength(0);
+    expect(ui.byLabel(/0 of 1 habits done/)).not.toHaveLength(0);
     expect(ui.byLabel(/^Thursday, Oct 8/).length).toBeGreaterThan(0);
   });
 });

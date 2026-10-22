@@ -1,8 +1,10 @@
-import { Pressable, Text } from 'react-native';
+import { Text, View } from 'react-native';
 import { Stack, router, useLocalSearchParams } from 'expo-router';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import ChevronRight from 'lucide-react-native/icons/chevron-right';
+import LayoutTemplate from 'lucide-react-native/icons/layout-template';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
+import { PressableScale } from '@shared/ui';
 import { templateById } from '@/data/templates';
 import { blankDraft, draftFromTemplate } from '@/features/habit-editor/drafts';
 import { HabitForm } from '@/features/habit-editor/HabitForm';
@@ -30,24 +32,27 @@ export default function NewHabit() {
           router.back();
         }}
         header={
-          <Pressable
+          <PressableScale
             accessibilityRole="button"
             accessibilityLabel={t('editor.fromTemplate')}
             onPress={() => router.push('/templates')}
+            scaleTo={0.98}
             style={{
               flexDirection: 'row',
               alignItems: 'center',
               gap: spacing.sm,
-              minHeight: touchTarget + 8,
+              minHeight: touchTarget + 12,
               padding: spacing.md,
-              borderRadius: radius.md,
-              backgroundColor: colors.surfaceAlt,
+              borderRadius: radius.lg,
+              backgroundColor: colors.primarySoft,
             }}
           >
-            <MaterialCommunityIcons name="lightning-bolt-outline" size={22} color={colors.primary} />
-            <Text style={[type.body, { color: colors.text, fontWeight: '600', flex: 1 }]}>{t('editor.fromTemplate')}</Text>
-            <MaterialCommunityIcons name="chevron-right" size={22} color={colors.textMuted} />
-          </Pressable>
+            <View style={{ width: 40, height: 40, borderRadius: radius.md, backgroundColor: colors.surface, alignItems: 'center', justifyContent: 'center' }}>
+              <LayoutTemplate size={20} color={colors.primary} strokeWidth={2.25} />
+            </View>
+            <Text style={[type.bodyLarge, { color: colors.text, fontWeight: '600', flex: 1 }]}>{t('editor.fromTemplate')}</Text>
+            <ChevronRight size={20} color={colors.primary} />
+          </PressableScale>
         }
       />
     </>
