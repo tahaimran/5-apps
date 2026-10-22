@@ -119,6 +119,24 @@ describe('type scale and touch targets', () => {
   it('never goes below 48dp even if asked', async () => {
     expect((await mountTheme({ touchTarget: 30 })).theme.touchTarget).toBe(MIN_TOUCH);
   });
+  it('puts the display family on titles and the body family on text', async () => {
+    const { theme } = await mountTheme({ fonts: { body: 'Body', display: 'Display' } });
+    expect(theme.type.body.fontFamily).toBe('Body');
+    expect(theme.type.caption.fontFamily).toBe('Body');
+    expect(theme.type.headline.fontFamily).toBe('Display');
+  });
+  it('falls back to the body family for titles when there is no display family', async () => {
+    const { theme } = await mountTheme({ fonts: { body: 'Body' } });
+    expect(theme.type.title.fontFamily).toBe('Body');
+  });
+  it('gives soft shadows that are stronger in dark mode and none at level 0', async () => {
+    const h = await mountTheme();
+    expect(h.theme.shadow(0)).toEqual({});
+    const light = h.theme.shadow(2).boxShadow!;
+    expect(light).toContain(defaultPalettes.light.shadow);
+    await act(async () => h.theme.setPreference('dark'));
+    expect(h.theme.shadow(2).boxShadow).not.toBe(light);
+  });
   it('exposes the shared spacing, radius and motion tokens', async () => {
     const { theme } = await mountTheme();
     expect(theme.spacing).toBe(spacing);

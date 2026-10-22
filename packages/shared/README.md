@@ -42,7 +42,35 @@ Backed by `react-native-mmkv`.
 `<OnboardingFlow steps={[...]} onDone={...} />`: a paged flow with a progress dots header, Skip, Back, and support for custom input steps (pickers, chips, sliders). It persists `onboarding.completedAt`.
 
 ### `@shared/theme`
-Tokens (`colors`, `spacing`, `radius`, `type`, `motion`) plus `ThemeProvider` with light, dark and high-contrast modes. Each app passes its own palette and font scale. Includes `useHaptics()`.
+Tokens (`colors`, `spacing`, `radius`, `type`, `motion`, `fonts`, `shadow(level)`) plus `ThemeProvider` with light, dark and high-contrast modes. Each app passes its own palette (including `primarySoft` and `shadow`), fonts and font scale. Includes `useHaptics()`.
+
+### `@shared/ui`
+Motion-ready building blocks on Reanimated + react-native-svg (each app lists both as dependencies):
+```tsx
+<PressableScale scaleTo={0.96}>   // dips on press-in, springs back; dims instead under reduced motion
+<ProgressRing size strokeWidth progress color trackColor>{center}</ProgressRing>   // sweeps to new values
+<Card level={1} padded>           // surface + radius.lg + theme.shadow(level)
+<Button label onPress variant="primary|secondary|ghost|danger" icon loading />
+<IconButton icon={LucideIcon} label onPress variant="plain|tonal|solid" />   // label is required
+showToast({ message, icon, tone, action }) and <ToastHost bottom={…} />      // mount the host once
+EASE_OUT, EASE_IN_OUT              // the curves to use for UI timing
+```
+Icons are passed as components (`IconComponent`), so apps import Lucide one icon at a time:
+`import Flame from 'lucide-react-native/icons/flame'`. Lucide ships types for some renamed icons without a
+runtime file (e.g. `history`, use `rotate-ccw-clock`); habit-tracker's `icons.static.test.ts` guards this.
+
+### `@shared/sound`
+`initSounds(preload?)`, `playSound('tap' | 'check' | 'undo' | 'complete' | 'celebrate')`, `setSoundsEnabled(on)`.
+expo-audio players that mix with the user's music and never play in the background. The files in
+`assets/sounds` come from `scripts/generate-sounds.mjs`; `reminder.wav` is for notification channels (bundle it
+with the expo-notifications plugin `sounds` option). Configure expo-audio with
+`{ microphonePermission: false, recordAudioAndroid: false, enableBackgroundPlayback: false }` so it adds no
+microphone or media-service permissions.
+
+### Fonts
+`assets/fonts` holds Figtree (400–700) and Bricolage Grotesque (600, 800), both OFL. Embed them with the
+expo-font plugin's `android.fonts` family syntax (see habit-tracker's `app.config.ts`) and pass
+`fonts={{ body, display }}` to `ThemeProvider`; type tokens then carry `fontFamily`, and `fontWeight` picks the file.
 
 ### `@shared/i18n`
 `t(key, params)` and `useLocale()` backed by `expo-localization` with bundled JSON per app.

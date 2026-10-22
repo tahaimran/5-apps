@@ -77,7 +77,7 @@ describe('rescheduleNotifications', () => {
     expect(channel).toBe('reminders');
     expect(entries).toHaveLength(7);
     expect(entries[0].at).toEqual(new Date(2026, 9, 8, 19, 0));
-    expect(entries[0].content).toMatchObject({ title: 'Drink water', body: 'Time to check in.', categoryIdentifier: 'habit-done' });
+    expect(entries[0].content).toMatchObject({ title: 'Drink water', body: 'Ready when you are. One tap logs it.', categoryIdentifier: 'habit-done' });
     expect(entries[0].content.data).toMatchObject({ path: `/habit/${id}` });
   });
 
@@ -96,7 +96,7 @@ describe('rescheduleNotifications', () => {
     await sched.rescheduleNotifications();
     const [, entries, channel] = callsFor('summary')[0] as unknown as [string, { content: { body: string } }[], string];
     expect(channel).toBe('summary');
-    expect(entries[0].content.body).toBe("You have 1 habit left today. You've got this.");
+    expect(entries[0].content.body).toBe('1 habit left today. A few minutes is all it takes.');
   });
 
   it('clears every series and plans nothing without permission', async () => {

@@ -168,10 +168,11 @@ jest.mock('react-native-reanimated', () => {
   const passthrough = (v: unknown) => v;
   const Animated = { View, ScrollView, createAnimatedComponent: passthrough };
   return {
+    // The complete stand-in from the shared package first; this app's overrides below win.
+    ...require('../../../../packages/shared/src/testing/animation').reanimatedMock(),
     __esModule: true,
     default: Animated,
     ...Animated,
-    useSharedValue: (v: unknown) => ({ value: v }),
     useAnimatedStyle: () => ({}),
     useAnimatedProps: () => ({}),
     useReducedMotion: () => mockMotion.reduced,
@@ -180,9 +181,6 @@ jest.mock('react-native-reanimated', () => {
     withTiming: passthrough,
     withSpring: passthrough,
     runOnJS: (f: unknown) => f,
-    Easing: { out: passthrough, quad: passthrough },
-    FadeInDown: { duration: () => undefined },
-    FadeOut: { duration: () => undefined },
     __react: React,
   };
 });

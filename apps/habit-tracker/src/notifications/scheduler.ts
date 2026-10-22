@@ -8,6 +8,8 @@ import { db } from '@/store/storage';
 
 const FIXED_SERIES = ['summary', 'nudge', 'reengage'];
 export const CATEGORY_DONE = 'habit-done';
+/** Two short, soft pulses instead of the default long buzz. */
+const GENTLE = [0, 160, 120, 160];
 
 let setupDone: Promise<void> | null = null;
 
@@ -15,9 +17,11 @@ let setupDone: Promise<void> | null = null;
 export function setupNotifications(): Promise<void> {
   setupDone ??= (async () => {
     await initNotifications([
-      { id: 'reminders', name: t('notify.channelReminders'), importance: Notifications.AndroidImportance.DEFAULT },
+      // reminder.wav is bundled by the expo-notifications plugin (app.config.ts). Android fixes a channel's
+      // sound when it is first created, so changing it later needs a new channel id.
+      { id: 'reminders', name: t('notify.channelReminders'), importance: Notifications.AndroidImportance.DEFAULT, sound: 'reminder.wav', vibrationPattern: GENTLE },
       { id: 'summary', name: t('notify.channelSummary'), importance: Notifications.AndroidImportance.LOW },
-      { id: 'streak', name: t('notify.channelStreak'), importance: Notifications.AndroidImportance.HIGH },
+      { id: 'streak', name: t('notify.channelStreak'), importance: Notifications.AndroidImportance.HIGH, sound: 'reminder.wav', vibrationPattern: GENTLE },
     ]);
     await Notifications.setNotificationCategoryAsync(CATEGORY_DONE, [
       { identifier: 'done', buttonTitle: t('notify.done'), options: { opensAppToForeground: false } },
