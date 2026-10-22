@@ -54,15 +54,28 @@ const config: ExpoConfig = {
     [
       'expo-font',
       {
-        // Embedded at build time so text never flashes in a fallback font.
-        fonts: [
-          '../../packages/shared/assets/fonts/Figtree_400Regular.ttf',
-          '../../packages/shared/assets/fonts/Figtree_500Medium.ttf',
-          '../../packages/shared/assets/fonts/Figtree_600SemiBold.ttf',
-          '../../packages/shared/assets/fonts/Figtree_700Bold.ttf',
-          '../../packages/shared/assets/fonts/BricolageGrotesque_600SemiBold.ttf',
-          '../../packages/shared/assets/fonts/BricolageGrotesque_800ExtraBold.ttf',
-        ],
+        // Embedded as Android font families, so fontFamily 'Figtree' + fontWeight picks the real file
+        // and text never flashes in a fallback font.
+        android: {
+          fonts: [
+            {
+              fontFamily: 'Figtree',
+              fontDefinitions: [
+                { path: '../../packages/shared/assets/fonts/Figtree_400Regular.ttf', weight: 400 },
+                { path: '../../packages/shared/assets/fonts/Figtree_500Medium.ttf', weight: 500 },
+                { path: '../../packages/shared/assets/fonts/Figtree_600SemiBold.ttf', weight: 600 },
+                { path: '../../packages/shared/assets/fonts/Figtree_700Bold.ttf', weight: 700 },
+              ],
+            },
+            {
+              fontFamily: 'Bricolage',
+              fontDefinitions: [
+                { path: '../../packages/shared/assets/fonts/BricolageGrotesque_600SemiBold.ttf', weight: 600 },
+                { path: '../../packages/shared/assets/fonts/BricolageGrotesque_800ExtraBold.ttf', weight: 800 },
+              ],
+            },
+          ],
+        },
       },
     ],
     [
@@ -70,8 +83,8 @@ const config: ExpoConfig = {
       {
         image: './assets/splash-icon.png',
         imageWidth: 200,
-        backgroundColor: '#FAF8F5',
-        dark: { image: './assets/splash-icon.png', backgroundColor: '#0F1115' },
+        backgroundColor: '#F6F5FA',
+        dark: { image: './assets/splash-icon.png', backgroundColor: '#100E17' },
       },
     ],
     ['expo-build-properties', { android: { compileSdkVersion: 36, targetSdkVersion: 36 } }],
