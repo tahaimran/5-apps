@@ -30,6 +30,8 @@ const config: ExpoConfig = {
       'android.permission.SYSTEM_ALERT_WINDOW',
       'android.permission.SCHEDULE_EXACT_ALARM',
       'android.permission.USE_EXACT_ALARM',
+      'android.permission.RECORD_AUDIO',
+      'android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK',
     ],
   },
   plugins: [
@@ -38,7 +40,31 @@ const config: ExpoConfig = {
       'react-native-google-mobile-ads',
       { androidAppId: process.env.EXPO_PUBLIC_ADMOB_ANDROID_APP_ID ?? TEST_ANDROID_APP_ID },
     ],
-    'expo-notifications',
+    [
+      'expo-notifications',
+      {
+        icon: './assets/notification-icon.png',
+        color: '#5B3DF5',
+        // Bundled into res/raw; channels refer to them by file name (see src/notifications/scheduler.ts).
+        sounds: ['../../packages/shared/assets/sounds/reminder.wav'],
+      },
+    ],
+    // Short UI sounds only: no microphone and no background playback service.
+    ['expo-audio', { microphonePermission: false, recordAudioAndroid: false, enableBackgroundPlayback: false }],
+    [
+      'expo-font',
+      {
+        // Embedded at build time so text never flashes in a fallback font.
+        fonts: [
+          '../../packages/shared/assets/fonts/Figtree_400Regular.ttf',
+          '../../packages/shared/assets/fonts/Figtree_500Medium.ttf',
+          '../../packages/shared/assets/fonts/Figtree_600SemiBold.ttf',
+          '../../packages/shared/assets/fonts/Figtree_700Bold.ttf',
+          '../../packages/shared/assets/fonts/BricolageGrotesque_600SemiBold.ttf',
+          '../../packages/shared/assets/fonts/BricolageGrotesque_800ExtraBold.ttf',
+        ],
+      },
+    ],
     [
       'expo-splash-screen',
       {
