@@ -18,8 +18,9 @@ const config: ExpoConfig = {
     versionCode: 1,
     adaptiveIcon: {
       foregroundImage: './assets/adaptive-icon-foreground.png',
+      backgroundImage: './assets/adaptive-icon-background.png',
       monochromeImage: './assets/adaptive-icon-monochrome.png',
-      backgroundColor: '#6C4CF1',
+      backgroundColor: '#5B3DF5',
     },
     // Exactly what the plan's permissions review allows (INTERNET, WAKE_LOCK and
     // ACCESS_NETWORK_STATE come from the ads SDK). No exact alarms, no storage, no overlays.

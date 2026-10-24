@@ -56,7 +56,7 @@ eas submit --platform android                        # uploads to the internal t
 | Item | Where | Status |
 |---|---|---|
 | Listing text (title, short, full) | `ASO.md` (limits checked by a test) | drafted |
-| Icon 512, feature graphic 1024×500 | `store/` (made by `scripts/make-assets.mjs`) | ready |
+| Icon 512, feature graphic 1024×500 | `store/` (made by `scripts/generate-icons.cjs` with the app icon set) | ready |
 | 8 screenshots 1080×1920 | `store/SCREENSHOTS.md`, demo data and Maestro flows | **to capture on a device** |
 | Data safety | `store/DATA_SAFETY.md` | drafted, verify against Google's current AdMob guidance |
 | Content rating | `store/CONTENT_RATING.md` | **decision needed** (substance templates) |
