@@ -213,40 +213,109 @@ Analytics-free: we log only local counters (`stats.onboardingCompletedAt`, chose
 
 ---
 
-## 7. Design system (`@shared/theme` extension)
+## 7. Design system ("Dawn": `@shared/theme` + `@shared/ui`)
 
-Register app tokens via `createTheme({ ... })` from `@shared/theme`.
+Direction (redesign, Oct 2026): soft and airy like a modern pregnancy app, but quiet enough for 3am. A cream page
+with a faint mint-to-blush wash at the top, white cards with soft warm shadows, round pill controls and one loud
+thing per screen: the giant Timer button (and on Kicks, the counter). Colors keep their meaning everywhere:
+**teal = Start**, **coral = Stop / contracting**, **soft amber = the pattern banner and every other "heads up"**.
+Nothing outside Night mode is ever red; warnings are amber and worded calmly. The app registers its palette with
+`ThemeProvider` (`src/theme/tokens.ts`); Night lives in the shared theme's `high-contrast` slot (`src/theme/mode.ts`,
+`NIGHT_SLOT`, `toggleNight`), and the Theme setting offers it as its own choice, never folded into "system".
 
 ### Palette
-| Token | Light | Dark | Night (red-shifted, 3am) |
+Every pair below is checked in `src/theme/__tests__/contrast.test.ts`, including text on each gradient stop and on
+the frosted overlays; `night.test.ts` walks every Night token (gradients and overlays too) and fails on any blue or
+green channel above 30% (`0x4D`). The first plan's Night text `#FF6B5A` had 42% green, so it became `#FF4A3A` (6.3:1 on black).
+
+| Token | Light | Dark | Night (red-shifted, OLED) |
 |---|---|---|---|
-| `bg` | `#FBF7F4` (warm cream) | `#141519` | `#000000` |
-| `surface` | `#FFFFFF` | `#1E2026` | `#120404` |
-| `textPrimary` | `#2B2D42` | `#ECEDF2` | `#FF6B5A` |
-| `textSecondary` | `#6B6F80` | `#A3A7B7` | `#B3473D` |
-| `primary` (Start) | `#3E9C95` (sea teal) | `#5BBFB7` | `#8C1E14` |
-| `active` (Stop/contracting) | `#E07A5F` (soft coral) | `#F09A82` | `#D2321F` |
-| `accent` (lavender) | `#9B8EC4` | `#B5AAE0` | `#5A1810` |
-| `alertSoft` (pattern banner) | `#F2C46D` bg / `#5C4300` text | `#4A3A12` / `#F7D893` | `#3A0A05` / `#FF6B5A` |
-| `success` | `#6BAA75` | `#86C590` | `#7A1A10` |
-| `divider` | `#ECE4DE` | `#2C2F38` | `#2A0804` |
+| `background` | `#FBF6F2` cream | `#121419` | `#000000` |
+| `surface` (cards) | `#FFFFFF` | `#1C1F26` | `#140403` |
+| `surfaceAlt` (insets, raised chips in dark) | `#F3ECE7` | `#272B34` | `#220806` |
+| `text` | `#2A2B3D` ink | `#EEEDF3` | `#FF4A3A` |
+| `textMuted` | `#5D6073` | `#A9ABBA` | `#E04A39` |
+| `primary` (teal, links, active tab) | `#25756F` | `#5EC4BA` | `#E5402F` |
+| `primarySoft` | `#E0F2EF` mint | `#18332F` | `#220604` |
+| `accent` (lavender, Kicks) | `#6E5DAA` | `#B5AAE0` | `#B3301F` |
+| `success` | `#2F7A4A` | `#86C590` | `#FF4A3A` |
+| `danger` (destructive only; warm terracotta, not alarm red) | `#9C4A3C` | `#F0A08C` | `#FF4A3A` |
+| `border` (toggle tracks, outlines; 3:1) | `#857C76` | `#707588` | `#B3301F` |
 
-Night mode: no blue/green channel above ~30%, pure-black background (OLED), max brightness guidance "Lower your screen brightness too". Contrast still ≥ 4.5:1 for body text (`#FF6B5A` on `#000` ≈ 7:1).
+App tokens (`extraColors`):
 
-### Type scale (sp; Partner mode ×1.4, capped by system font scale ≤ 2.0)
-`display 72/80` (timer digits, tabular-nums) · `h1 32/40` · `h2 24/32` · `h3 20/28` · `body 18/26` (larger than usual default) · `label 16/22` · `caption 14/20`. Font: system (Roboto) or Nunito via expo-font for softness; digits use `fontVariant: ['tabular-nums']`.
+| Token | Light | Dark | Night |
+|---|---|---|---|
+| Start button (gradient) / label | `#2A8079 → #1B5C57` / `#FFFFFF` | same / `#FFFFFF` | `#4A0E07 → #2E0603` / `#FF4A3A` |
+| Stop button (gradient) / label | `#DB6E53 → #BF5641` / `#FFFFFF` | `#C9624A → #A64A37` / `#FFFFFF` | `#6E140A → #4A0E07` / `#FF4A3A` |
+| Breathing ring | coral `#C9654B` (3:1 on the peach wash) | `#F09A82` | `#FF4A3A` |
+| Screen wash, resting (top → bottom) | mint `#DDF1ED` → cream → blush `#F9E9EC` | `#14302E` → bg | `#120302` → black |
+| Screen wash, contracting | peach `#FBE3D9` → cream → blush | `#3A221E` → bg | `#2A0703` → black |
+| Pattern banner bg / text / icon | `#FBE7B8` / `#6B4A00` / `#8A5E00` | `#3D3112` / `#F5D88C` / `#F5D88C` | `#2A0703` / `#FF4A3A` / `#FF4A3A` |
+| Kicks stage (gradient) / text | lavender `#65559F → #4C3F86` / white (white counter disc, `#4A3D85` digits) | `#5B4C96 → #3F336F` / white (disc `#6E5FAE`, raised) | `#2E0603 → #1A0302` / `#FF4A3A` |
+| Pregnancy hero (gradient) | `#CDEDE7 → #F8E2E9` | `#1B3A37 → #3A2430` | `#1A0402 → #0D0201` |
+| Coral as text / its soft tint | `#A9503B` / `#FCE9E3` | `#F09A82` / `#3A221E` | `#FF4A3A` / `#2A0805` |
+| Frosted overlay on a stage | white 14% | white 14% | `#FF4A3A` 14% |
+| Sheet scrim | `#1E1512` 55% | black 62% | black 70% |
+| Divider (hairlines) | `#ECE4DE` | `#2C2F38` | `#2A0804` |
 
-### Shape, spacing, motion
-- Spacing 4-pt grid; screen gutter 20dp. Radius: cards 20, chips 999.
-- **Timer button ≥ 120dp minimum, default 220dp, hit slop +24dp**; Kick button 180dp. All other targets ≥ 48dp.
-- Haptics (`expo-haptics`): start = `ImpactFeedbackStyle.Heavy`, stop = `Medium` ×2, kick tap = `Light`, pattern banner = `NotificationFeedbackType.Warning` (optional). Haptics toggle in settings.
-- Motion: breathing ring 4 s ease-in-out while contracting (doubles as a breathing guide); respects `AccessibilityInfo.isReduceMotionEnabled`.
+Dark mode has depth: each layer is lighter than the one under it (background < surface < surfaceAlt, and the raised
+part of a segmented control or stepper is lighter than its track, via `insetTones`); a test checks the order.
+Shadows are warm (`#6B5040`) in light mode and deep black in dark and Night. Switch thumbs stay visible (`Toggle`).
+
+### Type
+Figtree (body, 400–700) and Bricolage Grotesque (titles and big numbers, 600/800), embedded with the expo-font
+plugin from `packages/shared/assets/fonts`. Scale in sp: `display 72/80` (timer digits) · `h1 30/36` · `h2 22/28`
+· `h3 19/26` · `body 18/26` (larger than usual) · `label 16/22` · `caption 14/20`. Partner mode multiplies the Timer
+screen's type by 1.4, capped so Partner × system font scale never passes 2.0. Big numbers (timer, kick count,
+elapsed) use `fontVariant: ['tabular-nums']` (both fonts ship `tnum`) **and** sit in fixed-width digit boxes, so
+nothing shifts as they tick. Every screen is checked at system font scale 1.3 and 2.0, with Partner mode on.
+
+### Shape, spacing, touch
+- 4-pt grid, 20dp screen gutter. Radius: cards 20, hero cards 28, chips and buttons 999.
+- **Every touch target ≥ 56dp** (maternity app). **Timer button ≥ 120dp, default 220dp (280 in Partner mode),
+  hit slop +24dp**; Kick counter 180dp.
+- Icons: Lucide, one import per icon (`src/ui/icons.tsx`), 2.25 stroke. No emoji as icons or in copy.
+- Tab bar: compact (56dp + gesture inset), Lucide icons in a soft pill for the active tab, no ripple, no sliding.
+
+### The hero: Timer screen
+The page carries a soft wash (mint at the top while resting, warming to peach while a contraction runs; a 280 ms
+crossfade). Top row: title, Night toggle, Partner toggle, History. A status pill says what is happening ("Tap when
+a contraction begins" / "Contraction in progress" / "Resting · 3:12 since last started"). Above the button, the
+running time in big tabular digits. The 220dp button sits in the lower-middle third: a teal gradient disc with a
+timer icon and **Start**, or a coral disc with a square icon and **Stop**; a thin track ring circles it, and while a
+contraction runs a coral ring breathes around it (4 s in, 4 s out, labelled "Breathe with the ring"). Under it:
+three stat tiles (count, average length, every …), the last-contraction card with Mild / Moderate / Strong chips for
+8 s, and the pattern banner (soft amber, non-modal, slides in once). No ads on this screen, ever (§12).
+
+### Haptics and sound
+Haptics are the main feedback, through `useHaptics()` and the Settings toggle (`setHapticsEnabled`): start = Heavy,
+stop = Medium ×2, kick tap = Light, pattern banner = Warning. Sounds (`@shared/sound`) are **off by default** (the
+app is used next to someone sleeping) and only from the shared set: start `tap`, stop `check`, kick `tap`, kick
+target `complete`, undo `undo`, checklist tick `check`.
+
+### Motion (expo-animation; tokens in `src/ui/motion.ts`)
+Reanimated only. Everything the user causes finishes in under 300 ms: press scale (PressableScale), CSS transitions
+for state changes (button fill teal ↔ coral, wash crossfade, segmented pill, chip and checklist ticks), CSS
+keyframes for one-shot effects (kick-count pop, banner entrance). The one exception is the **breathing ring**: a
+looping 8 s keyframe (4 s each way, ease-in-out) that doubles as a breathing guide. Reduce Motion: the ring is drawn
+still, the pop and slide-in are dropped, colors still change. Shared values only where something is continuous
+(the shared ProgressRing on Kicks).
 
 ### Accessibility
-- TalkBack labels: button announces "Start contraction" / "Stop contraction, 42 seconds"; live region announces stats every contraction stop (not every second).
-- Dynamic type supported; layouts tested at 200% font scale.
-- Color is never the only signal (button label text + icon change).
-- One-handed: primary actions in bottom 60% of screen.
+- TalkBack: the button says "Start contraction" / "Stop contraction, 42 seconds"; stats are announced when a
+  contraction stops (not every second).
+- Color is never the only signal: label, icon and the status pill change too.
+- One-handed: primary actions in the bottom 60% of the screen.
+- Night mode: pure black, red only, "Lower your screen brightness too".
+
+### Native pieces (one dev build)
+expo-dev-client, expo-audio (no microphone, no background playback), expo-linear-gradient, expo-navigation-bar
+(`enforceContrast: false`), lucide-react-native, the expo-font families, the expo-notifications plugin with a white
+notification icon, the brand color and the shared `reminder.wav`. Icon, adaptive layers, monochrome, notification
+icon, splash and the 1024×500 feature graphic come from `scripts/generate-icons.cjs`. expo-keep-awake and expo-print
+load through `src/native/optional.ts`, so a build without them still runs (the screen may sleep; the PDF falls back
+to the text summary).
 
 ---
 
@@ -352,12 +421,12 @@ Content (not in storage): `assets/content/weeks.<locale>.json` (`{ week, sizeEn,
 
 | Notification | Default | Trigger | Copy |
 |---|---|---|---|
-| Kick-count reminder | Off; enabled in onboarding/Kicks | Daily at chosen time (`DailyTriggerInput`) | "Time for your kick count? Find a comfy spot and tap Start." |
-| Weekly size card | On after due date set (opt-out in More) | Weekly, start of each pregnancy week at 10:00 local | "Week 35: baby is about the size of a honeydew melon 🍈" |
+| Kick-count reminder | Off; enabled in onboarding/Kicks | Daily at chosen time (`DailyTriggerInput`), shown in the 12/24-hour style chosen in Settings | "Time for your kick count? Find a comfy spot and tap Start." Plays the shared chime (`reminder.wav`) with a gentle double vibration. |
+| Weekly size card | On after due date set (opt-out in More) | Weekly, start of each pregnancy week at 10:00 local | "Week 35: your baby is about the size of a honeydew melon." (no emoji) |
 | Ongoing timing (v1.1) | Off (setting) | While session active | Title "Contraction session · 7 timed" · chronometer · actions [Start] [Stop] |
 | Session left open | — | Session idle 2 h (scheduled on each stop, cancelled on next tap) | "Still timing? Your session is open. Tap to review or end it." |
 
-Rules: permission requested **only** when the user turns on a reminder (Android 13+). Channel ids: `kick-reminder` (default importance), `weekly` (low), `timing` (low, ongoing, no sound). Notifications stop automatically after EDD + 21 days (postpartum handoff card instead). No notification ever says "labor" in a predictive way.
+Rules: permission requested **only** when the user turns on a reminder (Android 13+). Channel ids: `kick-chime` (default importance, the shared chime, gentle vibration; Android fixes a channel's sound at creation, so it replaced the first version's `kick-reminder` channel, which the app deletes), `weekly` (low, silent), `timing` (low, ongoing, silent). Small icon: a white cut-out of the app mark; color: the Start teal `#2A8079`. Notifications stop automatically after EDD + 21 days (postpartum handoff card instead). No notification ever says "labor" in a predictive way.
 
 ---
 
@@ -547,3 +616,4 @@ Everything below was checked with `tsc`, Jest, `expo-doctor` and `expo export` i
 - [x] **Day 7** — Onboarding (five screens, the plan's exact copy, Skip, resume after a kill, consent after the last screen and deferred after Skip), Partner mode (×1.4 type, fewer controls, tab bar hidden while a contraction runs, "Exit partner mode" chip), disclaimer on screen 2 and as a sheet after Skip, the one-time coach mark, More (settings, privacy and ads, "Not medical advice", rate, feedback, about), Settings (pattern rule editor, colors incl. Night, vibration, 12/24 h, units, kick target, reminders), Delete all data with a double confirm, the rating rules of ASO.md §7. Tested in Jest. Device still needed: how Partner mode reads at arm's length, the Skip and resume paths on a real phone, the Play review dialog. Deviations: one onboarding route; the last screen's Skip sits under the button.
 - [x] **Day 8** — Placements of §12 behind `@shared/ads` with an app-level guard (`src/domain/adRules.ts`): banners on the two history lists, the week list and article and the checklists; a native card in the week list after the 3rd card then every 8; the one interstitial when a week article is closed after a 20-second read; the app-open ad on warm starts; rewarded unlocks for PDF looks and extra checklist lists. **Stricter than the plan:** nothing at all is shown while a contraction session or kick count is open (not only full-screen ads), and the rewarded buttons say "Available after your session". Consent starts after the last onboarding screen, or on the first navigation away from the Timer after Skip, never mid-session and never before the disclaimer. A static test replaces the plan's lint rule. Accessibility: every screen is audited in Jest at font scale 1.3 and 2.0 in light, dark and night. **Needs an account or a device and was not done:** the AdMob console content filters and G rating blocks, real unit ids, a UMP form on a phone, TalkBack, a real 200% font-scale look, real ad fill.
 - [ ] **Day 9** — QA matrix, Maestro, store assets, privacy policy, Data safety, Health declaration, testing tracks. **Not built (release prep, out of scope for this build).**
+- [x] **UI redesign (Oct 2026, branch `feat/ui-polish`)**: the "Dawn" look of §7 on the shared kit (Figtree and Bricolage, Lucide, PressableScale, Card, Button, Toggle, Segmented, Stepper, TimeField, toasts), the Timer hero (wash, fixed-width digits, gradient button, breathing ring), the Kicks stage, the My Pregnancy hero ring, sounds (off by default), the 12/24-hour setting following the phone, the chime channel for the kick reminder, a new icon set and feature graphic (`scripts/generate-icons.cjs`). Checked with `tsc`, Jest (light, dark and Night, font scale 1.3 and 2.0) and `expo-doctor`. **Not yet seen on a phone:** it needs a new dev build (expo-dev-client, expo-audio, expo-linear-gradient, expo-navigation-bar, the font families, the notification icon and chime).
