@@ -74,7 +74,8 @@ describe('store-facing config', () => {
     if (!process.env.EXPO_PUBLIC_ADMOB_ANDROID_APP_ID) expect(ads.androidAppId).toBe('ca-app-pub-3940256099942544~3347511713');
   });
   it('has the icon set, with the adaptive layers in files that exist', () => {
-    for (const file of [config.icon, config.android?.adaptiveIcon?.foregroundImage, config.android?.adaptiveIcon?.monochromeImage]) {
+    const notifications = pluginOptions('expo-notifications')![1] as { icon: string };
+    for (const file of [config.icon, config.android?.adaptiveIcon?.foregroundImage, config.android?.adaptiveIcon?.backgroundImage, config.android?.adaptiveIcon?.monochromeImage, notifications.icon]) {
       expect(file).toBeTruthy();
       expect(require('fs').existsSync(require('path').resolve(__dirname, '../..', file as string))).toBe(true);
     }

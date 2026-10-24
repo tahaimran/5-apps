@@ -25,6 +25,8 @@ describe('store graphics', () => {
     ['assets/adaptive-icon-foreground.png', 1024, 1024],
     ['assets/adaptive-icon-monochrome.png', 1024, 1024],
     ['assets/splash-icon.png', 1024, 1024],
+    ['assets/adaptive-icon-background.png', 512, 512],
+    ['assets/notification-icon.png', 96, 96],
   ])('%s is %ix%i', (file, w, h) => {
     expect(pngSize(file)).toEqual({ w, h });
   });

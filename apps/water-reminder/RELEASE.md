@@ -105,7 +105,7 @@ Note `am force-stop` also cancels the app's alarms, so it is not a valid "killed
 |---|---|---|
 | Listing title and short description | `ASO.md` (limits checked by a test) | ready |
 | Full description | `ASO.md` (Sipling text, 2,097 chars, copied from `store/FULL_DESCRIPTION_DRAFT.md`) | replaced; **Applyra check not run** |
-| Icon 512, feature graphic 1024×500 | `store/` (made by `scripts/make-assets.mjs`; the feature graphic is simpler than ASO §7) | ready, **never viewed on Play** |
+| Icon 512, feature graphic 1024×500 | `store/` (made by `scripts/generate-icons.cjs`; feature graphic follows ASO §7) | ready, **never viewed on Play** |
 | 8 screenshots 1080×1920 | `store/SCREENSHOTS.md`, `store/demo-backup.json`, Maestro flows | **to capture on a device** |
 | Data safety | `store/DATA_SAFETY.md` | drafted, verify against Google's current AdMob guidance |
 | Health apps declaration | `store/HEALTH_DECLARATION.md` | drafted |

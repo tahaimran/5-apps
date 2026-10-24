@@ -164,7 +164,7 @@ carry the conversion load (visible in search results).
 
 ## 7. Feature graphic (1024×500)
 
-Left 55%: headline "Drink water. Grow a plant." in Nunito 800 + small droplet logo. Right: three pots showing
+Left 55%: headline "Drink water. Grow a plant." in Bricolage Grotesque 800 + small droplet logo (rendered by `scripts/generate-icons.cjs`). Right: three pots showing
 seed → sprout → bloom with a water stream from a glass. Background soft blue gradient with wave line at bottom.
 No price text, no CTA text ("Download now") per policy.
 

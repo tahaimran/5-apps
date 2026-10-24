@@ -18,8 +18,9 @@ const config: ExpoConfig = {
     versionCode: 1,
     adaptiveIcon: {
       foregroundImage: './assets/adaptive-icon-foreground.png',
+      backgroundImage: './assets/adaptive-icon-background.png',
       monochromeImage: './assets/adaptive-icon-monochrome.png',
-      backgroundColor: '#2B9FE6',
+      backgroundColor: '#1F86D0',
     },
     // Exactly what plan §18 allows (INTERNET, WAKE_LOCK and ACCESS_NETWORK_STATE come from the ads
     // SDK). No exact alarms, no battery-optimization prompt, no storage, no overlays.
@@ -44,6 +45,7 @@ const config: ExpoConfig = {
     [
       'expo-notifications',
       {
+        icon: './assets/notification-icon.png',
         color: '#136CAD',
         // Bundled into res/raw; the "Water reminders" channel refers to it by file name (src/notifications/setup.ts).
         sounds: ['../../packages/shared/assets/sounds/reminder.wav'],
