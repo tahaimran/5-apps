@@ -66,6 +66,15 @@ describe('sounds', () => {
     expect(mockAudio.setAudioMode).toHaveBeenCalledTimes(1);
   });
 
+  it('plays the quiz pair (a wrong answer and the countdown tick) on players of their own', () => {
+    playSound('wrong');
+    playSound('tick');
+    playSound('tick');
+    // One player each (Jest maps every asset to the same stub, so the files are checked in files.test.ts).
+    expect(mockAudio.created).toHaveBeenCalledTimes(2);
+    expect(mockAudio.play).toHaveBeenCalledTimes(3);
+  });
+
   it('releases every player', () => {
     playSound('tap');
     releaseSounds();

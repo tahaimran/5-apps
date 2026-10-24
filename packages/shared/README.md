@@ -78,7 +78,8 @@ The 12/24-hour choice stays in each app's own settings (and backups); the app's 
 Reanimated.
 
 ### `@shared/sound`
-`initSounds(preload?)`, `playSound('tap' | 'check' | 'undo' | 'complete' | 'celebrate')`, `setSoundsEnabled(on)`.
+`initSounds(preload?)`, `playSound('tap' | 'check' | 'undo' | 'complete' | 'celebrate' | 'wrong' | 'tick')`, `setSoundsEnabled(on)`.
+`wrong` (a soft falling pair) and `tick` (a quiet countdown click) are the quiz sounds; any app may use them.
 expo-audio players that mix with the user's music and never play in the background. The files in
 `assets/sounds` come from `scripts/generate-sounds.mjs`; `reminder.wav` is for notification channels (bundle it
 with the expo-notifications plugin `sounds` option). Configure expo-audio with

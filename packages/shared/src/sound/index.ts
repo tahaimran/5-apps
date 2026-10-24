@@ -4,7 +4,8 @@ import { createAudioPlayer, setAudioModeAsync, type AudioPlayer } from 'expo-aud
  * Short UI sounds (synthesized by scripts/generate-sounds.mjs). They mix with the user's music
  * instead of pausing it, never play in the background, and are off whenever the app says so.
  */
-export type SoundName = 'tap' | 'check' | 'undo' | 'complete' | 'celebrate';
+/** `wrong` and `tick` are the quiz pair: a wrong answer and the last seconds of a countdown. */
+export type SoundName = 'tap' | 'check' | 'undo' | 'complete' | 'celebrate' | 'wrong' | 'tick';
 
 const sources: Record<SoundName, number> = {
   tap: require('../../assets/sounds/tap.wav'),
@@ -12,10 +13,12 @@ const sources: Record<SoundName, number> = {
   undo: require('../../assets/sounds/undo.wav'),
   complete: require('../../assets/sounds/complete.wav'),
   celebrate: require('../../assets/sounds/celebrate.wav'),
+  wrong: require('../../assets/sounds/wrong.wav'),
+  tick: require('../../assets/sounds/tick.wav'),
 };
 
 /** Quieter than full media volume: these are accents, not content. */
-const VOLUME: Record<SoundName, number> = { tap: 0.35, check: 0.55, undo: 0.4, complete: 0.6, celebrate: 0.6 };
+const VOLUME: Record<SoundName, number> = { tap: 0.35, check: 0.55, undo: 0.4, complete: 0.6, celebrate: 0.6, wrong: 0.45, tick: 0.3 };
 
 const players = new Map<SoundName, AudioPlayer>();
 let enabled = true;

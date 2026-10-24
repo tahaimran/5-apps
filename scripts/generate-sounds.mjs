@@ -91,6 +91,13 @@ const sounds = {
     ['G4', 'C5', 'E5', 'G5', 'C6', 'E6'].forEach((n, i) => tone(b, i * 0.065, note(n), { dur: 0.9, decay: 4.5, gain: 0.34 }));
     [0.45, 0.55, 0.62, 0.7].forEach((t, i) => tone(b, t, note(['G6', 'C7', 'E6', 'G6'][i]), { dur: 0.5, decay: 9, gain: 0.12, partials: [1] }));
   }),
+  // A wrong answer: a soft, low two-step fall. Muted partials so it reads as "no", never as an alarm.
+  wrong: render(0.34, (b) => {
+    tone(b, 0, note('E4'), { dur: 0.16, decay: 16, gain: 0.45, partials: [1, 0.35, 0.1] });
+    tone(b, 0.1, note('B3'), { dur: 0.24, decay: 12, gain: 0.45, partials: [1, 0.35, 0.1] });
+  }),
+  // Countdown tick (last seconds of a timer): a short wooden click, quieter than a tap.
+  tick: render(0.05, (b) => tick(b, 0, { dur: 0.035, gain: 0.22, freq: 1400 })),
   // Notification chime: two gentle bell notes.
   reminder: render(1.4, (b) => {
     tone(b, 0, note('A5'), { dur: 1.1, decay: 3.2, gain: 0.45, partials: [1, 0.3, 0.12, 0.05] });
