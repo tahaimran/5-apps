@@ -1,6 +1,8 @@
 import './mocks';
 import '@/bootstrap';
-import { resetSounds } from '@/audio/sounds';
+import { releaseSounds } from '@shared/sound';
+import { hideToast } from '@shared/ui';
+import { resetNotificationSetup } from '@/notifications/reminder';
 import { setBankForTests } from '@/content/bank';
 import { dateKeyFor } from '@/domain/dateKey';
 import { defaultAdCounters, defaultDaily, defaultProfile, defaultReview, defaultSettings, defaultStats, defaultStreak } from '@/domain/defaults';
@@ -30,5 +32,7 @@ export function resetApp(now: Date = new Date()) {
   resetNotifMock();
   for (const fn of Object.values(mockRouter)) if (typeof (fn as jest.Mock).mockClear === 'function') (fn as jest.Mock).mockClear();
   resetAdsMock();
-  resetSounds();
+  releaseSounds();
+  hideToast();
+  resetNotificationSetup();
 }

@@ -1,32 +1,59 @@
+import { Pressable, StyleSheet, View, type PressableProps } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Tabs } from 'expo-router';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import ChartColumn from 'lucide-react-native/icons/chart-column';
+import Gamepad2 from 'lucide-react-native/icons/gamepad-2';
+import House from 'lucide-react-native/icons/house';
+import Settings from 'lucide-react-native/icons/settings';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
-import { FONT_SEMIBOLD } from '@/ui/AppText';
+import type { IconComponent } from '@shared/ui';
+import { fonts } from '@/theme/tokens';
 
-const icons = { index: 'home-variant-outline', play: 'play-circle-outline', stats: 'chart-box-outline', settings: 'cog-outline' } as const;
+const icons: Record<'index' | 'play' | 'stats' | 'settings', IconComponent> = { index: House, play: Gamepad2, stats: ChartColumn, settings: Settings };
 
 export default function TabsLayout() {
-  const { colors, touchTarget, type } = useTheme();
-  const tab = (name: keyof typeof icons, title: string) => (
-    <Tabs.Screen
-      name={name}
-      options={{
-        title,
-        tabBarAccessibilityLabel: title,
-        tabBarIcon: ({ color, size }) => <MaterialCommunityIcons name={icons[name]} size={size + 2} color={color as string} />,
-      }}
-    />
-  );
+  const { colors, shadow } = useTheme();
+  const insets = useSafeAreaInsets();
+  const tab = (name: keyof typeof icons, title: string) => {
+    const Icon = icons[name];
+    return (
+      <Tabs.Screen
+        name={name}
+        options={{
+          title,
+          tabBarAccessibilityLabel: title,
+          // The active tab sits in a soft pill; tabs never slide (they are peers, not a hierarchy).
+          tabBarIcon: ({ color, focused }) => (
+            <View style={[styles.pill, { backgroundColor: focused ? colors.primarySoft : 'transparent' }]}>
+              <Icon size={20} color={color as string} strokeWidth={focused ? 2.4 : 2} />
+            </View>
+          ),
+        }}
+      />
+    );
+  };
   return (
     <Tabs
       screenOptions={{
         headerShown: false,
+        animation: 'none',
+        // No Android ripple: the active pill is the feedback, and a borderless ripple spilled over the bar.
+        tabBarButton: ({ android_ripple: _ripple, ...props }) => <Pressable {...(props as PressableProps)} />,
         tabBarActiveTintColor: colors.primary,
         tabBarInactiveTintColor: colors.textMuted,
-        tabBarShowLabel: true,
-        tabBarLabelStyle: { fontFamily: FONT_SEMIBOLD, fontSize: type.caption.fontSize },
-        tabBarStyle: { backgroundColor: colors.surface, borderTopColor: colors.border, minHeight: touchTarget + 16 },
+        // An explicit line height keeps descenders (y, g) from clipping under the pill icon.
+        tabBarLabelStyle: { fontFamily: fonts.body, fontWeight: '600', fontSize: 11, lineHeight: 14 },
+        tabBarIconStyle: { height: 26 },
+        tabBarStyle: {
+          backgroundColor: colors.surface,
+          borderTopWidth: 0,
+          // Compact: icons and labels in ~56dp, plus the system gesture area.
+          height: 56 + insets.bottom,
+          paddingTop: 5,
+          paddingBottom: insets.bottom + 4,
+          ...shadow(2),
+        },
       }}
     >
       {tab('index', t('tabs.home'))}
@@ -36,3 +63,7 @@ export default function TabsLayout() {
     </Tabs>
   );
 }
+
+const styles = StyleSheet.create({
+  pill: { width: 52, height: 26, borderRadius: 13, alignItems: 'center', justifyContent: 'center' },
+});

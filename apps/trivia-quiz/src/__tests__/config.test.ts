@@ -43,7 +43,14 @@ describe('store-facing config', () => {
     expect(build.android.compileSdkVersion).toBeGreaterThanOrEqual(build.android.targetSdkVersion);
   });
   it('registers the native plugins the built features need', () => {
-    for (const name of ['expo-router', 'react-native-google-mobile-ads', 'expo-notifications', 'expo-audio', 'expo-sharing', 'expo-splash-screen']) expect(plugins).toContain(name);
+    for (const name of ['expo-router', 'react-native-google-mobile-ads', 'expo-notifications', 'expo-audio', 'expo-sharing', 'expo-splash-screen', 'expo-navigation-bar', 'expo-font']) expect(plugins).toContain(name);
+  });
+  it('embeds Figtree and Bricolage as Android font families from the shared fonts', () => {
+    const font = pluginOptions('expo-font')![1] as { android: { fonts: { fontFamily: string; fontDefinitions: { path: string; weight: number }[] }[] } };
+    expect(font.android.fonts.map((f) => f.fontFamily)).toEqual(['Figtree', 'Bricolage']);
+    for (const family of font.android.fonts) {
+      for (const d of family.fontDefinitions) expect(require('fs').existsSync(require('path').resolve(__dirname, '../..', d.path))).toBe(true);
+    }
   });
   it('uses a test AdMob app id until a real one is set in EAS', () => {
     const ads = pluginOptions('react-native-google-mobile-ads')![1] as { androidAppId: string };
@@ -51,7 +58,7 @@ describe('store-facing config', () => {
     if (!process.env.EXPO_PUBLIC_ADMOB_ANDROID_APP_ID) expect(ads.androidAppId).toBe('ca-app-pub-3940256099942544~3347511713');
   });
   it('has the icon set, with the adaptive layers in files that exist', () => {
-    for (const file of [config.icon, config.android?.adaptiveIcon?.foregroundImage, config.android?.adaptiveIcon?.monochromeImage]) {
+    for (const file of [config.icon, config.android?.adaptiveIcon?.foregroundImage, config.android?.adaptiveIcon?.backgroundImage, config.android?.adaptiveIcon?.monochromeImage]) {
       if (!file) continue;
       expect(require('fs').existsSync(require('path').resolve(__dirname, '../..', file))).toBe(true);
     }
@@ -65,12 +72,22 @@ describe('audio and reminder config', () => {
     const audio = pluginOptions('expo-audio')![1] as { microphonePermission: boolean };
     expect(audio.microphonePermission).toBe(false);
   });
-  it('bundles the four sounds, each under 30 KB', () => {
-    for (const f of ['correct.wav', 'wrong.wav', 'tick.wav', 'levelup.wav']) {
-      const file = require('path').resolve(__dirname, '../../assets/sounds', f);
-      expect(require('fs').existsSync(file)).toBe(true);
-      expect(require('fs').statSync(file).size).toBeLessThan(30 * 1024);
+  it('plays only the shared UI sounds (no app-only audio), the quiz pair included', () => {
+    expect(require('fs').existsSync(require('path').resolve(__dirname, '../../assets/sounds'))).toBe(false);
+    for (const f of ['check.wav', 'wrong.wav', 'tick.wav', 'celebrate.wav']) {
+      const file = require('path').resolve(__dirname, '../../../../packages/shared/assets/sounds', f);
+      expect(require('fs').statSync(file).size).toBeLessThan(64 * 1024);
     }
+  });
+  it('turns off the audio library recording and background-playback services', () => {
+    const audio = pluginOptions('expo-audio')![1] as { recordAudioAndroid: boolean; enableBackgroundPlayback: boolean };
+    expect(audio).toMatchObject({ recordAudioAndroid: false, enableBackgroundPlayback: false });
+  });
+  it('bundles the shared chime and a white notification icon, in the brand color', () => {
+    const notif = pluginOptions('expo-notifications')![1] as { icon: string; color: string; sounds: string[] };
+    expect(notif.color).toBe('#5B3FE0');
+    for (const file of [notif.icon, ...notif.sounds]) expect(require('fs').existsSync(require('path').resolve(__dirname, '../..', file))).toBe(true);
+    expect(notif.sounds.map((s) => require('path').basename(s))).toEqual(['reminder.wav']);
   });
   it('blocks the microphone and foreground-service permissions the audio library adds on its own', () => {
     for (const p of ['RECORD_AUDIO', 'FOREGROUND_SERVICE', 'FOREGROUND_SERVICE_MEDIA_PLAYBACK']) expect(blocked).toContain(`android.permission.${p}`);

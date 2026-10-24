@@ -1,42 +1,54 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { AccessibilityInfo, AppState, BackHandler, View } from 'react-native';
+import { AccessibilityInfo, AppState, BackHandler, ScrollView, StyleSheet, View } from 'react-native';
 import { Redirect, router, useLocalSearchParams } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { LinearGradient } from 'expo-linear-gradient';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { Pressable } from 'react-native';
+import Heart from 'lucide-react-native/icons/heart';
+import Pause from 'lucide-react-native/icons/pause';
+import Star from 'lucide-react-native/icons/star';
+import X from 'lucide-react-native/icons/x';
+import Zap from 'lucide-react-native/icons/zap';
 import { t } from '@shared/i18n';
+import { playSound } from '@shared/sound';
 import { useTheme } from '@shared/theme';
+import { Button, IconButton, SystemNavBar } from '@shared/ui';
 import { useAdScreen } from '@/ads/guard';
-import { playSound } from '@/audio/sounds';
 import { AnswerButton, type AnswerState } from '@/components/AnswerButton';
 import { ExplanationPanel } from '@/components/ExplanationPanel';
 import { LifelineBar } from '@/components/LifelineBar';
 import { TimerRing } from '@/components/TimerRing';
 import { rewardedDecision } from '@/domain/adRules';
+import { categoryOfId } from '@/domain/categories';
 import { allowanceFor, LIFELINES, type LifelineKind } from '@/domain/lifelines';
 import { answer, canContinueWithHeart, canOfferRewarded, continueWithHeart, grantRewardedLifeline, isBlitz, lifelineLeft, next, tick, useLifeline } from '@/domain/round';
 import { isWatchingAd, watchRewarded } from '@/features/ads/rewarded';
 import { commitRound } from '@/features/play/commit';
 import { useRoundClock } from '@/features/play/useRoundClock';
+import { lifelineVideosToday, useAds } from '@/store/ads';
 import { useFeedback } from '@/store/feedback';
 import { logFunnel } from '@/store/funnel';
-import { lifelineVideosToday, useAds } from '@/store/ads';
 import { useRound } from '@/store/round';
+import { extraColorsFor, frost } from '@/theme/tokens';
 import { AppText } from '@/ui/AppText';
-import { BigButton } from '@/ui/BigButton';
+import { GoldButton } from '@/ui/GoldButton';
+import { categoryIcons } from '@/ui/icons';
 import { Sheet } from '@/ui/Sheet';
 
 /** Where a finished round goes (plan §4). */
 const destination = (mode: string) => (mode === 'daily' ? '/daily/result' : mode === 'warmup' ? '/warmup-result' : '/results/[sessionId]');
 
 /**
- * The question screen all modes share (plan §4: full-screen, no tabs, no banner, no ads of any kind).
- * The clock runs only while a question is open: it stops for the explanation, a pause overlay and
- * the quit sheet, and the paused time is never counted.
+ * The question screen all modes share, and the app's hero moment (plan §4, §5): a violet stage with
+ * the question card, its timer ring sitting on the card's top edge, four answer pills, and the
+ * lifelines, which give way to the explanation once an answer is in. Full-screen, no tabs, no banner,
+ * no ads of any kind. The clock runs only while a question is open: it stops for the explanation, a
+ * pause overlay and the sheets, and the paused time is never counted.
  */
 export default function Quiz() {
   const { sessionId } = useLocalSearchParams<{ sessionId: string }>();
-  const { colors, spacing, radius, mode } = useTheme();
+  const { colors, spacing, radius, mode, shadow } = useTheme();
+  const x = extraColorsFor(mode);
   const feedback = useFeedback();
   const sid = useRound((s) => s.sessionId);
   const round = useRound((s) => s.state);
@@ -46,6 +58,7 @@ export default function Quiz() {
   const [offer, setOffer] = useState<LifelineKind | 'heart' | null>(null);
   const [offerNote, setOfferNote] = useState<string | null>(null);
   const [adBusy, setAdBusy] = useState(false);
+  const scroll = useRef<ScrollView>(null);
   useAdScreen('quiz');
   const committed = useRef(false);
 
@@ -86,21 +99,23 @@ export default function Quiz() {
   );
   useRoundClock(running, onTick);
 
-  // Feedback once per answer.
+  // Feedback once per answer: a sound, a haptic and a spoken verdict, then the explanation scrolls in.
   const answered = live ? round.answers.length : 0;
   const lastCorrect = live ? round.correct : null;
   useEffect(() => {
     if (!live || answered === 0 || round.phase === 'question') return;
     if (round.config.mode === 'warmup') logFunnel(`onb_warmup_q${Math.min(answered, 3)}`);
     if (lastCorrect) {
-      playSound('correct');
-      feedback.success();
+      playSound('check');
+      void feedback.success();
     } else {
       playSound('wrong');
-      feedback.error();
+      void feedback.error();
     }
     const spoken = lastCorrect ? t('quiz.verdictSpoken.correct') : t(`quiz.verdictSpoken.${round.timedOut ? 'timeout' : 'wrong'}`, { answer: round.current.options[round.current.correctIndex] });
     AccessibilityInfo.announceForAccessibility(spoken);
+    const id = setTimeout(() => scroll.current?.scrollToEnd({ animated: true }), 60);
+    return () => clearTimeout(id);
     // eslint-disable-next-line react-hooks/exhaustive-deps -- once per answer
   }, [answered]);
 
@@ -112,7 +127,7 @@ export default function Quiz() {
     const state = useRound.getState();
     const result = commitRound(sessionId, state.state!, Date.now() - state.startedAt);
     state.markCommitted();
-    if (result.mode === 'classic' && result.stars >= 1) playSound('levelup');
+    if (result.mode === 'classic' && result.stars >= 1) playSound('celebrate');
     router.replace({ pathname: destination(result.mode) as '/results/[sessionId]', params: { sessionId } });
   }, [done, sessionId]);
 
@@ -126,6 +141,9 @@ export default function Quiz() {
   const questionNo = round.answers.length + (round.phase === 'question' ? 1 : 0);
   const total = round.config.questions.length;
   const blitz = isBlitz(round.config);
+  const correctCount = round.answers.filter((a) => a.correct).length;
+  const category = round.config.category ?? categoryOfId(cur.question.id);
+  const CategoryIcon = categoryIcons[category];
   const stateOf = (i: number): AnswerState => {
     if (round.removed.includes(i)) return 'removed';
     if (round.phase === 'question') return 'idle';
@@ -178,51 +196,89 @@ export default function Quiz() {
     useRound.getState().clear();
     router.dismissTo('/(tabs)');
   };
-  void mode;
+  const title = isWarmup ? t('quiz.warmupTitle') : round.config.mode === 'daily' ? t('home.dailyTitle') : blitz ? t('modes.blitz') : t(`categories.${category}`);
+  const progressText = blitz ? t('quiz.blitzCount', { count: correctCount }) : isWarmup ? t('quiz.warmupProgress', { n: questionNo, total }) : t('quiz.progress', { n: questionNo, total });
+  const progressLabel = blitz ? progressText : isWarmup ? progressText : t('quiz.progressLabel', { n: questionNo, total });
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: colors.background }}>
-      <View style={{ flex: 1, padding: spacing.lg, gap: spacing.md }}>
-        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: spacing.md }}>
+    <View style={styles.flex}>
+      <StatusBar style="light" />
+      <SystemNavBar dark />
+      <LinearGradient colors={x.stage} start={{ x: 0, y: 0 }} end={{ x: 0.4, y: 1 }} style={StyleSheet.absoluteFill} />
+      <SafeAreaView style={styles.flex} edges={['top', 'bottom']}>
+        {/* Top bar: quit, the round's name, the score. */}
+        <View style={[styles.bar, { paddingHorizontal: spacing.lg, paddingTop: spacing.sm, gap: spacing.sm }]}>
           {isWarmup ? (
-            <View style={{ minHeight: 48, justifyContent: 'center' }}>
-              <AppText variant="body" style={{ fontWeight: '700' }}>{t('quiz.warmupProgress', { n: questionNo, total })}</AppText>
-            </View>
+            <View style={styles.side} />
           ) : (
-            <Pressable accessibilityRole="button" accessibilityLabel={t('quiz.quit')} onPress={() => setQuitOpen(true)} style={{ minWidth: 48, minHeight: 48, alignItems: 'center', justifyContent: 'center' }}>
-              <MaterialCommunityIcons name="close" size={28} color={colors.text} />
-            </Pressable>
+            <IconButton icon={X} label={t('quiz.quit')} onPress={() => setQuitOpen(true)} color="#FFFFFF" style={{ backgroundColor: frost }} />
           )}
-          {!isWarmup && (
-            <View accessible accessibilityLabel={blitz ? t('quiz.blitzCount', { count: round.answers.filter((a) => a.correct).length }) : t('quiz.progressLabel', { n: questionNo, total })}>
-              <AppText variant="body" style={{ fontWeight: '700' }}>{blitz ? t('quiz.blitzCount', { count: round.answers.filter((a) => a.correct).length }) : t('quiz.progress', { n: questionNo, total })}</AppText>
+          <View style={[styles.titleBox, { gap: spacing.xs }]}>
+            {blitz ? <Zap size={18} color={x.gold} fill={x.gold} strokeWidth={2} /> : <CategoryIcon size={18} color="#FFFFFF" strokeWidth={2.4} />}
+            <AppText variant="h2" numberOfLines={1} style={styles.white}>
+              {title}
+            </AppText>
+          </View>
+          {isWarmup ? (
+            <View style={styles.side} />
+          ) : (
+            <View accessible accessibilityLabel={t('quiz.scoreLabel', { score: round.score })} style={[styles.chip, { backgroundColor: frost, borderRadius: radius.pill }]}>
+              <Star size={15} color={x.gold} fill={x.gold} strokeWidth={2} />
+              <AppText variant="body" style={[styles.white, styles.bold]}>
+                {String(round.score)}
+              </AppText>
             </View>
           )}
-          {round.config.hearts > 0 && (
-            <View accessible accessibilityLabel={t('quiz.heartsLabel', { count: round.hearts })} style={{ flexDirection: 'row', gap: 2 }}>
-              {Array.from({ length: round.config.hearts }, (_, i) => (
-                <MaterialCommunityIcons key={i} name={i < round.hearts ? 'heart' : 'heart-outline'} size={22} color={colors.danger} />
+        </View>
+
+        {/* Progress: "3 of 10" over one pill per question (or the Blitz count). */}
+        <View style={{ paddingHorizontal: spacing.lg, paddingTop: spacing.md, gap: spacing.sm }}>
+          <View style={[styles.row, { justifyContent: 'space-between' }]}>
+            <View accessible accessibilityLabel={progressLabel}>
+              <AppText variant="body" style={[styles.white, styles.semi]}>
+                {progressText}
+              </AppText>
+            </View>
+            {round.config.hearts > 0 && (
+              <View accessible accessibilityLabel={t('quiz.heartsLabel', { count: round.hearts })} style={[styles.row, { gap: 3 }]}>
+                {Array.from({ length: round.config.hearts }, (_, i) => (
+                  <Heart key={i} size={20} color={i < round.hearts ? '#FF8FA3' : '#FFFFFF80'} fill={i < round.hearts ? '#FF8FA3' : 'transparent'} strokeWidth={2.2} />
+                ))}
+              </View>
+            )}
+          </View>
+          {!blitz && (
+            <View style={[styles.row, { gap: 5 }]} importantForAccessibility="no-hide-descendants" accessibilityElementsHidden>
+              {Array.from({ length: total }, (_, i) => (
+                <View
+                  key={i}
+                  style={[styles.segment, { backgroundColor: i < round.answers.length ? '#FFFFFF' : i === round.answers.length ? x.gold : '#FFFFFF38' }]}
+                />
               ))}
             </View>
           )}
-          {!isWarmup && (
-            <View accessible accessibilityLabel={t('quiz.scoreLabel', { score: round.score })}>
-              <AppText variant="body" style={{ fontWeight: '700' }}>{String(round.score)}</AppText>
-            </View>
-          )}
-          {timed ? <TimerRing msLeft={round.msLeft ?? 0} msTotal={round.msTotal ?? 1} /> : <View style={{ width: 56 }} />}
         </View>
 
-        <View style={{ gap: spacing.md, flex: 1 }}>
-          <View style={{ padding: spacing.lg, borderRadius: radius.lg, backgroundColor: colors.surface, borderWidth: 1, borderColor: colors.border }}>
-            <AppText variant="question" accessibilityRole="header">{cur.question.q}</AppText>
+        <ScrollView ref={scroll} contentContainerStyle={{ padding: spacing.lg, paddingTop: timed ? 44 : spacing.lg, gap: spacing.md, flexGrow: 1 }} showsVerticalScrollIndicator={false}>
+          {/* The question card; the timer ring sits on its top edge. */}
+          <View style={[styles.card, { borderRadius: radius.xl, backgroundColor: x.card, paddingHorizontal: spacing.lg, paddingBottom: spacing.xl, paddingTop: timed ? 44 : spacing.xl }, shadow(3)]}>
+            {timed && (
+              <View style={[styles.ringSlot, shadow(2)]}>
+                <TimerRing msLeft={round.msLeft ?? 0} msTotal={round.msTotal ?? 1} running={running} resetKey={`${cur.question.id}:${round.answers.length}`} />
+              </View>
+            )}
+            <AppText variant="question" accessibilityRole="header" style={styles.center}>
+              {cur.question.q}
+            </AppText>
           </View>
+
           <View style={{ gap: spacing.md }}>
             {cur.options.map((text, i) => (
               <AnswerButton key={`${cur.question.id}-${i}`} index={i} text={text} state={stateOf(i)} disabled={round.phase !== 'question' || paused} onPress={(idx) => apply((s) => answer(s, idx))} />
             ))}
           </View>
-          {round.phase === 'question' && round.lastPoints > 0 && null}
+
+          <View style={styles.grow} />
           {round.phase === 'question' ? (
             LIFELINES.some((k) => shown[k]) && (
               <LifelineBar counts={round.lifelines} enabled={enabled} shown={shown} offer={offerFor} onUse={(kind: LifelineKind) => apply((s) => useLifeline(s, kind))} onOffer={openOffer} />
@@ -230,23 +286,38 @@ export default function Quiz() {
           ) : (
             <ExplanationPanel verdict={verdict} question={cur.question} correctText={cur.options[cur.correctIndex]} last={last} onNext={onNext} />
           )}
-        </View>
-      </View>
+        </ScrollView>
+      </SafeAreaView>
 
       {paused && round.phase === 'question' && (
-        <View style={{ position: 'absolute', inset: 0, backgroundColor: colors.background, alignItems: 'center', justifyContent: 'center', padding: spacing.xl, gap: spacing.lg }} accessibilityViewIsModal>
-          <AppText variant="h1" accessibilityRole="header">{t('quiz.paused')}</AppText>
-          <BigButton tall label={t('quiz.resume')} onPress={() => setPaused(false)} />
+        <View style={[StyleSheet.absoluteFill, styles.pause, { padding: spacing.xl, gap: spacing.lg }]} accessibilityViewIsModal>
+          <LinearGradient colors={x.stage} start={{ x: 0, y: 0 }} end={{ x: 0.4, y: 1 }} style={StyleSheet.absoluteFill} />
+          <View style={[styles.pauseIcon, { backgroundColor: frost }]}>
+            <Pause size={36} color="#FFFFFF" fill="#FFFFFF" strokeWidth={2} />
+          </View>
+          <AppText variant="display" accessibilityRole="header" style={styles.white}>
+            {t('quiz.paused')}
+          </AppText>
+          <GoldButton label={t('quiz.resume')} onPress={() => setPaused(false)} style={styles.pauseButton} />
         </View>
       )}
 
       <Sheet visible={offer !== null} onClose={closeOffer}>
-        <AppText variant="h1" accessibilityRole="header">{offer === 'heart' ? t('ads.heartTitle') : t('ads.lifelineTitle', { name: offer ? t(`quiz.lifeline.${offer}`) : '' })}</AppText>
-        <AppText variant="body" style={{ color: colors.textMuted }}>{offer === 'heart' ? t('ads.heartBody') : t('ads.lifelineBody', { name: offer ? t(`quiz.lifeline.${offer}`) : '' })}</AppText>
-        {offerNote && <AppText accessibilityLiveRegion="polite" variant="body" style={{ fontWeight: '700' }}>{offerNote}</AppText>}
-        <BigButton tall label={t('ads.watch')} onPress={() => void watch()} disabled={adBusy} />
-        <BigButton
+        <AppText variant="h1" accessibilityRole="header">
+          {offer === 'heart' ? t('ads.heartTitle') : t('ads.lifelineTitle', { name: offer ? t(`quiz.lifeline.${offer}`) : '' })}
+        </AppText>
+        <AppText variant="body" style={{ color: colors.textMuted }}>
+          {offer === 'heart' ? t('ads.heartBody') : t('ads.lifelineBody', { name: offer ? t(`quiz.lifeline.${offer}`) : '' })}
+        </AppText>
+        {offerNote && (
+          <AppText accessibilityLiveRegion="polite" variant="body" style={styles.bold}>
+            {offerNote}
+          </AppText>
+        )}
+        <Button label={t('ads.watch')} onPress={() => void watch()} disabled={adBusy} />
+        <Button
           variant="secondary"
+          block
           label={offer === 'heart' ? t('ads.endLevel') : t('ads.noThanks')}
           onPress={() => {
             const heart = offer === 'heart';
@@ -257,11 +328,36 @@ export default function Quiz() {
       </Sheet>
 
       <Sheet visible={quitOpen} onClose={() => setQuitOpen(false)}>
-        <AppText variant="h1" accessibilityRole="header">{t('quiz.quitTitle')}</AppText>
-        <AppText variant="body" style={{ color: colors.textMuted }}>{t('quiz.quitBody')}</AppText>
-        <BigButton tall label={t('quiz.keepPlaying')} onPress={() => setQuitOpen(false)} />
-        <BigButton variant="secondary" label={t('quiz.quitConfirm')} onPress={quit} />
+        <AppText variant="h1" accessibilityRole="header">
+          {t('quiz.quitTitle')}
+        </AppText>
+        <AppText variant="body" style={{ color: colors.textMuted }}>
+          {t('quiz.quitBody')}
+        </AppText>
+        <Button label={t('quiz.keepPlaying')} onPress={() => setQuitOpen(false)} />
+        <Button variant="secondary" block label={t('quiz.quitConfirm')} onPress={quit} />
       </Sheet>
-    </SafeAreaView>
+    </View>
   );
 }
+
+// White text sits on the violet stage or on frost over it; both are covered by the contrast test.
+const styles = StyleSheet.create({
+  flex: { flex: 1 },
+  grow: { flexGrow: 1 },
+  row: { flexDirection: 'row', alignItems: 'center' },
+  bar: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
+  side: { width: 48, height: 48 },
+  titleBox: { flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center' },
+  chip: { flexDirection: 'row', alignItems: 'center', gap: 6, minHeight: 36, paddingHorizontal: 12 },
+  segment: { flex: 1, height: 8, borderRadius: 4 },
+  card: { alignItems: 'center' },
+  ringSlot: { position: 'absolute', top: -32, alignSelf: 'center', borderRadius: 32 },
+  center: { textAlign: 'center' },
+  white: { color: '#FFFFFF' },
+  bold: { fontWeight: '700' },
+  semi: { fontWeight: '600' },
+  pause: { alignItems: 'center', justifyContent: 'center' },
+  pauseIcon: { width: 80, height: 80, borderRadius: 40, alignItems: 'center', justifyContent: 'center' },
+  pauseButton: { alignSelf: 'stretch' },
+});

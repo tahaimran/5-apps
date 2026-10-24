@@ -1,14 +1,14 @@
 import { useEffect } from 'react';
 import { StyleSheet } from 'react-native';
 import { Stack } from 'expo-router';
-import { useFonts } from 'expo-font';
-import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { Inter_400Regular, Inter_500Medium, Inter_600SemiBold, Inter_700Bold } from '@expo-google-fonts/inter';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useAppOpenAd } from '@shared/ads';
 import { useOnboardingComplete } from '@shared/onboarding';
+import { initSounds } from '@shared/sound';
 import { ThemeProvider, useTheme } from '@shared/theme';
+import { SystemNavBar, ToastHost } from '@shared/ui';
 import { adContext, useAdGuard } from '@/ads/guard';
 import { startAds } from '@/ads/start';
 import { adAllowed } from '@/domain/adRules';
@@ -18,17 +18,15 @@ import { useNotificationResponses, useReminderSync } from '@/notifications/remin
 import { useStats } from '@/store/stores';
 import { useDayRollover } from '@/store/today';
 import { useSettings } from '@/store/settings';
-import { palette, TOUCH_TARGET } from '@/theme/tokens';
-import { FONT_BOLD, FONT_MEDIUM, FONT_REGULAR, FONT_SEMIBOLD } from '@/ui/AppText';
+import { fonts, palette, TOUCH_TARGET } from '@/theme/tokens';
 import '@/bootstrap';
 
 // A render error anywhere shows a retry screen instead of closing the app in release builds.
 export { CrashScreen as ErrorBoundary } from '@shared/errors';
 
-void SplashScreen.preventAutoHideAsync().catch(() => undefined);
-
 function Root() {
   const { mode, colors } = useTheme();
+  const insets = useSafeAreaInsets();
   const [onboardingDone] = db.useStored('onboarding.done', false);
   const setupDone = useOnboardingComplete();
   useAdGuard();
@@ -39,6 +37,7 @@ function Root() {
     if (setupDone && onboardingDone) void startAds();
   }, [setupDone, onboardingDone]);
   useDayRollover();
+  useEffect(() => initSounds(['check', 'wrong', 'tick', 'tap']), []);
   useReminderSync();
   useNotificationResponses(() => useAds.getState().markExternalOpen());
   // One more cold start, counted once per process.
@@ -49,6 +48,8 @@ function Root() {
   return (
     <>
       <StatusBar style={mode === 'light' ? 'dark' : 'light'} />
+      {/* Follows the in-app theme, which can differ from the system one; the quiz stage sets its own. */}
+      <SystemNavBar dark={mode !== 'light'} />
       <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: colors.background } }}>
         <Stack.Screen name="(onboarding)/welcome" options={{ gestureEnabled: false }} />
         <Stack.Screen name="(onboarding)/warmup-result" options={{ gestureEnabled: false }} />
@@ -56,27 +57,18 @@ function Root() {
         <Stack.Screen name="results/[sessionId]" options={{ gestureEnabled: false }} />
         <Stack.Screen name="debug-ads" options={{ presentation: 'modal' }} />
       </Stack>
+      {/* Above the tab bar and the banner. */}
+      <ToastHost bottom={insets.bottom + 128} />
     </>
   );
 }
 
 export default function RootLayout() {
   const textScale = useSettings((s) => s.settings.textScale);
-  // The splash stays up until the fonts are ready; if they fail to load the system font is used.
-  const [loaded, error] = useFonts({
-    [FONT_REGULAR]: Inter_400Regular,
-    [FONT_MEDIUM]: Inter_500Medium,
-    [FONT_SEMIBOLD]: Inter_600SemiBold,
-    [FONT_BOLD]: Inter_700Bold,
-  });
-  const ready = loaded || error !== null;
-  useEffect(() => {
-    if (ready) void SplashScreen.hideAsync().catch(() => undefined);
-  }, [ready]);
-  if (!ready) return null;
+  // Figtree and Bricolage are embedded as Android font families (app.config.ts), so nothing waits on fonts.
   return (
     <GestureHandlerRootView style={styles.flex}>
-      <ThemeProvider palette={palette} fontScale={textScale} touchTarget={TOUCH_TARGET}>
+      <ThemeProvider palette={palette} fonts={fonts} fontScale={textScale} touchTarget={TOUCH_TARGET}>
         <Root />
       </ThemeProvider>
     </GestureHandlerRootView>

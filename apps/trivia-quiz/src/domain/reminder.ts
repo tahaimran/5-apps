@@ -2,8 +2,15 @@ import { addDays, dayOfYear } from './dateKey';
 import type { DateKey } from './types';
 
 export const REMINDER_ID = 'daily-reminder';
-/** Plan §11: Android channel `daily`, default importance. */
-export const REMINDER_CHANNEL = 'daily';
+/**
+ * Plan §11: one Android channel, default importance, with the shared chime. Android fixes a channel's
+ * sound when it is first created, so the chime needed a new id; the first version's silent-default
+ * `daily` channel is deleted (notifications/reminder.ts).
+ */
+export const REMINDER_CHANNEL = 'daily_chime';
+export const LEGACY_CHANNELS = ['daily'] as const;
+/** Two soft taps: noticeable in a pocket, never alarming. */
+export const GENTLE_VIBRATION = [0, 160, 120, 160];
 /** Today and the next 7 days; every app open plans them again, so a player who stops opening gets at most 8 and then silence. */
 export const REMINDER_DAYS = 8;
 export const COPY_VARIANTS = 4;

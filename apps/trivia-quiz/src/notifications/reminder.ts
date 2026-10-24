@@ -6,15 +6,46 @@ import { t } from '@shared/i18n';
 import { cancel, ensureNotificationPermission, getNotificationPermission, initNotifications, scheduleSeries, type NotificationContent } from '@shared/notify';
 import { sharedStore } from '@shared/storage';
 import { dateKeyFor } from '@/domain/dateKey';
-import { DEEP_LINK, planReminders, REMINDER_CHANNEL, REMINDER_ID, type PlannedReminder } from '@/domain/reminder';
+import { DEEP_LINK, GENTLE_VIBRATION, LEGACY_CHANNELS, planReminders, REMINDER_CHANNEL, REMINDER_ID, type PlannedReminder } from '@/domain/reminder';
 import { effectiveStreak } from '@/domain/streak';
 import { useSettings } from '@/store/settings';
 import { db } from '@/store/storage';
 import { useDaily, useStreak } from '@/store/stores';
 import { useToday } from '@/store/today';
 
-/** Creates the Android channel `daily` (default importance, plan §11). Safe to call again. */
-export const setupNotifications = () => initNotifications([{ id: REMINDER_CHANNEL, name: t('reminder.channel'), description: t('reminder.channelDescription') }]);
+let channelsDone: Promise<void> | null = null;
+
+/**
+ * Creates the reminder channel (plan §11: default importance) with the shared chime and a gentle
+ * vibration, and deletes the first version's channel. Runs before the first permission request, so the
+ * channel is created with its sound. Safe to call again; a failure is retried on the next call.
+ */
+export function setupNotifications(): Promise<void> {
+  channelsDone ??= initNotifications([
+    {
+      id: REMINDER_CHANNEL,
+      name: t('reminder.channel'),
+      description: t('reminder.channelDescription'),
+      importance: Notifications.AndroidImportance.DEFAULT,
+      // reminder.wav is bundled by the expo-notifications plugin (app.config.ts).
+      sound: 'reminder.wav',
+      vibrationPattern: GENTLE_VIBRATION,
+      lockscreenVisibility: Notifications.AndroidNotificationVisibility.PUBLIC,
+    },
+  ])
+    .then(() => Promise.all(LEGACY_CHANNELS.map((id) => Notifications.deleteNotificationChannelAsync(id).catch(() => undefined))))
+    .then(() => undefined)
+    .catch((e: unknown) => {
+      channelsDone = null;
+      throw e;
+    });
+  return channelsDone;
+}
+
+/** Tests only. */
+export const resetNotificationSetup = () => {
+  channelsDone = null;
+};
 
 /** The message of one planned notification (plan §11 copy, rotated). Tapping opens `quizora://daily`. */
 export function contentFor(p: PlannedReminder): NotificationContent {

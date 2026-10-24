@@ -1,19 +1,12 @@
 import { StyleSheet, Text, type TextProps } from 'react-native';
 import { useTheme } from '@shared/theme';
 import { useSettings } from '@/store/settings';
-import { scaledType, type TypeName } from '@/theme/tokens';
+import { DISPLAY_STYLES, scaledType, type TypeName } from '@/theme/tokens';
 
-export const FONT_REGULAR = 'Inter_400Regular';
-export const FONT_MEDIUM = 'Inter_500Medium';
-export const FONT_SEMIBOLD = 'Inter_600SemiBold';
-export const FONT_BOLD = 'Inter_700Bold';
+/** Bricolage ships 600 and 800 only; anything bold asks for the 800 file. */
+const displayWeight = (weight: string) => (weight === 'bold' || Number(weight) >= 700 ? '800' : '600');
 
-const family = (weight: string): string => {
-  if (weight === 'bold' || Number(weight) >= 700) return FONT_BOLD;
-  if (Number(weight) >= 600) return FONT_SEMIBOLD;
-  if (Number(weight) >= 500) return FONT_MEDIUM;
-  return FONT_REGULAR;
-};
+const DEFAULT_WEIGHT: Record<TypeName, string> = { display: '800', h1: '800', h2: '600', question: '600', answer: '600', body: '400', caption: '500', overline: '700' };
 
 export interface AppTextProps extends TextProps {
   /** A plan §7 type style; the text-size setting scales it. Omit to style by hand. */
@@ -21,14 +14,32 @@ export interface AppTextProps extends TextProps {
 }
 
 /**
- * Text in Inter (plan §7). Android needs one font file per weight, so the weight picks the family.
+ * Text in the app's fonts (plan §7): Bricolage for titles, the question and big numbers, Figtree for
+ * everything else. Both are embedded as Android font families, so `fontWeight` picks the real file.
  * The system font scale still applies on top of the text-size setting.
  */
 export function AppText({ style, variant, ...rest }: AppTextProps) {
-  const { colors } = useTheme();
+  const { colors, fonts } = useTheme();
   const scale = useSettings((s) => s.settings.textScale);
   const base = variant ? scaledType(scale)[variant] : undefined;
-  const flat = (StyleSheet.flatten([base, style]) ?? {}) as { fontWeight?: string };
-  const weight = String(flat.fontWeight ?? (variant === 'display' || variant === 'h1' ? '700' : variant === 'h2' || variant === 'question' ? '600' : variant === 'answer' ? '500' : '400'));
-  return <Text {...rest} style={[{ color: colors.text }, base, style, { fontFamily: family(weight), fontWeight: 'normal' }]} />;
+  const flat = (StyleSheet.flatten([base, style]) ?? {}) as { fontWeight?: string; fontFamily?: string };
+  const display = variant ? DISPLAY_STYLES.includes(variant) : flat.fontFamily === fonts.display;
+  const weight = String(flat.fontWeight ?? (variant ? DEFAULT_WEIGHT[variant] : '400'));
+  const family = display ? fonts.display : fonts.body;
+  return (
+    <Text
+      {...rest}
+      style={[
+        { color: colors.text },
+        base,
+        variant === 'overline' && styles.overline,
+        style,
+        family ? { fontFamily: family } : null,
+        { fontWeight: (display ? displayWeight(weight) : weight) as '400' },
+      ]}
+    />
+  );
 }
+
+// Overlines are uppercased by the caller (toUpperCase), so screen readers and tests see the same text.
+const styles = StyleSheet.create({ overline: { letterSpacing: 0.8 } });

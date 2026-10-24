@@ -103,7 +103,7 @@ describe('closing screens (O5-O7)', () => {
   };
 
   it('titles the result by the warm-up score and promises 30 XP', async () => {
-    for (const [score, title] of [[3, 'Perfect start! 🧠'], [2, "Nice! You're a natural."], [1, 'Everyone starts somewhere.'], [0, 'Everyone starts somewhere.']] as const) {
+    for (const [score, title] of [[3, 'Perfect start!'], [2, "Nice! You're a natural."], [1, 'Everyone starts somewhere.'], [0, 'Everyone starts somewhere.']] as const) {
       const r = await run(score);
       expect(r.texts().join(' ')).toContain(title);
       expect(r.texts().join(' ')).toContain('+30 XP');
@@ -138,7 +138,7 @@ describe('closing screens (O5-O7)', () => {
     mockNotif.granted = false;
     const r = await run(3);
     await r.press('Continue');
-    expect(r.texts().join(' ')).toMatch(/7:00\s?PM/);
+    expect(r.byLabel('Reminder time, 7:00 PM')).toHaveLength(1);
     await r.press('Remind me');
     expect(useSettings.getState().settings.reminder).toEqual({ enabled: true, hour: 19, minute: 0 });
     expect(mockNotifState.pending.size).toBeGreaterThan(0);

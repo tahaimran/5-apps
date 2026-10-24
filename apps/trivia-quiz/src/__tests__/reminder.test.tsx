@@ -37,13 +37,34 @@ describe('scheduling', () => {
     expect(pending()).toHaveLength(0);
   });
 
-  it('plans 8 one-off notifications on the daily channel, at the chosen time, with a link to the Daily', async () => {
+  it('creates the chime channel with a gentle vibration, and deletes the old channel', async () => {
+    // Jest runs as iOS (no channels), so the channel list handed to the shared layer is checked.
+    const init = jest.spyOn(require('@shared/notify'), 'initNotifications');
+    mockNotifState.channels.set('daily', { name: 'Daily Challenge' });
+    turnOn(19, 0);
+    await syncReminder(NOON);
+    expect(init).toHaveBeenCalledWith([
+      expect.objectContaining({ id: 'daily_chime', name: 'Daily Challenge', sound: 'reminder.wav', vibrationPattern: [0, 160, 120, 160], importance: 3 }),
+    ]);
+    // Android fixes a channel's sound at creation: the first version's channel goes.
+    expect(mockNotifState.channels.has('daily')).toBe(false);
+    init.mockRestore();
+  });
+
+  it('writes warm copy without emoji', async () => {
+    turnOn(19, 0);
+    useStreak.setState({ value: { ...defaultStreak(), current: 4, best: 4, lastDate: addDays(dateKeyFor(NOON), -1) } });
+    await syncReminder(NOON);
+    for (const body of bodies()) expect(body).not.toMatch(/\p{Extended_Pictographic}/u);
+  });
+
+  it('plans 8 one-off notifications on the chime channel, at the chosen time, with a link to the Daily', async () => {
     turnOn(19, 0);
     expect(await syncReminder(NOON)).toBe(8);
     const all = pending();
     expect(all).toHaveLength(8);
     for (const p of all) {
-      expect(p.trigger).toMatchObject({ type: 'date', channelId: 'daily' });
+      expect(p.trigger).toMatchObject({ type: 'date', channelId: 'daily_chime' });
       expect((p.trigger.date as Date).getHours()).toBe(19);
       expect(p.content.data).toMatchObject({ url: 'quizora://daily' });
     }
@@ -72,7 +93,7 @@ describe('scheduling', () => {
     useStreak.setState({ value: s });
     await syncReminder(NOON);
     const first = pending()[0];
-    expect(first.content.body).toBe('Your 3-day streak ends at midnight.');
+    expect(first.content.body).toBe('Your 3-day streak ends at midnight. One quick round keeps it.');
     expect([(first.trigger.date as Date).getHours(), (first.trigger.date as Date).getMinutes()]).toEqual([20, 30]);
     expect(pending()).toHaveLength(8);
   });
@@ -82,7 +103,7 @@ describe('scheduling', () => {
     await syncReminder(NOON);
     const b = bodies();
     expect(b[3]).toBe('Your next round of trivia is waiting.');
-    expect(b[7]).toBe('Missed you! Come back for a quick Daily Challenge.');
+    expect(b[7]).toBe('We saved you a seat. Come back for a quick Daily Challenge.');
   });
 
   it('never plans more than one a day, and stops after day 7', async () => {

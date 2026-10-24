@@ -1,5 +1,4 @@
 import { View } from 'react-native';
-import { router } from 'expo-router';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
 import { adContext } from '@/ads/guard';
@@ -7,7 +6,6 @@ import { decide, PLACEMENTS } from '@/domain/adRules';
 import { useAdCounters } from '@/store/stores';
 import { useAds } from '@/store/ads';
 import { AppText } from '@/ui/AppText';
-import { BigButton } from '@/ui/BigButton';
 import { Screen } from '@/ui/Screen';
 
 /**
@@ -33,8 +31,7 @@ export default function DebugAds() {
     ['lastAppOpen', ago(c.lastAppOpenAt)],
   ];
   return (
-    <Screen>
-      <AppText variant="h1" accessibilityRole="header">{t('adDebug.title')}</AppText>
+    <Screen stack title={t('adDebug.title')}>
       <AppText variant="body" style={{ color: colors.textMuted }}>{t('adDebug.intro')}</AppText>
       {PLACEMENTS.map((p) => {
         const d = decide(p, c);
@@ -51,7 +48,6 @@ export default function DebugAds() {
       {rows.map(([k, v]) => (
         <AppText key={k} variant="body">{`${k}: ${v}`}</AppText>
       ))}
-      <BigButton variant="secondary" label={t('adDebug.back')} onPress={() => router.back()} />
     </Screen>
   );
 }

@@ -78,7 +78,7 @@ describe('Home', () => {
     const r = await render(<Home />);
     expect(r.texts().join(' ')).toContain('Level 2 · Curious');
     expect(r.texts().join(' ')).toContain('Geography, level 1');
-    await r.press('Play level');
+    await r.press(/^Continue: .*. Play level$/);
     expect(mockRouter.push).toHaveBeenCalledWith(expect.objectContaining({ pathname: '/quiz/[sessionId]' }));
   });
 

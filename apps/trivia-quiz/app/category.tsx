@@ -1,27 +1,31 @@
 import { useState } from 'react';
-import { Pressable, View } from 'react-native';
-import { router } from 'expo-router';
+import { StyleSheet, View } from 'react-native';
+import Info from 'lucide-react-native/icons/info';
+import Play from 'lucide-react-native/icons/play';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
+import { Button, Segmented } from '@shared/ui';
+import { useAdScreen } from '@/ads/guard';
 import { getBank } from '@/content/bank';
-import { CATEGORIES, DIFFICULTIES } from '@/domain/categories';
 import { poolOf } from '@/domain/bank';
+import { CATEGORIES, DIFFICULTIES } from '@/domain/categories';
 import { seenShare } from '@/domain/selector';
 import type { CategoryId, Difficulty } from '@/domain/types';
 import { openRound } from '@/features/play/navigation';
 import { startCategory } from '@/features/play/start';
 import { useProfile, useSeen, useStats } from '@/store/stores';
-import { useAdScreen } from '@/ads/guard';
 import { AppText } from '@/ui/AppText';
 import { BannerSlot } from '@/ui/BannerSlot';
-import { BigButton } from '@/ui/BigButton';
+import { categoryIcons } from '@/ui/icons';
 import { Screen } from '@/ui/Screen';
 import { Tile } from '@/ui/Tile';
 
-/** Category play (plan F3): 12 tiles with accuracy, a difficulty control, and Start. */
+const COLUMNS = 2;
+
+/** Category play (plan F3): 12 category tiles with accuracy, a difficulty control, and Start. */
 export default function CategoryPicker() {
   useAdScreen('classic');
-  const { colors, spacing, radius, touchTarget } = useTheme();
+  const { colors, spacing, radius } = useTheme();
   const profile = useProfile((s) => s.value);
   const stats = useStats((s) => s.value);
   const seen = useSeen((s) => s.value);
@@ -30,49 +34,55 @@ export default function CategoryPicker() {
   const bank = getBank();
   const exhausted = seenShare(poolOf(bank, category, difficulty), seen) >= 0.9;
   const rows: (typeof CATEGORIES)[number][][] = [];
-  for (let i = 0; i < CATEGORIES.length; i += 2) rows.push(CATEGORIES.slice(i, i + 2));
+  for (let i = 0; i < CATEGORIES.length; i += COLUMNS) rows.push(CATEGORIES.slice(i, i + COLUMNS));
   return (
-    <Screen footer={<BannerSlot placement="menu" />}>
-      <AppText variant="h1" accessibilityRole="header">{t('category.title')}</AppText>
-      {rows.map((row) => (
-        <View key={row[0].id} style={{ flexDirection: 'row', gap: spacing.md }}>
-          {row.map((c) => {
-            const s = stats.byCategory[c.id];
-            const detail = s && s.a > 0 ? t('category.accuracy', { percent: Math.round((s.c / s.a) * 100) }) : t('category.noGames');
-            return (
-              <Tile
-                key={c.id}
-                role="radio"
-                icon={c.icon}
-                title={t(`categories.${c.id}`)}
-                detail={detail}
-                accent={c.strong}
-                selected={category === c.id}
-                accessibilityLabel={`${t(`categories.${c.id}`)}. ${detail}`}
-                onPress={() => setCategory(c.id)}
-              />
-            );
-          })}
-        </View>
-      ))}
-      <AppText variant="h2">{t('category.difficulty')}</AppText>
-      <View accessibilityRole="radiogroup" style={{ flexDirection: 'row', borderRadius: radius.md, borderWidth: 2, borderColor: colors.primary, overflow: 'hidden' }}>
-        {DIFFICULTIES.map((d) => (
-          <Pressable
-            key={d}
-            accessibilityRole="radio"
-            accessibilityLabel={t(`difficulty.${d}`)}
-            accessibilityState={{ selected: difficulty === d, checked: difficulty === d }}
-            onPress={() => setDifficulty(d)}
-            style={{ flex: 1, minHeight: touchTarget, alignItems: 'center', justifyContent: 'center', backgroundColor: difficulty === d ? colors.primary : colors.surface }}
-          >
-            <AppText variant="body" style={{ fontWeight: '700', color: difficulty === d ? colors.onPrimary : colors.primary }}>{t(`difficulty.${d}`)}</AppText>
-          </Pressable>
+    <Screen stack title={t('category.title')} footer={<BannerSlot placement="menu" />}>
+      <View accessibilityRole="radiogroup" style={{ gap: spacing.md }}>
+        {rows.map((row) => (
+          <View key={row[0].id} style={[styles.row, { gap: spacing.md }]}>
+            {row.map((c) => {
+              const s = stats.byCategory[c.id];
+              const detail = s && s.a > 0 ? t('category.accuracy', { percent: Math.round((s.c / s.a) * 100) }) : t('category.noGames');
+              return (
+                <Tile
+                  key={c.id}
+                  role="radio"
+                  icon={categoryIcons[c.id]}
+                  title={t(`categories.${c.id}`)}
+                  detail={detail}
+                  accent={c.strong}
+                  selected={category === c.id}
+                  accessibilityLabel={`${t(`categories.${c.id}`)}. ${detail}`}
+                  onPress={() => setCategory(c.id)}
+                />
+              );
+            })}
+          </View>
         ))}
       </View>
-      {exhausted && <AppText accessibilityLiveRegion="polite" variant="body" style={{ color: colors.textMuted }}>{t('category.exhausted')}</AppText>}
-      <BigButton tall label={t('category.start')} onPress={() => openRound(startCategory(category, difficulty))} />
-      <BigButton variant="secondary" label={t('common.back')} onPress={() => router.back()} />
+      <AppText variant="h2" accessibilityRole="header" style={{ marginTop: spacing.sm }}>
+        {t('category.difficulty')}
+      </AppText>
+      <Segmented
+        options={DIFFICULTIES.map((d) => ({ value: String(d), label: t(`difficulty.${d}`) }))}
+        value={String(difficulty)}
+        onChange={(v) => setDifficulty(Number(v) as Difficulty)}
+      />
+      {exhausted && (
+        <View accessible accessibilityLiveRegion="polite" style={[styles.row, styles.note, { gap: spacing.sm, padding: spacing.md, borderRadius: radius.lg, backgroundColor: colors.primarySoft }]}>
+          <Info size={20} color={colors.primary} strokeWidth={2.3} />
+          <AppText variant="body" style={styles.flex}>
+            {t('category.exhausted')}
+          </AppText>
+        </View>
+      )}
+      <Button label={t('category.start')} icon={Play} onPress={() => openRound(startCategory(category, difficulty))} style={{ marginTop: spacing.sm }} />
     </Screen>
   );
 }
+
+const styles = StyleSheet.create({
+  row: { flexDirection: 'row', alignItems: 'stretch' },
+  note: { alignItems: 'center' },
+  flex: { flex: 1 },
+});

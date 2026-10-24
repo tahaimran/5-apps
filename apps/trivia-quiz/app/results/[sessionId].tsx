@@ -1,25 +1,37 @@
 import { useState } from 'react';
-import { View } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
 import { Redirect, useLocalSearchParams } from 'expo-router';
+import { LinearGradient } from 'expo-linear-gradient';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { ScrollView } from 'react-native';
+import ArrowRight from 'lucide-react-native/icons/arrow-right';
+import House from 'lucide-react-native/icons/house';
+import Play from 'lucide-react-native/icons/play';
+import RotateCcw from 'lucide-react-native/icons/rotate-ccw';
+import Sparkles from 'lucide-react-native/icons/sparkles';
+import Star from 'lucide-react-native/icons/star';
+import Target from 'lucide-react-native/icons/target';
+import Timer from 'lucide-react-native/icons/timer';
+import Trophy from 'lucide-react-native/icons/trophy';
 import { NativeAdCard, showInterstitial } from '@shared/ads';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
+import { Button, Card } from '@shared/ui';
 import { useAdScreen } from '@/ads/guard';
 import { rewardedDecision } from '@/domain/adRules';
 import { levelProgress, titleFor } from '@/domain/scoring';
 import { watchRewarded } from '@/features/ads/rewarded';
 import { applyDoubleXp } from '@/features/play/commit';
-import { useReviewPrompt } from '@/features/play/useReviewPrompt';
-import { currentDateKey } from '@/store/today';
-import { useStats } from '@/store/stores';
 import { goHome, replaceWithRound } from '@/features/play/navigation';
 import { startAgain } from '@/features/play/replay';
+import { useReviewPrompt } from '@/features/play/useReviewPrompt';
 import { useResult } from '@/store/result';
-import { useProfile } from '@/store/stores';
+import { useProfile, useStats } from '@/store/stores';
+import { currentDateKey } from '@/store/today';
+import { extraColorsFor } from '@/theme/tokens';
 import { AppText } from '@/ui/AppText';
-import { BigButton } from '@/ui/BigButton';
+import { GoldButton } from '@/ui/GoldButton';
+import { ProgressBar } from '@/ui/ProgressBar';
+import { IconCircle, StatTile } from '@/ui/SettingsRow';
 import { StarRow } from '@/ui/StarRow';
 
 /** `m:ss` for the round time. */
@@ -32,7 +44,8 @@ export const formatElapsed = (ms: number): string => {
 export default function Results() {
   const { sessionId } = useLocalSearchParams<{ sessionId: string }>();
   const r = useResult((s) => s.last);
-  const { colors, spacing, radius } = useTheme();
+  const { colors, spacing, radius, mode, shadow } = useTheme();
+  const x = extraColorsFor(mode);
   const xp = useProfile((s) => s.value.xp);
   const doubleXpStats = useStats((s) => s.value.doubleXpToday);
   const [busy, setBusy] = useState(false);
@@ -71,63 +84,110 @@ export default function Results() {
     if (outcome === 'granted') applyDoubleXp();
     else if (outcome !== 'busy') setAdNote(t(outcome === 'unavailable' ? 'ads.unavailable' : 'ads.notEarned'));
   };
+  const nextMain = classic && r.nextLevel !== null;
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: colors.background }}>
-      <ScrollView contentContainerStyle={{ padding: spacing.lg, gap: spacing.lg, alignItems: 'center' }}>
-        <AppText variant="display" accessibilityRole="header" style={{ textAlign: 'center' }}>{title}</AppText>
-        {r.category && (
-          <AppText variant="body" style={{ color: colors.textMuted }}>
-            {t(`categories.${r.category}`)}
-            {r.level ? ` · ${t('results.levelN', { level: r.level })}` : ''}
+    <SafeAreaView style={[styles.flex, { backgroundColor: colors.background }]} edges={['top', 'bottom']}>
+      <ScrollView contentContainerStyle={{ padding: spacing.lg, gap: spacing.md }}>
+        {/* The result on the quiz's own violet stage. */}
+        <View style={[{ borderRadius: radius.xl }, shadow(3)]}>
+          <View style={[styles.hero, { borderRadius: radius.xl, padding: spacing.xl, gap: spacing.sm }]}>
+            <LinearGradient colors={x.stage} start={{ x: 0, y: 0 }} end={{ x: 0.7, y: 1 }} style={StyleSheet.absoluteFill} />
+            {!blitz && <StarRow stars={r.stars} size={44} pop emptyColor="#FFFFFF66" />}
+            <AppText variant="display" accessibilityRole="header" style={[styles.white, styles.center]}>
+              {title}
+            </AppText>
+            {r.category && (
+              <AppText variant="body" style={[styles.white, styles.semi]}>
+                {t(`categories.${r.category}`)}
+                {r.level ? ` · ${t('results.levelN', { level: r.level })}` : ''}
+              </AppText>
+            )}
+            <View accessible accessibilityLabel={blitz ? t('results.blitzScoreLabel', { count: r.correct }) : t('results.scoreLabel', { correct: r.correct, total: r.total })}>
+              <AppText variant="display" style={[styles.white, styles.score]}>
+                {blitz ? String(r.correct) : `${r.correct}/${r.total}`}
+              </AppText>
+            </View>
+            {failed && !r.failedByHearts && (
+              <AppText variant="body" style={[styles.white, styles.center]}>
+                {t('results.needToPass', { correct: r.correct, total: r.total, need: 5 })}
+              </AppText>
+            )}
+            {r.failedByHearts && (
+              <AppText variant="body" style={[styles.white, styles.center]}>
+                {t('results.heartsBody')}
+              </AppText>
+            )}
+            {r.newBest && (
+              <View accessible style={[styles.chip, { borderRadius: radius.pill, backgroundColor: x.gold }]}>
+                <Trophy size={15} color={x.onGold} strokeWidth={2.4} />
+                <AppText variant="body" style={[styles.bold, { color: x.onGold }]}>
+                  {blitz ? t('results.newBestBlitz') : t('results.newBest')}
+                </AppText>
+              </View>
+            )}
+          </View>
+        </View>
+
+        <View style={[styles.row, { gap: spacing.md }]}>
+          <StatTile icon={Star} value={String(r.score)} label={t('results.points')} tint={colors.accent} bg={x.goldSoft} />
+          <StatTile icon={Sparkles} value={`+${r.xp}${r.doubled ? ` (${t('results.doubled')})` : ''}`} label={t('results.xp')} />
+        </View>
+        <View style={[styles.row, { gap: spacing.md }]}>
+          <StatTile icon={Target} value={`${Math.round(r.accuracy * 100)}%`} label={t('results.accuracy')} tint={colors.success} bg={x.successSoft} />
+          <StatTile icon={Timer} value={formatElapsed(r.elapsedMs)} label={t('results.time')} />
+        </View>
+        {r.relaxed && (
+          <AppText variant="caption" style={{ color: colors.textMuted, textAlign: 'center' }}>
+            {t('results.relaxedNote')}
           </AppText>
         )}
-        {!blitz && <StarRow stars={r.stars} size={48} />}
-        <View accessible accessibilityLabel={blitz ? t('results.blitzScoreLabel', { count: r.correct }) : t('results.scoreLabel', { correct: r.correct, total: r.total })}>
-          <AppText variant="display" style={{ textAlign: 'center', color: colors.primary }}>{blitz ? String(r.correct) : `${r.correct}/${r.total}`}</AppText>
-        </View>
-        {failed && !r.failedByHearts && <AppText variant="body" style={{ textAlign: 'center' }}>{t('results.needToPass', { correct: r.correct, total: r.total, need: 5 })}</AppText>}
-        {r.failedByHearts && <AppText variant="body" style={{ textAlign: 'center' }}>{t('results.heartsBody')}</AppText>}
-        {r.newBest && (
-          <View accessible style={{ paddingHorizontal: spacing.md, paddingVertical: spacing.xs, borderRadius: radius.pill, backgroundColor: colors.surfaceAlt, borderWidth: 1, borderColor: colors.border }}>
-            <AppText variant="body" style={{ fontWeight: '700' }}>{blitz ? t('results.newBestBlitz') : t('results.newBest')}</AppText>
-          </View>
-        )}
-        <View style={{ width: '100%', gap: spacing.xs, padding: spacing.lg, borderRadius: radius.lg, backgroundColor: colors.surface, borderWidth: 1, borderColor: colors.border }}>
-          <Row label={t('results.points')} value={String(r.score)} />
-          <Row label={t('results.xp')} value={`+${r.xp}${r.doubled ? ` (${t('results.doubled')})` : ''}`} />
-          <Row label={t('results.accuracy')} value={`${Math.round(r.accuracy * 100)}%`} />
-          <Row label={t('results.time')} value={formatElapsed(r.elapsedMs)} />
-          {r.relaxed && <AppText variant="caption" style={{ color: colors.textMuted }}>{t('results.relaxedNote')}</AppText>}
-        </View>
+
         {r.levelAfter > r.levelBefore && (
-          <View accessible accessibilityLiveRegion="polite" style={{ width: '100%', padding: spacing.lg, borderRadius: radius.lg, backgroundColor: colors.surfaceAlt, borderWidth: 2, borderColor: colors.primary, alignItems: 'center' }}>
-            <AppText variant="h1">{t('results.levelUp', { level: r.levelAfter })}</AppText>
-            <AppText variant="body" style={{ color: colors.textMuted }}>{t(`titles.${titleFor(r.levelAfter)}`)}</AppText>
+          <View accessible accessibilityLiveRegion="polite" style={[styles.row, { gap: spacing.md, padding: spacing.lg, borderRadius: radius.lg, backgroundColor: x.goldSoft }]}>
+            <IconCircle icon={Trophy} tint={x.onGold} bg={x.gold} size={48} />
+            <View style={styles.flex}>
+              <AppText variant="h2">{t('results.levelUp', { level: r.levelAfter })}</AppText>
+              <AppText variant="body" style={{ color: colors.textMuted }}>
+                {t(`titles.${titleFor(r.levelAfter)}`)}
+              </AppText>
+            </View>
           </View>
         )}
-        <AppText variant="caption" style={{ color: colors.textMuted }}>{t('results.nextLevelXp', { into: progress.into, need: progress.need, level: progress.level + 1 })}</AppText>
-        <View style={{ width: '100%', gap: spacing.md }}>
-          {classic && r.nextLevel !== null && <BigButton tall label={t('results.nextLevel')} onPress={() => again(true)} />}
-          {(blitz || r.mode === 'category' || (classic && r.nextLevel === null)) && <BigButton tall label={t('results.playAgain')} onPress={() => again(false)} />}
-          {classic && r.nextLevel !== null && <BigButton variant="secondary" label={t('results.replay')} onPress={() => again(false)} />}
-          {canDouble && <BigButton variant="secondary" label={t('results.doubleXp')} accessibilityHint={t('results.doubleXpHint')} onPress={() => void doubleXp()} />}
-          {adNote && <AppText accessibilityLiveRegion="polite" variant="body" style={{ textAlign: 'center', color: colors.textMuted }}>{adNote}</AppText>}
-          <BigButton variant="secondary" label={t('results.home')} onPress={() => void leave(goHome)} />
+        <Card style={{ gap: spacing.sm }}>
+          <AppText variant="caption" style={{ color: colors.textMuted, fontWeight: '600' }}>
+            {t('results.nextLevelXp', { into: progress.into, need: progress.need, level: progress.level + 1 })}
+          </AppText>
+          <ProgressBar fraction={progress.fraction} color={x.gold} />
+        </Card>
+
+        <View style={{ gap: spacing.sm, marginTop: spacing.xs }}>
+          {nextMain && <GoldButton label={t('results.nextLevel')} icon={ArrowRight} trailing onPress={() => again(true)} />}
+          {(blitz || r.mode === 'category' || (classic && r.nextLevel === null)) && <GoldButton label={t('results.playAgain')} icon={RotateCcw} onPress={() => again(false)} />}
+          {nextMain && <Button variant="secondary" block icon={RotateCcw} label={t('results.replay')} onPress={() => again(false)} />}
+          {canDouble && <Button variant="secondary" block icon={Play} label={t('results.doubleXp')} accessibilityHint={t('results.doubleXpHint')} onPress={() => void doubleXp()} />}
+          {adNote && (
+            <AppText accessibilityLiveRegion="polite" variant="body" style={{ textAlign: 'center', color: colors.textMuted }}>
+              {adNote}
+            </AppText>
+          )}
+          <Button variant="ghost" icon={House} label={t('results.home')} onPress={() => void leave(goHome)} />
         </View>
-        <View style={{ width: '100%' }}>
-          <NativeAdCard placement="results_native" />
-        </View>
+        <NativeAdCard placement="results_native" />
       </ScrollView>
     </SafeAreaView>
   );
 }
 
-function Row({ label, value }: { label: string; value: string }) {
-  return (
-    <View accessible accessibilityLabel={`${label}: ${value}`} style={{ flexDirection: 'row', justifyContent: 'space-between', minHeight: 32, alignItems: 'center' }}>
-      <AppText variant="body">{label}</AppText>
-      <AppText variant="body" style={{ fontWeight: '700' }}>{value}</AppText>
-    </View>
-  );
-}
+// White text on the violet stage is covered by the contrast test.
+const styles = StyleSheet.create({
+  flex: { flex: 1 },
+  row: { flexDirection: 'row', alignItems: 'center' },
+  hero: { overflow: 'hidden', alignItems: 'center' },
+  white: { color: '#FFFFFF' },
+  center: { textAlign: 'center' },
+  bold: { fontWeight: '700' },
+  semi: { fontWeight: '600' },
+  score: { fontSize: 56, lineHeight: 62 },
+  chip: { flexDirection: 'row', alignItems: 'center', gap: 6, paddingHorizontal: 14, paddingVertical: 6, marginTop: 4 },
+});

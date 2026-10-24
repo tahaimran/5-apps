@@ -1,30 +1,65 @@
-import { View } from 'react-native';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { StyleSheet, View } from 'react-native';
+import Svg, { Circle, Defs, LinearGradient, Path, Rect, Stop } from 'react-native-svg';
+import Bell from 'lucide-react-native/icons/bell';
+import Check from 'lucide-react-native/icons/check';
+import Crown from 'lucide-react-native/icons/crown';
+import Flame from 'lucide-react-native/icons/flame';
+import Sprout from 'lucide-react-native/icons/sprout';
 import { t } from '@shared/i18n';
 import type { OnboardingStep, StepContext } from '@shared/onboarding';
 import { useTheme } from '@shared/theme';
+import { fromHHMM, TimeField, toHHMM } from '@shared/time';
+import type { IconComponent } from '@shared/ui';
 import { CategoryChips } from '@/components/CategoryChips';
-import { TimeStepper } from '@/components/TimeStepper';
-import type { CategoryId, Difficulty } from '@/domain/types';
+import { categoryInfo } from '@/domain/categories';
 import { DEFAULT_REMINDER } from '@/domain/reminder';
+import type { CategoryId, Difficulty } from '@/domain/types';
+import { extraColorsFor } from '@/theme/tokens';
 import { AppText } from '@/ui/AppText';
+import { categoryIcons } from '@/ui/icons';
 import { OptionCard } from '@/ui/OptionCard';
+import { IconCircle } from '@/ui/SettingsRow';
 import { DEFAULT_DIFFICULTY, DEFAULT_PICKS, MIN_CATEGORIES, warmupVerdict } from './answers';
 
 const LEVELS: Difficulty[] = [1, 2, 3];
+const LEVEL_ICONS: Record<Difficulty, IconComponent> = { 1: Sprout, 2: Flame, 3: Crown };
 
-/** O1 illustration: a stack of question cards with a lightbulb. Decorative, hidden from screen readers. */
-function WelcomeArt() {
-  const { colors, radius } = useTheme();
+/** A category bubble floating around the welcome mark. */
+function Orbit({ id, style }: { id: CategoryId; style: object }) {
+  const Icon = categoryIcons[id];
   return (
-    <View accessible={false} importantForAccessibility="no-hide-descendants" style={{ alignItems: 'center', paddingVertical: 24 }}>
-      <View style={{ width: 200, height: 150 }}>
-        {[16, 8, 0].map((offset, i) => (
-          <View key={offset} style={{ position: 'absolute', top: offset, left: offset, right: 16 - offset, height: 120, borderRadius: radius.lg, borderWidth: 2, borderColor: colors.primary, backgroundColor: i === 2 ? colors.surface : colors.surfaceAlt }} />
-        ))}
-        <View style={{ position: 'absolute', top: 30, left: 0, right: 16, alignItems: 'center' }}>
-          <MaterialCommunityIcons name="lightbulb-on-outline" size={64} color={colors.primary} />
-        </View>
+    <View style={[styles.orbit, { backgroundColor: categoryInfo(id).strong }, style]}>
+      <Icon size={20} color="#FFFFFF" strokeWidth={2.3} />
+    </View>
+  );
+}
+
+/**
+ * O1 illustration: the app's mark (a speech bubble with a "?" whose dot is a gold bulb) on the violet
+ * stage, with three category bubbles around it. Decorative, hidden from screen readers.
+ */
+function WelcomeArt() {
+  const { mode } = useTheme();
+  const x = extraColorsFor(mode);
+  return (
+    <View accessible={false} importantForAccessibility="no-hide-descendants" style={styles.art}>
+      <View style={styles.artBox}>
+        <Svg width={180} height={180} viewBox="0 0 180 180">
+          <Defs>
+            <LinearGradient id="stage" x1="0" y1="0" x2="0.6" y2="1">
+              <Stop offset="0" stopColor={x.stage[0]} />
+              <Stop offset="1" stopColor={x.stage[1]} />
+            </LinearGradient>
+          </Defs>
+          <Rect x="14" y="14" width="152" height="152" rx="44" fill="url(#stage)" />
+          <Path d="M64 50 H116 Q136 50 136 70 V104 Q136 124 116 124 H92 L70 142 L74 124 H64 Q44 124 44 104 V70 Q44 50 64 50 Z" fill="#FFFFFF" />
+          <Path d="M78 78 Q78 64 90 64 Q102 64 102 76 Q102 84 95 88 Q90 91 90 98" stroke={x.stage[0]} strokeWidth={10} strokeLinecap="round" fill="none" />
+          <Circle cx="90" cy="111" r="6.5" fill={x.gold} />
+          <Path d="M146 26 Q148 34 156 36 Q148 38 146 46 Q144 38 136 36 Q144 34 146 26 Z" fill={x.gold} />
+        </Svg>
+        <Orbit id="geography" style={{ left: -18, top: 34 }} />
+        <Orbit id="science" style={{ right: -20, top: 92 }} />
+        <Orbit id="movies" style={{ left: 6, bottom: -6 }} />
       </View>
     </View>
   );
@@ -36,7 +71,7 @@ function CategoriesStep({ ctx }: { ctx: StepContext }) {
   return (
     <View style={{ gap: spacing.md }}>
       <CategoryChips value={value} onChange={(next) => ctx.setValue(next)} />
-      <AppText accessibilityLiveRegion="polite" variant="body" style={{ color: colors.textMuted, fontWeight: '700' }}>
+      <AppText accessibilityLiveRegion="polite" variant="body" style={{ color: value.length >= MIN_CATEGORIES ? colors.success : colors.textMuted, fontWeight: '700' }}>
         {value.length >= MIN_CATEGORIES ? t('onboarding.pickedEnough', { count: value.length }) : t('onboarding.pickedCount', { count: value.length, need: MIN_CATEGORIES })}
       </AppText>
     </View>
@@ -44,14 +79,48 @@ function CategoriesStep({ ctx }: { ctx: StepContext }) {
 }
 
 function DifficultyStep({ ctx }: { ctx: StepContext }) {
-  const { colors, spacing } = useTheme();
+  const { colors, spacing, mode } = useTheme();
+  const x = extraColorsFor(mode);
   const value = (ctx.value as Difficulty | undefined) ?? DEFAULT_DIFFICULTY;
+  const tones: Record<Difficulty, { tint: string; bg: string }> = {
+    1: { tint: colors.success, bg: x.successSoft },
+    2: { tint: x.streak, bg: x.streakSoft },
+    3: { tint: colors.primary, bg: colors.primarySoft },
+  };
   return (
     <View style={{ gap: spacing.sm }} accessibilityRole="radiogroup">
       {LEVELS.map((d) => (
-        <OptionCard key={d} label={t(`difficulty.${d}`)} detail={t(`onboarding.difficultyDetail.${d}`)} selected={value === d} onPress={() => ctx.setValue(d)} />
+        <OptionCard
+          key={d}
+          icon={LEVEL_ICONS[d]}
+          tint={tones[d].tint}
+          bg={tones[d].bg}
+          label={t(`difficulty.${d}`)}
+          detail={t(`onboarding.difficultyDetail.${d}`)}
+          selected={value === d}
+          onPress={() => ctx.setValue(d)}
+        />
       ))}
-      <AppText variant="body" style={{ color: colors.textMuted, marginTop: spacing.sm }}>{t('onboarding.difficultyFooter')}</AppText>
+      <AppText variant="body" style={{ color: colors.textMuted, marginTop: spacing.sm }}>
+        {t('onboarding.difficultyFooter')}
+      </AppText>
+    </View>
+  );
+}
+
+/** O7: the time on the wheel picker, in the phone's 12- or 24-hour style. */
+function ReminderStep({ ctx }: { ctx: StepContext }) {
+  const { spacing, radius, colors, shadow } = useTheme();
+  const time = (ctx.value as { hour: number; minute: number } | undefined) ?? DEFAULT_REMINDER;
+  return (
+    <View style={{ gap: spacing.lg, alignItems: 'center' }}>
+      <IconCircle icon={Bell} size={72} />
+      <View style={[styles.timeRow, { gap: spacing.md, padding: spacing.md, paddingLeft: spacing.lg, borderRadius: radius.lg, backgroundColor: colors.surface }, shadow(1)]}>
+        <AppText variant="body" style={[styles.flex, styles.bold]}>
+          {t('settings.reminderTimeLabel')}
+        </AppText>
+        <TimeField label={t('settings.reminderTimeLabel')} value={toHHMM(time.hour, time.minute)} onChange={(hhmm) => ctx.setValue(fromHHMM(hhmm))} />
+      </View>
     </View>
   );
 }
@@ -106,6 +175,7 @@ export function buildFinishSteps(o: FinishOptions): OnboardingStep[] {
       key: 'result',
       title: t(`onboarding.result.${verdict}`),
       body: t('onboarding.resultBody'),
+      media: <ResultArt score={Math.max(0, o.warmupScore)} />,
       cta: t('onboarding.continue'),
       hidden: () => o.warmupScore < 0,
     },
@@ -122,10 +192,7 @@ export function buildFinishSteps(o: FinishOptions): OnboardingStep[] {
       key: 'reminder',
       title: t('onboarding.reminderTitle'),
       body: t('onboarding.reminderBody'),
-      render: (ctx) => {
-        const time = (ctx.value as { hour: number; minute: number } | undefined) ?? DEFAULT_REMINDER;
-        return <TimeStepper hour={time.hour} minute={time.minute} onChange={(hour, minute) => ctx.setValue({ hour, minute })} />;
-      },
+      render: (ctx) => <ReminderStep ctx={ctx} />,
       cta: t('onboarding.remindMe'),
       onContinue: (ctx) => {
         const time = (ctx.value as { hour: number; minute: number } | undefined) ?? DEFAULT_REMINDER;
@@ -141,3 +208,29 @@ export function buildFinishSteps(o: FinishOptions): OnboardingStep[] {
     },
   ];
 }
+
+/** O5: the warm-up score as three circles, gold with a check for each right answer; the number is spoken. */
+function ResultArt({ score }: { score: number }) {
+  const { colors, mode } = useTheme();
+  const x = extraColorsFor(mode);
+  return (
+    <View accessible accessibilityLabel={t('onboarding.resultScore', { score })} style={styles.result}>
+      {[0, 1, 2].map((i) => (
+        <View key={i} style={[styles.resultDot, { backgroundColor: i < score ? x.gold : 'transparent', borderColor: i < score ? x.gold : colors.border }]}>
+          {i < score ? <Check size={30} color={x.onGold} strokeWidth={3} /> : null}
+        </View>
+      ))}
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  flex: { flex: 1 },
+  bold: { fontWeight: '700' },
+  art: { alignItems: 'center', paddingVertical: 16 },
+  artBox: { width: 180, height: 180 },
+  orbit: { position: 'absolute', width: 44, height: 44, borderRadius: 22, alignItems: 'center', justifyContent: 'center', borderWidth: 3, borderColor: '#FFFFFF' },
+  timeRow: { flexDirection: 'row', alignItems: 'center', alignSelf: 'stretch' },
+  result: { flexDirection: 'row', gap: 14, justifyContent: 'center', paddingVertical: 16 },
+  resultDot: { width: 64, height: 64, borderRadius: 32, borderWidth: 3, alignItems: 'center', justifyContent: 'center' },
+});

@@ -1,11 +1,13 @@
-import { useEffect } from 'react';
-import { Pressable, View } from 'react-native';
-import Animated, { useAnimatedStyle, useReducedMotion, useSharedValue, withSequence, withSpring, withTiming } from 'react-native-reanimated';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { StyleSheet, View } from 'react-native';
+import Animated, { useReducedMotion } from 'react-native-reanimated';
+import Check from 'lucide-react-native/icons/check';
+import X from 'lucide-react-native/icons/x';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
-import { extraColors, ANSWER_MIN_HEIGHT } from '@/theme/tokens';
+import { PressableScale } from '@shared/ui';
+import { ANSWER_MIN_HEIGHT, extraColorsFor } from '@/theme/tokens';
 import { AppText } from '@/ui/AppText';
+import { CSS_EASE_OUT, POP, SHAKE, SHAKE_MS, STATE_MS } from '@/ui/motion';
 
 export type AnswerState = 'idle' | 'correct' | 'wrong' | 'dim' | 'removed';
 
@@ -20,69 +22,79 @@ export interface AnswerButtonProps {
 }
 
 /**
- * One answer (plan §5, §7): at least 56dp tall, never coloured alone: a correct answer shows a check
- * mark and a wrong one a cross. The wrong answer shakes three times and the right one bounces, unless
- * Reduce Motion is on, when it only changes colour.
+ * One answer on the quiz stage (plan §5, §7): a 60dp pill with its letter. The verdict never relies on
+ * color: the right answer swaps its letter for a check mark and the wrong one for a cross, and the
+ * spoken label says which. The fill changes with a CSS transition; the wrong answer shakes (240 ms) and
+ * the right one gives one small bounce, unless Reduce Motion is on, when only the colors change.
  */
 export function AnswerButton({ index, text, state, disabled, onPress }: AnswerButtonProps) {
-  const { colors, radius, spacing, type, mode } = useTheme();
-  const extra = extraColors[mode];
+  const { radius, spacing, mode, shadow } = useTheme();
+  const x = extraColorsFor(mode);
   const reduced = useReducedMotion();
-  const scale = useSharedValue(1);
-  const shift = useSharedValue(0);
-
-  useEffect(() => {
-    if (reduced) return;
-    if (state === 'wrong') shift.value = withSequence(withTiming(-8, { duration: 40 }), withTiming(8, { duration: 80 }), withTiming(-8, { duration: 80 }), withTiming(0, { duration: 40 }));
-    if (state === 'correct') scale.value = withSequence(withTiming(1.03, { duration: 90 }), withSpring(1));
-  }, [state, reduced, scale, shift]);
-  const animated = useAnimatedStyle(() => ({ transform: [{ scale: scale.value }, { translateX: shift.value }] }));
 
   const filled = state === 'correct' || state === 'wrong';
-  const bg = state === 'correct' ? colors.success : state === 'wrong' ? colors.danger : colors.surface;
-  const fg = state === 'correct' ? extra.onSuccess : state === 'wrong' ? extra.onDanger : colors.text;
+  const bg = state === 'correct' ? x.correct : state === 'wrong' ? x.wrong : x.answer;
+  const fg = filled ? x.onFill : x.onAnswer;
   const suffix = state === 'correct' ? t('quiz.correctSuffix') : state === 'wrong' ? t('quiz.wrongSuffix') : state === 'removed' ? t('quiz.removedSuffix') : '';
   const label = `${t('quiz.answerLabel', { letter: LETTERS[index], text })}${suffix}`;
 
   return (
-    <Animated.View style={[animated, { opacity: state === 'dim' ? 0.55 : state === 'removed' ? 0.3 : 1 }]}>
-      <Pressable
+    // The one-shot effect (shake or bounce) and the opacity transition live on separate layers.
+    <Animated.View
+      style={
+        reduced || !filled
+          ? null
+          : { animationName: state === 'wrong' ? SHAKE : POP, animationDuration: state === 'wrong' ? SHAKE_MS : 220, animationTimingFunction: CSS_EASE_OUT }
+      }
+    >
+    <Animated.View
+      style={{
+        opacity: state === 'dim' ? 0.5 : state === 'removed' ? 0.28 : 1,
+        transitionProperty: 'opacity',
+        transitionDuration: reduced ? 0 : STATE_MS,
+        transitionTimingFunction: CSS_EASE_OUT,
+      }}
+    >
+      <PressableScale
         testID={`answer-${index}`}
         accessibilityRole="button"
         accessibilityLabel={label}
-        accessibilityState={{ disabled: disabled || state === 'removed', selected: state === 'wrong' || state === 'correct' }}
+        accessibilityState={{ disabled: disabled || state === 'removed', selected: filled }}
         disabled={disabled || state === 'removed'}
-        onPressIn={() => {
-          if (!reduced && !disabled) scale.value = withSpring(0.97);
-        }}
-        onPressOut={() => {
-          if (!reduced) scale.value = withSpring(1);
-        }}
         onPress={() => onPress(index)}
-        style={{
-          minHeight: ANSWER_MIN_HEIGHT,
-          flexDirection: 'row',
-          alignItems: 'center',
-          gap: spacing.md,
-          paddingHorizontal: spacing.lg,
-          paddingVertical: spacing.sm,
-          borderRadius: radius.md,
-          borderWidth: filled ? 0 : 2,
-          borderColor: colors.border,
-          backgroundColor: bg,
-        }}
+        scaleTo={0.97}
+        style={[styles.pill, { minHeight: ANSWER_MIN_HEIGHT, borderRadius: radius.lg, gap: spacing.md, paddingHorizontal: spacing.md }, filled || state === 'idle' ? shadow(1) : null]}
       >
-        <View style={{ width: 28, height: 28, borderRadius: 14, alignItems: 'center', justifyContent: 'center', backgroundColor: filled ? 'transparent' : colors.surfaceAlt }}>
+        {/* The fill lives on its own layer so the color can transition while the press scale runs. */}
+        <Animated.View
+          pointerEvents="none"
+          style={[
+            StyleSheet.absoluteFill,
+            { borderRadius: radius.lg, backgroundColor: bg, transitionProperty: 'backgroundColor', transitionDuration: reduced ? 0 : STATE_MS, transitionTimingFunction: CSS_EASE_OUT },
+          ]}
+        />
+        <View style={[styles.badge, { backgroundColor: filled ? '#FFFFFF33' : x.answerBadge }]}>
           {state === 'correct' ? (
-            <MaterialCommunityIcons name="check-bold" size={22} color={fg} />
+            <Check size={20} color={fg} strokeWidth={3} />
           ) : state === 'wrong' ? (
-            <MaterialCommunityIcons name="close-thick" size={22} color={fg} />
+            <X size={20} color={fg} strokeWidth={3} />
           ) : (
-            <AppText variant="caption" style={{ color: colors.text, fontWeight: '700' }}>{LETTERS[index]}</AppText>
+            <AppText variant="body" style={{ color: fg, fontWeight: '700' }}>
+              {LETTERS[index]}
+            </AppText>
           )}
         </View>
-        <AppText variant="answer" style={{ flex: 1, color: fg, textDecorationLine: state === 'removed' ? 'line-through' : 'none', fontSize: type.body.fontSize + 1 }}>{text}</AppText>
-      </Pressable>
+        <AppText variant="answer" style={[styles.text, { color: fg, textDecorationLine: state === 'removed' ? 'line-through' : 'none' }]}>
+          {text}
+        </AppText>
+      </PressableScale>
+    </Animated.View>
     </Animated.View>
   );
 }
+
+const styles = StyleSheet.create({
+  pill: { flexDirection: 'row', alignItems: 'center', paddingVertical: 10 },
+  badge: { width: 36, height: 36, borderRadius: 18, alignItems: 'center', justifyContent: 'center' },
+  text: { flex: 1 },
+});

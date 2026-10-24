@@ -20,6 +20,8 @@ export type QuestionId = string;
 export type DateKey = string;
 export type TextScale = 0.9 | 1 | 1.15 | 1.3;
 export type ThemeChoice = 'system' | 'light' | 'dark';
+/** 12- or 24-hour clock for reminder times; unset follows the phone. */
+export type TimeFormatChoice = '12h' | '24h';
 
 export interface Question {
   id: QuestionId;
@@ -71,6 +73,8 @@ export interface Settings {
   theme: ThemeChoice;
   relaxedMode: boolean;
   reminder: ReminderSettings;
+  /** extra: the clock style for reminder times; undefined = the phone's setting. */
+  timeFormat?: TimeFormatChoice;
 }
 
 export type Stars = 0 | 1 | 2 | 3;

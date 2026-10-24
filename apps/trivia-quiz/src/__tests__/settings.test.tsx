@@ -2,8 +2,8 @@ import '@/testing/stores';
 import React from 'react';
 import { Alert, StyleSheet, Text } from 'react-native';
 import { sharedStore } from '@shared/storage';
-import { mockAds, mockNotif, mockNotifState, mockRouter } from '@/testing/mocks';
-import { auditPressables, cleanup, render } from '@/testing/ui';
+import { mockAds, mockHaptics, mockNotif, mockNotifState, mockRouter } from '@/testing/mocks';
+import { auditPressables, cleanup, render, stepWheel } from '@/testing/ui';
 import { resetApp } from '@/testing/stores';
 import { confirmReset, resetProgress } from '@/features/settings/reset';
 import { useAds } from '@/store/ads';
@@ -21,7 +21,7 @@ beforeEach(() => {
 afterEach(cleanup);
 
 describe('Settings screen (plan F11)', () => {
-  it('toggles sound and vibration, and says On or Off in words', async () => {
+  it('toggles sound and vibration, and the shared sounds and haptics follow', async () => {
     const r = await render(<Settings />);
     expect(useSettings.getState().settings).toMatchObject({ sound: true, haptics: true });
     const toggle = async (label: string) => {
@@ -32,12 +32,35 @@ describe('Settings screen (plan F11)', () => {
     await toggle('Sound effects');
     await toggle('Vibration feedback');
     expect(useSettings.getState().settings).toMatchObject({ sound: false, haptics: false });
-    expect(r.texts().filter((x) => x === 'Off').length).toBeGreaterThanOrEqual(2);
+    expect(r.root.findAll((n) => typeof n.props.onValueChange === 'function' && /^(Sound effects|Vibration feedback)$/.test(n.props.accessibilityLabel)).map((n) => n.props.value)).toEqual([false, false]);
+    expect(require('@shared/sound').soundsEnabled()).toBe(false);
+    mockHaptics.notification.mockClear();
+    const { useHaptics } = require('@shared/theme');
+    let haptics: { success: () => Promise<void> } | null = null;
+    const Probe = () => {
+      haptics = useHaptics();
+      return null;
+    };
+    await render(<Probe />);
+    await haptics!.success();
+    expect(mockHaptics.notification).not.toHaveBeenCalled();
+  });
+
+  it('switches the clock between the phone, 12-hour and 24-hour styles', async () => {
+    useSettings.getState().update({ reminder: { enabled: true, hour: 19, minute: 0 } });
+    const r = await render(<Settings />);
+    expect(r.byLabel('Reminder time, 7:00 PM')).toHaveLength(1); // en-US phone: 12-hour
+    await r.press('24-hour');
+    expect(useSettings.getState().settings.timeFormat).toBe('24h');
+    expect(r.byLabel('Reminder time, 19:00')).toHaveLength(1);
+    await r.press('Phone');
+    expect(useSettings.getState().settings.timeFormat).toBeUndefined();
+    expect(r.byLabel('Reminder time, 7:00 PM')).toHaveLength(1);
   });
 
   it('changes the text size in four steps and the text really grows', async () => {
     const r = await render(<Settings />);
-    for (const [label, scale] of [['Small', 0.9], ['Large', 1.15], ['Extra large', 1.3], ['Medium', 1]] as const) {
+    for (const [label, scale] of [['Small', 0.9], ['Large', 1.15], ['Largest', 1.3], ['Medium', 1]] as const) {
       await r.press(label);
       expect(useSettings.getState().settings.textScale).toBe(scale);
     }
@@ -54,7 +77,7 @@ describe('Settings screen (plan F11)', () => {
     await r.press('Dark');
     expect(sharedStore.get('theme.mode')).toBe('dark');
     expect(useSettings.getState().settings.theme).toBe('dark');
-    await r.press('Same as phone');
+    await r.press('Auto');
     expect(sharedStore.get('theme.mode')).toBe('system');
   });
 
@@ -73,9 +96,9 @@ describe('Settings screen (plan F11)', () => {
     const sw = () => r.root.findAll((n) => n.props.accessibilityLabel === 'Remind me every day' && typeof n.props.onValueChange === 'function')[0];
     await act(async () => sw().props.onValueChange(true));
     expect(useSettings.getState().settings.reminder).toEqual({ enabled: true, hour: 19, minute: 0 });
-    expect(r.texts().join(' ')).toMatch(/Reminder time: 7:00\s?PM/);
+    expect(r.byLabel('Reminder time, 7:00 PM')).toHaveLength(1);
     expect(mockNotifState.pending.size).toBeGreaterThan(0);
-    await r.press('One hour later');
+    await stepWheel(r, 'Reminder time', 'Hour', 1, 'increment');
     expect(useSettings.getState().settings.reminder.hour).toBe(20);
     await act(async () => sw().props.onValueChange(false));
     expect(useSettings.getState().settings.reminder.enabled).toBe(false);

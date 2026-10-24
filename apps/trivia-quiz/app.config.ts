@@ -19,8 +19,9 @@ const config: ExpoConfig = {
     versionCode: 1,
     adaptiveIcon: {
       foregroundImage: './assets/adaptive-icon-foreground.png',
+      backgroundImage: './assets/adaptive-icon-background.png',
       monochromeImage: './assets/adaptive-icon-monochrome.png',
-      backgroundColor: '#4F46E5',
+      backgroundColor: '#5B3FE0',
     },
     // The ads SDK adds INTERNET, WAKE_LOCK and ACCESS_NETWORK_STATE. POST_NOTIFICATIONS and
     // RECEIVE_BOOT_COMPLETED are for the daily reminder (it survives a reboot). No exact alarms.
@@ -44,17 +45,55 @@ const config: ExpoConfig = {
       'react-native-google-mobile-ads',
       { androidAppId: process.env.EXPO_PUBLIC_ADMOB_ANDROID_APP_ID ?? TEST_ANDROID_APP_ID },
     ],
-    ['expo-notifications', { color: '#4F46E5' }],
-    // Plays short answer sounds only: no recording, so no microphone permission.
-    ['expo-audio', { microphonePermission: false }],
+    [
+      'expo-notifications',
+      {
+        icon: './assets/notification-icon.png',
+        color: '#5B3FE0',
+        // Bundled into res/raw; the reminder channel refers to it by file name (src/notifications/reminder.ts).
+        sounds: ['../../packages/shared/assets/sounds/reminder.wav'],
+      },
+    ],
+    // Edge-to-edge without the OS's translucent strip behind 3-button navigation: the tab bar and
+    // screen colors run under it, and the root sets the button color from the app's own theme.
+    ['expo-navigation-bar', { enforceContrast: false }],
+    // Short answer sounds only: no microphone and no background playback service.
+    ['expo-audio', { microphonePermission: false, recordAudioAndroid: false, enableBackgroundPlayback: false }],
+    [
+      'expo-font',
+      {
+        // Embedded as Android font families, so fontFamily 'Figtree' + fontWeight picks the real file
+        // and text never flashes in a fallback font.
+        android: {
+          fonts: [
+            {
+              fontFamily: 'Figtree',
+              fontDefinitions: [
+                { path: '../../packages/shared/assets/fonts/Figtree_400Regular.ttf', weight: 400 },
+                { path: '../../packages/shared/assets/fonts/Figtree_500Medium.ttf', weight: 500 },
+                { path: '../../packages/shared/assets/fonts/Figtree_600SemiBold.ttf', weight: 600 },
+                { path: '../../packages/shared/assets/fonts/Figtree_700Bold.ttf', weight: 700 },
+              ],
+            },
+            {
+              fontFamily: 'Bricolage',
+              fontDefinitions: [
+                { path: '../../packages/shared/assets/fonts/BricolageGrotesque_600SemiBold.ttf', weight: 600 },
+                { path: '../../packages/shared/assets/fonts/BricolageGrotesque_800ExtraBold.ttf', weight: 800 },
+              ],
+            },
+          ],
+        },
+      },
+    ],
     'expo-sharing',
     [
       'expo-splash-screen',
       {
         image: './assets/splash-icon.png',
         imageWidth: 200,
-        backgroundColor: '#F8FAFC',
-        dark: { image: './assets/splash-icon.png', backgroundColor: '#0B1020' },
+        backgroundColor: '#F6F4FD',
+        dark: { image: './assets/splash-icon.png', backgroundColor: '#100D22' },
       },
     ],
     ['expo-build-properties', { android: { compileSdkVersion: 36, targetSdkVersion: 36 } }],

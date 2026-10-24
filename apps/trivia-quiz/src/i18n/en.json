@@ -4,10 +4,7 @@
   },
   "common": {
     "close": "Close",
-    "done": "Done",
     "cancel": "Cancel",
-    "on": "On",
-    "off": "Off",
     "back": "Back"
   },
   "tabs": {
@@ -81,7 +78,11 @@
     "dailyResult": "See today's result",
     "continue": "Continue",
     "continueCard": "{category}, level {level}",
-    "continuePlay": "Play level"
+    "continuePlay": "Play level",
+    "modes": "Game modes",
+    "classicShort": "30 levels each",
+    "categoryShort": "Pick a topic",
+    "statsShort": "Your progress"
   },
   "play": {
     "title": "Play"
@@ -91,7 +92,6 @@
     "intro": "Pick a category. Get one star on a level to unlock the next.",
     "complete": "{percent}% complete",
     "tileLabel": "{category}. {percent}% complete.",
-    "levelName": "Level {level}",
     "levelLabel": "Level {level}, {difficulty}, {stars} stars",
     "levelLocked": "Level {level}, locked",
     "getStar": "Get 1 star on level {level} first",
@@ -149,7 +149,8 @@
     "reportSubject": "Quizora question {id}",
     "reportBody": "Question {id} (revision {rev}) has a problem:",
     "next": "Next",
-    "seeResults": "See results"
+    "seeResults": "See results",
+    "warmupTitle": "Warm-up"
   },
   "results": {
     "levelDone": "Level complete!",
@@ -227,12 +228,12 @@
       "small": "Small",
       "medium": "Medium",
       "large": "Large",
-      "xlarge": "Extra large"
+      "xlarge": "Largest"
     },
     "sizeNote": "This also follows your phone's font size setting.",
     "theme": "Theme",
     "themes": {
-      "system": "Same as phone",
+      "system": "Auto",
       "light": "Light",
       "dark": "Dark"
     },
@@ -242,7 +243,6 @@
     "reminderSection": "Daily reminder",
     "reminderSwitch": "Remind me every day",
     "reminderHint": "One friendly nudge a day for the Daily Challenge. Nothing else.",
-    "reminderTime": "Reminder time: {time}",
     "privacy": "Privacy",
     "privacyNote": "Your progress stays on this phone. Ads come from Google AdMob.",
     "privacyInfo": "How Quizora uses data",
@@ -264,7 +264,12 @@
     "resetContinue": "Continue",
     "resetSureTitle": "Are you sure?",
     "resetSureBody": "This cannot be undone.",
-    "resetConfirm": "Erase everything"
+    "resetConfirm": "Erase everything",
+    "clock": "Clock",
+    "clockPhone": "Phone",
+    "clock12": "12-hour",
+    "clock24": "24-hour",
+    "reminderTimeLabel": "Reminder time"
   },
   "onboarding": {
     "welcomeTitle": "Test what you know. Learn what you don't.",
@@ -285,7 +290,7 @@
     "difficultyFooter": "We'll adapt as you play.",
     "startWarmup": "Start warm-up",
     "result": {
-      "perfect": "Perfect start! 🧠",
+      "perfect": "Perfect start!",
       "natural": "Nice! You're a natural.",
       "start": "Everyone starts somewhere."
     },
@@ -296,28 +301,25 @@
     "reminderTitle": "Keep your streak alive",
     "reminderBody": "Get one friendly nudge a day for the Daily Challenge. Nothing else.",
     "remindMe": "Remind me",
-    "notNow": "Not now"
+    "notNow": "Not now",
+    "resultScore": "{score} of 3 right"
   },
   "reminder": {
     "channel": "Daily Challenge",
     "channelDescription": "One reminder a day for the Daily Challenge",
     "copy": {
-      "0": "Today's 10 questions are ready. Ready to play?",
-      "1": "2 minutes, 10 questions. Ready?",
+      "0": "Today's 10 questions are ready when you are.",
+      "1": "Two minutes, ten questions. Fancy a round?",
       "2": "A fresh Daily Challenge is waiting for you.",
       "3": "How many of today's 10 can you get right?"
     },
-    "streakCopy": "Today's 10 questions are ready. Keep your {count}-day streak!",
-    "atRisk": "Your {count}-day streak ends at midnight.",
+    "streakCopy": "Today's 10 questions are ready. Keep your {count}-day streak going.",
+    "atRisk": "Your {count}-day streak ends at midnight. One quick round keeps it.",
     "comeback3": "Your next round of trivia is waiting.",
-    "comeback7": "Missed you! Come back for a quick Daily Challenge.",
+    "comeback7": "We saved you a seat. Come back for a quick Daily Challenge.",
     "denied": "Notifications stay off. You can turn the reminder on later in Settings.",
     "blocked": "Notifications are blocked for Quizora. Open your phone settings to allow them.",
-    "openSettings": "Open phone settings",
-    "hourDown": "One hour earlier",
-    "hourUp": "One hour later",
-    "minuteDown": "15 minutes earlier",
-    "minuteUp": "15 minutes later"
+    "openSettings": "Open phone settings"
   },
   "coach": {
     "title": "Your first Daily Challenge is ready",
@@ -343,8 +345,7 @@
     "intro": "Whether each ad placement would show right now, and why not. Only in development builds.",
     "allowed": "would show",
     "blocked": "blocked",
-    "counters": "Counters",
-    "back": "Back"
+    "counters": "Counters"
   },
   "privacy": {
     "title": "How Quizora uses data",

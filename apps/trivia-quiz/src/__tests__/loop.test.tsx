@@ -1,6 +1,7 @@
 import '@/testing/stores';
 import React from 'react';
 import { mockParams, mockRouter, mockNotifState } from '@/testing/mocks';
+import { ToastHost } from '@shared/ui';
 import { cleanup, render } from '@/testing/ui';
 import { resetApp } from '@/testing/stores';
 import { getBank } from '@/content/bank';
@@ -108,11 +109,17 @@ describe('Classic levels', () => {
 
   it('shows the map: current level, locked levels and a toast when a locked one is tapped', async () => {
     mockParams.current = { category: 'geography' };
-    const r = await render(<ClassicMap />);
+    // The locked-level hint is a shared toast, so the host is mounted next to the screen.
+    const r = await render(
+      <>
+        <ClassicMap />
+        <ToastHost />
+      </>,
+    );
     expect(r.byLabel(/^Level 1, Easy, 0 stars$/)).toHaveLength(1);
     expect(r.byLabel('Level 2, locked')).toHaveLength(1);
     await r.press('Level 2, locked');
-    expect(r.byLabel('Get 1 star on level 1 first').length).toBeGreaterThan(0);
+    expect(r.texts()).toContain('Get 1 star on level 1 first');
     await r.press(/^Level 1, Easy/);
     expect(mockRouter.push).toHaveBeenCalledWith(expect.objectContaining({ pathname: '/quiz/[sessionId]' }));
   });
