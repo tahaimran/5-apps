@@ -138,16 +138,19 @@
     "allWeeks": "Week by week",
     "stripEarlier": "Earlier weeks",
     "stripLater": "Later weeks",
-    "stripWeek": "Week {n}, open the card",
-    "stripWeekCurrent": "Week {n}, this week, open the card",
+    "stripWeek": "Week {n}, show its size",
+    "stripWeekCurrent": "Week {n}, this week, show its size",
     "wk": "Wk",
     "thisWeek": "This week · week {n}",
-    "thisWeekLabel": "This week, week {n}: about the size of a {size}. Length {length}, weight {weight}. Opens the card",
     "chipLength": "{length} long",
     "chipWeight": "{weight}",
     "readyTitle": "Getting ready",
     "weekRowSize": "About the size of a {size}",
-    "stripSubtitle": "Week {n} of 40"
+    "stripSubtitle": "Week {n} of 40",
+    "weekTag": "Week {n}",
+    "artLabel": "A drawing of a {size}",
+    "artHint": "Tap it for a little bounce",
+    "openWeek": "Open week {n}"
   },
   "more": {
     "title": "More",

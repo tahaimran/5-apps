@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { FlatList, StyleSheet, View, useWindowDimensions } from 'react-native';
 import { router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -12,10 +13,11 @@ import { Button, Card, IconButton, PressableScale } from '@shared/ui';
 import { useAdScreen } from '@/ads/guard';
 import { withAdSlots, type ListItem } from '@/domain/adSlots';
 import { progressOf } from '@/domain/checklists';
-import { currentCardWeek, lengthText, orderedCards, weekCard, weightText, type WeekCard } from '@/domain/weeks';
+import { currentCardWeek, FIRST_WEEK, orderedCards, weekCard, type WeekCard } from '@/domain/weeks';
 import { PregnancyDial } from '@/features/pregnancy/PregnancyDial';
 import { ReadyCarousel } from '@/features/pregnancy/ReadyCarousel';
-import { ThisWeekCard } from '@/features/pregnancy/ThisWeekCard';
+import { SizeArt } from '@/features/pregnancy/SizeArt';
+import { SizeExplorer } from '@/features/pregnancy/SizeExplorer';
 import { WeekStrip } from '@/features/pregnancy/WeekStrip';
 import { useChecklist } from '@/hooks/useChecklist';
 import { usePregnancy } from '@/hooks/usePregnancy';
@@ -26,7 +28,6 @@ import { BannerSlot } from '@/ui/BannerSlot';
 import { dayMonth } from '@/ui/format';
 import { TabTitle } from '@/ui/Screen';
 import { NavRow, SettingsGroup } from '@/ui/SettingsRow';
-import { WeekBadge } from '@/ui/WeekBadge';
 
 /** A section heading inside the list. */
 function Section({ title }: { title: string }) {
@@ -69,6 +70,9 @@ export default function Pregnancy() {
   const cards = withAdSlots(orderedCards(shown?.weeks ?? null));
   const current = shown ? weekCard(currentCardWeek(shown.weeks)) : null;
   const dial = Math.min(280, width - 88);
+  // The week shown by the strip and the size explorer: this week to begin with.
+  const [selected, setSelected] = useState(currentWeek ?? FIRST_WEEK);
+  useEffect(() => setSelected(currentWeek ?? FIRST_WEEK), [currentWeek]);
 
   const toGo = !gestation
     ? ''
@@ -118,9 +122,9 @@ export default function Pregnancy() {
         </SettingsGroup>
       ) : null}
 
-      <WeekStrip current={currentWeek} title={trimester} subtitle={shown ? t('pregnancy.stripSubtitle', { n: shown.weeks }) : undefined} />
+      <WeekStrip current={currentWeek} selected={selected} onSelect={setSelected} title={trimester} subtitle={shown ? t('pregnancy.stripSubtitle', { n: shown.weeks }) : undefined} />
 
-      {current ? <ThisWeekCard card={current} length={lengthText(current.lengthCm, units)} weight={weightText(current.weightG, units, t('week.under1g'))} /> : null}
+      <SizeExplorer selected={selected} current={currentWeek} units={units} onSelect={setSelected} />
 
       <Section title={t('pregnancy.readyTitle')} />
       <ReadyCarousel
@@ -179,7 +183,9 @@ export default function Pregnancy() {
                 shadow(isCurrent ? 2 : 0),
               ]}
             >
-              <WeekBadge week={item.week} current={isCurrent} />
+              <View style={[styles.thumb, { backgroundColor: isCurrent ? colors.primarySoft : colors.surfaceAlt }]}>
+                <SizeArt size={item.size} px={44} />
+              </View>
               <View style={styles.flex}>
                 <AppText style={[type.bodyLarge, { color: colors.text, fontWeight: '700' }]}>{t(isCurrent ? 'pregnancy.weekRowCurrent' : 'pregnancy.weekRow', { n: item.week })}</AppText>
                 <AppText style={[type.body, { color: colors.textMuted }]}>{t('pregnancy.weekRowSize', { size: item.size })}</AppText>
@@ -200,4 +206,5 @@ const styles = StyleSheet.create({
   center: { alignItems: 'center' },
   chips: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center' },
   row: { flexDirection: 'row', alignItems: 'center' },
+  thumb: { width: 56, height: 56, borderRadius: 28, alignItems: 'center', justifyContent: 'center' },
 });

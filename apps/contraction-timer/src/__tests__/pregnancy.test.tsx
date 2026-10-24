@@ -1,8 +1,8 @@
-import { mockParams, mockRouter } from '@/testing/mocks';
+import { mockMotion, mockParams, mockRouter } from '@/testing/mocks';
 import { resetApp } from '@/testing/stores';
 import { cleanup, isPressable, render } from '@/testing/ui';
 import { act } from 'react';
-import { Alert, Share } from 'react-native';
+import { Alert, Share, StyleSheet } from 'react-native';
 import { ThemeProvider } from '@shared/theme';
 import { hideToast, ToastHost } from '@shared/ui';
 import '@/bootstrap';
@@ -57,9 +57,10 @@ describe('My Pregnancy (plan §5.4)', () => {
     // trimester and the due date as chips; one sentence for screen readers.
     expect(ui.texts()).toEqual(expect.arrayContaining(['35', '+ 1 day', 'Week 35 + 1', '34 days to go', 'Trimester 3', 'Due 12 November']));
     expect(ui.byLabel('Week 35 and 1 days. 34 days to go. Baby is about the size of a honeydew melon')).toHaveLength(1);
-    // This week's card: the size as its headline, opening week 35.
+    // The size explorer opens on this week: the drawing, the size as its headline, the arrow to the card.
     expect(ui.texts()).toContain('About the size of a honeydew melon');
-    await ui.press(/^This week, week 35: about the size of a honeydew melon/);
+    expect(ui.byLabel('A drawing of a honeydew melon').length).toBeGreaterThan(0);
+    await ui.press('Open week 35');
     expect(mockRouter.push).toHaveBeenLastCalledWith({ pathname: '/pregnancy/week/[n]', params: { n: '35' } });
     // The list: this week pinned first.
     const rows = ui.root.findAll((n) => isPressable(n) && typeof n.props.onPress === 'function' && /^Week \d+: |^Week \d+, this week: /.test(String(n.props.accessibilityLabel)));
@@ -67,17 +68,47 @@ describe('My Pregnancy (plan §5.4)', () => {
     expect(String(rows[1].props.accessibilityLabel)).toContain('Week 4:');
   });
 
-  it('pages a strip of weeks with this week as the tall pill, and opens any week from it', async () => {
+  it('pages a strip of weeks; a tap chooses a week for the size explorer, and a swipe of the explorer moves the strip', async () => {
     useProfile.getState().setDue({ mode: 'edd', date: '2026-11-12' });
     const ui = await render(wrap(<Pregnancy />));
-    const strip = () => ui.root.findAll((n) => isPressable(n) && /, open the card$/.test(String(n.props.accessibilityLabel))).map((n) => String(n.props.accessibilityLabel));
-    expect(strip()).toEqual(['Week 33, open the card', 'Week 34, open the card', 'Week 35, this week, open the card', 'Week 36, open the card', 'Week 37, open the card']);
+    const strip = () => ui.root.findAll((n) => isPressable(n) && /, show its size$/.test(String(n.props.accessibilityLabel)));
+    const labels = () => strip().map((n) => String(n.props.accessibilityLabel));
+    const chosen = () => strip().filter((n) => n.props.accessibilityState?.selected).map((n) => String(n.props.accessibilityLabel));
+    expect(labels()).toEqual(['Week 33, show its size', 'Week 34, show its size', 'Week 35, this week, show its size', 'Week 36, show its size', 'Week 37, show its size']);
+    expect(chosen()).toEqual(['Week 35, this week, show its size']);
+    // A tap chooses the week (no navigation): the explorer follows it.
+    await ui.press('Week 37, show its size');
+    expect(chosen()).toEqual(['Week 37, show its size']);
+    expect(mockRouter.push).not.toHaveBeenCalled();
+    // Paging: up to the last card (week 42), then the arrow turns off.
     await ui.press('Later weeks');
-    // It pages up to the last card (week 42) and the arrow then turns off.
     expect(ui.byLabel('Later weeks')[0].props.accessibilityState).toMatchObject({ disabled: true });
-    expect(strip()).toEqual(['Week 38, open the card', 'Week 39, open the card', 'Week 40, open the card', 'Week 41, open the card', 'Week 42, open the card']);
-    await ui.press('Week 40, open the card');
-    expect(mockRouter.push).toHaveBeenLastCalledWith({ pathname: '/pregnancy/week/[n]', params: { n: '40' } });
+    expect(labels()).toEqual(['Week 38, show its size', 'Week 39, show its size', 'Week 40, show its size', 'Week 41, show its size', 'Week 42, show its size']);
+    // A swipe of the explorer that settles on week 10 brings the strip there.
+    const explorer = ui.root.findAll((n) => n.props.horizontal === true && typeof n.props.onMomentumScrollEnd === 'function' && typeof n.props.getItemLayout === 'function')[0];
+    const step = explorer.props.getItemLayout(null, 1).offset as number;
+    await act(async () => explorer.props.onMomentumScrollEnd({ nativeEvent: { contentOffset: { x: step * 6, y: 0 } } }));
+    expect(chosen()).toEqual(['Week 10, show its size']);
+  });
+
+  it('bounces a drawing when it is tapped (with Reduce Motion off)', async () => {
+    useProfile.getState().setDue({ mode: 'edd', date: '2026-11-12' });
+    mockMotion.reduced = false;
+    try {
+      const ui = await render(wrap(<Pregnancy />));
+      const pops = () => ui.root.findAll((n) => typeof n.type === 'string' && (StyleSheet.flatten(n.props.style) as { animationName?: unknown } | undefined)?.animationName !== undefined).length;
+      expect(pops()).toBe(0);
+      await ui.press('A drawing of a honeydew melon');
+      expect(pops()).toBe(1);
+    } finally {
+      mockMotion.reduced = true;
+    }
+  });
+
+  it('has a drawing for every week size', () => {
+    const { drawingFor } = require('@/features/pregnancy/drawings') as typeof import('@/features/pregnancy/drawings');
+    const { WEEK_CARDS } = require('@/domain/weeks') as typeof import('@/domain/weeks');
+    expect(WEEK_CARDS.filter((c) => drawingFor(c.size) === null).map((c) => c.size)).toEqual([]);
   });
 
   it('offers the hospital bag, birth plan and due date as cards to swipe', async () => {

@@ -1,6 +1,5 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { StyleSheet, View, useWindowDimensions } from 'react-native';
-import { router } from 'expo-router';
 import ChevronLeft from 'lucide-react-native/icons/chevron-left';
 import ChevronRight from 'lucide-react-native/icons/chevron-right';
 import { t } from '@shared/i18n';
@@ -16,16 +15,21 @@ export const STRIP = 5;
 export const stripStart = (week: number) => Math.max(FIRST_WEEK, Math.min(LAST_WEEK - STRIP + 1, week - Math.floor(STRIP / 2)));
 
 /**
- * A strip of weeks (the reference's date strip): five at a time with this week as a tall teal pill,
- * arrows to page through, and a tap on any week to open its card.
+ * A strip of weeks (the reference's date strip): five at a time, the chosen week as a tall pill and this
+ * week marked with a dot, arrows to page through. A tap chooses a week (the size explorer follows), and
+ * the strip follows the explorer when it is swiped.
  */
-export function WeekStrip({ current, title, subtitle }: { current: number | null; title: string; subtitle?: string }) {
+export function WeekStrip({ current, selected, onSelect, title, subtitle }: { current: number | null; selected: number; onSelect: (week: number) => void; title: string; subtitle?: string }) {
   const { colors, spacing, radius, type, fonts } = useTheme();
   const strong = useStrongFill();
   const { fontScale } = useWindowDimensions();
   // The pills are a fixed shape: their numbers keep their drawn size (each pill has a spoken name).
   const fit = (sp: number) => Math.round(sp / Math.max(1, fontScale));
-  const [start, setStart] = useState(() => stripStart(current ?? FIRST_WEEK));
+  const [start, setStart] = useState(() => stripStart(selected));
+  // Keep the chosen week in view when it changes from elsewhere (a swipe of the explorer).
+  useEffect(() => {
+    setStart((s) => (selected < s || selected >= s + STRIP ? stripStart(selected) : s));
+  }, [selected]);
   const weeks = Array.from({ length: STRIP }, (_, i) => start + i);
   const page = (dir: 1 | -1) => setStart((s) => Math.max(FIRST_WEEK, Math.min(LAST_WEEK - STRIP + 1, s + dir * STRIP)));
   return (
@@ -42,13 +46,15 @@ export function WeekStrip({ current, title, subtitle }: { current: number | null
       </View>
       <View style={[styles.row, { gap: spacing.xs }]}>
         {weeks.map((w) => {
-          const on = w === current;
+          const on = w === selected;
+          const now = w === current;
           return (
             <PressableScale
               key={w}
               accessibilityRole="button"
-              accessibilityLabel={t(on ? 'pregnancy.stripWeekCurrent' : 'pregnancy.stripWeek', { n: w })}
-              onPress={() => router.push({ pathname: '/pregnancy/week/[n]', params: { n: String(w) } })}
+              accessibilityLabel={t(now ? 'pregnancy.stripWeekCurrent' : 'pregnancy.stripWeek', { n: w })}
+              accessibilityState={{ selected: on }}
+              onPress={() => onSelect(w)}
               scaleTo={0.94}
               style={[styles.pill, { minHeight: on ? 88 : 76, borderRadius: radius.pill, backgroundColor: on ? strong.bg : colors.surfaceAlt, paddingVertical: spacing.sm }]}
             >
@@ -56,7 +62,7 @@ export function WeekStrip({ current, title, subtitle }: { current: number | null
                 {t('pregnancy.wk')}
               </AppText>
               <AppText style={{ fontSize: fit(20), lineHeight: fit(26), color: on ? strong.fg : colors.text, fontFamily: fonts.display, fontWeight: '800' }}>{String(w)}</AppText>
-              {on ? <View style={[styles.dot, { backgroundColor: strong.fg }]} /> : null}
+              {now ? <View style={[styles.dot, { backgroundColor: on ? strong.fg : colors.primary }]} /> : null}
             </PressableScale>
           );
         })}

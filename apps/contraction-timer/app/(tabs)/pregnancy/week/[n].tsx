@@ -17,7 +17,8 @@ import { AppText } from '@/ui/AppText';
 import { BannerSlot } from '@/ui/BannerSlot';
 import { Screen } from '@/ui/Screen';
 import { IconCircle, StatTile } from '@/ui/SettingsRow';
-import { WeekBadge } from '@/ui/WeekBadge';
+import { SizeArt } from '@/features/pregnancy/SizeArt';
+import { artSize } from '@/features/pregnancy/SizeExplorer';
 
 /** Plan §5.4: one week: the size comparison, length and weight, three notes, a question for the provider and the disclaimer. */
 export default function WeekArticle() {
@@ -50,9 +51,9 @@ export default function WeekArticle() {
       <View style={[{ borderRadius: radius.xl }, shadow(2)]}>
         <View style={[styles.hero, { borderRadius: radius.xl, padding: spacing.xl, gap: spacing.md }]}>
           <LinearGradient colors={app.hero} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }} style={StyleSheet.absoluteFill} />
-          {/* The week number on a disc: decoration, the heading below says the same. */}
-          <View accessible={false} importantForAccessibility="no-hide-descendants">
-            <WeekBadge week={card.week} current size={88} />
+          {/* The drawing on a soft disc: decoration, the heading below says what it is. */}
+          <View accessible={false} importantForAccessibility="no-hide-descendants" style={[styles.disc, { backgroundColor: app.heroTrack }]}>
+            <SizeArt size={card.size} px={artSize(card.week)} />
           </View>
           <AppText accessibilityRole="header" style={[type.headline, { color: app.onHero, fontWeight: '800', textAlign: 'center' }]}>
             {t('week.sizeIs', { size: card.size })}
@@ -90,6 +91,7 @@ export default function WeekArticle() {
 const styles = StyleSheet.create({
   flex: { flex: 1 },
   hero: { overflow: 'hidden', alignItems: 'center' },
+  disc: { width: 176, height: 176, borderRadius: 88, alignItems: 'center', justifyContent: 'center' },
   row: { flexDirection: 'row', flexWrap: 'wrap' },
   bullet: { flexDirection: 'row', alignItems: 'flex-start' },
   dot: { width: 8, height: 8, borderRadius: 4, marginTop: 10 },

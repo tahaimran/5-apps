@@ -156,8 +156,9 @@ Long-press button (600ms) = "Undo last tap" sheet. Stats strip items are each ta
 Redesigned (Oct 2026) after the reference screens, top to bottom:
 - **Pregnancy dial:** 40 week ticks around the face (every 4th numbered), an arc filled to today with a knob on this week, "Week 34 + 2" in the middle, then chips for the days to go, the trimester and the due date. Screen readers hear one sentence ("Week 34 and 2 days. 40 days to go. Baby is about the size of a cantaloupe").
 - Hospital-bag nudge at weeks 34/36/37 (soft amber row), unchanged.
-- **Week strip:** the trimester and "Week 34 of 40", five weeks at a time with this week as a tall pill, arrows to page through weeks 4–42; any week opens its card.
-- **This week card:** a mint-to-blush card with a drawn cradle illustration, "About the size of a cantaloupe", length and weight chips and a round arrow; the whole card opens the week.
+- **Week strip:** the trimester and "Week 34 of 40", five weeks at a time; the chosen week is a tall pill and this week has a dot; arrows page through weeks 4–42. A tap chooses the week the size explorer shows.
+- **Size explorer:** every week 4–42 as a page to swipe (the next one peeks in), opening on this week: a hand-drawn picture of the size comparison on a soft disc, growing as the weeks go on (tap it for a small bounce, a light haptic and, if sounds are on, a tap sound), "About the size of a cantaloupe", length and weight chips, and a round arrow that opens the full week. Swiping moves the strip with it.
+- **Drawings:** 36 hand-drawn SVG pictures, one per size in `weeks.en.json` (`src/features/pregnancy/drawings.tsx`), in one flat style; in Night every color is mapped to a red of the same lightness (tested). They also mark each row of the week list and head each week article.
 - **Getting ready:** hospital bag, birth plan and due date as cards to swipe sideways, each with its progress.
 - **Week by week:** the list, this week pinned first, with the **native ad card after the 3rd item** (§12).
 - No due date set: the dial shows "?" with "Add your due date to see your week" and the CTA; the strip, cards and list stay.
