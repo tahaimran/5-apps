@@ -37,7 +37,8 @@ function Root() {
     if (setupDone && onboardingDone) void startAds();
   }, [setupDone, onboardingDone]);
   useDayRollover();
-  useEffect(() => initSounds(['check', 'wrong', 'tick', 'tap']), []);
+  // The answer sounds load up front so the first answer has no delay; celebrate loads on first use.
+  useEffect(() => initSounds(['check', 'wrong', 'tick']), []);
   useReminderSync();
   useNotificationResponses(() => useAds.getState().markExternalOpen());
   // One more cold start, counted once per process.

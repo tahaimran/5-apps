@@ -8,6 +8,9 @@
 - Verified on `main` (2026-10-09): tsc clean, expo-doctor 21/21, all jest tests pass in every package.
 - EAS: all 5 apps linked to Expo account `tuahaimran` (owner + projectId in each `app.config.ts`);
   first `preview` APKs built 2026-10-09. Keystores are EAS-managed. Build from the app folder.
+- UI redesign on `feat/ui-polish` (not merged yet): Habits, Water and Quizora are on the shared kit
+  (Figtree/Bricolage, Lucide, motion, sounds, 12/24-hour TimeField, chime channels, new icons). Quizora's redesign
+  (2026-10-24) is Jest-verified only and needs a new dev build before it can be seen on a phone.
 - Next: each app's `WHATS_LEFT.md` is the remaining-work checklist (device testing, real AdMob IDs
   in EAS, privacy policy hosting, Play Console forms, screenshots, closed testing).
 
