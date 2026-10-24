@@ -22,14 +22,21 @@ describe('syncWeeklyCards', () => {
     expect(await syncWeeklyCards(NOW)).toBe(7);
     expect(ids()).toHaveLength(7);
     const first = mockNotifState.pending.get(`${WEEKLY_ID}:0`)!;
-    expect(first.content.body).toBe('Week 36: baby is about the size of a head of romaine lettuce 🥬');
+    // Plan §10, without the emoji the redesign took out of the copy.
+    expect(first.content.body).toBe('Week 36: your baby is about the size of a head of romaine lettuce.');
     expect(first.trigger).toMatchObject({ type: 'date', channelId: 'weekly' });
   });
   it('writes the plan\'s own example for week 35', async () => {
     mockNotif.granted = true;
     useProfile.getState().setDue({ mode: 'edd', date: '2026-11-19' });
     await syncWeeklyCards(NOW);
-    expect([...mockNotifState.pending.values()].some((n) => n.content.body === 'Week 35: baby is about the size of a honeydew melon 🍈')).toBe(true);
+    expect([...mockNotifState.pending.values()].some((n) => n.content.body === 'Week 35: your baby is about the size of a honeydew melon.')).toBe(true);
+  });
+  it('keeps emoji out of every weekly note', async () => {
+    mockNotif.granted = true;
+    useProfile.getState().setDue({ mode: 'edd', date: '2026-11-19' });
+    await syncWeeklyCards(NOW);
+    for (const n of mockNotifState.pending.values()) expect(String(n.content.body)).not.toMatch(/\p{Extended_Pictographic}/u);
   });
   it('schedules nothing without permission, and never asks for it', async () => {
     mockNotif.granted = false;

@@ -67,6 +67,8 @@ jest.mock('expo-haptics', () => ({
 }));
 jest.mock('expo-localization', () => ({
   getLocales: () => [{ languageCode: 'en', languageTag: 'en-US', textDirection: 'ltr' }],
+  // The phone's clock style: times in tests read "8:00 PM" unless a test picks 24-hour in Settings.
+  getCalendars: () => [{ uses24hourClock: false }],
   useLocales: () => [{ languageCode: 'en', languageTag: 'en-US', textDirection: 'ltr' }],
 }));
 /** The system review prompt: `available` is what the phone says, `request` records that it was shown. */
@@ -86,6 +88,7 @@ export const mockNotif = { granted: false, canAskAgain: true, answer: true, keep
 export const mockNotifState = {
   pending: new Map<string, { identifier: string; content: Record<string, unknown>; trigger: Record<string, unknown> }>(),
   channels: new Map<string, Record<string, unknown>>(),
+  deletedChannels: [] as string[],
 };
 export const mockLastNotificationResponse: { current: unknown } = { current: null };
 export const resetNotifMock = () => {
@@ -98,7 +101,9 @@ export const resetNotifMock = () => {
   Object.assign(mockShare, { printed: [], shared: [], available: true, failPrint: false, text: [] });
   mockNotifState.pending.clear();
   mockNotifState.channels.clear();
+  mockNotifState.deletedChannels.length = 0;
   mockLastNotificationResponse.current = null;
+  for (const p of mockAudio.players) p.play.mockClear();
 };
 jest.mock('expo-notifications', () => ({
   AndroidImportance: { DEFAULT: 3, LOW: 2, HIGH: 4 },
@@ -111,6 +116,7 @@ jest.mock('expo-notifications', () => ({
     return { granted: mockNotif.answer };
   },
   setNotificationChannelAsync: async (id: string, c: Record<string, unknown>) => void mockNotifState.channels.set(id, c),
+  deleteNotificationChannelAsync: async (id: string) => void mockNotifState.deletedChannels.push(id),
   setNotificationHandler: () => undefined,
   getAllScheduledNotificationsAsync: async () => [...mockNotifState.pending.values()],
   cancelScheduledNotificationAsync: async (id: string) => void mockNotifState.pending.delete(id),
@@ -171,9 +177,22 @@ jest.mock('react-native-svg', () => {
   const React = require('react');
   const { View } = require('react-native');
   const box = (props: Record<string, unknown>) => React.createElement(View, props);
-  return { __esModule: true, default: box, Svg: box, Circle: box, G: box, Path: box, Rect: box, Line: box, Text: box, Polyline: box };
+  return { __esModule: true, default: box, Svg: box, Circle: box, G: box, Path: box, Rect: box, Line: box, Text: box, Polyline: box, Defs: box, LinearGradient: box, Stop: box, Ellipse: box };
 });
-jest.mock('@expo/vector-icons', () => ({ MaterialCommunityIcons: () => null }));
+jest.mock('expo-linear-gradient', () => require('../../../../packages/shared/src/testing/animation').linearGradientMock());
+
+/** The UI sounds: one fake player per source, remembering what it was asked to play. */
+export const mockAudio = { players: [] as { source: unknown; volume: number; play: jest.Mock; seekTo: jest.Mock }[], mode: jest.fn(async () => undefined) };
+jest.mock('expo-audio', () => ({
+  createAudioPlayer: (source: unknown) => {
+    const p = { source, volume: 1, play: jest.fn(), seekTo: jest.fn(async () => undefined), remove: () => undefined };
+    mockAudio.players.push(p);
+    return p;
+  },
+  setAudioModeAsync: (...a: unknown[]) => (mockAudio.mode as unknown as (...x: unknown[]) => Promise<void>)(...a),
+}));
+/** How many UI sounds were played in all (Jest maps every .wav to the same asset stub, so files cannot be told apart). */
+export const soundPlays = () => mockAudio.players.reduce((n, p) => n + p.play.mock.calls.length, 0);
 jest.mock('react-native-safe-area-context', () => require('react-native-safe-area-context/jest/mock').default);
 
 /**
@@ -207,9 +226,10 @@ jest.mock('react-native-gesture-handler', () => {
 /** `reduced: false` renders the animated paths. */
 export const mockMotion = { reduced: true };
 jest.mock('react-native-reanimated', () => {
-  const { View, ScrollView } = require('react-native');
+  const { View, ScrollView, Text } = require('react-native');
   const passthrough = (v: unknown) => v;
-  const Animated = { View, ScrollView, createAnimatedComponent: passthrough };
+  // Text too: layout-animated text (Animated.Text) would crash the tests without it.
+  const Animated = { View, ScrollView, Text, createAnimatedComponent: passthrough };
   return {
     // The complete stand-in from the shared package first; this app's overrides below win.
     ...require('../../../../packages/shared/src/testing/animation').reanimatedMock(),

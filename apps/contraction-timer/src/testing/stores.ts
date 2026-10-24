@@ -13,6 +13,7 @@ import { defaultUnlocks } from '@/domain/defaults';
 import { useSessions } from '@/store/sessions';
 import { useSettings } from '@/store/settings';
 import { useToday } from '@/store/today';
+import { resetNotificationSetup } from '@/notifications';
 import { resetDisk, resetNotifMock } from './mocks';
 
 /** Back to a fresh install between tests (the fake disk and every store). */

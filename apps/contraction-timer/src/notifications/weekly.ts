@@ -11,7 +11,7 @@ import { CHANNEL, setupNotifications } from './index';
 export const WEEKLY_ID = 'weekly-card';
 
 /**
- * Plan §10: "Week 35: baby is about the size of a honeydew melon 🍈", once a week at 10:00 local, from the due date.
+ * Plan §10: "Week 35: your baby is about the size of a honeydew melon.", once a week at 10:00 local, from the due date.
  * On unless switched off in More; it is only scheduled when the notification permission already exists (it is
  * asked for when a reminder is turned on, never here on its own). Returns how many were scheduled.
  */
@@ -30,7 +30,7 @@ export async function syncWeeklyCards(now: Date = new Date()): Promise<number> {
   const cards = upcomingWeeklyCards(edd, now);
   return scheduleSeries(
     WEEKLY_ID,
-    cards.map((c) => ({ at: c.at, content: { title: t('app.name'), body: t('weekly.body', { n: c.week, size: c.size, emoji: c.emoji }).trim(), data: { url: 'contractiontimer://timer' } } })),
+    cards.map((c) => ({ at: c.at, content: { title: t('app.name'), body: t('weekly.body', { n: c.week, size: c.size }), data: { url: 'contractiontimer://timer' } } })),
     CHANNEL.weekly,
   );
 }

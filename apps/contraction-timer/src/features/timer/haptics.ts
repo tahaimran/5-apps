@@ -1,33 +1,38 @@
-import * as Haptics from 'expo-haptics';
-import { useSettings } from '@/store/settings';
+import { playSound } from '@shared/sound';
+import { haptics } from '@shared/theme';
 
-const enabled = () => useSettings.getState().settings.haptics;
+/** Plan §7: stop is two medium taps this far apart. */
+export const STOP_GAP_MS = 140;
 
-/** Runs a haptic and swallows any failure: feedback must never break a tap. */
-const fire = (go: () => Promise<void> | void) => {
-  try {
-    void Promise.resolve(go()).catch(() => undefined);
-  } catch {
-    // no vibrator, or the call is not supported on this phone
-  }
-};
-
-/** Plan §7: start = heavy, stop = medium twice, banner = warning, kick tap = light. All of it follows the Settings switch. */
+/**
+ * Plan §7: start = heavy, stop = medium twice, banner = warning, kick tap = light. Haptics are the main
+ * feedback and follow the Settings switch (`setHapticsEnabled`, pushed by the settings store); a sound
+ * plays as well only when the person turned sounds on (off by default: someone may be asleep nearby).
+ * A failing vibrator or audio module never breaks a tap.
+ */
 export const timerHaptics = {
   start: () => {
-    if (enabled()) fire(() => Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy));
+    void haptics.heavy();
+    playSound('tap');
   },
   stop: () => {
-    if (!enabled()) return;
-    fire(() => Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium));
-    setTimeout(() => {
-      if (enabled()) fire(() => Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium));
-    }, 140);
+    void haptics.press();
+    setTimeout(() => void haptics.press(), STOP_GAP_MS);
+    playSound('check');
   },
   banner: () => {
-    if (enabled()) fire(() => Haptics.notificationAsync(Haptics.NotificationFeedbackType.Warning));
+    void haptics.warning();
   },
   kick: () => {
-    if (enabled()) fire(() => Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light));
+    void haptics.tap();
+    playSound('tap');
+  },
+  kickTarget: () => {
+    void haptics.success();
+    playSound('complete');
+  },
+  undo: () => {
+    void haptics.select();
+    playSound('undo');
   },
 };

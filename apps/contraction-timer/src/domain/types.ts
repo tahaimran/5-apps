@@ -88,7 +88,10 @@ export interface Settings {
   /** Sizes in the week cards: centimetres and grams, or inches and pounds. Starts from the phone's region. */
   units: 'metric' | 'imperial';
   haptics: boolean;
-  clock24h: boolean;
+  /** UI sounds (@shared/sound). Off by default: the app is used at night next to someone sleeping. */
+  sounds: boolean;
+  /** 12- or 24-hour times everywhere (screens, reminders, summaries); undefined follows the phone's clock. */
+  timeFormat?: '12h' | '24h';
   kickTarget: number;
   kickReminder: { enabled: boolean; hour: number; minute: number };
   weeklyCardNotif: boolean;

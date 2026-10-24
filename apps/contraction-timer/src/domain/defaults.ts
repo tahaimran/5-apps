@@ -27,7 +27,7 @@ export const defaultSettings: Settings = {
   partnerMode: false,
   units: 'metric',
   haptics: true,
-  clock24h: false,
+  sounds: false,
   kickTarget: KICK_TARGET_LIMITS.default,
   // Plan §6 screen 5: 8:00 PM.
   kickReminder: { enabled: false, hour: 20, minute: 0 },

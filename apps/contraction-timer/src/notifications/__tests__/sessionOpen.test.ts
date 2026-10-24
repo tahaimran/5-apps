@@ -84,7 +84,7 @@ describe('the "session left open" note (plan §10)', () => {
     expect(mockNotif.granted).toBe(false);
   });
 
-  it('uses low-importance silent channels for the weekly card and this note, and a default one for the kick reminder', async () => {
+  it('uses low-importance silent channels for the weekly card and this note, and a chime channel for the kick reminder', async () => {
     jest.replaceProperty(Platform, 'OS', 'android'); // channels exist on Android only
     let setup!: () => Promise<void>;
     jest.isolateModules(() => {
@@ -94,6 +94,9 @@ describe('the "session left open" note (plan §10)', () => {
     await setup();
     expect(mockNotifState.channels.get('timing')).toMatchObject({ importance: 2, sound: null });
     expect(mockNotifState.channels.get('weekly')).toMatchObject({ importance: 2, sound: null });
-    expect(mockNotifState.channels.get('kick-reminder')).toMatchObject({ importance: 3 });
+    // Android fixes a channel's sound at creation: the chime needed a new channel id, and the old one is deleted.
+    expect(mockNotifState.channels.get('kick-chime')).toMatchObject({ importance: 3, sound: 'reminder.wav', vibrationPattern: [0, 180, 140, 180] });
+    expect(mockNotifState.channels.has('kick-reminder')).toBe(false);
+    expect(mockNotifState.deletedChannels).toEqual(['kick-reminder']);
   });
 });
