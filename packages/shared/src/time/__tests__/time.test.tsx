@@ -1,6 +1,6 @@
 import { mockHaptics, mockLocale, resetDisk } from '../../testing/native';
 import { act } from 'react';
-import { ScrollView, Text } from 'react-native';
+import { ScrollView, StyleSheet, Text } from 'react-native';
 import type { ReactTestInstance } from 'react-test-renderer';
 import { cleanup, render } from '../../testing/render';
 import { ThemeProvider } from '../../theme';
@@ -50,6 +50,14 @@ const scrollTo = (sv: ReactTestInstance, y: number) => {
 };
 
 describe('TimeField', () => {
+  it('keeps the wheel text inside its fixed rows at a large phone font scale (Jest runs at 2x)', async () => {
+    const ui = await render(themed(<TimeField label="Wake up" value="07:00" onChange={jest.fn()} />));
+    await ui.press('Wake up, 07:00');
+    const sizes = scrollViews(ui.root).flatMap((sv) => sv.findAllByType(Text).map((t) => StyleSheet.flatten(t.props.style).fontSize ?? 0));
+    // 28 / 2 = 14sp, drawn at 28dp: fits the 48dp rows and the 72dp columns.
+    expect(Math.max(...sizes)).toBe(14);
+  });
+
   it('shows the stored time in 24-hour style and saves a wheel pick', async () => {
     const onChange = jest.fn();
     const ui = await render(themed(<TimeField label="Wake up" value="07:00" onChange={onChange} />));

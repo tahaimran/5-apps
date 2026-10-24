@@ -22,6 +22,13 @@ describe('insetTones', () => {
 });
 
 describe('Toggle', () => {
+  it('never draws a white thumb in a high-contrast palette (a red Night mode)', async () => {
+    const on = await render(themed(<Toggle label="Sounds" value onValueChange={jest.fn()} />, 'high-contrast'));
+    expect(on.root.findByType(Switch).props.thumbColor).toBe(defaultPalettes['high-contrast'].onPrimary);
+    const off = await render(themed(<Toggle label="Vibration" value={false} onValueChange={jest.fn()} />, 'high-contrast'));
+    expect(off.root.findByType(Switch).props.thumbColor).toBe(defaultPalettes['high-contrast'].textMuted);
+  });
+
   it('keeps the off thumb visible in dark mode and reports changes', async () => {
     const onValueChange = jest.fn();
     const ui = await render(themed(<Toggle label="Sounds" value={false} onValueChange={onValueChange} />, 'dark'));

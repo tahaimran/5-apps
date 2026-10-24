@@ -228,6 +228,12 @@ describe('useHaptics', () => {
     await expect(haptics.tap()).resolves.toBeUndefined();
   });
 
+  it('buzzes in the same tick as the tap, not a microtask later', () => {
+    mockHaptics.impact.mockClear();
+    void sharedHaptics.heavy();
+    expect(mockHaptics.impact.mock.calls).toEqual([['heavy']]);
+  });
+
   it('offers the same helpers outside React, behind the same switch', async () => {
     mockHaptics.impact.mockClear();
     setHapticsEnabled(false);

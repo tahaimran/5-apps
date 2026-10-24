@@ -346,7 +346,8 @@ export function Toggle({ value, onValueChange, label, disabled }: { value: boole
       disabled={disabled}
       onValueChange={onValueChange}
       trackColor={{ true: colors.primary, false: mode === 'light' ? colors.border : colors.surfaceAlt }}
-      thumbColor={value || mode === 'light' ? '#FFFFFF' : colors.textMuted}
+      // High-contrast palettes (an app's red Night mode) keep the thumb in their own colors, never white.
+      thumbColor={mode === 'high-contrast' ? (value ? colors.onPrimary : colors.textMuted) : value || mode === 'light' ? '#FFFFFF' : colors.textMuted}
     />
   );
 }
@@ -453,7 +454,8 @@ export function Stepper({ value, onChange, min, max, step = 1, label, format = S
   const size = large ? Math.max(touchTarget, 56) : touchTarget;
   const btn = { width: size, height: size, borderRadius: size / 2 };
   const text = (
-    <Text style={[styles.stepperValue, large ? [type.headline, { fontFamily: fonts.display, fontWeight: '800' as const }] : type.bodyLarge, { color: colors.text }]} numberOfLines={1}>
+    // No line limit: a long value ("10 movements", "September") wraps at large font sizes instead of being cut.
+    <Text style={[styles.stepperValue, large ? [type.headline, { fontFamily: fonts.display, fontWeight: '800' as const }] : type.bodyLarge, { color: colors.text }]}>
       {format(value)}
     </Text>
   );

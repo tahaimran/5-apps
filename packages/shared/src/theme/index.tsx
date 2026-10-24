@@ -111,8 +111,18 @@ export function setHapticsEnabled(on: boolean): void {
 }
 
 /** Fires only while haptics are on; a missing vibrator or module never rejects. */
-const gated = (fire: () => Promise<void>) => (): Promise<void> =>
-  hapticsOn ? Promise.resolve().then(fire).catch(() => undefined) : Promise.resolve();
+/**
+ * Fires only while haptics are on, in the same tick as the tap that caused it (a buzz that lags its
+ * visual reads as a glitch). A missing vibrator or module never throws or rejects.
+ */
+const gated = (fire: () => Promise<void>) => (): Promise<void> => {
+  if (!hapticsOn) return Promise.resolve();
+  try {
+    return Promise.resolve(fire()).catch(() => undefined);
+  } catch {
+    return Promise.resolve();
+  }
+};
 
 /**
  * The same helpers outside React (a store action, a timer callback). They follow `setHapticsEnabled` too.

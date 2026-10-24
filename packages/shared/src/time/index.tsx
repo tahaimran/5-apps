@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Modal, Pressable, ScrollView, StyleSheet, Text, View, type NativeScrollEvent, type NativeSyntheticEvent } from 'react-native';
+import { Modal, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions, type NativeScrollEvent, type NativeSyntheticEvent } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Clock from 'lucide-react-native/icons/clock';
 import { t } from '../i18n';
@@ -32,6 +32,10 @@ interface WheelProps {
  */
 function Wheel({ items, index, onChange, label, width }: WheelProps) {
   const { colors, type, fonts } = useTheme();
+  // Rows and columns have a fixed size, so the text stays inside them at any phone font scale.
+  const { fontScale } = useWindowDimensions();
+  const fontSize = Math.min(type.title.fontSize, Math.floor(28 / Math.max(fontScale, 0.5)));
+  const lineHeight = Math.min(type.title.lineHeight, Math.floor((ITEM - 6) / Math.max(fontScale, 0.5)));
   const haptics = useHaptics();
   const ref = useRef<ScrollView>(null);
   const passing = useRef(index);
@@ -89,7 +93,7 @@ function Wheel({ items, index, onChange, label, width }: WheelProps) {
             <Text
               style={[
                 type.title,
-                { fontFamily: fonts.display, color: i === index ? colors.text : colors.textMuted, fontWeight: i === index ? '800' : '600', opacity: i === index ? 1 : 0.55 },
+                { fontSize, lineHeight, fontFamily: fonts.display, color: i === index ? colors.text : colors.textMuted, fontWeight: i === index ? '800' : '600', opacity: i === index ? 1 : 0.55 },
               ]}
             >
               {item}
