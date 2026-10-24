@@ -4,7 +4,6 @@ import { StyleSheet } from 'react-native';
 import { Stack } from 'expo-router';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { StatusBar } from 'expo-status-bar';
-import { NavigationBar } from 'expo-navigation-bar';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useAppOpenAd } from '@shared/ads';
 import { useOnboardingComplete } from '@shared/onboarding';
@@ -20,6 +19,7 @@ import { useSettings } from '@/store/settings';
 import { useDayRollover } from '@/store/today';
 import { startWidgetSync } from '@/widget/sync';
 import { fonts, palette } from '@/theme/tokens';
+import { SystemNavBar } from '@/ui/SystemNavBar';
 import '@/bootstrap';
 
 // A render error anywhere shows a retry screen instead of closing the app in release builds.
@@ -54,7 +54,7 @@ function Root() {
     <>
       <StatusBar style={mode === 'light' ? 'dark' : 'light'} />
       {/* Follows the in-app theme, which can differ from the system one. */}
-      <NavigationBar style={mode === 'light' ? 'dark' : 'light'} />
+      <SystemNavBar dark={mode !== 'light'} />
       <Stack
         screenOptions={{
           headerShown: false,
