@@ -40,7 +40,7 @@ import { BEAT, CSS_EASE_OUT } from '@/ui/motion';
  */
 export default function DailyResult() {
   useAdScreen('dailyResult');
-  const { colors, spacing, radius, mode, shadow } = useTheme();
+  const { colors, spacing, radius, mode, shadow, type } = useTheme();
   const x = extraColorsFor(mode);
   const reduced = useReducedMotion();
   const today = useToday((s) => s.today);
@@ -86,7 +86,7 @@ export default function DailyResult() {
               {justNow ? t('daily.done') : t('daily.alreadyPlayed')}
             </AppText>
             <View accessible accessibilityLabel={t('daily.scoreLabel', { score: daily.lastScore })}>
-              <AppText variant="display" style={[styles.white, styles.score]}>{`${daily.lastScore}/10`}</AppText>
+              <AppText variant="display" style={[styles.white, styles.score, { fontSize: Math.round(type.display.fontSize * 1.6), lineHeight: Math.round(type.display.lineHeight * 1.55) }]}>{`${daily.lastScore}/10`}</AppText>
             </View>
             {streak > 0 && (
               <View accessible accessibilityLabel={t('home.streakLabel', { count: streak })} style={[styles.chip, { borderRadius: radius.pill, backgroundColor: frost }]}>
@@ -173,7 +173,7 @@ const styles = StyleSheet.create({
   center: { textAlign: 'center' },
   bold: { fontWeight: '700' },
   semi: { fontWeight: '600' },
-  score: { fontSize: 56, lineHeight: 62 },
+  score: { textAlign: 'center' },
   chip: { flexDirection: 'row', alignItems: 'center', gap: 8, paddingHorizontal: 16, paddingVertical: 8 },
   day: { flex: 1, alignItems: 'center', paddingVertical: 8 },
   dot: { width: 28, height: 28, borderRadius: 14, borderWidth: 2, alignItems: 'center', justifyContent: 'center' },

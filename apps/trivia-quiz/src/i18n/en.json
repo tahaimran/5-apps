@@ -167,7 +167,6 @@
     "newBestBlitz": "New Blitz best!",
     "points": "Points",
     "xp": "XP earned",
-    "doubled": "doubled",
     "accuracy": "Accuracy",
     "time": "Time",
     "relaxedNote": "Relaxed mode: no timer, XP x0.8.",
@@ -178,7 +177,8 @@
     "playAgain": "Play again",
     "home": "Home",
     "doubleXp": "Double XP (watch video)",
-    "doubleXpHint": "Watch a short video to double the XP from this round"
+    "doubleXpHint": "Watch a short video to double the XP from this round",
+    "xpDoubled": "XP earned (doubled)"
   },
   "daily": {
     "done": "Daily Challenge done!",
@@ -269,7 +269,13 @@
     "clockPhone": "Phone",
     "clock12": "12-hour",
     "clock24": "24-hour",
-    "reminderTimeLabel": "Reminder time"
+    "reminderTimeLabel": "Reminder time",
+    "sizeShort": {
+      "small": "S",
+      "medium": "M",
+      "large": "L",
+      "xlarge": "XL"
+    }
   },
   "onboarding": {
     "welcomeTitle": "Test what you know. Learn what you don't.",

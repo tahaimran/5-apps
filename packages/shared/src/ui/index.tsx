@@ -345,13 +345,16 @@ export function Toggle({ value, onValueChange, label, disabled }: { value: boole
   );
 }
 
-/** Radio group with a pill that slides under the selected option (a CSS transition, so it never sticks). */
+/**
+ * Radio group with a pill that slides under the selected option (a CSS transition, so it never sticks).
+ * An option may carry a longer spoken name (`accessibilityLabel`) when its visible label is short ("XL").
+ */
 export function Segmented<T extends string>({
   options,
   value,
   onChange,
 }: {
-  options: { value: T; label: string }[];
+  options: { value: T; label: string; accessibilityLabel?: string }[];
   value: T;
   onChange: (v: T) => void;
 }) {
@@ -393,7 +396,7 @@ export function Segmented<T extends string>({
             key={o.value}
             accessibilityRole="radio"
             accessibilityState={{ selected }}
-            accessibilityLabel={o.label}
+            accessibilityLabel={o.accessibilityLabel ?? o.label}
             onPress={() => onChange(o.value)}
             scaleTo={0.96}
             style={[styles.segment, { minHeight: touchTarget }]}

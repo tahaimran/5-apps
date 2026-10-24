@@ -215,7 +215,7 @@ export default function Quiz() {
           )}
           <View style={[styles.titleBox, { gap: spacing.xs }]}>
             {blitz ? <Zap size={18} color={x.gold} fill={x.gold} strokeWidth={2} /> : <CategoryIcon size={18} color="#FFFFFF" strokeWidth={2.4} />}
-            <AppText variant="h2" numberOfLines={1} style={styles.white}>
+            <AppText variant="h2" numberOfLines={1} style={[styles.white, styles.shrink]}>
               {title}
             </AppText>
           </View>
@@ -345,6 +345,7 @@ export default function Quiz() {
 const styles = StyleSheet.create({
   flex: { flex: 1 },
   grow: { flexGrow: 1 },
+  shrink: { flexShrink: 1 },
   row: { flexDirection: 'row', alignItems: 'center' },
   bar: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
   side: { width: 48, height: 48 },

@@ -54,6 +54,15 @@ describe('Segmented', () => {
     expect(onChange).toHaveBeenCalledWith('day');
   });
 
+  it('speaks a longer name for an option with a short visible label', async () => {
+    const onChange = jest.fn();
+    const ui = await render(themed(<Segmented options={[{ value: 'xl', label: 'XL', accessibilityLabel: 'Largest' }, ...options]} value="xl" onChange={onChange} />));
+    expect(ui.byLabel('Largest')[0].props.accessibilityState).toEqual({ selected: true });
+    expect(ui.byLabel('XL')).toHaveLength(0);
+    await ui.press('Largest');
+    expect(onChange).toHaveBeenCalledWith('xl');
+  });
+
   it('falls back to the first option for an unknown value', async () => {
     const ui = await render(themed(<Segmented options={[...options]} value={'month' as 'day'} onChange={jest.fn()} />, 'dark'));
     expect(ui.byLabel('Day')[0].props.accessibilityState).toEqual({ selected: false });

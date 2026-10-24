@@ -44,7 +44,7 @@ export const formatElapsed = (ms: number): string => {
 export default function Results() {
   const { sessionId } = useLocalSearchParams<{ sessionId: string }>();
   const r = useResult((s) => s.last);
-  const { colors, spacing, radius, mode, shadow } = useTheme();
+  const { colors, spacing, radius, mode, shadow, type } = useTheme();
   const x = extraColorsFor(mode);
   const xp = useProfile((s) => s.value.xp);
   const doubleXpStats = useStats((s) => s.value.doubleXpToday);
@@ -85,6 +85,8 @@ export default function Results() {
     else if (outcome !== 'busy') setAdNote(t(outcome === 'unavailable' ? 'ads.unavailable' : 'ads.notEarned'));
   };
   const nextMain = classic && r.nextLevel !== null;
+  // 1.6x the display size, so it follows the in-app text size like everything else.
+  const bigScore = { fontSize: Math.round(type.display.fontSize * 1.6), lineHeight: Math.round(type.display.lineHeight * 1.55) };
 
   return (
     <SafeAreaView style={[styles.flex, { backgroundColor: colors.background }]} edges={['top', 'bottom']}>
@@ -104,7 +106,7 @@ export default function Results() {
               </AppText>
             )}
             <View accessible accessibilityLabel={blitz ? t('results.blitzScoreLabel', { count: r.correct }) : t('results.scoreLabel', { correct: r.correct, total: r.total })}>
-              <AppText variant="display" style={[styles.white, styles.score]}>
+              <AppText variant="display" style={[styles.white, styles.score, bigScore]}>
                 {blitz ? String(r.correct) : `${r.correct}/${r.total}`}
               </AppText>
             </View>
@@ -131,7 +133,7 @@ export default function Results() {
 
         <View style={[styles.row, { gap: spacing.md }]}>
           <StatTile icon={Star} value={String(r.score)} label={t('results.points')} tint={colors.accent} bg={x.goldSoft} />
-          <StatTile icon={Sparkles} value={`+${r.xp}${r.doubled ? ` (${t('results.doubled')})` : ''}`} label={t('results.xp')} />
+          <StatTile icon={Sparkles} value={`+${r.xp}`} label={r.doubled ? t('results.xpDoubled') : t('results.xp')} />
         </View>
         <View style={[styles.row, { gap: spacing.md }]}>
           <StatTile icon={Target} value={`${Math.round(r.accuracy * 100)}%`} label={t('results.accuracy')} tint={colors.success} bg={x.successSoft} />
@@ -188,6 +190,6 @@ const styles = StyleSheet.create({
   center: { textAlign: 'center' },
   bold: { fontWeight: '700' },
   semi: { fontWeight: '600' },
-  score: { fontSize: 56, lineHeight: 62 },
+  score: { textAlign: 'center' },
   chip: { flexDirection: 'row', alignItems: 'center', gap: 6, paddingHorizontal: 14, paddingVertical: 6, marginTop: 4 },
 });

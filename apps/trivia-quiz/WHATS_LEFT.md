@@ -29,6 +29,7 @@ previewed in the Habits dev client (react-native-view-shot is optional there; sh
 13. [ ] Turn on "Remove animations" in phone settings: no shaking or bouncing, everything still works.
 14. [ ] Look at every screen in light and dark mode, and the icon on your home screen. Dark mode: answer pills and the question card sit lighter than the violet stage; the Segmented pills and switch thumbs are visible.
 14b. [ ] Settings → Clock: Phone / 12-hour / 24-hour changes the reminder time display and the wheel picker.
+14d. [ ] Light theme: open the Quit sheet and the reminder time picker; the system navigation bar (buttons or gesture pill) must stay visible over the white sheet (both modals draw under it with `navigationBarTranslucent`).
 14c. [ ] A reminder plays the soft chime with two short vibrations, shows the white bubble icon in violet, and reads warmly (no emoji).
 15. [ ] Tap "Remind me": allow notifications, and check one arrives at the chosen time and opens the Daily.
 16. [ ] Restart the phone and change the time zone: reminders still arrive; the streak does not count twice.

@@ -83,8 +83,8 @@ export default function Home() {
         <View accessible accessibilityLabel={t('home.levelLabel', { level: progress.level, title: levelTitle, into: progress.into, need: progress.need })} style={[styles.row, { gap: spacing.md }]}>
           <IconCircle icon={Trophy} tint={colors.accent} bg={x.goldSoft} size={44} />
           <View style={[styles.flex, { gap: 6 }]}>
-            <View style={[styles.row, { justifyContent: 'space-between' }]}>
-              <AppText variant="body" style={styles.bold}>
+            <View style={[styles.row, styles.wrap, { justifyContent: 'space-between', columnGap: spacing.sm }]}>
+              <AppText variant="body" style={[styles.bold, styles.shrink]}>
                 {t('home.level', { level: progress.level, title: levelTitle })}
               </AppText>
               <AppText variant="caption" style={{ color: colors.textMuted, fontWeight: '700' }}>
@@ -195,6 +195,8 @@ const styles = StyleSheet.create({
   row: { flexDirection: 'row', alignItems: 'center' },
   note: {},
   bold: { fontWeight: '700' },
+  shrink: { flexShrink: 1 },
+  wrap: { flexWrap: 'wrap' },
   square: { width: 48, height: 48, borderRadius: 16, alignItems: 'center', justifyContent: 'center' },
   play: { width: 44, height: 44, borderRadius: 22, alignItems: 'center', justifyContent: 'center' },
 });

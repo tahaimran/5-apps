@@ -27,7 +27,7 @@ export function OptionCard({
   tint?: string;
   bg?: string;
 }) {
-  const { colors, radius, spacing, shadow } = useTheme();
+  const { colors, radius, spacing, shadow, type } = useTheme();
   return (
     <PressableScale
       accessibilityRole="radio"
@@ -44,11 +44,11 @@ export function OptionCard({
     >
       {icon ? <IconCircle icon={icon} tint={tint} bg={bg} size={44} /> : null}
       <View style={styles.flex}>
-        <AppText variant="body" style={styles.title}>
+        <AppText style={[styles.title, type.bodyLarge]}>
           {label}
         </AppText>
         {detail ? (
-          <AppText variant="caption" style={{ color: colors.textMuted, fontSize: 14, lineHeight: 20 }}>
+          <AppText style={[type.body, { color: colors.textMuted }]}>
             {detail}
           </AppText>
         ) : null}
@@ -61,7 +61,7 @@ export function OptionCard({
 const styles = StyleSheet.create({
   card: { minHeight: 64, flexDirection: 'row', alignItems: 'center', borderWidth: 2.5 },
   flex: { flex: 1 },
-  title: { fontWeight: '700', fontSize: 17 },
+  title: { fontWeight: '700' },
   radio: { width: 24, height: 24, borderRadius: 12, borderWidth: 2, alignItems: 'center', justifyContent: 'center' },
   dot: { width: 12, height: 12, borderRadius: 6 },
 });

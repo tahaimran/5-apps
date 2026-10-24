@@ -71,7 +71,7 @@ export default function Settings() {
         <RowBlock>
           {label('settings.textSize')}
           <Segmented
-            options={TEXT_SCALES.map((scale) => ({ value: String(scale), label: t(`settings.size.${SIZE_KEY[scale]}`) }))}
+            options={TEXT_SCALES.map((scale) => ({ value: String(scale), label: t(`settings.sizeShort.${SIZE_KEY[scale]}`), accessibilityLabel: t(`settings.size.${SIZE_KEY[scale]}`) }))}
             value={String(settings.textScale)}
             onChange={(v) => update({ textScale: Number(v) as TextScale })}
           />

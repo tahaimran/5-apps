@@ -20,7 +20,7 @@ export interface GoldButtonProps {
  * where it carries the main move; everywhere else the shared Button is the action.
  */
 export function GoldButton({ label, onPress, icon: Icon, trailing, disabled, accessibilityHint, style }: GoldButtonProps) {
-  const { radius, spacing, mode, shadow } = useTheme();
+  const { radius, spacing, mode, shadow, type } = useTheme();
   const x = extraColorsFor(mode);
   const icon = Icon ? <Icon size={20} color={x.onGold} strokeWidth={2.6} /> : null;
   return (
@@ -35,7 +35,7 @@ export function GoldButton({ label, onPress, icon: Icon, trailing, disabled, acc
       style={[styles.pill, { borderRadius: radius.pill, gap: spacing.sm, backgroundColor: x.gold, opacity: disabled ? 0.5 : 1 }, shadow(2), style]}
     >
       {!trailing && icon}
-      <AppText variant="body" style={[styles.label, { color: x.onGold }]}>
+      <AppText style={[styles.label, { fontSize: type.bodyLarge.fontSize, lineHeight: type.bodyLarge.lineHeight, color: x.onGold }]}>
         {label}
       </AppText>
       {trailing && icon}
@@ -45,5 +45,5 @@ export function GoldButton({ label, onPress, icon: Icon, trailing, disabled, acc
 
 const styles = StyleSheet.create({
   pill: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', minHeight: 56, paddingHorizontal: 24 },
-  label: { fontWeight: '700', fontSize: 17 },
+  label: { fontWeight: '700' },
 });

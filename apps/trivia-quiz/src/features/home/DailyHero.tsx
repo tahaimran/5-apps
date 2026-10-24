@@ -68,7 +68,7 @@ export function DailyHero(p: DailyHeroProps) {
           {p.played ? (
             <View accessible accessibilityLabel={t('daily.scoreLabel', { score: p.score })}>
               <ProgressRing size={88} strokeWidth={9} progress={p.score / 10} color={x.gold} trackColor="#FFFFFF2E" duration={280}>
-                <AppText variant="h1" style={styles.white}>{`${p.score}/10`}</AppText>
+                <AppText variant="h2" numberOfLines={1} adjustsFontSizeToFit style={[styles.white, styles.ringText]}>{`${p.score}/10`}</AppText>
               </ProgressRing>
             </View>
           ) : (
@@ -118,6 +118,7 @@ const styles = StyleSheet.create({
   wrap: { flexWrap: 'wrap' },
   chip: { flexDirection: 'row', alignItems: 'center', gap: 6, paddingHorizontal: 12, paddingVertical: 6 },
   white: { color: '#FFFFFF' },
+  ringText: { fontWeight: '800', maxWidth: 64, textAlign: 'center' },
   bold: { fontWeight: '700' },
   semi: { fontWeight: '600' },
   frostButton: { minHeight: 52, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 24 },

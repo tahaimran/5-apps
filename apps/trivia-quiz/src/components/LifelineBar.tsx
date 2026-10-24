@@ -52,7 +52,7 @@ export function LifelineBar({ counts, enabled, shown, offer, onUse, onOffer }: L
             <AppText variant="caption" style={styles.name} numberOfLines={1}>
               {name}
             </AppText>
-            <View style={[styles.badge, { backgroundColor: usable ? x.gold : '#FFFFFF40' }]}>
+            <View style={[styles.badge, { backgroundColor: usable ? x.gold : x.stage[1], borderColor: x.stage[1] }]}>
               {offered ? (
                 <Play size={11} color={x.onGold} fill={x.onGold} strokeWidth={2.5} />
               ) : (
@@ -71,8 +71,9 @@ export function LifelineBar({ counts, enabled, shown, offer, onUse, onOffer }: L
 // White on the frosted stage is checked by the contrast test (the lightest stage stop under FROST).
 const styles = StyleSheet.create({
   row: { flexDirection: 'row' },
-  pill: { flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', paddingHorizontal: 10 },
+  pill: { flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', paddingHorizontal: 8 },
   name: { color: '#FFFFFF', fontWeight: '700', flexShrink: 1 },
-  badge: { minWidth: 20, height: 20, borderRadius: 10, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 4 },
+  // On the pill's top-right corner, outlined in the stage color so it reads as a sticker, not part of the text.
+  badge: { position: 'absolute', top: -6, right: -2, minWidth: 22, height: 22, borderRadius: 11, borderWidth: 2, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 4 },
   count: { fontWeight: '800', fontSize: 12, lineHeight: 16 },
 });
