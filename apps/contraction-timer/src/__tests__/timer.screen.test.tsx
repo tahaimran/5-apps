@@ -391,6 +391,11 @@ describe('Night mode, one tap from the Timer (plan F16)', () => {
     await ui.press('Night mode');
     expect(getThemePref()).toBe('night');
     expect(ui.byLabel('Night mode, on')).toHaveLength(1);
+    // On, the button is a dim red ring on the soft fill, never a bright filled disc (it would glare at 3am).
+    const { StyleSheet } = require('react-native') as typeof import('react-native');
+    const on = StyleSheet.flatten(ui.byLabel('Night mode, on')[0].props.style);
+    expect(on).toMatchObject({ borderWidth: 2, borderColor: palette['high-contrast'].border, backgroundColor: palette['high-contrast'].primarySoft });
+    expect(ui.byLabel('Night mode, on')[0].props.accessibilityState).toMatchObject({ selected: true });
     await ui.press('Night mode, on');
     expect(getThemePref()).toBe('dark');
     void toggleNight;

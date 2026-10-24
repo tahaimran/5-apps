@@ -209,13 +209,19 @@ export interface IconButtonProps {
   disabled?: boolean;
   /** An on/off button (Night mode, Partner mode): drawn solid while on and announced as selected. */
   selected?: boolean;
+  /**
+   * How "on" looks: `solid` (the default) fills the button; `ring` keeps the soft fill and adds a dim
+   * outline, for a switch that must stay quiet when on (a red Night mode at 3am).
+   */
+  selectedLook?: 'solid' | 'ring';
   style?: StyleProp<ViewStyle>;
 }
 
-export function IconButton({ icon: Icon, label, onPress, variant = 'plain', color, size = 22, disabled, selected, style }: IconButtonProps) {
+export function IconButton({ icon: Icon, label, onPress, variant = 'plain', color, size = 22, disabled, selected, selectedLook = 'solid', style }: IconButtonProps) {
   const { colors, touchTarget } = useTheme();
-  const look = selected ? 'solid' : variant;
-  const fg = (selected ? undefined : color) ?? (look === 'solid' ? colors.onPrimary : look === 'tonal' ? colors.primary : colors.text);
+  const ring = !!selected && selectedLook === 'ring';
+  const look = ring ? 'tonal' : selected ? 'solid' : variant;
+  const fg = ring ? colors.textMuted : ((selected ? undefined : color) ?? (look === 'solid' ? colors.onPrimary : look === 'tonal' ? colors.primary : colors.text));
   const bg = look === 'solid' ? colors.primary : look === 'tonal' ? colors.primarySoft : 'transparent';
   return (
     <PressableScale
@@ -229,6 +235,7 @@ export function IconButton({ icon: Icon, label, onPress, variant = 'plain', colo
       style={[
         styles.center,
         { width: touchTarget, height: touchTarget, borderRadius: touchTarget / 2, backgroundColor: bg, opacity: disabled ? 0.35 : 1 },
+        ring && { borderWidth: 2, borderColor: colors.border },
         style,
       ]}
     >

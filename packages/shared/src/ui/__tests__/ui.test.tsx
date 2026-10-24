@@ -1,8 +1,8 @@
 import { resetDisk } from '../../testing/native';
 import { act } from 'react';
-import { Text } from 'react-native';
+import { StyleSheet, Text } from 'react-native';
 import { cleanup, render } from '../../testing/render';
-import { ThemeProvider } from '../../theme';
+import { defaultPalettes, ThemeProvider } from '../../theme';
 import { Button, Card, hideToast, IconButton, PressableScale, ProgressRing, showToast, ToastHost } from '../index';
 
 const Icon = () => null;
@@ -70,6 +70,14 @@ describe('IconButton', () => {
     expect(node.props.accessibilityState).toEqual({ disabled: false, selected: true });
     const off = await render(themed(<IconButton icon={Icon} label="Partner mode" selected={false} variant="tonal" onPress={jest.fn()} />));
     expect(off.byLabel('Partner mode')[0].props.accessibilityState).toEqual({ disabled: false, selected: false });
+  });
+
+  it('can show "on" as a dim ring instead of a solid fill, still announced as selected', async () => {
+    const ui = await render(themed(<IconButton icon={Icon} label="Night mode" selected selectedLook="ring" onPress={jest.fn()} />));
+    const node = ui.byLabel('Night mode')[0];
+    expect(node.props.accessibilityState).toEqual({ disabled: false, selected: true });
+    const flat = StyleSheet.flatten(node.props.style);
+    expect(flat).toMatchObject({ borderWidth: 2, borderColor: defaultPalettes.light.border, backgroundColor: defaultPalettes.light.primarySoft });
   });
 });
 

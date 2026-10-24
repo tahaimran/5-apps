@@ -33,7 +33,8 @@ export function TimerHeader({ hideTools }: { hideTools?: boolean }) {
       <AppText accessibilityRole="header" style={[type.headline, styles.flex, { color: colors.text, fontWeight: '800' }]}>
         {t('timer.title')}
       </AppText>
-      <IconButton icon={Moon} variant="tonal" selected={night} label={t(night ? 'timer.nightModeOn' : 'timer.nightMode')} onPress={() => toggleNight()} />
+      {/* On, it stays a dim red ring: a bright filled disc would be the loudest thing on a Night screen. */}
+      <IconButton icon={Moon} variant="tonal" selected={night} selectedLook="ring" label={t(night ? 'timer.nightModeOn' : 'timer.nightMode')} onPress={() => toggleNight()} />
       <IconButton
         icon={Users}
         variant="tonal"

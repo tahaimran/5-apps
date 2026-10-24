@@ -280,7 +280,7 @@ nothing shifts as they tick. Every screen is checked at system font scale 1.3 an
 
 ### The hero: Timer screen
 The page carries a soft wash (mint at the top while resting, warming to peach while a contraction runs; a 280 ms
-crossfade). Top row: title, Night toggle, Partner toggle, History. A status pill says what is happening ("Tap when
+crossfade). Top row: title, Night toggle (when on, a dim red ring rather than a filled disc, so it never glares at 3am), Partner toggle, History. A status pill says what is happening ("Tap when
 a contraction begins" / "Contraction in progress" / "Resting · 3:12 since last started"). Above the button, the
 running time in big tabular digits. The 220dp button sits in the lower-middle third: a teal gradient disc with a
 timer icon and **Start**, or a coral disc with a square icon and **Stop**; a thin track ring circles it, and while a
