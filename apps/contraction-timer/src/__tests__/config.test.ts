@@ -49,10 +49,26 @@ describe('store-facing config', () => {
     expect(build.android.compileSdkVersion).toBeGreaterThanOrEqual(build.android.targetSdkVersion);
   });
   it('registers the native plugins the built features need', () => {
-    for (const name of ['expo-router', 'react-native-google-mobile-ads', 'expo-notifications', 'expo-sharing', 'expo-splash-screen']) expect(plugins).toContain(name);
+    for (const name of ['expo-router', 'react-native-google-mobile-ads', 'expo-notifications', 'expo-sharing', 'expo-splash-screen', 'expo-font', 'expo-audio', 'expo-navigation-bar']) {
+      expect(plugins).toContain(name);
+    }
   });
-  it('has no audio plugin: the app plays no sounds, so it cannot pick up the microphone permission that library adds', () => {
-    expect(plugins).not.toContain('expo-audio');
+  it('plays short UI sounds without a microphone or background playback (and blocks what expo-audio adds anyway)', () => {
+    expect(pluginOptions('expo-audio')![1]).toEqual({ microphonePermission: false, recordAudioAndroid: false, enableBackgroundPlayback: false });
+    for (const p of ['RECORD_AUDIO', 'FOREGROUND_SERVICE', 'FOREGROUND_SERVICE_MEDIA_PLAYBACK']) expect(blocked).toContain(`android.permission.${p}`);
+  });
+  it('embeds Figtree and Bricolage as font families from the shared package (plan §7)', () => {
+    const fonts = (pluginOptions('expo-font')![1] as { android: { fonts: { fontFamily: string; fontDefinitions: { path: string; weight: number }[] }[] } }).android.fonts;
+    expect(fonts.map((f) => f.fontFamily)).toEqual(['Figtree', 'Bricolage']);
+    for (const f of fonts) {
+      for (const d of f.fontDefinitions) expect(require('fs').existsSync(require('path').resolve(__dirname, '../..', d.path))).toBe(true);
+    }
+  });
+  it('gives notifications a white small icon, the brand color and the shared chime (plan §10)', () => {
+    const n = pluginOptions('expo-notifications')![1] as { icon: string; color: string; sounds: string[] };
+    expect(n.color).toBe('#2A8079');
+    for (const file of [n.icon, ...n.sounds]) expect(require('fs').existsSync(require('path').resolve(__dirname, '../..', file))).toBe(true);
+    expect(n.sounds.map((f) => f.split('/').pop())).toEqual(['reminder.wav']);
   });
   it('uses a test AdMob app id until a real one is set in EAS', () => {
     const ads = pluginOptions('react-native-google-mobile-ads')![1] as { androidAppId: string };
@@ -60,7 +76,7 @@ describe('store-facing config', () => {
     if (!process.env.EXPO_PUBLIC_ADMOB_ANDROID_APP_ID) expect(ads.androidAppId).toBe('ca-app-pub-3940256099942544~3347511713');
   });
   it('has the icon set, with the adaptive layers in files that exist', () => {
-    for (const file of [config.icon, config.android?.adaptiveIcon?.foregroundImage, config.android?.adaptiveIcon?.monochromeImage]) {
+    for (const file of [config.icon, config.android?.adaptiveIcon?.foregroundImage, config.android?.adaptiveIcon?.backgroundImage, config.android?.adaptiveIcon?.monochromeImage]) {
       if (!file) continue;
       expect(require('fs').existsSync(require('path').resolve(__dirname, '../..', file))).toBe(true);
     }
@@ -69,8 +85,9 @@ describe('store-facing config', () => {
   });
   it('sets the splash colors to the cream and dark backgrounds, not white', () => {
     const splash = pluginOptions('expo-splash-screen')![1] as { backgroundColor: string; dark: { backgroundColor: string } };
-    expect(splash.backgroundColor).toBe('#FBF7F4');
-    expect(splash.dark.backgroundColor).toBe('#141519');
+    const { palette } = require('@/theme/tokens');
+    expect(splash.backgroundColor).toBe(palette.light.background);
+    expect(splash.dark.backgroundColor).toBe(palette.dark.background);
   });
 });
 

@@ -132,7 +132,7 @@ adb shell dumpsys backup | grep -i contractiontimer                         # ba
 ```
 
 ## 5. Play Console content
-Only the icon and the feature graphic exist (made by `scripts/make-assets.mjs`; the feature graphic is a drawing, not a screenshot).
+Only the icon and the feature graphic exist (made by `scripts/generate-icons.cjs` with resvg from a scratch folder; the feature graphic is a drawing of the Night-mode Timer, not a screenshot).
 | Item | Where | Status |
 |---|---|---|
 | Listing title and short description | `ASO.md` (limits checked by a test) | ready, **but see "ASO claims" in §6** |

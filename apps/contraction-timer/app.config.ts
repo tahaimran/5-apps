@@ -22,8 +22,9 @@ const config: ExpoConfig = {
     allowBackup: false,
     adaptiveIcon: {
       foregroundImage: './assets/adaptive-icon-foreground.png',
+      backgroundImage: './assets/adaptive-icon-background.png',
       monochromeImage: './assets/adaptive-icon-monochrome.png',
-      backgroundColor: '#FBF7F4',
+      backgroundColor: '#FBF6F2',
     },
     // POST_NOTIFICATIONS: the optional kick reminder (asked for only when the person turns it on).
     // VIBRATE: haptics. AD_ID: declared for AdMob. The ads SDK adds INTERNET, ACCESS_NETWORK_STATE and WAKE_LOCK, and
@@ -37,6 +38,10 @@ const config: ExpoConfig = {
       'android.permission.SCHEDULE_EXACT_ALARM',
       'android.permission.USE_EXACT_ALARM',
       'android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS',
+      // expo-audio adds these even with the microphone option off; short UI sounds need none of them.
+      'android.permission.RECORD_AUDIO',
+      'android.permission.FOREGROUND_SERVICE',
+      'android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK',
     ],
   },
   plugins: [
@@ -45,15 +50,55 @@ const config: ExpoConfig = {
       'react-native-google-mobile-ads',
       { androidAppId: process.env.EXPO_PUBLIC_ADMOB_ANDROID_APP_ID ?? TEST_ANDROID_APP_ID },
     ],
-    ['expo-notifications', { color: '#3E9C95' }],
+    [
+      'expo-notifications',
+      {
+        icon: './assets/notification-icon.png',
+        color: '#2A8079',
+        // Bundled into res/raw; the kick reminder's chime channel refers to it by file name (src/notifications/index.ts).
+        sounds: ['../../packages/shared/assets/sounds/reminder.wav'],
+      },
+    ],
+    // Edge-to-edge without the OS's translucent strip behind 3-button navigation: the tab bar and
+    // screen colors run under it, and the root sets the button color from the app's own theme.
+    ['expo-navigation-bar', { enforceContrast: false }],
+    // Short UI sounds only (off by default): no microphone and no background playback service.
+    ['expo-audio', { microphonePermission: false, recordAudioAndroid: false, enableBackgroundPlayback: false }],
+    [
+      'expo-font',
+      {
+        // Embedded as Android font families, so fontFamily 'Figtree' + fontWeight picks the real file
+        // and text never flashes in a fallback font.
+        android: {
+          fonts: [
+            {
+              fontFamily: 'Figtree',
+              fontDefinitions: [
+                { path: '../../packages/shared/assets/fonts/Figtree_400Regular.ttf', weight: 400 },
+                { path: '../../packages/shared/assets/fonts/Figtree_500Medium.ttf', weight: 500 },
+                { path: '../../packages/shared/assets/fonts/Figtree_600SemiBold.ttf', weight: 600 },
+                { path: '../../packages/shared/assets/fonts/Figtree_700Bold.ttf', weight: 700 },
+              ],
+            },
+            {
+              fontFamily: 'Bricolage',
+              fontDefinitions: [
+                { path: '../../packages/shared/assets/fonts/BricolageGrotesque_600SemiBold.ttf', weight: 600 },
+                { path: '../../packages/shared/assets/fonts/BricolageGrotesque_800ExtraBold.ttf', weight: 800 },
+              ],
+            },
+          ],
+        },
+      },
+    ],
     'expo-sharing',
     [
       'expo-splash-screen',
       {
         image: './assets/splash-icon.png',
         imageWidth: 200,
-        backgroundColor: '#FBF7F4',
-        dark: { image: './assets/splash-icon.png', backgroundColor: '#141519' },
+        backgroundColor: '#FBF6F2',
+        dark: { image: './assets/splash-icon.png', backgroundColor: '#121419' },
       },
     ],
     ['expo-build-properties', { android: { compileSdkVersion: 36, targetSdkVersion: 36 } }],
