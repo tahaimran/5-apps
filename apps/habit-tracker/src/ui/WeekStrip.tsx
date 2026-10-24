@@ -1,5 +1,4 @@
-import { useRef } from 'react';
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
 import { PressableScale, ProgressRing } from '@shared/ui';
@@ -19,18 +18,10 @@ const RING = 38;
 
 /** Mon–Sun with a small completion ring around each date; the selected day is a filled pill. */
 export function WeekStrip({ days, today, selected, progress, onSelect }: WeekStripProps) {
-  const { colors, spacing, radius, type, touchTarget } = useTheme();
-  const scroll = useRef<ScrollView>(null);
-  const cell = touchTarget + spacing.xs;
+  const { colors, radius, type, touchTarget } = useTheme();
   return (
-    // Each day keeps at least a 48dp touch target; on narrow phones the strip scrolls a little.
-    <ScrollView
-      ref={scroll}
-      horizontal
-      showsHorizontalScrollIndicator={false}
-      contentContainerStyle={[styles.strip, { gap: spacing.xs }]}
-      onContentSizeChange={() => scroll.current?.scrollTo({ x: Math.max(0, days.indexOf(selected) * cell - cell * 2), animated: false })}
-    >
+    // A plain row: seven 48dp days fit even a 360dp phone, and a scroll view clipped the first ring.
+    <View style={styles.strip}>
       {days.map((day) => {
         const date = parseDayKey(day);
         const isFuture = day > today;
@@ -78,12 +69,12 @@ export function WeekStrip({ days, today, selected, progress, onSelect }: WeekStr
           </PressableScale>
         );
       })}
-    </ScrollView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  strip: { flexGrow: 1 },
+  strip: { flexDirection: 'row', justifyContent: 'space-between', gap: 2 },
   day: { flex: 1, alignItems: 'center', justifyContent: 'center', gap: 4, paddingVertical: 6 },
   dot: { width: 5, height: 5, borderRadius: 3 },
 });

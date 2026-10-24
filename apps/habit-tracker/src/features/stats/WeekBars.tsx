@@ -29,7 +29,8 @@ export function WeekBars({ bars, today }: { bars: DayBar[]; today: DayKey }) {
       {bars.map((bar, i) => {
         const date = parseDayKey(bar.day);
         const dayName = date.toLocaleDateString(undefined, { weekday: 'long' });
-        const ratio = bar.total === 0 ? 0 : Math.max(0.05, bar.ratio);
+        // An empty day stays empty; any progress gets at least a visible stub.
+        const ratio = bar.done === 0 ? 0 : Math.max(0.08, bar.ratio);
         const isToday = bar.day === today;
         return (
           <View

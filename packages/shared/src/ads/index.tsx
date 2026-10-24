@@ -189,7 +189,9 @@ export function NativeAdCard({ placement, currentApp }: NativeAdCardProps) {
 }
 
 const styles = StyleSheet.create({
-  banner: { alignItems: 'center', justifyContent: 'center', maxHeight: 60 },
+  // No height cap here: the ad view sizes itself (BannerAd maxHeight limits the request), and a capped
+  // wrapper let a taller ad spill over the content above and under the tab bar below.
+  banner: { alignItems: 'center', justifyContent: 'center' },
   native: { borderWidth: StyleSheet.hairlineWidth },
   badge: { alignSelf: 'flex-start', paddingHorizontal: 8, paddingVertical: 2 },
   badgeText: { fontSize: 12, fontWeight: '700' },

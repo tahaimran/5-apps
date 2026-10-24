@@ -1,4 +1,5 @@
-import { StyleSheet, View } from 'react-native';
+import { Pressable, StyleSheet, View, type PressableProps } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Tabs } from 'expo-router';
 import CalendarCheck from 'lucide-react-native/icons/calendar-check';
 import ChartColumn from 'lucide-react-native/icons/chart-column';
@@ -15,7 +16,8 @@ const icons: Record<'index' | 'stats' | 'settings', IconComponent> = {
 };
 
 export default function TabsLayout() {
-  const { colors, touchTarget, shadow } = useTheme();
+  const { colors, shadow } = useTheme();
+  const insets = useSafeAreaInsets();
   const tab = (name: keyof typeof icons, title: string) => {
     const Icon = icons[name];
     return (
@@ -39,14 +41,19 @@ export default function TabsLayout() {
       screenOptions={{
         headerShown: false,
         animation: 'none',
+        // No Android ripple: the active pill is the feedback, and a borderless ripple spilled over the bar.
+        tabBarButton: ({ android_ripple: _ripple, ...props }) => <Pressable {...(props as PressableProps)} />,
         tabBarActiveTintColor: colors.primary,
         tabBarInactiveTintColor: colors.textMuted,
-        tabBarLabelStyle: { fontFamily: fonts.body, fontWeight: '600', fontSize: 12 },
+        // An explicit line height keeps descenders (y, g) from clipping under the pill icon.
+        tabBarLabelStyle: { fontFamily: fonts.body, fontWeight: '600', fontSize: 12, lineHeight: 16, marginTop: 2 },
+        tabBarIconStyle: { height: 32 },
         tabBarStyle: {
           backgroundColor: colors.surface,
           borderTopWidth: 0,
-          minHeight: touchTarget + 20,
-          paddingTop: 6,
+          height: 72 + insets.bottom,
+          paddingTop: 8,
+          paddingBottom: insets.bottom + 8,
           ...shadow(2),
         },
       }}
