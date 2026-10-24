@@ -35,7 +35,8 @@ describe('store graphics', () => {
 
 describe('reminder sound', () => {
   it('is a short PCM wav', () => {
-    const buf = fs.readFileSync(path.join(ROOT, 'assets/sounds/drop.wav'));
+    // The shared chime (packages/shared/scripts/generate-sounds.mjs), bundled by the notifications plugin.
+    const buf = fs.readFileSync(path.join(ROOT, '../../packages/shared/assets/sounds/reminder.wav'));
     expect(buf.subarray(0, 4).toString()).toBe('RIFF');
     expect(buf.subarray(8, 12).toString()).toBe('WAVE');
     expect(buf.length).toBeLessThan(100_000);

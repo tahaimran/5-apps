@@ -4,16 +4,21 @@ import { t } from '@shared/i18n';
 import { formatAmount } from '@/domain/units';
 import { preferredCup, useSettings } from '@/store/settings';
 
-export const CHANNEL_NORMAL = 'reminders';
+// Android fixes a channel's sound when it is first created, so the chime needed a new id; the
+// first version's drop-sound channel is deleted (see setupChannels).
+export const CHANNEL_NORMAL = 'reminders_chime';
+export const LEGACY_CHANNEL = 'reminders';
 export const CHANNEL_GENTLE = 'reminders_gentle';
 export const CATEGORY = 'WATER_REMINDER';
 export const ACTION_ADD = 'ADD_CUP';
 export const ACTION_SNOOZE = 'SNOOZE';
+/** Two soft taps: noticeable in a pocket, never alarming. */
+export const GENTLE_VIBRATION = [0, 160, 120, 160];
 
 let channelsDone: Promise<void> | null = null;
 
 /**
- * Android channels (plan §10.1): "Water reminders" (high, with the drop sound and a short
+ * Android channels (plan §10.1): "Water reminders" (high, with the shared chime and a gentle
  * vibration) and "Gentle reminders" (low, silent). Needs to run before the first permission
  * request, so the first channel creation already has the sound and importance above.
  */
@@ -23,15 +28,18 @@ export function setupChannels(): Promise<void> {
       id: CHANNEL_NORMAL,
       name: t('notify.channelNormal'),
       importance: Notifications.AndroidImportance.HIGH,
-      sound: 'drop.wav',
-      vibrationPattern: [0, 120, 80, 120],
+      // reminder.wav is bundled by the expo-notifications plugin (app.config.ts).
+      sound: 'reminder.wav',
+      vibrationPattern: GENTLE_VIBRATION,
       lockscreenVisibility: Notifications.AndroidNotificationVisibility.PUBLIC,
     },
     { id: CHANNEL_GENTLE, name: t('notify.channelGentle'), importance: Notifications.AndroidImportance.LOW, sound: null },
-  ]).catch((e: unknown) => {
-    channelsDone = null; // retry on the next call instead of remembering the failure
-    throw e;
-  });
+  ])
+    .then(() => Notifications.deleteNotificationChannelAsync(LEGACY_CHANNEL).catch(() => undefined))
+    .catch((e: unknown) => {
+      channelsDone = null; // retry on the next call instead of remembering the failure
+      throw e;
+    });
   return channelsDone;
 }
 

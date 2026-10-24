@@ -53,7 +53,7 @@ describe('store-facing config', () => {
   it('bundles the reminder sound the channel uses', () => {
     const notifications = pluginOptions('expo-notifications')![1] as { sounds: string[] };
     for (const file of notifications.sounds) expect(require('fs').existsSync(require('path').resolve(__dirname, '../..', file))).toBe(true);
-    expect(notifications.sounds.some((s) => s.endsWith('drop.wav'))).toBe(true);
+    expect(notifications.sounds.some((s) => s.endsWith('reminder.wav'))).toBe(true);
   });
   it('embeds the shared fonts, all of which exist on disk', () => {
     const font = pluginOptions('expo-font')![1] as { android: { fonts: { fontFamily: string; fontDefinitions: { path: string }[] }[] } };

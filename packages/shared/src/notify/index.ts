@@ -70,6 +70,13 @@ export async function initNotifications(
   }
 }
 
+/**
+ * Internal callers (permission, scheduling) need the handler and a channel. The generic default
+ * channel is created only when the app declared none of its own, so an app that renamed its
+ * channel (e.g. for a new sound) never gets a stray "Reminders" channel back.
+ */
+const ready = () => initNotifications(channelsCreated.size > 0 ? [] : undefined);
+
 const confirm = (reason: PermissionReason) =>
   new Promise<boolean>((resolve) => {
     Alert.alert(
@@ -99,7 +106,7 @@ export async function getNotificationPermission(): Promise<PermissionState> {
  * triggers the system permission prompt. Returns whether notifications are allowed.
  */
 export async function ensureNotificationPermission(reasonCopy: string | PermissionReason | null): Promise<boolean> {
-  await initNotifications();
+  await ready();
   const current = await Notifications.getPermissionsAsync();
   if (current.granted) return true;
   if (!current.canAskAgain) return false;
@@ -119,7 +126,7 @@ export async function scheduleDaily(
   content: NotificationContent,
   channelId: string = DEFAULT_CHANNEL_ID,
 ): Promise<void> {
-  await initNotifications();
+  await ready();
   await cancel(id);
   await Notifications.scheduleNotificationAsync({
     identifier: id,
@@ -142,7 +149,7 @@ export async function scheduleSeries(
   entries: SeriesEntry[],
   channelId: string = DEFAULT_CHANNEL_ID,
 ): Promise<number> {
-  await initNotifications();
+  await ready();
   await cancel(id);
   const now = Date.now();
   let count = 0;

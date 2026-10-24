@@ -235,6 +235,18 @@ describe('scheduleSeries', () => {
     expect(cancelled).not.toContain('other:0');
     expect(cancelled).not.toContain('ss:0');
   });
+  it('creates the generic channel only for an app that declared none of its own', async () => {
+    const restore = withOS('android');
+    const fresh = load();
+    await fresh.scheduleSeries('s', [{ at: at(20), content: { title: 'x' } }]);
+    expect(mockN.channel).toHaveBeenCalledWith('reminders', expect.anything());
+    mockN.channel.mockClear();
+    const own = load();
+    await own.initNotifications([{ id: 'reminders_chime', name: 'Water reminders' }]);
+    await own.scheduleSeries('s', [{ at: at(20), content: { title: 'x' } }], 'reminders_chime');
+    expect(mockN.channel.mock.calls.map((c) => c[0])).toEqual(['reminders_chime']);
+    restore.restore();
+  });
   it('an empty list just clears the series', async () => {
     mockN.scheduled = [{ identifier: 's:0' }];
     expect(await load().scheduleSeries('s', [])).toBe(0);

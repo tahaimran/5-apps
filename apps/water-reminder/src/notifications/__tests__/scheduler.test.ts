@@ -30,9 +30,12 @@ beforeAll(() => {
 afterAll(() => jest.restoreAllMocks());
 
 describe('channels and action buttons (plan §10.1)', () => {
-  it('creates the loud and the gentle channel', async () => {
+  it('creates the chime and the gentle channel, and removes the old drop-sound channel', async () => {
     await setupChannels();
-    expect(mockNotifState.channels.get('reminders')).toMatchObject({ name: 'Water reminders', importance: 4, sound: 'drop.wav', vibrationPattern: [0, 120, 80, 120], lockscreenVisibility: 1 });
+    expect(mockNotifState.channels.get('reminders_chime')).toMatchObject({ name: 'Water reminders', importance: 4, sound: 'reminder.wav', vibrationPattern: [0, 160, 120, 160], lockscreenVisibility: 1 });
+    expect(mockNotifState.deletedChannels).toEqual(['reminders']);
+    // The shared scheduler must not bring a generic channel back under the old id.
+    expect(mockNotifState.channels.has('reminders')).toBe(false);
     expect(mockNotifState.channels.get('reminders_gentle')).toMatchObject({ name: 'Gentle reminders', importance: 2, sound: null });
   });
   it('labels the buttons with the preferred cup and the snooze time, and updates them when those change', async () => {
@@ -62,15 +65,15 @@ describe('rescheduleReminders (F4)', () => {
       expect(minute).toBeGreaterThanOrEqual(450);
       expect(minute).toBeLessThanOrEqual(1350);
     }
-    expect(mockNotifState.pending.get('reminder:0')?.trigger).toMatchObject({ type: 'date', channelId: 'reminders' });
+    expect(mockNotifState.pending.get('reminder:0')?.trigger).toMatchObject({ type: 'date', channelId: 'reminders_chime' });
   });
   it('gives each reminder a friendly line, the action buttons, and ends with the soft "misses you" message', async () => {
     await rescheduleReminders();
     const first = mockNotifState.pending.get('reminder:0')!;
-    expect(first.content).toMatchObject({ title: '💧 Time for a sip!', categoryIdentifier: 'WATER_REMINDER' });
+    expect(first.content).toMatchObject({ title: 'Time for a sip', categoryIdentifier: 'WATER_REMINDER' });
     expect(String(first.content.body)).toMatch(/\w/);
     const last = mockNotifState.pending.get('reminder:29')!;
-    expect(last.content).toMatchObject({ title: '🌱 Your plant misses you' });
+    expect(last.content).toMatchObject({ title: 'Your plant misses you' });
     expect(last.content.categoryIdentifier).toBeUndefined();
   });
   it('uses the silent channel for the gentle style', async () => {

@@ -76,7 +76,7 @@ describe('the full flow (plan §6)', () => {
 
     expect(ui.texts()).toContain("Want a gentle nudge when it's time?");
     expect(ui.texts()).toContain("We'll send about 16 reminders between 7:00 AM and 11:00 PM. You can log right from the notification.");
-    expect(ui.texts()).toContain('💧 Time for a sip!');
+    expect(ui.texts()).toContain('Time for a sip');
     await ui.press('Turn on reminders');
 
     expect(ui.texts()).toContain("Let's water your plant for the first time.");

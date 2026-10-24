@@ -41,8 +41,14 @@ const config: ExpoConfig = {
       'react-native-google-mobile-ads',
       { androidAppId: process.env.EXPO_PUBLIC_ADMOB_ANDROID_APP_ID ?? TEST_ANDROID_APP_ID },
     ],
-    // `drop.wav` is the reminder sound of the "Water reminders" channel.
-    ['expo-notifications', { sounds: ['./assets/sounds/drop.wav'], color: '#2B9FE6' }],
+    [
+      'expo-notifications',
+      {
+        color: '#136CAD',
+        // Bundled into res/raw; the "Water reminders" channel refers to it by file name (src/notifications/setup.ts).
+        sounds: ['../../packages/shared/assets/sounds/reminder.wav'],
+      },
+    ],
     'expo-background-task',
     // Edge-to-edge without the OS's translucent strip behind 3-button navigation: the tab bar and
     // screen colors run under it, and the root sets the button color from the app's own theme.

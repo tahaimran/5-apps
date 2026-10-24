@@ -1,6 +1,6 @@
 import { defaultReminders } from '../defaults';
 import { dayKeyFor, minuteOfDay } from '../dayKey';
-import { MAX_PENDING, planReminders, planSnooze, type PlanInput } from '../reminderPlan';
+import { MAX_PENDING, MESSAGE_COUNT, planReminders, planSnooze, type PlanInput } from '../reminderPlan';
 
 const at = (d: number, h: number, mi = 0, mo = 10) => new Date(2026, mo - 1, d, h, mi);
 const input = (over: Partial<PlanInput> = {}): PlanInput => ({
@@ -92,6 +92,12 @@ describe('planReminders (plan §10.2)', () => {
   it('rotates through the friendly lines', () => {
     const lines = new Set(planReminders(input()).map((p) => p.messageIndex));
     expect(lines.size).toBeGreaterThan(3);
+  });
+  it('has a line in en.json for every index it can pick, and no emoji standing in for an icon', () => {
+    const messages = require('../../i18n/en.json').notify.messages as Record<string, string>;
+    expect(Object.keys(messages)).toHaveLength(MESSAGE_COUNT);
+    // Printable ASCII only (space … tilde): the branded droplet icon replaces the old emoji.
+    for (let i = 0; i < MESSAGE_COUNT; i++) expect(messages[String(i)]).toMatch(/^[ -~]+$/);
   });
   it('stays under the pending cap even with 16 slots a day', () => {
     const plan = planReminders(input({ goalMl: 4500, cupMl: 150 }));

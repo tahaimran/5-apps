@@ -6,7 +6,7 @@ import type { DayKey, MinuteOfDay, ReminderSettings } from './types';
 export const HORIZON_DAYS = 3;
 /** 16 slots x 3 days; far below Android's 500-alarm cap. */
 export const MAX_PENDING = 48;
-export const MESSAGE_COUNT = 8;
+export const MESSAGE_COUNT = 16;
 
 export interface PlannedReminder {
   at: Date;

@@ -78,6 +78,7 @@ export const mockNotifState = {
   categories: new Map<string, { identifier: string; buttonTitle: string }[]>(),
   channels: new Map<string, Record<string, unknown>>(),
   dismissed: [] as string[],
+  deletedChannels: [] as string[],
   scheduleCalls: 0,
 };
 export const resetNotifMock = () => {
@@ -86,6 +87,7 @@ export const resetNotifMock = () => {
   mockNotifState.categories.clear();
   mockNotifState.channels.clear();
   mockNotifState.dismissed.length = 0;
+  mockNotifState.deletedChannels.length = 0;
   mockNotifState.scheduleCalls = 0;
 };
 
@@ -102,6 +104,7 @@ jest.mock('expo-notifications', () => ({
   },
   setNotificationCategoryAsync: async (id: string, actions: { identifier: string; buttonTitle: string }[]) => void mockNotifState.categories.set(id, actions),
   setNotificationChannelAsync: async (id: string, c: Record<string, unknown>) => void mockNotifState.channels.set(id, c),
+  deleteNotificationChannelAsync: async (id: string) => void mockNotifState.deletedChannels.push(id),
   setNotificationHandler: () => undefined,
   getAllScheduledNotificationsAsync: async () => [...mockNotifState.pending.values()],
   cancelScheduledNotificationAsync: async (id: string) => void mockNotifState.pending.delete(id),

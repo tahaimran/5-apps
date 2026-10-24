@@ -392,9 +392,10 @@ Writes: logging appends to the month shard, updates `daySummaries[dayKey]`, then
 
 ### 10.1 Channel & categories
 ```ts
-await Notifications.setNotificationChannelAsync('reminders', {
-  name: 'Water reminders', importance: AndroidImportance.HIGH, sound: 'drop.wav',
-  vibrationPattern: [0, 120, 80, 120], lockscreenVisibility: PUBLIC,
+// New id: Android fixes a channel's sound at creation; the v1 'reminders' (drop.wav) channel is deleted.
+await Notifications.setNotificationChannelAsync('reminders_chime', {
+  name: 'Water reminders', importance: AndroidImportance.HIGH, sound: 'reminder.wav',
+  vibrationPattern: [0, 160, 120, 160], lockscreenVisibility: PUBLIC,
 });
 await Notifications.setNotificationChannelAsync('reminders_gentle', { name: 'Gentle reminders', importance: AndroidImportance.LOW, sound: null });
 await Notifications.setNotificationCategoryAsync('WATER_REMINDER', [
@@ -539,7 +540,7 @@ apps/water-reminder/
 │  ├─ components/               # ProgressRing, Plant, CupChip, BarChart, StreakChip, EmptyState
 │  ├─ i18n/en.json …
 │  └─ theme/tokens.ts
-├─ assets/ (lottie/, images/, sounds/drop.wav, fonts/)
+├─ assets/ (lottie/, images/, fonts/ (sounds and fonts come from packages/shared/assets)
 └─ __tests__/ + .maestro/
 ```
 

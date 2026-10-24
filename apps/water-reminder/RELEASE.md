@@ -65,7 +65,7 @@ minutes ago (the first reminder is wake + 30 min), keep a 2,000 to 2,300 ml goal
 | Area | Check | Status |
 |---|---|---|
 | Reminders | arrive on time-ish, only between wake + 30 and bed - 30; none outside; overnight bedtime (02:00) works | open |
-| Reminders | channel "Water reminders" plays `drop.wav` with the short vibration; "Gentle reminders" is silent; the lock screen shows the text | open |
+| Reminders | channel "Water reminders" plays the shared chime (`reminder.wav`) with a gentle double vibration; "Gentle reminders" is silent; the lock screen shows the text | open |
 | Actions | "Add 250 ml" and "Snooze 15 min" with the app **open**, **in the background** and **killed** on a Pixel 8 (Android 15), a Samsung A-series (Android 14) and a Xiaomi (Android 13). Killed-app logging relies on `Notifications.registerTaskAsync` (headless JS). **Not device-verified; the plan's fallback (`opensAppToForeground: true` plus a "Logged" toast route) is not built.** | open |
 | Actions | the button label follows the preferred cup, the unit and the snooze time after changing them in Settings (the category is re-registered; whether Android re-reads it for already-scheduled notifications is unconfirmed) | open |
 | Actions | TalkBack reads the buttons as "Add 250 ml" and "Snooze 15 min" (plan §7.5 wanted "millilitres"; Android notification buttons only take a title) | open |
