@@ -21,7 +21,7 @@ export default function EditEntry() {
 
   if (!entry) {
     return (
-      <Screen>
+      <Screen edges={['bottom']}>
         <Stack.Screen options={{ title: t('edit.title'), headerShown: true }} />
         <Text accessibilityLiveRegion="polite" style={[type.bodyLarge, { color: colors.text }]}>
           {t('edit.missing')}
@@ -57,7 +57,7 @@ export default function EditEntry() {
     ]);
 
   return (
-    <Screen>
+    <Screen edges={['bottom']}>
       <Stack.Screen options={{ title: t('edit.title'), headerShown: true }} />
       <EntryForm
         initial={{ beverage: entry.beverage, volumeMl: entry.volumeMl, minute: minuteOfDay(new Date(entry.ts)) }}

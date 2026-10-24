@@ -64,6 +64,8 @@ jest.mock('expo-haptics', () => ({
 jest.mock('expo-localization', () => ({
   getLocales: () => [{ languageCode: 'en', languageTag: 'en-US', textDirection: 'ltr' }],
   useLocales: () => [{ languageCode: 'en', languageTag: 'en-US', textDirection: 'ltr' }],
+  // en-US phones default to a 12-hour clock.
+  getCalendars: () => [{ uses24hourClock: false }],
 }));
 jest.mock('expo-store-review', () => ({ isAvailableAsync: async () => false, requestReview: jest.fn() }));
 export const mockLastNotificationResponse: { current: unknown } = { current: null };
@@ -175,16 +177,15 @@ jest.mock('react-native-google-mobile-ads', () => ({
   RewardedAdEventType: { LOADED: 'rl', EARNED_REWARD: 'er' },
 }));
 
-jest.mock('@expo/vector-icons', () => ({ MaterialCommunityIcons: () => null }));
 jest.mock('react-native-safe-area-context', () => require('react-native-safe-area-context/jest/mock').default);
 jest.mock('react-native-gesture-handler', () => ({ GestureHandlerRootView: ({ children }: { children: React.ReactNode }) => children }));
 /** `reduced: false` renders the animated paths (confetti, goal reveal timing). */
 export const mockMotion = { reduced: true };
 jest.mock('react-native-reanimated', () => {
   const React = require('react');
-  const { View, ScrollView } = require('react-native');
+  const { View, ScrollView, Text } = require('react-native');
   const passthrough = (v: unknown) => v;
-  const Animated = { View, ScrollView, createAnimatedComponent: passthrough };
+  const Animated = { View, ScrollView, Text, createAnimatedComponent: passthrough };
   return {
     // The complete stand-in from the shared package first; this app's overrides below win.
     ...require('../../../../packages/shared/src/testing/animation').reanimatedMock(),

@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { Alert, StyleSheet, Text, View } from 'react-native';
+import { Alert, Text } from 'react-native';
 import { Stack } from 'expo-router';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
+import { Card } from '@shared/ui';
 import type { BackupSummary } from '@/domain/backup';
 import type { BackupFile } from '@/domain/types';
 import { exportBackup, pickBackup, restoreBackup } from '@/features/backup/files';
@@ -12,7 +13,7 @@ import { PrimaryButton, TextButton } from '@/ui/controls';
 type Pending = { backup: BackupFile; summary: BackupSummary };
 
 export default function Backup() {
-  const { colors, spacing, radius, type } = useTheme();
+  const { colors, spacing, type } = useTheme();
   const [pending, setPending] = useState<Pending | null>(null);
   const [message, setMessage] = useState<{ text: string; error: boolean } | null>(null);
 
@@ -52,17 +53,17 @@ export default function Backup() {
   };
 
   const card = (title: string, body: string, action: React.ReactNode) => (
-    <View style={[styles.card, { backgroundColor: colors.surface, borderColor: colors.border, borderRadius: radius.md, padding: spacing.lg, gap: spacing.sm }]}>
+    <Card style={{ gap: spacing.sm }}>
       <Text accessibilityRole="header" style={[type.bodyLarge, { color: colors.text, fontWeight: '600' }]}>
         {title}
       </Text>
       <Text style={[type.body, { color: colors.textMuted }]}>{body}</Text>
       {action}
-    </View>
+    </Card>
   );
 
   return (
-    <Screen>
+    <Screen edges={[]}>
       <Stack.Screen options={{ title: t('backup.title'), headerShown: true }} />
       <Text style={[type.body, { color: colors.textMuted }]}>{t('backup.intro')}</Text>
 
@@ -70,7 +71,7 @@ export default function Backup() {
       {card(t('backup.import'), t('backup.importBody'), <PrimaryButton label={t('backup.import')} onPress={onImport} />)}
 
       {pending && (
-        <View style={[styles.card, { backgroundColor: colors.surfaceAlt, borderColor: colors.border, borderRadius: radius.md, padding: spacing.lg, gap: spacing.sm }]}>
+        <Card style={{ gap: spacing.sm, backgroundColor: colors.primarySoft }}>
           <Text accessibilityRole="header" style={[type.bodyLarge, { color: colors.text, fontWeight: '600' }]}>
             {t('backup.previewTitle')}
           </Text>
@@ -81,7 +82,7 @@ export default function Backup() {
           <Text style={[type.body, { color: colors.textMuted }]}>{t('backup.replaceWarning')}</Text>
           <PrimaryButton label={t('backup.restore')} onPress={confirmRestore} />
           <TextButton label={t('common.cancel')} onPress={() => setPending(null)} />
-        </View>
+        </Card>
       )}
 
       {message && (
@@ -93,4 +94,3 @@ export default function Backup() {
   );
 }
 
-const styles = StyleSheet.create({ card: { borderWidth: StyleSheet.hairlineWidth } });

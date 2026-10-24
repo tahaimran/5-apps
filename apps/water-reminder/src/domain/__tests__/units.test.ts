@@ -1,4 +1,4 @@
-import { clamp, flozToMl, formatAmount, groupDigits, kgToLb, lbToKg, mlToFloz, percentOf, roundTo, stepMl, volumeIn } from '../units';
+import { clamp, flozToMl, formatAmount, groupDigits, kgToLb, lbToKg, mlToFloz, drinkStep, goalStep, percentOf, roundTo, unitToMl, volumeIn } from '../units';
 
 describe('units', () => {
   it('groups thousands', () => {
@@ -34,8 +34,25 @@ describe('units', () => {
     expect(percentOf(1250, 2300)).toBe(54);
     expect(percentOf(100, 0)).toBe(0);
   });
-  it('steps by 50 ml or 2 fl oz', () => {
-    expect(stepMl('ml')).toBe(50);
-    expect(stepMl('floz')).toBe(59);
+  it('moves the goal by 50 ml or 2 fl oz', () => {
+    expect(goalStep('ml')).toBe(50);
+    expect(goalStep('floz')).toBe(2);
+  });
+  it.each([
+    ['ml', 50, 1, 10],
+    ['ml', 100, 1, 25],
+    ['ml', 100, -1, 10],
+    ['ml', 250, 1, 25],
+    ['ml', 300, -1, 25],
+    ['ml', 300, 1, 50],
+    ['floz', 3, 1, 0.5],
+    ['floz', 4, -1, 0.5],
+    ['floz', 8.5, 1, 1],
+  ] as const)('steps a %s drink from %d (direction %d) by %d', (unit, value, dir, step) => {
+    expect(drinkStep(unit, value, dir)).toBe(step);
+  });
+  it('turns a stepper value back into whole ml', () => {
+    expect(unitToMl(250.4, 'ml')).toBe(250);
+    expect(unitToMl(8.46, 'floz')).toBe(flozToMl(8.5));
   });
 });

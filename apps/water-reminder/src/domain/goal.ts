@@ -1,5 +1,5 @@
-import type { Activity, Climate, Mode, Profile, Sex } from './types';
-import { clamp, roundTo } from './units';
+import type { Activity, Climate, Mode, Profile, Sex, Unit } from './types';
+import { clamp, flozToMl, mlToFloz, roundTo } from './units';
 
 export const GOAL_MIN_ML = 1200;
 export const GOAL_MAX_ML = 4500;
@@ -36,6 +36,13 @@ export const calcGoalMl = (p: Profile): number => goalBreakdown(p).goalMl;
 
 /** Keeps a hand-typed goal inside the supported range and on a 50 ml step. */
 export const clampGoal = (ml: number): number => clamp(roundTo(ml, 50), GOAL_MIN_ML, GOAL_MAX_ML);
+
+/**
+ * Like clampGoal, in the unit the user steps in: fl oz goals stay on whole ounces (68 fl oz), since
+ * a 50 ml grid would pull them back to 67.6.
+ */
+export const clampGoalIn = (ml: number, unit: Unit): number =>
+  unit === 'ml' ? clampGoal(ml) : clamp(flozToMl(Math.round(mlToFloz(ml))), GOAL_MIN_ML, GOAL_MAX_ML);
 
 /** Roughly how many 250 ml glasses a goal is. */
 export const glassesOf = (goalMl: number): number => Math.round(goalMl / 250);

@@ -1,4 +1,4 @@
-import { calcGoalMl, clampGoal, glassesOf, goalBreakdown } from '../goal';
+import { calcGoalMl, clampGoal, clampGoalIn, glassesOf, goalBreakdown } from '../goal';
 import { defaultProfile } from '../defaults';
 import type { Profile } from '../types';
 
@@ -51,6 +51,9 @@ describe('goal calculator (plan §8.1)', () => {
   it('clamps a typed goal and counts glasses', () => {
     expect(clampGoal(990)).toBe(1200);
     expect(clampGoal(9000)).toBe(4500);
+    expect(clampGoalIn(2011, 'ml')).toBe(2000);
+    expect(clampGoalIn(2011, 'floz')).toBe(2011); // 68 fl oz stays 68
+    expect(clampGoalIn(9000, 'floz')).toBe(4500);
     expect(clampGoal(2333)).toBe(2350);
     expect(glassesOf(2300)).toBe(9);
     expect(glassesOf(2000)).toBe(8);

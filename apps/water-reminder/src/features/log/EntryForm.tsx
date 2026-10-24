@@ -1,27 +1,23 @@
 import { useState, type ReactNode } from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { StyleSheet, Text, View } from 'react-native';
+import Clock from 'lucide-react-native/icons/clock';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
-import { beverageIcons, effectiveMl, factorOf } from '@/domain/hydration';
+import { Card, PressableScale } from '@shared/ui';
+import { effectiveMl, factorOf } from '@/domain/hydration';
 import type { BeverageId } from '@/domain/types';
-import { flozToMl, mlToFloz } from '@/domain/units';
 import { useSettings } from '@/store/settings';
-import { spokenVolume, volume } from '@/ui/format';
-import { Slider } from '@/ui/Slider';
-import { Field, MinuteStepper, PrimaryButton, TextField } from '@/ui/controls';
+import { AmountStepper } from '@/ui/AmountStepper';
+import { volume } from '@/ui/format';
+import { beverageIcons } from '@/ui/icons';
+import { ControlRow, IconCircle, SettingsGroup } from '@/ui/SettingsRow';
+import { Chip, Field, MinuteField, PrimaryButton } from '@/ui/controls';
 
-export const AMOUNT_MIN = 50;
-export const AMOUNT_MAX = 1000;
-export const AMOUNT_STEP = 10;
+export { parseAmount } from '@/ui/AmountStepper';
+
+export const AMOUNT_MIN = 10;
+export const AMOUNT_MAX = 2000;
 export const DRINKS: BeverageId[] = ['water', 'sparkling', 'tea', 'coffee', 'juice', 'milk'];
-
-/** The amount in the unit the user types in, back to ml. */
-export const parseAmount = (text: string, unit: 'ml' | 'floz'): number | null => {
-  const n = Number(text.replace(',', '.'));
-  if (!Number.isFinite(n) || n <= 0) return null;
-  return Math.round(unit === 'ml' ? n : flozToMl(n));
-};
 
 export interface EntryValues {
   beverage: BeverageId;
@@ -31,8 +27,8 @@ export interface EntryValues {
 }
 
 /**
- * Beverage picker, amount (slider and typed), time and a submit button: the form behind both
- * "Add a drink" and "Edit entry" (plan §5.4).
+ * Drink picker, amount (stepper with sensible steps, or typed exactly), time and a submit button:
+ * the form behind both "Add a drink" and "Edit drink" (plan §5.4).
  */
 export function EntryForm({
   initial,
@@ -45,92 +41,85 @@ export function EntryForm({
   onSubmit: (values: EntryValues) => void;
   footer?: ReactNode;
 }) {
-  const { colors, spacing, radius, type, touchTarget } = useTheme();
+  const { colors, spacing, radius, type, fonts } = useTheme();
   const unit = useSettings((s) => s.goal.unit);
   const beverages = useSettings((s) => s.beverages);
+  const cups = useSettings((s) => s.cups);
   const [beverage, setBeverage] = useState<BeverageId>(initial.beverage);
   const [amount, setAmount] = useState(initial.volumeMl);
-  const [typed, setTyped] = useState<string | null>(null);
   const [minute, setMinute] = useState(initial.minute);
 
   const factor = factorOf(beverages, beverage);
   const counted = effectiveMl(amount, factor);
-  const shown = typed ?? String(unit === 'ml' ? amount : mlToFloz(amount));
-
-  const setFromSlider = (v: number) => {
-    setTyped(null);
-    setAmount(v);
-  };
-  const setFromText = (text: string) => {
-    setTyped(text);
-    const ml = parseAmount(text, unit);
-    if (ml !== null) setAmount(Math.min(AMOUNT_MAX, Math.max(AMOUNT_MIN, ml)));
-  };
+  const presets = [...new Set(cups.map((c) => c.ml))].sort((a, b) => a - b).slice(0, 4);
 
   return (
     <>
       <Field label={t('logCustom.beverage')}>
-        <View style={styles.wrap} accessibilityRole="radiogroup">
+        <View style={styles.grid} accessibilityRole="radiogroup">
           {DRINKS.map((id) => {
             const selected = id === beverage;
             return (
-              <Pressable
+              <PressableScale
                 key={id}
                 accessibilityRole="radio"
                 accessibilityState={{ selected }}
                 accessibilityLabel={t(`beverages.${id}`)}
                 onPress={() => setBeverage(id)}
-                style={{
-                  minHeight: 64,
-                  minWidth: 88,
-                  flexGrow: 1,
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: 2,
-                  borderRadius: radius.md,
-                  borderWidth: 2,
-                  borderColor: selected ? colors.primary : colors.border,
-                  backgroundColor: selected ? colors.primary + '1A' : colors.surface,
-                }}
+                scaleTo={0.95}
+                style={[
+                  styles.drink,
+                  {
+                    borderRadius: radius.lg,
+                    borderWidth: selected ? 2 : 1,
+                    borderColor: selected ? colors.primary : colors.border,
+                    backgroundColor: selected ? colors.primarySoft : colors.surface,
+                  },
+                ]}
               >
-                <MaterialCommunityIcons name={beverageIcons[id] as never} size={24} color={selected ? colors.primary : colors.textMuted} />
-                <Text style={[type.caption, { color: colors.text, fontWeight: '600' }]}>{t(`beverages.${id}`)}</Text>
-              </Pressable>
+                <IconCircle icon={beverageIcons[id]} bg={selected ? colors.surface : colors.primarySoft} />
+                <Text style={[type.caption, { color: colors.text, fontWeight: '700' }]}>{t(`beverages.${id}`)}</Text>
+              </PressableScale>
             );
           })}
         </View>
       </Field>
 
-      <Field label={t('logCustom.amount')}>
-        <Text style={[type.display, { color: colors.text, fontWeight: '800' }]}>{volume(amount, unit)}</Text>
-        <Slider
-          value={Math.min(AMOUNT_MAX, Math.max(AMOUNT_MIN, amount))}
-          min={AMOUNT_MIN}
-          max={AMOUNT_MAX}
-          step={AMOUNT_STEP}
-          onChange={setFromSlider}
+      <Card style={{ gap: spacing.md, alignItems: 'stretch' }}>
+        <Text style={[type.body, { color: colors.text, fontWeight: '700' }]}>{t('logCustom.amount')}</Text>
+        <Text style={[styles.big, { color: colors.text, fontFamily: fonts.display }]} accessibilityElementsHidden importantForAccessibility="no">
+          {volume(amount, unit)}
+        </Text>
+        <AmountStepper
+          valueMl={amount}
+          onChange={setAmount}
+          unit={unit}
+          minMl={AMOUNT_MIN}
+          maxMl={AMOUNT_MAX}
+          kind="drink"
           label={t('logCustom.amount')}
-          valueText={spokenVolume(amount, unit)}
+          decreaseLabel={t('logCustom.less')}
+          increaseLabel={t('logCustom.more')}
         />
-        <TextField
-          value={shown}
-          onChangeText={setFromText}
-          label={t('logCustom.amountInput', { unit: t(`units.${unit}`) })}
-          keyboardType="decimal-pad"
-          maxLength={6}
-        />
+        <View style={styles.chips}>
+          {presets.map((ml) => (
+            <Chip key={ml} label={volume(ml, unit)} selected={ml === amount} onPress={() => setAmount(ml)} />
+          ))}
+        </View>
         {factor < 1 && (
           <Text accessibilityLiveRegion="polite" style={[type.body, { color: colors.textMuted }]}>
             {t('logCustom.counts', { beverage: t(`beverages.${beverage}`), amount: volume(amount, unit), effective: volume(counted, unit) })}
           </Text>
         )}
-      </Field>
+      </Card>
 
-      <Field label={t('logCustom.time')}>
-        <MinuteStepper value={minute} onChange={setMinute} label={t('logCustom.time')} minuteStep={5} />
-      </Field>
+      <SettingsGroup>
+        <ControlRow label={t('logCustom.time')} icon={Clock}>
+          <MinuteField value={minute} onChange={setMinute} label={t('logCustom.time')} minuteStep={1} />
+        </ControlRow>
+      </SettingsGroup>
 
-      <View style={{ marginTop: spacing.md, minHeight: touchTarget, gap: spacing.sm }}>
+      <View style={{ gap: spacing.sm }}>
         <PrimaryButton label={submitLabel} onPress={() => onSubmit({ beverage, volumeMl: amount, minute })} />
         {footer}
       </View>
@@ -138,4 +127,9 @@ export function EntryForm({
   );
 }
 
-const styles = StyleSheet.create({ wrap: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 } });
+const styles = StyleSheet.create({
+  grid: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
+  drink: { flexBasis: '30%', flexGrow: 1, minHeight: 84, alignItems: 'center', justifyContent: 'center', gap: 6, paddingVertical: 10 },
+  big: { fontSize: 40, lineHeight: 46, fontWeight: '800', textAlign: 'center' },
+  chips: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, justifyContent: 'center' },
+});

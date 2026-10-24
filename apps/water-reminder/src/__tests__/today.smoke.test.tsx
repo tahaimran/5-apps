@@ -1,6 +1,6 @@
 import { mockNotif, mockRouter, resetNotifMock } from '@/testing/mocks';
 import { resetApp } from '@/testing/stores';
-import { auditPressables, cleanup, flush, render } from '@/testing/ui';
+import { auditPressables, cleanup, flush, render, stepWheel, typeAmount } from '@/testing/ui';
 import { act } from 'react';
 import { Alert, Linking } from 'react-native';
 import { ThemeProvider } from '@shared/theme';
@@ -15,10 +15,15 @@ import { useSettings } from '@/store/settings';
 import { useToday } from '@/store/today';
 import { useWater } from '@/store/water';
 import { palette } from '@/theme/tokens';
-import { Slider } from '@/ui/Slider';
+import { hideToast, ToastHost } from '@shared/ui';
 
 const TODAY = '2026-10-08';
-const themed = (el: ReactElement, scale = 1) => <ThemeProvider palette={palette} fontScale={scale}>{el}</ThemeProvider>;
+const themed = (el: ReactElement, scale = 1) => (
+  <ThemeProvider palette={palette} fontScale={scale}>
+    {el}
+    <ToastHost />
+  </ThemeProvider>
+);
 const at = (h: number, mi = 0) => new Date(2026, 9, 8, h, mi).getTime();
 
 beforeEach(() => {
@@ -33,6 +38,7 @@ beforeEach(() => {
   mockNotif.granted = true;
 });
 afterEach(async () => {
+  act(() => hideToast());
   await cleanup();
   jest.useRealTimers();
 });
@@ -51,7 +57,18 @@ describe('Today: empty state', () => {
     expect(ui.byLabel('Add a different amount or drink')).toHaveLength(1);
     expect(ui.byLabel('Settings')).toHaveLength(1);
     expect(ui.byLabel(/^Your plant is a seed and looks thirsty/)).toHaveLength(1);
-    expect(ui.texts()).not.toContain("Today's log");
+    expect(ui.byLabel(/^\d+:\d+ [AP]M, /)).toHaveLength(0);
+  });
+  it('logs the usual cup from the hero and opens the cup settings', async () => {
+    const ui = await render(themed(<Today />));
+    await ui.press('Drink 250 millilitres, your usual cup');
+    expect(summary()).toMatchObject({ effectiveMl: 250, count: 1 });
+    await ui.press('Choose your usual cup');
+    expect(mockRouter.push).toHaveBeenCalledWith('/settings/cups');
+  });
+  it('greets by the time of day', async () => {
+    const ui = await render(themed(<Today />));
+    expect(ui.texts()).toContain('Good afternoon');
   });
   it('describes the ring for a screen reader', async () => {
     const ui = await render(themed(<Today />));
@@ -75,7 +92,7 @@ describe('Today: logging (F2)', () => {
     expect(summary()).toMatchObject({ effectiveMl: 250, count: 1 });
     expect(ui.texts()).toContain('Added 250 ml');
     expect(ui.texts().join('|')).toContain('250 / 2,000 ml · 13%');
-    expect(ui.texts()).toContain("Today's log");
+    expect(ui.texts()).toContain("Today's drinks");
     expect(ui.byLabel(/^Your plant is a seed and looks thirsty/)).toHaveLength(1);
     await act(async () => {
       jest.advanceTimersByTime(5100);
@@ -99,9 +116,11 @@ describe('Today: logging (F2)', () => {
     const ui = await render(themed(<Today />));
     const rows = ui.byLabel(/^\d+:\d+ [AP]M, /);
     expect(rows.map((r) => r.props.accessibilityLabel.split(', ').slice(1).join(', '))).toEqual(['Water, 300 millilitres', 'Coffee, 250 millilitres', 'Water, 200 millilitres']);
-    expect(ui.texts()).toContain('counts as 200 ml');
+    expect(ui.texts()).toContain('Coffee · counts as 200 ml');
     await ui.press('See all');
     expect(mockRouter.push).toHaveBeenCalledWith('/history');
+    await ui.press(rows[1].props.accessibilityLabel);
+    expect(mockRouter.push).toHaveBeenCalledWith({ pathname: '/edit-entry/[id]', params: { id: useWater.getState().logsForDay(TODAY)[2].id } });
   });
   it('shows volumes in fluid ounces when that is the unit', async () => {
     useSettings.getState().setGoal({ unit: 'floz' });
@@ -199,22 +218,25 @@ describe('Today: reminders card (plan §5.1)', () => {
   });
   it('shows the next reminder time, skipping what a recent drink already covers', async () => {
     const ui = await render(themed(<Today />));
-    expect(ui.texts().some((t) => /^Next reminder 3:\d\d PM$/.test(t) || /^Next reminder \d+:\d\d (AM|PM)$/.test(t))).toBe(true);
+    expect(ui.byLabel(/^Next reminder \d+:\d\d (AM|PM)$/)).toHaveLength(1);
+    // The same time heads the drinks list, with the usual cup it will offer.
+    expect(ui.byLabel(/^Next reminder at \d+:\d\d (AM|PM), 250 millilitres$/)).toHaveLength(1);
   });
   it('moves the next reminder forward as the day passes, without any other change', async () => {
     useSettings.getState().setGoal({ goalMl: 2300 });
     const ui = await render(themed(<Today />));
-    expect(ui.texts()).toContain('Next reminder 2:10 PM');
+    expect(ui.byLabel('Next reminder 2:10 PM')).toHaveLength(1);
     await act(async () => {
       jest.setSystemTime(new Date(2026, 9, 8, 14, 20));
       jest.advanceTimersByTime(60_000);
     });
-    expect(ui.texts()).toContain('Next reminder 3:50 PM');
+    expect(ui.byLabel('Next reminder 3:50 PM')).toHaveLength(1);
   });
   it('says "tomorrow" once the goal is reached', async () => {
     useWater.getState().logDrink({ volumeMl: 2000, ts: at(12) });
     const ui = await render(themed(<Today />));
-    expect(ui.texts().some((t) => t.startsWith('Next reminder tomorrow, '))).toBe(true);
+    expect(ui.byLabel(/^Next reminder tomorrow, /)).toHaveLength(1);
+    expect(ui.texts().some((t) => t.startsWith('Tomorrow '))).toBe(true);
   });
 });
 
@@ -231,75 +253,64 @@ describe('Log a custom drink (plan §5.4)', () => {
   it('logs coffee with the counted amount and goes back', async () => {
     const ui = await render(themed(<LogCustom />));
     await ui.press('Coffee');
-    await ui.type('Amount in ml', '300');
+    await typeAmount(ui, 'ml', '300');
     expect(ui.texts()).toContain('Coffee 300 ml → counts as 240 ml');
     await ui.press('Add');
     const log = useWater.getState().logsForDay(TODAY)[0];
     expect(log).toMatchObject({ beverage: 'coffee', volumeMl: 300, effectiveMl: 240, source: 'app' });
     expect(mockRouter.back).toHaveBeenCalled();
+    expect(ui.texts()).toContain('Added 300 ml');
   });
   it('defaults to 250 ml of water now, and can use a time earlier today', async () => {
     const ui = await render(themed(<LogCustom />));
-    await ui.press('Earlier'); // hour -1 → 13:00
+    await stepWheel(ui, 'Time', 'Hour', 1, 'decrement'); // 14:00 → 13:00
     await ui.press('Add');
     expect(new Date(useWater.getState().logsForDay(TODAY)[0].ts).getHours()).toBe(13);
     expect(useWater.getState().logsForDay(TODAY)[0]).toMatchObject({ beverage: 'water', volumeMl: 250 });
   });
   it('treats a later time of day as last night', async () => {
     const ui = await render(themed(<LogCustom />));
-    for (let i = 0; i < 9; i++) await ui.press('Later'); // 14:00 → 23:00
+    await stepWheel(ui, 'Time', 'Hour', 9, 'increment'); // 14:00 → 23:00
     await ui.press('Add');
     expect(useWater.getState().logsForDay('2026-10-07')).toHaveLength(1);
   });
-  it('keeps the typed amount within 50 to 1,000 ml and ignores nonsense', async () => {
+  it('keeps the typed amount within 10 to 2,000 ml and ignores nonsense', async () => {
     const ui = await render(themed(<LogCustom />));
-    await ui.type('Amount in ml', '5000');
+    await typeAmount(ui, 'ml', '5000');
     await ui.press('Add');
-    expect(useWater.getState().logsForDay(TODAY)[0].volumeMl).toBe(1000);
+    expect(useWater.getState().logsForDay(TODAY)[0].volumeMl).toBe(2000);
     expect(parseAmount('abc', 'ml')).toBeNull();
     expect(parseAmount('0', 'ml')).toBeNull();
+    expect(parseAmount('', 'ml')).toBeNull();
     expect(parseAmount('8,5', 'floz')).toBe(251);
+  });
+  it('leaves the amount alone when the typed text is not a number', async () => {
+    const ui = await render(themed(<LogCustom />));
+    await typeAmount(ui, 'ml', '.');
+    expect(ui.texts()).toContain('250 ml');
   });
   it('types ounces when the unit is fl oz', async () => {
     useSettings.getState().setGoal({ unit: 'floz' });
     const ui = await render(themed(<LogCustom />));
-    await ui.type('Amount in fl oz', '12');
+    await typeAmount(ui, 'fl oz', '12');
     await ui.press('Add');
     expect(useWater.getState().logsForDay(TODAY)[0].volumeMl).toBe(355);
   });
-  it('has a slider that screen readers can adjust', async () => {
+  it('steps the amount in sensible sizes: 25 ml below 300, 50 ml above', async () => {
     const ui = await render(themed(<LogCustom />));
-    const slider = ui.root.findAll((n) => n.props.accessibilityRole === 'adjustable')[0];
-    expect(slider.props.accessibilityValue).toMatchObject({ min: 50, max: 1000, now: 250, text: '250 millilitres' });
-    await act(async () => slider.props.onAccessibilityAction({ nativeEvent: { actionName: 'increment' } }));
-    expect(ui.texts()).toContain('260 ml');
-    await act(async () => slider.props.onAccessibilityAction({ nativeEvent: { actionName: 'decrement' } }));
-    await act(async () => slider.props.onAccessibilityAction({ nativeEvent: { actionName: 'decrement' } }));
-    expect(ui.texts()).toContain('240 ml');
+    await ui.press('More');
+    expect(ui.texts()).toContain('275 ml');
+    await ui.press('More');
+    await ui.press('More');
+    expect(ui.texts()).toContain('350 ml');
+    await ui.press('Less');
+    expect(ui.texts()).toContain('300 ml');
   });
-});
-
-describe('Slider', () => {
-  const touch = (x: number) => ({ nativeEvent: { locationX: x } }) as never;
-  it('maps a touch position to a snapped value', async () => {
-    const onChange = jest.fn();
-    const ui = await render(themed(<Slider value={50} min={50} max={1000} step={10} onChange={onChange} label="Amount" />));
-    const node = ui.root.findAll((n) => n.props.accessibilityRole === 'adjustable')[0];
-    await act(async () => node.props.onLayout({ nativeEvent: { layout: { width: 200 } } }));
-    await act(async () => node.props.onResponderGrant(touch(100)));
-    expect(onChange).toHaveBeenLastCalledWith(530);
-    await act(async () => node.props.onResponderMove(touch(400)));
-    expect(onChange).toHaveBeenLastCalledWith(1000);
-    await act(async () => node.props.onResponderMove(touch(-20)));
-    expect(onChange).toHaveBeenLastCalledWith(50);
-  });
-  it('ignores touches before it was laid out and other actions', async () => {
-    const onChange = jest.fn();
-    const ui = await render(themed(<Slider value={100} min={50} max={1000} step={10} onChange={onChange} label="Amount" />));
-    const node = ui.root.findAll((n) => n.props.accessibilityRole === 'adjustable')[0];
-    await act(async () => node.props.onResponderGrant(touch(50)));
-    await act(async () => node.props.onAccessibilityAction({ nativeEvent: { actionName: 'activate' } }));
-    expect(onChange).not.toHaveBeenCalled();
+  it('picks one of the cup sizes as a preset', async () => {
+    const ui = await render(themed(<LogCustom />));
+    await ui.press('500 ml');
+    await ui.press('Add');
+    expect(useWater.getState().logsForDay(TODAY)[0].volumeMl).toBe(500);
   });
 });
 

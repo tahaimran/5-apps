@@ -106,3 +106,19 @@ export function auditPressables(root: ReactTestInstance): string[] {
   }
   return problems;
 }
+
+/** Taps a stepper's amount, types an exact number and confirms (the AmountStepper's typing mode). */
+export async function typeAmount(ui: Rendered, unit: 'ml' | 'fl oz', text: string, label = 'Amount') {
+  await ui.press(new RegExp(`^${label} \\d`));
+  await ui.type(`${label} in ${unit}`, text);
+  await ui.press('Done');
+}
+
+/** Opens a TimeField by its label and steps one wheel with TalkBack actions, then confirms. */
+export async function stepWheel(ui: Rendered, field: string, wheel: 'Hour' | 'Minute', times: number, action: 'increment' | 'decrement') {
+  await ui.press(new RegExp(`^${field}, `));
+  const node = ui.root.findAll((n) => typeof n.type === 'string' && n.props.accessibilityRole === 'adjustable' && n.props.accessibilityLabel === wheel)[0];
+  if (!node) throw new Error(`No ${wheel} wheel`);
+  for (let i = 0; i < times; i++) await act(async () => node.props.onAccessibilityAction({ nativeEvent: { actionName: action } }));
+  await ui.press('Done');
+}

@@ -1,22 +1,34 @@
-import { useCallback, useMemo, useState } from 'react';
-import { Alert, Pressable, StyleSheet, Text, View } from 'react-native';
+import { Fragment, useCallback, useMemo, useState } from 'react';
+import { Alert, StyleSheet, Text, View } from 'react-native';
 import { router, useFocusEffect } from 'expo-router';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import CalendarCheck from 'lucide-react-native/icons/calendar-check';
+import ChartColumn from 'lucide-react-native/icons/chart-column';
+import Check from 'lucide-react-native/icons/check';
+import ChevronLeft from 'lucide-react-native/icons/chevron-left';
+import ChevronRight from 'lucide-react-native/icons/chevron-right';
+import Flame from 'lucide-react-native/icons/flame';
+import Trash from 'lucide-react-native/icons/trash';
+import Trophy from 'lucide-react-native/icons/trophy';
 import { NativeAdCard, showInterstitial } from '@shared/ads';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
+import { useTimeFormat } from '@shared/time';
+import { Card, IconButton, PressableScale } from '@shared/ui';
 import { BarChart } from '@/components/BarChart';
-import { addDays, monthKeyOf, parseDayKey } from '@/domain/dayKey';
-import { beverageIcons } from '@/domain/hydration';
-import { monthDays, rangeStats, shiftMonth, weekDays } from '@/domain/summaries';
+import { addDays, monthKeyOf, parseDayKey, weekdayOf } from '@/domain/dayKey';
+import { monthDays, rangeStats, shiftMonth, weekDays, type ChartDay } from '@/domain/summaries';
 import type { DayKey } from '@/domain/types';
 import { recordInterstitialShown } from '@/ads/guard';
 import { liveProgress } from '@/domain/streak';
+import { DayStrip } from '@/features/history/DayStrip';
 import { useFeedback } from '@/store/feedback';
 import { useSettings } from '@/store/settings';
 import { useToday } from '@/store/today';
 import { useDayLogs, useWater } from '@/store/water';
-import { clockTime, dayLabel, longDayLabel, spokenVolume, volume } from '@/ui/format';
+import { extraColorsFor } from '@/theme/tokens';
+import { dayLabel, longDayLabel, spokenVolume, volume } from '@/ui/format';
+import { beverageIcons } from '@/ui/icons';
+import { IconCircle, StatTile } from '@/ui/SettingsRow';
 import { Screen } from '@/ui/Screen';
 import { Segmented } from '@/ui/controls';
 
@@ -25,33 +37,55 @@ type Mode = 'day' | 'week' | 'month';
 export const INTERSTITIAL_VIEW_MS = 20_000;
 const NATIVE_AFTER_ROWS = 3;
 
+/** Monday … Sunday of the week holding `day`. */
+const weekOf = (day: DayKey): DayKey[] => {
+  const monday = addDays(day, -((weekdayOf(day) + 6) % 7));
+  return Array.from({ length: 7 }, (_, i) => addDays(monday, i));
+};
+
 function Pager({ label, onPrev, onNext, nextDisabled, prevLabel, nextLabel }: { label: string; onPrev: () => void; onNext: () => void; nextDisabled: boolean; prevLabel: string; nextLabel: string }) {
-  const { colors, type, touchTarget } = useTheme();
-  const box = { minWidth: touchTarget, minHeight: touchTarget, alignItems: 'center' as const, justifyContent: 'center' as const };
+  const { colors, type } = useTheme();
   return (
     <View style={styles.pager}>
-      <Pressable accessibilityRole="button" accessibilityLabel={prevLabel} onPress={onPrev} style={box}>
-        <MaterialCommunityIcons name="chevron-left" size={28} color={colors.text} />
-      </Pressable>
-      <Text accessibilityRole="header" accessibilityLiveRegion="polite" style={[type.bodyLarge, { color: colors.text, fontWeight: '700', flex: 1, textAlign: 'center' }]}>
+      <IconButton icon={ChevronLeft} label={prevLabel} onPress={onPrev} variant="tonal" />
+      <Text accessibilityRole="header" accessibilityLiveRegion="polite" style={[type.bodyLarge, styles.pagerLabel, { color: colors.text }]}>
         {label}
       </Text>
-      <Pressable
-        accessibilityRole="button"
-        accessibilityLabel={nextLabel}
-        accessibilityState={{ disabled: nextDisabled }}
-        disabled={nextDisabled}
-        onPress={onNext}
-        style={[box, { opacity: nextDisabled ? 0.3 : 1 }]}
-      >
-        <MaterialCommunityIcons name="chevron-right" size={28} color={colors.text} />
-      </Pressable>
+      <IconButton icon={ChevronRight} label={nextLabel} onPress={onNext} variant="tonal" disabled={nextDisabled} />
+    </View>
+  );
+}
+
+/** Seven circles, filled with a check on goal days (the "weekly completion" row from the references). */
+function GoalWeek({ days, today }: { days: ChartDay[]; today: DayKey }) {
+  const { colors, type, mode } = useTheme();
+  const extra = extraColorsFor(mode);
+  const initials = t('history.weekdayInitials').split(',');
+  return (
+    <View style={styles.goalWeek} importantForAccessibility="no-hide-descendants" accessibilityElementsHidden>
+      {days.map((d) => (
+        <View key={d.dayKey} style={styles.goalDay}>
+          <View
+            style={[
+              styles.goalDot,
+              {
+                backgroundColor: d.reached ? extra.leaf : colors.surfaceAlt,
+                borderColor: d.dayKey === today ? colors.primary : 'transparent',
+              },
+            ]}
+          >
+            {d.reached ? <Check size={14} color="#FFFFFF" strokeWidth={3} /> : null}
+          </View>
+          <Text style={[type.caption, { color: colors.textMuted, fontWeight: '600' }]}>{initials[parseDayKey(d.dayKey).getDay()]}</Text>
+        </View>
+      ))}
     </View>
   );
 }
 
 export default function History() {
-  const { colors, spacing, radius, type, touchTarget } = useTheme();
+  const { colors, spacing, radius, type, touchTarget, shadow, fonts } = useTheme();
+  const clock = useTimeFormat();
   const feedback = useFeedback();
   const { goal } = useSettings();
   const today = useToday((s) => s.today);
@@ -86,6 +120,7 @@ export default function History() {
   const dayTitle = day === today ? t('history.today') : day === addDays(today, -1) ? t('history.yesterday') : dayLabel(parseDayKey(day));
   const summary = summaries[day];
   const total = summary?.effectiveMl ?? 0;
+  const strip = weekOf(day);
 
   const confirmDelete = (id: string, ml: number) =>
     Alert.alert(t('history.deleteTitle'), t('history.deleteBody', { amount: volume(ml, unit) }), [
@@ -100,48 +135,38 @@ export default function History() {
       },
     ]);
 
-  const statBox = (label: string, value: string) => (
-    <View accessible accessibilityLabel={`${label}: ${value}`} style={[styles.stat, { backgroundColor: colors.surface, borderRadius: radius.md, padding: spacing.md }]}>
-      <Text style={[type.caption, { color: colors.textMuted, fontWeight: '600' }]}>{label}</Text>
-      <Text style={[type.bodyLarge, { color: colors.text, fontWeight: '800' }]}>{value}</Text>
-    </View>
-  );
-
-  const rangeLabel = () => {
-    const first = parseDayKey(week[0].dayKey);
-    const last = parseDayKey(week[6].dayKey);
-    return t('history.weekRange', { from: dayLabel(first), to: dayLabel(last) });
-  };
+  const rangeLabel = () => t('history.weekRange', { from: dayLabel(parseDayKey(week[0].dayKey)), to: dayLabel(parseDayKey(week[6].dayKey)) });
 
   const chartStats = (
-    <View style={styles.stats}>
-      {statBox(t('history.average'), volume(stats.averageMl, unit))}
-      {statBox(t('history.best'), stats.best ? volume(stats.best.effectiveMl, unit) : t('history.noBest'))}
-      {statBox(t('history.goalDays'), t('history.goalDaysValue', { reached: stats.reachedDays, elapsed: stats.elapsedDays }))}
+    <View style={[styles.row, { gap: spacing.sm }]}>
+      <StatTile icon={ChartColumn} label={t('history.average')} value={volume(stats.averageMl, unit)} />
+      <StatTile icon={Trophy} label={t('history.best')} value={stats.best ? volume(stats.best.effectiveMl, unit) : t('history.noBest')} />
+      <StatTile icon={CalendarCheck} label={t('history.goalDays')} value={t('history.goalDaysValue', { reached: stats.reachedDays, elapsed: stats.elapsedDays })} />
     </View>
   );
 
   return (
     <Screen>
-        <Text accessibilityRole="header" style={[type.headline, { color: colors.text, fontWeight: '800' }]}>
-          {t('tabs.history')}
-        </Text>
-        <View style={{ flexDirection: 'row', gap: spacing.md }}>
-          {statBox(t('history.streak'), t('history.streakValue', { count: live.streak }))}
-          {statBox(t('history.bestStreak'), t('history.streakValue', { count: live.bestStreak }))}
-        </View>
-        <Segmented<Mode>
-          value={mode}
-          onChange={setMode}
-          options={[
-            { value: 'day', label: t('history.day') },
-            { value: 'week', label: t('history.week') },
-            { value: 'month', label: t('history.month') },
-          ]}
-        />
+      <Text accessibilityRole="header" style={[type.headline, { color: colors.text, fontWeight: '800' }]}>
+        {t('tabs.history')}
+      </Text>
+      <View style={[styles.row, { gap: spacing.md }]}>
+        <StatTile icon={Flame} label={t('history.streak')} value={t('history.streakValue', { count: live.streak })} />
+        <StatTile icon={Trophy} label={t('history.bestStreak')} value={t('history.streakValue', { count: live.bestStreak })} />
+      </View>
+      <Segmented<Mode>
+        value={mode}
+        onChange={setMode}
+        options={[
+          { value: 'day', label: t('history.day') },
+          { value: 'week', label: t('history.week') },
+          { value: 'month', label: t('history.month') },
+        ]}
+      />
 
-        {mode === 'day' && (
-          <View style={{ gap: spacing.md }}>
+      {mode === 'day' && (
+        <View style={{ gap: spacing.md }}>
+          <View style={[{ backgroundColor: colors.primarySoft, borderRadius: radius.xl, padding: spacing.md, gap: spacing.md }]}>
             <Pager
               label={dayTitle}
               prevLabel={t('history.previousDay')}
@@ -150,54 +175,59 @@ export default function History() {
               onPrev={() => setDay(addDays(day, -1))}
               onNext={() => setDay(addDays(day, 1))}
             />
-            <Text style={[type.title, { color: colors.text, fontWeight: '800', textAlign: 'center' }]}>
+            <DayStrip days={strip} today={today} selected={day} summaries={summaries} goalMl={goal.goalMl} unit={unit} onSelect={setDay} />
+            <Text style={[type.title, { color: colors.text, fontWeight: '800', textAlign: 'center', fontFamily: fonts.display }]}>
               {t('history.dayTotal', { amount: volume(total, unit), goal: volume(summary?.goalMl ?? goal.goalMl, unit) })}
             </Text>
-            {logs.length === 0 ? (
-              <Text accessibilityLiveRegion="polite" style={[type.body, { color: colors.textMuted, textAlign: 'center', paddingVertical: spacing.xl }]}>
-                {t(day > today ? 'history.emptyFuture' : 'history.empty')}
-              </Text>
-            ) : (
-              logs.map((l, i) => {
-                const time = clockTime(new Date(l.ts));
+          </View>
+          {logs.length === 0 ? (
+            <Text accessibilityLiveRegion="polite" style={[type.body, { color: colors.textMuted, textAlign: 'center', paddingVertical: spacing.xl }]}>
+              {t(day > today ? 'history.emptyFuture' : 'history.empty')}
+            </Text>
+          ) : (
+            <View style={[{ backgroundColor: colors.surface, borderRadius: radius.lg, overflow: 'hidden' }, shadow(1)]}>
+              {logs.map((l, i) => {
+                const time = clock.at(new Date(l.ts));
                 return (
-                  <View key={l.id} style={{ gap: spacing.md }}>
-                    <View style={[styles.row, { backgroundColor: colors.surface, borderRadius: radius.md }]}>
-                      <Pressable
+                  <Fragment key={l.id}>
+                    {i > 0 && <View style={[styles.divider, { backgroundColor: colors.border, marginLeft: spacing.lg + 36 + spacing.md }]} />}
+                    <View style={styles.entry}>
+                      <PressableScale
                         accessibilityRole="button"
                         accessibilityLabel={t('history.editEntry', { time, beverage: t(`beverages.${l.beverage}`), amount: spokenVolume(l.volumeMl, unit) })}
                         onPress={() => router.push({ pathname: '/edit-entry/[id]', params: { id: l.id } })}
-                        style={[styles.rowMain, { minHeight: touchTarget + 8, padding: spacing.md }]}
+                        scaleTo={0.98}
+                        style={[styles.entryMain, { minHeight: touchTarget + 16, paddingLeft: spacing.lg, paddingVertical: spacing.sm, gap: spacing.md }]}
                       >
-                        <MaterialCommunityIcons name={beverageIcons[l.beverage] as never} size={24} color={colors.primary} />
-                        <Text style={[type.body, { color: colors.textMuted, width: 74 }]}>{time}</Text>
-                        <View style={{ flex: 1 }}>
-                          <Text style={[type.body, { color: colors.text, fontWeight: '700' }]}>{volume(l.volumeMl, unit)}</Text>
-                          {l.effectiveMl !== l.volumeMl && (
-                            <Text style={[type.caption, { color: colors.textMuted }]}>{t('history.counted', { amount: volume(l.effectiveMl, unit) })}</Text>
-                          )}
+                        <IconCircle icon={beverageIcons[l.beverage]} />
+                        <View style={styles.flex}>
+                          <Text style={[type.bodyLarge, { color: colors.text, fontWeight: '700', fontFamily: fonts.display }]}>{time}</Text>
+                          <Text style={[type.caption, { color: colors.textMuted }]}>
+                            {t(`beverages.${l.beverage}`)}
+                            {l.effectiveMl !== l.volumeMl ? ` · ${t('history.counted', { amount: volume(l.effectiveMl, unit) })}` : ''}
+                          </Text>
                         </View>
-                      </Pressable>
-                      <Pressable
-                        accessibilityRole="button"
-                        accessibilityLabel={t('history.deleteEntry', { time })}
-                        onPress={() => confirmDelete(l.id, l.volumeMl)}
-                        style={{ minWidth: touchTarget, minHeight: touchTarget, alignItems: 'center', justifyContent: 'center' }}
-                      >
-                        <MaterialCommunityIcons name="trash-can-outline" size={22} color={colors.danger} />
-                      </Pressable>
+                        <Text style={[type.bodyLarge, { color: colors.text, fontWeight: '700' }]}>{volume(l.volumeMl, unit)}</Text>
+                      </PressableScale>
+                      <IconButton icon={Trash} color={colors.danger} label={t('history.deleteEntry', { time })} onPress={() => confirmDelete(l.id, l.volumeMl)} style={{ marginRight: spacing.xs }} />
                     </View>
-                    {i === NATIVE_AFTER_ROWS - 1 && <NativeAdCard placement="history_list" />}
-                  </View>
+                    {i === NATIVE_AFTER_ROWS - 1 && (
+                      <View style={{ padding: spacing.md }}>
+                        <NativeAdCard placement="history_list" />
+                      </View>
+                    )}
+                  </Fragment>
                 );
-              })
-            )}
-            {logs.length > 0 && logs.length < NATIVE_AFTER_ROWS && <NativeAdCard placement="history_list" />}
-          </View>
-        )}
+              })}
+            </View>
+          )}
+          {logs.length > 0 && logs.length < NATIVE_AFTER_ROWS && <NativeAdCard placement="history_list" />}
+        </View>
+      )}
 
-        {mode === 'week' && (
-          <View style={{ gap: spacing.md }}>
+      {mode === 'week' && (
+        <View style={{ gap: spacing.md }}>
+          <Card style={{ gap: spacing.lg }}>
             <Pager
               label={rangeLabel()}
               prevLabel={t('history.previousWeek')}
@@ -206,14 +236,17 @@ export default function History() {
               onPrev={() => setWeekEnd(addDays(weekEnd, -7))}
               onNext={() => setWeekEnd(addDays(weekEnd, 7) > today ? today : addDays(weekEnd, 7))}
             />
-            <BarChart days={week} goalMl={goal.goalMl} unit={unit} variant="week" />
-            {chartStats}
-            {stats.best && <NativeAdCard placement="history_list" />}
-          </View>
-        )}
+            <GoalWeek days={week} today={today} />
+            <BarChart days={week} goalMl={goal.goalMl} unit={unit} variant="week" today={today} />
+          </Card>
+          {chartStats}
+          {stats.best && <NativeAdCard placement="history_list" />}
+        </View>
+      )}
 
-        {mode === 'month' && (
-          <View style={{ gap: spacing.md }}>
+      {mode === 'month' && (
+        <View style={{ gap: spacing.md }}>
+          <Card style={{ gap: spacing.lg }}>
             <Pager
               label={monthName}
               prevLabel={t('history.previousMonth')}
@@ -227,6 +260,7 @@ export default function History() {
               goalMl={goal.goalMl}
               unit={unit}
               variant="month"
+              today={today}
               summary={t('history.chartMonth', {
                 month: monthName,
                 average: spokenVolume(stats.averageMl, unit),
@@ -235,18 +269,24 @@ export default function History() {
                 elapsed: stats.elapsedDays,
               })}
             />
-            {chartStats}
-            {stats.best && <NativeAdCard placement="history_list" />}
-          </View>
-        )}
+          </Card>
+          {chartStats}
+          {stats.best && <NativeAdCard placement="history_list" />}
+        </View>
+      )}
     </Screen>
   );
 }
 
 const styles = StyleSheet.create({
+  flex: { flex: 1 },
+  row: { flexDirection: 'row' },
   pager: { flexDirection: 'row', alignItems: 'center' },
-  row: { flexDirection: 'row', alignItems: 'center' },
-  rowMain: { flex: 1, flexDirection: 'row', alignItems: 'center', gap: 10 },
-  stats: { flexDirection: 'row', gap: 8 },
-  stat: { flex: 1, gap: 2 },
+  pagerLabel: { flex: 1, textAlign: 'center', fontWeight: '700' },
+  divider: { height: StyleSheet.hairlineWidth },
+  entry: { flexDirection: 'row', alignItems: 'center' },
+  entryMain: { flex: 1, flexDirection: 'row', alignItems: 'center' },
+  goalWeek: { flexDirection: 'row', justifyContent: 'space-between' },
+  goalDay: { alignItems: 'center', gap: 4 },
+  goalDot: { width: 30, height: 30, borderRadius: 15, alignItems: 'center', justifyContent: 'center', borderWidth: 2 },
 });

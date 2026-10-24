@@ -27,5 +27,19 @@ export function formatAmount(ml: number, unit: Unit): string {
 /** Percent of the goal, rounded; 0 when there is no goal. */
 export const percentOf = (ml: number, goalMl: number): number => (goalMl > 0 ? Math.round((ml / goalMl) * 100) : 0);
 
-/** Step used by the goal stepper and the custom-amount stepper in each unit. */
-export const stepMl = (unit: Unit): number => (unit === 'ml' ? 50 : flozToMl(2));
+/**
+ * One tap of − / + on a drink amount, in the user's unit: fine steps for sips, bigger ones for
+ * bottles (ml: 10 below 100, 25 below 300, then 50; fl oz: 0.5 below 4, then 1). Stepping down
+ * from a boundary uses the smaller step, so 100 − goes to 90 and 300 − to 275.
+ */
+export function drinkStep(unit: Unit, value: number, direction: 1 | -1): number {
+  const v = direction < 0 ? value - 1e-6 : value;
+  if (unit === 'ml') return v < 100 ? 10 : v < 300 ? 25 : 50;
+  return v < 4 ? 0.5 : 1;
+}
+
+/** The goal moves in round numbers: 50 ml or 2 fl oz. */
+export const goalStep = (unit: Unit): number => (unit === 'ml' ? 50 : 2);
+
+/** A stepper value in the user's unit back to whole ml (fl oz values are rounded to 0.1 first). */
+export const unitToMl = (value: number, unit: Unit): number => (unit === 'ml' ? Math.round(value) : flozToMl(Math.round(value * 10) / 10));

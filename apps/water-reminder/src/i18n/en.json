@@ -162,7 +162,8 @@
     "firstGlassTap": "Tap the cup to pour your first glass.",
     "pour": "Pour {amount}",
     "firstSip": "Your first sip! {drunk} down, {left} to go.",
-    "toPlant": "Go to my plant"
+    "toPlant": "Go to my plant",
+    "previewApp": "Sipling · now"
   },
   "tabs": {
     "index": "Today",
@@ -218,14 +219,32 @@
     "otherLabel": "Add a different amount or drink",
     "added": "Added {amount}",
     "undo": "Undo",
-    "logTitle": "Today's log",
+    "logTitle": "Today's drinks",
     "seeAll": "See all",
     "entry": "{time}, {beverage}, {amount}",
     "countsAs": "counts as {amount}",
     "lateTitle": "Reminders arriving late?",
     "lateBody": "Some phones stop apps in the background. Three quick steps usually fix it.",
     "lateShow": "Show me",
-    "lateDismiss": "Not now"
+    "lateDismiss": "Not now",
+    "greeting": {
+      "morning": "Good morning",
+      "afternoon": "Good afternoon",
+      "evening": "Good evening"
+    },
+    "hero": {
+      "thirsty": "Time for a sip",
+      "ok": "Nice and steady",
+      "happy": "Almost there",
+      "sparkle": "Blooming beautifully"
+    },
+    "drink": "Drink {amount}",
+    "drinkLabel": "Drink {amount}, your usual cup",
+    "chooseCup": "Choose your usual cup",
+    "nextChipTomorrow": "Tomorrow {time}",
+    "nextRow": "Next reminder",
+    "nextRowLabel": "Next reminder at {time}, {amount}",
+    "editHint": "Opens this drink to change or delete it"
   },
   "logCustom": {
     "title": "Add a drink",
@@ -235,7 +254,9 @@
     "time": "Time",
     "add": "Add",
     "counts": "{beverage} {amount} → counts as {effective}",
-    "sliderValue": "{amount}"
+    "sliderValue": "{amount}",
+    "less": "Less",
+    "more": "More"
   },
   "settings": {
     "title": "Settings",
@@ -266,7 +287,17 @@
     "backup": "Backup and restore",
     "rate": "Rate Sipling",
     "privacyPolicy": "Privacy policy",
-    "version": "Version {version}"
+    "version": "Version {version}",
+    "yourDay": "Your day",
+    "drinks": "Drinks",
+    "theme": "Theme",
+    "timeFormat": "Clock",
+    "timeSystem": "Phone",
+    "time12": "12-hour",
+    "time24": "24-hour",
+    "sounds": "Sounds",
+    "soundsHint": "A soft splash when you log a drink.",
+    "help": "Help and privacy"
   },
   "edit": {
     "title": "Edit drink",
@@ -310,7 +341,8 @@
     "bestStreak": "Best streak",
     "streakValue": "{count} days",
     "goalLegend": "Dashed line: your goal, {goal}",
-    "weekdayInitials": "S,M,T,W,T,F,S"
+    "weekdayInitials": "S,M,T,W,T,F,S",
+    "stripDay": "{day}: {amount}"
   },
   "garden": {
     "toNext": "{have} of {need} goal days to {name}",
@@ -376,13 +408,22 @@
     "quietTo": "Quiet until",
     "addQuiet": "Add a quiet time",
     "remove": "Remove",
-    "removeQuiet": "Remove the quiet time from {from} to {to}"
+    "removeQuiet": "Remove the quiet time from {from} to {to}",
+    "window": "When to remind me",
+    "gapH": "every {h}h",
+    "gapM": "every {m}m",
+    "gapHM": "every {h}h {m}m",
+    "skipLess": "Shorter skip window",
+    "skipMore": "Longer skip window",
+    "quietRange": "{from} – {to}"
   },
   "cupsScreen": {
-    "intro": "The four quick-add cups on Today. The preferred cup is the one behind the button on reminders.",
-    "preferred": "Preferred cup",
-    "makePreferred": "Make preferred",
-    "reset": "Reset cups"
+    "intro": "The four quick-add cups on Today. Your usual cup is the big button on Today and the one reminders offer.",
+    "preferred": "Usual cup",
+    "makePreferred": "Make usual",
+    "reset": "Reset cups",
+    "smaller": "{name}: smaller",
+    "bigger": "{name}: bigger"
   },
   "beveragesScreen": {
     "intro": "How much of each drink counts towards your goal. Water counts fully; others are a conservative default you can change.",
@@ -469,5 +510,10 @@
         "3": "Look for an Autostart or Background activity switch for Sipling and turn it on."
       }
     }
+  },
+  "amount": {
+    "typeLabel": "{label} in {unit}",
+    "done": "Done",
+    "typeHint": "Opens a field to type an exact amount"
   }
 }

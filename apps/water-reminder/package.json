@@ -11,7 +11,6 @@
     "test:tz": "for z in America/New_York Europe/London Australia/Lord_Howe Asia/Calcutta Pacific/Auckland America/Sao_Paulo UTC; do TZ=$z jest src/domain/__tests__/qa.dst || exit 1; done"
   },
   "dependencies": {
-    "@expo/vector-icons": "^15.1.1",
     "@shared/core": "*",
     "expo": "^57.0.27",
     "expo-audio": "~57.0.5",

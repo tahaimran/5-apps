@@ -13,16 +13,6 @@ export const defaultBeverages: BeverageFactor[] = [
   { id: 'coffee', factor: 0.8 },
 ];
 
-export const beverageIcons: Record<BeverageId, string> = {
-  water: 'water',
-  sparkling: 'bottle-soda-outline',
-  tea: 'tea',
-  milk: 'cup-outline',
-  juice: 'fruit-citrus',
-  coffee: 'coffee',
-  soda: 'cup',
-};
-
 /** Factors are editable between 0.5 and 1.0 in steps of 0.05. */
 export const clampFactor = (f: number): number => Math.round(Math.min(FACTOR_MAX, Math.max(FACTOR_MIN, f)) * 20) / 20;
 

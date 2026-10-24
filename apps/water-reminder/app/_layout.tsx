@@ -50,7 +50,16 @@ function Root() {
       <StatusBar style={mode === 'light' ? 'dark' : 'light'} />
       {/* Follows the in-app theme, which can differ from the system one. */}
       <SystemNavBar dark={mode !== 'light'} />
-      <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: colors.background } }}>
+      <Stack
+        screenOptions={{
+          headerShown: false,
+          contentStyle: { backgroundColor: colors.background },
+          headerStyle: { backgroundColor: colors.background },
+          headerShadowVisible: false,
+          headerTintColor: colors.text,
+          headerTitleStyle: { fontFamily: fonts.display, fontWeight: '600' },
+        }}
+      >
         <Stack.Screen name="onboarding" options={{ gestureEnabled: false }} />
         <Stack.Screen name="log-custom" options={{ presentation: 'modal' }} />
         <Stack.Screen name="edit-entry/[id]" options={{ presentation: 'modal' }} />

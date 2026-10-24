@@ -1,10 +1,16 @@
-import { useEffect, useState } from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
-import Animated, { useAnimatedStyle, useReducedMotion, useSharedValue, withRepeat, withSequence, withTiming } from 'react-native-reanimated';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { useState } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import Animated, { useReducedMotion } from 'react-native-reanimated';
+import Droplet from 'lucide-react-native/icons/droplet';
+import GlassWater from 'lucide-react-native/icons/glass-water';
+import Moon from 'lucide-react-native/icons/moon';
+import SlidersHorizontal from 'lucide-react-native/icons/sliders-horizontal';
+import Sunrise from 'lucide-react-native/icons/sunrise';
 import { t } from '@shared/i18n';
 import type { OnboardingStep, StepContext } from '@shared/onboarding';
-import { useHaptics, useTheme } from '@shared/theme';
+import { useTheme } from '@shared/theme';
+import { useTimeFormat } from '@shared/time';
+import { PressableScale } from '@shared/ui';
 import { startAds } from '@/ads/start';
 import { askPermissionSilently } from '@/notifications/permission';
 import { Plant } from '@/components/Plant';
@@ -14,9 +20,13 @@ import { defaultCups, DEFAULT_BED_MIN, DEFAULT_GOAL_ML, DEFAULT_WAKE_MIN, defaul
 import { GOAL_MAX_ML, GOAL_MIN_ML } from '@/domain/goal';
 import type { Activity, Climate, Sex } from '@/domain/types';
 import { formatAmount } from '@/domain/units';
+import { useFeedback } from '@/store/feedback';
 import { useWater } from '@/store/water';
 import { WeightInput, type Weight } from '@/features/profile/WeightInput';
-import { Chip, MinuteStepper, OptionCard, Stepper } from '@/ui/controls';
+import { AmountStepper } from '@/ui/AmountStepper';
+import { Chip, MinuteField, OptionCard } from '@/ui/controls';
+import { activityIcons, climateIcons, cupIcon } from '@/ui/icons';
+import { ControlRow, SettingsGroup } from '@/ui/SettingsRow';
 import { applyOnboardingAnswers } from './finish';
 import {
   calculatedGoal,
@@ -68,21 +78,18 @@ function ScheduleStep({ ctx }: { ctx: StepContext }) {
   const value = (ctx.value as { wakeMin: number; bedMin: number } | undefined) ?? { wakeMin: DEFAULT_WAKE_MIN, bedMin: DEFAULT_BED_MIN };
   return (
     <View style={{ gap: spacing.lg }}>
-      <View style={{ gap: spacing.sm }}>
-        <Text style={[type.body, { color: colors.textMuted, fontWeight: '600' }]}>{t('onboarding.wake')}</Text>
-        <MinuteStepper label={t('onboarding.wake')} value={value.wakeMin} onChange={(wakeMin) => ctx.setValue({ ...value, wakeMin })} />
-      </View>
-      <View style={{ gap: spacing.sm }}>
-        <Text style={[type.body, { color: colors.textMuted, fontWeight: '600' }]}>{t('onboarding.bed')}</Text>
-        <MinuteStepper label={t('onboarding.bed')} value={value.bedMin} onChange={(bedMin) => ctx.setValue({ ...value, bedMin })} />
-      </View>
+      <SettingsGroup>
+        <ControlRow label={t('onboarding.wake')} icon={Sunrise}>
+          <MinuteField label={t('onboarding.wake')} value={value.wakeMin} onChange={(wakeMin) => ctx.setValue({ ...value, wakeMin })} />
+        </ControlRow>
+        <ControlRow label={t('onboarding.bed')} icon={Moon}>
+          <MinuteField label={t('onboarding.bed')} value={value.bedMin} onChange={(bedMin) => ctx.setValue({ ...value, bedMin })} />
+        </ControlRow>
+      </SettingsGroup>
       <Text style={[type.body, { color: colors.textMuted }]}>{t('onboarding.scheduleHelper')}</Text>
     </View>
   );
 }
-
-const ACTIVITY_ICONS: Record<Activity, string> = { sedentary: 'sofa-outline', light: 'walk', active: 'run', very_active: 'weight-lifter' };
-const CLIMATE_ICONS: Record<Climate, string> = { cool: 'snowflake', mild: 'weather-partly-cloudy', warm: 'weather-sunny', hot: 'thermometer-high' };
 
 function ActivityStep({ ctx }: { ctx: StepContext }) {
   const { spacing } = useTheme();
@@ -90,7 +97,7 @@ function ActivityStep({ ctx }: { ctx: StepContext }) {
   return (
     <View style={{ gap: spacing.sm }}>
       {(['sedentary', 'light', 'active', 'very_active'] as const).map((a) => (
-        <OptionCard key={a} icon={ACTIVITY_ICONS[a]} label={t(`onboarding.activity.${a}`)} selected={value === a} onPress={() => ctx.setValue(a)} />
+        <OptionCard key={a} icon={activityIcons[a]} label={t(`onboarding.activity.${a}`)} selected={value === a} onPress={() => ctx.setValue(a)} />
       ))}
     </View>
   );
@@ -102,7 +109,7 @@ function ClimateStep({ ctx }: { ctx: StepContext }) {
   return (
     <View style={{ gap: spacing.sm }}>
       {(['cool', 'mild', 'warm', 'hot'] as const).map((c) => (
-        <OptionCard key={c} icon={CLIMATE_ICONS[c]} label={t(`onboarding.climate.${c}`)} selected={value === c} onPress={() => ctx.setValue(c)} />
+        <OptionCard key={c} icon={climateIcons[c]} label={t(`onboarding.climate.${c}`)} selected={value === c} onPress={() => ctx.setValue(c)} />
       ))}
       <Text style={[type.body, { color: colors.textMuted }]}>{t('onboarding.climateHelper')}</Text>
     </View>
@@ -122,13 +129,13 @@ function GoalStep({ ctx }: { ctx: StepContext }) {
       <GoalReveal profile={profileFrom(answers, unit)} goalMl={calculated} />
       {value.adjusting && (
         <View style={{ gap: spacing.sm }}>
-          <Stepper
-            value={goal}
-            min={GOAL_MIN_ML}
-            max={GOAL_MAX_ML}
-            step={50}
+          <AmountStepper
+            valueMl={goal}
+            minMl={GOAL_MIN_ML}
+            maxMl={GOAL_MAX_ML}
+            unit="ml"
+            kind="goal"
             label={t('onboarding.goalStepperLabel')}
-            format={ml}
             onChange={(adjustedMl) => ctx.setValue({ adjusting: true, adjustedMl })}
             decreaseLabel={t('onboarding.goalLess')}
             increaseLabel={t('onboarding.goalMore')}
@@ -151,13 +158,13 @@ function CupStep({ ctx }: { ctx: StepContext }) {
       {known && (
         <View style={{ gap: spacing.sm }}>
           <Text style={[type.bodyLarge, { color: colors.text, fontWeight: '700' }]}>{t('onboarding.knownGoalTitle')}</Text>
-          <Stepper
-            value={value.goalMl ?? DEFAULT_GOAL_ML}
-            min={GOAL_MIN_ML}
-            max={GOAL_MAX_ML}
-            step={50}
+          <AmountStepper
+            valueMl={value.goalMl ?? DEFAULT_GOAL_ML}
+            minMl={GOAL_MIN_ML}
+            maxMl={GOAL_MAX_ML}
+            unit="ml"
+            kind="goal"
             label={t('onboarding.goalStepperLabel')}
-            format={ml}
             onChange={(goalMl) => ctx.setValue({ ...value, goalMl })}
             decreaseLabel={t('onboarding.goalLess')}
             increaseLabel={t('onboarding.goalMore')}
@@ -169,7 +176,7 @@ function CupStep({ ctx }: { ctx: StepContext }) {
         {defaultCups.map((c) => (
           <OptionCard
             key={c.id}
-            icon={c.icon}
+            icon={cupIcon(c.icon)}
             label={t(`cups.${c.label}`)}
             detail={ml(c.ml)}
             selected={!customOpen && value.ml === c.ml}
@@ -179,16 +186,16 @@ function CupStep({ ctx }: { ctx: StepContext }) {
             }}
           />
         ))}
-        <OptionCard icon="tune-variant" label={t('cups.custom')} selected={customOpen} onPress={() => setCustomOpen(true)} />
+        <OptionCard icon={SlidersHorizontal} label={t('cups.custom')} selected={customOpen} onPress={() => setCustomOpen(true)} />
       </View>
       {customOpen && (
-        <Stepper
-          value={value.ml}
-          min={50}
-          max={1000}
-          step={50}
+        <AmountStepper
+          valueMl={value.ml}
+          minMl={50}
+          maxMl={1000}
+          unit="ml"
+          kind="drink"
           label={t('onboarding.customCup')}
-          format={ml}
           onChange={(next) => ctx.setValue({ ...value, ml: next })}
           decreaseLabel={t('onboarding.cupLess')}
           increaseLabel={t('onboarding.cupMore')}
@@ -234,52 +241,61 @@ export function reminderSummary(a: OnboardingAnswers): { count: number; start: s
 }
 
 function PermissionStep({ ctx }: { ctx: StepContext }) {
-  const { colors, radius, spacing, type, touchTarget } = useTheme();
+  const { colors, radius, spacing, type, shadow } = useTheme();
+  const clock = useTimeFormat();
   const { count, start, end } = reminderSummary(answersOf(ctx));
   const cup = resolveAnswers(answersOf(ctx), defaultWeightUnit());
   const cupMl = cup.cups.find((c) => c.id === cup.preferredCupId)?.ml ?? 250;
-  const action = { backgroundColor: colors.surfaceAlt, borderRadius: radius.pill, paddingHorizontal: 12, paddingVertical: 6 };
+  const action = { paddingHorizontal: 4, paddingVertical: 6 };
   return (
     <View style={{ gap: spacing.lg }}>
+      {/* A look-alike of the real notification: app row, warm copy, the two action buttons. */}
       <View
         accessible
         accessibilityLabel={t('onboarding.previewLabel')}
-        style={{ backgroundColor: colors.surface, borderColor: colors.border, borderWidth: 1, borderRadius: radius.lg, padding: spacing.lg, gap: spacing.sm }}
+        style={[{ backgroundColor: colors.surface, borderRadius: radius.lg, padding: spacing.lg, gap: spacing.sm }, shadow(2)]}
       >
+        <View style={styles.appRow}>
+          <View style={[styles.appIcon, { backgroundColor: colors.primary }]}>
+            <Droplet size={12} color={colors.onPrimary} fill={colors.onPrimary} strokeWidth={2} />
+          </View>
+          <Text style={[type.caption, { color: colors.textMuted, fontWeight: '600' }]}>{t('onboarding.previewApp')}</Text>
+        </View>
         <Text style={[type.bodyLarge, { color: colors.text, fontWeight: '700' }]}>{t('onboarding.previewTitle')}</Text>
         <Text style={[type.body, { color: colors.textMuted }]}>{t('onboarding.previewBody')}</Text>
-        <View style={{ flexDirection: 'row', gap: spacing.sm, minHeight: touchTarget - 8 }}>
+        <View style={[styles.appRow, { gap: spacing.xl }]}>
           <Text style={[type.body, action, { color: colors.primary, fontWeight: '700' }]}>{t('notify.addCup', { amount: ml(cupMl) })}</Text>
           <Text style={[type.body, action, { color: colors.primary, fontWeight: '700' }]}>{t('notify.snooze', { minutes: 15 })}</Text>
         </View>
       </View>
-      <Text style={[type.bodyLarge, { color: colors.text, fontWeight: '700' }]}>{t('onboarding.permissionTitle')}</Text>
-      <Text style={[type.body, { color: colors.textMuted }]}>{t('onboarding.permissionBody', { count, start, end })}</Text>
+      <Text style={[type.title, { color: colors.text, fontWeight: '800' }]}>{t('onboarding.permissionTitle')}</Text>
+      <Text style={[type.body, { color: colors.textMuted }]}>{t('onboarding.permissionBody', { count, start: clock.time(start), end: clock.time(end) })}</Text>
     </View>
   );
 }
 
+/** A slow breathing pulse on the first-glass button (a looping CSS animation, off under reduced motion). */
+const PULSE = {
+  '0%': { transform: [{ scale: 1 }] },
+  '50%': { transform: [{ scale: 1.06 }] },
+  '100%': { transform: [{ scale: 1 }] },
+};
+
 function FirstGlassStep({ ctx }: { ctx: StepContext }) {
-  const { colors, type, spacing, radius, touchTarget } = useTheme();
-  const haptics = useHaptics();
+  const { colors, type, spacing, radius, touchTarget, fonts, shadow } = useTheme();
+  const feedback = useFeedback();
   const reduced = useReducedMotion();
   const answers = answersOf(ctx);
   const resolved = resolveAnswers(answers, defaultWeightUnit());
   const cupMl = resolved.cups.find((c) => c.id === resolved.preferredCupId)?.ml ?? 250;
   const value = ctx.value as { logged: boolean; ml: number } | undefined;
-  const scale = useSharedValue(1);
-  useEffect(() => {
-    if (reduced || value?.logged) return;
-    scale.value = withRepeat(withSequence(withTiming(1.08, { duration: 700 }), withTiming(1, { duration: 700 })), -1);
-  }, [reduced, value?.logged, scale]);
-  const pulse = useAnimatedStyle(() => ({ transform: [{ scale: scale.value }] }));
 
   const pour = () => {
     if (value?.logged) return;
     // Save the settings first so the drink is measured against this goal and these factors.
     applyOnboardingAnswers(answers);
     useWater.getState().logDrink({ volumeMl: cupMl, source: 'app' });
-    haptics.success();
+    feedback.celebrate();
     ctx.setValue({ logged: true, ml: cupMl });
   };
 
@@ -293,26 +309,22 @@ function FirstGlassStep({ ctx }: { ctx: StepContext }) {
       ) : (
         <>
           <Text style={[type.body, { color: colors.textMuted, textAlign: 'center' }]}>{t('onboarding.firstGlassTap')}</Text>
-          <Animated.View style={pulse}>
-            <Pressable
+          <Animated.View
+            style={reduced ? null : { animationName: PULSE, animationDuration: '1600ms', animationIterationCount: 'infinite', animationTimingFunction: 'ease-in-out' }}
+          >
+            <PressableScale
               accessibilityRole="button"
               accessibilityLabel={t('onboarding.pour', { amount: ml(cupMl) })}
               onPress={pour}
-              style={{
-                minHeight: Math.max(touchTarget, 88),
-                minWidth: 168,
-                borderRadius: radius.pill,
-                backgroundColor: colors.primary,
-                alignItems: 'center',
-                justifyContent: 'center',
-                flexDirection: 'row',
-                gap: spacing.sm,
-                paddingHorizontal: spacing.xl,
-              }}
+              style={[
+                styles.pour,
+                { minHeight: Math.max(touchTarget, 88), borderRadius: radius.pill, backgroundColor: colors.primary, gap: spacing.sm, paddingHorizontal: spacing.xl },
+                shadow(2),
+              ]}
             >
-              <MaterialCommunityIcons name="cup-water" size={34} color={colors.onPrimary} />
-              <Text style={[type.title, { color: colors.onPrimary, fontWeight: '800' }]}>{ml(cupMl)}</Text>
-            </Pressable>
+              <GlassWater size={32} color={colors.onPrimary} strokeWidth={2.25} />
+              <Text style={[type.title, { color: colors.onPrimary, fontWeight: '800', fontFamily: fonts.display }]}>{ml(cupMl)}</Text>
+            </PressableScale>
           </Animated.View>
         </>
       )}
@@ -388,4 +400,9 @@ export function buildSteps(): OnboardingStep[] {
   ];
 }
 
-const styles = StyleSheet.create({ wrap: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 } });
+const styles = StyleSheet.create({
+  wrap: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
+  appRow: { flexDirection: 'row', alignItems: 'center', gap: 8 },
+  appIcon: { width: 20, height: 20, borderRadius: 10, alignItems: 'center', justifyContent: 'center' },
+  pour: { minWidth: 168, alignItems: 'center', justifyContent: 'center', flexDirection: 'row' },
+});

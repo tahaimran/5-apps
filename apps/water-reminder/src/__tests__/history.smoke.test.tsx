@@ -1,6 +1,6 @@
 import { mockParams, mockRouter, resetNotifMock } from '@/testing/mocks';
 import { resetApp } from '@/testing/stores';
-import { auditPressables, cleanup, render } from '@/testing/ui';
+import { auditPressables, cleanup, render, stepWheel, typeAmount } from '@/testing/ui';
 import { Alert } from 'react-native';
 import { act } from 'react';
 import { ThemeProvider } from '@shared/theme';
@@ -59,7 +59,7 @@ describe('History: Day', () => {
     expect(ui.texts()).toContain('450 ml of 2,000 ml');
     expect(ui.byLabel('Edit 8:00 AM, Water, 250 millilitres')).toHaveLength(1);
     expect(ui.byLabel('Edit 10:00 AM, Coffee, 250 millilitres')).toHaveLength(1);
-    expect(ui.texts()).toContain('counts as 200 ml');
+    expect(ui.texts()).toContain('Coffee · counts as 200 ml');
   });
   it('puts the native ad after the 3rd row, or at the end of a short list', async () => {
     log(100, 7);
@@ -196,8 +196,8 @@ describe('Edit entry', () => {
     mockParams.current = { id: entry.id };
     const ui = await render(themed(<EditEntry />));
     await ui.press('Tea');
-    await ui.type('Amount in ml', '400');
-    await ui.press('Later'); // 08:00 → 09:00
+    await typeAmount(ui, 'ml', '400');
+    await stepWheel(ui, 'Time', 'Hour', 1, 'increment'); // 08:00 → 09:00
     await ui.press('Save');
     const saved = useWater.getState().logsForDay(TODAY)[0];
     expect(saved).toMatchObject({ beverage: 'tea', volumeMl: 400, effectiveMl: 360 });
@@ -208,7 +208,7 @@ describe('Edit entry', () => {
     const { entry } = useWater.getState().logDrink({ volumeMl: 250, ts: at(8, 7) });
     mockParams.current = { id: entry.id };
     const ui = await render(themed(<EditEntry />));
-    await ui.type('Amount in ml', '300');
+    await typeAmount(ui, 'ml', '300');
     await ui.press('Save');
     expect(useWater.getState().logsForDay(TODAY)[0]).toMatchObject({ volumeMl: 300, ts: at(8, 7) });
   });

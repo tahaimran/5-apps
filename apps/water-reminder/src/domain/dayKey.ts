@@ -63,7 +63,14 @@ export function dayKeyFor(at: Date | number, wakeMin: MinuteOfDay): DayKey {
   return minute >= MIN_PER_DAY + cutoff ? addDays(date, 1) : date;
 }
 
+/** Minutes from midnight as stored "HH:mm" (24-hour); screens show it with useTimeFormat().time. */
 export const formatClock = (minute: MinuteOfDay): string => {
   const m = ((minute % MIN_PER_DAY) + MIN_PER_DAY) % MIN_PER_DAY;
   return `${pad(Math.floor(m / 60))}:${pad(m % 60)}`;
+};
+
+/** "HH:mm" back to minutes from midnight; anything unreadable counts as 0. */
+export const hhmmToMinute = (hhmm: string): MinuteOfDay => {
+  const [h, m] = hhmm.split(':').map(Number);
+  return (Number.isFinite(h) ? h : 0) * 60 + (Number.isFinite(m) ? m : 0);
 };

@@ -1,9 +1,10 @@
 import { mockDevice, mockFiles, mockNotif, mockPicker, mockRouter, mockShare, resetNotifMock } from '@/testing/mocks';
 import { resetApp } from '@/testing/stores';
-import { auditPressables, cleanup, flush, render } from '@/testing/ui';
+import { auditPressables, cleanup, flush, render, stepWheel } from '@/testing/ui';
 import { act } from 'react';
 import { Alert, Linking } from 'react-native';
 import { ThemeProvider } from '@shared/theme';
+import { hideToast, ToastHost } from '@shared/ui';
 import { sharedStore } from '@shared/storage';
 import '@/bootstrap';
 import type { ReactElement } from 'react';
@@ -40,7 +41,12 @@ import { palette } from '@/theme/tokens';
 
 const TODAY = '2026-10-08';
 const NOW = new Date(2026, 9, 8, 14, 0);
-const themed = (el: ReactElement, scale = 1) => <ThemeProvider palette={palette} fontScale={scale}>{el}</ThemeProvider>;
+const themed = (el: ReactElement, scale = 1) => (
+  <ThemeProvider palette={palette} fontScale={scale}>
+    {el}
+    <ToastHost />
+  </ThemeProvider>
+);
 const at = (h: number, d = 8) => new Date(2026, 9, d, h).getTime();
 const alertPress = (style: 'cancel' | 'destructive') => jest.spyOn(Alert, 'alert').mockImplementation((_t, _m, buttons) => void buttons?.find((b) => b.style === style)?.onPress?.());
 
@@ -63,6 +69,7 @@ beforeEach(() => {
   useCelebration.setState({ current: null });
 });
 afterEach(async () => {
+  act(() => hideToast());
   await cleanup();
   jest.useRealTimers();
   jest.restoreAllMocks();
@@ -177,8 +184,8 @@ describe('Garden (plan §5.3)', () => {
 describe('Settings index', () => {
   it('shows the goal, reminders and cup summaries and opens each screen', async () => {
     const ui = await render(themed(<SettingsIndex />));
-    await ui.press('Daily goal, 2,000 ml');
-    await ui.press('Reminders, 8 a day');
+    await ui.press('Daily goal: 2,000 ml');
+    await ui.press('Reminders: 8 a day');
     await ui.press('Cups, 250 ml');
     await ui.press('Drinks and how they count');
     await ui.press('Privacy and ads');
@@ -198,8 +205,8 @@ describe('Settings index', () => {
     const ui = await render(themed(<SettingsIndex />));
     await ui.press('fl oz');
     expect(useSettings.getState().goal.unit).toBe('floz');
-    expect(ui.byLabel('Daily goal, 67.6 fl oz')).toHaveLength(1);
-    await ui.press('Later'); // the first "Later" is the wake hour
+    expect(ui.byLabel('Daily goal: 67.6 fl oz')).toHaveLength(1);
+    await stepWheel(ui, 'Wake up', 'Hour', 1, 'increment');
     expect(useSettings.getState().reminders.wakeMin).toBe(8 * 60);
     await ui.press('Dark');
     expect(sharedStore.get('theme.mode')).toBe('dark');
@@ -210,6 +217,18 @@ describe('Settings index', () => {
     await act(async () => toggle('Large text').props.onValueChange(true));
     await act(async () => toggle('Vibration feedback').props.onValueChange(false));
     expect(useSettings.getState().prefs).toMatchObject({ largeText: true, haptics: false });
+    await act(async () => toggle('Sounds').props.onValueChange(false));
+    expect(useSettings.getState().prefs.sounds).toBe(false);
+  });
+  it('switches the clock between the phone, 12-hour and 24-hour styles', async () => {
+    const ui = await render(themed(<SettingsIndex />));
+    expect(ui.byLabel('Wake up, 7:00 AM')).toHaveLength(1); // en-US phone: 12-hour
+    await ui.press('24-hour');
+    expect(useSettings.getState().prefs.timeFormat).toBe('24h');
+    expect(ui.byLabel('Wake up, 07:00')).toHaveLength(1);
+    await ui.press('Phone');
+    expect(useSettings.getState().prefs.timeFormat).toBeUndefined();
+    expect(ui.byLabel('Wake up, 7:00 AM')).toHaveLength(1);
   });
   it('opens the store page to rate', async () => {
     const open = jest.spyOn(Linking, 'openURL').mockResolvedValue(true);
@@ -268,18 +287,18 @@ describe('Reminder settings (F4, F5)', () => {
   it('summarizes the schedule and follows the frequency and window', async () => {
     useSettings.getState().setGoal({ goalMl: 2300 });
     const ui = await render(themed(<RemindersSettings />));
-    expect(ui.texts()).toContain('About 10 reminders a day, from 07:30 to 22:30');
+    expect(ui.texts()).toContain('About 10 reminders a day, from 7:30 AM to 10:30 PM');
     await ui.press('At a fixed interval');
     await ui.press('Every 60 min');
     expect(useSettings.getState().reminders).toMatchObject({ frequency: 'interval', intervalMin: 60 });
-    expect(ui.texts()).toContain('About 16 reminders a day, from 07:30 to 22:30');
+    expect(ui.texts()).toContain('About 16 reminders a day, from 7:30 AM to 10:30 PM');
   });
   it('sets style, snooze and the skip window', async () => {
     const ui = await render(themed(<RemindersSettings />));
     await ui.press('Gentle (silent banner)');
     await ui.press('30 min');
     expect(useSettings.getState().reminders).toMatchObject({ style: 'gentle', snoozeMin: 30 });
-    await ui.press('Later'); // skip window stepper: 30 → 35
+    await ui.press('Longer skip window'); // 30 → 35
     expect(useSettings.getState().reminders.skipWindowMin).toBe(35);
   });
   it('switches reminders off and hides the options', async () => {
@@ -303,8 +322,8 @@ describe('Reminder settings (F4, F5)', () => {
     const ui = await render(themed(<RemindersSettings />));
     await ui.press('Add a quiet time');
     expect(useSettings.getState().reminders.quietBlocks).toEqual([{ startMin: 720, endMin: 780 }]);
-    expect(ui.texts()).toContain('About 9 reminders a day, from 07:30 to 22:30');
-    await ui.press('Remove the quiet time from 12:00 to 13:00');
+    expect(ui.texts()).toContain('About 9 reminders a day, from 7:30 AM to 10:30 PM');
+    await ui.press('Remove the quiet time from 12:00 PM to 1:00 PM');
     expect(useSettings.getState().reminders.quietBlocks).toEqual([]);
   });
   it('offers to turn the permission on when it is off', async () => {
@@ -321,9 +340,9 @@ describe('Reminder settings (F4, F5)', () => {
 describe('Cups and drinks', () => {
   it('resizes a cup and makes another the preferred one', async () => {
     const ui = await render(themed(<CupsSettings />));
-    await ui.press('Larger cup'); // first cup: 150 → 200
-    expect(useSettings.getState().cups[0].ml).toBe(200);
-    await ui.press('Make preferred'); // the first cup in the list
+    await ui.press('Small glass: bigger'); // 150 → 175 (25 ml steps below 300)
+    expect(useSettings.getState().cups[0].ml).toBe(175);
+    await ui.press('Make usual'); // the first cup in the list
     expect(useSettings.getState().prefs.preferredCupId).toBe('cup-150');
     await ui.press('Reset cups');
     expect(useSettings.getState().cups[0].ml).toBe(150);

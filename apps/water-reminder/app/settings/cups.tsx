@@ -1,42 +1,48 @@
-import { Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { Stack } from 'expo-router';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
+import { Card } from '@shared/ui';
 import { defaultCups } from '@/domain/defaults';
 import { useSettings } from '@/store/settings';
-import { volume } from '@/ui/format';
+import { AmountStepper } from '@/ui/AmountStepper';
+import { cupIcon } from '@/ui/icons';
+import { IconCircle } from '@/ui/SettingsRow';
 import { Screen } from '@/ui/Screen';
-import { Chip, Stepper, TextButton } from '@/ui/controls';
+import { Chip, TextButton } from '@/ui/controls';
 
 export default function CupsSettings() {
-  const { colors, spacing, radius, type } = useTheme();
+  const { colors, spacing, type } = useTheme();
   const { cups, prefs, goal, setCups, setPrefs } = useSettings();
   const unit = goal.unit;
   const resize = (id: string, ml: number) => setCups(cups.map((c) => (c.id === id ? { ...c, ml } : c)));
 
   return (
-    <Screen>
+    <Screen edges={[]}>
       <Stack.Screen options={{ title: t('settings.cups'), headerShown: true }} />
       <Text style={[type.body, { color: colors.textMuted }]}>{t('cupsScreen.intro')}</Text>
       {cups.map((cup) => {
         const name = defaultCups.some((d) => d.label === cup.label) || cup.label === 'custom' ? t(`cups.${cup.label}`) : cup.label;
         const preferred = cup.id === prefs.preferredCupId;
         return (
-          <View key={cup.id} style={{ backgroundColor: colors.surface, borderRadius: radius.md, padding: spacing.lg, gap: spacing.sm }}>
-            <Text style={[type.bodyLarge, { color: colors.text, fontWeight: '700' }]}>{name}</Text>
-            <Stepper
-              value={cup.ml}
-              min={50}
-              max={1000}
-              step={50}
-              label={name}
-              format={(v) => volume(v, unit)}
+          <Card key={cup.id} style={[{ gap: spacing.md }, preferred && { borderWidth: 2, borderColor: colors.primary }]}>
+            <View style={styles.head}>
+              <IconCircle icon={cupIcon(cup.icon)} />
+              <Text style={[type.bodyLarge, styles.flex, { color: colors.text, fontWeight: '700' }]}>{name}</Text>
+              <Chip label={preferred ? t('cupsScreen.preferred') : t('cupsScreen.makePreferred')} selected={preferred} onPress={() => setPrefs({ preferredCupId: cup.id })} />
+            </View>
+            <AmountStepper
+              valueMl={cup.ml}
               onChange={(ml) => resize(cup.id, ml)}
-              decreaseLabel={t('onboarding.cupLess')}
-              increaseLabel={t('onboarding.cupMore')}
+              unit={unit}
+              minMl={50}
+              maxMl={1000}
+              kind="drink"
+              label={name}
+              decreaseLabel={t('cupsScreen.smaller', { name })}
+              increaseLabel={t('cupsScreen.bigger', { name })}
             />
-            <Chip label={preferred ? t('cupsScreen.preferred') : t('cupsScreen.makePreferred')} selected={preferred} onPress={() => setPrefs({ preferredCupId: cup.id })} />
-          </View>
+          </Card>
         );
       })}
       <TextButton
@@ -49,3 +55,8 @@ export default function CupsSettings() {
     </Screen>
   );
 }
+
+const styles = StyleSheet.create({
+  head: { flexDirection: 'row', alignItems: 'center', gap: 12 },
+  flex: { flex: 1 },
+});

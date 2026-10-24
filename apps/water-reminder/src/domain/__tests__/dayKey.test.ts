@@ -1,4 +1,4 @@
-import { addDays, atMinute, dayKeyFor, daysBetween, dayRange, formatClock, localDateKey, minuteOfDay, monthKeyOf, parseDayKey, weekdayOf } from '../dayKey';
+import { addDays, atMinute, dayKeyFor, daysBetween, dayRange, formatClock, hhmmToMinute, localDateKey, minuteOfDay, monthKeyOf, parseDayKey, weekdayOf } from '../dayKey';
 
 const at = (y: number, mo: number, d: number, h: number, mi = 0) => new Date(y, mo - 1, d, h, mi);
 
@@ -23,6 +23,8 @@ describe('day keys', () => {
   it('formats clock times, wrapping past midnight', () => {
     expect(formatClock(450)).toBe('07:30');
     expect(formatClock(1500)).toBe('01:00');
+    expect(hhmmToMinute('07:30')).toBe(450);
+    expect(hhmmToMinute('x')).toBe(0);
     expect(formatClock(-30)).toBe('23:30');
   });
   it('places a minute offset on a day, running into the next day past 1440', () => {
