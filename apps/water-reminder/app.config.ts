@@ -31,6 +31,8 @@ const config: ExpoConfig = {
       'android.permission.SCHEDULE_EXACT_ALARM',
       'android.permission.USE_EXACT_ALARM',
       'android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS',
+      'android.permission.RECORD_AUDIO',
+      'android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK',
     ],
   },
   plugins: [
@@ -42,13 +44,45 @@ const config: ExpoConfig = {
     // `drop.wav` is the reminder sound of the "Water reminders" channel.
     ['expo-notifications', { sounds: ['./assets/sounds/drop.wav'], color: '#2B9FE6' }],
     'expo-background-task',
+    // Edge-to-edge without the OS's translucent strip behind 3-button navigation: the tab bar and
+    // screen colors run under it, and the root sets the button color from the app's own theme.
+    ['expo-navigation-bar', { enforceContrast: false }],
+    // Short UI sounds only: no microphone and no background playback service.
+    ['expo-audio', { microphonePermission: false, recordAudioAndroid: false, enableBackgroundPlayback: false }],
+    [
+      'expo-font',
+      {
+        // Embedded as Android font families, so fontFamily 'Figtree' + fontWeight picks the real file
+        // and text never flashes in a fallback font.
+        android: {
+          fonts: [
+            {
+              fontFamily: 'Figtree',
+              fontDefinitions: [
+                { path: '../../packages/shared/assets/fonts/Figtree_400Regular.ttf', weight: 400 },
+                { path: '../../packages/shared/assets/fonts/Figtree_500Medium.ttf', weight: 500 },
+                { path: '../../packages/shared/assets/fonts/Figtree_600SemiBold.ttf', weight: 600 },
+                { path: '../../packages/shared/assets/fonts/Figtree_700Bold.ttf', weight: 700 },
+              ],
+            },
+            {
+              fontFamily: 'Bricolage',
+              fontDefinitions: [
+                { path: '../../packages/shared/assets/fonts/BricolageGrotesque_600SemiBold.ttf', weight: 600 },
+                { path: '../../packages/shared/assets/fonts/BricolageGrotesque_800ExtraBold.ttf', weight: 800 },
+              ],
+            },
+          ],
+        },
+      },
+    ],
     [
       'expo-splash-screen',
       {
         image: './assets/splash-icon.png',
         imageWidth: 200,
-        backgroundColor: '#F4FAFE',
-        dark: { image: './assets/splash-icon.png', backgroundColor: '#0E1A24' },
+        backgroundColor: '#F2F8FC',
+        dark: { image: './assets/splash-icon.png', backgroundColor: '#0B1620' },
       },
     ],
     ['expo-build-properties', { android: { compileSdkVersion: 36, targetSdkVersion: 36 } }],

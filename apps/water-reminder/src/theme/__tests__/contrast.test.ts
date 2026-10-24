@@ -1,6 +1,6 @@
 import { defaultPalettes } from '@shared/theme/tokens';
 import { contrastRatio } from '../contrast';
-import { extraColors, palette } from '../tokens';
+import { extraColors, palette, WAVE_ALPHA } from '../tokens';
 
 const merged = (mode: 'light' | 'dark') => ({ ...defaultPalettes[mode], ...palette[mode] });
 const AA = 4.5;
@@ -43,6 +43,21 @@ describe.each(['light', 'dark'] as const)('%s palette meets WCAG AA for text', (
   });
   it('body text is at least 12:1 as the plan requires', () => {
     expect(contrastRatio(c.text, c.background)).toBeGreaterThanOrEqual(12);
+  });
+  it.each(['hero', 'heroDone'] as const)('white hero text stays AA on every %s stop, even with both waves behind it', (key) => {
+    // Both translucent waves stacked: the lightest spot text can land on.
+    const waves = 1 - (1 - WAVE_ALPHA.back) * (1 - WAVE_ALPHA.front);
+    for (const stop of extraColors[mode][key]) {
+      expect(contrastRatio('#FFFFFF', stop)).toBeGreaterThanOrEqual(AA);
+      expect(contrastRatio('#FFFFFF', blend('#FFFFFF', stop, waves))).toBeGreaterThanOrEqual(AA);
+    }
+  });
+  it('the hero pill button (primary-dark text on white) reads clearly', () => {
+    expect(contrastRatio(extraColors.light.hero[0], '#FFFFFF')).toBeGreaterThanOrEqual(AA);
+  });
+  it('text reads on the garden wash', () => {
+    for (const stop of extraColors[mode].garden) expect(contrastRatio(c.text, stop)).toBeGreaterThanOrEqual(AA);
+    for (const stop of extraColors[mode].garden) expect(contrastRatio(c.textMuted, stop)).toBeGreaterThanOrEqual(AA);
   });
   it('the ring fill is visible against its track (3:1 non-text contrast)', () => {
     expect(contrastRatio(extraColors[mode].ring, c.surface)).toBeGreaterThanOrEqual(mode === 'light' ? 2.5 : 3);

@@ -538,8 +538,9 @@ describe('dark mode', () => {
       for (const el of [<Today key="t" />, <History key="h" />, <Garden key="g" />, <SettingsIndex key="s" />]) {
         const ui = await render(themed(el));
         const backgrounds = ui.root.findAll((n) => typeof n.props.style === 'object' && n.props.style !== null).map((n) => JSON.stringify(n.props.style));
-        expect(backgrounds.some((b) => b.includes(mode === 'dark' ? '#0E1A24' : '#F4FAFE'))).toBe(true);
-        expect(backgrounds.some((b) => b.includes(mode === 'dark' ? '#F4FAFE' : '#0E1A24'))).toBe(false);
+        const [own, other] = mode === 'dark' ? [palette.dark!.background!, palette.light!.background!] : [palette.light!.background!, palette.dark!.background!];
+        expect(backgrounds.some((b) => b.includes(own))).toBe(true);
+        expect(backgrounds.some((b) => b.includes(other))).toBe(false);
         expect(auditPressables(ui.root)).toEqual([]);
         await cleanup();
       }

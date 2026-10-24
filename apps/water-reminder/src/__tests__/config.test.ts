@@ -55,6 +55,19 @@ describe('store-facing config', () => {
     for (const file of notifications.sounds) expect(require('fs').existsSync(require('path').resolve(__dirname, '../..', file))).toBe(true);
     expect(notifications.sounds.some((s) => s.endsWith('drop.wav'))).toBe(true);
   });
+  it('embeds the shared fonts, all of which exist on disk', () => {
+    const font = pluginOptions('expo-font')![1] as { android: { fonts: { fontFamily: string; fontDefinitions: { path: string }[] }[] } };
+    expect(font.android.fonts.map((f) => f.fontFamily)).toEqual(['Figtree', 'Bricolage']);
+    for (const f of font.android.fonts) {
+      for (const d of f.fontDefinitions) expect(require('fs').existsSync(require('path').resolve(__dirname, '../..', d.path))).toBe(true);
+    }
+    expect(require('../theme/tokens').fonts).toEqual({ body: 'Figtree', display: 'Bricolage' });
+  });
+  it('plays UI sounds without a microphone or a background media service', () => {
+    expect(pluginOptions('expo-audio')![1]).toEqual({ microphonePermission: false, recordAudioAndroid: false, enableBackgroundPlayback: false });
+    expect(blocked).toEqual(expect.arrayContaining(['android.permission.RECORD_AUDIO', 'android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK']));
+    expect(plugins).toContain('expo-navigation-bar');
+  });
   it('uses a test AdMob app id until a real one is set in EAS', () => {
     const ads = pluginOptions('react-native-google-mobile-ads')![1] as { androidAppId: string };
     expect(ads.androidAppId).toMatch(/^ca-app-pub-\d+~\d+$/);

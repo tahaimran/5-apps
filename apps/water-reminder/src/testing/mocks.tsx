@@ -130,8 +130,26 @@ jest.mock('react-native-svg', () => {
   const React = require('react');
   const { View } = require('react-native');
   const box = (props: Record<string, unknown>) => React.createElement(View, props);
-  return { __esModule: true, default: box, Svg: box, Circle: box, G: box, Path: box, Rect: box };
+  return {
+    __esModule: true,
+    default: box,
+    Svg: box,
+    Circle: box,
+    G: box,
+    Path: box,
+    Rect: box,
+    Ellipse: box,
+    Line: box,
+    Defs: box,
+    LinearGradient: box,
+    RadialGradient: box,
+    Stop: box,
+    ClipPath: box,
+  };
 });
+jest.mock('react-native-worklets', () => require('../../../../packages/shared/src/testing/animation').workletsMock());
+jest.mock('expo-linear-gradient', () => require('../../../../packages/shared/src/testing/animation').linearGradientMock());
+jest.mock('expo-audio', () => require('../../../../packages/shared/src/testing/animation').audioMock());
 jest.mock('react-native-google-mobile-ads', () => ({
   __esModule: true,
   default: () => ({ initialize: async () => [], setRequestConfiguration: async () => undefined }),

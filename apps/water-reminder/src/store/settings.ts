@@ -1,4 +1,6 @@
 import { create } from 'zustand';
+import { setHapticsEnabled } from '@shared/theme';
+import { setTimeFormatPreference } from '@shared/time/preference';
 import { defaultBeverages } from '@/domain/hydration';
 import { defaultCups, defaultGoal, defaultPrefs, defaultProfile, defaultReminders } from '@/domain/defaults';
 import type { BeverageFactor, Cup, GoalSettings, Prefs, Profile, ReminderSettings } from '@/domain/types';
@@ -75,6 +77,14 @@ export const useSettings = create<SettingsState>((set, get) => ({
     set(snapshot);
   },
 }));
+
+/** Shared pieces (the wheel TimeField, useHaptics) follow the clock style and haptics toggle chosen here. */
+const share = ({ timeFormat, haptics }: Prefs) => {
+  setTimeFormatPreference(timeFormat);
+  setHapticsEnabled(haptics);
+};
+share(useSettings.getState().prefs);
+useSettings.subscribe((s) => share(s.prefs));
 
 /** The cup behind the "+250 ml" notification button; falls back to the first cup. */
 export function preferredCup(s: Pick<Snapshot, 'cups' | 'prefs'>): Cup {

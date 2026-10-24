@@ -115,7 +115,7 @@ describe('cleaning', () => {
         reminders: { wakeMin: 99_999, bedMin: -5, frequency: 'often', intervalMin: 7, style: 'loud', snoozeMin: 3, skipWindowMin: 'x', quietBlocks: [{ startMin: 1 }, { startMin: 60, endMin: 120 }], activeWeekdays: [9, -1, 'x'] },
         cups: [{ id: 'a', ml: 99_999, label: 'Big' }, { nope: true }],
         beverages: [{ id: 'tea', factor: 4 }, { id: 'coffee', factor: 'x' }],
-        prefs: { preferredCupId: 'gone', largeText: 'yes', haptics: false, freezeEarnedDay: 'yesterday' },
+        prefs: { preferredCupId: 'gone', largeText: 'yes', haptics: false, sounds: 'loud', timeFormat: '13h', freezeEarnedDay: 'yesterday' },
       }),
       1,
     );
@@ -127,8 +127,14 @@ describe('cleaning', () => {
     expect(r.backup.cups).toEqual([{ id: 'a', ml: 1000, label: 'Big', icon: 'cup-water' }]);
     expect(r.backup.beverages.find((b) => b.id === 'tea')?.factor).toBe(1);
     expect(r.backup.beverages.find((b) => b.id === 'coffee')?.factor).toBe(0.8);
-    expect(r.backup.prefs).toMatchObject({ preferredCupId: 'a', largeText: false, haptics: false });
+    expect(r.backup.prefs).toMatchObject({ preferredCupId: 'a', largeText: false, haptics: false, sounds: true });
     expect(r.backup.prefs.freezeEarnedDay).toBeUndefined();
+    expect(r.backup.prefs.timeFormat).toBeUndefined();
+  });
+  it('keeps the sound and clock-style choices', () => {
+    const file = buildBackup(source(), NOW, 1);
+    const r = parseBackup(text({ ...file, prefs: { ...file.prefs, sounds: false, timeFormat: '12h' } }), 1);
+    expect(r.ok && r.backup.prefs).toMatchObject({ sounds: false, timeFormat: '12h' });
   });
   it('clamps plant numbers and keeps a valid day', () => {
     const file = buildBackup(source(), NOW, 1);

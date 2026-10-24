@@ -125,6 +125,10 @@ export interface Prefs {
   preferredCupId: string;
   largeText: boolean;
   haptics: boolean;
+  /** Short UI sounds when logging a drink, undoing and reaching the goal. */
+  sounds: boolean;
+  /** Clock style; absent = follow the phone's. */
+  timeFormat?: '12h' | '24h';
   /** Last day the goal-reached confetti played (once per day). */
   celebratedDay?: DayKey;
   /** Last day a streak freeze was earned from a rewarded ad (max one per day). */

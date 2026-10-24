@@ -29,7 +29,7 @@ export function useGoalCelebration() {
     if (prefs.celebratedDay === today) return;
     setPrefs({ celebratedDay: today });
     useCelebration.getState().show({ kind: 'goal' });
-    feedback.success();
+    feedback.celebrate();
 
     const water = useWater.getState();
     const last = water.logsForDay(today).at(-1);

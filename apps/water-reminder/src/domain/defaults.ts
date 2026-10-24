@@ -37,7 +37,7 @@ export const defaultCups: Cup[] = [
 
 export const DEFAULT_CUP_ID = 'cup-250';
 
-export const defaultPrefs: Prefs = { preferredCupId: DEFAULT_CUP_ID, largeText: false, haptics: true };
+export const defaultPrefs: Prefs = { preferredCupId: DEFAULT_CUP_ID, largeText: false, haptics: true, sounds: true };
 
 /** A new plant starts the day before `today`, so today is the first day that gets evaluated later. */
 export const defaultProgress = (yesterday: DayKey): PlantProgress => ({

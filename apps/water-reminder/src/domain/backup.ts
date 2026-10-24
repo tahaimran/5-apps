@@ -130,6 +130,8 @@ function cleanPrefs(v: unknown, cups: Cup[]): Prefs {
   else p.preferredCupId = (cups.find((c) => c.id === defaultPrefs.preferredCupId) ?? cups[0]).id;
   if (typeof v.largeText === 'boolean') p.largeText = v.largeText;
   if (typeof v.haptics === 'boolean') p.haptics = v.haptics;
+  if (typeof v.sounds === 'boolean') p.sounds = v.sounds;
+  if (v.timeFormat === '12h' || v.timeFormat === '24h') p.timeFormat = v.timeFormat;
   if (isDay(v.freezeEarnedDay)) p.freezeEarnedDay = v.freezeEarnedDay;
   return p;
 }
