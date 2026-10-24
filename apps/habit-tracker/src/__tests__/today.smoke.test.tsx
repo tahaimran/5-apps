@@ -145,3 +145,27 @@ describe('Today screen', () => {
     expect(ui.texts().length).toBeGreaterThan(30);
   });
 });
+
+describe('big count targets', () => {
+  beforeEach(() => {
+    resetApp();
+    jest.useFakeTimers({ now: new Date(2026, 9, 8, 9, 0, 0), doNotFake: ['nextTick', 'setImmediate'] });
+    useToday.setState({ today: TODAY });
+  });
+  afterEach(async () => {
+    await cleanup();
+    jest.useRealTimers();
+  });
+
+  it('steps move in round chunks and an exact amount can be typed', async () => {
+    const { id } = add('steps');
+    const ui = await render(element());
+    await ui.press('Add 500');
+    expect(habits.useHabits.getState().entries[id][TODAY].value).toBe(500);
+    await ui.press('Enter amount');
+    await ui.type('Amount in steps', '8240');
+    await ui.press('Save');
+    expect(habits.useHabits.getState().entries[id][TODAY].value).toBe(8240);
+    expect(ui.texts()).toContain('8,240/8,000 steps');
+  });
+});

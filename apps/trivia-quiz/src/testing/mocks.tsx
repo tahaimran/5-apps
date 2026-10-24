@@ -147,7 +147,7 @@ jest.mock('react-native-google-mobile-ads', () => ({
   AdsConsentPrivacyOptionsRequirementStatus: { REQUIRED: 'REQUIRED' },
   AdsConsentStatus: { UNKNOWN: 'UNKNOWN', REQUIRED: 'REQUIRED', NOT_REQUIRED: 'NOT_REQUIRED', OBTAINED: 'OBTAINED' },
   BannerAd: () => null,
-  BannerAdSize: { LARGE_ANCHORED_ADAPTIVE_BANNER: 'x' },
+  BannerAdSize: { ANCHORED_ADAPTIVE_BANNER: 'x', LARGE_ANCHORED_ADAPTIVE_BANNER: 'x' },
   NativeAdView: () => null,
   NativeAsset: () => null,
   NativeAssetType: {},

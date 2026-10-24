@@ -49,6 +49,9 @@ const config: ExpoConfig = {
         sounds: ['../../packages/shared/assets/sounds/reminder.wav'],
       },
     ],
+    // Edge-to-edge without the OS's translucent strip behind 3-button navigation: the tab bar and
+    // screen colors run under it, and the root sets the button color from the app's own theme.
+    ['expo-navigation-bar', { enforceContrast: false }],
     // Short UI sounds only: no microphone and no background playback service.
     ['expo-audio', { microphonePermission: false, recordAudioAndroid: false, enableBackgroundPlayback: false }],
     [

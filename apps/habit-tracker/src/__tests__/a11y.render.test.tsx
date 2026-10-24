@@ -123,7 +123,7 @@ describe('screens are readable by a screen reader', () => {
     const ui = await render(themed(<Today />));
     const row = ui.root.findAll((n) => typeof n.props.onAccessibilityAction === 'function')[0];
     expect(row.props.accessibilityLabel).toBe('Drink water, 0 of 8 glasses, no streak yet');
-    expect(row.props.accessibilityActions.map((a: { name: string }) => a.name)).toEqual(['increment', 'decrement', 'details', 'moveUp', 'moveDown']);
+    expect(row.props.accessibilityActions.map((a: { name: string }) => a.name)).toEqual(['increment', 'decrement', 'details', 'logAmount', 'moveUp', 'moveDown']);
   });
   it('the progress ring and week days have spoken labels', async () => {
     add('make-bed');

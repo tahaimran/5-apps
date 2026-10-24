@@ -94,7 +94,7 @@ jest.mock('react-native-google-mobile-ads', () => {
       APP_OPEN: 'test-app-open',
       NATIVE: 'test-native',
     },
-    BannerAdSize: { LARGE_ANCHORED_ADAPTIVE_BANNER: 'LARGE_ANCHORED_ADAPTIVE_BANNER' },
+    BannerAdSize: { ANCHORED_ADAPTIVE_BANNER: 'ANCHORED_ADAPTIVE_BANNER', LARGE_ANCHORED_ADAPTIVE_BANNER: 'LARGE_ANCHORED_ADAPTIVE_BANNER' },
     BannerAd: (props: Record<string, unknown>) => React.createElement('BannerAd', props),
     NativeAdView: (props: Record<string, unknown>) => React.createElement('NativeAdView', props, props.children),
     NativeAsset: (props: Record<string, unknown>) => props.children,

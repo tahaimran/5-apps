@@ -3,6 +3,7 @@ import { Pressable, StyleSheet, Text, View, type AccessibilityActionEvent } from
 import Animated, { useAnimatedStyle, useReducedMotion, useSharedValue, withTiming } from 'react-native-reanimated';
 import Check from 'lucide-react-native/icons/check';
 import Minus from 'lucide-react-native/icons/minus';
+import PencilLine from 'lucide-react-native/icons/pencil-line';
 import Pause from 'lucide-react-native/icons/pause';
 import Play from 'lucide-react-native/icons/play';
 import Plus from 'lucide-react-native/icons/plus';
@@ -10,6 +11,7 @@ import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
 import { EASE_OUT, PressableScale, ProgressRing } from '@shared/ui';
 import { isComplete } from '@/domain/completion';
+import { countStep, stepLabel } from '@/domain/countStep';
 import { elapsedSeconds, formatClock, isRunning } from '@/domain/timer';
 import { readableOn } from '@/theme/contrast';
 import { CheckButton } from './CheckButton';
@@ -36,6 +38,8 @@ export interface HabitRowProps {
   onLongPress?: () => void;
   /** Accessible alternative to dragging. */
   onMove?: (delta: -1 | 1) => void;
+  /** Count habits: type an exact amount (opens the log sheet). */
+  onLogAmount?: () => void;
 }
 
 const streakLabel = (s: StreakResult) =>
@@ -82,6 +86,7 @@ function HabitRowBase({
   onOpen,
   onLongPress,
   onMove,
+  onLogAmount,
 }: HabitRowProps) {
   const { colors, spacing, radius, type, touchTarget, shadow } = useTheme();
   const running = isRunning(entry);
@@ -93,9 +98,13 @@ function HabitRowBase({
   const seconds = elapsedSeconds(entry, now);
   const progress = isCount ? value / habit.target : isTimer ? seconds / (habit.target * 60) : complete ? 1 : 0;
   const accent = complete && !running ? colors.success : habit.color;
+  // + adds one round chunk: 1 glass, but 500 of 8,000 steps.
+  const step = isCount ? countStep(habit.target) : 1;
+  const increaseLabel = step > 1 ? t('today.increaseBy', { step: step.toLocaleString() }) : t('today.increase');
+  const decreaseLabel = step > 1 ? t('today.decreaseBy', { step: step.toLocaleString() }) : t('today.decrease');
 
   const detail = isCount
-    ? t('today.countProgress', { value, target: habit.target, unit: habit.unit ?? '' })
+    ? t('today.countProgress', { value: value.toLocaleString(), target: habit.target.toLocaleString(), unit: habit.unit ?? '' })
     : isTimer
       ? t('timer.elapsed', { elapsed: formatClock(seconds), target: habit.target })
       : undefined;
@@ -116,6 +125,8 @@ function HabitRowBase({
         return isCount ? onAdjust(1) : isTimer ? onTimerToggle() : onToggle();
       case 'details':
         return onOpen();
+      case 'logAmount':
+        return onLogAmount?.();
       case 'moveUp':
         return onMove?.(-1);
       case 'moveDown':
@@ -133,13 +144,14 @@ function HabitRowBase({
       accessibilityActions={[
         {
           name: 'increment',
-          label: t(isCount ? 'today.increase' : isTimer ? 'timer.addLabel' : 'today.check', { minutes: TIMER_QUICK_ADD_MINUTES }),
+          label: isCount ? increaseLabel : t(isTimer ? 'timer.addLabel' : 'today.check', { minutes: TIMER_QUICK_ADD_MINUTES }),
         },
         {
           name: 'decrement',
-          label: t(isCount ? 'today.decrease' : isTimer ? 'timer.addLabel' : 'today.uncheck', { minutes: -TIMER_QUICK_ADD_MINUTES }),
+          label: isCount ? decreaseLabel : t(isTimer ? 'timer.addLabel' : 'today.uncheck', { minutes: -TIMER_QUICK_ADD_MINUTES }),
         },
         { name: 'details', label: t('today.details') },
+        ...(isCount && onLogAmount ? [{ name: 'logAmount', label: t('today.log.edit') }] : []),
         ...(onMove
           ? [
               { name: 'moveUp', label: t('today.moveUp') },
@@ -166,8 +178,22 @@ function HabitRowBase({
             {habit.name}
           </Text>
           <View style={styles.meta}>
-            {(hint || detail) && (
-              <Text style={[type.caption, { color: running ? colors.primary : colors.textMuted, fontWeight: '500' }]}>{hint ?? detail}</Text>
+            {isCount && onLogAmount && !hint ? (
+              // The amount is its own button: type an exact number instead of tapping + many times.
+              <Pressable
+                accessibilityRole="button"
+                accessibilityLabel={t('today.log.edit')}
+                onPress={onLogAmount}
+                hitSlop={{ top: 12, bottom: 12, left: 8, right: 8 }}
+                style={({ pressed }) => [styles.amount, { opacity: pressed ? 0.6 : 1 }]}
+              >
+                <Text style={[type.caption, { color: colors.textMuted, fontWeight: '600' }]}>{detail}</Text>
+                <PencilLine size={13} color={colors.textMuted} strokeWidth={2.25} />
+              </Pressable>
+            ) : (
+              (hint || detail) && (
+                <Text style={[type.caption, { color: running ? colors.primary : colors.textMuted, fontWeight: '500' }]}>{hint ?? detail}</Text>
+              )
             )}
             <StreakBadge streak={streak} />
           </View>
@@ -179,7 +205,7 @@ function HabitRowBase({
         <View style={styles.controls}>
           <PressableScale
             accessibilityRole="button"
-            accessibilityLabel={t('today.decrease')}
+            accessibilityLabel={decreaseLabel}
             disabled={value <= 0}
             onPress={() => onAdjust(-1)}
             scaleTo={0.88}
@@ -187,10 +213,27 @@ function HabitRowBase({
           >
             <Minus size={20} color={colors.textMuted} strokeWidth={2.5} />
           </PressableScale>
-          <PressableScale accessibilityRole="button" accessibilityLabel={t('today.increase')} onPress={() => onAdjust(1)} scaleTo={0.88} style={round}>
+          <PressableScale
+            accessibilityRole="button"
+            accessibilityLabel={increaseLabel}
+            accessibilityHint={onLogAmount ? t('today.log.hint') : undefined}
+            onPress={() => onAdjust(1)}
+            onLongPress={onLogAmount}
+            delayLongPress={350}
+            scaleTo={0.88}
+            style={round}
+          >
             <ProgressRing size={ring} strokeWidth={3.5} progress={progress} color={accent} trackColor={colors.surfaceAlt}>
               <View style={[styles.inner, { backgroundColor: complete ? accent : habit.color + '1F' }]}>
-                {complete ? <Check size={20} color={readableOn(accent)} strokeWidth={3} /> : <Plus size={20} color={habit.color} strokeWidth={2.75} />}
+                {complete ? (
+                  <Check size={20} color={readableOn(accent)} strokeWidth={3} />
+                ) : step > 1 ? (
+                  <Text style={[styles.stepText, { color: colors.text }]} numberOfLines={1} adjustsFontSizeToFit>
+                    +{stepLabel(step)}
+                  </Text>
+                ) : (
+                  <Plus size={20} color={habit.color} strokeWidth={2.75} />
+                )}
               </View>
             </ProgressRing>
           </PressableScale>
@@ -245,6 +288,8 @@ const styles = StyleSheet.create({
   meta: { flexDirection: 'row', alignItems: 'center', gap: 10, flexWrap: 'wrap' },
   controls: { flexDirection: 'row', alignItems: 'center', gap: 2 },
   inner: { width: 36, height: 36, borderRadius: 18, alignItems: 'center', justifyContent: 'center' },
+  stepText: { fontSize: 11, fontWeight: '800', paddingHorizontal: 2 },
+  amount: { flexDirection: 'row', alignItems: 'center', gap: 4 },
   bar: { height: 6, borderRadius: 3, overflow: 'hidden', marginTop: 4 },
   barFill: { position: 'absolute', left: 0, top: 0, bottom: 0, borderRadius: 3 },
 });

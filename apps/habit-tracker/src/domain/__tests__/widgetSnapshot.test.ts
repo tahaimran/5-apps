@@ -27,6 +27,8 @@ describe('valueAfterAction', () => {
   it('increments count habits by one', () => {
     expect(valueAfterAction(water, undefined, 'INCREMENT')).toBe(1);
     expect(valueAfterAction(water, entry(2), 'INCREMENT')).toBe(3);
+    // Large targets move by the same round step as the app's + button.
+    expect(valueAfterAction({ type: 'count', target: 8000 }, entry(1000), 'INCREMENT')).toBe(1500);
   });
   it('toggling a count habit completes or clears it', () => {
     expect(valueAfterAction(water, entry(1), 'TOGGLE')).toBe(3);

@@ -1,7 +1,8 @@
 import type { Habit } from './types';
 
 export const NAME_MAX = 40;
-export const COUNT_MAX = 999;
+/** Big enough for steps or millilitres; the + button moves in round chunks (see countStep). */
+export const COUNT_MAX = 100000;
 export const TIMER_MAX_MINUTES = 600;
 
 export type HabitDraft = Pick<Habit, 'name' | 'icon' | 'color' | 'type' | 'target' | 'schedule' | 'category' | 'createdAt'> &

@@ -65,7 +65,7 @@ describe('<AdBanner>', () => {
   it('shows an adaptive anchored banner with the test id once ready, without a remount', async () => {
     const r = await mount(<AdBanner placement="home" />);
     await makeReady();
-    expect(bannerOf(r).props).toMatchObject({ unitId: 'test-banner', size: 'LARGE_ANCHORED_ADAPTIVE_BANNER', maxHeight: 60 });
+    expect(bannerOf(r).props).toMatchObject({ unitId: 'test-banner', size: 'ANCHORED_ADAPTIVE_BANNER', maxHeight: 60 });
   });
   it('uses the real id in a release build', async () => {
     (globalThis as unknown as { __DEV__: boolean }).__DEV__ = false;

@@ -20,12 +20,14 @@ import { useCelebrations } from '@/features/celebrations/useCelebrations';
 import { CoachMark } from '@/features/onboarding/CoachMark';
 import { WidgetPromptSheet } from '@/features/onboarding/WidgetPromptSheet';
 import { useFreezeReward } from '@/features/freeze/useFreezeReward';
+import { LogAmountSheet } from '@/features/today/LogAmountSheet';
 import { TodayHero } from '@/features/today/TodayHero';
 import { useCelebration } from '@/store/celebrations';
 import { useProfile } from '@/store/profile';
 import { useNotes } from '@/store/notes';
 import { hasCheckInIn } from '@/ads/guard';
 import { isComplete } from '@/domain/completion';
+import { countStep } from '@/domain/countStep';
 import { parseDayKey, weekDays } from '@/domain/dayKey';
 import { dayProgress, type DayProgress } from '@/domain/percent';
 import { applyVisibleReorder } from '@/domain/reorder';
@@ -76,6 +78,7 @@ export default function Today() {
   const freeze = useFreezeReward();
   const checkedInEver = hasCheckInIn(entries);
   const [widgetSheet, setWidgetSheet] = useState(false);
+  const [logFor, setLogFor] = useState<Habit | null>(null);
   const celebration = useCelebration((s) => s.current);
 
   // Onboarding step 5: the coach-mark goes away with the first check-in.
@@ -146,7 +149,7 @@ export default function Today() {
   const adjust = useCallback(
     (habit: Habit, delta: 1 | -1) => {
       const before = entries[habit.id]?.[selected]?.value ?? 0;
-      const next = Math.max(0, before + delta);
+      const next = Math.max(0, before + delta * countStep(habit.target));
       setValue(habit.id, selected, next);
       if (delta < 0) feedback.undo();
       else if (isComplete(habit, { value: next, updatedAt: 0 }) && before < habit.target) feedback.complete();
@@ -181,6 +184,19 @@ export default function Today() {
       else feedback.check();
     },
     [entries, selected, addMinutes, feedback],
+  );
+
+  /** Exact amount from the log sheet (count habits). */
+  const logAmount = useCallback(
+    (habit: Habit, next: number) => {
+      const before = entries[habit.id]?.[selected]?.value ?? 0;
+      if (next === before) return;
+      setValue(habit.id, selected, next);
+      if (next < before) feedback.undo();
+      else if (before < habit.target && next >= habit.target) feedback.complete();
+      else feedback.check();
+    },
+    [entries, selected, setValue, feedback],
   );
 
   const onReorder = ({ from, to }: ReorderableListReorderEvent) =>
@@ -324,6 +340,7 @@ export default function Today() {
               onAddMinutes={(m) => addMins(habit, m)}
               onOpen={() => router.push({ pathname: '/habit/[id]', params: { id: habit.id } })}
               onMove={(delta) => move(habit.id, delta)}
+              onLogAmount={habit.type === 'count' ? () => setLogFor(habit) : undefined}
             />
           )}
         />
@@ -345,6 +362,12 @@ export default function Today() {
       <AdBanner placement="today_bottom" />
 
       <WidgetPromptSheet visible={widgetSheet} onClose={() => setWidgetSheet(false)} />
+      <LogAmountSheet
+        habit={logFor}
+        value={logFor ? (entries[logFor.id]?.[selected]?.value ?? 0) : 0}
+        onSave={(value) => logFor && logAmount(logFor, value)}
+        onClose={() => setLogFor(null)}
+      />
     </SafeAreaView>
   );
 }

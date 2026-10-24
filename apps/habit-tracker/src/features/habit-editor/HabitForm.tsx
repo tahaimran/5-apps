@@ -10,6 +10,7 @@ import { habitIcons } from '@/data/icons';
 import { categories } from '@/domain/categories';
 import { addDays, daysBetween, parseDayKey } from '@/domain/dayKey';
 import type { DayKey, Schedule, Weekday } from '@/domain/types';
+import { countStep } from '@/domain/countStep';
 import { COUNT_MAX, NAME_MAX, TIMER_MAX_MINUTES, validateDraft, type HabitDraft } from '@/domain/validate';
 import { readableOn } from '@/theme/contrast';
 import { habitColors } from '@/theme/tokens';
@@ -196,7 +197,8 @@ export function HabitForm({ initial, today, submitLabel, onSubmit, header }: Hab
               value={draft.target}
               min={1}
               max={targetMax}
-              step={draft.type === 'timer' ? 5 : 1}
+              // Big counts move in round chunks (8,000 steps by 500) like the + button on Today.
+              step={draft.type === 'timer' ? 5 : countStep(draft.target)}
               label={t('editor.target')}
               onChange={(target) => patch({ target })}
               decreaseLabel={t('today.decrease')}

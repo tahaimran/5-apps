@@ -29,7 +29,7 @@ export default function TabsLayout() {
           // The active tab sits in a soft pill; tabs never slide (they are peers, not a hierarchy).
           tabBarIcon: ({ color, focused }) => (
             <View style={[styles.pill, { backgroundColor: focused ? colors.primarySoft : 'transparent' }]}>
-              <Icon size={22} color={color as string} strokeWidth={focused ? 2.4 : 2} />
+              <Icon size={20} color={color as string} strokeWidth={focused ? 2.4 : 2} />
             </View>
           ),
         }}
@@ -46,14 +46,15 @@ export default function TabsLayout() {
         tabBarActiveTintColor: colors.primary,
         tabBarInactiveTintColor: colors.textMuted,
         // An explicit line height keeps descenders (y, g) from clipping under the pill icon.
-        tabBarLabelStyle: { fontFamily: fonts.body, fontWeight: '600', fontSize: 12, lineHeight: 16, marginTop: 2 },
-        tabBarIconStyle: { height: 32 },
+        tabBarLabelStyle: { fontFamily: fonts.body, fontWeight: '600', fontSize: 11, lineHeight: 14 },
+        tabBarIconStyle: { height: 26 },
         tabBarStyle: {
           backgroundColor: colors.surface,
           borderTopWidth: 0,
-          height: 72 + insets.bottom,
-          paddingTop: 8,
-          paddingBottom: insets.bottom + 8,
+          // Compact: icons and labels in ~56dp, plus the system gesture area.
+          height: 56 + insets.bottom,
+          paddingTop: 5,
+          paddingBottom: insets.bottom + 4,
           ...shadow(2),
         },
       }}
@@ -66,5 +67,5 @@ export default function TabsLayout() {
 }
 
 const styles = StyleSheet.create({
-  pill: { width: 60, height: 32, borderRadius: 16, alignItems: 'center', justifyContent: 'center' },
+  pill: { width: 52, height: 26, borderRadius: 13, alignItems: 'center', justifyContent: 'center' },
 });

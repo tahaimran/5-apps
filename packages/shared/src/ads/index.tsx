@@ -124,7 +124,9 @@ export function AdBanner({ placement }: { placement: string }) {
     <View style={styles.banner} accessibilityElementsHidden importantForAccessibility="no-hide-descendants">
       <BannerAd
         unitId={unitId}
-        size={BannerAdSize.LARGE_ANCHORED_ADAPTIVE_BANNER}
+        // The standard anchored size (~50–60dp). The large one is Google's default now but takes about a
+        // sixth of the screen; the product call is the smaller, calmer banner.
+        size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
         maxHeight={60}
         onAdFailedToLoad={() => setFailed(true)}
       />

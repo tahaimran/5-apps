@@ -25,7 +25,7 @@ describe('validateDraft', () => {
     expect(validateDraft(draft({ name: 'x'.repeat(41) })).name).toBe('tooLong');
     expect(isValid(draft({ name: 'x'.repeat(40) }))).toBe(true);
   });
-  it('count needs a whole target between 1 and 999', () => {
+  it('count needs a whole target between 1 and 100,000', () => {
     expect(validateDraft(draft({ type: 'count', target: 0 })).target).toBe('range');
     expect(validateDraft(draft({ type: 'count', target: 2.5 })).target).toBe('range');
     expect(validateDraft(draft({ type: 'count', target: COUNT_MAX + 1 })).target).toBe('range');

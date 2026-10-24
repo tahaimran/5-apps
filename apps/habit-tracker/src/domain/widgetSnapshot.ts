@@ -1,4 +1,5 @@
 import { isComplete } from './completion';
+import { countStep } from './countStep';
 import { isActiveOn, isScheduledOn } from './schedule';
 import { computeStreaks, weekCount, type Entries } from './streaks';
 import type { DayKey, Entry, Habit, HabitId, WidgetSnapshot } from './types';
@@ -18,7 +19,8 @@ export function valueAfterAction(habit: Pick<Habit, 'type' | 'target'>, entry: E
     if (habit.type === 'count') return isComplete(habit, entry) ? 0 : habit.target;
     return null;
   }
-  return habit.type === 'count' ? value + 1 : null;
+  // Same step as the + button in the app (8,000 steps moves by 500).
+  return habit.type === 'count' ? value + countStep(habit.target) : null;
 }
 
 /** What the widget shows: the habits for `day`, in the user's order, with progress. */

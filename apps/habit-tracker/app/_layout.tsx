@@ -4,6 +4,7 @@ import { StyleSheet } from 'react-native';
 import { Stack } from 'expo-router';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { StatusBar } from 'expo-status-bar';
+import { NavigationBar } from 'expo-navigation-bar';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useAppOpenAd } from '@shared/ads';
 import { useOnboardingComplete } from '@shared/onboarding';
@@ -52,6 +53,8 @@ function Root() {
   return (
     <>
       <StatusBar style={mode === 'light' ? 'dark' : 'light'} />
+      {/* Follows the in-app theme, which can differ from the system one. */}
+      <NavigationBar style={mode === 'light' ? 'dark' : 'light'} />
       <Stack
         screenOptions={{
           headerShown: false,

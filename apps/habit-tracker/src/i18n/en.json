@@ -52,6 +52,15 @@
       "progress": "{done} of {total} habits done",
       "streak_one": "{count}-day streak",
       "streak_other": "{count}-day streak"
+    },
+    "increaseBy": "Add {step}",
+    "decreaseBy": "Remove {step}",
+    "log": {
+      "title": "Log {name}",
+      "label": "Amount in {unit}",
+      "ofTarget": "/ {target} {unit}",
+      "edit": "Enter amount",
+      "hint": "Long press to type an exact amount"
     }
   },
   "stats": {

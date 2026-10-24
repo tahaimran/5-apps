@@ -72,7 +72,7 @@ export function linearGradientMock() {
   return { LinearGradient: View };
 }
 
-export const mockAudio = { play: jest.fn(), seekTo: jest.fn(async () => undefined), setAudioMode: jest.fn(async () => undefined), created: jest.fn() };
+export const mockAudio = { play: jest.fn((_source?: unknown) => undefined), seekTo: jest.fn(async () => undefined), setAudioMode: jest.fn(async (_mode?: unknown) => undefined), created: jest.fn((_source?: unknown) => undefined) };
 
 export function audioMock() {
   return {
