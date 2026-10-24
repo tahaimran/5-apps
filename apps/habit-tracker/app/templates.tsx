@@ -2,10 +2,11 @@ import { useMemo, useState } from 'react';
 import { Modal, Pressable, SectionList, StyleSheet, Text, View } from 'react-native';
 import { Stack, router } from 'expo-router';
 import ChevronRight from 'lucide-react-native/icons/chevron-right';
+import CircleCheck from 'lucide-react-native/icons/circle-check';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
-import { PressableScale } from '@shared/ui';
+import { PressableScale, showToast } from '@shared/ui';
 import { templates, type Template } from '@/data/templates';
 import { categories } from '@/domain/categories';
 import { draftFromTemplate } from '@/features/habit-editor/drafts';
@@ -53,6 +54,7 @@ export default function Templates() {
     setPreview(null);
     // Back to Today; if we came through "New habit" this also closes that modal.
     router.dismissAll();
+    showToast({ message: t('editor.added', { name: t(`templates.${tpl.id}.name`) }), icon: CircleCheck, tone: 'success' });
   };
 
   return (

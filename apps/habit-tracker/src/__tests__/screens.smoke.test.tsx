@@ -124,7 +124,8 @@ describe('habit editor', () => {
     const created = Object.values(useHabits.getState().habits);
     expect(created).toHaveLength(1);
     expect(created[0]).toMatchObject({ name: 'Stretch', type: 'count', schedule: { kind: 'weekdays' } });
-    expect(mockRouter.back).toHaveBeenCalled();
+    // Back to Today in one step, even when two editors are stacked (template → Edit first).
+    expect(mockRouter.dismissAll).toHaveBeenCalled();
   });
 
   it('opens from a template with its values filled in', async () => {

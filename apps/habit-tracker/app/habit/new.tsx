@@ -1,10 +1,11 @@
 import { Text, View } from 'react-native';
 import { Stack, router, useLocalSearchParams } from 'expo-router';
 import ChevronRight from 'lucide-react-native/icons/chevron-right';
+import CircleCheck from 'lucide-react-native/icons/circle-check';
 import LayoutTemplate from 'lucide-react-native/icons/layout-template';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
-import { PressableScale } from '@shared/ui';
+import { PressableScale, showToast } from '@shared/ui';
 import { templateById } from '@/data/templates';
 import { blankDraft, draftFromTemplate } from '@/features/habit-editor/drafts';
 import { HabitForm } from '@/features/habit-editor/HabitForm';
@@ -29,7 +30,9 @@ export default function NewHabit() {
         submitLabel={t('editor.create')}
         onSubmit={(draft) => {
           addHabit(draft);
-          router.back();
+          // Straight to Today, even through New habit → Templates → Edit first (two editors stacked).
+          router.dismissAll();
+          showToast({ message: t('editor.added', { name: draft.name.trim() }), icon: CircleCheck, tone: 'success' });
         }}
         header={
           <PressableScale

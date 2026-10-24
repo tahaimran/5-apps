@@ -321,7 +321,8 @@
     "discardBody": "Your changes to this habit won't be saved.",
     "create": "Create habit",
     "saveChanges": "Save changes",
-    "notFound": "This habit no longer exists."
+    "notFound": "This habit no longer exists.",
+    "added": "{name} added to Today"
   },
   "schedule": {
     "daily": "Every day",
