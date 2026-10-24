@@ -1,6 +1,6 @@
-import * as BackgroundTask from 'expo-background-task';
 import * as Notifications from 'expo-notifications';
 import * as TaskManager from 'expo-task-manager';
+import { BackgroundTask } from '@/native/optional';
 import { handleNotificationAction } from './actions';
 import { rescheduleReminders } from './scheduler';
 
@@ -22,13 +22,14 @@ TaskManager.defineTask<Notifications.NotificationTaskPayload>(ACTION_TASK, async
 TaskManager.defineTask(TOPUP_TASK, async () => {
   try {
     await rescheduleReminders();
-    return BackgroundTask.BackgroundTaskResult.Success;
+    return BackgroundTask?.BackgroundTaskResult.Success;
   } catch {
-    return BackgroundTask.BackgroundTaskResult.Failed;
+    return BackgroundTask?.BackgroundTaskResult.Failed;
   }
 });
 
 export function registerBackgroundWork(): void {
   Notifications.registerTaskAsync(ACTION_TASK).catch(() => undefined);
-  BackgroundTask.registerTaskAsync(TOPUP_TASK, { minimumInterval: TOPUP_INTERVAL_MIN }).catch(() => undefined);
+  // Builds without the module still get reminders topped up on every foreground and log.
+  BackgroundTask?.registerTaskAsync(TOPUP_TASK, { minimumInterval: TOPUP_INTERVAL_MIN }).catch(() => undefined);
 }

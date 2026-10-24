@@ -1,6 +1,6 @@
 import { resetDisk } from '../../testing/native';
 import { act } from 'react';
-import { Switch } from 'react-native';
+import { Switch, Text } from 'react-native';
 import { cleanup, render } from '../../testing/render';
 import { defaultPalettes, ThemeProvider, type ThemePreference } from '../../theme';
 import { sharedStore } from '../../storage';
@@ -118,5 +118,16 @@ describe('SystemNavBar', () => {
       expect((Bar({ dark: true }) as React.ReactElement<{ style: string }>).props.style).toBe('light');
       expect((Bar({ dark: false }) as React.ReactElement<{ style: string }>).props.style).toBe('dark');
     });
+  });
+});
+
+describe('Stepper (large)', () => {
+  it('shows a big display value with 56dp buttons', async () => {
+    const ui = await render(themed(<Stepper large label="Goal" value={2000} min={1000} max={4000} step={50} onChange={jest.fn()} format={(v) => `${v} ml`} />));
+    const { StyleSheet } = require('react-native');
+    const plus = ui.byLabel('Increase Goal').find((n) => n.props.style)!;
+    expect(StyleSheet.flatten(plus.props.style).width).toBe(56);
+    const value = ui.root.findAll((n) => n.type === Text && n.props.children === '2000 ml')[0];
+    expect(StyleSheet.flatten(value.props.style)).toMatchObject({ fontWeight: '800', fontSize: 28 });
   });
 });

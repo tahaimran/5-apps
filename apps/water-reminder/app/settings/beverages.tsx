@@ -16,7 +16,7 @@ export default function BeveragesSettings() {
   const set = (id: string, factor: number) => setBeverages(beverages.map((b) => (b.id === id ? { ...b, factor: clampFactor(factor) } : b)));
 
   return (
-    <Screen edges={[]}>
+    <Screen edges={['bottom']}>
       <Stack.Screen options={{ title: t('settings.beverages'), headerShown: true }} />
       <Text style={[type.body, { color: colors.textMuted }]}>{t('beveragesScreen.intro')}</Text>
       {beverages.map((b) => {

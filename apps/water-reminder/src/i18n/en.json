@@ -423,7 +423,8 @@
     "gapHM": "every {h}h {m}m",
     "skipLess": "Shorter skip window",
     "skipMore": "Longer skip window",
-    "quietRange": "{from} – {to}"
+    "quietRange": "{from} – {to}",
+    "count": "About {count} reminders a day"
   },
   "cupsScreen": {
     "intro": "The four quick-add cups on Today. Your usual cup is the big button on Today and the one reminders offer.",

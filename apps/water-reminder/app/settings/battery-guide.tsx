@@ -1,11 +1,10 @@
 import { Linking, StyleSheet, Text, View } from 'react-native';
 import { Stack } from 'expo-router';
-import * as Device from 'expo-device';
-import * as IntentLauncher from 'expo-intent-launcher';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
 import { Card } from '@shared/ui';
 import { dontKillMyAppUrl, vendorOf } from '@/domain/battery';
+import { Device, IntentLauncher } from '@/native/optional';
 import { Screen } from '@/ui/Screen';
 import { PrimaryButton, TextButton } from '@/ui/controls';
 
@@ -13,12 +12,13 @@ const STEPS = [1, 2, 3] as const;
 
 export default function BatteryGuide() {
   const { colors, spacing, type, fonts } = useTheme();
-  const vendor = vendorOf(Device.manufacturer);
+  const vendor = vendorOf(Device?.manufacturer ?? null);
 
   // Plan §10.5: we never ask for the exempt-from-battery-optimization permission (Play policy);
   // we open the system screen and let the user decide.
   const openSettings = async () => {
     try {
+      if (!IntentLauncher) throw new Error('no intent launcher in this build');
       await IntentLauncher.startActivityAsync('android.settings.IGNORE_BATTERY_OPTIMIZATION_SETTINGS');
     } catch {
       await Linking.openSettings();
@@ -26,7 +26,7 @@ export default function BatteryGuide() {
   };
 
   return (
-    <Screen edges={[]}>
+    <Screen edges={['bottom']}>
       <Stack.Screen options={{ title: t('settings.battery'), headerShown: true }} />
       <Text style={[type.body, { color: colors.textMuted }]}>{t('battery.intro')}</Text>
       <Text accessibilityRole="header" style={[type.title, { color: colors.text, fontWeight: '800' }]}>

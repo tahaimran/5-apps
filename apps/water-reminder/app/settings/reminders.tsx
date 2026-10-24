@@ -61,7 +61,7 @@ export default function RemindersSettings() {
   );
 
   return (
-    <Screen edges={[]}>
+    <Screen edges={['bottom']}>
       <Stack.Screen options={{ title: t('settings.reminders'), headerShown: true }} />
       <SettingsGroup>
         <SwitchRow icon={BellRing} label={t('reminders.enabled')} value={reminders.enabled} onChange={(enabled) => set({ enabled })} />
@@ -90,8 +90,13 @@ export default function RemindersSettings() {
                 {pill(time(slots[slots.length - 1]))}
               </View>
             ) : null}
-            <Text accessibilityLiveRegion="polite" style={[type.body, { color: colors.text, fontWeight: '600', textAlign: 'center' }]}>
-              {slots.length > 0 ? t('reminders.summary', { count: slots.length, first: time(slots[0]), last: time(slots[slots.length - 1]) }) : t('reminders.none')}
+            {/* The pills above already show first and last, so the visible line is short; TalkBack hears it all. */}
+            <Text
+              accessibilityLiveRegion="polite"
+              accessibilityLabel={slots.length > 0 ? t('reminders.summary', { count: slots.length, first: time(slots[0]), last: time(slots[slots.length - 1]) }) : t('reminders.none')}
+              style={[type.body, { color: colors.text, fontWeight: '600', textAlign: 'center' }]}
+            >
+              {slots.length > 0 ? t('reminders.count', { count: slots.length }) : t('reminders.none')}
             </Text>
             {slots.length > 0 && (
               <View style={styles.wrap}>

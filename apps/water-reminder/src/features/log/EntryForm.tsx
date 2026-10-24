@@ -41,7 +41,7 @@ export function EntryForm({
   onSubmit: (values: EntryValues) => void;
   footer?: ReactNode;
 }) {
-  const { colors, spacing, radius, type, fonts } = useTheme();
+  const { colors, spacing, radius, type } = useTheme();
   const unit = useSettings((s) => s.goal.unit);
   const beverages = useSettings((s) => s.beverages);
   const cups = useSettings((s) => s.cups);
@@ -87,9 +87,6 @@ export function EntryForm({
 
       <Card style={{ gap: spacing.md, alignItems: 'stretch' }}>
         <Text style={[type.body, { color: colors.text, fontWeight: '700' }]}>{t('logCustom.amount')}</Text>
-        <Text style={[styles.big, { color: colors.text, fontFamily: fonts.display }]} accessibilityElementsHidden importantForAccessibility="no">
-          {volume(amount, unit)}
-        </Text>
         <AmountStepper
           valueMl={amount}
           onChange={setAmount}
@@ -100,10 +97,11 @@ export function EntryForm({
           label={t('logCustom.amount')}
           decreaseLabel={t('logCustom.less')}
           increaseLabel={t('logCustom.more')}
+          large
         />
         <View style={styles.chips}>
           {presets.map((ml) => (
-            <Chip key={ml} label={volume(ml, unit)} selected={ml === amount} onPress={() => setAmount(ml)} />
+            <Chip key={ml} label={volume(ml, unit)} selected={ml === amount} onPress={() => setAmount(ml)} style={styles.preset} />
           ))}
         </View>
         {factor < 1 && (
@@ -130,6 +128,7 @@ export function EntryForm({
 const styles = StyleSheet.create({
   grid: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
   drink: { flexBasis: '30%', flexGrow: 1, minHeight: 84, alignItems: 'center', justifyContent: 'center', gap: 6, paddingVertical: 10 },
-  big: { fontSize: 40, lineHeight: 46, fontWeight: '800', textAlign: 'center' },
-  chips: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, justifyContent: 'center' },
+  chips: { flexDirection: 'row', gap: 8 },
+  // Four presets share one row: equal widths, tighter padding than a free-standing chip.
+  preset: { flex: 1, paddingHorizontal: 4 },
 });

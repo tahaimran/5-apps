@@ -1,5 +1,5 @@
 import { useState, type ReactNode } from 'react';
-import { StyleSheet, Text, TextInput, View, type KeyboardTypeOptions } from 'react-native';
+import { StyleSheet, Text, TextInput, View, type KeyboardTypeOptions, type StyleProp, type ViewStyle } from 'react-native';
 import CircleCheck from 'lucide-react-native/icons/circle-check';
 import { useTheme } from '@shared/theme';
 import { TimeField } from '@shared/time';
@@ -73,7 +73,19 @@ export function TextField({ value, onChangeText, label, placeholder, maxLength, 
   );
 }
 
-export function Chip({ label, selected, onPress, icon: Icon }: { label: string; selected: boolean; onPress: () => void; icon?: IconComponent }) {
+export function Chip({
+  label,
+  selected,
+  onPress,
+  icon: Icon,
+  style,
+}: {
+  label: string;
+  selected: boolean;
+  onPress: () => void;
+  icon?: IconComponent;
+  style?: StyleProp<ViewStyle>;
+}) {
   const { colors, radius, type, touchTarget } = useTheme();
   const fg = selected ? colors.onPrimary : colors.text;
   return (
@@ -92,10 +104,13 @@ export function Chip({ label, selected, onPress, icon: Icon }: { label: string; 
           backgroundColor: selected ? colors.primary : colors.surface,
           borderColor: selected ? colors.primary : colors.border,
         },
+        style,
       ]}
     >
       {Icon ? <Icon size={18} color={fg} strokeWidth={2.25} /> : null}
-      <Text style={[type.body, { color: fg, fontWeight: '600' }]}>{label}</Text>
+      <Text style={[type.body, { color: fg, fontWeight: '600' }]} numberOfLines={1}>
+        {label}
+      </Text>
     </PressableScale>
   );
 }

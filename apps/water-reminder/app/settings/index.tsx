@@ -50,7 +50,7 @@ export default function Settings() {
   const sun = { tint: colors.accent, bg: extra.sunSoft };
 
   return (
-    <Screen edges={[]}>
+    <Screen edges={['bottom']}>
       <Stack.Screen options={{ title: t('settings.title'), headerShown: true }} />
 
       <View style={[styles.tiles, { gap: spacing.md }]}>

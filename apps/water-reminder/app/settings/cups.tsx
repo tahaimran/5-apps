@@ -18,7 +18,7 @@ export default function CupsSettings() {
   const resize = (id: string, ml: number) => setCups(cups.map((c) => (c.id === id ? { ...c, ml } : c)));
 
   return (
-    <Screen edges={[]}>
+    <Screen edges={['bottom']}>
       <Stack.Screen options={{ title: t('settings.cups'), headerShown: true }} />
       <Text style={[type.body, { color: colors.textMuted }]}>{t('cupsScreen.intro')}</Text>
       {cups.map((cup) => {

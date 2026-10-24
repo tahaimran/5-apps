@@ -23,7 +23,7 @@ export default function Privacy() {
   const extra = extraColorsFor(mode);
 
   return (
-    <Screen edges={[]}>
+    <Screen edges={['bottom']}>
       <Stack.Screen options={{ title: t('settings.privacy'), headerShown: true }} />
       <Card style={{ gap: spacing.md }}>
         <View style={styles.head}>

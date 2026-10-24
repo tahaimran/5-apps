@@ -63,7 +63,7 @@ export default function Backup() {
   );
 
   return (
-    <Screen edges={[]}>
+    <Screen edges={['bottom']}>
       <Stack.Screen options={{ title: t('backup.title'), headerShown: true }} />
       <Text style={[type.body, { color: colors.textMuted }]}>{t('backup.intro')}</Text>
 

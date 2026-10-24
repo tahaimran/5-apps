@@ -20,7 +20,7 @@ const ACTIVITIES: Activity[] = ['sedentary', 'light', 'active', 'very_active'];
 const CLIMATES: Climate[] = ['cool', 'mild', 'warm', 'hot'];
 
 export default function GoalSettings() {
-  const { colors, spacing, type, fonts } = useTheme();
+  const { colors, spacing, type } = useTheme();
   const { goal, profile, setGoal, setProfile } = useSettings();
   const unit = goal.unit;
   const [weight, setWeight] = useState<Weight>(() => ({
@@ -40,13 +40,10 @@ export default function GoalSettings() {
   };
 
   return (
-    <Screen edges={[]}>
+    <Screen edges={['bottom']}>
       <Stack.Screen options={{ title: t('settings.goal'), headerShown: true }} />
       <Card style={{ gap: spacing.md }}>
         <Text style={[type.body, { color: colors.text, fontWeight: '700' }]}>{t('settings.goalNow')}</Text>
-        <Text style={[styles.big, { color: colors.text, fontFamily: fonts.display }]} accessibilityElementsHidden importantForAccessibility="no">
-          {volume(goal.goalMl, unit)}
-        </Text>
         <AmountStepper
           valueMl={goal.goalMl}
           onChange={(ml) => setGoal({ goalMl: clampGoalIn(ml, unit), source: 'manual' })}
@@ -57,6 +54,7 @@ export default function GoalSettings() {
           label={t('onboarding.goalStepperLabel')}
           decreaseLabel={t('onboarding.goalLess')}
           increaseLabel={t('onboarding.goalMore')}
+          large
         />
         <Text style={[type.body, { color: colors.textMuted, textAlign: 'center' }]}>
           {t(goal.source === 'manual' ? 'settings.goalManual' : 'settings.goalCalculated')} · {t('onboarding.goalApprox', { count: glassesOf(goal.goalMl) })}
@@ -104,5 +102,4 @@ export default function GoalSettings() {
 
 const styles = StyleSheet.create({
   wrap: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
-  big: { fontSize: 40, lineHeight: 46, fontWeight: '800', textAlign: 'center' },
 });

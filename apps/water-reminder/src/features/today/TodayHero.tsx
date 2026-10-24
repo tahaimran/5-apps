@@ -18,7 +18,9 @@ import { cupIcon } from '@/ui/icons';
 import { Waves } from './Waves';
 
 const CSS_EASE_OUT = cubicBezier(0.23, 1, 0.32, 1);
-const RING = 188;
+const RING = 164;
+/** The frosted disc fills the ring's inside with a hairline gap. */
+const DISC = RING - 2 * 12;
 
 /** A quick squash-and-settle; two copies so changing the name replays it on every drink. */
 const bounce = (peak: number) => ({
@@ -69,7 +71,7 @@ export function TodayHero(p: TodayHeroProps) {
     <View style={[{ borderRadius: radius.xl }, shadow(3)]}>
       <View
         onLayout={(e) => setSize({ width: e.nativeEvent.layout.width, height: e.nativeEvent.layout.height })}
-        style={[styles.card, { borderRadius: radius.xl, padding: spacing.lg, gap: spacing.md }]}
+        style={[styles.card, { borderRadius: radius.xl, padding: spacing.lg, gap: spacing.sm }]}
       >
         {/* Two gradients crossfade when the goal is reached (a state change, so a CSS transition). */}
         <LinearGradient colors={extra.hero} start={{ x: 0, y: 0 }} end={{ x: 0.6, y: 1 }} style={StyleSheet.absoluteFill} />
@@ -110,7 +112,7 @@ export function TodayHero(p: TodayHeroProps) {
         <View style={styles.center}>
           <View accessible accessibilityRole="progressbar" accessibilityLabel={ringLabel} accessibilityValue={{ min: 0, max: 100, now: Math.min(100, p.percent) }}>
             <ProgressRing size={RING} strokeWidth={12} progress={fraction} color="#FFFFFF" trackColor="#FFFFFF2E" duration={280}>
-              <View style={[styles.disc, { width: RING - 40, height: RING - 40, borderRadius: (RING - 40) / 2 }]}>
+              <View style={[styles.disc, { width: DISC, height: DISC, borderRadius: DISC / 2 }]}>
                 <Animated.View
                   style={
                     reduced || p.addCount === 0
@@ -118,7 +120,7 @@ export function TodayHero(p: TodayHeroProps) {
                       : { animationName: BOUNCE[p.addCount % 2], animationDuration: '250ms', animationTimingFunction: CSS_EASE_OUT }
                   }
                 >
-                  <Plant stage={p.stage} mood={p.mood} skin={p.skin} size={128} />
+                  <Plant stage={p.stage} mood={p.mood} skin={p.skin} size={128} trim />
                 </Animated.View>
               </View>
             </ProgressRing>

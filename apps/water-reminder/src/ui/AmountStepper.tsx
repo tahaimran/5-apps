@@ -28,13 +28,15 @@ export interface AmountStepperProps {
   label: string;
   decreaseLabel?: string;
   increaseLabel?: string;
+  /** The amount is the screen's main number: big value, bigger buttons. */
+  large?: boolean;
 }
 
 /**
  * − amount + in the user's unit, snapping to sensible steps; tapping the amount lets the user type an
  * exact number instead (330 ml can, 12 fl oz bottle).
  */
-export function AmountStepper({ valueMl, onChange, unit, minMl, maxMl, kind, label, decreaseLabel, increaseLabel }: AmountStepperProps) {
+export function AmountStepper({ valueMl, onChange, unit, minMl, maxMl, kind, label, decreaseLabel, increaseLabel, large }: AmountStepperProps) {
   const { spacing } = useTheme();
   const [typing, setTyping] = useState<string | null>(null);
   const toUnit = (ml: number) => volumeIn(ml, unit);
@@ -76,6 +78,7 @@ export function AmountStepper({ valueMl, onChange, unit, minMl, maxMl, kind, lab
       increaseLabel={increaseLabel}
       onPressValue={() => setTyping(String(toUnit(valueMl)))}
       valueHint={t('amount.typeHint')}
+      large={large}
     />
   );
 }

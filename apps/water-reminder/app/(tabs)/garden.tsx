@@ -138,7 +138,7 @@ export default function Garden() {
       <View style={[styles.hero, { borderRadius: radius.xl }]}>
         <LinearGradient colors={extra.garden} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }} style={StyleSheet.absoluteFill} />
         <View style={{ alignItems: 'center', gap: spacing.sm, padding: spacing.xl }}>
-          <Plant stage={live.stage} mood={moodFor(percent)} skin={progressRaw.activeSkin} size={200} />
+          <Plant stage={live.stage} mood={moodFor(percent)} skin={progressRaw.activeSkin} size={200} trim />
           <Text style={[type.headline, { color: colors.text, fontWeight: '800' }]}>{t(`plant.stageNames.${live.stage}`)}</Text>
           <Text style={[type.body, { color: colors.textMuted, textAlign: 'center' }]}>
             {next ? t('garden.toNext', { have: next.have, need: next.need, name: t(`plant.stageNames.${next.stage}`) }) : t('garden.fullyGrown')}

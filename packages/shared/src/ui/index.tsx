@@ -422,6 +422,8 @@ export interface StepperProps {
   /** Makes the value tappable (e.g. to type an exact amount). */
   onPressValue?: () => void;
   valueHint?: string;
+  /** The stepper is the screen's main number (an amount, a goal): a big display value and larger buttons. */
+  large?: boolean;
 }
 
 /** Snaps to the step grid, so 237 + 50 lands on 250 (not 287) and 250 − 50 on 200. */
@@ -430,8 +432,8 @@ export function stepValue(value: number, size: number, direction: 1 | -1): numbe
 }
 
 /** −  value  + on an inset pill track; the raised buttons follow the dark-mode inset rule. */
-export function Stepper({ value, onChange, min, max, step = 1, label, format = String, decreaseLabel, increaseLabel, onPressValue, valueHint }: StepperProps) {
-  const { colors, radius, type, touchTarget, mode } = useTheme();
+export function Stepper({ value, onChange, min, max, step = 1, label, format = String, decreaseLabel, increaseLabel, onPressValue, valueHint, large }: StepperProps) {
+  const { colors, radius, type, touchTarget, mode, fonts } = useTheme();
   const haptics = useHaptics();
   const { track, raised } = insetTones(colors, mode);
   const move = (direction: 1 | -1) => {
@@ -439,9 +441,10 @@ export function Stepper({ value, onChange, min, max, step = 1, label, format = S
     void haptics.select();
     onChange(Math.min(max, Math.max(min, stepValue(value, size, direction))));
   };
-  const btn = { width: touchTarget, height: touchTarget, borderRadius: touchTarget / 2 };
+  const size = large ? Math.max(touchTarget, 56) : touchTarget;
+  const btn = { width: size, height: size, borderRadius: size / 2 };
   const text = (
-    <Text style={[type.bodyLarge, styles.stepperValue, { color: colors.text }]} numberOfLines={1}>
+    <Text style={[styles.stepperValue, large ? [type.headline, { fontFamily: fonts.display, fontWeight: '800' as const }] : type.bodyLarge, { color: colors.text }]} numberOfLines={1}>
       {format(value)}
     </Text>
   );

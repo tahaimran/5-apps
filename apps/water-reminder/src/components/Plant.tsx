@@ -15,6 +15,11 @@ export interface PlantProps {
   /** Plant skin id (pot and leaf colors); defaults to the classic one. */
   skin?: string;
   size?: number;
+  /**
+   * Crops the empty sky above a young plant so it sits centered (the drawing keeps headroom for the
+   * tallest stage). The height then grows with the stage; the width stays `size`.
+   */
+  trim?: boolean;
 }
 
 const LEAVES: Record<number, [number, number, number][]> = {
@@ -47,6 +52,10 @@ const LEAVES: Record<number, [number, number, number][]> = {
   ],
 };
 const STEM_TOP: Record<number, number> = { 1: 104, 2: 84, 3: 66, 4: 62 };
+/** Highest drawn point per stage (viewBox units), with a little air. */
+const CONTENT_TOP: Record<number, number> = { 0: 112, 1: 90, 2: 72, 3: 44, 4: 32 };
+const SPARKLE_TOP = 38;
+const CONTENT_BOTTOM = 198;
 const FLOWERS: [number, number][] = [
   [100, 54],
   [72, 76],
@@ -84,7 +93,7 @@ function Face({ mood }: { mood: Mood }) {
  * The plant companion (plan §7.3): five growth stages and a daily mood, drawn as vectors so the
  * pot and leaf colors can follow the chosen skin. It sways gently unless reduced motion is on.
  */
-export function Plant({ stage, mood, skin = 'classic', size = 200 }: PlantProps) {
+export function Plant({ stage, mood, skin = 'classic', size = 200, trim = false }: PlantProps) {
   const { mode } = useTheme();
   const extra = extraColorsFor(mode);
   const s = skinById(skin);
@@ -101,15 +110,18 @@ export function Plant({ stage, mood, skin = 'classic', size = 200 }: PlantProps)
   const droop = mood === 'thirsty' && stage > 0 ? -14 : 0;
   const stemTop = STEM_TOP[stage] ?? 130;
   const label = t('plant.label', { stage: t(`plant.stages.${stage}`), mood: t(`plant.moods.${mood}`) });
+  const top = trim ? Math.min(CONTENT_TOP[stage] ?? 0, mood === 'sparkle' ? SPARKLE_TOP : 200) : 0;
+  const bottom = trim ? CONTENT_BOTTOM : 200;
+  const height = Math.round((size * (bottom - top)) / 200);
 
   return (
     <Animated.View
       accessible
       accessibilityRole="image"
       accessibilityLabel={label}
-      style={[styles.box, { width: size, height: size }, swayStyle]}
+      style={[styles.box, { width: size, height }, swayStyle]}
     >
-      <Svg width={size} height={size} viewBox="0 0 200 200">
+      <Svg width={size} height={height} viewBox={`0 ${top} 200 ${bottom - top}`}>
         {stage > 0 && (
           <G rotation={droop} origin="100, 132">
             <Path d={`M100 134 L100 ${stemTop}`} stroke={leaf} strokeWidth={5} strokeLinecap="round" />
@@ -122,8 +134,8 @@ export function Plant({ stage, mood, skin = 'classic', size = 200 }: PlantProps)
             {stage === 4 && FLOWERS.map(([x, y]) => <Flower key={x} x={x} y={y} petal={extra.bloom} center={extra.sun} />)}
           </G>
         )}
-        {stage === 0 && <Path d="M94 132 q 6 -9 12 0 q -6 6 -12 0 Z" fill="#8A5A3C" />}
         <Rect x={50} y={130} width={100} height={16} rx={7} fill={pot} />
+        {stage === 0 && <Path d="M93 131 q 7 -12 14 0 q -7 6 -14 0 Z" fill="#8A5A3C" />}
         <Path d="M58 146 L142 146 L132 192 L68 192 Z" fill={pot} />
         <Path d="M58 146 L142 146 L140 152 L60 152 Z" fill="#000000" fillOpacity={0.12} />
         <Face mood={mood} />

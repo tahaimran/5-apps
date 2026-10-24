@@ -287,11 +287,12 @@ describe('Reminder settings (F4, F5)', () => {
   it('summarizes the schedule and follows the frequency and window', async () => {
     useSettings.getState().setGoal({ goalMl: 2300 });
     const ui = await render(themed(<RemindersSettings />));
-    expect(ui.texts()).toContain('About 10 reminders a day, from 7:30 AM to 10:30 PM');
+    expect(ui.byLabel('About 10 reminders a day, from 7:30 AM to 10:30 PM')).toHaveLength(1);
+    expect(ui.texts()).toContain('About 10 reminders a day');
     await ui.press('At a fixed interval');
     await ui.press('Every 60 min');
     expect(useSettings.getState().reminders).toMatchObject({ frequency: 'interval', intervalMin: 60 });
-    expect(ui.texts()).toContain('About 16 reminders a day, from 7:30 AM to 10:30 PM');
+    expect(ui.byLabel('About 16 reminders a day, from 7:30 AM to 10:30 PM')).toHaveLength(1);
   });
   it('sets style, snooze and the skip window', async () => {
     const ui = await render(themed(<RemindersSettings />));
@@ -322,7 +323,7 @@ describe('Reminder settings (F4, F5)', () => {
     const ui = await render(themed(<RemindersSettings />));
     await ui.press('Add a quiet time');
     expect(useSettings.getState().reminders.quietBlocks).toEqual([{ startMin: 720, endMin: 780 }]);
-    expect(ui.texts()).toContain('About 9 reminders a day, from 7:30 AM to 10:30 PM');
+    expect(ui.byLabel('About 9 reminders a day, from 7:30 AM to 10:30 PM')).toHaveLength(1);
     await ui.press('Remove the quiet time from 12:00 PM to 1:00 PM');
     expect(useSettings.getState().reminders.quietBlocks).toEqual([]);
   });
