@@ -38,3 +38,14 @@ export const useThemePref = (): [ThemePref, (p: ThemePref) => void] => {
 export const useAppColors = (): AppColors => appColors[useTheme().mode];
 
 export const useIsNight = (): boolean => useTheme().mode === NIGHT_SLOT;
+
+/**
+ * The fill for a small "this one" highlight (the current week pill, a round arrow button): teal with its
+ * label color, except in Night, where a bright red fill would glare at 3am, so it is the dim dark red of
+ * the Start button with red text.
+ */
+export function useStrongFill(): { bg: string; fg: string } {
+  const { colors, mode } = useTheme();
+  const app = appColors[mode];
+  return mode === NIGHT_SLOT ? { bg: app.start[0], fg: app.onStart } : { bg: colors.primary, fg: colors.onPrimary };
+}

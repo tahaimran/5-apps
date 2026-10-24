@@ -123,7 +123,31 @@
     "bagNudge": "Hospital bag {percent}% packed",
     "bagNudgeBody": "A good time to look at your list.",
     "bagNudgeOpen": "Open the hospital bag list",
-    "weeksShort": "weeks"
+    "weeksShort": "weeks",
+    "dialWeek": "Week",
+    "dialDay": "+ {n} day",
+    "dialDays": "+ {n} days",
+    "dialUnknown": "not set yet",
+    "dueChip": "Due {date}",
+    "dueNotSet": "Not set yet",
+    "trimesterName": {
+      "1": "First trimester",
+      "2": "Second trimester",
+      "3": "Third trimester"
+    },
+    "allWeeks": "Week by week",
+    "stripEarlier": "Earlier weeks",
+    "stripLater": "Later weeks",
+    "stripWeek": "Week {n}, open the card",
+    "stripWeekCurrent": "Week {n}, this week, open the card",
+    "wk": "Wk",
+    "thisWeek": "This week · week {n}",
+    "thisWeekLabel": "This week, week {n}: about the size of a {size}. Length {length}, weight {weight}. Opens the card",
+    "chipLength": "{length} long",
+    "chipWeight": "{weight}",
+    "readyTitle": "Getting ready",
+    "weekRowSize": "About the size of a {size}",
+    "stripSubtitle": "Week {n} of 40"
   },
   "more": {
     "title": "More",

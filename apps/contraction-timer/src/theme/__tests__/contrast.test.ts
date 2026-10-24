@@ -78,6 +78,8 @@ describe.each(modes)('%s palette', (mode) => {
       expect(contrastRatio(a.onHero, stop)).toBeGreaterThanOrEqual(4.5);
       expect(contrastRatio(a.heroMuted, stop)).toBeGreaterThanOrEqual(4.5);
       expect(contrastRatio(a.heroRing, blend(a.heroTrack, stop))).toBeGreaterThanOrEqual(3);
+      // The frosted chips and tag on this week's card.
+      expect(contrastRatio(a.onHero, blend(a.heroTrack, stop))).toBeGreaterThanOrEqual(4.5);
     }
   });
 

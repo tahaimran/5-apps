@@ -153,9 +153,15 @@ Long-press button (600ms) = "Undo last tap" sheet. Stats strip items are each ta
 - History list with sparkline of time-to-10; banner at bottom.
 
 ### 5.4 My Pregnancy (Tab 3)
-- Header card: "Week 34 + 2 · 40 days to go · Baby is about the size of a cantaloupe".
-- Rows: Due date calculator, Week-by-week (list with **native ad card after the 3rd item**), Hospital bag (progress), Birth plan (progress).
-- No due date set: "Add your due date to see your week" CTA.
+Redesigned (Oct 2026) after the reference screens, top to bottom:
+- **Pregnancy dial:** 40 week ticks around the face (every 4th numbered), an arc filled to today with a knob on this week, "Week 34 + 2" in the middle, then chips for the days to go, the trimester and the due date. Screen readers hear one sentence ("Week 34 and 2 days. 40 days to go. Baby is about the size of a cantaloupe").
+- Hospital-bag nudge at weeks 34/36/37 (soft amber row), unchanged.
+- **Week strip:** the trimester and "Week 34 of 40", five weeks at a time with this week as a tall pill, arrows to page through weeks 4–42; any week opens its card.
+- **This week card:** a mint-to-blush card with a drawn cradle illustration, "About the size of a cantaloupe", length and weight chips and a round arrow; the whole card opens the week.
+- **Getting ready:** hospital bag, birth plan and due date as cards to swipe sideways, each with its progress.
+- **Week by week:** the list, this week pinned first, with the **native ad card after the 3rd item** (§12).
+- No due date set: the dial shows "?" with "Add your due date to see your week" and the CTA; the strip, cards and list stay.
+- In Night the highlights (current week pill and badge, the arrow) use the dim dark red of the Start button, never a bright red fill.
 - Week article: illustration, size comparison, length/weight approx, 3 bullets, "Questions for your next appointment", disclaimer footer. Back = interstitial-eligible (§12).
 
 ### 5.5 More (Tab 4)

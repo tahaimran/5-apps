@@ -238,7 +238,8 @@ describe('the native card in the week list (plan §12)', () => {
     await flush();
     expect(nativeOf(ui)).toHaveLength(1);
     expect(ui.texts()).toContain('Ad');
-    const order = ui.root.findAll((n) => typeof n.type === 'string' && ((typeof n.props.accessibilityLabel === 'string' && /^Week \d+/.test(n.props.accessibilityLabel)) || (n.type as string) === 'NativeAdView'));
+    // The list rows only (the week strip above them has its own "Week n, open the card" pills).
+    const order = ui.root.findAll((n) => typeof n.type === 'string' && ((typeof n.props.accessibilityLabel === 'string' && /^Week \d+(: |, this week: )/.test(n.props.accessibilityLabel)) || (n.type as string) === 'NativeAdView'));
     const positions = order.map((n) => ((n.type as string) === 'NativeAdView' ? 'ad' : 'card'));
     expect(positions.indexOf('ad')).toBe(3);
   });

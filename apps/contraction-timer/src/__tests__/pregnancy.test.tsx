@@ -53,11 +53,41 @@ describe('My Pregnancy (plan §5.4)', () => {
   it('with a due date shows week, days to go and the size, and pins this week first', async () => {
     useProfile.getState().setDue({ mode: 'edd', date: '2026-11-12' }); // 34 days to go: week 35 + 1... 246 days = 35w1d
     const ui = await render(wrap(<Pregnancy />));
-    // The hero card: the week inside a ring of the 40, then the week, the days to go and the size on their own lines.
-    expect(ui.texts()).toEqual(expect.arrayContaining(['35', 'Week 35 + 1', '34 days to go', 'Baby is about the size of a honeydew melon']));
-    const rows = ui.root.findAll((n) => isPressable(n) && typeof n.props.onPress === 'function' && /^Week \d+/.test(String(n.props.accessibilityLabel)));
+    // The dial: the week in the middle of a 40-week face, then the week and day, and the days to go, the
+    // trimester and the due date as chips; one sentence for screen readers.
+    expect(ui.texts()).toEqual(expect.arrayContaining(['35', '+ 1 day', 'Week 35 + 1', '34 days to go', 'Trimester 3', 'Due 12 November']));
+    expect(ui.byLabel('Week 35 and 1 days. 34 days to go. Baby is about the size of a honeydew melon')).toHaveLength(1);
+    // This week's card: the size as its headline, opening week 35.
+    expect(ui.texts()).toContain('About the size of a honeydew melon');
+    await ui.press(/^This week, week 35: about the size of a honeydew melon/);
+    expect(mockRouter.push).toHaveBeenLastCalledWith({ pathname: '/pregnancy/week/[n]', params: { n: '35' } });
+    // The list: this week pinned first.
+    const rows = ui.root.findAll((n) => isPressable(n) && typeof n.props.onPress === 'function' && /^Week \d+: |^Week \d+, this week: /.test(String(n.props.accessibilityLabel)));
     expect(String(rows[0].props.accessibilityLabel)).toBe('Week 35, this week: about the size of a honeydew melon');
     expect(String(rows[1].props.accessibilityLabel)).toContain('Week 4:');
+  });
+
+  it('pages a strip of weeks with this week as the tall pill, and opens any week from it', async () => {
+    useProfile.getState().setDue({ mode: 'edd', date: '2026-11-12' });
+    const ui = await render(wrap(<Pregnancy />));
+    const strip = () => ui.root.findAll((n) => isPressable(n) && /, open the card$/.test(String(n.props.accessibilityLabel))).map((n) => String(n.props.accessibilityLabel));
+    expect(strip()).toEqual(['Week 33, open the card', 'Week 34, open the card', 'Week 35, this week, open the card', 'Week 36, open the card', 'Week 37, open the card']);
+    await ui.press('Later weeks');
+    // It pages up to the last card (week 42) and the arrow then turns off.
+    expect(ui.byLabel('Later weeks')[0].props.accessibilityState).toMatchObject({ disabled: true });
+    expect(strip()).toEqual(['Week 38, open the card', 'Week 39, open the card', 'Week 40, open the card', 'Week 41, open the card', 'Week 42, open the card']);
+    await ui.press('Week 40, open the card');
+    expect(mockRouter.push).toHaveBeenLastCalledWith({ pathname: '/pregnancy/week/[n]', params: { n: '40' } });
+  });
+
+  it('offers the hospital bag, birth plan and due date as cards to swipe', async () => {
+    const ui = await render(wrap(<Pregnancy />));
+    await ui.press('Hospital bag, 0% packed');
+    expect(mockRouter.push).toHaveBeenLastCalledWith('/pregnancy/hospital-bag');
+    await ui.press(/^Birth plan, 0 of \d+ thought through$/);
+    expect(mockRouter.push).toHaveBeenLastCalledWith('/pregnancy/birth-plan');
+    await ui.press('Due date calculator, Not set yet');
+    expect(mockRouter.push).toHaveBeenLastCalledWith('/pregnancy/due-date');
   });
 
   it('says "1 day to go", "Due today" and the days past, and the plan\'s past-due line after 42 weeks', async () => {
