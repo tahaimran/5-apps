@@ -1,11 +1,14 @@
 import { useEffect } from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, useWindowDimensions } from 'react-native';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { ThemeProvider, useTheme } from '@shared/theme';
 import { useAppOpenAd } from '@shared/ads';
+import { initSounds } from '@shared/sound';
+import { SystemNavBar, ToastHost } from '@shared/ui';
 import { adContext, useAdGuard } from '@/ads/guard';
 import { useStartAdsWhenSafe } from '@/ads/useStartAds';
 import { adAllowed } from '@/domain/adRules';
@@ -16,7 +19,8 @@ import { useWeeklyCardSync } from '@/notifications/weekly';
 import { useNotificationResponses } from '@/notifications/responses';
 import { installSessionNotifier } from '@/notifications/sessionOpen';
 import { useMeta } from '@/store/meta';
-import { FONT_SCALE, palette, TOUCH_TARGET } from '@/theme/tokens';
+import { useSettings } from '@/store/settings';
+import { FONT_SCALE, tabBarHeight, themeProps } from '@/theme/tokens';
 import '@/bootstrap';
 
 // A render error anywhere shows a retry screen instead of closing the app in release builds.
@@ -29,6 +33,13 @@ let launchCounted = false;
 
 function Root() {
   const { mode, colors } = useTheme();
+  const insets = useSafeAreaInsets();
+  const { fontScale } = useWindowDimensions();
+  const sounds = useSettings((s) => s.settings.sounds);
+  // Sounds are off by default; their players load only once someone turns them on.
+  useEffect(() => {
+    if (sounds) initSounds(['tap', 'check']);
+  }, [sounds]);
   useAdGuard();
   // Warm starts only (never a cold start); the rules also keep it away from any open session, notification taps and the first launches.
   useAppOpenAd(() => adAllowed('app_open', adContext()));
@@ -51,12 +62,15 @@ function Root() {
     <>
       {/* Light content on the dark and night themes, dark content on the light one. */}
       <StatusBar style={mode === 'light' ? 'dark' : 'light'} />
+      <SystemNavBar dark={mode !== 'light'} />
       <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: colors.background } }}>
         <Stack.Screen name="onboarding" options={{ gestureEnabled: false }} />
         <Stack.Screen name="modals/share-summary" options={{ presentation: 'modal' }} />
         <Stack.Screen name="modals/alert-rule" options={{ presentation: 'modal' }} />
         <Stack.Screen name="modals/pdf-theme" options={{ presentation: 'modal' }} />
       </Stack>
+      {/* Above the tab bar; one host for every screen (toasts replace the old in-screen notes). */}
+      <ToastHost bottom={tabBarHeight(fontScale) + insets.bottom + 12} />
     </>
   );
 }
@@ -64,7 +78,7 @@ function Root() {
 export default function RootLayout() {
   return (
     <GestureHandlerRootView style={styles.flex}>
-      <ThemeProvider palette={palette} fontScale={FONT_SCALE} touchTarget={TOUCH_TARGET}>
+      <ThemeProvider {...themeProps} fontScale={FONT_SCALE}>
         <Root />
       </ThemeProvider>
     </GestureHandlerRootView>

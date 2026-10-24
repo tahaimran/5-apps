@@ -1,4 +1,10 @@
 import { t } from '@shared/i18n';
+import { currentTimeFormat, useTimeFormat } from '@shared/time/preference';
+
+/** True when times read 24-hour: the choice in Settings, else the phone's clock (plan §5.5). */
+export const useClock24h = (): boolean => useTimeFormat().format === '24h';
+/** The same outside React (notification copy, a summary made in a callback). */
+export const currentClock24h = (): boolean => currentTimeFormat() === '24h';
 
 const pad = (n: number) => String(n).padStart(2, '0');
 const whole = (ms: number) => Math.max(0, Math.floor(ms / 1000));

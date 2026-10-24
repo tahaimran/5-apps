@@ -7,6 +7,19 @@
 > 2. The **Health apps declaration** is filled in Play Console (see section 4).
 > 3. The audience is set to **18+ only**, and the **medical disclaimer** ("Not a medical device. Not medical advice. Always follow your provider's guidance.") has been checked by a lawyer for the countries you ship to.
 
+**Redesign (2026-10-25, branch `feat/ui-polish`):** the "Dawn" look of plan §7 is built and Jest-verified only. It needs a **new dev build** before it can be seen on a phone (new native pieces: expo-dev-client, expo-audio, expo-linear-gradient, expo-navigation-bar, the embedded fonts, the notification icon and chime). The Oct 14 preview APK has no dev client and shows the old look.
+
+## 0. Check the redesign on the new dev build
+- [ ] Timer digits never shift as they tick (fixed-width digit slots), in light, dark and Night.
+- [ ] The breathing ring feels calm (4 s in, 4 s out) and is still with Remove animations on.
+- [ ] The wash warms to peach while contracting and cools back at Stop.
+- [ ] Night mode: nothing white or blue-green anywhere (sheets, toasts, the tab bar, the navigation bar).
+- [ ] Partner mode at the largest font size: digits, Start/Stop and the status pill fit.
+- [ ] Sounds stay silent until turned on in Settings; then start, stop and each kick make a soft sound.
+- [ ] The kick reminder arrives with the chime and a gentle buzz on the new "Kick count reminder" channel; the old channel is gone from Android settings.
+- [ ] The 12/24-hour setting (Phone / 12-hour / 24-hour) changes every time shown, the reminder sheet and the shared summary.
+- [ ] Launcher icon in circle, squircle and themed (monochrome) icons; notification icon in the status bar; splash in light and dark.
+
 ## 1. Try it on your phone (test checklist)
 Install the preview APK, then check each item. Full list: `RELEASE.md` section 4.
 - [ ] 1. Open the app: the splash shows, then onboarding. Go from first launch to timing a contraction in under 60 seconds.

@@ -1,10 +1,11 @@
 import { mockNotif, mockNotifState, mockRouter } from '@/testing/mocks';
 import { resetApp } from '@/testing/stores';
-import { cleanup, flush, render } from '@/testing/ui';
+import { cleanup, flush, pickTime, render } from '@/testing/ui';
 import { act } from 'react';
 import { Linking } from 'react-native';
 import * as Haptics from 'expo-haptics';
 import { ThemeProvider } from '@shared/theme';
+import { hideToast, ToastHost } from '@shared/ui';
 import '@/bootstrap';
 import { SOFT_LIMIT_MS } from '@/domain/kicks';
 import { useKicks } from '@/store/kicks';
@@ -12,14 +13,16 @@ import { useMeta } from '@/store/meta';
 import { useProfile } from '@/store/profile';
 import { useSettings } from '@/store/settings';
 import { dateKeyFor } from '@/domain/dateKey';
-import { FONT_SCALE, palette, TOUCH_TARGET } from '@/theme/tokens';
+import { FONT_SCALE, themeProps } from '@/theme/tokens';
 import Kicks from '../../app/(tabs)/kicks/index';
 import KickHistory from '../../app/(tabs)/kicks/history';
 
 const NOW = new Date(2026, 10, 4, 20, 0).getTime();
+// "Saved" and the 3-hour note are toasts in the shared host the root layout mounts, so the tests mount one too.
 const wrap = (el: React.ReactElement) => (
-  <ThemeProvider palette={palette} fontScale={FONT_SCALE} touchTarget={TOUCH_TARGET}>
+  <ThemeProvider {...themeProps} fontScale={FONT_SCALE}>
     {el}
+    <ToastHost />
   </ThemeProvider>
 );
 const advance = (ms: number) => act(async () => void jest.advanceTimersByTime(ms));
@@ -32,6 +35,7 @@ beforeEach(() => {
   mockRouter.push.mockClear();
 });
 afterEach(async () => {
+  await act(async () => hideToast());
   await cleanup();
   jest.useRealTimers();
   jest.restoreAllMocks();
@@ -156,7 +160,7 @@ describe('the daily reminder (plan F18, §10)', () => {
     expect(mockNotif.granted).toBe(true);
     expect(useSettings.getState().settings.kickReminder).toEqual({ enabled: true, hour: 20, minute: 0 });
     const n = mockNotifState.pending.get('kick-reminder')!;
-    expect(n.trigger).toMatchObject({ type: 'daily', hour: 20, minute: 0, channelId: 'kick-reminder' });
+    expect(n.trigger).toMatchObject({ type: 'daily', hour: 20, minute: 0, channelId: 'kick-chime' });
     expect(n.content.body).toBe('Time for your kick count? Find a comfy spot and tap Start.');
     expect(n.content.data).toEqual({ url: 'contractiontimer://kicks' });
   });
@@ -196,12 +200,15 @@ describe('the daily reminder (plan F18, §10)', () => {
     await ui.press(/^Daily reminder: Off/);
     await ui.press('Turn on');
     await ui.press(/^Daily reminder: 8:00 PM/);
-    await ui.press('One hour later');
+    // The time is picked on the shared wheels (TimeField) and shown in the phone's clock style.
+    expect(ui.byLabel('Reminder time, 8:00 PM')).toHaveLength(1);
+    await pickTime(ui.root, 'Reminder time', '21:00');
     await flush();
     expect(mockNotifState.pending.get('kick-reminder')!.trigger).toMatchObject({ hour: 21, minute: 0 });
-    await ui.press('Fifteen minutes earlier');
+    await pickTime(ui.root, 'Reminder time', '20:45');
     await flush();
     expect(mockNotifState.pending.get('kick-reminder')!.trigger).toMatchObject({ hour: 20, minute: 45 });
+    expect(ui.byLabel('Reminder time, 8:45 PM')).toHaveLength(1);
     await ui.press('Turn off');
     await flush();
     expect(mockNotifState.pending.size).toBe(0);

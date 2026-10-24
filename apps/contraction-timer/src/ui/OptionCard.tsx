@@ -1,38 +1,78 @@
-import { Pressable, View } from 'react-native';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { StyleSheet, View } from 'react-native';
+import Circle from 'lucide-react-native/icons/circle';
+import CircleCheck from 'lucide-react-native/icons/circle-check';
+import Square from 'lucide-react-native/icons/square';
+import SquareCheck from 'lucide-react-native/icons/square-check';
+import Animated, { useReducedMotion } from 'react-native-reanimated';
 import { useTheme } from '@shared/theme';
+import { PressableScale, type IconComponent } from '@shared/ui';
+import { CSS_EASE_OUT, STATE_MS } from './motion';
 import { AppText } from './AppText';
 
 /**
- * A large radio card (72dp, plan §6): a title, an optional line under it, and a filled or empty
- * circle plus a heavier border when selected, so the choice is never shown by color alone.
+ * A large choice card (72dp, plan §6): a title, an optional line under it, and a ticked circle (radio)
+ * or square (checkbox) plus a teal edge and soft fill when selected, so the choice never rests on color
+ * alone. The fill changes with a short CSS transition.
  */
-export function OptionCard({ label, detail, selected, onPress, accessibilityHint }: { label: string; detail?: string; selected: boolean; onPress: () => void; accessibilityHint?: string }) {
-  const { colors, radius, spacing, type } = useTheme();
+export function OptionCard({
+  label,
+  detail,
+  selected,
+  onPress,
+  accessibilityHint,
+  kind = 'radio',
+  icon: Icon,
+}: {
+  label: string;
+  detail?: string;
+  selected: boolean;
+  onPress: () => void;
+  accessibilityHint?: string;
+  kind?: 'radio' | 'checkbox';
+  /** A leading icon (onboarding answers). */
+  icon?: IconComponent;
+}) {
+  const { colors, radius, spacing, type, shadow } = useTheme();
+  const reduced = useReducedMotion();
+  const Mark = kind === 'checkbox' ? (selected ? SquareCheck : Square) : selected ? CircleCheck : Circle;
   return (
-    <Pressable
-      accessibilityRole="radio"
+    <PressableScale
+      accessibilityRole={kind}
       accessibilityLabel={detail ? `${label}. ${detail}` : label}
       accessibilityHint={accessibilityHint}
-      accessibilityState={{ selected, checked: selected }}
+      accessibilityState={kind === 'checkbox' ? { checked: selected } : { selected, checked: selected }}
       onPress={onPress}
-      style={{
-        minHeight: 72,
-        flexDirection: 'row',
-        alignItems: 'center',
-        gap: spacing.md,
-        padding: spacing.md,
-        borderRadius: radius.lg,
-        borderWidth: selected ? 3 : 1,
-        borderColor: selected ? colors.text : colors.border,
-        backgroundColor: colors.surface,
-      }}
+      scaleTo={0.98}
+      style={[{ borderRadius: radius.lg }, shadow(selected ? 0 : 1)]}
     >
-      <MaterialCommunityIcons name={selected ? 'radiobox-marked' : 'radiobox-blank'} size={28} color={selected ? colors.text : colors.textMuted} />
-      <View style={{ flex: 1 }}>
+      <Animated.View
+        style={[
+          styles.card,
+          {
+          gap: spacing.md,
+          padding: spacing.md,
+          paddingHorizontal: spacing.lg,
+          borderRadius: radius.lg,
+          borderColor: selected ? colors.primary : colors.surface,
+          backgroundColor: selected ? colors.primarySoft : colors.surface,
+          transitionProperty: ['backgroundColor', 'borderColor'],
+          transitionDuration: reduced ? 0 : STATE_MS,
+          transitionTimingFunction: CSS_EASE_OUT,
+          },
+        ]}
+      >
+      {Icon ? <Icon size={24} color={selected ? colors.primary : colors.textMuted} strokeWidth={2.25} /> : null}
+      <View style={styles.flex}>
         <AppText style={[type.bodyLarge, { color: colors.text, fontWeight: '700' }]}>{label}</AppText>
         {detail ? <AppText style={[type.body, { color: colors.textMuted }]}>{detail}</AppText> : null}
       </View>
-    </Pressable>
+      <Mark size={26} color={selected ? colors.primary : colors.textMuted} strokeWidth={2.25} />
+      </Animated.View>
+    </PressableScale>
   );
 }
+
+const styles = StyleSheet.create({
+  flex: { flex: 1 },
+  card: { minHeight: 72, flexDirection: 'row', alignItems: 'center', borderWidth: 2 },
+});

@@ -1,12 +1,20 @@
-import { Alert, Linking, Platform, View } from 'react-native';
+import { Alert, Linking, Platform } from 'react-native';
 import Constants from 'expo-constants';
 import { router } from 'expo-router';
+import Gauge from 'lucide-react-native/icons/gauge';
+import Info from 'lucide-react-native/icons/info';
+import Mail from 'lucide-react-native/icons/mail';
+import Settings from 'lucide-react-native/icons/settings';
+import Shield from 'lucide-react-native/icons/shield';
+import Star from 'lucide-react-native/icons/star';
+import Stethoscope from 'lucide-react-native/icons/stethoscope';
+import Trash from 'lucide-react-native/icons/trash';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
 import { deleteAllData } from '@/features/settings/reset';
-import { AppText } from '@/ui/AppText';
-import { BigButton } from '@/ui/BigButton';
+import { useAppColors } from '@/theme/mode';
 import { Screen } from '@/ui/Screen';
+import { NavRow, SettingsGroup } from '@/ui/SettingsRow';
 
 const PACKAGE = (Constants.expoConfig?.android?.package as string | undefined) ?? 'com.fiveapps.contractiontimer';
 const contactEmail = () => process.env.EXPO_PUBLIC_CONTACT_EMAIL;
@@ -54,22 +62,24 @@ export function confirmDeleteAll(onDone?: () => void): void {
 }
 
 export default function More() {
-  const { colors, spacing, type } = useTheme();
+  const { colors } = useTheme();
+  const app = useAppColors();
   return (
-    <Screen>
-      <AppText accessibilityRole="header" style={[type.headline, { color: colors.text, fontWeight: '700' }]}>{t('more.title')}</AppText>
-      <View style={{ gap: spacing.sm }}>
-        <BigButton variant="secondary" label={t('more.settings')} onPress={() => router.push('/more/settings')} />
-        <BigButton variant="secondary" label={t('more.privacy')} onPress={() => router.push('/more/privacy')} />
-        <BigButton variant="secondary" label={t('more.disclaimer')} onPress={() => router.push('/more/disclaimer')} />
-        <BigButton variant="secondary" label={t('more.rate')} onPress={() => void rateApp()} />
-        {contactEmail() ? <BigButton variant="secondary" label={t('more.feedback')} onPress={() => void sendFeedback()} /> : null}
-        <BigButton variant="secondary" label={t('more.about')} onPress={() => router.push('/more/about')} />
-        {__DEV__ ? <BigButton variant="secondary" label={t('more.adRules')} onPress={() => router.push('/debug-ads')} /> : null}
-      </View>
-      <View style={{ marginTop: spacing.xl }}>
-        <BigButton variant="danger" label={t('more.delete')} onPress={() => confirmDeleteAll()} />
-      </View>
+    <Screen title={t('more.title')}>
+      <SettingsGroup>
+        <NavRow icon={Settings} label={t('more.settings')} onPress={() => router.push('/more/settings')} />
+        <NavRow icon={Shield} label={t('more.privacy')} onPress={() => router.push('/more/privacy')} />
+        <NavRow icon={Stethoscope} label={t('more.disclaimer')} tint={app.alertIcon} bg={app.alertBg} onPress={() => router.push('/more/disclaimer')} />
+      </SettingsGroup>
+      <SettingsGroup>
+        <NavRow icon={Star} label={t('more.rate')} tint={colors.accent} bg={colors.surfaceAlt} onPress={() => void rateApp()} />
+        {contactEmail() ? <NavRow icon={Mail} label={t('more.feedback')} tint={colors.accent} bg={colors.surfaceAlt} onPress={() => void sendFeedback()} /> : null}
+        <NavRow icon={Info} label={t('more.about')} tint={colors.accent} bg={colors.surfaceAlt} onPress={() => router.push('/more/about')} />
+        {__DEV__ ? <NavRow icon={Gauge} label={t('more.adRules')} onPress={() => router.push('/debug-ads')} /> : null}
+      </SettingsGroup>
+      <SettingsGroup>
+        <NavRow icon={Trash} tone="danger" label={t('more.delete')} onPress={() => confirmDeleteAll()} />
+      </SettingsGroup>
     </Screen>
   );
 }

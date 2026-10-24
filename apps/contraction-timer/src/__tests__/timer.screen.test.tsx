@@ -4,6 +4,7 @@ import { cleanup, flush, render } from '@/testing/ui';
 import { act } from 'react';
 import * as Haptics from 'expo-haptics';
 import { ThemeProvider } from '@shared/theme';
+import { hideToast, ToastHost } from '@shared/ui';
 import '@/bootstrap';
 import { IDLE_PROMPT_MS } from '@/domain/session';
 import { reloadSessionsFromDisk, useSessions } from '@/store/sessions';
@@ -16,15 +17,20 @@ import { resetDisclaimerSheetForTests } from '../../app/(tabs)/timer/index';
 import TabsLayout from '../../app/(tabs)/_layout';
 import { toggleNight, getThemePref } from '@/theme/mode';
 import { useProfile } from '@/store/profile';
-import { FONT_SCALE, palette, TOUCH_TARGET } from '@/theme/tokens';
+import { FONT_SCALE, palette, TOUCH_TARGET, themeProps } from '@/theme/tokens';
+import { digitsSize } from '../../app/(tabs)/timer/index';
 import TimerScreen from '../../app/(tabs)/timer/index';
 
 const NOW = new Date(2026, 10, 4, 2, 58, 0).getTime();
+// Toasts (restored, clock changed) show in the shared host the root layout mounts, so the tests mount one too.
 const wrap = () => (
-  <ThemeProvider palette={palette} fontScale={FONT_SCALE} touchTarget={TOUCH_TARGET}>
+  <ThemeProvider {...themeProps} fontScale={FONT_SCALE}>
     <TimerScreen />
+    <ToastHost />
   </ThemeProvider>
 );
+/** The running time is drawn digit by digit in fixed slots; its spoken name carries the whole value. */
+const elapsedLabel = (spoken: string) => `Time so far, ${spoken}`;
 const advance = (ms: number) => act(async () => void jest.advanceTimersByTime(ms));
 
 beforeEach(() => {
@@ -38,6 +44,7 @@ beforeEach(() => {
   (Haptics.notificationAsync as jest.Mock).mockClear();
 });
 afterEach(async () => {
+  await act(async () => hideToast());
   await cleanup();
   jest.useRealTimers();
   sharedStore.remove('onboarding.completedAt');
@@ -63,7 +70,9 @@ describe('the Timer screen', () => {
     expect(mockKeepAwake.active.has('timer')).toBe(true);
     await advance(42_000);
     expect(ui.byLabel('Stop contraction, 42 seconds')).toHaveLength(1);
-    expect(ui.texts()).toContain('0:42');
+    expect(ui.byLabel(elapsedLabel('42 seconds'))).toHaveLength(1);
+    // Fixed-width digit slots: the characters render one by one, so the width never changes as they tick.
+    expect(ui.texts().join('')).toContain('0:42');
   });
 
   it('stops on the second tap (after the double-tap guard), double haptic, and shows how long since it started', async () => {
@@ -106,7 +115,7 @@ describe('the Timer screen', () => {
     ui = await render(wrap());
     await flush();
     expect(ui.texts()).toContain('Timing restored');
-    expect(ui.texts()).toContain('3:00');
+    expect(ui.byLabel(elapsedLabel('3 minutes'))).toHaveLength(1);
     expect(ui.byLabel('Stop contraction, 3 minutes')).toHaveLength(1);
     expect(mockKeepAwake.active.has('timer')).toBe(true);
   });
@@ -168,7 +177,7 @@ describe('the Timer screen', () => {
   it('stops the page scrolling while a finger is on the button, and lets it scroll again afterwards', async () => {
     const ui = await render(wrap());
     const scroller = () => ui.root.findAll((n) => typeof n.props.scrollEnabled === 'boolean' && typeof n.type === 'string')[0];
-    const button = ui.root.findAll((n) => typeof n.props.onPressIn === 'function' && n.props.accessibilityRole === 'button')[0];
+    const button = ui.root.findAll((n) => typeof n.props.onPressIn === 'function' && n.props.accessibilityLabel === 'Start contraction')[0];
     expect(scroller().props.scrollEnabled).toBe(true);
     await act(async () => button.props.onPressIn());
     expect(scroller().props.scrollEnabled).toBe(false);
@@ -324,9 +333,17 @@ describe('Partner mode (plan §4, §7, F15)', () => {
     useSettings.getState().update({ partnerMode: true });
     const ui = await render(wrap());
     await ui.press('Start contraction');
-    const digits = ui.root.findAll((n) => (n.type as unknown) === 'Text' && n.props.adjustsFontSizeToFit === true)[0];
-    const flat = (require('react-native') as typeof import('react-native')).StyleSheet.flatten(digits.props.style);
-    expect(flat.fontSize).toBeCloseTo(72 * 1.4, 5);
+    const { StyleSheet } = require('react-native') as typeof import('react-native');
+    const sizes = ui.root.findAll((n) => (n.type as unknown) === 'Text').map((n) => StyleSheet.flatten(n.props.style)?.fontSize ?? 0);
+    // 72sp × 1.4 = 100.8, floored to whole sp; it only shrinks further when the screen is too narrow.
+    expect(Math.max(...sizes)).toBe(100);
+  });
+
+  it('shrinks the digits only as far as a narrow screen or a large font scale needs, never below 32sp', () => {
+    expect(digitsSize('0:42', 72, 400, 1)).toBe(72);
+    // (300 - 48) / ((3 × 0.64 + 0.34) em × 2) = 55.7
+    expect(digitsSize('0:42', 72, 300, 2)).toBe(55);
+    expect(digitsSize('1:00:42', 101, 320, 2)).toBeGreaterThanOrEqual(32);
   });
 
   it('while a contraction runs only an "Exit partner mode" chip is left of the header, and it leaves partner mode', async () => {

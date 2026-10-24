@@ -1,27 +1,29 @@
 import { useState } from 'react';
-import { View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { router } from 'expo-router';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import CircleCheck from 'lucide-react-native/icons/circle-check';
+import Lock from 'lucide-react-native/icons/lock';
+import PlayCircle from 'lucide-react-native/icons/circle-play';
+import Sparkles from 'lucide-react-native/icons/sparkles';
+import TriangleAlert from 'lucide-react-native/icons/triangle-alert';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
+import { Button, Card, showToast } from '@shared/ui';
 import { watchRewarded } from '@/ads/rewarded';
 import { PDF_THEME_IDS, PDF_THEMES, type PdfThemeId } from '@/domain/pdf';
 import { isPdfThemeUnlocked, useUnlocks } from '@/store/unlocks';
 import { AppText } from '@/ui/AppText';
-import { BigButton } from '@/ui/BigButton';
 import { Screen } from '@/ui/Screen';
-import { ScreenHeader } from '@/ui/ScreenHeader';
-import { Toast } from '@/ui/Toast';
+import { IconCircle } from '@/ui/SettingsRow';
 
 /**
  * Plan §12 `pdf_theme_reward`: "Clean" is free for ever. Another look is unlocked for good by watching one short video that the
  * person chose to watch; the button says "Available after your session" and does nothing while a session or kick count is open.
  */
 export default function PdfThemePicker() {
-  const { colors, spacing, radius, type } = useTheme();
+  const { colors, spacing, type } = useTheme();
   const unlocks = useUnlocks((s) => s.unlocks);
   const selected = useUnlocks((s) => s.selectedPdfTheme);
-  const [message, setMessage] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
 
   const unlock = async (id: PdfThemeId) => {
@@ -30,34 +32,42 @@ export default function PdfThemePicker() {
     setBusy(false);
     if (result === 'earned') {
       useUnlocks.getState().unlockPdfTheme(id);
-      setMessage(t('unlock.unlocked', { name: t(`pdfTheme.${id}`) }));
-    } else setMessage(t(result === 'blocked' ? 'unlock.blocked' : 'unlock.failed'));
+      showToast({ message: t('unlock.unlocked', { name: t(`pdfTheme.${id}`) }), icon: Sparkles, tone: 'success' });
+    } else showToast({ message: t(result === 'blocked' ? 'unlock.blocked' : 'unlock.failed'), icon: TriangleAlert, tone: 'warning' });
   };
 
   return (
-    <Screen>
-      <ScreenHeader title={t('pdfThemeScreen.title')} onBack={() => router.back()} />
+    <Screen modal title={t('pdfThemeScreen.title')} onBack={() => router.back()}>
       <AppText style={[type.bodyLarge, { color: colors.textMuted }]}>{t('pdfThemeScreen.intro')}</AppText>
       {PDF_THEME_IDS.map((id) => {
         const open = isPdfThemeUnlocked(unlocks, id);
         const name = t(`pdfTheme.${id}`);
         const inUse = open && selected === id;
         return (
-          <View key={id} style={{ gap: spacing.sm, padding: spacing.md, borderRadius: radius.lg, borderWidth: inUse ? 3 : 1, borderColor: inUse ? colors.text : colors.border, backgroundColor: colors.surface }}>
-            <View style={{ flexDirection: 'row', alignItems: 'center', gap: spacing.sm }}>
-              <MaterialCommunityIcons accessible={false} name={open ? 'check-circle-outline' : 'lock-outline'} size={28} color={colors.text} />
-              <AppText style={[type.bodyLarge, { color: colors.text, fontWeight: '700', flex: 1 }]}>{name}</AppText>
+          <Card key={id} style={[{ gap: spacing.md, borderWidth: 2, borderColor: inUse ? colors.primary : colors.surface }]}>
+            <View style={[styles.row, { gap: spacing.md }]}>
+              <IconCircle icon={open ? CircleCheck : Lock} tint={open ? colors.primary : colors.textMuted} bg={open ? colors.primarySoft : colors.surfaceAlt} />
+              <AppText style={[type.bodyLarge, styles.flex, { color: colors.text, fontWeight: '700' }]}>{name}</AppText>
               <AppText style={[type.body, { color: colors.textMuted }]}>{PDF_THEMES[id].free ? t('unlock.free') : open ? t('unlock.open') : t('unlock.locked')}</AppText>
             </View>
             {open ? (
-              <BigButton variant={inUse ? 'secondary' : 'primary'} label={inUse ? t('unlock.inUse') : t('unlock.use')} accessibilityLabel={`${name}. ${inUse ? t('unlock.inUse') : t('unlock.use')}`} onPress={() => useUnlocks.getState().selectPdfTheme(id)} />
+              <Button
+                variant={inUse ? 'secondary' : 'primary'}
+                label={inUse ? t('unlock.inUse') : t('unlock.use')}
+                accessibilityLabel={`${name}. ${inUse ? t('unlock.inUse') : t('unlock.use')}`}
+                onPress={() => useUnlocks.getState().selectPdfTheme(id)}
+              />
             ) : (
-              <BigButton label={t('unlock.watch')} accessibilityLabel={t('unlock.watchLabel', { name })} disabled={busy} onPress={() => void unlock(id)} />
+              <Button icon={PlayCircle} label={t('unlock.watch')} accessibilityLabel={t('unlock.watchLabel', { name })} disabled={busy} onPress={() => void unlock(id)} />
             )}
-          </View>
+          </Card>
         );
       })}
-      {message ? <Toast message={message} /> : null}
     </Screen>
   );
 }
+
+const styles = StyleSheet.create({
+  flex: { flex: 1 },
+  row: { flexDirection: 'row', alignItems: 'center', flexWrap: 'wrap' },
+});

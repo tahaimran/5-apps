@@ -1,8 +1,16 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
-import { Alert, Pressable, View } from 'react-native';
+import { useState } from 'react';
+import { Alert, StyleSheet, View } from 'react-native';
 import { router, useLocalSearchParams } from 'expo-router';
+import EyeOff from 'lucide-react-native/icons/eye-off';
+import Hash from 'lucide-react-native/icons/hash';
+import Hourglass from 'lucide-react-native/icons/hourglass';
+import Plus from 'lucide-react-native/icons/plus';
+import Repeat from 'lucide-react-native/icons/repeat';
+import Share2 from 'lucide-react-native/icons/share-2';
+import Trash from 'lucide-react-native/icons/trash';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
+import { Button, PressableScale, showToast } from '@shared/ui';
 import { SECOND } from '@/domain/defaults';
 import { intervalFor, isIgnored, sessionStats } from '@/domain/stats';
 import { sessionStart } from '@/domain/session';
@@ -10,42 +18,37 @@ import type { ContractionSession } from '@/domain/types';
 import { useAdScreen } from '@/ads/guard';
 import { RowEditor, type EditorTarget } from '@/features/history/RowEditor';
 import { useSessions } from '@/store/sessions';
-import { useSettings } from '@/store/settings';
+import { useAppColors } from '@/theme/mode';
 import { AppText } from '@/ui/AppText';
-import { BigButton } from '@/ui/BigButton';
-import { clockTime, compact, mmss, shortDate, spoken } from '@/ui/format';
+import { clockTime, compact, mmss, shortDate, spoken, useClock24h } from '@/ui/format';
 import { Screen } from '@/ui/Screen';
-import { ScreenHeader } from '@/ui/ScreenHeader';
+import { StatTile } from '@/ui/SettingsRow';
 
 export const UNDO_DELETE_MS = 5 * SECOND;
 
 /** Plan §5.2: one session, row by row. Edit, delete (with a 5-second undo), join, add a missed one, share, delete the session. */
 export default function SessionDetail() {
   const { id } = useLocalSearchParams<{ id: string }>();
-  const { colors, spacing, radius, type } = useTheme();
+  const { colors, spacing, radius, type, shadow, fonts } = useTheme();
+  const app = useAppColors();
   useAdScreen('session');
-  const clock24h = useSettings((s) => s.settings.clock24h);
+  const clock24h = useClock24h();
   const session = useSessions((s) => (s.active?.id === id ? s.active : (s.archived[id] ?? null)));
   const isOpen = useSessions((s) => s.active?.id === id);
   const [target, setTarget] = useState<EditorTarget | null>(null);
-  const [undo, setUndo] = useState<ContractionSession | null>(null);
-  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  useEffect(
-    () => () => {
-      if (timer.current) clearTimeout(timer.current);
-    },
-    [],
-  );
-  const offerUndo = useCallback((before: ContractionSession) => {
-    setUndo(before);
-    if (timer.current) clearTimeout(timer.current);
-    timer.current = setTimeout(() => setUndo(null), UNDO_DELETE_MS);
-  }, []);
+
+  // A deleted row can be put back for 5 seconds (plan F7), from a toast with an Undo action.
+  const offerUndo = (before: ContractionSession) =>
+    showToast({
+      message: t('session.deleted'),
+      icon: Trash,
+      duration: UNDO_DELETE_MS,
+      action: { label: t('session.undo'), onPress: () => useSessions.getState().restoreSession(before) },
+    });
 
   if (!session) {
     return (
-      <Screen>
-        <ScreenHeader title={t('session.title')} />
+      <Screen stack title={t('session.title')}>
         <AppText style={[type.bodyLarge, { color: colors.text }]}>{t('session.notFound')}</AppText>
       </Screen>
     );
@@ -53,11 +56,8 @@ export default function SessionDetail() {
 
   const stats = sessionStats(session.contractions);
   const rows = [...session.contractions].sort((a, b) => b.startedAt - a.startedAt);
-  const summary = t('session.stats', {
-    count: stats.count,
-    length: stats.avgDurationMs === null ? t('stats.none') : compact(stats.avgDurationMs),
-    gap: stats.avgIntervalMs === null ? t('stats.none') : t('stats.intervalValue', { time: compact(stats.avgIntervalMs) }),
-  });
+  const length = stats.avgDurationMs === null ? t('stats.none') : compact(stats.avgDurationMs);
+  const gapText = stats.avgIntervalMs === null ? t('stats.none') : t('stats.intervalValue', { time: compact(stats.avgIntervalMs) });
   const lastEnd = Math.max(0, ...session.contractions.map((c) => c.endedAt ?? c.startedAt));
 
   const confirmDelete = () =>
@@ -74,9 +74,12 @@ export default function SessionDetail() {
     ]);
 
   return (
-    <Screen>
-      <ScreenHeader title={shortDate(sessionStart(session))} />
-      <AppText style={[type.bodyLarge, { color: colors.textMuted }]}>{summary}</AppText>
+    <Screen stack title={shortDate(sessionStart(session))}>
+      <View accessible accessibilityLabel={t('session.stats', { count: stats.count, length, gap: gapText })} style={[styles.row, { gap: spacing.sm }]}>
+        <StatTile icon={Hash} label={t('session.countTitle')} value={String(stats.count)} />
+        <StatTile icon={Hourglass} label={t('stats.lengthTitle')} value={length} tint={app.activeText} bg={app.activeSoft} />
+        <StatTile icon={Repeat} label={t('stats.intervalTitle')} value={gapText} tint={colors.accent} bg={colors.surfaceAlt} />
+      </View>
       {isOpen ? <AppText style={[type.body, { color: colors.textMuted }]}>{t('session.inProgressNote')}</AppText> : null}
 
       <View style={{ gap: spacing.sm }}>
@@ -84,7 +87,7 @@ export default function SessionDetail() {
           const running = c.endedAt === null;
           const gap = intervalFor(session.contractions, c.id);
           const ignored = !running && isIgnored(c);
-          const length = running ? t('session.running') : mmss((c.endedAt as number) - c.startedAt);
+          const rowLength = running ? t('session.running') : mmss((c.endedAt as number) - c.startedAt);
           const spokenLength = running ? t('session.running') : spoken((c.endedAt as number) - c.startedAt);
           const label = t('session.rowLabel', {
             start: clockTime(c.startedAt, clock24h),
@@ -93,59 +96,43 @@ export default function SessionDetail() {
             strength: c.intensity ? t(`intensity.${c.intensity}`) : t('session.noStrength'),
           });
           return (
-            <Pressable
+            <PressableScale
               key={c.id}
               accessibilityRole="button"
               accessibilityLabel={ignored ? `${label}. ${t('session.leftOut')}` : label}
               accessibilityHint={running ? undefined : t('session.editHint')}
               disabled={running}
               onPress={() => setTarget({ mode: 'edit', contraction: c })}
-              style={({ pressed }) => ({
-                minHeight: 72,
-                padding: spacing.md,
-                borderRadius: radius.lg,
-                borderWidth: 1,
-                borderColor: colors.border,
-                backgroundColor: pressed ? colors.surfaceAlt : colors.surface,
-                opacity: ignored ? 0.6 : 1,
-                gap: 2,
-              })}
+              scaleTo={0.98}
+              style={[{ minHeight: 72, padding: spacing.md, paddingHorizontal: spacing.lg, borderRadius: radius.lg, backgroundColor: colors.surface, opacity: ignored ? 0.6 : 1, gap: 2 }, shadow(1)]}
             >
-              <View style={{ flexDirection: 'row', justifyContent: 'space-between', gap: spacing.md }}>
+              <View style={[styles.between, { gap: spacing.md }]}>
                 <AppText style={[type.bodyLarge, { color: colors.text, fontWeight: '700' }]}>{clockTime(c.startedAt, clock24h)}</AppText>
-                <AppText style={[type.bodyLarge, { color: colors.text, fontWeight: '700', fontVariant: ['tabular-nums'] }]}>{length}</AppText>
+                <AppText style={[type.bodyLarge, { color: running ? app.activeText : colors.text, fontFamily: fonts.display, fontWeight: '800', fontVariant: ['tabular-nums'] }]}>{rowLength}</AppText>
               </View>
-              <AppText style={[type.body, { color: colors.textMuted }]}>
-                {[gap === null ? t('session.noGap') : t('session.gapAfter', { gap: compact(gap) }), c.intensity ? t(`intensity.${c.intensity}`) : null, ignored ? t('session.leftOut') : null].filter(Boolean).join(' · ')}
-              </AppText>
+              <View style={[styles.row, { gap: spacing.xs, alignItems: 'center' }]}>
+                {ignored ? <EyeOff size={16} color={colors.textMuted} strokeWidth={2.25} /> : null}
+                <AppText style={[type.body, styles.flex, { color: colors.textMuted }]}>
+                  {[gap === null ? t('session.noGap') : t('session.gapAfter', { gap: compact(gap) }), c.intensity ? t(`intensity.${c.intensity}`) : null, ignored ? t('session.leftOut') : null].filter(Boolean).join(' · ')}
+                </AppText>
+              </View>
               {c.note ? <AppText style={[type.body, { color: colors.text }]}>{c.note}</AppText> : null}
-            </Pressable>
+            </PressableScale>
           );
         })}
       </View>
 
-      {undo ? (
-        <View accessibilityLiveRegion="polite" style={{ flexDirection: 'row', alignItems: 'center', gap: spacing.md, padding: spacing.md, borderRadius: radius.md, backgroundColor: colors.text, minHeight: 64 }}>
-          <AppText style={[type.bodyLarge, { color: colors.background, flex: 1, fontWeight: '700' }]}>{t('session.deleted')}</AppText>
-          <Pressable
-            accessibilityRole="button"
-            accessibilityLabel={t('session.undo')}
-            onPress={() => {
-              useSessions.getState().restoreSession(undo);
-              setUndo(null);
-            }}
-            style={{ minHeight: 56, minWidth: 96, alignItems: 'center', justifyContent: 'center', borderRadius: radius.md, backgroundColor: colors.background }}
-          >
-            <AppText style={[type.bodyLarge, { color: colors.text, fontWeight: '700' }]}>{t('session.undo')}</AppText>
-          </Pressable>
-        </View>
-      ) : null}
-
-      <BigButton tall label={t('session.share')} onPress={() => router.push({ pathname: '/modals/share-summary', params: { id: session.id } })} />
-      <BigButton variant="secondary" label={t('session.add')} onPress={() => setTarget({ mode: 'add', startedAt: Math.min(Date.now() - 60 * SECOND, lastEnd + 5 * 60 * SECOND) })} />
-      {!isOpen ? <BigButton variant="secondary" label={t('session.delete')} onPress={confirmDelete} /> : null}
+      <Button icon={Share2} label={t('session.share')} onPress={() => router.push({ pathname: '/modals/share-summary', params: { id: session.id } })} />
+      <Button variant="secondary" icon={Plus} label={t('session.add')} onPress={() => setTarget({ mode: 'add', startedAt: Math.min(Date.now() - 60 * SECOND, lastEnd + 5 * 60 * SECOND) })} />
+      {!isOpen ? <Button variant="danger" icon={Trash} label={t('session.delete')} onPress={confirmDelete} /> : null}
 
       <RowEditor sessionId={session.id} target={target} onClose={() => setTarget(null)} onDeleted={offerUndo} />
     </Screen>
   );
 }
+
+const styles = StyleSheet.create({
+  flex: { flex: 1 },
+  row: { flexDirection: 'row', flexWrap: 'wrap' },
+  between: { flexDirection: 'row', justifyContent: 'space-between', flexWrap: 'wrap' },
+});

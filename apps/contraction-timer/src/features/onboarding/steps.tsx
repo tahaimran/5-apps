@@ -1,51 +1,54 @@
 import { useState } from 'react';
-import { Pressable, View } from 'react-native';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { StyleSheet, View } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
+import Baby from 'lucide-react-native/icons/baby';
+import CalendarHeart from 'lucide-react-native/icons/calendar-heart';
+import Footprints from 'lucide-react-native/icons/footprints';
+import HeartHandshake from 'lucide-react-native/icons/heart-handshake';
+import Moon from 'lucide-react-native/icons/moon';
+import Sparkles from 'lucide-react-native/icons/sparkles';
+import Timer from 'lucide-react-native/icons/timer';
+import Users from 'lucide-react-native/icons/users';
 import { t } from '@shared/i18n';
 import type { OnboardingStep, StepContext } from '@shared/onboarding';
 import { useTheme } from '@shared/theme';
-import { TimeStepper } from '@/components/TimeStepper';
+import { fromHHMM, TimeField, toHHMM } from '@shared/time';
+import type { IconComponent } from '@shared/ui';
 import { defaultDraft, draftSavable, DueDateForm, type DueDraft } from '@/components/DueDateForm';
 import type { FirstBaby, Need } from '@/domain/types';
 import { changeKickReminderTime, disableKickReminder, enableKickReminder, type EnableResult } from '@/notifications/kickReminder';
 import { useMeta } from '@/store/meta';
 import { useSettings } from '@/store/settings';
 import { currentDateKey } from '@/store/today';
+import { useAppColors } from '@/theme/mode';
 import { AppText } from '@/ui/AppText';
-import { timeOfDay } from '@/ui/format';
+import { timeOfDay, useClock24h } from '@/ui/format';
 import { OptionCard } from '@/ui/OptionCard';
-import { SwitchRow } from '@/ui/SwitchRow';
+import { SettingsGroup, SwitchRow } from '@/ui/SettingsRow';
 import type { OnboardingAnswers } from './answers';
 
 function Welcome() {
-  const { colors } = useTheme();
-  // A soft moon over a curved horizon (plan §6 screen 1). Decoration only.
+  const { radius } = useTheme();
+  const app = useAppColors();
+  // A soft moon over a curved horizon (plan §6 screen 1), on the app's dawn wash. Decoration only.
   return (
-    <View accessible={false} importantForAccessibility="no-hide-descendants" style={{ alignItems: 'center', paddingVertical: 24 }}>
-      <View style={{ width: 220, height: 160, borderRadius: 24, backgroundColor: colors.surfaceAlt, overflow: 'hidden', alignItems: 'center', borderWidth: 2, borderColor: colors.border }}>
-        <View style={{ marginTop: 22 }}>
-          <MaterialCommunityIcons name="moon-waning-crescent" size={72} color={colors.text} />
+    <View accessible={false} importantForAccessibility="no-hide-descendants" style={styles.welcomeWrap}>
+      <View style={[styles.welcome, { borderRadius: radius.xl }]}>
+        <LinearGradient colors={app.hero} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }} style={StyleSheet.absoluteFill} />
+        <View style={styles.moon}>
+          <Moon size={64} color={app.heroRing} strokeWidth={1.75} fill={app.heroTrack} />
         </View>
-        <View style={{ position: 'absolute', bottom: -90, width: 360, height: 160, borderRadius: 180, backgroundColor: colors.surface, borderWidth: 2, borderColor: colors.border }} />
+        <View style={[styles.spark, { left: 48, top: 30 }]}>
+          <Sparkles size={22} color={app.heroRing} strokeWidth={2} />
+        </View>
+        <View style={[styles.horizon, { backgroundColor: app.heroTrack }]} />
       </View>
     </View>
   );
 }
 
 function Checkbox({ label, checked, onChange }: { label: string; checked: boolean; onChange: (v: boolean) => void }) {
-  const { colors, spacing, radius, type } = useTheme();
-  return (
-    <Pressable
-      accessibilityRole="checkbox"
-      accessibilityLabel={label}
-      accessibilityState={{ checked }}
-      onPress={() => onChange(!checked)}
-      style={{ minHeight: 64, flexDirection: 'row', alignItems: 'center', gap: spacing.md, padding: spacing.md, borderRadius: radius.lg, borderWidth: checked ? 3 : 1, borderColor: checked ? colors.text : colors.border, backgroundColor: colors.surface }}
-    >
-      <MaterialCommunityIcons accessible={false} name={checked ? 'checkbox-marked' : 'checkbox-blank-outline'} size={32} color={colors.text} />
-      <AppText style={[type.bodyLarge, { color: colors.text, fontWeight: '700', flex: 1 }]}>{label}</AppText>
-    </Pressable>
-  );
+  return <OptionCard kind="checkbox" label={label} selected={checked} onPress={() => onChange(!checked)} />;
 }
 
 function HowFar({ ctx }: { ctx: StepContext }) {
@@ -77,10 +80,10 @@ function DueDateChooser({ onPick }: { onPick: (mode: 'edd' | 'lmp' | 'conception
   );
 }
 
-const FIRST: { value: FirstBaby; key: string }[] = [
-  { value: 'yes', key: 'onboarding.firstYes' },
-  { value: 'no', key: 'onboarding.firstNo' },
-  { value: 'partner', key: 'onboarding.firstPartner' },
+const FIRST: { value: FirstBaby; key: string; icon: IconComponent }[] = [
+  { value: 'yes', key: 'onboarding.firstYes', icon: Baby },
+  { value: 'no', key: 'onboarding.firstNo', icon: HeartHandshake },
+  { value: 'partner', key: 'onboarding.firstPartner', icon: Users },
 ];
 
 function FirstTime({ ctx }: { ctx: StepContext }) {
@@ -89,22 +92,22 @@ function FirstTime({ ctx }: { ctx: StepContext }) {
   return (
     <View accessibilityRole="radiogroup" style={{ gap: spacing.sm }}>
       {FIRST.map((o) => (
-        <OptionCard key={o.value} label={t(o.key)} selected={value === o.value} onPress={() => ctx.setValue(o.value)} />
+        <OptionCard key={o.value} icon={o.icon} label={t(o.key)} selected={value === o.value} onPress={() => ctx.setValue(o.value)} />
       ))}
       <AppText style={[type.body, { color: colors.textMuted, marginTop: spacing.sm }]}>{t('onboarding.firstFooter')}</AppText>
     </View>
   );
 }
 
-const NEEDS: { value: Need; key: string }[] = [
-  { value: 'timer', key: 'onboarding.needTimer' },
-  { value: 'kicks', key: 'onboarding.needKicks' },
-  { value: 'tracking', key: 'onboarding.needTracking' },
+const NEEDS: { value: Need; key: string; icon: IconComponent }[] = [
+  { value: 'timer', key: 'onboarding.needTimer', icon: Timer },
+  { value: 'kicks', key: 'onboarding.needKicks', icon: Footprints },
+  { value: 'tracking', key: 'onboarding.needTracking', icon: CalendarHeart },
 ];
 
 function Needs({ ctx }: { ctx: StepContext }) {
   const { colors, spacing, type } = useTheme();
-  const clock24h = useSettings((s) => s.settings.clock24h);
+  const clock24h = useClock24h();
   const saved = useSettings((s) => s.settings.kickReminder);
   const value = (ctx.value as OnboardingAnswers['needs']) ?? { needs: [], reminder: { on: false, hour: saved.hour, minute: saved.minute } };
   const [message, setMessage] = useState<EnableResult | null>(null);
@@ -131,21 +134,26 @@ function Needs({ ctx }: { ctx: StepContext }) {
     <View style={{ gap: spacing.sm }}>
       <View style={{ gap: spacing.sm }}>
         {NEEDS.map((n) => (
-          <OptionCard key={n.value} label={t(n.key)} selected={value.needs.includes(n.value)} onPress={() => toggle(n.value)} />
+          <OptionCard key={n.value} kind="checkbox" icon={n.icon} label={t(n.key)} selected={value.needs.includes(n.value)} onPress={() => toggle(n.value)} />
         ))}
       </View>
       {value.needs.includes('kicks') ? (
         <View style={{ gap: spacing.sm }}>
-          <SwitchRow label={t('onboarding.remindMe', { time: timeOfDay(value.reminder.hour, value.reminder.minute, clock24h) })} value={value.reminder.on} onChange={(on) => void remind(on)} />
+          <SettingsGroup>
+            <SwitchRow label={t('onboarding.remindMe', { time: timeOfDay(value.reminder.hour, value.reminder.minute, clock24h) })} value={value.reminder.on} onChange={(on) => void remind(on)} />
+          </SettingsGroup>
           {value.reminder.on ? (
-            <TimeStepper
-              hour={value.reminder.hour}
-              minute={value.reminder.minute}
-              onChange={(hour, minute) => {
-                set({ reminder: { on: true, hour, minute } });
-                void changeKickReminderTime(hour, minute);
-              }}
-            />
+            <View style={styles.end}>
+              <TimeField
+                label={t('reminder.time')}
+                value={toHHMM(value.reminder.hour, value.reminder.minute)}
+                onChange={(hhmm) => {
+                  const { hour, minute } = fromHHMM(hhmm);
+                  set({ reminder: { on: true, hour, minute } });
+                  void changeKickReminderTime(hour, minute);
+                }}
+              />
+            </View>
           ) : null}
           {message ? <AppText accessibilityLiveRegion="polite" style={[type.bodyLarge, { color: colors.text, fontWeight: '600' }]}>{t(message === 'blocked' ? 'onboarding.remindBlocked' : 'onboarding.remindDenied')}</AppText> : null}
         </View>
@@ -190,3 +198,12 @@ export function buildSteps(onSkipLast: (ctx: StepContext) => void): OnboardingSt
 }
 
 export const markCoachMarkShown = () => useMeta.getState().update({ coachMarkShownAt: Date.now() });
+
+const styles = StyleSheet.create({
+  welcomeWrap: { alignItems: 'center', paddingVertical: 16 },
+  welcome: { width: 240, height: 168, overflow: 'hidden', alignItems: 'center' },
+  moon: { marginTop: 26 },
+  spark: { position: 'absolute' },
+  horizon: { position: 'absolute', bottom: -96, width: 380, height: 168, borderRadius: 190 },
+  end: { alignItems: 'flex-end' },
+});

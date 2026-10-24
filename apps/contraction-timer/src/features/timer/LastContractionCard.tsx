@@ -1,10 +1,12 @@
-import { Pressable, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
+import { Card } from '@shared/ui';
 import { SECOND } from '@/domain/defaults';
 import type { LastContraction } from '@/domain/stats';
 import type { Intensity } from '@/domain/types';
 import { AppText } from '@/ui/AppText';
+import { ChipRow } from '@/ui/Choice';
 import { compact, mmss, spoken } from '@/ui/format';
 
 /** Plan F2: the strength chips stay for 8 seconds after a contraction stops. */
@@ -17,12 +19,12 @@ const LEVELS: Intensity[] = ['mild', 'moderate', 'strong'];
  * never block the next Start (they are not modal and Start works while they are showing).
  */
 export function LastContractionCard({ last, now, onTag }: { last: LastContraction | null; now: number; onTag: (id: string, intensity: Intensity | undefined) => void }) {
-  const { colors, spacing, radius, type } = useTheme();
+  const { colors, spacing, type, fonts } = useTheme();
   if (!last) {
     return (
-      <View style={{ padding: spacing.lg, borderRadius: radius.lg, borderWidth: 1, borderColor: colors.border, backgroundColor: colors.surface }}>
+      <Card>
         <AppText style={[type.bodyLarge, { color: colors.textMuted }]}>{t('last.none')}</AppText>
-      </View>
+      </Card>
     );
   }
   const c = last.contraction;
@@ -31,19 +33,20 @@ export function LastContractionCard({ last, now, onTag }: { last: LastContractio
     last.intervalMs === null
       ? t('last.labelFirst', { length: spoken(last.durationMs) })
       : t('last.label', { length: spoken(last.durationMs), gap: spoken(last.intervalMs) });
+  const big = [type.headline, { color: colors.text, fontFamily: fonts.display, fontWeight: '800' as const, fontVariant: ['tabular-nums' as const] }];
   return (
-    <View style={{ padding: spacing.lg, borderRadius: radius.lg, borderWidth: 1, borderColor: colors.border, backgroundColor: colors.surface, gap: spacing.md }}>
-      <View accessible accessibilityLabel={label} style={{ gap: spacing.xs }}>
-        <AppText style={[type.body, { color: colors.textMuted }]}>{t('last.title')}</AppText>
-        <View style={{ flexDirection: 'row', gap: spacing.xl }}>
+    <Card style={{ gap: spacing.md }}>
+      <View accessible accessibilityLabel={label} style={{ gap: spacing.sm }}>
+        <AppText style={[type.caption, { color: colors.textMuted, fontWeight: '700', letterSpacing: 0.6, textTransform: 'uppercase' }]}>{t('last.title')}</AppText>
+        <View style={[styles.row, { gap: spacing.xl }]}>
           <View>
-            <AppText style={[type.caption, { color: colors.textMuted }]}>{t('last.length')}</AppText>
-            <AppText style={[type.headline, { color: colors.text, fontWeight: '700', fontVariant: ['tabular-nums'] }]}>{mmss(last.durationMs)}</AppText>
+            <AppText style={[type.body, { color: colors.textMuted }]}>{t('last.length')}</AppText>
+            <AppText style={big}>{mmss(last.durationMs)}</AppText>
           </View>
           {last.intervalMs !== null ? (
-            <View style={{ flexShrink: 1 }}>
-              <AppText style={[type.caption, { color: colors.textMuted }]}>{`${t('last.gap')} (${t('last.gapNote')})`}</AppText>
-              <AppText style={[type.headline, { color: colors.text, fontWeight: '700', fontVariant: ['tabular-nums'] }]}>{compact(last.intervalMs)}</AppText>
+            <View style={styles.shrink}>
+              <AppText style={[type.body, { color: colors.textMuted }]}>{`${t('last.gap')} (${t('last.gapNote')})`}</AppText>
+              <AppText style={big}>{compact(last.intervalMs)}</AppText>
             </View>
           ) : null}
         </View>
@@ -51,35 +54,14 @@ export function LastContractionCard({ last, now, onTag }: { last: LastContractio
       {showChips ? (
         <View style={{ gap: spacing.sm }}>
           <AppText style={[type.body, { color: colors.textMuted }]}>{t('last.strengthTitle')}</AppText>
-          <View style={{ flexDirection: 'row', gap: spacing.sm, flexWrap: 'wrap' }}>
-            {LEVELS.map((level) => {
-              const selected = c.intensity === level;
-              return (
-                <Pressable
-                  key={level}
-                  accessibilityRole="button"
-                  accessibilityLabel={t(`intensity.${level}`)}
-                  accessibilityState={{ selected }}
-                  onPress={() => onTag(c.id, selected ? undefined : level)}
-                  style={{
-                    flex: 1,
-                    minWidth: 96,
-                    minHeight: 56,
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    borderRadius: radius.pill,
-                    borderWidth: selected ? 3 : 1,
-                    borderColor: selected ? colors.text : colors.border,
-                    backgroundColor: selected ? colors.surfaceAlt : colors.background,
-                  }}
-                >
-                  <AppText style={[type.bodyLarge, { color: colors.text, fontWeight: selected ? '700' : '500' }]}>{t(`intensity.${level}`)}</AppText>
-                </Pressable>
-              );
-            })}
-          </View>
+          <ChipRow options={LEVELS.map((level) => ({ value: level, label: t(`intensity.${level}`) }))} value={c.intensity} onChange={(level) => onTag(c.id, level)} />
         </View>
       ) : null}
-    </View>
+    </Card>
   );
 }
+
+const styles = StyleSheet.create({
+  row: { flexDirection: 'row', flexWrap: 'wrap' },
+  shrink: { flexShrink: 1 },
+});

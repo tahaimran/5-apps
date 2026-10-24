@@ -1,9 +1,10 @@
 import { mockParams, mockRouter, mockShare, mockFiles } from '@/testing/mocks';
 import { resetApp, seedSession } from '@/testing/stores';
-import { cleanup, flush, render } from '@/testing/ui';
+import { cleanup, flush, isPressable, render, shiftTime } from '@/testing/ui';
 import { act } from 'react';
 import { Alert, Share } from 'react-native';
 import { ThemeProvider } from '@shared/theme';
+import { hideToast, ToastHost } from '@shared/ui';
 import '@/bootstrap';
 import { RULE_PRESETS } from '@/domain/defaults';
 import { cleanPdfCache, PDF_KEEP_MS, rememberPdf } from '@/export/pdfCache';
@@ -13,18 +14,23 @@ import { useSessions } from '@/store/sessions';
 import { useSettings } from '@/store/settings';
 import { db } from '@/store/storage';
 import { useUnlocks } from '@/store/unlocks';
-import { FONT_SCALE, palette, TOUCH_TARGET } from '@/theme/tokens';
+import { FONT_SCALE, themeProps } from '@/theme/tokens';
 import { series, sessionOf, made, MINUTE, SECOND } from '@/testing/fixtures';
 import History from '../../app/(tabs)/timer/history';
 import Detail from '../../app/(tabs)/timer/session/[id]';
 import ShareSummary from '../../app/modals/share-summary';
 
 const NOW = new Date(2026, 10, 4, 3, 30).getTime();
+// The undo and the share warnings are toasts in the shared host the root layout mounts, so the tests mount one too.
 const wrap = (el: React.ReactElement) => (
-  <ThemeProvider palette={palette} fontScale={FONT_SCALE} touchTarget={TOUCH_TARGET}>
+  <ThemeProvider {...themeProps} fontScale={FONT_SCALE}>
     {el}
+    <ToastHost />
   </ThemeProvider>
 );
+/** Pressables only: a PressableScale and the Pressable inside it carry the same label. */
+const pressables = (ui: Awaited<ReturnType<typeof render>>, test: (label: string) => boolean) =>
+  ui.root.findAll((n) => isPressable(n) && typeof n.props.onPress === 'function' && test(String(n.props.accessibilityLabel)));
 const advance = (ms: number) => act(async () => void jest.advanceTimersByTime(ms));
 
 const file = (id: string, endsAgo: number, n = 4, extra = {}) => seedSession(id, endsAgo, n, extra, NOW);
@@ -35,6 +41,7 @@ beforeEach(() => {
   mockRouter.push.mockClear();
 });
 afterEach(async () => {
+  await act(async () => hideToast());
   await cleanup();
   jest.useRealTimers();
   jest.restoreAllMocks();
@@ -50,13 +57,13 @@ describe('History (plan §5.2)', () => {
     file('older', 3 * 24 * 60 * MINUTE);
     file('newer', 60 * MINUTE, 6, { patternMatchedAt: NOW - 70 * MINUTE });
     const ui = await render(wrap(<History />));
-    const rows = ui.root.findAll((n) => typeof n.props.onPress === 'function' && /contractions/.test(String(n.props.accessibilityLabel)));
+    const rows = pressables(ui, (l) => /contractions/.test(l));
     expect(rows).toHaveLength(2);
     expect(String(rows[0].props.accessibilityLabel)).toContain('6 contractions');
     expect(String(rows[1].props.accessibilityLabel)).toContain('4 contractions');
     expect(ui.texts().some((x) => x.includes('6 contractions') && x.includes('avg 1m') && x.includes('every 5m'))).toBe(true);
-    const bells = ui.root.findAll((n) => n.props.name === 'bell-ring-outline');
-    expect(bells).toHaveLength(1); // only the session whose rule matched has the bell
+    // Only the session whose rule matched carries the bell, and says so.
+    expect(rows.filter((r) => String(r.props.accessibilityLabel).endsWith('Matched your pattern rule'))).toHaveLength(1);
   });
 
   it('puts the session being timed on top and says so', async () => {
@@ -76,7 +83,7 @@ describe('History (plan §5.2)', () => {
 });
 
 describe('Session detail (plan §5.2)', () => {
-  const rowLabels = (ui: Awaited<ReturnType<typeof render>>) => ui.root.findAll((n) => typeof n.props.onPress === 'function' && /^\d.*, length /.test(String(n.props.accessibilityLabel))).map((n) => String(n.props.accessibilityLabel));
+  const rowLabels = (ui: Awaited<ReturnType<typeof render>>) => pressables(ui, (l) => /^\d.*, length /.test(l)).map((n) => String(n.props.accessibilityLabel));
 
   it('lists every contraction newest first with its gap and strength', async () => {
     const s = file('s1', 60 * MINUTE);
@@ -97,7 +104,8 @@ describe('Session detail (plan §5.2)', () => {
     const first = s.contractions[3];
     await act(async () => ui.root.findAll((n) => typeof n.props.onPress === 'function' && String(n.props.accessibilityLabel).startsWith(`${new Date(first.startedAt).getHours() % 12 || 12}:`) && /length/.test(String(n.props.accessibilityLabel)))[0].props.onPress());
     expect(ui.texts()).toContain('Edit contraction');
-    await ui.press('Start 1 minute earlier');
+    // The start is picked on the shared clock wheels; the length on the shared stepper.
+    await shiftTime(ui.root, 'Start time', -1);
     await ui.press('5 seconds longer');
     await ui.type('Note', 'waters not broken');
     await ui.press('Save');
@@ -113,7 +121,7 @@ describe('Session detail (plan §5.2)', () => {
     const ui = await render(wrap(<Detail />));
     const newest = s.contractions[3];
     await act(async () => ui.root.findAll((n) => typeof n.props.onPress === 'function' && /length/.test(String(n.props.accessibilityLabel)))[0].props.onPress());
-    for (let i = 0; i < 5; i++) await ui.press('Start 1 minute earlier');
+    await shiftTime(ui.root, 'Start time', -5);
     await ui.press('Save');
     expect(ui.texts()).toContain('That overlaps another contraction. Move it so they do not overlap.');
     expect(useSessions.getState().archived.s1.contractions.find((c) => c.id === newest.id)!.startedAt).toBe(newest.startedAt);
@@ -147,7 +155,7 @@ describe('Session detail (plan §5.2)', () => {
     mockParams.current = { id: 's1' };
     const ui = await render(wrap(<Detail />));
     await ui.press('Add a missed contraction');
-    await ui.press('Start 10 minutes earlier');
+    await shiftTime(ui.root, 'Start time', -10);
     await ui.press('Save');
     expect(useSessions.getState().archived.s1.contractions).toHaveLength(5);
     expect(useSessions.getState().archived.s1.contractions[4].endedAt! - useSessions.getState().archived.s1.contractions[4].startedAt).toBe(60 * SECOND);
@@ -211,7 +219,7 @@ describe('Session detail (plan §5.2)', () => {
 describe('Share summary (plan F8, F9)', () => {
   beforeEach(() => {
     useProfile.getState().setDue({ mode: 'edd', date: '2026-11-09' });
-    useSettings.getState().update({ clock24h: true });
+    useSettings.getState().update({ timeFormat: '24h' });
     file('s1', 60 * MINUTE, 6, { ruleAtStart: RULE_PRESETS['511'] });
     mockParams.current = { id: 's1' };
   });

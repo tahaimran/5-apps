@@ -1,21 +1,29 @@
-import { View } from 'react-native';
 import { useCallback } from 'react';
+import { StyleSheet, View } from 'react-native';
 import { useFocusEffect, useLocalSearchParams } from 'expo-router';
+import { LinearGradient } from 'expo-linear-gradient';
+import MessageCircleQuestion from 'lucide-react-native/icons/message-circle-question-mark';
+import Ruler from 'lucide-react-native/icons/ruler';
+import Weight from 'lucide-react-native/icons/weight';
 import { t } from '@shared/i18n';
+import { useTheme } from '@shared/theme';
+import { Card } from '@shared/ui';
 import { useAdScreen } from '@/ads/guard';
 import { offerWeekCloseInterstitial } from '@/ads/weekClose';
-import { useTheme } from '@shared/theme';
 import { lengthText, weekCard, weightText } from '@/domain/weeks';
 import { useSettings } from '@/store/settings';
+import { useAppColors } from '@/theme/mode';
 import { AppText } from '@/ui/AppText';
 import { BannerSlot } from '@/ui/BannerSlot';
 import { Screen } from '@/ui/Screen';
-import { ScreenHeader } from '@/ui/ScreenHeader';
+import { IconCircle, StatTile } from '@/ui/SettingsRow';
+import { WeekBadge } from '@/ui/WeekBadge';
 
 /** Plan §5.4: one week: the size comparison, length and weight, three notes, a question for the provider and the disclaimer. */
 export default function WeekArticle() {
   const { n } = useLocalSearchParams<{ n: string }>();
-  const { colors, spacing, radius, type } = useTheme();
+  const { colors, spacing, radius, type, shadow } = useTheme();
+  const app = useAppColors();
   const units = useSettings((s) => s.settings.units);
   useAdScreen('weekArticle');
   // Plan §12: closing the article (Back) after a read is the one place an interstitial can appear; the rules decide.
@@ -31,38 +39,58 @@ export default function WeekArticle() {
   const card = Number.isInteger(week) ? weekCard(week) : null;
   if (!card) {
     return (
-      <Screen>
-        <ScreenHeader title={t('week.title', { n: Number.isFinite(week) ? week : '' })} />
+      <Screen stack title={t('week.title', { n: Number.isFinite(week) ? week : '' })}>
         <AppText style={[type.bodyLarge, { color: colors.text }]}>{t('week.notFound')}</AppText>
       </Screen>
     );
   }
   const length = lengthText(card.lengthCm, units);
   return (
-    <Screen footer={<BannerSlot placement="week_banner" />}>
-      <ScreenHeader title={t('week.title', { n: card.week })} />
-      {/* The picture is a large emoji or a dot: decoration only, so it is hidden from a screen reader. */}
-      <View accessible={false} importantForAccessibility="no-hide-descendants" style={{ alignSelf: 'center', width: 140, height: 140, borderRadius: 70, borderWidth: 3, borderColor: colors.text, backgroundColor: colors.surface, alignItems: 'center', justifyContent: 'center' }}>
-        <AppText style={{ fontSize: 64, color: colors.text }}>{card.emoji ?? '•'}</AppText>
+    <Screen stack title={t('week.title', { n: card.week })} footer={<BannerSlot placement="week_banner" />}>
+      <View style={[{ borderRadius: radius.xl }, shadow(2)]}>
+        <View style={[styles.hero, { borderRadius: radius.xl, padding: spacing.xl, gap: spacing.md }]}>
+          <LinearGradient colors={app.hero} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }} style={StyleSheet.absoluteFill} />
+          {/* The week number on a disc: decoration, the heading below says the same. */}
+          <View accessible={false} importantForAccessibility="no-hide-descendants">
+            <WeekBadge week={card.week} current size={88} />
+          </View>
+          <AppText accessibilityRole="header" style={[type.headline, { color: app.onHero, fontWeight: '800', textAlign: 'center' }]}>
+            {t('week.sizeIs', { size: card.size })}
+          </AppText>
+        </View>
       </View>
-      <AppText accessibilityRole="header" style={[type.headline, { color: colors.text, fontWeight: '700', textAlign: 'center' }]}>{t('week.sizeIs', { size: card.size })}</AppText>
-      <AppText style={[type.bodyLarge, { color: colors.text, textAlign: 'center' }]}>
-        {`${t('week.length', { length: t(card.measure === 'crown-rump' ? 'week.lengthCrown' : 'week.lengthHeel', { length }) })} · ${t('week.weight', { weight: weightText(card.weightG, units, t('week.under1g')) })}`}
-      </AppText>
+      <View style={[styles.row, { gap: spacing.sm }]}>
+        <StatTile icon={Ruler} label={t('week.lengthTitle')} value={t('week.length', { length: t(card.measure === 'crown-rump' ? 'week.lengthCrown' : 'week.lengthHeel', { length }) })} />
+        <StatTile icon={Weight} label={t('week.weightTitle')} value={t('week.weight', { weight: weightText(card.weightG, units, t('week.under1g')) })} tint={colors.accent} bg={colors.surfaceAlt} />
+      </View>
       <AppText style={[type.body, { color: colors.textMuted, textAlign: 'center' }]}>{t('week.approx')}</AppText>
 
-      <AppText accessibilityRole="header" style={[type.title, { color: colors.text, fontWeight: '700', marginTop: spacing.md }]}>{t('week.notes')}</AppText>
-      <View style={{ gap: spacing.sm }}>
+      <Card style={{ gap: spacing.md }}>
+        <AppText accessibilityRole="header" style={[type.title, { color: colors.text, fontWeight: '800' }]}>{t('week.notes')}</AppText>
         {card.bullets.map((b) => (
-          <AppText key={b} style={[type.bodyLarge, { color: colors.text }]}>{`•  ${b}`}</AppText>
+          <View key={b} style={[styles.bullet, { gap: spacing.md }]}>
+            <View style={[styles.dot, { backgroundColor: colors.primary }]} />
+            <AppText style={[type.bodyLarge, styles.flex, { color: colors.text }]}>{b}</AppText>
+          </View>
         ))}
-      </View>
+      </Card>
 
-      <View style={{ padding: spacing.lg, borderRadius: radius.lg, borderWidth: 1, borderColor: colors.border, backgroundColor: colors.surface, gap: spacing.xs }}>
-        <AppText accessibilityRole="header" style={[type.bodyLarge, { color: colors.text, fontWeight: '700' }]}>{t('week.ask')}</AppText>
+      <Card style={{ gap: spacing.sm }}>
+        <View style={[styles.row, { gap: spacing.md, alignItems: 'center' }]}>
+          <IconCircle icon={MessageCircleQuestion} tint={app.alertIcon} bg={app.alertBg} />
+          <AppText accessibilityRole="header" style={[type.bodyLarge, styles.flex, { color: colors.text, fontWeight: '700' }]}>{t('week.ask')}</AppText>
+        </View>
         <AppText style={[type.bodyLarge, { color: colors.text }]}>{card.askProvider}</AppText>
-      </View>
+      </Card>
       <AppText style={[type.body, { color: colors.textMuted }]}>{t('week.disclaimer')}</AppText>
     </Screen>
   );
 }
+
+const styles = StyleSheet.create({
+  flex: { flex: 1 },
+  hero: { overflow: 'hidden', alignItems: 'center' },
+  row: { flexDirection: 'row', flexWrap: 'wrap' },
+  bullet: { flexDirection: 'row', alignItems: 'flex-start' },
+  dot: { width: 8, height: 8, borderRadius: 4, marginTop: 10 },
+});

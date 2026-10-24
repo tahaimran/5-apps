@@ -1,9 +1,18 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { router } from 'expo-router';
-import { AccessibilityInfo, Pressable, View } from 'react-native';
+import { AccessibilityInfo, StyleSheet, View, useWindowDimensions } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
+import Animated, { useReducedMotion } from 'react-native-reanimated';
+import ClockAlert from 'lucide-react-native/icons/clock-alert';
+import Hand from 'lucide-react-native/icons/hand';
+import Hourglass from 'lucide-react-native/icons/hourglass';
+import Info from 'lucide-react-native/icons/info';
+import Moon from 'lucide-react-native/icons/moon';
+import RotateCcwClock from 'lucide-react-native/icons/rotate-ccw-clock';
 import { t } from '@shared/i18n';
 import { useOnboardingComplete } from '@shared/onboarding';
 import { ThemeProvider, useTheme } from '@shared/theme';
+import { Button, Digits, PressableScale, showToast } from '@shared/ui';
 import { clockSetBack, elapsedOf, idleStatus, isLongRunning } from '@/domain/session';
 import { evaluatePattern, bannerVisible } from '@/domain/pattern';
 import { lastContraction, openContraction, windowStats } from '@/domain/stats';
@@ -21,26 +30,64 @@ import { useMeta } from '@/store/meta';
 import { useProfile } from '@/store/profile';
 import { useSessions } from '@/store/sessions';
 import { useSettings } from '@/store/settings';
-import { useAppColors } from '@/theme/mode';
-import { FONT_SCALE, palette, PARTNER_SCALE, TOUCH_TARGET } from '@/theme/tokens';
+import { useAppColors, useIsNight } from '@/theme/mode';
+import { DIGITS, FONT_SCALE, partnerFactor, themeProps } from '@/theme/tokens';
+import { AlertCard } from '@/ui/AlertCard';
 import { AppText } from '@/ui/AppText';
-import { BigButton } from '@/ui/BigButton';
 import { mmss, spoken } from '@/ui/format';
+import { CSS_EASE_OUT, WASH_MS } from '@/ui/motion';
 import { Screen } from '@/ui/Screen';
 import { Sheet } from '@/ui/Sheet';
-import { Toast } from '@/ui/Toast';
 
-const TOAST_MS = 5000;
 /** The disclaimer sheet is offered once per launch. */
 let disclaimerShownThisLaunch = false;
 export const resetDisclaimerSheetForTests = () => {
   disclaimerShownThisLaunch = false;
 };
 
+/** The running time's size in sp: 72 (×1.4 in Partner mode), shrunk only as far as the screen width needs. */
+export function digitsSize(value: string, want: number, width: number, fontScale: number): number {
+  const ems = [...value].reduce((sum, ch) => sum + (/\d/.test(ch) ? 0.64 : 0.34), 0);
+  return Math.max(32, Math.floor(Math.min(want, (width - 48) / (ems * fontScale))));
+}
+
+/**
+ * The page wash: mint while resting, warming to peach while a contraction runs (two gradients that
+ * crossfade with a CSS transition; with Reduce Motion the change is instant).
+ */
+function Wash({ warm }: { warm: boolean }) {
+  const app = useAppColors();
+  const reduced = useReducedMotion();
+  return (
+    <View pointerEvents="none" style={StyleSheet.absoluteFill}>
+      <LinearGradient colors={app.wash} locations={[0, 0.55, 1]} style={StyleSheet.absoluteFill} />
+      <Animated.View style={[StyleSheet.absoluteFill, { opacity: warm ? 1 : 0, transitionProperty: 'opacity', transitionDuration: reduced ? 0 : WASH_MS, transitionTimingFunction: CSS_EASE_OUT }]}>
+        <LinearGradient colors={app.washActive} locations={[0, 0.55, 1]} style={StyleSheet.absoluteFill} />
+      </Animated.View>
+    </View>
+  );
+}
+
+/** What is happening, in one pill: a colored dot (coral while contracting) and the plan's words. */
+function StatusPill({ text, tone }: { text: string; tone: 'idle' | 'resting' | 'contracting' }) {
+  const { colors, radius, spacing, type, shadow } = useTheme();
+  const app = useAppColors();
+  const dot = tone === 'contracting' ? app.active : tone === 'resting' ? colors.primary : colors.textMuted;
+  return (
+    <View style={[styles.pill, { backgroundColor: colors.surface, borderRadius: radius.lg, paddingHorizontal: spacing.lg, paddingVertical: spacing.sm, gap: spacing.sm }, shadow(1)]}>
+      <View style={[styles.dot, { backgroundColor: dot }]} />
+      <AppText accessibilityLiveRegion="polite" style={[type.bodyLarge, styles.shrink, { color: colors.text, fontWeight: '600', textAlign: 'center' }]}>
+        {text}
+      </AppText>
+    </View>
+  );
+}
+
 function TimerContent() {
   const { colors, spacing, type, radius } = useTheme();
   useAdScreen('timer');
-  const app = useAppColors();
+  const night = useIsNight();
+  const { width, fontScale } = useWindowDimensions();
   const active = useSessions((s) => s.active);
   const partner = useSettings((s) => s.settings.partnerMode);
   const rule = useSettings((s) => s.settings.rule);
@@ -60,8 +107,6 @@ function TimerContent() {
   const matchesNow = !!active && patternAlerts && evaluatePattern(rule, active.contractions, now).matches;
   const showBanner = !!active && matchesNow && bannerVisible(active.pattern, matchesNow);
 
-  const [toast, setToast] = useState<string | null>(null);
-  const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [touching, setTouching] = useState(false);
   const [undoOpen, setUndoOpen] = useState(false);
   const [howOpen, setHowOpen] = useState(false);
@@ -78,35 +123,24 @@ function TimerContent() {
     }
   }, [onboarded, meta.disclaimerAckAt]);
 
-  const showToast = useCallback((message: string) => {
-    setToast(message);
-    if (toastTimer.current) clearTimeout(toastTimer.current);
-    toastTimer.current = setTimeout(() => setToast(null), TOAST_MS);
-  }, []);
-  useEffect(
-    () => () => {
-      if (toastTimer.current) clearTimeout(toastTimer.current);
-    },
-    [],
-  );
-
   // Plan §5.1 "Restored after kill": the session came back from disk when the app started.
   useEffect(() => {
     if (useSessions.getState().restored) {
       useSessions.setState({ restored: false });
-      showToast(t('timer.restored'));
+      showToast({ message: t('timer.restored'), icon: RotateCcwClock, duration: 5000 });
     }
-  }, [showToast]);
+  }, []);
 
+  const clockToast = () => showToast({ message: t('timer.clockChanged'), icon: ClockAlert, tone: 'warning', duration: 5000 });
   useKeepAwakeWhile(!!active && focused);
-  useClockWatch(!!active && focused, () => showToast(t('timer.clockChanged')));
+  useClockWatch(!!active && focused, clockToast);
 
   const onTap = () => {
     if (meta.coachMarkShownAt === undefined) useMeta.getState().update({ coachMarkShownAt: Date.now() });
     const before = useSessions.getState().active;
     // Read the clock at the tap, and warn when it is behind the last thing that was saved.
     const at = Date.now();
-    if (clockSetBack(before, at)) showToast(t('timer.clockChanged'));
+    if (clockSetBack(before, at)) clockToast();
     const kind = useSessions.getState().tap(at);
     if (kind === 'started') timerHaptics.start();
     if (kind === 'stopped') {
@@ -120,42 +154,34 @@ function TimerContent() {
   const last = active ? Math.max(0, ...active.contractions.map((c) => c.startedAt)) : 0;
   const elapsed = open ? elapsedOf(open, now) : 0;
   const status = !active ? t(partner ? 'timer.partnerIdleStatus' : 'timer.idleStatus') : open ? t('timer.contracting') : t('timer.resting', { time: mmss(now - last) });
+  const running = mmss(elapsed);
+  const want = DIGITS.size * (partner ? 1.4 : 1);
+  const size = digitsSize(running, want, width, fontScale);
 
   return (
-    <Screen scrollEnabled={!touching}>
+    <Screen scrollEnabled={!touching} backdrop={<Wash warm={!!open} />}>
       <TimerHeader hideTools={partner && !!open} />
-      <AppText
-        accessibilityLiveRegion="polite"
-        style={[type.bodyLarge, { color: colors.textMuted, textAlign: 'center', marginTop: spacing.md }]}
-      >
-        {status}
-      </AppText>
+      <StatusPill text={status} tone={!active ? 'idle' : open ? 'contracting' : 'resting'} />
       {partner && !active ? (
-        <AppText style={[type.title, { color: colors.text, textAlign: 'center', fontWeight: '700' }]}>{t('timer.partnerLabel')}</AppText>
+        <AppText style={[type.title, { color: colors.text, textAlign: 'center', fontWeight: '800' }]}>{t('timer.partnerLabel')}</AppText>
       ) : null}
 
       {/* The running time. Its space is kept while resting so the button does not jump. */}
-      <View style={{ minHeight: 96, justifyContent: 'center' }} accessible={!!open} accessibilityLabel={open ? t('timer.elapsedLabel', { time: spoken(elapsed) }) : undefined}>
+      <View style={[styles.center, { minHeight: Math.round(DIGITS.line * (partner ? 1.4 : 1) * Math.min(fontScale, 1.3)) }]}>
         {showCoach ? (
-          <Pressable
+          <PressableScale
             accessibilityRole="button"
             accessibilityLabel={t('onboarding.coachDismiss')}
             accessibilityHint={t('onboarding.coachMark')}
             onPress={() => useMeta.getState().update({ coachMarkShownAt: Date.now() })}
-            style={{ minHeight: 72, justifyContent: 'center', padding: spacing.md, borderRadius: radius.lg, borderWidth: 2, borderColor: colors.text, backgroundColor: colors.surface }}
+            scaleTo={0.98}
+            style={[styles.coach, { padding: spacing.md, paddingHorizontal: spacing.lg, gap: spacing.md, borderRadius: radius.lg, backgroundColor: colors.surface, borderColor: colors.primary }]}
           >
-            <AppText style={[type.bodyLarge, { color: colors.text, textAlign: 'center', fontWeight: '700' }]}>{t('onboarding.coachMark')}</AppText>
-          </Pressable>
+            <Hand size={24} color={colors.primary} strokeWidth={2.25} />
+            <AppText style={[type.bodyLarge, styles.shrink, { color: colors.text, fontWeight: '700' }]}>{t('onboarding.coachMark')}</AppText>
+          </PressableScale>
         ) : null}
-        {open ? (
-          <AppText
-            adjustsFontSizeToFit
-            numberOfLines={1}
-            style={{ color: colors.text, textAlign: 'center', fontWeight: '700', fontSize: 72 * (partner ? 1.4 : 1), lineHeight: 80 * (partner ? 1.4 : 1), fontVariant: ['tabular-nums'] }}
-          >
-            {mmss(elapsed)}
-          </AppText>
-        ) : null}
+        {open ? <Digits value={running} size={size} lineHeight={Math.round(size * 1.12)} color={colors.text} accessibilityLabel={t('timer.elapsedLabel', { time: spoken(elapsed) })} /> : null}
       </View>
 
       <TimerButton
@@ -166,31 +192,25 @@ function TimerContent() {
         onLongPress={() => active && setUndoOpen(true)}
         onTouch={setTouching}
       />
+      {open && !partner ? <AppText style={[type.body, { color: colors.textMuted, textAlign: 'center' }]}>{t('timer.breathe')}</AppText> : null}
 
-      {isLongRunning(open, now) ? (
-        <AppText style={[type.bodyLarge, { color: colors.text, textAlign: 'center' }]}>{t('timer.longRunning')}</AppText>
-      ) : null}
+      {isLongRunning(open, now) ? <AlertCard icon={Hourglass}>{t('timer.longRunning')}</AlertCard> : null}
 
       {idle ? (
-        <View style={{ padding: spacing.lg, borderRadius: radius.lg, backgroundColor: app.alertBg, gap: spacing.md }}>
-          <AppText style={[type.bodyLarge, { color: app.alertText, fontWeight: '600' }]}>{t('timer.idlePrompt')}</AppText>
-          <View style={{ flexDirection: 'row', gap: spacing.md }}>
-            <BigButton style={{ flex: 1 }} label={t('timer.idleEnd')} onPress={() => useSessions.getState().endActive()} />
-            <BigButton style={{ flex: 1 }} variant="secondary" label={t('timer.idleKeep')} onPress={() => useSessions.getState().keepActive()} />
-          </View>
-        </View>
+        <AlertCard
+          icon={Moon}
+          actions={
+            <>
+              <Button label={t('timer.idleEnd')} onPress={() => useSessions.getState().endActive()} style={styles.grow} />
+              <Button variant="secondary" label={t('timer.idleKeep')} onPress={() => useSessions.getState().keepActive()} style={styles.grow} />
+            </>
+          }
+        >
+          {t('timer.idlePrompt')}
+        </AlertCard>
       ) : null}
 
-      {!active && firstBaby !== 'no' ? (
-        <Pressable
-          accessibilityRole="link"
-          accessibilityLabel={t('timer.howThisWorks')}
-          onPress={() => setHowOpen(true)}
-          style={{ minHeight: 56, alignItems: 'center', justifyContent: 'center' }}
-        >
-          <AppText style={[type.bodyLarge, { color: colors.text, textDecorationLine: 'underline' }]}>{t('timer.howThisWorks')}</AppText>
-        </Pressable>
-      ) : null}
+      {!active && firstBaby !== 'no' ? <Button variant="ghost" icon={Info} label={t('timer.howThisWorks')} onPress={() => setHowOpen(true)} /> : null}
 
       {active && !partner ? (
         <>
@@ -202,53 +222,64 @@ function TimerContent() {
       {/* Under the button, so it can never move the button while a thumb is on its way to it. */}
       {showBanner ? <PatternBanner rule={rule} onShare={() => router.push({ pathname: '/modals/share-summary', params: { id: active.id } })} onDismiss={() => useSessions.getState().dismissPattern()} /> : null}
 
-      {toast ? <Toast message={toast} /> : null}
+      {night ? <AppText style={[type.body, { color: colors.textMuted, textAlign: 'center' }]}>{t('timer.nightHint')}</AppText> : null}
 
-      <Sheet visible={undoOpen} onClose={() => setUndoOpen(false)}>
-        <AppText accessibilityRole="header" style={[type.title, { color: colors.text, fontWeight: '700' }]}>{t('timer.undoTitle')}</AppText>
+      <Sheet visible={undoOpen} onClose={() => setUndoOpen(false)} title={t('timer.undoTitle')}>
         <AppText style={[type.bodyLarge, { color: colors.text }]}>{t('timer.undoBody')}</AppText>
-        <BigButton
-          tall
+        <Button
           label={t('timer.undoConfirm')}
           onPress={() => {
             useSessions.getState().undoTap();
+            timerHaptics.undo();
             setUndoOpen(false);
           }}
         />
-        <BigButton variant="secondary" label={t('common.cancel')} onPress={() => setUndoOpen(false)} />
+        <Button variant="secondary" label={t('common.cancel')} onPress={() => setUndoOpen(false)} />
       </Sheet>
 
-      <Sheet visible={disclaimerOpen} onClose={() => setDisclaimerOpen(false)}>
-        <AppText accessibilityRole="header" style={[type.title, { color: colors.text, fontWeight: '700' }]}>{t('disclaimerSheet.title')}</AppText>
+      <Sheet visible={disclaimerOpen} onClose={() => setDisclaimerOpen(false)} title={t('disclaimerSheet.title')}>
         <AppText style={[type.bodyLarge, { color: colors.text }]}>{t('onboarding.disclaimerBody')}</AppText>
-        <BigButton
-          tall
+        <Button
           label={t('onboarding.understand')}
           onPress={() => {
             useMeta.getState().acknowledgeDisclaimer();
             setDisclaimerOpen(false);
           }}
         />
-        <BigButton variant="secondary" label={t('disclaimerSheet.later')} onPress={() => setDisclaimerOpen(false)} />
+        <Button variant="secondary" label={t('disclaimerSheet.later')} onPress={() => setDisclaimerOpen(false)} />
       </Sheet>
 
-      <Sheet visible={howOpen} onClose={() => setHowOpen(false)}>
-        <AppText accessibilityRole="header" style={[type.title, { color: colors.text, fontWeight: '700' }]}>{t('timer.howTitle')}</AppText>
+      <Sheet visible={howOpen} onClose={() => setHowOpen(false)} title={t('timer.howTitle')}>
         {(['howBody1', 'howBody2', 'howBody3'] as const).map((k) => (
-          <AppText key={k} style={[type.bodyLarge, { color: colors.text }]}>{t(`timer.${k}`)}</AppText>
+          <AppText key={k} style={[type.bodyLarge, { color: colors.text }]}>
+            {t(`timer.${k}`)}
+          </AppText>
         ))}
-        <BigButton tall label={t('common.done')} onPress={() => setHowOpen(false)} />
+        <Button label={t('common.done')} onPress={() => setHowOpen(false)} />
       </Sheet>
     </Screen>
   );
 }
 
-/** Plan §7: in Partner mode the Timer's type is 1.4 times bigger, and the secondary controls go. */
+/**
+ * Plan §7: in Partner mode the Timer's type is 1.4 times bigger (capped so Partner × the phone's own font
+ * scale stays at or under 2), and the secondary controls go.
+ */
 export default function TimerScreen() {
   const partner = useSettings((s) => s.settings.partnerMode);
+  const { fontScale } = useWindowDimensions();
   return (
-    <ThemeProvider palette={palette} fontScale={FONT_SCALE * (partner ? PARTNER_SCALE : 1)} touchTarget={TOUCH_TARGET}>
+    <ThemeProvider {...themeProps} fontScale={FONT_SCALE * (partner ? partnerFactor(fontScale) : 1)}>
       <TimerContent />
     </ThemeProvider>
   );
 }
+
+const styles = StyleSheet.create({
+  center: { alignItems: 'center', justifyContent: 'center' },
+  pill: { flexDirection: 'row', alignItems: 'center', alignSelf: 'center', maxWidth: '100%' },
+  dot: { width: 10, height: 10, borderRadius: 5 },
+  shrink: { flexShrink: 1 },
+  grow: { flexGrow: 1 },
+  coach: { flexDirection: 'row', alignItems: 'center', borderWidth: 2, minHeight: 72 },
+});

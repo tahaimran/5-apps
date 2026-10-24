@@ -11,6 +11,7 @@ import { cleanup, flush, render } from '@/testing/ui';
 import { act } from 'react';
 import { AppState } from 'react-native';
 import { ThemeProvider } from '@shared/theme';
+import { hideToast, ToastHost } from '@shared/ui';
 import { adsState } from '@shared/ads/state';
 import { sharedStore } from '@shared/storage';
 import '@/bootstrap';
@@ -40,9 +41,11 @@ import PdfTheme from '../../app/modals/pdf-theme';
 import DebugAds from '../../app/debug-ads';
 import Onboarding from '../../app/onboarding';
 
+// Unlock results are toasts in the shared host the root layout mounts, so the tests mount one too.
 const wrap = (el: React.ReactElement) => (
   <ThemeProvider palette={palette} fontScale={FONT_SCALE} touchTarget={TOUCH_TARGET}>
     {el}
+    <ToastHost />
   </ThemeProvider>
 );
 // 10 Nov 2026, noon. The app was installed on 1 Nov (9 days ago) and has been opened 9 times.
@@ -104,6 +107,7 @@ beforeEach(() => {
   freshAds();
 });
 afterEach(async () => {
+  await act(async () => hideToast());
   await cleanup();
   sharedStore.remove('onboarding.completedAt');
   mockSdk.native.current = { status: 'idle', nativeAd: null, error: null };

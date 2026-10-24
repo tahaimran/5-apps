@@ -1,9 +1,10 @@
 import { mockParams, mockRouter } from '@/testing/mocks';
 import { resetApp } from '@/testing/stores';
-import { cleanup, render } from '@/testing/ui';
+import { cleanup, isPressable, render } from '@/testing/ui';
 import { act } from 'react';
 import { Alert, Share } from 'react-native';
 import { ThemeProvider } from '@shared/theme';
+import { hideToast, ToastHost } from '@shared/ui';
 import '@/bootstrap';
 import { dateKeyFor } from '@/domain/dateKey';
 import { useChecklists } from '@/store/checklists';
@@ -11,7 +12,7 @@ import { useProfile } from '@/store/profile';
 import { useSettings } from '@/store/settings';
 import { useToday } from '@/store/today';
 import { db } from '@/store/storage';
-import { FONT_SCALE, palette, TOUCH_TARGET } from '@/theme/tokens';
+import { FONT_SCALE, themeProps } from '@/theme/tokens';
 import Pregnancy from '../../app/(tabs)/pregnancy/index';
 import DueDate from '../../app/(tabs)/pregnancy/due-date';
 import Week from '../../app/(tabs)/pregnancy/week/[n]';
@@ -19,9 +20,11 @@ import HospitalBag from '../../app/(tabs)/pregnancy/hospital-bag';
 import BirthPlan from '../../app/(tabs)/pregnancy/birth-plan';
 
 const NOW = new Date(2026, 9, 9, 12, 0);
+// "Due date saved" and the template notes are toasts in the shared host the root layout mounts, so the tests mount one too.
 const wrap = (el: React.ReactElement) => (
-  <ThemeProvider palette={palette} fontScale={FONT_SCALE} touchTarget={TOUCH_TARGET}>
+  <ThemeProvider {...themeProps} fontScale={FONT_SCALE}>
     {el}
+    <ToastHost />
   </ThemeProvider>
 );
 
@@ -33,6 +36,7 @@ beforeEach(() => {
   mockRouter.push.mockClear();
 });
 afterEach(async () => {
+  await act(async () => hideToast());
   await cleanup();
   jest.useRealTimers();
   jest.restoreAllMocks();
@@ -49,9 +53,9 @@ describe('My Pregnancy (plan §5.4)', () => {
   it('with a due date shows week, days to go and the size, and pins this week first', async () => {
     useProfile.getState().setDue({ mode: 'edd', date: '2026-11-12' }); // 34 days to go: week 35 + 1... 246 days = 35w1d
     const ui = await render(wrap(<Pregnancy />));
-    expect(ui.texts()).toContain('Week 35 + 1 · 34 days to go');
-    expect(ui.texts()).toContain('Baby is about the size of a honeydew melon');
-    const rows = ui.root.findAll((n) => typeof n.props.onPress === 'function' && /^Week \d+/.test(String(n.props.accessibilityLabel)));
+    // The hero card: the week inside a ring of the 40, then the week, the days to go and the size on their own lines.
+    expect(ui.texts()).toEqual(expect.arrayContaining(['35', 'Week 35 + 1', '34 days to go', 'Baby is about the size of a honeydew melon']));
+    const rows = ui.root.findAll((n) => isPressable(n) && typeof n.props.onPress === 'function' && /^Week \d+/.test(String(n.props.accessibilityLabel)));
     expect(String(rows[0].props.accessibilityLabel)).toBe('Week 35, this week: about the size of a honeydew melon');
     expect(String(rows[1].props.accessibilityLabel)).toContain('Week 4:');
   });
@@ -95,8 +99,11 @@ describe('a week card', () => {
     mockParams.current = { n: '34' };
     const ui = await render(wrap(<Week />));
     expect(ui.texts()).toContain('About the size of a cantaloupe');
-    expect(ui.texts().some((x) => x.includes('45 cm, head to heel') && x.includes('2.1 kg'))).toBe(true);
-    expect(ui.texts().filter((x) => x.startsWith('•')).length).toBe(3);
+    expect(ui.byLabel(/^Length: About 45 cm, head to heel$/)).toHaveLength(1);
+    expect(ui.byLabel(/^Weight: About 2\.1 kg$/)).toHaveLength(1);
+    // Three notes, each a line beside a small dot (no bullet characters in the copy).
+    expect(ui.texts().filter((x) => x.startsWith('•'))).toHaveLength(0);
+    expect(ui.texts().indexOf('What many people notice')).toBeGreaterThan(-1);
     expect(ui.texts()).toContain('Questions for your next appointment');
     expect(ui.texts().some((x) => x.includes('5-1-1'))).toBe(true);
     expect(ui.texts()).toContain('This is general information, not medical advice. Your midwife or doctor knows your situation best.');
@@ -105,7 +112,8 @@ describe('a week card', () => {
     useSettings.getState().update({ units: 'imperial' });
     mockParams.current = { n: '12' };
     const ui = await render(wrap(<Week />));
-    expect(ui.texts().some((x) => x.includes('2.1 in, crown to rump') && x.includes('oz'))).toBe(true);
+    expect(ui.byLabel(/^Length: About 2\.1 in, crown to rump$/)).toHaveLength(1);
+    expect(ui.byLabel(/^Weight: About .* oz$/)).toHaveLength(1);
   });
   it('says so for a week without a card, and for nonsense', async () => {
     for (const n of ['2', '99', 'abc']) {
@@ -122,12 +130,12 @@ describe('the due date calculator (plan F11)', () => {
     const ui = await render(wrap(<DueDate />));
     expect(ui.texts()).toContain('Use the buttons to set the date. Nothing is saved until you do.');
     const save = () => ui.root.findAll((n) => n.props.accessibilityLabel === 'Save due date' && typeof n.props.onPress === 'function')[0];
-    expect(save().props.disabled).toBe(true);
+    expect(save().props.accessibilityState.disabled).toBe(true);
     await ui.press('First day of my last period'); // choosing how it is known is not choosing a date
-    expect(save().props.disabled).toBe(true);
+    expect(save().props.accessibilityState.disabled).toBe(true);
     expect(useProfile.getState().profile.edd).toBeUndefined();
     await ui.press('First day of your last period: one day earlier');
-    expect(save().props.disabled).toBe(false);
+    expect(save().props.accessibilityState.disabled).toBe(false);
   });
 
   it('works out the due date from the last period with a 28-day cycle and shows the live sentence', async () => {
@@ -162,7 +170,7 @@ describe('the due date calculator (plan F11)', () => {
     await ui.press('Due date: one year later');
     expect(ui.texts()).toContain('That due date is more than 42 weeks away. Check the date.');
     const save = ui.root.findAll((n) => n.props.accessibilityLabel === 'Save due date' && typeof n.props.onPress === 'function')[0];
-    expect(save.props.disabled).toBe(true);
+    expect(save.props.accessibilityState.disabled).toBe(true);
   });
   it('handles IVF day 3 and day 5, and a conception date', async () => {
     const ui = await render(wrap(<DueDate />));
@@ -205,7 +213,7 @@ describe('the due date calculator (plan F11)', () => {
 describe('the hospital bag and the birth plan (plan F13, F14)', () => {
   it('shows Mom, Partner and Baby groups with progress, and saves a tick', async () => {
     const ui = await render(wrap(<HospitalBag />));
-    expect(ui.texts()).toEqual(expect.arrayContaining(['For me', 'For my partner', 'For the baby', '0% packed']));
+    expect(ui.texts()).toEqual(expect.arrayContaining(['For me', 'For my partner', 'For the baby', '0% packed', '0%']));
     const first = ui.root.findAll((n) => n.props.accessibilityRole === 'checkbox')[0];
     await act(async () => first.props.onPress());
     expect(ui.texts().some((x) => /^\d+% packed$/.test(x) && x !== '0% packed')).toBe(true);

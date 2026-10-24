@@ -1,13 +1,17 @@
-import { Pressable, View } from 'react-native';
+import type { ReactNode } from 'react';
+import { View } from 'react-native';
+import CalendarX from 'lucide-react-native/icons/calendar-x';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
-import { addDays, addMonths, addYears } from '@/domain/dateKey';
+import { Card, Stepper } from '@shared/ui';
+import { addDays, addMonths, addYears, dayDiff } from '@/domain/dateKey';
 import { CYCLE_LIMITS, eddFrom, gestationOn, validateDue, type DueError } from '@/domain/dueDate';
 import type { DateKey, DateMode } from '@/domain/types';
+import { AlertCard } from '@/ui/AlertCard';
 import { AppText } from '@/ui/AppText';
+import { ChoiceGroup } from '@/ui/Choice';
 import { dayMonth, fullDate } from '@/ui/format';
 import { OptionCard } from '@/ui/OptionCard';
-import { Stepper } from '@/ui/Stepper';
 
 export interface DueDraft {
   mode: DateMode;
@@ -46,41 +50,64 @@ export function resultSentence(d: DueDraft, today: DateKey): string {
   return t('due.result', { weeks: t(g.weeks === 1 ? 'due.week' : 'due.weeks', { n: g.weeks }), days: t(g.day === 1 ? 'due.dayUnit' : 'due.days', { n: g.day }), date: dayMonth(draftEdd(d)) });
 }
 
+const EPOCH = '2000-01-01';
+
+/** The date as three shared steppers (day, month, year); each moves the whole date, rolling over months and years. */
 function DateStepper({ label, value, onChange }: { label: string; value: DateKey; onChange: (v: DateKey) => void }) {
   const { colors, type, spacing } = useTheme();
-  const [y, m, d] = value.split('-').map(Number);
-  return (
-    <View style={{ gap: spacing.sm }}>
-      <AppText accessibilityLiveRegion="polite" style={[type.title, { color: colors.text, fontWeight: '700' }]}>
-        {`${label}: ${fullDate(value)}`}
-      </AppText>
-      <Stepper label={t('due.day')} value={String(d)} minusLabel={t('due.dayLess', { field: label })} plusLabel={t('due.dayMore', { field: label })} onMinus={() => onChange(addDays(value, -1))} onPlus={() => onChange(addDays(value, 1))} />
-      <Stepper label={t('due.month')} value={t(`date.monthLong.${m - 1}`)} minusLabel={t('due.monthLess', { field: label })} plusLabel={t('due.monthMore', { field: label })} onMinus={() => onChange(addMonths(value, -1))} onPlus={() => onChange(addMonths(value, 1))} />
-      <Stepper label={t('due.year')} value={String(y)} minusLabel={t('due.yearLess', { field: label })} plusLabel={t('due.yearMore', { field: label })} onMinus={() => onChange(addYears(value, -1))} onPlus={() => onChange(addYears(value, 1))} />
+  const [y, m] = value.split('-').map(Number);
+  const dayIndex = dayDiff(EPOCH, value);
+  const monthIndex = y * 12 + (m - 1);
+  const row = (caption: string, node: ReactNode) => (
+    <View style={{ gap: spacing.xs }}>
+      <AppText style={[type.body, { color: colors.textMuted, fontWeight: '600' }]}>{caption}</AppText>
+      {node}
     </View>
   );
-}
-
-function Chips<T extends string | number>({ options, value, onChange }: { options: { value: T; label: string }[]; value: T; onChange: (v: T) => void }) {
-  const { colors, spacing, radius, type } = useTheme();
   return (
-    <View style={{ flexDirection: 'row', gap: spacing.sm, flexWrap: 'wrap' }}>
-      {options.map((o) => {
-        const selected = o.value === value;
-        return (
-          <Pressable
-            key={String(o.value)}
-            accessibilityRole="radio"
-            accessibilityLabel={o.label}
-            accessibilityState={{ selected, checked: selected }}
-            onPress={() => onChange(o.value)}
-            style={{ flex: 1, minWidth: 120, minHeight: 56, alignItems: 'center', justifyContent: 'center', borderRadius: radius.pill, borderWidth: selected ? 3 : 1, borderColor: selected ? colors.text : colors.border, backgroundColor: selected ? colors.surfaceAlt : colors.surface }}
-          >
-            <AppText style={[type.bodyLarge, { color: colors.text, fontWeight: selected ? '700' : '500' }]}>{o.label}</AppText>
-          </Pressable>
-        );
-      })}
-    </View>
+    <Card style={{ gap: spacing.md }}>
+      <AppText accessibilityLiveRegion="polite" style={[type.title, { color: colors.text, fontWeight: '800' }]}>
+        {`${label}: ${fullDate(value)}`}
+      </AppText>
+      {row(
+        t('due.day'),
+        <Stepper
+          label={t('due.day')}
+          value={dayIndex}
+          min={0}
+          max={100_000}
+          format={(v) => String(Number(addDays(EPOCH, v).slice(8)))}
+          decreaseLabel={t('due.dayLess', { field: label })}
+          increaseLabel={t('due.dayMore', { field: label })}
+          onChange={(v) => onChange(addDays(value, v - dayIndex))}
+        />,
+      )}
+      {row(
+        t('due.month'),
+        <Stepper
+          label={t('due.month')}
+          value={monthIndex}
+          min={0}
+          max={12 * 9999}
+          format={(v) => t(`date.monthLong.${v % 12}`)}
+          decreaseLabel={t('due.monthLess', { field: label })}
+          increaseLabel={t('due.monthMore', { field: label })}
+          onChange={(v) => onChange(addMonths(value, v - monthIndex))}
+        />,
+      )}
+      {row(
+        t('due.year'),
+        <Stepper
+          label={t('due.year')}
+          value={y}
+          min={1900}
+          max={9999}
+          decreaseLabel={t('due.yearLess', { field: label })}
+          increaseLabel={t('due.yearMore', { field: label })}
+          onChange={(v) => onChange(addYears(value, v - y))}
+        />,
+      )}
+    </Card>
   );
 }
 
@@ -107,12 +134,12 @@ export function DueDateForm({ draft, onChange, today, grouped }: { draft: DueDra
         })}
       </View>
       {grouped && inGroup ? (
-        <Chips
+        <ChoiceGroup<'conception' | 'ivf'>
           options={[
-            { value: 'conception' as DateMode, label: t('due.subConception') },
-            { value: 'ivf' as DateMode, label: t('due.subIvf') },
+            { value: 'conception', label: t('due.subConception') },
+            { value: 'ivf', label: t('due.subIvf') },
           ]}
-          value={draft.mode}
+          value={draft.mode === 'ivf' ? 'ivf' : 'conception'}
           onChange={switchMode}
         />
       ) : null}
@@ -120,35 +147,45 @@ export function DueDateForm({ draft, onChange, today, grouped }: { draft: DueDra
       <DateStepper label={t(FIELD[draft.mode])} value={draft.date} onChange={(date) => change({ date, touched: true })} />
 
       {draft.mode === 'lmp' ? (
-        <View style={{ gap: spacing.xs }}>
+        <Card style={{ gap: spacing.sm }}>
+          <AppText style={[type.body, { color: colors.textMuted, fontWeight: '600' }]}>{t('due.cycle')}</AppText>
           <Stepper
             label={t('due.cycle')}
-            value={t('due.cycleValue', { n: draft.cycleLength })}
-            minusLabel={t('due.cycleLess')}
-            plusLabel={t('due.cycleMore')}
-            minusDisabled={draft.cycleLength <= CYCLE_LIMITS.min}
-            plusDisabled={draft.cycleLength >= CYCLE_LIMITS.max}
-            onMinus={() => change({ cycleLength: Math.max(CYCLE_LIMITS.min, draft.cycleLength - 1) })}
-            onPlus={() => change({ cycleLength: Math.min(CYCLE_LIMITS.max, draft.cycleLength + 1) })}
+            value={draft.cycleLength}
+            min={CYCLE_LIMITS.min}
+            max={CYCLE_LIMITS.max}
+            format={(n) => t('due.cycleValue', { n })}
+            decreaseLabel={t('due.cycleLess')}
+            increaseLabel={t('due.cycleMore')}
+            onChange={(cycleLength) => change({ cycleLength })}
           />
           <AppText style={[type.body, { color: colors.textMuted }]}>{t('due.cycleNote')}</AppText>
-        </View>
+        </Card>
       ) : null}
       {draft.mode === 'ivf' ? (
-        <View style={{ gap: spacing.sm }}>
-          <AppText style={[type.bodyLarge, { color: colors.text }]}>{t('due.transfer')}</AppText>
-          <Chips options={[{ value: 3 as const, label: t('due.day3') }, { value: 5 as const, label: t('due.day5') }]} value={draft.ivfEmbryoDay} onChange={(ivfEmbryoDay) => change({ ivfEmbryoDay })} />
-        </View>
+        <Card style={{ gap: spacing.sm }}>
+          <AppText style={[type.bodyLarge, { color: colors.text, fontWeight: '600' }]}>{t('due.transfer')}</AppText>
+          <ChoiceGroup<'3' | '5'>
+            options={[
+              { value: '3', label: t('due.day3') },
+              { value: '5', label: t('due.day5') },
+            ]}
+            value={draft.ivfEmbryoDay === 3 ? '3' : '5'}
+            onChange={(v) => change({ ivfEmbryoDay: v === '3' ? 3 : 5 })}
+          />
+        </Card>
       ) : null}
 
       {!draft.touched ? (
         <AppText style={[type.bodyLarge, { color: colors.textMuted }]}>{t('due.setDateHint')}</AppText>
       ) : error ? (
-        <AppText accessibilityLiveRegion="assertive" style={[type.bodyLarge, { color: colors.danger, fontWeight: '600' }]}>{t(`due.errors.${error}`)}</AppText>
+        <AlertCard icon={CalendarX}>{t(`due.errors.${error}`)}</AlertCard>
       ) : (
-        <View accessibilityLiveRegion="polite" style={{ gap: spacing.xs }}>
-          <AppText style={[type.bodyLarge, { color: colors.text, fontWeight: '600' }]}>{resultSentence(draft, today)}</AppText>
-          {g?.pastDue ? <AppText style={[type.bodyLarge, { color: colors.text }]}>{t('pregnancy.pastDue')}</AppText> : null}
+        <View accessibilityLiveRegion="polite">
+          <Card style={{ gap: spacing.xs, backgroundColor: colors.primarySoft }}>
+            <AppText style={[type.bodyLarge, { color: colors.text, fontWeight: '700' }]}>{resultSentence(draft, today)}</AppText>
+            {g?.pastDue ? <AppText style={[type.bodyLarge, { color: colors.text }]}>{t('pregnancy.pastDue')}</AppText> : null}
+          </Card>
         </View>
       )}
     </View>

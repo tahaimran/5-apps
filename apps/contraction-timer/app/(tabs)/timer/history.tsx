@@ -1,38 +1,37 @@
-import { FlatList, View } from 'react-native';
+import { FlatList, StyleSheet } from 'react-native';
 import { router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import RotateCcwClock from 'lucide-react-native/icons/rotate-ccw-clock';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
 import { useAdScreen } from '@/ads/guard';
 import { SessionCard } from '@/features/history/SessionCard';
 import { useSessions } from '@/store/sessions';
-import { AppText } from '@/ui/AppText';
 import { BannerSlot } from '@/ui/BannerSlot';
-import { ScreenHeader } from '@/ui/ScreenHeader';
+import { EmptyState } from '@/ui/EmptyState';
+import { StackHeader } from '@/ui/Screen';
 
 /** Plan §5.2: every session on this phone, newest first; the one being timed (if any) is on top. */
 export default function History() {
-  const { colors, spacing, radius, type } = useTheme();
+  const { colors, spacing } = useTheme();
   useAdScreen('timerHistory');
   const active = useSessions((s) => s.active);
   const index = useSessions((s) => s.index);
   const archived = useSessions((s) => s.archived);
   const items = [...(active ? [{ s: active, open: true }] : []), ...index.filter((id) => archived[id]).map((id) => ({ s: archived[id], open: false }))];
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: colors.background }} edges={['top']}>
+    <SafeAreaView style={[styles.flex, { backgroundColor: colors.background }]} edges={['top']}>
+      <StackHeader title={t('history.title')} />
       <FlatList
         data={items}
         keyExtractor={(item) => item.s.id}
-        contentContainerStyle={{ padding: spacing.xl - 4, gap: spacing.md, flexGrow: 1 }}
-        ListHeaderComponent={<ScreenHeader title={t('history.title')} />}
-        ListEmptyComponent={
-          <View style={{ padding: spacing.lg, borderRadius: radius.lg, borderWidth: 1, borderColor: colors.border, backgroundColor: colors.surface }}>
-            <AppText style={[type.bodyLarge, { color: colors.text }]}>{t('history.empty')}</AppText>
-          </View>
-        }
+        contentContainerStyle={{ padding: spacing.xl - 4, paddingTop: spacing.xs, gap: spacing.md, flexGrow: 1 }}
+        ListEmptyComponent={<EmptyState icon={RotateCcwClock} text={t('history.empty')} />}
         renderItem={({ item }) => <SessionCard session={item.s} active={item.open} onPress={() => router.push({ pathname: '/timer/session/[id]', params: { id: item.s.id } })} />}
       />
       <BannerSlot placement="history_banner" />
     </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({ flex: { flex: 1 } });

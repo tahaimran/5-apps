@@ -1,26 +1,48 @@
 import { useEffect, useState } from 'react';
-import { Pressable, TextInput, View } from 'react-native';
+import { StyleSheet, TextInput, View } from 'react-native';
+import Eye from 'lucide-react-native/icons/eye';
+import EyeOff from 'lucide-react-native/icons/eye-off';
+import Merge from 'lucide-react-native/icons/merge';
+import Trash from 'lucide-react-native/icons/trash';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
-import { MINUTE, SECOND } from '@/domain/defaults';
+import { fromHHMM, TimeField, toHHMM } from '@shared/time';
+import { Button, Stepper } from '@shared/ui';
+import { DAY, HOUR, SECOND } from '@/domain/defaults';
 import { isIgnored } from '@/domain/stats';
 import type { Contraction, ContractionSession, ID, Intensity } from '@/domain/types';
 import { useSessions } from '@/store/sessions';
-import { useSettings } from '@/store/settings';
 import { AppText } from '@/ui/AppText';
-import { BigButton } from '@/ui/BigButton';
-import { clockTime, mmss } from '@/ui/format';
+import { ChipRow } from '@/ui/Choice';
+import { mmss } from '@/ui/format';
+import { RowBlock } from '@/ui/SettingsRow';
 import { Sheet } from '@/ui/Sheet';
-import { Stepper } from '@/ui/Stepper';
 
 const LEVELS: Intensity[] = ['mild', 'moderate', 'strong'];
+/** Length limits in the editor, in seconds (the store refuses anything over 30 minutes with its own reason). */
+const LENGTH = { min: 5, max: 30 * 60, step: 5 } as const;
 
 export type EditorTarget = { mode: 'edit'; contraction: Contraction } | { mode: 'add'; startedAt: number };
 
 /**
+ * The moment closest to `around` that shows `hhmm` on the clock, keeping its seconds. A contraction at
+ * 23:58 moved to "00:03" lands five minutes later (the next day), not almost a day earlier.
+ */
+export function nearestClockTime(around: number, hhmm: string): number {
+  const { hour, minute } = fromHHMM(hhmm);
+  const d = new Date(around);
+  d.setHours(hour, minute);
+  let at = d.getTime();
+  if (at - around > 12 * HOUR) at -= DAY;
+  if (around - at > 12 * HOUR) at += DAY;
+  return at;
+}
+
+/**
  * Plan §5.2: change when a contraction began and how long it lasted, tag it, write a note, leave it out of the
- * numbers (or count it again), join it with the next one, delete it, or add one that was missed. The times are
- * changed with plus and minus buttons, and a change that overlaps another contraction or lies in the future is refused with a reason.
+ * numbers (or count it again), join it with the next one, delete it, or add one that was missed. The start is
+ * picked on the shared clock wheels and the length with a stepper; a change that overlaps another contraction
+ * or lies in the future is refused with a reason.
  */
 export function RowEditor({
   sessionId,
@@ -34,10 +56,11 @@ export function RowEditor({
   /** Called after a delete with the session as it was just before, so the screen can offer a 5-second undo. */
   onDeleted: (before: ContractionSession) => void;
 }) {
-  const { colors, spacing, type } = useTheme();
-  const clock24h = useSettings((s) => s.settings.clock24h);
+  const { colors, spacing, radius, type, fonts } = useTheme();
   const [start, setStart] = useState(0);
-  const [length, setLength] = useState(60 * SECOND);
+  // Kept in ms so saving without touching the length keeps it exactly as timed.
+  const [lengthMs, setLengthMs] = useState(60 * SECOND);
+  const lengthSec = Math.round(lengthMs / SECOND);
   const [note, setNote] = useState('');
   const [error, setError] = useState<string | null>(null);
   const edit = target?.mode === 'edit' ? target.contraction : null;
@@ -47,11 +70,11 @@ export function RowEditor({
     if (!target) return;
     if (target.mode === 'edit') {
       setStart(target.contraction.startedAt);
-      setLength((target.contraction.endedAt ?? target.contraction.startedAt) - target.contraction.startedAt);
+      setLengthMs((target.contraction.endedAt ?? target.contraction.startedAt) - target.contraction.startedAt);
       setNote(target.contraction.note ?? '');
     } else {
       setStart(target.startedAt);
-      setLength(60 * SECOND);
+      setLengthMs(60 * SECOND);
       setNote('');
     }
   }, [target]);
@@ -67,79 +90,42 @@ export function RowEditor({
     const store = useSessions.getState();
     const result =
       target?.mode === 'edit'
-        ? store.editTimes(sessionId, target.contraction.id, { startedAt: start, endedAt: start + length })
-        : store.addContraction(sessionId, start, length);
+        ? store.editTimes(sessionId, target.contraction.id, { startedAt: start, endedAt: start + lengthMs })
+        : store.addContraction(sessionId, start, lengthMs);
     if (!result) return fail('not-found');
     if (!result.ok) return fail(result.reason);
     if (target?.mode === 'edit') store.setNote(sessionId, target.contraction.id, note);
     onClose();
   };
 
-  const lengthText = mmss(length);
+  const startDate = new Date(start);
   return (
-    <Sheet visible={target !== null} onClose={onClose}>
-      <AppText accessibilityRole="header" style={[type.title, { color: colors.text, fontWeight: '700' }]}>
-        {t(edit ? 'edit.titleEdit' : 'edit.titleAdd')}
-      </AppText>
-      <Stepper
-        label={t('edit.start')}
-        value={clockTime(start, clock24h)}
-        stepText={t('edit.step1')}
-        minusLabel={t('edit.startEarlier1')}
-        plusLabel={t('edit.startLater1')}
-        onMinus={() => setStart((s) => s - MINUTE)}
-        onPlus={() => setStart((s) => s + MINUTE)}
-      />
-      <Stepper
-        label={t('edit.start')}
-        value={clockTime(start, clock24h)}
-        stepText={t('edit.step10')}
-        minusLabel={t('edit.startEarlier10')}
-        plusLabel={t('edit.startLater10')}
-        onMinus={() => setStart((s) => s - 10 * MINUTE)}
-        onPlus={() => setStart((s) => s + 10 * MINUTE)}
-      />
-      <Stepper
-        label={t('edit.length')}
-        value={lengthText}
-        stepText={t('edit.step5s')}
-        minusLabel={t('edit.lengthLess5')}
-        plusLabel={t('edit.lengthMore5')}
-        minusDisabled={length <= 5 * SECOND}
-        onMinus={() => setLength((l) => Math.max(5 * SECOND, l - 5 * SECOND))}
-        onPlus={() => setLength((l) => l + 5 * SECOND)}
-      />
-      <Stepper
-        label={t('edit.length')}
-        value={lengthText}
-        stepText={t('edit.step30s')}
-        minusLabel={t('edit.lengthLess30')}
-        plusLabel={t('edit.lengthMore30')}
-        minusDisabled={length <= 30 * SECOND}
-        onMinus={() => setLength((l) => Math.max(5 * SECOND, l - 30 * SECOND))}
-        onPlus={() => setLength((l) => l + 30 * SECOND)}
-      />
+    <Sheet visible={target !== null} onClose={onClose} title={t(edit ? 'edit.titleEdit' : 'edit.titleAdd')}>
+      <RowBlock label={t('edit.start')}>
+        <TimeField label={t('edit.start')} value={toHHMM(startDate.getHours(), startDate.getMinutes())} minuteStep={1} onChange={(hhmm) => setStart((s) => nearestClockTime(s, hhmm))} />
+      </RowBlock>
+      <RowBlock label={t('edit.length')}>
+        <Stepper
+          label={t('edit.length')}
+          value={lengthSec}
+          min={LENGTH.min}
+          max={LENGTH.max}
+          step={LENGTH.step}
+          format={(sec) => mmss(sec * SECOND)}
+          decreaseLabel={t('edit.lengthLess5')}
+          increaseLabel={t('edit.lengthMore5')}
+          onChange={(sec) => setLengthMs(sec * SECOND)}
+        />
+      </RowBlock>
 
       {edit && current ? (
         <>
           <AppText style={[type.body, { color: colors.textMuted }]}>{t('edit.strength')}</AppText>
-          <View style={{ flexDirection: 'row', gap: spacing.sm, flexWrap: 'wrap' }}>
-            {LEVELS.map((level) => {
-              const selected = current.intensity === level;
-              return (
-                <Pressable
-                  key={level}
-                  accessibilityRole="button"
-                  accessibilityLabel={t(`intensity.${level}`)}
-                  accessibilityState={{ selected }}
-                  onPress={() => useSessions.getState().setIntensity(sessionId, edit.id, selected ? undefined : level)}
-                  style={{ flex: 1, minWidth: 96, minHeight: 56, alignItems: 'center', justifyContent: 'center', borderRadius: 999, borderWidth: selected ? 3 : 1, borderColor: selected ? colors.text : colors.border, backgroundColor: selected ? colors.surfaceAlt : colors.background }}
-                >
-                  <AppText style={[type.bodyLarge, { color: colors.text, fontWeight: selected ? '700' : '500' }]}>{t(`intensity.${level}`)}</AppText>
-                </Pressable>
-              );
-            })}
-          </View>
+          <ChipRow
+            options={LEVELS.map((level) => ({ value: level, label: t(`intensity.${level}`) }))}
+            value={current.intensity}
+            onChange={(level) => useSessions.getState().setIntensity(sessionId, edit.id, level)}
+          />
           <TextInput
             accessibilityLabel={t('edit.noteLabel')}
             placeholder={t('edit.notePlaceholder')}
@@ -147,7 +133,10 @@ export function RowEditor({
             value={note}
             onChangeText={setNote}
             multiline
-            style={{ minHeight: 80, padding: spacing.md, borderRadius: 12, borderWidth: 1, borderColor: colors.border, color: colors.text, backgroundColor: colors.surface, fontSize: type.bodyLarge.fontSize, textAlignVertical: 'top' }}
+            style={[
+              styles.note,
+              { padding: spacing.md, borderRadius: radius.md, borderColor: colors.border, color: colors.text, backgroundColor: colors.surfaceAlt, fontFamily: fonts.body, fontSize: type.bodyLarge.fontSize },
+            ]}
           />
         </>
       ) : null}
@@ -158,12 +147,18 @@ export function RowEditor({
         </AppText>
       ) : null}
 
-      <BigButton tall label={t('edit.save')} onPress={save} />
+      <Button label={t('edit.save')} onPress={save} />
       {edit && current ? (
-        <>
-          <BigButton variant="secondary" label={t(isIgnored(current) ? 'edit.restore' : 'edit.ignore')} onPress={() => useSessions.getState().toggleIgnored(sessionId, edit.id)} />
-          <BigButton
+        <View style={{ gap: spacing.sm }}>
+          <Button
             variant="secondary"
+            icon={isIgnored(current) ? Eye : EyeOff}
+            label={t(isIgnored(current) ? 'edit.restore' : 'edit.ignore')}
+            onPress={() => useSessions.getState().toggleIgnored(sessionId, edit.id)}
+          />
+          <Button
+            variant="secondary"
+            icon={Merge}
             label={t('edit.merge')}
             onPress={() => {
               const result = useSessions.getState().mergeWithNext(sessionId, edit.id);
@@ -171,8 +166,9 @@ export function RowEditor({
               else onClose();
             }}
           />
-          <BigButton
-            variant="secondary"
+          <Button
+            variant="danger"
+            icon={Trash}
             label={t('edit.delete')}
             onPress={() => {
               const before = useSessions.getState().get(sessionId);
@@ -181,9 +177,11 @@ export function RowEditor({
               onClose();
             }}
           />
-        </>
+        </View>
       ) : null}
-      <BigButton variant="secondary" label={t('common.cancel')} onPress={onClose} />
+      <Button variant="ghost" label={t('common.cancel')} onPress={onClose} />
     </Sheet>
   );
 }
+
+const styles = StyleSheet.create({ note: { minHeight: 88, borderWidth: 1, textAlignVertical: 'top' } });

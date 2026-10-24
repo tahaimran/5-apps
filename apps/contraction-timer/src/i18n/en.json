@@ -57,7 +57,9 @@
     "nightModeOn": "Night mode, on",
     "partnerMode": "Partner mode",
     "stopped": "Contraction stopped, {time}",
-    "exitPartner": "Exit partner mode"
+    "exitPartner": "Exit partner mode",
+    "breathe": "Breathe with the ring: in as it grows, out as it settles",
+    "nightHint": "Night mode is on. Lower your screen brightness too."
   },
   "kicks": {
     "title": "Kicks",
@@ -79,7 +81,6 @@
     "hardClosed": "This count ended after 3 hours and was saved.",
     "reminderOff": "Daily reminder: Off",
     "reminderOn": "Daily reminder: {time}",
-    "reminderChip": "{state}. Tap to change",
     "history": "History",
     "historyTitle": "Kick history",
     "historyEmpty": "No counts yet. When you save one, it will be kept here, only on this phone.",
@@ -89,7 +90,8 @@
     "rowShortLabel": "{date}, {count} of {target} movements, ended after {min} minutes",
     "sparkTitle": "Minutes to reach {target}",
     "sparkLabel": "Minutes to reach the target over your last {n} counts: from {first} to {last}",
-    "sparkOne": "Minutes to reach the target: {first}"
+    "sparkOne": "Minutes to reach the target: {first}",
+    "reminderHint": "Choose a time, or turn the daily reminder on or off"
   },
   "pregnancy": {
     "title": "My Pregnancy",
@@ -118,7 +120,8 @@
     "weekRowCurrentLabel": "Week {n}, this week: about the size of a {size}",
     "bagNudge": "Hospital bag {percent}% packed",
     "bagNudgeBody": "A good time to look at your list.",
-    "bagNudgeOpen": "Open the hospital bag list"
+    "bagNudgeOpen": "Open the hospital bag list",
+    "weeksShort": "weeks"
   },
   "more": {
     "title": "More",
@@ -198,8 +201,7 @@
     "tapHint": "Tap to see what this means",
     "explainCount": "How many contractions you timed in the last 60 minutes. Very short taps, under 10 seconds, are left out because they are most likely a mis-tap.",
     "explainLength": "The average time from the start to the end of each contraction in the last hour.",
-    "explainInterval": "The average time from the start of one contraction to the start of the next, over the last hour. A gap of more than 30 minutes is left out.",
-    "label": "{title}: {value}"
+    "explainInterval": "The average time from the start of one contraction to the start of the next, over the last hour. A gap of more than 30 minutes is left out."
   },
   "last": {
     "title": "Last contraction",
@@ -308,25 +310,16 @@
     "deleted": "Contraction deleted",
     "undo": "Undo",
     "inProgressNote": "This session is still open. Ending it is done on the Timer.",
-    "stats": "{count} timed · average length {length} · {gap}"
+    "stats": "{count} timed · average length {length} · {gap}",
+    "countTitle": "Contractions"
   },
   "edit": {
     "titleEdit": "Edit contraction",
     "titleAdd": "Add a missed contraction",
     "start": "Start time",
     "length": "Length",
-    "startEarlier1": "Start 1 minute earlier",
-    "startLater1": "Start 1 minute later",
-    "startEarlier10": "Start 10 minutes earlier",
-    "startLater10": "Start 10 minutes later",
     "lengthLess5": "5 seconds shorter",
     "lengthMore5": "5 seconds longer",
-    "lengthLess30": "30 seconds shorter",
-    "lengthMore30": "30 seconds longer",
-    "step1": "1 min",
-    "step10": "10 min",
-    "step5s": "5 s",
-    "step30s": "30 s",
     "noteLabel": "Note",
     "notePlaceholder": "A note for yourself or your provider",
     "ignore": "Leave out of the numbers",
@@ -350,12 +343,12 @@
     "intro": "This is made on your phone and goes nowhere until you choose an app.",
     "text": "Share as text",
     "pdf": "Share as PDF",
-    "themeLabel": "PDF look: {name}",
     "moreThemes": "More PDF looks",
     "preview": "Summary preview",
     "pdfFailed": "Could not make the PDF. You can still share the text.",
     "pdfUnavailable": "Sharing files is not available on this phone. You can still share the text.",
-    "textFailed": "Could not open the share sheet."
+    "textFailed": "Could not open the share sheet.",
+    "pdfFallback": "This version cannot make PDFs, so the text summary opens instead."
   },
   "pdfTheme": {
     "clean": "Clean",
@@ -373,12 +366,6 @@
     "denied": "No problem. You can turn reminders on later in More.",
     "blocked": "Notifications are turned off for this app in your phone's settings.",
     "openSettings": "Open phone settings",
-    "hourLess": "One hour earlier",
-    "hourMore": "One hour later",
-    "minuteLess": "Fifteen minutes earlier",
-    "minuteMore": "Fifteen minutes later",
-    "hourStep": "1 h",
-    "minuteStep": "15 min",
     "notificationBody": "Time for your kick count? Find a comfy spot and tap Start."
   },
   "week": {
@@ -394,7 +381,9 @@
     "approx": "Sizes and weights are rough averages. Every baby is different.",
     "disclaimer": "This is general information, not medical advice. Your midwife or doctor knows your situation best.",
     "notFound": "There is no card for this week.",
-    "illustration": "{size}"
+    "illustration": "{size}",
+    "lengthTitle": "Length",
+    "weightTitle": "Weight"
   },
   "due": {
     "title": "Due date calculator",
@@ -495,7 +484,7 @@
     "addButtonLabel": "Add to {group}"
   },
   "weekly": {
-    "body": "Week {n}: baby is about the size of a {size} {emoji}"
+    "body": "Week {n}: your baby is about the size of a {size}."
   },
   "onboarding": {
     "welcomeTitle": "Hi there. Let's keep this simple.",
@@ -535,7 +524,6 @@
     "alertsSection": "Pattern alert",
     "alerts": "Pattern alerts",
     "alertsHint": "A soft message when your recent contractions match the rule you chose. It never says you are in labor.",
-    "rule": "Pattern rule: {rule}",
     "ruleHint": "Change the rule",
     "lookSection": "Look",
     "theme": "Colors",
@@ -548,7 +536,6 @@
     "feelSection": "Feel and format",
     "haptics": "Vibration",
     "hapticsHint": "A buzz when you start and stop, and when your kicks are counted.",
-    "clock24h": "24-hour clock",
     "units": "Sizes in the week cards",
     "unitsMetric": "Centimetres and grams",
     "unitsImperial": "Inches and pounds",
@@ -560,7 +547,23 @@
     "kickReminder": "Daily kick reminder",
     "weekly": "Weekly size card",
     "weeklyHint": "A note once a week on how big your baby is. It needs notifications to be allowed on your phone.",
-    "reminderRow": "{state}. Tap to change"
+    "reminderRow": "{state}. Tap to change",
+    "ruleLabel": "Pattern rule",
+    "themeShort": {
+      "system": "Phone",
+      "light": "Light",
+      "dark": "Dark",
+      "night": "Night"
+    },
+    "sounds": "Sounds",
+    "soundsHint": "Soft sounds when you start, stop and count. Off at first, so no one nearby is woken.",
+    "clock": "Clock",
+    "clockPhone": "Phone",
+    "clockPhoneLabel": "Like my phone ({format})",
+    "clock12": "12-hour",
+    "clock24": "24-hour",
+    "unitsMetricShort": "cm, g",
+    "unitsImperialShort": "in, lb"
   },
   "rule": {
     "title": "Pattern rule",
@@ -631,7 +634,6 @@
     "intro": "Development builds only. For each ad place: would it show right now, and if not, why not. The numbers below are what the rules are reading.",
     "allowed": "would show",
     "blocked": "blocked",
-    "counters": "What the rules read",
-    "back": "Back"
+    "counters": "What the rules read"
   }
 }

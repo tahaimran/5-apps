@@ -1,6 +1,6 @@
 import { mockNotif, mockNotifState, mockRouter } from '@/testing/mocks';
 import { resetApp } from '@/testing/stores';
-import { auditPressables, cleanup, render } from '@/testing/ui';
+import { auditPressables, cleanup, pickTime, render } from '@/testing/ui';
 import { act } from 'react';
 import { ThemeProvider } from '@shared/theme';
 import { sharedStore } from '@shared/storage';
@@ -160,7 +160,8 @@ describe('the kick reminder in onboarding', () => {
     const ui = await render(wrap());
     await toNeeds(ui);
     await act(async () => toggle(ui).props.onValueChange(true));
-    await ui.press('One hour later');
+    // Picked on the shared clock wheels.
+    await pickTime(ui.root, 'Reminder time', '21:00');
     expect(useSettings.getState().settings.kickReminder.hour).toBe(21);
   });
 });

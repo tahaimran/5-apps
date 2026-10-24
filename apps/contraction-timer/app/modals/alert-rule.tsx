@@ -1,17 +1,17 @@
 import { useState } from 'react';
 import { View } from 'react-native';
 import { router } from 'expo-router';
+import HeartHandshake from 'lucide-react-native/icons/heart-handshake';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
+import { Button, Card, Stepper } from '@shared/ui';
 import { CUSTOM_LIMITS, RULE_PRESETS } from '@/domain/defaults';
 import type { PatternRule, RulePreset } from '@/domain/types';
 import { useSettings } from '@/store/settings';
+import { AlertCard } from '@/ui/AlertCard';
 import { AppText } from '@/ui/AppText';
-import { BigButton } from '@/ui/BigButton';
 import { OptionCard } from '@/ui/OptionCard';
 import { Screen } from '@/ui/Screen';
-import { ScreenHeader } from '@/ui/ScreenHeader';
-import { Stepper } from '@/ui/Stepper';
 
 const PRESETS: { preset: RulePreset; label: string }[] = [
   { preset: '511', label: 'rule.p511' },
@@ -20,7 +20,6 @@ const PRESETS: { preset: RulePreset; label: string }[] = [
   { preset: 'custom', label: 'rule.custom' },
 ];
 
-const clamp = (n: number, { min, max }: { min: number; max: number }) => Math.min(max, Math.max(min, n));
 const describe = (r: PatternRule) => t('rule.describe', { interval: r.intervalMaxMin, length: r.durationMinSec, sustain: r.sustainMin });
 
 /** Plan F5, §8.2: 5-1-1, 4-1-1, 3-1-1 or a custom rule (2–10 minutes apart, 30–90 seconds long, held for 30–120 minutes). */
@@ -31,9 +30,14 @@ export default function AlertRule() {
   const custom = rule.preset === 'custom';
   const choose = (preset: RulePreset) => setRule(preset === 'custom' ? { ...rule, preset: 'custom' } : RULE_PRESETS[preset]);
   const patch = (p: Partial<PatternRule>) => setRule({ ...rule, ...p, preset: 'custom' });
+  const field = (label: string, node: React.ReactNode) => (
+    <View style={{ gap: spacing.sm }}>
+      <AppText style={[type.body, { color: colors.textMuted, fontWeight: '600' }]}>{label}</AppText>
+      {node}
+    </View>
+  );
   return (
-    <Screen>
-      <ScreenHeader title={t('rule.title')} onBack={() => router.back()} />
+    <Screen modal title={t('rule.title')} onBack={() => router.back()}>
       <AppText style={[type.bodyLarge, { color: colors.textMuted }]}>{t('rule.intro')}</AppText>
       <View accessibilityRole="radiogroup" style={{ gap: spacing.sm }}>
         {PRESETS.map((p) => (
@@ -41,43 +45,53 @@ export default function AlertRule() {
         ))}
       </View>
       {custom ? (
-        <View style={{ gap: spacing.sm }}>
-          <Stepper
-            label={t('rule.interval')}
-            value={t('rule.intervalValue', { n: rule.intervalMaxMin })}
-            minusLabel={t('rule.intervalLess')}
-            plusLabel={t('rule.intervalMore')}
-            minusDisabled={rule.intervalMaxMin <= CUSTOM_LIMITS.intervalMaxMin.min}
-            plusDisabled={rule.intervalMaxMin >= CUSTOM_LIMITS.intervalMaxMin.max}
-            onMinus={() => patch({ intervalMaxMin: clamp(rule.intervalMaxMin - 1, CUSTOM_LIMITS.intervalMaxMin) })}
-            onPlus={() => patch({ intervalMaxMin: clamp(rule.intervalMaxMin + 1, CUSTOM_LIMITS.intervalMaxMin) })}
-          />
-          <Stepper
-            label={t('rule.length')}
-            value={t('rule.lengthValue', { n: rule.durationMinSec })}
-            minusLabel={t('rule.lengthLess')}
-            plusLabel={t('rule.lengthMore')}
-            minusDisabled={rule.durationMinSec <= CUSTOM_LIMITS.durationMinSec.min}
-            plusDisabled={rule.durationMinSec >= CUSTOM_LIMITS.durationMinSec.max}
-            onMinus={() => patch({ durationMinSec: clamp(rule.durationMinSec - 5, CUSTOM_LIMITS.durationMinSec) })}
-            onPlus={() => patch({ durationMinSec: clamp(rule.durationMinSec + 5, CUSTOM_LIMITS.durationMinSec) })}
-          />
-          <Stepper
-            label={t('rule.sustain')}
-            value={t('rule.sustainValue', { n: rule.sustainMin })}
-            minusLabel={t('rule.sustainLess')}
-            plusLabel={t('rule.sustainMore')}
-            minusDisabled={rule.sustainMin <= CUSTOM_LIMITS.sustainMin.min}
-            plusDisabled={rule.sustainMin >= CUSTOM_LIMITS.sustainMin.max}
-            onMinus={() => patch({ sustainMin: clamp(rule.sustainMin - 10, CUSTOM_LIMITS.sustainMin) })}
-            onPlus={() => patch({ sustainMin: clamp(rule.sustainMin + 10, CUSTOM_LIMITS.sustainMin) })}
-          />
+        <Card style={{ gap: spacing.lg }}>
+          {field(
+            t('rule.interval'),
+            <Stepper
+              label={t('rule.interval')}
+              value={rule.intervalMaxMin}
+              min={CUSTOM_LIMITS.intervalMaxMin.min}
+              max={CUSTOM_LIMITS.intervalMaxMin.max}
+              format={(n) => t('rule.intervalValue', { n })}
+              decreaseLabel={t('rule.intervalLess')}
+              increaseLabel={t('rule.intervalMore')}
+              onChange={(intervalMaxMin) => patch({ intervalMaxMin })}
+            />,
+          )}
+          {field(
+            t('rule.length'),
+            <Stepper
+              label={t('rule.length')}
+              value={rule.durationMinSec}
+              min={CUSTOM_LIMITS.durationMinSec.min}
+              max={CUSTOM_LIMITS.durationMinSec.max}
+              step={5}
+              format={(n) => t('rule.lengthValue', { n })}
+              decreaseLabel={t('rule.lengthLess')}
+              increaseLabel={t('rule.lengthMore')}
+              onChange={(durationMinSec) => patch({ durationMinSec })}
+            />,
+          )}
+          {field(
+            t('rule.sustain'),
+            <Stepper
+              label={t('rule.sustain')}
+              value={rule.sustainMin}
+              min={CUSTOM_LIMITS.sustainMin.min}
+              max={CUSTOM_LIMITS.sustainMin.max}
+              step={10}
+              format={(n) => t('rule.sustainValue', { n })}
+              decreaseLabel={t('rule.sustainLess')}
+              increaseLabel={t('rule.sustainMore')}
+              onChange={(sustainMin) => patch({ sustainMin })}
+            />,
+          )}
           <AppText style={[type.bodyLarge, { color: colors.text }]}>{describe(rule)}</AppText>
-        </View>
+        </Card>
       ) : null}
-      <AppText style={[type.bodyLarge, { color: colors.text, fontWeight: '600' }]}>{t('rule.note')}</AppText>
-      <BigButton
-        tall
+      <AlertCard icon={HeartHandshake}>{t('rule.note')}</AlertCard>
+      <Button
         label={t('rule.save')}
         onPress={() => {
           useSettings.getState().update({ rule });

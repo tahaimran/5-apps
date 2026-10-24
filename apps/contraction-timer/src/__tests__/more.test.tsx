@@ -4,6 +4,7 @@ import { cleanup, render } from '@/testing/ui';
 import { act } from 'react';
 import { Alert, Linking } from 'react-native';
 import { ThemeProvider } from '@shared/theme';
+import { currentTimeFormat } from '@shared/time';
 import { sharedStore } from '@shared/storage';
 import '@/bootstrap';
 import { RULE_PRESETS } from '@/domain/defaults';
@@ -19,7 +20,7 @@ import { useSettings } from '@/store/settings';
 import { db } from '@/store/storage';
 import { useUnlocks } from '@/store/unlocks';
 import { getThemePref } from '@/theme/mode';
-import { FONT_SCALE, palette, TOUCH_TARGET } from '@/theme/tokens';
+import { FONT_SCALE, themeProps } from '@/theme/tokens';
 import More from '../../app/(tabs)/more/index';
 import Settings from '../../app/(tabs)/more/settings';
 import AlertRule from '../../app/modals/alert-rule';
@@ -30,7 +31,7 @@ import { seedSession } from '@/testing/stores';
 
 const NOW = new Date(2026, 10, 4, 12, 0);
 const wrap = (el: React.ReactElement) => (
-  <ThemeProvider palette={palette} fontScale={FONT_SCALE} touchTarget={TOUCH_TARGET}>
+  <ThemeProvider {...themeProps} fontScale={FONT_SCALE}>
     {el}
   </ThemeProvider>
 );
@@ -171,15 +172,30 @@ describe('deleteAllData', () => {
 });
 
 describe('Settings (plan §5.5)', () => {
-  it('turns pattern alerts, vibration, the 24-hour clock and Partner mode on and off, and saves each', async () => {
+  it('turns pattern alerts, vibration, sounds and Partner mode on and off, and saves each', async () => {
     const ui = await render(wrap(<Settings />));
     const sw = (label: string) => ui.root.findAll((n) => n.props.accessibilityLabel === label && typeof n.props.onValueChange === 'function')[0];
+    // Sounds start off: the app is used at night next to someone sleeping.
+    expect(sw('Sounds').props.value).toBe(false);
     await act(async () => sw('Pattern alerts').props.onValueChange(false));
     await act(async () => sw('Vibration').props.onValueChange(false));
-    await act(async () => sw('24-hour clock').props.onValueChange(true));
+    await act(async () => sw('Sounds').props.onValueChange(true));
     await act(async () => sw('Partner mode').props.onValueChange(true));
-    expect(useSettings.getState().settings).toMatchObject({ patternAlerts: false, haptics: false, clock24h: true, partnerMode: true });
-    expect(db.get('settings')).toMatchObject({ patternAlerts: false, haptics: false, clock24h: true, partnerMode: true });
+    expect(useSettings.getState().settings).toMatchObject({ patternAlerts: false, haptics: false, sounds: true, partnerMode: true });
+    expect(db.get('settings')).toMatchObject({ patternAlerts: false, haptics: false, sounds: true, partnerMode: true });
+  });
+
+  it('follows the phone\'s clock until a 12- or 24-hour clock is chosen, and the choice drives every time shown', async () => {
+    const ui = await render(wrap(<Settings />));
+    expect(useSettings.getState().settings.timeFormat).toBeUndefined();
+    expect(currentTimeFormat()).toBe('12h'); // the mocked phone uses a 12-hour clock
+    await ui.press('24-hour');
+    expect(useSettings.getState().settings.timeFormat).toBe('24h');
+    expect(db.get('settings')?.timeFormat).toBe('24h');
+    expect(currentTimeFormat()).toBe('24h');
+    await ui.press('Like my phone (12-hour)');
+    expect(useSettings.getState().settings.timeFormat).toBeUndefined();
+    expect(currentTimeFormat()).toBe('12h');
   });
   it('chooses the colors, including Night, and remembers it for the Timer\'s one-tap switch', async () => {
     const ui = await render(wrap(<Settings />));
@@ -191,7 +207,7 @@ describe('Settings (plan §5.5)', () => {
   });
   it('shows the rule and opens the editor', async () => {
     const ui = await render(wrap(<Settings />));
-    await ui.press('Pattern rule: 5-1-1');
+    await ui.press('Pattern rule, 5-1-1');
     expect(mockRouter.push).toHaveBeenCalledWith('/modals/alert-rule');
   });
   it('changes the kick target within 5 to 20', async () => {
@@ -216,7 +232,7 @@ describe('Settings (plan §5.5)', () => {
   });
   it('opens the daily kick reminder sheet', async () => {
     const ui = await render(wrap(<Settings />));
-    await ui.press('Daily kick reminder');
+    await ui.press(/^Daily kick reminder, Daily reminder: Off/);
     expect(ui.texts()).toContain('We can send one quiet reminder a day at the time you choose. You can turn it off whenever you like.');
   });
 });
