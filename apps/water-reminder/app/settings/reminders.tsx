@@ -8,7 +8,7 @@ import Trash from 'lucide-react-native/icons/trash';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
 import { useTimeFormat } from '@shared/time';
-import { Card, IconButton } from '@shared/ui';
+import { Card, IconButton, insetTones } from '@shared/ui';
 import { formatClock } from '@/domain/dayKey';
 import { buildSlots } from '@/domain/schedule';
 import type { QuietBlock, ReminderSettings } from '@/domain/types';
@@ -38,6 +38,8 @@ export default function RemindersSettings() {
   const { reminders, goal, cups, prefs, setReminders } = useSettings();
   const { permission, refresh } = useNotificationPermission();
   const extra = extraColorsFor(mode);
+  // The timeline is an inset track with raised pills (lighter than the track in dark mode).
+  const { track, raised } = insetTones(colors, mode);
 
   const cupMl = preferredCup({ cups, prefs }).ml;
   const slots = useMemo(() => buildSlots(reminders, goal.goalMl, cupMl), [reminders, goal.goalMl, cupMl]);
@@ -53,7 +55,7 @@ export default function RemindersSettings() {
     set({ activeWeekdays: has ? reminders.activeWeekdays.filter((x) => x !== d) : [...reminders.activeWeekdays, d].sort() });
   };
   const pill = (text: string) => (
-    <View style={[styles.pill, { backgroundColor: colors.surface, borderRadius: radius.pill }]}>
+    <View style={[styles.pill, { backgroundColor: raised, borderRadius: radius.pill }]}>
       <Text style={[type.body, { color: colors.text, fontWeight: '700' }]}>{text}</Text>
     </View>
   );
@@ -78,7 +80,7 @@ export default function RemindersSettings() {
       {reminders.enabled && (
         <>
           {/* The day at a glance: first — every ~2h — last (the timeline from the design references). */}
-          <View style={[styles.timeline, { backgroundColor: colors.surfaceAlt, borderRadius: radius.lg, padding: spacing.lg, gap: spacing.md }]}>
+          <View style={{ backgroundColor: track, borderRadius: radius.lg, padding: spacing.lg, gap: spacing.md }}>
             {slots.length > 0 ? (
               <View style={styles.timelineRow} importantForAccessibility="no-hide-descendants" accessibilityElementsHidden>
                 {pill(time(slots[0]))}
@@ -94,7 +96,7 @@ export default function RemindersSettings() {
             {slots.length > 0 && (
               <View style={styles.wrap}>
                 {slots.map((s) => (
-                  <View key={s} style={[styles.slot, { backgroundColor: colors.surface, borderRadius: radius.pill }]}>
+                  <View key={s} style={[styles.slot, { backgroundColor: raised, borderRadius: radius.pill }]}>
                     <Text style={[type.caption, { color: colors.textMuted, fontWeight: '700', fontFamily: fonts.body }]}>{time(s)}</Text>
                   </View>
                 ))}
@@ -191,7 +193,6 @@ export default function RemindersSettings() {
 }
 
 const styles = StyleSheet.create({
-  timeline: {},
   timelineRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center' },
   pill: { paddingHorizontal: 12, paddingVertical: 6 },
   line: { flex: 1, height: 2, marginHorizontal: 4, maxWidth: 40 },

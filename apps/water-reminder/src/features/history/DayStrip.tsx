@@ -29,7 +29,9 @@ export function DayStrip({
   unit: Unit;
   onSelect: (day: DayKey) => void;
 }) {
-  const { colors, radius, type, touchTarget } = useTheme();
+  const { colors, radius, type, touchTarget, mode } = useTheme();
+  // Pills are raised parts: white on the soft card in light mode, lighter than the card in dark mode.
+  const pill = mode === 'light' ? colors.surface : colors.surfaceAlt;
   const initials = t('history.weekdayInitials').split(',');
   return (
     <View style={styles.strip}>
@@ -55,7 +57,7 @@ export function DayStrip({
                 minHeight: touchTarget + 30,
                 minWidth: 40,
                 borderRadius: radius.pill,
-                backgroundColor: isSelected ? colors.primary : colors.surface,
+                backgroundColor: isSelected ? colors.primary : pill,
                 opacity: future ? 0.45 : 1,
               },
             ]}
@@ -66,7 +68,7 @@ export function DayStrip({
               strokeWidth={3}
               progress={ratio}
               color={isSelected ? colors.onPrimary : s?.reached ? colors.success : colors.primary}
-              trackColor={isSelected ? colors.onPrimary + '40' : colors.surfaceAlt}
+              trackColor={isSelected ? colors.onPrimary + '40' : mode === 'light' ? colors.surfaceAlt : colors.border}
             >
               <Text style={[type.body, { color: fg, fontWeight: day === today || isSelected ? '700' : '500' }]}>{date.getDate()}</Text>
             </ProgressRing>

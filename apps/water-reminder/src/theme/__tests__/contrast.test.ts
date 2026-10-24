@@ -1,5 +1,5 @@
 import { defaultPalettes } from '@shared/theme/tokens';
-import { contrastRatio } from '../contrast';
+import { contrastRatio, luminance } from '../contrast';
 import { extraColors, palette, WAVE_ALPHA } from '../tokens';
 
 const merged = (mode: 'light' | 'dark') => ({ ...defaultPalettes[mode], ...palette[mode] });
@@ -61,5 +61,17 @@ describe.each(['light', 'dark'] as const)('%s palette meets WCAG AA for text', (
   });
   it('the ring fill is visible against its track (3:1 non-text contrast)', () => {
     expect(contrastRatio(extraColors[mode].ring, c.surface)).toBeGreaterThanOrEqual(mode === 'light' ? 2.5 : 3);
+  });
+});
+
+describe('dark mode depth', () => {
+  const c = merged('dark');
+  it('gets lighter as a layer rises: background < surface < surfaceAlt < border', () => {
+    const order = [c.background, c.surface, c.surfaceAlt, c.border].map(luminance);
+    for (let i = 1; i < order.length; i++) expect(order[i]).toBeGreaterThan(order[i - 1]);
+  });
+  it('keeps a raised pill (surfaceAlt) visibly lighter than its track (background)', () => {
+    // ~1.3:1, the same step as Habits' dark mode; enough to read as a raised layer, not a border.
+    expect(contrastRatio(c.surfaceAlt, c.background)).toBeGreaterThan(1.25);
   });
 });

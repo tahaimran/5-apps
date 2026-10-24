@@ -152,7 +152,8 @@ app/
 - States: rewarded not loaded → button disabled with "Ad not available, try later"; offline → same.
 
 ### 5.4 Log custom (modal sheet)
-Beverage picker (6 icons), amount slider (50–1,000 ml, step 10) + numeric input, time picker (defaults now),
+Beverage picker (6 icons), amount stepper (10–2,000 ml; steps of 10/25/50 ml or 0.5/1 fl oz as the amount grows, tap
+the amount to type an exact one) + cup-size presets, wheel time picker with 1-minute steps (defaults now),
 "Add" button. Shows effective hydration: "Coffee 250 ml → counts as 200 ml".
 
 ### 5.5 Settings
@@ -200,32 +201,42 @@ behind consent, see §16).
 
 Use `@shared/theme` (`ThemeProvider` with light / dark / high-contrast modes, tokens `colors/spacing/radius/type/motion`, `useHaptics()`); the app supplies the palette and font scale below.
 
-### 7.1 Palette
+### 7.1 Palette ("Lagoon"; the source of truth is `src/theme/tokens.ts`)
+Aqua-white surfaces, a deep-water brand blue, leaf green for growth and sun amber for streaks. Today's gradient hero is
+the one loud element. Contrast is enforced by `src/theme/__tests__/contrast.test.ts`.
+
 | Token | Light | Dark | Use |
 |---|---|---|---|
-| `primary` | `#2B9FE6` | `#5BB8F5` | Ring, primary buttons |
-| `primaryDeep` | `#1572B6` | `#2B9FE6` | Pressed, headings accent |
-| `water` | `#7FD1F7` | `#3A8FC4` | Ring track fill gradient end |
-| `leaf` | `#4CBF7A` | `#6BD494` | Plant, success, streak |
+| `primary` | `#136CAD` | `#5BB8F5` | Buttons, links, active tab, icons (the brand `#2B9FE6` is 2.9:1 on white, so it stays decorative) |
+| `primarySoft` | `#DCEEFB` | `#16344A` | Tonal buttons, selected cards, icon circles |
+| `ring` / `ringEnd` | `#2B9FE6` / `#7FD1F7` | `#5BB8F5` / `#3A8FC4` | Chart bars, decorative fills |
+| `hero` gradient | `#0B5DA3 → #083F73` | `#0A5799 → #07335C` | Today hero; white text stays AA even under both waves (10% + 8% white) |
+| `heroDone` gradient | `#0A6542 → #064A30` | `#0A6542 → #06422B` | The hero once the goal is reached |
+| `leaf` | `#4CBF7A` | `#6BD494` | Plant, goal-day bars and dots |
+| `success` | `#1A7A45` | `#6BD494` | Success text |
 | `bloom` | `#FF8FB1` | `#FF9FBE` | Flowers, celebration |
-| `sun` | `#FFC94D` | `#FFD36E` | Streak flame, warnings (soft) |
-| `bg` | `#F4FAFE` | `#0E1A24` | Screen background |
-| `surface` | `#FFFFFF` | `#16242F` | Cards |
-| `surfaceAlt` | `#E6F3FC` | `#1E3140` | Chips, ring track |
-| `text` | `#11263A` | `#E8F2F9` | Body (contrast ≥ 12:1) |
-| `textMuted` | `#5A7184` | `#9DB3C4` | Secondary (≥ 4.5:1) |
-| `danger` | `#E05A5A` | `#FF7B7B` | Delete only |
+| `sun` / `accent` | `#FFC94D` / `#A86200` | `#FFD36E` / `#FFD36E` | Streak flame / readable streak text |
+| `background` | `#F2F8FC` | `#0B1620` | Screen background |
+| `surface` | `#FFFFFF` | `#13212D` | Cards |
+| `surfaceAlt` | `#E4F1FA` | `#1C2E3D` | Chips and tracks; in dark mode raised parts (pills, stepper buttons) use it so they sit lighter than their track |
+| `text` | `#0F2436` | `#E6F1F9` | Body (≥ 12:1) |
+| `textMuted` | `#506A7E` | `#98AFC2` | Secondary (≥ 4.5:1 on every surface) |
+| `danger` | `#C73F3F` | `#FF7B7B` | Delete only |
 
-### 7.2 Typography (Nunito via expo-font; rounded, friendly)
+### 7.2 Typography (Figtree + Bricolage Grotesque, the shared OFL fonts embedded with expo-font)
+Figtree (400–700) for body text, Bricolage Grotesque (600, 800) for titles, headlines and big numbers (the shared
+theme's `title`, `headline` and `display` tokens). Changed from Nunito in the 2026-10 redesign so all apps share one kit.
+
 | Style | Size/Line | Weight |
 |---|---|---|
-| display (goal number) | 40/48 | 800 |
-| h1 | 28/34 | 800 |
-| h2 | 22/28 | 700 |
+| hero amount | 44/50 | 800 (Bricolage) |
+| display (goal number) | 40/46 | 800 (Bricolage) |
+| headline | 28/34 | 800 (Bricolage) |
+| title | 22/28 | 800 (Bricolage) |
 | body | 16/24 | 500 |
-| label | 14/20 | 600 |
-| caption | 12/16 | 500 |
-All sizes respect system font scale (cap at 1.6× on ring numbers); "Large text" setting adds 1.2× multiplier.
+| caption | 12/16 | 600 |
+
+All sizes respect the system font scale; the "Large text" setting adds a 1.2× multiplier. Nothing caps font scaling.
 
 ### 7.3 Plant growth stages (illustrations, Lottie or Rive)
 | Stage | Unlock (cumulative goal-days) | Visual |
@@ -239,11 +250,19 @@ All sizes respect system font scale (cap at 1.6× on ring numbers); "Large text"
 Daily mood overlay: thirsty (<25%, slight droop), ok (25–74%), happy (75–99%), sparkle (≥100%).
 Missing days never kill the plant (no punishment); it only droops for that day.
 
-### 7.4 Motion & haptics
-- Water add: ring sweep 600 ms `withSpring({damping:18})`; plant bounce 250 ms; droplet particles.
-- Goal reached: confetti 1.2 s once/day; `Haptics.notificationAsync(Success)`.
-- Chip tap: `Haptics.impactAsync(Light)`. Delete: `Warning`.
-- Respect `AccessibilityInfo.isReduceMotionEnabled()` → crossfade only, no confetti/particles.
+### 7.4 Motion & haptics (Reanimated only; every UI animation under 300 ms)
+- Press: every control uses the shared `PressableScale` (0.94–0.98 scale; it dims instead under reduced motion).
+- Water add: the hero's water level rises (CSS transition on transform, 280 ms ease-out), the ring sweeps (280 ms),
+  the plant bounces (250 ms keyframes), and a "+250 ml" label floats up and fades (220/200 ms layout animations).
+- The waves drift sideways in a slow linear loop (CSS animation, 6–9 s per period); stopped under reduced motion.
+- Goal reached: the hero crossfades to the green gradient (280 ms); confetti once a day (the one rare celebration);
+  success haptic and the `celebrate` sound.
+- State changes (segmented pill, hero color, progress fill) use CSS transitions; shared values only for gestures and
+  continuous values (plant sway). Tabs never slide.
+- Haptics go through `useHaptics` (gated by the Vibration setting): light tap on add, selection on stepper ticks and
+  wheel detents, success on goal, warning on delete. Sounds go through `@shared/sound` (gated by the Sounds setting):
+  `check` on add, `undo`, `complete`, `celebrate`. Never the only feedback.
+- Reduced motion: crossfades and color changes only; no drift, bounce, float, pulse or confetti.
 
 ### 7.5 Accessibility
 - Touch targets ≥ 48 dp; quick-add chips 56 dp tall.

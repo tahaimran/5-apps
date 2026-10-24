@@ -84,7 +84,7 @@ function GoalWeek({ days, today }: { days: ChartDay[]; today: DayKey }) {
 }
 
 export default function History() {
-  const { colors, spacing, radius, type, touchTarget, shadow, fonts } = useTheme();
+  const { colors, spacing, radius, type, touchTarget, shadow, fonts, mode: theme } = useTheme();
   const clock = useTimeFormat();
   const feedback = useFeedback();
   const { goal } = useSettings();
@@ -166,7 +166,7 @@ export default function History() {
 
       {mode === 'day' && (
         <View style={{ gap: spacing.md }}>
-          <View style={[{ backgroundColor: colors.primarySoft, borderRadius: radius.xl, padding: spacing.md, gap: spacing.md }]}>
+          <View style={[{ backgroundColor: theme === 'light' ? colors.primarySoft : colors.surface, borderRadius: radius.xl, padding: spacing.md, gap: spacing.md }]}>
             <Pager
               label={dayTitle}
               prevLabel={t('history.previousDay')}

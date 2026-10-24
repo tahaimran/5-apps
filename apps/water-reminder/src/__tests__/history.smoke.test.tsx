@@ -120,6 +120,17 @@ describe('History: Day', () => {
   });
 });
 
+describe('History: dark mode', () => {
+  afterEach(() => sharedStore.remove('theme.mode'));
+  it('raises the day pills above their card instead of sinking them', async () => {
+    sharedStore.set('theme.mode', 'dark');
+    const ui = await render(themed(<History />));
+    const { StyleSheet } = require('react-native');
+    const pill = ui.root.findAll((n) => typeof n.props.onPress === 'function' && /^[A-Z][a-z]+day, /.test(n.props.accessibilityLabel ?? '') && !n.props.accessibilityState?.selected)[0];
+    expect(StyleSheet.flatten(pill.props.style).backgroundColor).toBe(palette.dark!.surfaceAlt);
+  });
+});
+
 describe('History: Week and Month', () => {
   beforeEach(() => {
     log(2300, 9, {}, 6);

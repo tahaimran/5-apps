@@ -149,7 +149,7 @@ export default function Garden() {
             accessibilityRole="progressbar"
             accessibilityLabel={t('garden.goalDays', { count: live.goalDays })}
             accessibilityValue={{ min: 0, max: 100, now: Math.round(toNext * 100) }}
-            style={[styles.bar, { backgroundColor: colors.surface, borderRadius: radius.pill }]}
+            style={[styles.bar, { backgroundColor: mode === 'light' ? colors.surface : colors.border, borderRadius: radius.pill }]}
           >
             <Animated.View
               style={[

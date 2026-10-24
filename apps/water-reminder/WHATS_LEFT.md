@@ -2,13 +2,23 @@
 
 Status (2026-10-09): the code checks pass (TypeScript clean, expo-doctor 21/21, all Jest tests pass). Linked to EAS as @tuahaimran/water-reminder (projectId is in app.config.ts). A first "preview" APK was built in the cloud on 2026-10-09; install it from the Builds page on expo.dev.
 
+Redesign (2026-10-24, branch `feat/ui-polish`): every screen rebuilt on the shared kit (Lagoon palette, Figtree +
+Bricolage, Lucide icons, sounds, wheel time picker, 12/24-hour setting), a chime notification channel, and a new icon.
+TypeScript clean, expo-doctor 21/21, all Jest tests pass. **Not yet seen on a phone.**
+
+## 0. New dev build (needed before any phone testing)
+The redesign adds native code, so the old preview APK cannot run it: expo-dev-client, expo-linear-gradient, expo-audio,
+expo-navigation-bar, the embedded fonts, the notification icon and `reminder.wav`, and the new icon/splash.
+- [ ] After the free EAS quota resets (Nov 1): `cd apps/water-reminder && eas build --profile development --platform android`.
+- [ ] Install it, then `npx expo start --dev-client --port 8081` and `adb reverse tcp:8081 tcp:8081`.
+
 ## 1. Try it on your phone (test checklist)
 Tip: to get a reminder soon, go to Settings and set "Wake up" to about 35 minutes ago (first reminder = wake + 30 min).
 1. - [ ] Install the preview APK and finish onboarding; check the goal it suggests looks sensible in kg and in lb, and that a manual goal stays after you reopen the app.
 2. - [ ] Look at every screen: plant (stages, moods, skins), progress ring, confetti, goal reveal, first-glass screen. None of these has ever been seen on a screen.
 3. - [ ] Check dark mode on every screen, and the app icon on your home screen.
 4. - [ ] Wait for reminders: they only come between wake + 30 min and bedtime - 30 min; try a bedtime of 02:00 too.
-5. - [ ] Check the reminder sound and short vibration, that "Gentle reminders" is silent, and that the lock screen shows the text.
+5. - [ ] Check the reminder plays the soft chime with a gentle double vibration, shows the droplet icon in brand blue, that "Gentle reminders" is silent, that only one "Water reminders" channel is listed in system settings, and that the lock screen shows the text.
 6. - [ ] Tap "Add 250 ml" and "Snooze 15 min" on a reminder with the app open, in the background, and closed (swipe it away from Recents).
 7. - [ ] Change your cup size, unit and snooze time in Settings; check the reminder buttons change to match.
 8. - [ ] Log a drink just before a reminder is due: that reminder should not come, the next one should.
@@ -25,7 +35,11 @@ Tip: to get a reminder soon, go to Settings and set "Wake up" to about 35 minute
 19. - [ ] Turn on TalkBack (Android's screen reader) and go through onboarding, logging, History, Garden, Settings.
 20. - [ ] Set system font size to large (1.3x and 2.0x): nothing is cut off on any screen.
 21. - [ ] Turn on "Remove animations" in Android settings: confetti and sway are skipped, the toast still shows.
-22. - [ ] Drag the custom amount slider with your finger, and with TalkBack (swipe up/down).
+22. - [ ] Add a drink: the − / + steps feel right (10 ml under 100, 25 under 300, then 50; fl oz 0.5 then 1), tapping the amount lets you type an exact one (e.g. 330), and the time wheel snaps and ticks.
+25. - [ ] Today's hero: the water level rises smoothly on every drink, the waves drift slowly (and stop with "Remove animations"), the plant bounces, "+250 ml" floats up, and the card turns green at the goal. Feel-check on the Redmi, not just in the code.
+26. - [ ] Settings → Clock: Phone / 12-hour / 24-hour changes every time on screen (Today, reminders, wheels); Sounds and Vibration toggles silence the feedback.
+27. - [ ] Dark mode: pills and stepper buttons sit lighter than their tracks, Switch thumbs are visible, the hero text reads clearly.
+28. - [ ] New icon on the home screen (round and squircle launchers), the monochrome themed icon, and the splash in light and dark.
 23. - [ ] Check the app opens fast (under ~1.5 s) and History scrolls smoothly.
 24. - [ ] If you can, repeat steps 4-6 on a Samsung and a Xiaomi phone (they kill background apps harder).
 
