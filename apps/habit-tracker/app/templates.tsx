@@ -17,7 +17,7 @@ import { scheduleLabel } from '@/ui/format';
 import { habitColors } from '@/theme/tokens';
 import { readableOn } from '@/theme/contrast';
 import { HabitIcon } from '@/ui/icons';
-import { useTimeFormat } from '@/store/timeFormat';
+import { useTimeFormat } from '@shared/time';
 
 const targetLabel = (tpl: Template) =>
   tpl.type === 'count'

@@ -22,9 +22,10 @@ jest.mock('react-native-mmkv', () => ({
 
 jest.mock('expo-localization', () => ({
   getLocales: () => [{ languageCode: mockLocale.current, languageTag: mockLocale.current, textDirection: 'ltr' }],
+  getCalendars: () => [{ uses24hourClock: mockLocale.uses24hourClock }],
   useLocales: () => [{ languageCode: mockLocale.current, languageTag: mockLocale.current, textDirection: mockLocale.current === 'ar' ? 'rtl' : 'ltr' }],
 }));
-export const mockLocale = { current: 'en' };
+export const mockLocale: { current: string; uses24hourClock: boolean | null } = { current: 'en', uses24hourClock: true };
 
 export const mockHaptics = { impact: jest.fn(), selection: jest.fn(), notification: jest.fn() };
 jest.mock('expo-haptics', () => ({
@@ -41,3 +42,4 @@ jest.mock('react-native-worklets', () => require('./animation').workletsMock());
 jest.mock('react-native-svg', () => require('./animation').svgMock());
 jest.mock('expo-linear-gradient', () => require('./animation').linearGradientMock());
 jest.mock('expo-audio', () => require('./animation').audioMock());
+jest.mock('react-native-safe-area-context', () => require('react-native-safe-area-context/jest/mock').default);

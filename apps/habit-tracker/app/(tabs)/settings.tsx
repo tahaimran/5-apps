@@ -29,8 +29,7 @@ import { invalidateNotificationPlan, rescheduleNotifications } from '@/notificat
 import { extraColorsFor } from '@/theme/tokens';
 import { WIDGET_NAME } from '@/widget/render';
 import { Field, Segmented, Stepper, Toggle } from '@/ui/controls';
-import { TimeField } from '@/ui/TimePicker';
-import { useTimeFormat } from '@/store/timeFormat';
+import { TimeField, useTimeFormat } from '@shared/time';
 
 type Choice = 'system' | 'light' | 'dark';
 

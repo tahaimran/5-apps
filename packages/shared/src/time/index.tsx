@@ -2,16 +2,20 @@ import { useEffect, useRef, useState } from 'react';
 import { Modal, Pressable, ScrollView, StyleSheet, Text, View, type NativeScrollEvent, type NativeSyntheticEvent } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Clock from 'lucide-react-native/icons/clock';
-import { t } from '@shared/i18n';
-import { useHaptics, useTheme } from '@shared/theme';
-import { Button, PressableScale } from '@shared/ui';
-import { fromHHMM, toHHMM } from '@/domain/timeFormat';
-import { useSettings } from '@/store/settings';
-import { useTimeFormat } from '@/store/timeFormat';
+import { t } from '../i18n';
+import { useHaptics, useTheme } from '../theme';
+import { Button, PressableScale } from '../ui';
+import { fromHHMM, toHHMM } from './format';
+import { useTimeFormat } from './preference';
+
+// Stores import './preference' directly: it carries no UI (no Reanimated) for pure-logic tests.
+export * from './format';
+export * from './preference';
+
+// ---- Wheel time picker -------------------------------------------------------------------------
 
 const ITEM = 48;
 const VISIBLE = 5;
-const MINUTE_STEP = 5;
 const pad = (n: number) => String(n).padStart(2, '0');
 
 interface WheelProps {
@@ -23,13 +27,12 @@ interface WheelProps {
 }
 
 /**
- * One snapping column. A tick of haptics as each value passes the center line (no React render
- * per frame), and the value commits when the scroll settles. TalkBack users get increment/decrement.
+ * One snapping column. A haptic tick as each value passes the center line (no React render per
+ * frame), and the value commits when the scroll settles. TalkBack users get increment/decrement.
  */
 function Wheel({ items, index, onChange, label, width }: WheelProps) {
   const { colors, type, fonts } = useTheme();
   const haptics = useHaptics();
-  const hapticsOn = useSettings((s) => s.settings.haptics);
   const ref = useRef<ScrollView>(null);
   const passing = useRef(index);
 
@@ -47,7 +50,7 @@ function Wheel({ items, index, onChange, label, width }: WheelProps) {
     const i = at(e);
     if (i !== passing.current) {
       passing.current = i;
-      if (hapticsOn) haptics.select();
+      void haptics.select();
     }
   };
   const settle = (e: NativeSyntheticEvent<NativeScrollEvent>) => {
@@ -103,10 +106,12 @@ export interface TimeFieldProps {
   value: string;
   onChange: (hhmm: string) => void;
   label: string;
+  /** Minutes between wheel values. Default 5; use 1 for an exact time such as when a drink was logged. */
+  minuteStep?: number;
 }
 
 /** A time shown in the user's clock style; tapping it opens wheels for hour, minute (and AM/PM). */
-export function TimeField({ value, onChange, label }: TimeFieldProps) {
+export function TimeField({ value, onChange, label, minuteStep = 5 }: TimeFieldProps) {
   const { colors, spacing, radius, type, touchTarget, fonts } = useTheme();
   const insets = useSafeAreaInsets();
   const clock = useTimeFormat();
@@ -115,17 +120,17 @@ export function TimeField({ value, onChange, label }: TimeFieldProps) {
 
   const twelve = clock.format === '12h';
   const hours = twelve ? Array.from({ length: 12 }, (_, i) => String(i === 0 ? 12 : i)) : Array.from({ length: 24 }, (_, i) => pad(i));
-  const minutes = Array.from({ length: 60 / MINUTE_STEP }, (_, i) => pad(i * MINUTE_STEP));
+  const minutes = Array.from({ length: Math.ceil(60 / minuteStep) }, (_, i) => pad(i * minuteStep));
   const pm = draft.hour >= 12;
   const hourIndex = twelve ? draft.hour % 12 : draft.hour;
-  const minuteIndex = Math.min(minutes.length - 1, Math.round(draft.minute / MINUTE_STEP));
+  const minuteIndex = Math.min(minutes.length - 1, Math.round(draft.minute / minuteStep));
 
   const show = () => {
     setDraft(fromHHMM(value));
     setOpen(true);
   };
   const save = () => {
-    onChange(toHHMM(draft.hour, minuteIndex * MINUTE_STEP));
+    onChange(toHHMM(draft.hour, minuteIndex * minuteStep));
     setOpen(false);
   };
 
@@ -134,7 +139,7 @@ export function TimeField({ value, onChange, label }: TimeFieldProps) {
       <PressableScale
         accessibilityRole="button"
         accessibilityLabel={`${label}, ${clock.time(value)}`}
-        accessibilityHint={t('time.hint')}
+        accessibilityHint={t('shared.time.hint')}
         onPress={show}
         scaleTo={0.96}
         style={[styles.field, { backgroundColor: colors.surfaceAlt, borderRadius: radius.pill, minHeight: touchTarget, paddingHorizontal: spacing.lg, gap: spacing.sm }]}
@@ -144,20 +149,22 @@ export function TimeField({ value, onChange, label }: TimeFieldProps) {
       </PressableScale>
 
       <Modal visible={open} transparent animationType="slide" statusBarTranslucent navigationBarTranslucent onRequestClose={() => setOpen(false)}>
-        <Pressable accessibilityLabel={t('common.close')} style={styles.scrim} onPress={() => setOpen(false)} />
+        <Pressable accessibilityLabel={t('shared.time.close')} style={styles.scrim} onPress={() => setOpen(false)} />
         <View
-          style={[
-            styles.sheet,
-            { backgroundColor: colors.surface, borderTopLeftRadius: radius.xl, borderTopRightRadius: radius.xl, padding: spacing.xl, paddingBottom: spacing.xl + insets.bottom, gap: spacing.lg },
-          ]}
+          style={{
+            backgroundColor: colors.surface,
+            borderTopLeftRadius: radius.xl,
+            borderTopRightRadius: radius.xl,
+            padding: spacing.xl,
+            paddingBottom: spacing.xl + insets.bottom,
+            gap: spacing.lg,
+          }}
         >
           <View style={[styles.grabber, { backgroundColor: colors.border }]} />
           <Text accessibilityRole="header" style={[type.title, { color: colors.text, fontWeight: '800' }]}>
             {label}
           </Text>
-          <Text style={[styles.preview, { color: colors.primary, fontFamily: fonts.display }]}>
-            {clock.time(toHHMM(draft.hour, minuteIndex * MINUTE_STEP))}
-          </Text>
+          <Text style={[styles.preview, { color: colors.primary, fontFamily: fonts.display }]}>{clock.time(toHHMM(draft.hour, minuteIndex * minuteStep))}</Text>
 
           <View style={styles.wheels}>
             {/* The band marks the selected row across all columns. */}
@@ -166,23 +173,23 @@ export function TimeField({ value, onChange, label }: TimeFieldProps) {
               items={hours}
               index={hourIndex}
               width={72}
-              label={t('time.hour')}
+              label={t('shared.time.hour')}
               onChange={(i) => setDraft((d) => ({ ...d, hour: twelve ? (i % 12) + (pm ? 12 : 0) : i }))}
             />
             <Text style={[type.title, { color: colors.textMuted, fontWeight: '800' }]}>:</Text>
-            <Wheel items={minutes} index={minuteIndex} width={72} label={t('time.minute')} onChange={(i) => setDraft((d) => ({ ...d, minute: i * MINUTE_STEP }))} />
+            <Wheel items={minutes} index={minuteIndex} width={72} label={t('shared.time.minute')} onChange={(i) => setDraft((d) => ({ ...d, minute: i * minuteStep }))} />
             {twelve && (
               <Wheel
                 items={[clock.periods.am, clock.periods.pm]}
                 index={pm ? 1 : 0}
                 width={72}
-                label={t('time.period')}
+                label={t('shared.time.period')}
                 onChange={(i) => setDraft((d) => ({ ...d, hour: (d.hour % 12) + (i === 1 ? 12 : 0) }))}
               />
             )}
           </View>
 
-          <Button label={t('common.done')} onPress={save} />
+          <Button label={t('shared.time.done')} onPress={save} />
         </View>
       </Modal>
     </>
@@ -192,7 +199,6 @@ export function TimeField({ value, onChange, label }: TimeFieldProps) {
 const styles = StyleSheet.create({
   field: { flexDirection: 'row', alignItems: 'center', alignSelf: 'flex-start' },
   scrim: { flex: 1, backgroundColor: '#0000007A' },
-  sheet: {},
   grabber: { alignSelf: 'center', width: 40, height: 5, borderRadius: 3, marginTop: -8 },
   preview: { fontSize: 40, lineHeight: 46, fontWeight: '800' },
   wheels: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8 },

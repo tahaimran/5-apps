@@ -9,7 +9,7 @@ import { useAppOpenAd } from '@shared/ads';
 import { useOnboardingComplete } from '@shared/onboarding';
 import { initSounds } from '@shared/sound';
 import { ThemeProvider, useTheme } from '@shared/theme';
-import { ToastHost } from '@shared/ui';
+import { SystemNavBar, ToastHost } from '@shared/ui';
 import { hasCheckInIn, installAdGuard, useAdsStart } from '@/ads/guard';
 import { useNotificationResponses, useNotificationSync } from '@/notifications/sync';
 import { dayKeyFor } from '@/domain/dayKey';
@@ -19,7 +19,6 @@ import { useSettings } from '@/store/settings';
 import { useDayRollover } from '@/store/today';
 import { startWidgetSync } from '@/widget/sync';
 import { fonts, palette } from '@/theme/tokens';
-import { SystemNavBar } from '@/ui/SystemNavBar';
 import '@/bootstrap';
 
 // A render error anywhere shows a retry screen instead of closing the app in release builds.

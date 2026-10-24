@@ -2,7 +2,7 @@
   "name": "@shared/core",
   "version": "1.0.0",
   "private": true,
-  "description": "Code reused by all 5 apps: consent, ads, storage, onboarding, theme, ui, sound, i18n, review, notify, crosspromo.",
+  "description": "Code reused by all 5 apps: consent, ads, storage, onboarding, theme, ui, time, sound, i18n, review, notify, crosspromo.",
   "scripts": {
     "typecheck": "tsc --noEmit",
     "test": "jest",
@@ -13,6 +13,7 @@
     "react": "*",
     "react-native": "*",
     "react-native-reanimated": "*",
+    "react-native-safe-area-context": "*",
     "react-native-svg": "*"
   },
   "dependencies": {
@@ -20,8 +21,10 @@
     "expo-file-system": "*",
     "expo-haptics": "*",
     "expo-localization": "*",
+    "expo-navigation-bar": "*",
     "expo-notifications": "*",
     "expo-store-review": "*",
+    "lucide-react-native": "*",
     "react-native-google-mobile-ads": "^17.2.0",
     "react-native-mmkv": "^4.3.2"
   },

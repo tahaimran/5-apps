@@ -1,7 +1,7 @@
 const mockCalendars = jest.fn();
 jest.mock('expo-localization', () => ({ getCalendars: () => mockCalendars() }));
 
-import { deviceTimeFormat, formatHour, formatTime, fromHHMM, toHHMM } from '../timeFormat';
+import { deviceTimeFormat, formatHour, formatTime, fromHHMM, toHHMM } from '../format';
 
 describe('formatTime', () => {
   it.each([

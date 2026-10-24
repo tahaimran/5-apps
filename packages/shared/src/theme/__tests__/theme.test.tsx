@@ -4,7 +4,7 @@ import TestRenderer, { type ReactTestRenderer } from 'react-test-renderer';
 import * as RN from 'react-native';
 import { sharedStore } from '../../storage';
 import { MIN_TOUCH, MIN_TOUCH_LARGE, baseType, defaultPalettes, motion, radius, spacing } from '../tokens';
-import { ThemeProvider, useHaptics, useTheme, type Theme, type ThemeProviderProps } from '../index';
+import { setHapticsEnabled, ThemeProvider, useHaptics, useTheme, type Theme, type ThemeProviderProps } from '../index';
 
 (globalThis as { IS_REACT_ACT_ENVIRONMENT?: boolean }).IS_REACT_ACT_ENVIRONMENT = true;
 
@@ -202,14 +202,29 @@ describe('useHaptics', () => {
     await act(async () => {
       live.push(TestRenderer.create(<Probe />));
     });
-    haptics.tap();
-    haptics.press();
-    haptics.select();
-    haptics.success();
-    haptics.warning();
-    haptics.error();
+    await Promise.all([haptics.tap(), haptics.press(), haptics.select(), haptics.success(), haptics.warning(), haptics.error()]);
     expect(mockHaptics.impact.mock.calls).toEqual([['light'], ['medium']]);
     expect(mockHaptics.selection).toHaveBeenCalledTimes(1);
     expect(mockHaptics.notification.mock.calls).toEqual([['success'], ['warning'], ['error']]);
+  });
+
+  it('stays silent while turned off and never rejects', async () => {
+    let haptics!: ReturnType<typeof useHaptics>;
+    const Probe = (): null => {
+      haptics = useHaptics();
+      return null;
+    };
+    await act(async () => {
+      live.push(TestRenderer.create(<Probe />));
+    });
+    mockHaptics.impact.mockClear();
+    setHapticsEnabled(false);
+    await haptics.tap();
+    expect(mockHaptics.impact).not.toHaveBeenCalled();
+    setHapticsEnabled(true);
+    mockHaptics.impact.mockImplementationOnce(() => {
+      throw new Error('no vibrator');
+    });
+    await expect(haptics.tap()).resolves.toBeUndefined();
   });
 });

@@ -1,9 +1,10 @@
-import React, { useEffect, useSyncExternalStore, type ComponentType, type ReactNode } from 'react';
+import React, { useEffect, useRef, useState, useSyncExternalStore, type ComponentType, type ReactNode } from 'react';
 import {
   AccessibilityInfo,
   ActivityIndicator,
   Pressable,
   StyleSheet,
+  Switch,
   Text,
   View,
   type GestureResponderEvent,
@@ -11,7 +12,11 @@ import {
   type StyleProp,
   type ViewStyle,
 } from 'react-native';
+import { requireOptionalNativeModule } from 'expo';
+import Minus from 'lucide-react-native/icons/minus';
+import Plus from 'lucide-react-native/icons/plus';
 import Animated, {
+  cubicBezier,
   Easing,
   FadeInDown,
   FadeOutDown,
@@ -23,7 +28,8 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 import Svg, { Circle } from 'react-native-svg';
-import { useTheme } from '../theme';
+import { t } from '../i18n';
+import { useHaptics, useTheme, type Palette, type ThemeMode } from '../theme';
 
 /** Strong ease-out for anything entering or responding (never ease-in on UI). */
 export const EASE_OUT = Easing.bezier(0.23, 1, 0.32, 1);
@@ -312,8 +318,194 @@ export function ToastHost({ bottom = 24 }: { bottom?: number }) {
   );
 }
 
+// ---- Form controls -----------------------------------------------------------------------------
+
+/** CSS-transition curve matching EASE_OUT (state changes use CSS transitions, not shared values). */
+const CSS_EASE_OUT = cubicBezier(0.23, 1, 0.32, 1);
+
+/**
+ * An inset track with a raised part on top (segment pill, stepper buttons). In dark mode a raised
+ * part must be lighter than its track, not darker, or it reads as pressed in.
+ */
+export const insetTones = (colors: Palette, mode: ThemeMode) =>
+  mode === 'light' ? { track: colors.surfaceAlt, raised: colors.surface } : { track: colors.background, raised: colors.surfaceAlt };
+
+/** A Switch whose thumb stays visible on dark surfaces (the platform default goes dark-on-dark). */
+export function Toggle({ value, onValueChange, label, disabled }: { value: boolean; onValueChange: (v: boolean) => void; label: string; disabled?: boolean }) {
+  const { colors, mode } = useTheme();
+  return (
+    <Switch
+      accessibilityLabel={label}
+      value={value}
+      disabled={disabled}
+      onValueChange={onValueChange}
+      trackColor={{ true: colors.primary, false: mode === 'light' ? colors.border : colors.surfaceAlt }}
+      thumbColor={value || mode === 'light' ? '#FFFFFF' : colors.textMuted}
+    />
+  );
+}
+
+/** Radio group with a pill that slides under the selected option (a CSS transition, so it never sticks). */
+export function Segmented<T extends string>({
+  options,
+  value,
+  onChange,
+}: {
+  options: { value: T; label: string }[];
+  value: T;
+  onChange: (v: T) => void;
+}) {
+  const { colors, radius, type, touchTarget, shadow, mode } = useTheme();
+  const reduced = useReducedMotion();
+  const { track, raised } = insetTones(colors, mode);
+  const [width, setWidth] = useState(0);
+  const index = Math.max(0, options.findIndex((o) => o.value === value));
+  const segment = width > 0 ? (width - 8) / options.length : 0;
+  // The first placement jumps; only later changes slide.
+  const placed = useRef(false);
+  useEffect(() => {
+    if (segment > 0) placed.current = true;
+  }, [segment]);
+  return (
+    <View
+      onLayout={(e) => setWidth(e.nativeEvent.layout.width)}
+      style={[styles.segmented, { backgroundColor: track, borderRadius: radius.md + 4 }]}
+      accessibilityRole="radiogroup"
+    >
+      <Animated.View
+        pointerEvents="none"
+        style={[
+          styles.indicator,
+          { width: segment, opacity: segment > 0 ? 1 : 0, borderRadius: radius.md, backgroundColor: raised },
+          shadow(1),
+          {
+            transform: [{ translateX: index * segment }],
+            transitionProperty: 'transform',
+            transitionDuration: placed.current && !reduced ? 220 : 0,
+            transitionTimingFunction: CSS_EASE_OUT,
+          },
+        ]}
+      />
+      {options.map((o) => {
+        const selected = o.value === value;
+        return (
+          <PressableScale
+            key={o.value}
+            accessibilityRole="radio"
+            accessibilityState={{ selected }}
+            accessibilityLabel={o.label}
+            onPress={() => onChange(o.value)}
+            scaleTo={0.96}
+            style={[styles.segment, { minHeight: touchTarget }]}
+          >
+            <Text style={[type.body, { color: selected ? colors.text : colors.textMuted, fontWeight: selected ? '700' : '500' }]} numberOfLines={1}>
+              {o.label}
+            </Text>
+          </PressableScale>
+        );
+      })}
+    </View>
+  );
+}
+
+export interface StepperProps {
+  value: number;
+  onChange: (v: number) => void;
+  min: number;
+  max: number;
+  /** A fixed step, or one that depends on the value and direction (e.g. 10 ml below 100, 50 above). */
+  step?: number | ((value: number, direction: 1 | -1) => number);
+  label: string;
+  format?: (v: number) => string;
+  decreaseLabel?: string;
+  increaseLabel?: string;
+  /** Makes the value tappable (e.g. to type an exact amount). */
+  onPressValue?: () => void;
+  valueHint?: string;
+}
+
+/** Snaps to the step grid, so 237 + 50 lands on 250 (not 287) and 250 − 50 on 200. */
+export function stepValue(value: number, size: number, direction: 1 | -1): number {
+  return direction > 0 ? Math.floor(value / size) * size + size : Math.ceil(value / size) * size - size;
+}
+
+/** −  value  + on an inset pill track; the raised buttons follow the dark-mode inset rule. */
+export function Stepper({ value, onChange, min, max, step = 1, label, format = String, decreaseLabel, increaseLabel, onPressValue, valueHint }: StepperProps) {
+  const { colors, radius, type, touchTarget, mode } = useTheme();
+  const haptics = useHaptics();
+  const { track, raised } = insetTones(colors, mode);
+  const move = (direction: 1 | -1) => {
+    const size = typeof step === 'number' ? step : step(value, direction);
+    void haptics.select();
+    onChange(Math.min(max, Math.max(min, stepValue(value, size, direction))));
+  };
+  const btn = { width: touchTarget, height: touchTarget, borderRadius: touchTarget / 2 };
+  const text = (
+    <Text style={[type.bodyLarge, styles.stepperValue, { color: colors.text }]} numberOfLines={1}>
+      {format(value)}
+    </Text>
+  );
+  return (
+    <View style={[styles.stepper, { borderRadius: radius.pill, backgroundColor: track }]}>
+      <PressableScale
+        accessibilityRole="button"
+        accessibilityLabel={decreaseLabel ?? t('shared.controls.decrease', { label })}
+        disabled={value <= min}
+        onPress={() => move(-1)}
+        scaleTo={0.88}
+        style={[styles.center, btn, { backgroundColor: raised, opacity: value <= min ? 0.35 : 1 }]}
+      >
+        <Minus size={20} color={colors.text} strokeWidth={2.5} />
+      </PressableScale>
+      {onPressValue ? (
+        <PressableScale
+          accessibilityRole="button"
+          accessibilityLabel={`${label} ${format(value)}`}
+          accessibilityHint={valueHint}
+          onPress={onPressValue}
+          scaleTo={0.96}
+          style={[styles.center, styles.grow, { minHeight: touchTarget }]}
+        >
+          {text}
+        </PressableScale>
+      ) : (
+        <View accessible accessibilityLabel={`${label} ${format(value)}`} style={[styles.center, styles.grow]}>
+          {text}
+        </View>
+      )}
+      <PressableScale
+        accessibilityRole="button"
+        accessibilityLabel={increaseLabel ?? t('shared.controls.increase', { label })}
+        disabled={value >= max}
+        onPress={() => move(1)}
+        scaleTo={0.88}
+        style={[styles.center, btn, { backgroundColor: raised, opacity: value >= max ? 0.35 : 1 }]}
+      >
+        <Plus size={20} color={colors.text} strokeWidth={2.5} />
+      </PressableScale>
+    </View>
+  );
+}
+
+// ---- System navigation bar ---------------------------------------------------------------------
+
+/** Present only in builds made after expo-navigation-bar was added; older dev builds lack it. */
+const NavigationBar =
+  requireOptionalNativeModule('ExpoNavigationBar') !== null ? (require('expo-navigation-bar') as typeof import('expo-navigation-bar')).NavigationBar : null;
+
+/** Light or dark system navigation buttons, following the in-app theme. */
+export function SystemNavBar({ dark }: { dark: boolean }) {
+  return NavigationBar ? <NavigationBar style={dark ? 'light' : 'dark'} /> : null;
+}
+
 const styles = StyleSheet.create({
   center: { alignItems: 'center', justifyContent: 'center' },
+  grow: { flexGrow: 1 },
+  segmented: { flexDirection: 'row', padding: 4 },
+  indicator: { position: 'absolute', top: 4, bottom: 4, left: 4 },
+  segment: { flex: 1, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 4 },
+  stepper: { flexDirection: 'row', alignItems: 'center', padding: 4, gap: 4 },
+  stepperValue: { fontWeight: '700', minWidth: 72, textAlign: 'center', paddingHorizontal: 8 },
   ringSvg: { transform: [{ rotate: '-90deg' }] },
   button: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8, paddingHorizontal: 24 },
   toastLayer: { justifyContent: 'flex-end' },

@@ -53,11 +53,29 @@ Motion-ready building blocks on Reanimated + react-native-svg (each app lists bo
 <Button label onPress variant="primary|secondary|ghost|danger" icon loading />
 <IconButton icon={LucideIcon} label onPress variant="plain|tonal|solid" />   // label is required
 showToast({ message, icon, tone, action }) and <ToastHost bottom={…} />      // mount the host once
+<Toggle label value onValueChange>                     // Switch with a visible thumb in dark mode
+<Segmented options value onChange>                     // sliding pill (CSS transition, never sticks)
+<Stepper label value min max step format onPressValue> // step may be (value, dir) => size; snaps to the grid
+<SystemNavBar dark>                                    // nav-bar button style; renders nothing in builds without expo-navigation-bar
+insetTones(colors, mode)           // track + raised colors; in dark mode the raised part is the lighter one
 EASE_OUT, EASE_IN_OUT              // the curves to use for UI timing
 ```
+`useHaptics()` (from `@shared/theme`) obeys `setHapticsEnabled(on)`; call it from the app's settings store so
+shared components (Stepper, TimeField wheels) follow the user's toggle.
 Icons are passed as components (`IconComponent`), so apps import Lucide one icon at a time:
 `import Flame from 'lucide-react-native/icons/flame'`. Lucide ships types for some renamed icons without a
 runtime file (e.g. `history`, use `rotate-ccw-clock`); habit-tracker's `icons.static.test.ts` guards this.
+
+### `@shared/time`
+```ts
+formatTime('20:30', '12h') → '8:30 PM'; formatHour, toHHMM, fromHHMM, deviceTimeFormat()   // pure, "HH:mm" stored 24-hour
+setTimeFormatPreference('12h' | '24h' | undefined)    // undefined = follow the phone's clock
+useTimeFormat() → { format, periods, time(hhmm), hour(h), at(date) }; currentTimeFormat(), formatClock(date)
+<TimeField label value="07:00" onChange minuteStep={5}>   // pill that opens hour/minute(/AM-PM) wheels
+```
+The 12/24-hour choice stays in each app's own settings (and backups); the app's settings store pushes it with
+`setTimeFormatPreference`. Stores import `@shared/time/preference`, which has no UI, so pure-logic tests never load
+Reanimated.
 
 ### `@shared/sound`
 `initSounds(preload?)`, `playSound('tap' | 'check' | 'undo' | 'complete' | 'celebrate')`, `setSoundsEnabled(on)`.

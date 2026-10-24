@@ -27,8 +27,7 @@ import { invalidateNotificationPlan } from '@/notifications/scheduler';
 import { extraColorsFor, habitColors } from '@/theme/tokens';
 import { readableOn } from '@/theme/contrast';
 import { Chip } from '@/ui/controls';
-import { TimeField } from '@/ui/TimePicker';
-import { useTimeFormat } from '@/store/timeFormat';
+import { TimeField, useTimeFormat } from '@shared/time';
 import { HabitIcon } from '@/ui/icons';
 
 /** Goal chips get line icons (the emoji in data/onboarding.ts are not rendered). */

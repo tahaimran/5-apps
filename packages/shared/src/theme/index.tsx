@@ -103,15 +103,26 @@ export function useTheme(): Theme {
   return theme;
 }
 
+let hapticsOn = true;
+
+/** Turns every `useHaptics()` call on or off (an app's Settings toggle), shared components included. */
+export function setHapticsEnabled(on: boolean): void {
+  hapticsOn = on;
+}
+
+/** Fires only while haptics are on; a missing vibrator or module never rejects. */
+const gated = (fire: () => Promise<void>) => (): Promise<void> =>
+  hapticsOn ? Promise.resolve().then(fire).catch(() => undefined) : Promise.resolve();
+
 export function useHaptics() {
   return useMemo(
     () => ({
-      tap: () => Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light),
-      press: () => Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium),
-      select: () => Haptics.selectionAsync(),
-      success: () => Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success),
-      warning: () => Haptics.notificationAsync(Haptics.NotificationFeedbackType.Warning),
-      error: () => Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error),
+      tap: gated(() => Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light)),
+      press: gated(() => Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium)),
+      select: gated(() => Haptics.selectionAsync()),
+      success: gated(() => Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success)),
+      warning: gated(() => Haptics.notificationAsync(Haptics.NotificationFeedbackType.Warning)),
+      error: gated(() => Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error)),
     }),
     [],
   );

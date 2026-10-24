@@ -1,4 +1,6 @@
 import { create } from 'zustand';
+import { setHapticsEnabled } from '@shared/theme';
+import { setTimeFormatPreference } from '@shared/time/preference';
 import { defaultSettings } from '@/domain/defaults';
 import type { Settings } from '@/domain/types';
 import { db } from './storage';
@@ -25,3 +27,11 @@ export const useSettings = create<SettingsState>((set, get) => ({
     set({ settings });
   },
 }));
+
+/** Shared pieces (the wheel TimeField, useHaptics) follow the clock style and haptics toggle chosen here. */
+const share = ({ timeFormat, haptics }: Settings) => {
+  setTimeFormatPreference(timeFormat);
+  setHapticsEnabled(haptics);
+};
+share(useSettings.getState().settings);
+useSettings.subscribe((s) => share(s.settings));

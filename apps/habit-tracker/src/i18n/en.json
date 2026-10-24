@@ -526,13 +526,5 @@
     "limit": "You've earned one today. Come back tomorrow.",
     "full": "You're holding the maximum of 2.",
     "atRisk": "Your {count}-day streak is at risk today."
-  },
-  "time": {
-    "hint": "Opens the time picker",
-    "hour": "Hour",
-    "minute": "Minute",
-    "period": "AM or PM",
-    "am": "AM",
-    "pm": "PM"
   }
 }

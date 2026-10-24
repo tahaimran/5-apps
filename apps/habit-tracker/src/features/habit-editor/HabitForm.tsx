@@ -16,7 +16,7 @@ import { readableOn } from '@/theme/contrast';
 import { habitColors } from '@/theme/tokens';
 import { HabitIcon } from '@/ui/icons';
 import { Chip, Field, PrimaryButton, Segmented, Stepper, TextField, Toggle } from '@/ui/controls';
-import { TimeField } from '@/ui/TimePicker';
+import { TimeField } from '@shared/time';
 
 export interface HabitFormProps {
   initial: HabitDraft;
