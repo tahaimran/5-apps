@@ -15,7 +15,8 @@ import { COUNT_MAX, NAME_MAX, TIMER_MAX_MINUTES, validateDraft, type HabitDraft 
 import { readableOn } from '@/theme/contrast';
 import { habitColors } from '@/theme/tokens';
 import { HabitIcon } from '@/ui/icons';
-import { Chip, Field, PrimaryButton, Segmented, Stepper, TextField, TimeStepper } from '@/ui/controls';
+import { Chip, Field, PrimaryButton, Segmented, Stepper, TextField, Toggle } from '@/ui/controls';
+import { TimeField } from '@/ui/TimePicker';
 
 export interface HabitFormProps {
   initial: HabitDraft;
@@ -258,15 +259,10 @@ export function HabitForm({ initial, today, submitLabel, onSubmit, header }: Hab
         <Field label={t('editor.reminder')}>
           <View style={[styles.row, { minHeight: touchTarget }]}>
             <Text style={[type.body, { color: colors.text, flex: 1 }]}>{t('editor.reminderToggle')}</Text>
-            <Switch
-              accessibilityLabel={t('editor.reminderToggle')}
-              value={draft.reminderTime !== null}
-              onValueChange={(on) => patch({ reminderTime: on ? lastReminder.current : null })}
-              trackColor={{ true: colors.primary, false: colors.border }}
-            />
+            <Toggle label={t('editor.reminderToggle')} value={draft.reminderTime !== null} onValueChange={(on) => patch({ reminderTime: on ? lastReminder.current : null })} />
           </View>
           {draft.reminderTime !== null && (
-            <TimeStepper value={draft.reminderTime} onChange={(reminderTime) => patch({ reminderTime })} label={t('editor.reminder')} />
+            <TimeField value={draft.reminderTime} onChange={(reminderTime) => patch({ reminderTime })} label={t('editor.reminder')} />
           )}
         </Field>
 

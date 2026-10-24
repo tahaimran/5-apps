@@ -55,6 +55,8 @@ export interface Settings {
   haptics: boolean;
   /** Short UI sounds on check-offs and celebrations. */
   sounds: boolean;
+  /** Clock style for every time shown; unset follows the phone. Times are always stored as HH:mm. */
+  timeFormat?: '12h' | '24h';
   dailySummary: { enabled: boolean; time: string };
   eveningNudge: { enabled: boolean; time: string };
 }

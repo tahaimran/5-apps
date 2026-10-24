@@ -1,12 +1,21 @@
-import { useEffect, useState, type ReactNode } from 'react';
-import { StyleSheet, Text, TextInput, View, type KeyboardTypeOptions } from 'react-native';
-import Animated, { useAnimatedStyle, useReducedMotion, useSharedValue, withTiming } from 'react-native-reanimated';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
+import { StyleSheet, Switch, Text, TextInput, View, type KeyboardTypeOptions } from 'react-native';
+import Animated, { cubicBezier, useReducedMotion } from 'react-native-reanimated';
 import Minus from 'lucide-react-native/icons/minus';
 import Plus from 'lucide-react-native/icons/plus';
 import { t } from '@shared/i18n';
-import { useTheme } from '@shared/theme';
-import { Button, EASE_OUT, PressableScale, type IconComponent } from '@shared/ui';
+import { useTheme, type Palette, type ThemeMode } from '@shared/theme';
+import { Button, PressableScale, type IconComponent } from '@shared/ui';
 import { HabitIcon } from './icons';
+
+const CSS_EASE_OUT = cubicBezier(0.23, 1, 0.32, 1);
+
+/**
+ * An inset track with a raised part on top (segment pill, stepper buttons). In dark mode a raised
+ * part must be lighter than its track, not darker, or it reads as pressed in.
+ */
+const insetTones = (colors: Palette, mode: ThemeMode) =>
+  mode === 'light' ? { track: colors.surfaceAlt, raised: colors.surface } : { track: colors.background, raised: colors.surfaceAlt };
 
 export function Field({ label, error, hint, children }: { label: string; error?: string; hint?: string; children: ReactNode }) {
   const { colors, spacing, type } = useTheme();
@@ -119,28 +128,37 @@ export function Segmented<T extends string>({
   value: T;
   onChange: (v: T) => void;
 }) {
-  const { colors, radius, type, touchTarget, shadow } = useTheme();
+  const { colors, radius, type, touchTarget, shadow, mode } = useTheme();
   const reduced = useReducedMotion();
+  const { track, raised } = insetTones(colors, mode);
   const [width, setWidth] = useState(0);
   const index = Math.max(0, options.findIndex((o) => o.value === value));
   const segment = width > 0 ? (width - 8) / options.length : 0;
-  const x = useSharedValue(index * segment);
+  // The first placement jumps; only later changes slide (a state change, so a CSS transition).
+  const placed = useRef(false);
   useEffect(() => {
-    x.set(reduced || segment === 0 ? index * segment : withTiming(index * segment, { duration: 220, easing: EASE_OUT }));
-  }, [index, segment, reduced, x]);
-  const pill = useAnimatedStyle(() => ({ transform: [{ translateX: x.get() }] }));
+    if (segment > 0) placed.current = true;
+  }, [segment]);
   return (
     <View
       onLayout={(e) => setWidth(e.nativeEvent.layout.width)}
-      style={[styles.segmented, { backgroundColor: colors.surfaceAlt, borderRadius: radius.md + 4 }]}
+      style={[styles.segmented, { backgroundColor: track, borderRadius: radius.md + 4 }]}
       accessibilityRole="radiogroup"
     >
-      {segment > 0 && (
-        <Animated.View
-          pointerEvents="none"
-          style={[styles.indicator, { width: segment, borderRadius: radius.md, backgroundColor: colors.surface }, shadow(1), pill]}
-        />
-      )}
+      <Animated.View
+        pointerEvents="none"
+        style={[
+          styles.indicator,
+          { width: segment, opacity: segment > 0 ? 1 : 0, borderRadius: radius.md, backgroundColor: raised },
+          shadow(1),
+          {
+            transform: [{ translateX: index * segment }],
+            transitionProperty: 'transform',
+            transitionDuration: placed.current && !reduced ? 220 : 0,
+            transitionTimingFunction: CSS_EASE_OUT,
+          },
+        ]}
+      />
       {options.map((o) => {
         const selected = o.value === value;
         return (
@@ -184,17 +202,18 @@ export function Stepper({
   decreaseLabel: string;
   increaseLabel: string;
 }) {
-  const { colors, radius, type, touchTarget } = useTheme();
+  const { colors, radius, type, touchTarget, mode } = useTheme();
+  const { track, raised } = insetTones(colors, mode);
   const btn = { width: touchTarget, height: touchTarget, borderRadius: touchTarget / 2, alignItems: 'center' as const, justifyContent: 'center' as const };
   return (
-    <View style={[styles.stepper, { borderRadius: radius.pill, backgroundColor: colors.surfaceAlt }]}>
+    <View style={[styles.stepper, { borderRadius: radius.pill, backgroundColor: track }]}>
       <PressableScale
         accessibilityRole="button"
         accessibilityLabel={decreaseLabel}
         disabled={value <= min}
         onPress={() => onChange(Math.max(min, value - step))}
         scaleTo={0.88}
-        style={[btn, { backgroundColor: colors.surface, opacity: value <= min ? 0.35 : 1 }]}
+        style={[btn, { backgroundColor: raised, opacity: value <= min ? 0.35 : 1 }]}
       >
         <Minus size={20} color={colors.text} strokeWidth={2.5} />
       </PressableScale>
@@ -210,7 +229,7 @@ export function Stepper({
         disabled={value >= max}
         onPress={() => onChange(Math.min(max, value + step))}
         scaleTo={0.88}
-        style={[btn, { backgroundColor: colors.surface, opacity: value >= max ? 0.35 : 1 }]}
+        style={[btn, { backgroundColor: raised, opacity: value >= max ? 0.35 : 1 }]}
       >
         <Plus size={20} color={colors.text} strokeWidth={2.5} />
       </PressableScale>
@@ -234,35 +253,16 @@ const styles = StyleSheet.create({
   stepper: { flexDirection: 'row', alignItems: 'center', alignSelf: 'flex-start', padding: 4, gap: 4 },
 });
 
-/** Hour and minute (15-minute steps) as "HH:mm". */
-export function TimeStepper({ value, onChange, label }: { value: string; onChange: (hhmm: string) => void; label: string }) {
-  const { colors, type } = useTheme();
-  const [hour, minute] = value.split(':').map(Number);
-  const pad = (n: number) => String(n).padStart(2, '0');
+/** A Switch whose thumb stays visible on dark surfaces (the platform default goes dark-on-dark). */
+export function Toggle({ value, onValueChange, label }: { value: boolean; onValueChange: (v: boolean) => void; label: string }) {
+  const { colors, mode } = useTheme();
   return (
-    <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8, flexWrap: 'wrap' }} accessibilityLabel={`${label} ${value}`}>
-      <Stepper
-        value={hour}
-        min={0}
-        max={23}
-        label={label}
-        format={pad}
-        onChange={(h) => onChange(`${pad(h)}:${pad(minute)}`)}
-        decreaseLabel={t('editor.earlier')}
-        increaseLabel={t('editor.later')}
-      />
-      <Text style={[type.title, { color: colors.textMuted }]}>:</Text>
-      <Stepper
-        value={minute}
-        min={0}
-        max={45}
-        step={15}
-        label={label}
-        format={pad}
-        onChange={(m) => onChange(`${pad(hour)}:${pad(m)}`)}
-        decreaseLabel={t('editor.earlier')}
-        increaseLabel={t('editor.later')}
-      />
-    </View>
+    <Switch
+      accessibilityLabel={label}
+      value={value}
+      onValueChange={onValueChange}
+      trackColor={{ true: colors.primary, false: mode === 'light' ? colors.border : colors.surfaceAlt }}
+      thumbColor={value || mode === 'light' ? '#FFFFFF' : colors.textMuted}
+    />
   );
 }

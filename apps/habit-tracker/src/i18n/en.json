@@ -122,7 +122,10 @@
     },
     "sounds": "Sounds",
     "soundsHint": "Soft sounds when you check things off",
-    "hapticsHint": "Gentle vibrations on taps"
+    "hapticsHint": "Gentle vibrations on taps",
+    "timeFormat": "Time format",
+    "time12": "12-hour",
+    "time24": "24-hour"
   },
   "templates": {
     "drink-water": {
@@ -274,7 +277,8 @@
     "discard": "Discard",
     "keepEditing": "Keep editing",
     "close": "Close",
-    "back": "Back"
+    "back": "Back",
+    "done": "Done"
   },
   "editor": {
     "titleNew": "New habit",
@@ -519,5 +523,13 @@
     "limit": "You've earned one today. Come back tomorrow.",
     "full": "You're holding the maximum of 2.",
     "atRisk": "Your {count}-day streak is at risk today."
+  },
+  "time": {
+    "hint": "Opens the time picker",
+    "hour": "Hour",
+    "minute": "Minute",
+    "period": "AM or PM",
+    "am": "AM",
+    "pm": "PM"
   }
 }

@@ -26,7 +26,9 @@ import { templateById } from '@/data/templates';
 import { invalidateNotificationPlan } from '@/notifications/scheduler';
 import { extraColorsFor, habitColors } from '@/theme/tokens';
 import { readableOn } from '@/theme/contrast';
-import { Chip, TimeStepper } from '@/ui/controls';
+import { Chip } from '@/ui/controls';
+import { TimeField } from '@/ui/TimePicker';
+import { useTimeFormat } from '@/store/timeFormat';
 import { HabitIcon } from '@/ui/icons';
 
 /** Goal chips get line icons (the emoji in data/onboarding.ts are not rendered). */
@@ -152,6 +154,7 @@ function StartersStep({ ctx }: { ctx: StepContext }) {
 
 function ReminderStep({ ctx }: { ctx: StepContext }) {
   const { colors, spacing, type } = useTheme();
+  const clock = useTimeFormat();
   const answer = (ctx.value as ReminderAnswer | undefined) ?? { mode: 'suggested' };
   const custom = answer.mode === 'custom';
   return (
@@ -161,14 +164,14 @@ function ReminderStep({ ctx }: { ctx: StepContext }) {
           <Chip
             key={p.key}
             icon={p.icon}
-            label={`${t(`onboarding.${p.key}`)} ${p.time}`}
+            label={`${t(`onboarding.${p.key}`)} ${clock.time(p.time)}`}
             selected={answer.mode === 'preset' && answer.time === p.time}
             onPress={() => ctx.setValue({ mode: 'preset', time: p.time })}
           />
         ))}
         <Chip label={t('onboarding.custom')} selected={custom} onPress={() => ctx.setValue({ mode: 'custom', time: custom ? answer.time : '19:00' })} />
       </View>
-      {custom && <TimeStepper value={answer.time} label={t('onboarding.custom')} onChange={(time) => ctx.setValue({ mode: 'custom', time })} />}
+      {custom && <TimeField value={answer.time} label={t('onboarding.custom')} onChange={(time) => ctx.setValue({ mode: 'custom', time })} />}
       {answer.mode === 'suggested' && <Text style={[type.body, { color: colors.textMuted }]}>{t('onboarding.reminderDefault')}</Text>}
     </View>
   );
@@ -176,12 +179,13 @@ function ReminderStep({ ctx }: { ctx: StepContext }) {
 
 function PermissionStep({ ctx }: { ctx: StepContext }) {
   const { colors, radius, spacing, type, shadow } = useTheme();
+  const clock = useTimeFormat();
   return (
     <View style={[styles.card, { backgroundColor: colors.surface, borderRadius: radius.xl, padding: spacing.xl, gap: spacing.lg }, shadow(2)]}>
       <View style={[styles.bell, { backgroundColor: colors.primarySoft }]}>
         <BellRing size={30} color={colors.primary} strokeWidth={2.25} />
       </View>
-      <Text style={[type.bodyLarge, { color: colors.text }]}>{t('onboarding.permissionBody', { time: reminderTimeFor(ctx.answers) })}</Text>
+      <Text style={[type.bodyLarge, { color: colors.text }]}>{t('onboarding.permissionBody', { time: clock.time(reminderTimeFor(ctx.answers)) })}</Text>
     </View>
   );
 }

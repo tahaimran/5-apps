@@ -16,6 +16,7 @@ import { scheduleLabel } from '@/ui/format';
 import { habitColors } from '@/theme/tokens';
 import { readableOn } from '@/theme/contrast';
 import { HabitIcon } from '@/ui/icons';
+import { useTimeFormat } from '@/store/timeFormat';
 
 const targetLabel = (tpl: Template) =>
   tpl.type === 'count'
@@ -32,6 +33,7 @@ export default function Templates() {
   const addHabit = useHabits((s) => s.addHabit);
   const [query, setQuery] = useState('');
   const [preview, setPreview] = useState<Template | null>(null);
+  const clock = useTimeFormat();
 
   const sections = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -103,7 +105,7 @@ export default function Templates() {
             </View>
             <Text accessibilityRole="header" style={[type.headline, { color: colors.text, fontWeight: '800' }]}>{t(`templates.${preview.id}.name`)}</Text>
             <Text style={[type.body, { color: colors.textMuted }]}>{summary(preview)}</Text>
-            <Text style={[type.body, { color: colors.textMuted }]}>{t('templatesScreen.reminderAt', { time: preview.reminder })}</Text>
+            <Text style={[type.body, { color: colors.textMuted }]}>{t('templatesScreen.reminderAt', { time: clock.time(preview.reminder) })}</Text>
             <PrimaryButton label={t('templatesScreen.addHabit')} onPress={() => add(preview)} />
             <TextButton
               label={t('templatesScreen.editFirst')}

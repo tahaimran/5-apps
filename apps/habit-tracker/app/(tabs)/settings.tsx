@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState, type ReactNode } from 'react';
-import { Alert, AppState, Linking, Pressable, StyleSheet, Switch, Text, View } from 'react-native';
+import { Alert, AppState, Linking, Pressable, StyleSheet, Text, View } from 'react-native';
 import { router } from 'expo-router';
 import Constants from 'expo-constants';
 import Archive from 'lucide-react-native/icons/archive';
@@ -28,7 +28,9 @@ import { useFreezeReward } from '@/features/freeze/useFreezeReward';
 import { invalidateNotificationPlan, rescheduleNotifications } from '@/notifications/scheduler';
 import { extraColorsFor } from '@/theme/tokens';
 import { WIDGET_NAME } from '@/widget/render';
-import { Field, Segmented, Stepper, TimeStepper } from '@/ui/controls';
+import { Field, Segmented, Stepper, Toggle } from '@/ui/controls';
+import { TimeField } from '@/ui/TimePicker';
+import { useTimeFormat } from '@/store/timeFormat';
 
 type Choice = 'system' | 'light' | 'dark';
 
@@ -38,6 +40,7 @@ export default function Settings() {
   const [permission, setPermission] = useState<PermissionState | null>(null);
   const [privacyRequired, setPrivacyRequired] = useState(false);
   const freeze = useFreezeReward();
+  const clock = useTimeFormat();
   const frozen = extraColorsFor(mode).frozen;
 
   useEffect(() => {
@@ -112,13 +115,7 @@ export default function Settings() {
         <Text style={[type.bodyLarge, { color: colors.text }]}>{label}</Text>
         {hint ? <Text style={[type.caption, { color: colors.textMuted }]}>{hint}</Text> : null}
       </View>
-      <Switch
-        accessibilityLabel={label}
-        value={value}
-        onValueChange={onChange}
-        trackColor={{ true: colors.primary, false: colors.border }}
-        thumbColor={colors.surface}
-      />
+      <Toggle label={label} value={value} onValueChange={onChange} />
     </View>
   );
 
@@ -146,6 +143,21 @@ export default function Settings() {
       )}
 
       {section(
+        t('settings.timeFormat'),
+        padded(
+          // Starts on the phone's own clock style; picking one pins it for every time in the app.
+          <Segmented<'12h' | '24h'>
+            value={clock.format}
+            onChange={(timeFormat) => update({ timeFormat })}
+            options={[
+              { value: '12h', label: t('settings.time12') },
+              { value: '24h', label: t('settings.time24') },
+            ]}
+          />,
+        ),
+      )}
+
+      {section(
         t('settings.sections.week'),
         padded(
           <>
@@ -165,7 +177,7 @@ export default function Settings() {
                 min={0}
                 max={4}
                 label={t('settings.dayEndsAt')}
-                format={(h) => t('settings.hour', { hour: String(h).padStart(2, '0') })}
+                format={clock.hour}
                 onChange={(h) => update({ dayEndsAtHour: h as 0 | 1 | 2 | 3 | 4 })}
                 decreaseLabel={t('editor.earlier')}
                 increaseLabel={t('editor.later')}
@@ -200,7 +212,7 @@ export default function Settings() {
             )}
             {settings.dailySummary.enabled && (
               <View style={{ paddingHorizontal: spacing.lg, paddingBottom: spacing.md, paddingLeft: 64 }}>
-                <TimeStepper value={settings.dailySummary.time} label={t('settings.dailySummary')} onChange={(time) => update({ dailySummary: { ...settings.dailySummary, time } })} />
+                <TimeField value={settings.dailySummary.time} label={t('settings.dailySummary')} onChange={(time) => update({ dailySummary: { ...settings.dailySummary, time } })} />
               </View>
             )}
             {divider}
@@ -209,7 +221,7 @@ export default function Settings() {
             )}
             {settings.eveningNudge.enabled && (
               <View style={{ paddingHorizontal: spacing.lg, paddingBottom: spacing.md, paddingLeft: 64 }}>
-                <TimeStepper value={settings.eveningNudge.time} label={t('settings.eveningNudge')} onChange={(time) => update({ eveningNudge: { ...settings.eveningNudge, time } })} />
+                <TimeField value={settings.eveningNudge.time} label={t('settings.eveningNudge')} onChange={(time) => update({ eveningNudge: { ...settings.eveningNudge, time } })} />
               </View>
             )}
           </>

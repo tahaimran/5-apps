@@ -45,6 +45,7 @@ export function reanimatedMock() {
     interpolate: (v: number) => v,
     Easing: { out: passthrough, in: passthrough, inOut: passthrough, quad: passthrough, bezier: () => passthrough, linear: passthrough },
     ReduceMotion: { System: 'system', Always: 'always', Never: 'never' },
+    cubicBezier: () => 'ease-out',
     FadeIn: builder,
     FadeOut: builder,
     FadeInDown: builder,
