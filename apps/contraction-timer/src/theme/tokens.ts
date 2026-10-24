@@ -210,7 +210,8 @@ export const appColors: Record<ThemeMode, AppColors> = {
     onHero: '#FF4A3A',
     heroMuted: '#E04A39',
     heroTrack: '#3D0A05',
-    heroRing: '#FF4A3A',
+    // Dimmer than the text red: the dial's arc runs all the way round a big circle at 3am.
+    heroRing: '#D2321F',
     frost: withAlpha('#FF4A3A', FROST_ALPHA.night),
     scrim: '#000000B3',
     sheen: withAlpha('#FF4A3A', 0.08),
