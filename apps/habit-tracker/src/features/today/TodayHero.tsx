@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import Flame from 'lucide-react-native/icons/flame';
+import PartyPopper from 'lucide-react-native/icons/party-popper';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
 import { ProgressRing } from '@shared/ui';
@@ -33,6 +34,7 @@ export function TodayHero({ done, total, streak, past }: TodayHeroProps) {
   const extra = extraColorsFor(mode);
   const pct = total === 0 ? 0 : Math.round((done / total) * 100);
   const headline = t(headlineKey(done, total, past));
+  const perfect = total > 0 && done === total;
   return (
     <View
       accessible
@@ -41,7 +43,7 @@ export function TodayHero({ done, total, streak, past }: TodayHeroProps) {
       style={[{ borderRadius: radius.xl }, shadow(3)]}
     >
       <LinearGradient
-        colors={extra.hero}
+        colors={perfect ? extra.heroDone : extra.hero}
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 1 }}
         style={[styles.card, { borderRadius: radius.xl, padding: spacing.xl, gap: spacing.lg }]}
@@ -58,14 +60,18 @@ export function TodayHero({ done, total, streak, past }: TodayHeroProps) {
           )}
         </View>
         <ProgressRing size={RING} strokeWidth={10} progress={total === 0 ? 0 : done / total} color="#FFFFFF" trackColor="#FFFFFF33">
-          <Text style={[styles.white, styles.pct, { fontFamily: fonts.display }]}>
-            {pct}
-            <Text style={styles.pctSign}>%</Text>
-          </Text>
+          {perfect ? (
+            <PartyPopper size={40} color="#FFFFFF" strokeWidth={2} />
+          ) : (
+            <Text style={[styles.white, styles.pct, { fontFamily: fonts.display }]}>
+              {pct}
+              <Text style={styles.pctSign}>%</Text>
+            </Text>
+          )}
         </ProgressRing>
       </LinearGradient>
       {/* Keeps the hero legible if the gradient ever fails to draw. */}
-      <View style={[StyleSheet.absoluteFill, { borderRadius: radius.xl, backgroundColor: colors.primary, zIndex: -1 }]} />
+      <View style={[StyleSheet.absoluteFill, { borderRadius: radius.xl, backgroundColor: perfect ? extra.heroDone[1] : colors.primary, zIndex: -1 }]} />
     </View>
   );
 }

@@ -43,3 +43,9 @@ describe.each(['light', 'dark'] as const)('%s palette meets WCAG AA for text', (
     expect(contrastRatio(c.text, blend(extraColors[mode].warning, c.background, 0.15))).toBeGreaterThanOrEqual(AA);
   });
 });
+
+describe.each(['light', 'dark'] as const)('%s hero gradients carry white text', (mode) => {
+  it.each(['hero', 'heroDone'] as const)('%s stops reach 4.5:1 with white', (key) => {
+    for (const stop of extraColors[mode][key]) expect(contrastRatio('#FFFFFF', stop)).toBeGreaterThanOrEqual(AA);
+  });
+});

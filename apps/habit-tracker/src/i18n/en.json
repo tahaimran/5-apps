@@ -61,7 +61,8 @@
       "ofTarget": "/ {target} {unit}",
       "edit": "Enter amount",
       "hint": "Long press to type an exact amount"
-    }
+    },
+    "unchecked": "{name} unchecked"
   },
   "stats": {
     "empty": "Stats appear after your first check-in.",
@@ -278,7 +279,8 @@
     "keepEditing": "Keep editing",
     "close": "Close",
     "back": "Back",
-    "done": "Done"
+    "done": "Done",
+    "undo": "Undo"
   },
   "editor": {
     "titleNew": "New habit",

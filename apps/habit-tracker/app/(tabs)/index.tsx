@@ -10,10 +10,11 @@ import Plus from 'lucide-react-native/icons/plus';
 import Snowflake from 'lucide-react-native/icons/snowflake';
 import Sparkles from 'lucide-react-native/icons/sparkles';
 import Sun from 'lucide-react-native/icons/sun';
+import Undo2 from 'lucide-react-native/icons/undo-2';
 import { AdBanner } from '@shared/ads';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
-import { Button, Card, IconButton, PressableScale } from '@shared/ui';
+import { Button, Card, IconButton, PressableScale, showToast } from '@shared/ui';
 import { templateById } from '@/data/templates';
 import { CelebrationHost } from '@/features/celebrations/CelebrationHost';
 import { useCelebrations } from '@/features/celebrations/useCelebrations';
@@ -138,10 +139,19 @@ export default function Today() {
 
   const toggle = useCallback(
     (habit: Habit) => {
+      const before = entries[habit.id]?.[selected]?.value ?? 0;
       const complete = isComplete(habit, entries[habit.id]?.[selected]);
-      setValue(habit.id, selected, complete ? 0 : habit.type === 'count' ? habit.target : habit.type === 'timer' ? habit.target * 60 : 1);
-      if (complete) feedback.undo();
-      else feedback.done();
+      const day = selected;
+      setValue(habit.id, day, complete ? 0 : habit.type === 'count' ? habit.target : habit.type === 'timer' ? habit.target * 60 : 1);
+      if (complete) {
+        feedback.undo();
+        // A mis-tap on a done habit is easy to make and annoying to redo (it may hold a count or time).
+        showToast({
+          message: t('today.unchecked', { name: habit.name }),
+          icon: Undo2,
+          action: { label: t('common.undo'), onPress: () => setValue(habit.id, day, before) },
+        });
+      } else feedback.done();
     },
     [entries, selected, setValue, feedback],
   );

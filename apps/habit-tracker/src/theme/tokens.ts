@@ -48,6 +48,8 @@ export const extraColors = {
     heat: ['#ECEAF2', '#D3CAFE', '#A996FB', '#7E62F6', '#5B3DF5'],
     /** Today's hero card. */
     hero: ['#6E50FF', '#4524DA'] as const,
+    /** The hero on a perfect day; dark enough for white text (4.5:1+). */
+    heroDone: ['#0A8452', '#06663F'] as const,
     /** The streak flame chip. */
     ember: ['#FF9A3D', '#F2620F'] as const,
   },
@@ -56,6 +58,7 @@ export const extraColors = {
     frozen: '#5BB6E8',
     heat: ['#24202F', '#3B2F7A', '#5640B8', '#7059EE', '#9C88FF'],
     hero: ['#5B3DF5', '#341BA8'] as const,
+    heroDone: ['#0A8452', '#055A37'] as const,
     ember: ['#FF9A3D', '#E8580A'] as const,
   },
 } as const;
