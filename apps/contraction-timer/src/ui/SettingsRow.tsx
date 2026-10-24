@@ -76,7 +76,7 @@ export function NavRow({
   return (
     <PressableScale accessibilityRole="button" accessibilityLabel={spoken} accessibilityHint={accessibilityHint} onPress={onPress} scaleTo={0.98} style={rowStyle(touchTarget, spacing)}>
       <IconCircle icon={icon} tint={danger ? colors.danger : tint} bg={danger ? colors.surfaceAlt : bg} />
-      <View style={styles.flex}>
+      <View style={styles.label}>
         <AppText style={[type.bodyLarge, { color: danger ? colors.danger : colors.text, fontWeight: '600' }]}>{label}</AppText>
         {detail ? <AppText style={[type.body, { color: colors.textMuted }]}>{detail}</AppText> : null}
       </View>
@@ -175,7 +175,9 @@ const styles = StyleSheet.create({
   flex: { flex: 1 },
   circle: { alignItems: 'center', justifyContent: 'center' },
   row: { flexDirection: 'row', alignItems: 'center' },
-  value: { flexShrink: 1, textAlign: 'right' },
+  // The label keeps at least half the row; a long value wraps within the rest instead of squeezing it.
+  label: { flex: 1, minWidth: '50%' },
+  value: { flexShrink: 1, maxWidth: '45%', textAlign: 'right' },
   divider: { height: StyleSheet.hairlineWidth },
   tile: { flexGrow: 1, flexBasis: 96, minHeight: 56 },
 });

@@ -39,7 +39,7 @@ export default function Settings() {
   const [sheet, setSheet] = useState(false);
   const clock24h = useClock24h();
   const reminder = settings.kickReminder;
-  const reminderState = reminder.enabled ? t('kicks.reminderOn', { time: timeOfDay(reminder.hour, reminder.minute, clock24h) }) : t('kicks.reminderOff');
+  const reminderState = reminder.enabled ? timeOfDay(reminder.hour, reminder.minute, clock24h) : t('common.off');
   const phoneClock = t(deviceTimeFormat() === '24h' ? 'settings.clock24' : 'settings.clock12');
 
   return (

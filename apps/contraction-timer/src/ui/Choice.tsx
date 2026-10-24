@@ -13,7 +13,7 @@ export interface ChoiceOption<T extends string> {
 }
 
 /** Past this phone font scale a row of segments would squeeze its labels, so the choices stack instead. */
-export const SEGMENTED_MAX_FONT_SCALE = 1.15;
+export const SEGMENTED_MAX_FONT_SCALE = 1.05;
 
 /**
  * One choice out of a few (theme, clock, units): the shared sliding Segmented control at normal text

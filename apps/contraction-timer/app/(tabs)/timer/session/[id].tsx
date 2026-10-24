@@ -37,14 +37,23 @@ export default function SessionDetail() {
   const isOpen = useSessions((s) => s.active?.id === id);
   const [target, setTarget] = useState<EditorTarget | null>(null);
 
-  // A deleted row can be put back for 5 seconds (plan F7), from a toast with an Undo action.
-  const offerUndo = (before: ContractionSession) =>
+  // A deleted row can be put back for 5 seconds (plan F7), from a toast with an Undo action. The toast
+  // outlives this screen, so Undo only restores while the session is exactly as the delete left it: a
+  // contraction started (or any edit made) since then is never overwritten by the old copy.
+  const offerUndo = (before: ContractionSession) => {
+    const after = useSessions.getState().get(before.id);
     showToast({
       message: t('session.deleted'),
       icon: Trash,
       duration: UNDO_DELETE_MS,
-      action: { label: t('session.undo'), onPress: () => useSessions.getState().restoreSession(before) },
+      action: {
+        label: t('session.undo'),
+        onPress: () => {
+          if (useSessions.getState().get(before.id) === after) useSessions.getState().restoreSession(before);
+        },
+      },
     });
+  };
 
   if (!session) {
     return (

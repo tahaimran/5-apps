@@ -7,7 +7,8 @@
     "timer": "Timer",
     "kicks": "Kicks",
     "pregnancy": "My Pregnancy",
-    "more": "More"
+    "more": "More",
+    "pregnancyShort": "Pregnancy"
   },
   "common": {
     "close": "Close",
@@ -319,8 +320,6 @@
     "titleAdd": "Add a missed contraction",
     "start": "Start time",
     "length": "Length",
-    "lengthLess5": "5 seconds shorter",
-    "lengthMore5": "5 seconds longer",
     "noteLabel": "Note",
     "notePlaceholder": "A note for yourself or your provider",
     "ignore": "Leave out of the numbers",
@@ -337,7 +336,9 @@
       "overlaps": "That overlaps another contraction. Move it so they do not overlap.",
       "not-found": "That contraction is not there any more.",
       "open": "A contraction that is still being timed cannot be edited."
-    }
+    },
+    "lengthLess": "Make it shorter",
+    "lengthMore": "Make it longer"
   },
   "share": {
     "title": "Share summary",

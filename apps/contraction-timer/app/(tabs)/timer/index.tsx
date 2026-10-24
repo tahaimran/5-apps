@@ -155,7 +155,7 @@ function TimerContent() {
   const elapsed = open ? elapsedOf(open, now) : 0;
   const status = !active ? t(partner ? 'timer.partnerIdleStatus' : 'timer.idleStatus') : open ? t('timer.contracting') : t('timer.resting', { time: mmss(now - last) });
   const running = mmss(elapsed);
-  const want = DIGITS.size * (partner ? 1.4 : 1);
+  const want = DIGITS.size * (partner ? partnerFactor(fontScale) : 1);
   const size = digitsSize(running, want, width, fontScale);
 
   return (
@@ -167,7 +167,7 @@ function TimerContent() {
       ) : null}
 
       {/* The running time. Its space is kept while resting so the button does not jump. */}
-      <View style={[styles.center, { minHeight: Math.round(DIGITS.line * (partner ? 1.4 : 1) * Math.min(fontScale, 1.3)) }]}>
+      <View style={[styles.center, { minHeight: Math.round(size * 1.12) * fontScale }]}>
         {showCoach ? (
           <PressableScale
             accessibilityRole="button"

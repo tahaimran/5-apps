@@ -20,7 +20,7 @@ import { Sheet } from '@/ui/Sheet';
 
 const LEVELS: Intensity[] = ['mild', 'moderate', 'strong'];
 /** Length limits in the editor, in seconds (the store refuses anything over 30 minutes with its own reason). */
-const LENGTH = { min: 5, max: 30 * 60, step: 5 } as const;
+const LENGTH = { min: 5, max: 30 * 60, step: 5, coarse: 30, coarseFrom: 120 } as const;
 
 export type EditorTarget = { mode: 'edit'; contraction: Contraction } | { mode: 'add'; startedAt: number };
 
@@ -60,7 +60,7 @@ export function RowEditor({
   const [start, setStart] = useState(0);
   // Kept in ms so saving without touching the length keeps it exactly as timed.
   const [lengthMs, setLengthMs] = useState(60 * SECOND);
-  const lengthSec = Math.round(lengthMs / SECOND);
+  const lengthSec = Math.floor(lengthMs / SECOND);
   const [note, setNote] = useState('');
   const [error, setError] = useState<string | null>(null);
   const edit = target?.mode === 'edit' ? target.contraction : null;
@@ -110,10 +110,10 @@ export function RowEditor({
           value={lengthSec}
           min={LENGTH.min}
           max={LENGTH.max}
-          step={LENGTH.step}
+          step={(sec, dir) => (sec > LENGTH.coarseFrom || (sec === LENGTH.coarseFrom && dir > 0) ? LENGTH.coarse : LENGTH.step)}
           format={(sec) => mmss(sec * SECOND)}
-          decreaseLabel={t('edit.lengthLess5')}
-          increaseLabel={t('edit.lengthMore5')}
+          decreaseLabel={t('edit.lengthLess')}
+          increaseLabel={t('edit.lengthMore')}
           onChange={(sec) => setLengthMs(sec * SECOND)}
         />
       </RowBlock>

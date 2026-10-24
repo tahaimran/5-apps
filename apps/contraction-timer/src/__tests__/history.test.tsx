@@ -106,7 +106,7 @@ describe('Session detail (plan §5.2)', () => {
     expect(ui.texts()).toContain('Edit contraction');
     // The start is picked on the shared clock wheels; the length on the shared stepper.
     await shiftTime(ui.root, 'Start time', -1);
-    await ui.press('5 seconds longer');
+    await ui.press('Make it longer');
     await ui.type('Note', 'waters not broken');
     await ui.press('Save');
     const saved = useSessions.getState().archived.s1.contractions.find((c) => c.id === first.id)!;
@@ -137,6 +137,41 @@ describe('Session detail (plan §5.2)', () => {
     expect(ui.texts()).toContain('Contraction deleted');
     await ui.press('Undo');
     expect(useSessions.getState().archived.s1.contractions).toHaveLength(4);
+  });
+
+  it('never lets Undo overwrite a contraction started after the delete (the toast outlives the screen)', async () => {
+    // An open session with three timed contractions.
+    for (let i = 0; i < 3; i++) {
+      useSessions.getState().tap(NOW - (30 - i * 5) * MINUTE);
+      useSessions.getState().tap(NOW - (30 - i * 5) * MINUTE + 60 * SECOND);
+    }
+    const id = useSessions.getState().active!.id;
+    mockParams.current = { id };
+    const ui = await render(wrap(<Detail />));
+    await act(async () => pressables(ui, (l) => /length/.test(l))[0].props.onPress());
+    await ui.press('Delete this contraction');
+    expect(useSessions.getState().active!.contractions).toHaveLength(2);
+    // Off to the Timer: a new contraction starts while the toast is still up.
+    await act(async () => void useSessions.getState().tap(NOW));
+    await ui.press('Undo');
+    const active = useSessions.getState().active!;
+    expect(active.contractions).toHaveLength(3);
+    expect(active.contractions.some((c) => c.startedAt === NOW && c.endedAt === null)).toBe(true);
+  });
+
+  it('steps a length by 5 seconds up to 2 minutes and by 30 seconds above', async () => {
+    file('s1', 60 * MINUTE);
+    mockParams.current = { id: 's1' };
+    const ui = await render(wrap(<Detail />));
+    await act(async () => pressables(ui, (l) => /length/.test(l))[0].props.onPress());
+    await ui.press('Make it longer'); // 1:00 → 1:05
+    expect(ui.byLabel('Length 1:05')).toHaveLength(1);
+    for (let i = 0; i < 11; i++) await ui.press('Make it longer'); // → 2:00
+    await ui.press('Make it longer'); // above 2 minutes the step is 30 s
+    expect(ui.byLabel('Length 2:30')).toHaveLength(1);
+    await ui.press('Make it shorter');
+    await ui.press('Make it shorter');
+    expect(ui.byLabel('Length 1:55')).toHaveLength(1);
   });
 
   it('lets the undo expire after 5 seconds', async () => {

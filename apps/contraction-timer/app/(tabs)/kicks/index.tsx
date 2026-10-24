@@ -76,6 +76,8 @@ export default function Kicks() {
   const ring = disc + 28;
   const count = active?.taps.length ?? 0;
   const digits = countSize(disc, String(count).length, fontScale);
+  // "Start counting" on two lines inside the disc: the title size, shrunk only as far as the font scale needs.
+  const startSize = Math.max(14, Math.min(type.title.fontSize, Math.floor((disc * 0.62) / (8 * 0.6 * fontScale))));
 
   return (
     <Screen scrollEnabled={!touching} title={t('kicks.title')} titleAccessory={<IconButton icon={RotateCcwClock} variant="tonal" label={t('kicks.history')} onPress={() => router.push('/kicks/history')} />}>
@@ -95,7 +97,7 @@ export default function Kicks() {
               style={[styles.disc, { width: disc, height: disc, borderRadius: disc / 2, backgroundColor: app.kickDisc, padding: spacing.lg, gap: spacing.sm }, shadow(2)]}
             >
               <Footprints size={40} color={app.onKickDisc} strokeWidth={2.25} />
-              <AppText style={[type.title, { color: app.onKickDisc, textAlign: 'center', fontFamily: fonts.display, fontWeight: '800' }]}>{t('kicks.start')}</AppText>
+              <AppText style={{ fontSize: startSize, lineHeight: Math.round(startSize * 1.2), color: app.onKickDisc, textAlign: 'center', fontFamily: fonts.display, fontWeight: '800' }}>{t('kicks.start')}</AppText>
             </PressableScale>
           ) : (
             <View style={[styles.center, { width: ring, height: ring }]}>

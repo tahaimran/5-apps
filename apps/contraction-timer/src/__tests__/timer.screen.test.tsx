@@ -17,7 +17,7 @@ import { resetDisclaimerSheetForTests } from '../../app/(tabs)/timer/index';
 import TabsLayout from '../../app/(tabs)/_layout';
 import { toggleNight, getThemePref } from '@/theme/mode';
 import { useProfile } from '@/store/profile';
-import { FONT_SCALE, palette, TOUCH_TARGET, themeProps } from '@/theme/tokens';
+import { FONT_SCALE, palette, partnerFactor, TOUCH_TARGET, themeProps } from '@/theme/tokens';
 import { digitsSize } from '../../app/(tabs)/timer/index';
 import TimerScreen from '../../app/(tabs)/timer/index';
 
@@ -329,14 +329,16 @@ describe('Partner mode (plan §4, §7, F15)', () => {
     expect(ui.texts()).not.toContain('Last contraction');
   });
 
-  it('scales the Timer\'s type by 1.4 and the digits to 100sp', async () => {
+  it('scales the Timer\'s type by 1.4, but never past 2x with the phone\'s own font scale (Jest runs at 2x)', async () => {
     useSettings.getState().update({ partnerMode: true });
     const ui = await render(wrap());
     await ui.press('Start contraction');
     const { StyleSheet } = require('react-native') as typeof import('react-native');
     const sizes = ui.root.findAll((n) => (n.type as unknown) === 'Text').map((n) => StyleSheet.flatten(n.props.style)?.fontSize ?? 0);
-    // 72sp × 1.4 = 100.8, floored to whole sp; it only shrinks further when the screen is too narrow.
-    expect(Math.max(...sizes)).toBe(100);
+    // At the phone's 2x text, Partner adds nothing (1.4 × 2 would pass the 2x cap), so the digits stay 72sp;
+    // at normal text size they are 72 × 1.4.
+    expect(Math.max(...sizes)).toBe(72);
+    expect(partnerFactor(1)).toBe(1.4);
   });
 
   it('shrinks the digits only as far as a narrow screen or a large font scale needs, never below 32sp', () => {

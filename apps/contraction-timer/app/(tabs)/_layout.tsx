@@ -29,7 +29,7 @@ export default function TabsLayout() {
       <Tabs.Screen
         name={name}
         options={{
-          title: t(`tabs.${name}`),
+          title: t(`tabs.${name === 'pregnancy' ? 'pregnancyShort' : name}`),
           tabBarAccessibilityLabel: t(`tabs.${name}`),
           // The active tab sits in a soft pill; tabs never slide (they are peers, not a hierarchy).
           tabBarIcon: ({ color, focused }) => (

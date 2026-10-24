@@ -1,4 +1,4 @@
-import { FlatList, StyleSheet, View } from 'react-native';
+import { FlatList, StyleSheet, View, useWindowDimensions } from 'react-native';
 import { router } from 'expo-router';
 import { LinearGradient } from 'expo-linear-gradient';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -32,6 +32,9 @@ export default function Pregnancy() {
   const { colors, spacing, radius, type, shadow, fonts } = useTheme();
   const app = useAppColors();
   const adsReady = useAdScreen('weeks');
+  // Text inside the fixed ring keeps its drawn size at any phone font scale (the card's label says it all).
+  const { fontScale } = useWindowDimensions();
+  const fit = (sp: number) => Math.round(sp / Math.max(1, fontScale));
   const { gestation, shown } = usePregnancy();
   const bag = progressOf(useChecklist('hospitalBag'));
   const plan = progressOf(useChecklist('birthPlan'));
@@ -63,8 +66,8 @@ export default function Pregnancy() {
           >
             <LinearGradient colors={app.hero} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }} style={StyleSheet.absoluteFill} />
             <ProgressRing size={RING} strokeWidth={9} progress={gestation.days / TERM_DAYS} color={app.heroRing} trackColor={app.heroTrack}>
-              <AppText style={{ fontSize: 34, lineHeight: 38, color: app.onHero, fontFamily: fonts.display, fontWeight: '800' }}>{shown.weeks}</AppText>
-              <AppText style={[type.caption, { color: app.heroMuted, fontWeight: '700' }]}>{t('pregnancy.weeksShort')}</AppText>
+              <AppText style={{ fontSize: fit(34), lineHeight: fit(38), color: app.onHero, fontFamily: fonts.display, fontWeight: '800' }}>{shown.weeks}</AppText>
+              <AppText style={{ fontSize: fit(13), lineHeight: fit(16), color: app.heroMuted, fontFamily: fonts.body, fontWeight: '700' }}>{t('pregnancy.weeksShort')}</AppText>
             </ProgressRing>
             <View style={[styles.flex, { gap: spacing.xs }]}>
               <AppText style={[type.title, { color: app.onHero, fontWeight: '800' }]}>{t('pregnancy.header', { weeks: shown.weeks, days: shown.day })}</AppText>

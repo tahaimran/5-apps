@@ -232,7 +232,7 @@ describe('Settings (plan §5.5)', () => {
   });
   it('opens the daily kick reminder sheet', async () => {
     const ui = await render(wrap(<Settings />));
-    await ui.press(/^Daily kick reminder, Daily reminder: Off/);
+    await ui.press(/^Daily kick reminder, Off/);
     expect(ui.texts()).toContain('We can send one quiet reminder a day at the time you choose. You can turn it off whenever you like.');
   });
 });

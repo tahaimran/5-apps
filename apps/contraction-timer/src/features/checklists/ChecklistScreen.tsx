@@ -1,5 +1,5 @@
 import { useState, type ReactNode } from 'react';
-import { StyleSheet, TextInput, View } from 'react-native';
+import { StyleSheet, TextInput, View, useWindowDimensions } from 'react-native';
 import Animated, { useReducedMotion } from 'react-native-reanimated';
 import ArrowDown from 'lucide-react-native/icons/arrow-down';
 import ArrowUp from 'lucide-react-native/icons/arrow-up';
@@ -75,6 +75,9 @@ export function ChecklistScreen({ id, title, intro, progressText, share, footer,
   const [drafts, setDrafts] = useState<Record<string, string>>({});
   const progress = progressOf(list);
   const store = useChecklists.getState;
+  // The ring is a fixed 64dp: its percentage keeps its drawn size at any font scale (the row's label says it).
+  const { fontScale } = useWindowDimensions();
+  const fit = (sp: number) => Math.round(sp / Math.max(1, fontScale));
   const add = (group: string) => {
     store().add(id, group, drafts[group] ?? '');
     setDrafts((d) => ({ ...d, [group]: '' }));
@@ -97,7 +100,7 @@ export function ChecklistScreen({ id, title, intro, progressText, share, footer,
       <Card style={[styles.row, { gap: spacing.lg }]}>
         <View accessible accessibilityLabel={t('lists.progressLabel', { percent: progress.percent, checked: progress.checked, total: progress.total })} style={[styles.row, styles.flex, { gap: spacing.lg }]}>
           <ProgressRing size={64} strokeWidth={7} progress={progress.percent / 100} color={colors.primary} trackColor={app.track}>
-            <AppText style={{ fontSize: 15, lineHeight: 18, color: colors.text, fontFamily: fonts.display, fontWeight: '800' }}>{`${progress.percent}%`}</AppText>
+            <AppText style={{ fontSize: fit(15), lineHeight: fit(18), color: colors.text, fontFamily: fonts.display, fontWeight: '800' }}>{`${progress.percent}%`}</AppText>
           </ProgressRing>
           <AppText style={[type.bodyLarge, styles.flex, { color: colors.text, fontWeight: '700' }]}>{progressText(progress)}</AppText>
         </View>

@@ -27,8 +27,9 @@ export const timerHaptics = {
     void haptics.tap();
     playSound('tap');
   },
+  /** The kick that reaches the target: the same Light tap (plan §7), with the complete sound instead of the tap sound. */
   kickTarget: () => {
-    void haptics.success();
+    void haptics.tap();
     playSound('complete');
   },
   undo: () => {
