@@ -4,7 +4,7 @@ import { Switch, Text } from 'react-native';
 import { cleanup, render } from '../../testing/render';
 import { defaultPalettes, ThemeProvider, type ThemePreference } from '../../theme';
 import { sharedStore } from '../../storage';
-import { insetTones, Segmented, Stepper, stepValue, SystemNavBar, Toggle } from '../index';
+import { Digits, insetTones, Segmented, Stepper, stepValue, SystemNavBar, Toggle } from '../index';
 
 const themed = (el: React.ReactElement, mode: ThemePreference = 'light') => {
   sharedStore.set('theme.mode', mode);
@@ -138,5 +138,23 @@ describe('Stepper (large)', () => {
     expect(StyleSheet.flatten(plus.props.style).width).toBe(56);
     const value = ui.root.findAll((n) => n.type === Text && n.props.children === '2000 ml')[0];
     expect(StyleSheet.flatten(value.props.style)).toMatchObject({ fontWeight: '800', fontSize: 28 });
+  });
+});
+
+describe('Digits', () => {
+  it('gives every digit the same slot and the separators a narrow one, and reads the label out', async () => {
+    const ui = await render(themed(<Digits value="12:07" size={50} color="#111111" accessibilityLabel="12 minutes 7 seconds" />));
+    const wrapper = ui.root.findAll((n) => n.props.accessibilityLabel === '12 minutes 7 seconds' && typeof n.type === 'string')[0];
+    const slots = wrapper.children.filter((c): c is NonNullable<typeof c> & { props: { style: { width: number } } } => typeof c !== 'string').map((c) => c.props.style.width);
+    // fontScale 2 in the jest window: 50sp × 2 × 0.64em per digit, 0.34em for the colon.
+    expect(slots).toEqual([64, 64, 34, 64, 64]);
+    const texts = ui.root.findAllByType(Text);
+    expect(texts.map((t) => t.props.children)).toEqual(['1', '2', ':', '0', '7']);
+    expect(texts[0].props.style).toEqual(expect.arrayContaining([expect.objectContaining({ fontVariant: ['tabular-nums'], fontWeight: '800' })]));
+  });
+
+  it('falls back to the characters as its spoken name', async () => {
+    const ui = await render(themed(<Digits value="0:47" size={40} color="#111111" />));
+    expect(ui.root.findAll((n) => n.props.accessibilityLabel === '0:47' && typeof n.type === 'string')).toHaveLength(1);
   });
 });

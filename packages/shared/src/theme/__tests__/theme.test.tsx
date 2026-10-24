@@ -4,7 +4,7 @@ import TestRenderer, { type ReactTestRenderer } from 'react-test-renderer';
 import * as RN from 'react-native';
 import { sharedStore } from '../../storage';
 import { MIN_TOUCH, MIN_TOUCH_LARGE, baseType, defaultPalettes, motion, radius, spacing } from '../tokens';
-import { setHapticsEnabled, ThemeProvider, useHaptics, useTheme, type Theme, type ThemeProviderProps } from '../index';
+import { haptics as sharedHaptics, setHapticsEnabled, ThemeProvider, useHaptics, useTheme, type Theme, type ThemeProviderProps } from '../index';
 
 (globalThis as { IS_REACT_ACT_ENVIRONMENT?: boolean }).IS_REACT_ACT_ENVIRONMENT = true;
 
@@ -202,8 +202,8 @@ describe('useHaptics', () => {
     await act(async () => {
       live.push(TestRenderer.create(<Probe />));
     });
-    await Promise.all([haptics.tap(), haptics.press(), haptics.select(), haptics.success(), haptics.warning(), haptics.error()]);
-    expect(mockHaptics.impact.mock.calls).toEqual([['light'], ['medium']]);
+    await Promise.all([haptics.tap(), haptics.press(), haptics.heavy(), haptics.select(), haptics.success(), haptics.warning(), haptics.error()]);
+    expect(mockHaptics.impact.mock.calls).toEqual([['light'], ['medium'], ['heavy']]);
     expect(mockHaptics.selection).toHaveBeenCalledTimes(1);
     expect(mockHaptics.notification.mock.calls).toEqual([['success'], ['warning'], ['error']]);
   });
@@ -226,5 +226,15 @@ describe('useHaptics', () => {
       throw new Error('no vibrator');
     });
     await expect(haptics.tap()).resolves.toBeUndefined();
+  });
+
+  it('offers the same helpers outside React, behind the same switch', async () => {
+    mockHaptics.impact.mockClear();
+    setHapticsEnabled(false);
+    await sharedHaptics.heavy();
+    expect(mockHaptics.impact).not.toHaveBeenCalled();
+    setHapticsEnabled(true);
+    await sharedHaptics.heavy();
+    expect(mockHaptics.impact.mock.calls).toEqual([['heavy']]);
   });
 });

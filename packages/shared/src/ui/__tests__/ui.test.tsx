@@ -42,6 +42,12 @@ describe('Button', () => {
     expect(ui.byLabel('Busy')[0].props.accessibilityState).toMatchObject({ busy: true });
   });
 
+  it('can speak a fuller name than its label', async () => {
+    const ui = await render(themed(<Button label="Use this look" accessibilityLabel="Clean, use this look" onPress={() => undefined} />));
+    expect(ui.byLabel('Clean, use this look')).toHaveLength(1);
+    expect(ui.texts()).toContain('Use this look');
+  });
+
   it.each(['ghost', 'danger'] as const)('renders the %s variant', async (variant) => {
     const ui = await render(themed(<Button label="Go" variant={variant} onPress={() => undefined} />));
     expect(ui.texts()).toContain('Go');
@@ -56,6 +62,14 @@ describe('IconButton', () => {
     expect(node.props.accessibilityRole).toBe('button');
     await ui.press('Close');
     expect(onPress).toHaveBeenCalled();
+  });
+
+  it('announces an on/off button as selected and draws it solid while on', async () => {
+    const ui = await render(themed(<IconButton icon={Icon} label="Night mode" selected onPress={jest.fn()} />));
+    const node = ui.byLabel('Night mode')[0];
+    expect(node.props.accessibilityState).toEqual({ disabled: false, selected: true });
+    const off = await render(themed(<IconButton icon={Icon} label="Partner mode" selected={false} variant="tonal" onPress={jest.fn()} />));
+    expect(off.byLabel('Partner mode')[0].props.accessibilityState).toEqual({ disabled: false, selected: false });
   });
 });
 

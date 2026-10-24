@@ -57,11 +57,13 @@ showToast({ message, icon, tone, action }) and <ToastHost bottom={…} />      /
 <Segmented options value onChange>                     // sliding pill (CSS transition, never sticks)
 <Stepper label value min max step format onPressValue> // step may be (value, dir) => size; snaps to the grid
 <SystemNavBar dark>                                    // nav-bar button style; renders nothing in builds without expo-navigation-bar
+<Digits value="12:07" size={72} color>                 // ticking numbers in fixed-width digit slots (never shift)
 insetTones(colors, mode)           // track + raised colors; in dark mode the raised part is the lighter one
 EASE_OUT, EASE_IN_OUT              // the curves to use for UI timing
 ```
 `useHaptics()` (from `@shared/theme`) obeys `setHapticsEnabled(on)`; call it from the app's settings store so
-shared components (Stepper, TimeField wheels) follow the user's toggle.
+shared components (Stepper, TimeField wheels) follow the user's toggle. Outside React (store actions, timer callbacks)
+use the same gated helpers as `haptics` (`tap`, `press`, `heavy`, `select`, `success`, `warning`, `error`).
 Icons are passed as components (`IconComponent`), so apps import Lucide one icon at a time:
 `import Flame from 'lucide-react-native/icons/flame'`. Lucide ships types for some renamed icons without a
 runtime file (e.g. `history`, use `rotate-ccw-clock`); habit-tracker's `icons.static.test.ts` guards this.

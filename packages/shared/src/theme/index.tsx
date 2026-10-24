@@ -114,16 +114,20 @@ export function setHapticsEnabled(on: boolean): void {
 const gated = (fire: () => Promise<void>) => (): Promise<void> =>
   hapticsOn ? Promise.resolve().then(fire).catch(() => undefined) : Promise.resolve();
 
+/**
+ * The same helpers outside React (a store action, a timer callback). They follow `setHapticsEnabled` too.
+ * `heavy` is for a moment that must be felt through a pocket (a contraction timer's Start).
+ */
+export const haptics = {
+  tap: gated(() => Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light)),
+  press: gated(() => Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium)),
+  heavy: gated(() => Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy)),
+  select: gated(() => Haptics.selectionAsync()),
+  success: gated(() => Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success)),
+  warning: gated(() => Haptics.notificationAsync(Haptics.NotificationFeedbackType.Warning)),
+  error: gated(() => Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error)),
+};
+
 export function useHaptics() {
-  return useMemo(
-    () => ({
-      tap: gated(() => Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light)),
-      press: gated(() => Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium)),
-      select: gated(() => Haptics.selectionAsync()),
-      success: gated(() => Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success)),
-      warning: gated(() => Haptics.notificationAsync(Haptics.NotificationFeedbackType.Warning)),
-      error: gated(() => Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error)),
-    }),
-    [],
-  );
+  return useMemo(() => haptics, []);
 }

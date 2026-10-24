@@ -32,7 +32,7 @@ jest.mock('expo-haptics', () => ({
   impactAsync: (...a: unknown[]) => mockHaptics.impact(...a),
   selectionAsync: (...a: unknown[]) => mockHaptics.selection(...a),
   notificationAsync: (...a: unknown[]) => mockHaptics.notification(...a),
-  ImpactFeedbackStyle: { Light: 'light', Medium: 'medium' },
+  ImpactFeedbackStyle: { Light: 'light', Medium: 'medium', Heavy: 'heavy' },
   NotificationFeedbackType: { Success: 'success', Warning: 'warning', Error: 'error' },
 }));
 

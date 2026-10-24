@@ -7,6 +7,7 @@ import {
   Switch,
   Text,
   View,
+  useWindowDimensions,
   type GestureResponderEvent,
   type PressableProps,
   type StyleProp,
@@ -154,9 +155,11 @@ export interface ButtonProps {
   block?: boolean;
   style?: StyleProp<ViewStyle>;
   accessibilityHint?: string;
+  /** Spoken instead of the label when several buttons share one ("Use this look" → "Clean, use this look"). */
+  accessibilityLabel?: string;
 }
 
-export function Button({ label, onPress, variant = 'primary', icon: Icon, disabled, loading, block, style, accessibilityHint }: ButtonProps) {
+export function Button({ label, onPress, variant = 'primary', icon: Icon, disabled, loading, block, style, accessibilityHint, accessibilityLabel }: ButtonProps) {
   const { colors, radius, type, touchTarget, shadow } = useTheme();
   const fg = variant === 'primary' ? colors.onPrimary : variant === 'danger' ? colors.danger : colors.primary;
   const bg = variant === 'primary' ? colors.primary : variant === 'secondary' ? colors.primarySoft : 'transparent';
@@ -164,7 +167,7 @@ export function Button({ label, onPress, variant = 'primary', icon: Icon, disabl
   return (
     <PressableScale
       accessibilityRole="button"
-      accessibilityLabel={label}
+      accessibilityLabel={accessibilityLabel ?? label}
       accessibilityHint={accessibilityHint}
       accessibilityState={{ disabled: !!disabled, busy: !!loading }}
       disabled={inactive}
@@ -204,18 +207,21 @@ export interface IconButtonProps {
   color?: string;
   size?: number;
   disabled?: boolean;
+  /** An on/off button (Night mode, Partner mode): drawn solid while on and announced as selected. */
+  selected?: boolean;
   style?: StyleProp<ViewStyle>;
 }
 
-export function IconButton({ icon: Icon, label, onPress, variant = 'plain', color, size = 22, disabled, style }: IconButtonProps) {
+export function IconButton({ icon: Icon, label, onPress, variant = 'plain', color, size = 22, disabled, selected, style }: IconButtonProps) {
   const { colors, touchTarget } = useTheme();
-  const fg = color ?? (variant === 'solid' ? colors.onPrimary : variant === 'tonal' ? colors.primary : colors.text);
-  const bg = variant === 'solid' ? colors.primary : variant === 'tonal' ? colors.primarySoft : 'transparent';
+  const look = selected ? 'solid' : variant;
+  const fg = (selected ? undefined : color) ?? (look === 'solid' ? colors.onPrimary : look === 'tonal' ? colors.primary : colors.text);
+  const bg = look === 'solid' ? colors.primary : look === 'tonal' ? colors.primarySoft : 'transparent';
   return (
     <PressableScale
       accessibilityRole="button"
       accessibilityLabel={label}
-      accessibilityState={{ disabled: !!disabled }}
+      accessibilityState={selected === undefined ? { disabled: !!disabled } : { disabled: !!disabled, selected }}
       disabled={disabled}
       onPress={onPress}
       hitSlop={4}
@@ -493,6 +499,51 @@ export function Stepper({ value, onChange, min, max, step = 1, label, format = S
   );
 }
 
+// ---- Ticking numbers ---------------------------------------------------------------------------
+
+export interface DigitsProps {
+  /** What to show, e.g. "12:07". Digits get a fixed-width slot; anything else (":", " ") a narrow one. */
+  value: string;
+  /** fontSize in sp before the system font scale (the slots grow with it). */
+  size: number;
+  lineHeight?: number;
+  color: string;
+  /** Font family and weight; defaults to the theme's display family at 800. */
+  fontFamily?: string;
+  fontWeight?: '600' | '700' | '800';
+  /** Slot width per digit in em. Wider than any tabular figure in the shared fonts. */
+  digitEm?: number;
+  /** Spoken instead of the characters (e.g. "3 minutes 12 seconds"). */
+  accessibilityLabel?: string;
+}
+
+/**
+ * A big number that never shifts as it ticks: each digit sits in a fixed-width slot (and asks for
+ * tabular figures too), so "1:11" → "1:12" moves nothing, whatever the font does with `tnum`.
+ * The text is wider than its slot with negative margins, so a glyph is never clipped or ellipsized.
+ */
+export function Digits({ value, size, lineHeight, color, fontFamily, fontWeight = '800', digitEm = 0.64, accessibilityLabel }: DigitsProps) {
+  const { fonts } = useTheme();
+  const { fontScale } = useWindowDimensions();
+  const em = size * fontScale;
+  const style = { fontSize: size, lineHeight: lineHeight ?? Math.round(size * 1.12), color, fontFamily: fontFamily ?? fonts.display, fontWeight, fontVariant: ['tabular-nums' as const] };
+  return (
+    <View accessible accessibilityLabel={accessibilityLabel ?? value} style={styles.digits}>
+      {[...value].map((ch, i) => {
+        const slot = Math.ceil(em * (/\d/.test(ch) ? digitEm : 0.34));
+        return (
+          <View key={i} importantForAccessibility="no-hide-descendants" style={{ width: slot, alignItems: 'center' }}>
+            <Text style={[style, { width: slot + 2 * DIGIT_BLEED, marginHorizontal: -DIGIT_BLEED, textAlign: 'center' }]}>{ch}</Text>
+          </View>
+        );
+      })}
+    </View>
+  );
+}
+
+/** Extra room each side of a digit slot, so a wide glyph overflows its slot instead of being cut. */
+const DIGIT_BLEED = 24;
+
 // ---- System navigation bar ---------------------------------------------------------------------
 
 /** Present only in builds made after expo-navigation-bar was added; older dev builds lack it. */
@@ -511,6 +562,7 @@ const styles = StyleSheet.create({
   indicator: { position: 'absolute', top: 4, bottom: 4, left: 4 },
   segment: { flex: 1, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 4 },
   stepper: { flexDirection: 'row', alignItems: 'center', padding: 4, gap: 4 },
+  digits: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center' },
   stepperValue: { fontWeight: '700', minWidth: 72, textAlign: 'center', paddingHorizontal: 8 },
   ringSvg: { transform: [{ rotate: '-90deg' }] },
   button: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8, paddingHorizontal: 24 },
