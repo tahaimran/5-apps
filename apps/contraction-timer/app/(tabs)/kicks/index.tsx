@@ -151,7 +151,8 @@ export default function Kicks() {
           <Button
             variant="secondary"
             icon={Undo2}
-            label={t('kicks.undo')}
+            label={t('kicks.undoShort')}
+            accessibilityLabel={t('kicks.undo')}
             disabled={count === 0}
             onPress={() => {
               useKicks.getState().undo();

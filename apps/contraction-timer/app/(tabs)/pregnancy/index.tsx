@@ -109,6 +109,7 @@ export default function Pregnancy() {
   return (
     <SafeAreaView style={[styles.flex, { backgroundColor: colors.background }]} edges={['top']}>
       <FlatList<ListItem<WeekCard>>
+        style={styles.clip}
         data={cards}
         extraData={adsReady}
         keyExtractor={(c) => (c.kind === 'ad' ? c.key : String(c.card.week))}
@@ -148,6 +149,7 @@ export default function Pregnancy() {
 
 const styles = StyleSheet.create({
   flex: { flex: 1 },
+  clip: { flex: 1, overflow: 'hidden' },
   hero: { overflow: 'hidden', flexDirection: 'row', alignItems: 'center', flexWrap: 'wrap' },
   row: { flexDirection: 'row', alignItems: 'center' },
 });

@@ -39,7 +39,9 @@ export function Screen({ children, footer, title, titleAccessory, stack, modal, 
     <SafeAreaView style={{ flex: 1, backgroundColor: colors.background }} edges={modal ? ['top', 'bottom'] : ['top']}>
       {backdrop}
       {stack || modal ? <StackHeader title={title} onBack={onBack} accessory={titleAccessory} /> : null}
+      {/* Clipped at its own top edge: scrolled content must slide under the status bar, never draw over it. */}
       <ScrollView
+        style={styles.clip}
         scrollEnabled={scrollEnabled}
         keyboardShouldPersistTaps="handled"
         contentContainerStyle={{ padding: spacing.xl - 4, paddingTop: stack || modal ? spacing.xs : spacing.lg, gap: spacing.md, flexGrow: 1 }}
@@ -83,6 +85,7 @@ export function TabTitle({ title, accessory }: { title: string; accessory?: Reac
 
 const styles = StyleSheet.create({
   flex: { flex: 1 },
+  clip: { flex: 1, overflow: 'hidden' },
   header: { flexDirection: 'row', alignItems: 'center', minHeight: 64 },
   titleRow: { flexDirection: 'row', alignItems: 'center', minHeight: 56, flexWrap: 'wrap' },
 });

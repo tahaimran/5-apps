@@ -23,6 +23,7 @@ export default function History() {
     <SafeAreaView style={[styles.flex, { backgroundColor: colors.background }]} edges={['top']}>
       <StackHeader title={t('history.title')} />
       <FlatList
+        style={styles.clip}
         data={items}
         keyExtractor={(item) => item.s.id}
         contentContainerStyle={{ padding: spacing.xl - 4, paddingTop: spacing.xs, gap: spacing.md, flexGrow: 1 }}
@@ -34,4 +35,4 @@ export default function History() {
   );
 }
 
-const styles = StyleSheet.create({ flex: { flex: 1 } });
+const styles = StyleSheet.create({ flex: { flex: 1 }, clip: { flex: 1, overflow: 'hidden' } });

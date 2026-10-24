@@ -91,7 +91,8 @@
     "sparkTitle": "Minutes to reach {target}",
     "sparkLabel": "Minutes to reach the target over your last {n} counts: from {first} to {last}",
     "sparkOne": "Minutes to reach the target: {first}",
-    "reminderHint": "Choose a time, or turn the daily reminder on or off"
+    "reminderHint": "Choose a time, or turn the daily reminder on or off",
+    "undoShort": "Undo"
   },
   "pregnancy": {
     "title": "My Pregnancy",

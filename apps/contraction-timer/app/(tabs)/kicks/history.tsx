@@ -38,6 +38,7 @@ export default function KickHistory() {
     <SafeAreaView style={[styles.flex, { backgroundColor: colors.background }]} edges={['top']}>
       <StackHeader title={t('kicks.historyTitle')} />
       <FlatList
+        style={styles.clip}
         data={history}
         keyExtractor={(s) => s.id}
         contentContainerStyle={{ padding: spacing.xl - 4, paddingTop: spacing.xs, gap: spacing.sm, flexGrow: 1 }}
@@ -73,5 +74,6 @@ export default function KickHistory() {
 
 const styles = StyleSheet.create({
   flex: { flex: 1 },
+  clip: { flex: 1, overflow: 'hidden' },
   row: { flexDirection: 'row', alignItems: 'center' },
 });

@@ -11,6 +11,8 @@
 - UI redesign on `feat/ui-polish` (not merged yet): Habits, Water and Quizora are on the shared kit
   (Figtree/Bricolage, Lucide, motion, sounds, 12/24-hour TimeField, chime channels, new icons). Quizora's redesign
   (2026-10-24) is Jest-verified only and needs a new dev build before it can be seen on a phone.
+  Contraction Timer's redesign ("Dawn", 2026-10-25, plan §7) is on the kit too (Night stays in the shared
+  high-contrast slot, sounds off by default, chime channel `kick-chime`); also Jest-verified only, needs a dev build.
 - Next: each app's `WHATS_LEFT.md` is the remaining-work checklist (device testing, real AdMob IDs
   in EAS, privacy policy hosting, Play Console forms, screenshots, closed testing).
 
