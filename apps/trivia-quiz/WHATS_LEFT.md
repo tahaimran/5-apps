@@ -4,6 +4,13 @@ Status (2026-10-09): the code checks pass (type check clean, expo-doctor 21/21, 
 
 **Biggest risk:** none of the 3,600 questions has been fact-checked. Do not publish until that is done (step 3).
 
+**Redesign (2026-10-24, branch `feat/ui-polish`):** every screen was rebuilt ("Spark", plan §7) and checked in Jest only.
+It adds native pieces, so the installed preview APK cannot show it: **one new dev build is needed**
+(`eas build --profile development --platform android` from `apps/trivia-quiz`; wait for the free quota on Nov 1 or
+ask first). That build brings expo-dev-client (Metro), expo-linear-gradient, expo-navigation-bar, the embedded
+Figtree/Bricolage fonts, the chime notification sound and icon, and the new icon/splash. Until then the screens can be
+previewed in the Habits dev client (react-native-view-shot is optional there; sharing falls back to text).
+
 ## 1. Try it on your phone (test checklist)
 - [x] Run `eas login`, then `eas init` in `apps/trivia-quiz` to get the EAS project id. *(done 2026-10-09)*
 - [ ] Install the preview APK; check the splash shows the icon, then the onboarding starts.
@@ -17,10 +24,12 @@ Status (2026-10-09): the code checks pass (type check clean, expo-doctor 21/21, 
 8. [ ] Share the Daily result: the share sheet opens with the picture.
 9. [ ] Turn on airplane mode on a fresh install: every mode, Daily and Stats still work, no crash.
 10. [ ] Check sound and vibration feel right, and that Settings switches turn them off.
-11. [ ] Try Settings text size Small to Extra large, and phone font size at maximum: nothing cut off.
+11. [ ] Try Settings text size Small to Largest, and phone font size at maximum: nothing cut off.
 12. [ ] Play a full round with TalkBack (the screen reader) on; answers are read out.
 13. [ ] Turn on "Remove animations" in phone settings: no shaking or bouncing, everything still works.
-14. [ ] Look at every screen in light and dark mode, and the icon on your home screen.
+14. [ ] Look at every screen in light and dark mode, and the icon on your home screen. Dark mode: answer pills and the question card sit lighter than the violet stage; the Segmented pills and switch thumbs are visible.
+14b. [ ] Settings → Clock: Phone / 12-hour / 24-hour changes the reminder time display and the wheel picker.
+14c. [ ] A reminder plays the soft chime with two short vibrations, shows the white bubble icon in violet, and reads warmly (no emoji).
 15. [ ] Tap "Remind me": allow notifications, and check one arrives at the chosen time and opens the Daily.
 16. [ ] Restart the phone and change the time zone: reminders still arrive; the streak does not count twice.
 17. [ ] Check test ads (dev build, Settings → "Ad rules (development)"): banners only on Home, Play, Classic, Stats, Settings; never during a question; no full-screen ad in the first session.

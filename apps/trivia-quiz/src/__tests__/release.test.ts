@@ -27,7 +27,7 @@ describe('RELEASE.md', () => {
   });
 
   it('lists the checks that need a phone, an account or a store', () => {
-    for (const word of ['TalkBack', 'UMP', '16 KB', 'Reduce motion', 'Doze', 'reboot', 'Samsung', 'Xiaomi', 'silent mode', 'review dialog', 'closed testing', 'Inter', 'under 30 s', 'share sheet']) {
+    for (const word of ['TalkBack', 'UMP', '16 KB', 'Reduce motion', 'Doze', 'reboot', 'Samsung', 'Xiaomi', 'silent mode', 'review dialog', 'closed testing', 'Figtree', 'under 30 s', 'share sheet']) {
       expect(doc).toContain(word);
     }
   });

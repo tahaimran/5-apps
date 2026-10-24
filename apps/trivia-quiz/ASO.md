@@ -130,7 +130,7 @@ Positioning against them: **"offline + explanations + calm ads + daily streak, n
 
 ## 5. Icon concept
 
-- **Primary:** a rounded indigo square (`#4F46E5` to `#6366F1` gradient) with a bold white speech-bubble "?" whose dot is a gold lightbulb (`#F59E0B`). There is no text. It is readable at 48 px.
+- **Primary:** a violet square (`#7457F5` to `#3B24B0` gradient, the app's "Spark" stage) with a white speech bubble holding a bold violet "?" whose dot is a glowing gold lightbulb (`#FFC940`), plus a gold sparkle. There is no text. It is readable at 48 px. Rendered by `scripts/generate-icons.cjs`.
 - **A/B variant (Store listing experiments, week 4):** the same "?" on a gold background with an indigo glyph, which is more eye-catching in a grid of mostly blue and purple trivia icons.
 - Avoid cartoon mascots or childish styling so the app does not "appeal to children" under Play Families rules.
 
@@ -151,7 +151,7 @@ At v1.1, replace #7 with Pass & Play ("**Family Trivia Night on One Phone**"). F
 
 ## 7. Feature graphic (1024×500)
 
-Indigo gradient. On the left is "Quizora" with the tagline "Trivia that works offline." On the right are three tilted question cards (Geography, Movies, Science), and one shows a green ✓ and a "Did you know?" chip. The center 70% is kept clear of essential text in case of cropping.
+Violet gradient. On the left is "Quizora" with the tagline "Trivia that works offline." On the right are three tilted question cards (Geography, Movies, Science), and one shows a green ✓ and a "Did you know?" chip. The center 70% is kept clear of essential text in case of cropping.
 
 ## 8. Promo video (YouTube, 25 s, landscape)
 

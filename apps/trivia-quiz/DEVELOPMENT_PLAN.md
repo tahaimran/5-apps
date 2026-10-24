@@ -174,34 +174,84 @@ Funnel events (local counters only, logged via `@shared/storage` analytics count
 
 ## 7. Design system (`@shared/theme` overrides)
 
-**Palette**
-| Token | Light | Dark |
-|---|---|---|
-| `primary` (brand indigo) | `#4F46E5` | `#818CF8` |
-| `primaryContainer` | `#E0E7FF` | `#312E81` |
-| `accent` (quiz gold, stars/XP) | `#F59E0B` | `#FBBF24` |
-| `streak` (flame) | `#F97316` | `#FB923C` |
-| `success` | `#16A34A` | `#4ADE80` |
-| `error` | `#DC2626` | `#F87171` |
-| `bg` | `#F8FAFC` | `#0B1020` |
-| `surface` | `#FFFFFF` | `#151B2E` |
-| `surfaceAlt` | `#EEF2F7` | `#1E2640` |
-| `text` | `#0F172A` | `#E5E7EB` |
-| `textMuted` | `#475569` | `#94A3B8` |
-| `border` | `#E2E8F0` | `#2A3350` |
+> Redesigned 2026-10-24 ("Spark") to the quality bar of Habits and Sipling, on the shared kit. Source of truth:
+> `src/theme/tokens.ts`; every pair below is checked by `src/theme/__tests__/contrast.test.ts`.
 
-Category colors (chips/icons): GK `#6366F1`, Geography `#0EA5E9`, History `#A16207`, Science `#10B981`, Movies `#E11D48`, Music `#D946EF`, Sports `#F97316`, Animals `#84CC16`, Food `#EAB308`, Literature `#8B5CF6`, Logic/IQ `#14B8A6`, Flags `#EF4444`. All text-on-color pairs verified ≥4.5:1 (white text on darker shade variants where needed).
+**Mood:** playful and high-energy where it counts (the quiz stage, the Daily hero, results), calm everywhere else so
+long sessions stay easy on the eyes. One loud element per screen; the rest is lavender-white cards with soft shadows.
 
-**Type scale** (Inter via expo-font; scaled by text-size setting ×0.9/1/1.15/1.3 and respects OS font scale up to 1.5):
-Display 32/40 bold · H1 24/32 bold · H2 20/28 semibold · Question 20/28 semibold · Answer 17/24 medium · Body 16/24 · Caption 13/18 · Overline 12/16 caps.
+**Palette ("Spark")**
+| Token | Light | Dark | Notes |
+|---|---|---|---|
+| `primary` (electric violet) | `#5B3FE0` | `#A796FF` | buttons, links, timer ring, active tab |
+| `primarySoft` | `#ECE8FF` | `#2C2558` | selected chips, icon circles, notes |
+| `accent` (gold as text) | `#9A5B00` | `#FFC940` | "Did you know?", stat icons |
+| `success` / `danger` (text) | `#137A47` / `#C8324D` | `#4FD18B` / `#FF7D92` | verdict titles |
+| `background` | `#F6F4FD` | `#100D22` | |
+| `surface` | `#FFFFFF` | `#1A1631` | cards |
+| `surfaceAlt` | `#ECE8FA` | `#2A2350` | inset tracks; dark: raised pills (`insetTones`) |
+| `text` / `textMuted` | `#1C1838` / `#5C5878` | `#EFEDFB` / `#ABA6C9` | |
+| `border` | `#E1DCF2` | `#3A3266` | hairlines only |
 
-**Spacing/shape:** 4-pt grid; radius 12 (buttons), 20 (cards); answer buttons min height 56 dp, 12 dp gap.
+Extra colors (`extraColors`): **gold** `#FFC940` with `onGold` `#1C1838` (stars, XP bars, the one gold call to action
+per screen), **streak** `#D9520A` light / `#FF9A55` dark, soft tints for gold/success/danger/streak icon circles. The
+**stage** gradient (`#5B3FE0 → #3B24B0` light, `#271E66 → #140F38` dark) is the quiz screen, the Daily hero, the
+results hero and the share card; white text on it, and on 16% white frost over it (chips, lifelines), is AA. On the
+stage the **card** is white (light) or `#312985` (dark, raised above the stage), **answer pills** are white /
+`#463B9E` with letter badges, and a chosen answer fills **correct** `#137A47` or **wrong** `#C02A47`, white text.
 
-**Motion (Reanimated):** answer press scale 0.97 (spring), correct → green fill 180 ms + subtle bounce; wrong → 3-cycle shake 240 ms; explanation sheet slide-up 220 ms; stars pop sequentially 150 ms apart; respects `AccessibilityInfo.isReduceMotionEnabled` (crossfade only).
+Dark mode depth: background < surface < surfaceAlt < border in luminance (tested); a raised part is always lighter
+than its track (`insetTones`, Segmented pill, Stepper buttons, answer pills over the stage, card over the stage);
+Switches are the shared `Toggle` (thumb stays visible).
 
-**Sounds/haptics (expo-av / expo-audio, expo-haptics):** correct chime, wrong soft buzz, tick in last 5 s, level-up fanfare; all < 30 KB OGG. Haptics: `notificationAsync(Success|Error)`, light impact on tap. Independent toggles; default sound ON, music OFF.
+**Category colors** (12 distinct hues, `src/domain/categories.ts`): GK `#6366F1`, Geography `#0EA5E9`, History
+`#D97706`, Science `#10B981`, Movies `#F43F5E`, Music `#D946EF`, Sports `#F97316`, Animals `#84CC16`, Food `#EAB308`,
+Literature `#8B5CF6`, Logic/IQ `#14B8A6`, Flags `#EF4444`. Each has a `strong` shade that carries white text at
+≥ 4.5:1 (tile squares, picked chips, level nodes); on plain surfaces icons use the strong shade in light mode and the
+bright hue in dark mode, over a 14% / 22% tint (`src/ui/categoryTone.ts`), all ≥ 3:1 (tested). Lucide icon per
+category in `src/ui/icons.tsx`.
 
-**Accessibility:** TalkBack labels ("Answer B, Paris"); result announced via `announceForAccessibility`; never rely on color only (✓/✗ icons); timer can be disabled in Settings ("Relaxed mode" — no timer, still earns XP ×0.8); touch targets ≥48 dp; dynamic type tested at 1.5×.
+**Type** (shared fonts, embedded as Android font families by the expo-font plugin; Inter dropped): **Bricolage
+Grotesque** (600/800) for titles, the question and big numbers; **Figtree** (400–700) for everything else. Scale in
+sp, multiplied by the text-size setting ×0.9/1/1.15/1.3 and the OS font scale: Display 34/40 · H1 26/32 · H2 20/26 ·
+Question 22/30 · Answer 17/24 · Body 16/24 · Caption 13/18 · Overline 12/16 (+0.8 letter spacing).
+
+**Spacing/shape:** shared 4-pt spacing; radius 20 cards/tiles, 28 hero cards and sheets, pills fully round; answer
+pills min 60 dp with a 12 dp gap; every control ≥ 48 dp; shadows from `theme.shadow(level)` (levels 1–3).
+
+**Icons:** Lucide only, imported one at a time (`lucide-react-native/icons/<name>`), guarded by
+`icons.static.test.ts`; no emoji as icons, none in notification copy. `@expo/vector-icons` removed.
+
+**Hero moment — the quiz screen:** full-bleed violet stage; top bar with a frosted close button, the round's
+name and icon, and a gold-star score chip; "3 / 10" over one pill per question (done white, current gold); the
+question card with the **timer ring on its top edge**; four answer pills; frosted lifeline pills with gold count
+badges (a play badge when a video is on offer); after an answer the explanation card rises in (verdict icon ✓ / ✗ /
+stopped timer, "Did you know?" fact on an inset panel, source, a gold **Next** pill). Light status bar and nav-bar
+buttons on the stage. Home's Daily hero, the results hero and the share card reuse the stage.
+
+**Motion** (Reanimated only, per the expo-animation skill; `src/ui/motion.ts`): everything the user causes finishes
+under 300 ms; tabs never slide (`animation: 'none'`, no ripple). Press feedback is the shared `PressableScale`
+(0.97 on answers). **CSS transitions** for state changes: answer fill and fade 180 ms, Segmented pill, progress bar
+widths. **CSS keyframes** for one-shot or looping effects: wrong answer 3-cycle shake 240 ms, right answer bounce
+220 ms, timer number beat each of the last 5 seconds, stars pop 150 ms apart on results, the Daily flame beat, the
+current Classic level's halo (pings in the first 300 ms of a 1.6 s cycle). **Shared value** only for the timer ring,
+which sweeps linearly to empty on the UI thread and freezes when the clock stops. Layout animation: the explanation
+card enters with `FadeInDown` 220 ms. **Reduce Motion:** no shake, bounce, pop, beat or halo; colors and opacity still
+change (tested in `motion.test.tsx`).
+
+**Sounds/haptics:** `@shared/sound` only (expo-audio, mixes with the user's music, no background playback): `check`
+(right answer), `wrong` (soft falling pair), `tick` (each of the last 5 seconds), `celebrate` (a starred Classic
+level). `wrong` and `tick` were added to the shared generator for this app. Haptics through `useHaptics()`
+(success / error on an answer). Sound and Vibration toggles in Settings are pushed to the shared layer with
+`setSoundsEnabled` / `setHapticsEnabled`, so shared controls obey them too. Default sound ON; no music.
+
+**Time:** reminder times use the 12/24-hour setting (Settings → Clock: Phone / 12-hour / 24-hour, default the
+phone's) and the shared wheel `TimeField` (Settings, the onboarding reminder step, the re-ask sheet).
+
+**Accessibility:** TalkBack labels ("Answer B, Paris, correct"); the verdict is announced with
+`announceForAccessibility` and never relies on color (✓ / ✗ icons in the answer badge and the explanation); the timer
+is text in the ring and speaks in 5-second steps; relaxed mode removes the timer (XP ×0.8); touch targets ≥ 48 dp
+(answers 60 dp); text sizes tested at 1.3× with every control still 48 dp.
 
 ---
 
@@ -329,7 +379,7 @@ Location: `apps/trivia-quiz/content/` (scripts in Node/TS, run locally or in CI)
 | Comeback | Day 3 and day 7 of inactivity | "We added a new history level for you." | Stop after day 7; no more until next open |
 | Weekly event (v2.0) | Monday 18:00 | "Space Week starts now 🚀" | Opt-out toggle |
 
-Android channel `daily` (default importance). Tapping deep-links to `quizora://daily`. Never more than 1 notification per day. All rescheduled on app open (idempotent).
+Android channel `daily_chime` (default importance) with the shared `reminder.wav` chime, a gentle two-tap vibration, the brand color and a white notification icon; it replaced the first version's `daily` channel, which is deleted (Android fixes a channel's sound at creation). Copy is warm and has no emoji. Tapping deep-links to `quizora://daily`. Never more than 1 notification per day. All rescheduled on app open (idempotent).
 
 ---
 
@@ -373,7 +423,7 @@ Projected ad load: ~3 interstitials, ~1.5 rewarded, ~15 banner impressions per D
 - Expo SDK (latest stable), Expo Router (typed routes), TypeScript strict, React Native New Architecture.
 - `react-native-mmkv` via `@shared/storage`; `zustand` for in-memory session state (quiz engine).
 - `react-native-google-mobile-ads` via `@shared/ads`; UMP via `@shared/consent`. EAS **dev build** required (no Expo Go).
-- `react-native-reanimated`, `react-native-gesture-handler`, `expo-haptics`, `expo-audio`, `expo-font` (Inter), `expo-notifications`, `expo-store-review`, `expo-sharing` + `react-native-view-shot`, `expo-localization`, `expo-updates` (EAS Update), `@shopify/flash-list` (stats/level lists), `zod` (content scripts + runtime manifest check).
+- `react-native-reanimated`, `react-native-gesture-handler`, `expo-haptics`, `expo-audio`, `expo-font` (Figtree + Bricolage, shared), `expo-linear-gradient`, `expo-navigation-bar`, `lucide-react-native`, `expo-dev-client`, `expo-notifications`, `expo-store-review`, `expo-sharing` + `react-native-view-shot`, `expo-localization`, `expo-updates` (EAS Update), `@shopify/flash-list` (stats/level lists), `zod` (content scripts + runtime manifest check).
 - Testing: Jest + `@testing-library/react-native` (engine, caps, seeds), Maestro E2E flows (onboarding, daily, ad caps with test IDs).
 - Crash reporting: Sentry (`@sentry/react-native`, no PII) — declared in Data safety.
 - CI: EAS Workflows — lint/typecheck/test → content validate → preview build; `eas update` on `main` to `preview` channel.
@@ -464,6 +514,7 @@ Data sources: Play Console (retention cohorts, vitals, acquisition), AdMob (ARPD
 - [x] **D6 — Ads:** all placements, caps, rewarded flows, native results card, app-open warm start. *(Everything is tested in Jest against the real `@shared/ads` with a fake AdMob SDK (`src/__tests__/ads.integration.test.tsx`) and a development-only "Ad rules" screen; ~~Maestro ad flow with test IDs~~ was not written (no Maestro, no device). No ad was ever requested from Google, no real unit id exists, and the native card, the rewarded timing and the app-open ad have never been seen. Notes: the interstitial rules count rounds in `src/domain/adRules.ts` and the shared layer is told every call is eligible. "Never spin more than 3 s" is met by checking `isRewardedReady` first: a video that is not loaded shows "Not available right now" at once. Deviation: the app-open ad is also blocked for 10 s after a notification tap, a link or the share sheet, through an in-memory window.)*
 - [x] **D7 — Stats, Settings, content check:** Stats and Settings screens, bank manifest, validator at 0 errors. *(Stats was built with D4 and Settings now; both are tested in Jest only. The validator reports 0 problems and `bank.test.ts` re-runs it, but ~~"fact-check pass, human spot-check"~~ did not happen: see `content/review/`. Not built from §5: music (no music is bundled, so there is no music switch), the corrupt-MMKV reset dialog with a progress backup, and Settings' "Rate" and "Privacy policy" rows only appear when a Play id or `EXPO_PUBLIC_PRIVACY_POLICY_URL` exists.)*
 - [x] **D8 — Polish:** sounds/haptics, dark mode, a11y (TalkBack, 1.5× font), reduce motion, performance (cold start < 2 s mid-range), review prompt, `RELEASE.md`. *(Sounds, haptics, light and dark themes, labels, 48/56dp targets, contrast, Reduce Motion paths and the review rules are all checked in Jest only; ~~"a11y checklist passed"~~, TalkBack, 1.5× OS font scale (Jest uses a theme scale of 1.3), cold start under 2 s and 60 fps were never tested because nothing has been run on a device. The bank load time is guarded in Jest on this machine only. `RELEASE.md` lists every open device check; its honesty is guarded by `src/__tests__/release.test.ts`.)*
+- [x] **Redesign (2026-10-24):** "Spark" palette, Figtree/Bricolage, Lucide, the quiz stage hero, every screen on the shared kit (PressableScale, Card, Button, IconButton, ProgressRing, toasts, Toggle, Segmented, TimeField), CSS-transition/keyframe motion with Reduce Motion paths, shared sounds incl. the new `wrong` and `tick`, 12/24-hour clock, chime notification channel, new icon set and feature graphic (§7). *(Jest, tsc and expo-doctor only: nothing was seen on a phone, because it needs a new dev build with the native changes; see WHATS_LEFT.md.)*
 - [ ] **D9 — Release prep:** store assets, privacy policy, Data safety, IARC, internal testing track, production build. *(not started)*
 - [ ] **D10–D23 — Closed testing and bug bash.** *(not started)*
 

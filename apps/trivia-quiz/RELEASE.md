@@ -63,20 +63,21 @@ every placement, whether it would show now and why not, with the counters.
 
 | Area | Check | Status |
 |---|---|---|
-| Build | dev client builds with EAS, installs, launches; the splash shows the icon, then the fonts load, then onboarding | open |
-| Fonts | Inter (regular, medium, semibold, bold) renders everywhere including tab labels; the app still works if the fonts fail to load | open |
+| Build | the new dev client (expo-dev-client, expo-linear-gradient, expo-navigation-bar, embedded fonts, chime, notification icon) builds with EAS, installs, launches; the splash shows the new icon tile, then onboarding | open |
+| Fonts | Figtree and Bricolage (embedded Android font families) render everywhere including tab labels; weights pick the right files (Bricolage 600/800) | open |
+| Look | the Spark redesign on a phone in light and dark: the quiz stage, the timer ring on the card edge, answer pills, the Daily hero, Classic path, Results hero; nav-bar buttons are light on the quiz stage | open |
 | First answer | first launch to the first answered warm-up question takes under 30 s on a mid-range phone (nothing was timed) | open |
 | Onboarding | every screen O1 to O7 on a phone; "skip intro" skips the warm-up; killing the app on each screen resumes it; the warm-up has no timer, no lifelines and no ads | open |
 | Quiz | the answer buttons, the shake and bounce, the timer ring, the tick in the last 5 s, the +points feel; the ring never jumps when 50/50 or +Time is used | open |
 | Quiz | the timer pauses when the app is backgrounded (home button, an incoming call, the share sheet) and the paused time is not counted; "Paused — Resume" appears | open |
 | Quiz | Android Back during a round asks "Quit round?"; Back on the Results screen goes where expected; the quiz is a full-screen modal with no tab bar | open |
 | Haptics | a light tap on press, success on a right answer, error on a wrong one or a timeout; Settings → Vibration turns them off | open |
-| Sounds | the chime, the buzz, the tick and the fanfare are pleasant at 60%; they follow the phone's silent mode (whether `playsInSilentMode: false` is enough on Android is unconfirmed); other music keeps playing; Settings → Sound turns them off; the WAV files are under 30 KB, not OGG | open |
+| Sounds | the shared check, wrong, tick and celebrate sounds (`@shared/sound`) are pleasant; they follow the phone's silent mode (`playsInSilentMode: false`; whether that is enough on Android is unconfirmed); other music keeps playing; Settings → Sound turns them off; the reminder plays the shared chime on the `daily_chime` channel with a gentle vibration | open |
 | Clock | Blitz: 60 s, +1 s on a right answer, −3 s on a wrong one, the clock stands still while the explanation shows, +10 s once; Classic and Category timers 25, 20 and 18 s | open |
 | Classic | stars and unlocks survive killing the app; 30 levels in each of 12 categories; hearts on levels 21 to 30 | open |
 | Daily | the same 10 questions on two phones on the same date; the streak, freeze and restore across real midnights and a time-zone change; airplane mode | open |
 | Share | the Daily result image is made and the Android share sheet opens with it (`react-native-view-shot`, `expo-sharing` are mocked in Jest); returning from the share sheet shows no app-open ad | open |
-| Text size | Settings text size Small to Extra large, and Android font size 1.5× and "display size: Largest" on every screen (Jest checks targets and labels at a theme scale of 1.3, not clipping and not the OS scale) | open |
+| Text size | Settings text size Small to Largest, and Android font size 1.5× and "display size: Largest" on every screen (Jest checks targets and labels at a theme scale of 1.3, not clipping and not the OS scale) | open |
 | TalkBack | a full round with TalkBack (answers read as "Answer B, Paris", the verdict is announced, the explanation is reachable, lifelines read their state), the Classic map, the Daily result strip, Settings and onboarding | open |
 | Reduce motion | with "Remove animations" on: no shake, bounce or pulse; everything still works | open |
 | Look | every screen in light and dark; the icon, adaptive icon and monochrome icon in a launcher; the feature graphic; category tile colors | open |
@@ -141,7 +142,7 @@ Declare from this build (not yet done anywhere; milestone 9):
 **Deviations from the plan**
 - Milestones D3 and D4 were built together and are in one commit.
 - Plan names: the engine lives in `src/domain` (the plan says `src/engine`), stores in `src/store`; the notification code is `src/notifications/reminder.ts`; routes `(onboarding)/welcome` and `(onboarding)/warmup-result` carry O1–O3 and O5–O7 (the warm-up O4 is the quiz screen in warm-up mode).
-- Fonts: Inter through `@expo-google-fonts/inter`. Sounds: WAV (30 KB or less), not OGG. The explanation is a panel inside the quiz screen, not a sliding sheet. The lifeline-offer is a sheet in the quiz screen, not a route. The mode grid on Home is 2×2 (v1.1 modes are hidden).
+- Fonts: the shared Figtree and Bricolage (Inter was dropped in the 2026-10-24 redesign). Sounds: the shared WAV set, not OGG. The explanation is a panel inside the quiz screen, not a sliding sheet. The lifeline-offer is a sheet in the quiz screen, not a route. The mode grid on Home is 2×2 (v1.1 modes are hidden).
 - The plan's OS font scale "up to 1.5" is not capped (capping would break "respect the system font scale"); the layout was tested at a theme text scale of 1.3 only.
 - The Blitz score and personal best are the number of right answers. Blitz shows an explanation after each answer with the clock stopped, so the 60 s is thinking time.
 - Plan §6 O5 says "Your streak starts today"; only the Daily counts toward the streak, so the text says to play today's Daily Challenge to start it. The warm-up pays a flat 30 XP.
