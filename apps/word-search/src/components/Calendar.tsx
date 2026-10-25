@@ -11,7 +11,7 @@ import { useAppColors, useIsHighContrast } from '@/theme/mode';
 import { AppText } from '@/ui/AppText';
 import { formatDay, formatMonth, weekdayNames } from '@/ui/format';
 
-const DAY = 40;
+const DAY = 38;
 
 /**
  * A month of the daily puzzle (plan §5.5) on a frosted card: finished days are filled with a check
@@ -60,16 +60,18 @@ export function Calendar({ monthKey, daily, today, onPrev, onNext }: { monthKey:
                   style={[
                     styles.day,
                     {
-                      backgroundColor: done ? (hc ? colors.background : app.go[1]) : 'transparent',
+                      backgroundColor: done ? app.doneSoft : 'transparent',
                       borderWidth: isToday ? 3 : done && hc ? 2 : 0,
                       borderColor: isToday ? colors.primary : colors.success,
                     },
                   ]}
                 >
-                  {done ? (
-                    <Check size={20} color={hc ? colors.success : app.onGo} strokeWidth={3.2} />
-                  ) : (
-                    <AppText style={{ fontSize: fixed(15), lineHeight: fixed(20), color: colors.text, fontWeight: isToday ? '800' : '600' }}>{day}</AppText>
+                  <AppText style={{ fontSize: fixed(15), lineHeight: fixed(20), color: colors.text, fontWeight: isToday || done ? '800' : '600' }}>{day}</AppText>
+                  {/* The date stays readable; a small check badge says the day is done (never color alone). */}
+                  {done && (
+                    <View style={[styles.badge, { backgroundColor: colors.success, borderColor: colors.surface }]}>
+                      <Check size={11} color={colors.surface} strokeWidth={4} />
+                    </View>
                   )}
                 </View>
               </View>
@@ -87,4 +89,5 @@ const styles = StyleSheet.create({
   row: { flexDirection: 'row' },
   cell: { flex: 1, alignItems: 'center', justifyContent: 'center' },
   day: { width: DAY, height: DAY, borderRadius: DAY / 2, alignItems: 'center', justifyContent: 'center' },
+  badge: { position: 'absolute', right: -3, bottom: -3, width: 18, height: 18, borderRadius: 9, borderWidth: 2, alignItems: 'center', justifyContent: 'center' },
 });

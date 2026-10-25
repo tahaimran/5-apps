@@ -97,6 +97,8 @@ export interface AppColors {
   starEmpty: string;
   /** The streak flame. */
   flame: string;
+  /** A finished day on the Daily calendar: a soft green disc behind the date (the check is a small badge). */
+  doneSoft: string;
   /** A frosted card over the sky. */
   frost: string;
   /** The rays behind the stars on Puzzle Complete. */
@@ -127,6 +129,7 @@ export const appColors: Record<ThemeMode, AppColors> = {
     onGold: '#4A2C00',
     starEmpty: '#C8D6E5',
     flame: '#E0591F',
+    doneSoft: '#DDF2CC',
     frost: withAlpha('#FFFFFF', 0.86),
     burst: withAlpha('#FFFFFF', 0.55),
     scrim: '#0B1A2E8C',
@@ -151,6 +154,7 @@ export const appColors: Record<ThemeMode, AppColors> = {
     onGold: '#2A1A00',
     starEmpty: '#3A5070',
     flame: '#FF9A5C',
+    doneSoft: '#1F3D2B',
     frost: withAlpha('#16283F', 0.9),
     burst: withAlpha('#FFFFFF', 0.08),
     scrim: '#000000A6',
@@ -175,6 +179,7 @@ export const appColors: Record<ThemeMode, AppColors> = {
     onGold: '#000000',
     starEmpty: '#FFFFFF',
     flame: '#FFA500',
+    doneSoft: '#000000',
     frost: '#000000',
     burst: '#00000000',
     scrim: '#000000CC',

@@ -75,6 +75,11 @@ describe.each(modes)('%s palette', (mode) => {
     expect(contrastRatio(mode === 'high-contrast' ? app.goLip : app.go[1], c.surface)).toBeGreaterThanOrEqual(mode === 'light' ? 2 : 3);
   });
 
+  it('keeps the date AAA on a finished calendar day', () => {
+    expect(contrastRatio(c.text, app.doneSoft)).toBeGreaterThanOrEqual(7);
+    expect(contrastRatio(c.success, c.surface)).toBeGreaterThanOrEqual(3);
+  });
+
   it('control borders are visible against the background (3:1 non-text)', () => {
     expect(contrastRatio(c.border, c.background)).toBeGreaterThanOrEqual(3);
   });

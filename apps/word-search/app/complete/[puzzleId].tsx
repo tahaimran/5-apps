@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { ScrollView, StyleSheet, View, useWindowDimensions } from 'react-native';
 import { Redirect, router } from 'expo-router';
 import Animated, { useReducedMotion } from 'react-native-reanimated';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Svg, { Path } from 'react-native-svg';
 import ArrowRight from 'lucide-react-native/icons/arrow-right';
 import Flame from 'lucide-react-native/icons/flame';
@@ -115,6 +115,7 @@ export default function Complete() {
   const hc = useIsHighContrast();
   const reduced = useReducedMotion();
   const { width } = useWindowDimensions();
+  const insets = useSafeAreaInsets();
   if (!result) return <Redirect href="/(tabs)" />;
   const next = result.isTutorial ? levelPuzzleId(DEFAULT_PACK, difficulty, 1) : nextPuzzleId(result);
   const pack = getPack(result.packId)?.name ?? '';
@@ -130,7 +131,7 @@ export default function Complete() {
   const flameDelay = STAR_LEAD_MS + 3 * STAR_GAP_MS + STAR_MS / 2;
   const rise = (delay: number) => (reduced ? null : { animationName: RISE_IN, animationDuration: RISE_MS, animationDelay: delay, animationFillMode: 'backwards' as const, animationTimingFunction: CSS_EASE_OUT });
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: colors.background }} edges={['top', 'bottom']}>
+    <View style={{ flex: 1, backgroundColor: colors.background, paddingTop: insets.top, paddingBottom: insets.bottom }}>
       <SkyBackdrop />
       <ScrollView style={styles.clip} contentContainerStyle={{ flexGrow: 1, justifyContent: 'center', padding: spacing.lg, gap: spacing.xl }}>
         <View style={{ alignItems: 'center', gap: spacing.lg }}>
@@ -199,7 +200,7 @@ export default function Complete() {
       </ScrollView>
       {confetti && !reduced && <Confetti colors={[...(hc ? g.edges : g.highlights), app.gold]} duration={CONFETTI_MS} onDone={() => setConfetti(false)} />}
       <ReminderSheet visible={reminderOpen} onClose={() => setReminderOpen(false)} />
-    </SafeAreaView>
+    </View>
   );
 }
 

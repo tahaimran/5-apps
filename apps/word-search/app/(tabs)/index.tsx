@@ -1,6 +1,5 @@
 import { StyleSheet, View } from 'react-native';
 import { router } from 'expo-router';
-import Check from 'lucide-react-native/icons/check';
 import Play from 'lucide-react-native/icons/play';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
@@ -28,6 +27,7 @@ import { PackCard } from '@/ui/PackCard';
 import { ProgressBar } from '@/ui/ProgressBar';
 import { Ribbon } from '@/ui/Ribbon';
 import { formatLongDay } from '@/ui/format';
+import { DayStatus } from '@/ui/DayStatus';
 import { Screen } from '@/ui/Screen';
 import { SkyBackdrop } from '@/ui/SkyBackdrop';
 import { StarShape } from '@/ui/StarRow';
@@ -112,10 +112,7 @@ export default function Home() {
             <AppText style={[type.body, { color: colors.textMuted }]}>{t('home.todayTheme', { theme: getPack(todayPack)?.name ?? '' })}</AppText>
           </View>
         </View>
-        <View style={[styles.status, { gap: spacing.xs, borderRadius: radius.pill, paddingHorizontal: spacing.md, backgroundColor: status === 'done' ? colors.primarySoft : colors.surfaceAlt }]}>
-          {status === 'done' && <Check size={18} color={colors.success} strokeWidth={3} />}
-          <AppText style={[type.body, { color: colors.text, fontWeight: '700' }]}>{t(`daily.status.${status}`)}</AppText>
-        </View>
+        <DayStatus status={status} />
         {status !== 'done' && (
           <GameButton
             variant={current ? 'plain' : 'go'}
@@ -150,6 +147,5 @@ const styles = StyleSheet.create({
   header: { flexDirection: 'row', alignItems: 'flex-start', flexWrap: 'wrap', paddingTop: 8 },
   chips: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'flex-end' },
   row: { flexDirection: 'row', alignItems: 'center' },
-  status: { flexDirection: 'row', alignItems: 'center', alignSelf: 'flex-start', minHeight: 36 },
   grid: { flexDirection: 'row', flexWrap: 'wrap' },
 });

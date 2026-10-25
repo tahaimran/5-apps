@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { AccessibilityInfo, AppState, ScrollView, StyleSheet, useWindowDimensions, View } from 'react-native';
 import { router, useLocalSearchParams } from 'expo-router';
 import Animated, { useReducedMotion } from 'react-native-reanimated';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import ChevronLeft from 'lucide-react-native/icons/chevron-left';
 import EllipsisVertical from 'lucide-react-native/icons/ellipsis-vertical';
 import Lightbulb from 'lucide-react-native/icons/lightbulb';
@@ -136,6 +136,7 @@ export default function Play() {
   useAdScreen('play'); // never an ad on this screen (plan §11)
   const { colors, spacing, type, shadow, mode } = useTheme();
   const reduced = useReducedMotion();
+  const insets = useSafeAreaInsets();
   const { width } = useWindowDimensions();
   const settings = useSettings((s) => s.settings);
   const feedback = useFeedback();
@@ -267,7 +268,7 @@ export default function Play() {
   const onPreview = useCallback((l: string) => setLetters(l), []);
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: colors.background }} edges={['top', 'bottom']}>
+    <View style={{ flex: 1, backgroundColor: colors.background, paddingTop: insets.top, paddingBottom: insets.bottom }}>
       <SkyBackdrop />
       <View style={[styles.bar, { minHeight: 64, paddingHorizontal: spacing.sm, gap: spacing.sm }]}>
         <IconButton
@@ -339,7 +340,7 @@ export default function Play() {
       )}
       <HintSheet visible={sheet === 'refill'} onClose={() => setSheet('none')} />
       <MenuSheet visible={sheet === 'menu'} onClose={() => setSheet('none')} />
-    </SafeAreaView>
+    </View>
   );
 }
 

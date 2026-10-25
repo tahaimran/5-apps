@@ -124,7 +124,7 @@ export function SwitchRow({
       style={[rowStyle(touchTarget, spacing), styles.wrap]}
     >
       {icon ? <IconCircle icon={icon} tint={tint} bg={bg} /> : null}
-      <View style={styles.label}>
+      <View style={styles.switchLabel}>
         <AppText style={[type.bodyLarge, { color: colors.text, fontWeight: '600' }]}>{label}</AppText>
         {hint ? <AppText style={[type.body, { color: colors.textMuted }]}>{hint}</AppText> : null}
       </View>
@@ -198,6 +198,8 @@ const styles = StyleSheet.create({
   wrap: { flexWrap: 'wrap' },
   // The label keeps at least half the row; a long value wraps within the rest instead of squeezing it.
   label: { flex: 1, minWidth: '50%' },
+  // A switch row keeps its toggle on the same line until the label would get under ~120dp (very large text).
+  switchLabel: { flex: 1, minWidth: 120 },
   value: { flexShrink: 1, maxWidth: '45%', textAlign: 'right' },
   divider: { height: StyleSheet.hairlineWidth },
   tile: { flexGrow: 1, flexBasis: 96, minHeight: 56 },

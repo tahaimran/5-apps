@@ -121,7 +121,7 @@ export default function PackScreen() {
                 onPress={() => startLevel(pack.id, difficulty, track.currentLevel)}
               />
             </View>
-            <View style={[styles.row, { gap: spacing.md, padding: spacing.md, minHeight: touchTarget + 8, opacity: 0.75 }, ...card]} accessible accessibilityLabel={t('packs.nextUpLabel', { level: track.currentLevel + 1 })}>
+            <View style={[styles.row, { gap: spacing.md, padding: spacing.md, minHeight: touchTarget + 8 }, ...card]} accessible accessibilityLabel={t('packs.nextUpLabel', { level: track.currentLevel + 1 })}>
               <LevelBadge level={track.currentLevel + 1} />
               <AppText style={[type.bodyLarge, styles.flex, { color: colors.textMuted }]}>{t('packs.level', { level: track.currentLevel + 1 })}</AppText>
               <AppText style={[type.body, { color: colors.textMuted, fontWeight: '700' }]}>{t('packs.nextUp')}</AppText>

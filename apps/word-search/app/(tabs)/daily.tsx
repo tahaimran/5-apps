@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
-import Check from 'lucide-react-native/icons/check';
 import Flame from 'lucide-react-native/icons/flame';
 import History from 'lucide-react-native/icons/rotate-ccw';
 import Play from 'lucide-react-native/icons/play';
@@ -25,6 +24,7 @@ import { AppText } from '@/ui/AppText';
 import { BannerSlot } from '@/ui/BannerSlot';
 import { GameButton } from '@/ui/GameButton';
 import { formatDay, formatLongDay } from '@/ui/format';
+import { DayStatus } from '@/ui/DayStatus';
 import { Screen } from '@/ui/Screen';
 import { NavRow, SettingsGroup, StatTile } from '@/ui/SettingsRow';
 
@@ -58,12 +58,7 @@ export default function DailyTab() {
             <AppText style={[type.bodyLarge, { color: colors.textMuted }]}>{t('daily.theme', { theme })}</AppText>
           </View>
         </View>
-        <View style={[styles.status, { gap: spacing.xs, borderRadius: radius.pill, paddingHorizontal: spacing.md, backgroundColor: status === 'done' ? colors.primarySoft : colors.surfaceAlt }]}>
-          {status === 'done' && <Check size={18} color={colors.success} strokeWidth={3} />}
-          <AppText accessibilityLiveRegion="polite" style={[type.body, { color: colors.text, fontWeight: '700' }]}>
-            {t(`daily.status.${status}`)}
-          </AppText>
-        </View>
+        <DayStatus status={status} />
         {status === 'done' ? (
           <AppText style={[type.bodyLarge, { color: colors.text }]}>{t('daily.comeBack')}</AppText>
         ) : (
@@ -87,7 +82,7 @@ export default function DailyTab() {
       {missed.length > 0 && (
         <SettingsGroup title={t('daily.catchUp')}>
           {missed.map((key) => (
-            <NavRow key={key} icon={History} label={formatDay(key)} value={t('daily.catchUpAction')} accessibilityLabel={t('daily.catchUpLabel', { date: formatDay(key) })} onPress={() => startPuzzle(dailyIdToOpen(current, key, difficulty))} />
+            <NavRow key={key} icon={History} label={formatDay(key)} accessibilityLabel={t('daily.catchUpLabel', { date: formatDay(key) })} onPress={() => startPuzzle(dailyIdToOpen(current, key, difficulty))} />
           ))}
         </SettingsGroup>
       )}
@@ -100,5 +95,4 @@ const styles = StyleSheet.create({
   flex: { flex: 1 },
   row: { flexDirection: 'row', alignItems: 'center' },
   tiles: { flexDirection: 'row', flexWrap: 'wrap' },
-  status: { flexDirection: 'row', alignItems: 'center', alignSelf: 'flex-start', minHeight: 36 },
 });
