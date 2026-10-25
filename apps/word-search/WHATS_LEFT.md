@@ -1,10 +1,19 @@
 # Word Search: Large Print Easy — what's left
 
-Status (2026-10-09): the code checks pass (tsc clean, expo-doctor 21/21, all jest tests pass), but the app has never run on a phone. Linked to EAS as @tuahaimran/word-search (projectId is in app.config.ts). A first "preview" APK was built in the cloud on 2026-10-09; install it from the Builds page on expo.dev.
+Status (2026-10-25): the "Sky Garden" redesign is on `feat/ui-polish` (plan §7): tsc clean, expo-doctor 21/21, all jest tests pass, but it has never run on a phone. It adds native pieces (dev client, gradient, navigation bar, embedded fonts, new icons, splash, notification icon and chime), so the 2026-10-09 preview APK can't show it: **a new development build is needed** (`eas build --profile development --platform android` from this folder, once the EAS quota allows). Linked to EAS as @tuahaimran/word-search (projectId is in app.config.ts).
+
+## 0. Look at the redesign on the new dev build
+- [ ] The sky, clouds and ribbons on every screen in light, dark (night sky) and high contrast (black, white and yellow only).
+- [ ] Drag across a word: the see-through pill follows the finger smoothly (no stepping), the word bubble shows the letters, a wrong pick just fades.
+- [ ] Found words: the pill draws in, the chip ticks, letters stay readable on every pill color.
+- [ ] Puzzle Complete: the rays, the stars landing one by one, the streak flame on a daily, the confetti (none with "Remove animations").
+- [ ] The pack pictures on Home and in each pack, and the new launcher icon, splash and notification icon (white, blue tint) with its soft chime.
+- [ ] Settings → Clock: Phone / 12-hour / 24-hour changes the reminder chips and time.
+- [ ] Every screen at system font size 1.3× and 2.0× and at each of the four letter sizes: nothing cut off or overlapping.
 
 ## 1. Try it on your phone (test checklist)
 Tip: in a development build, Settings → "Ad rules (development builds only)" shows why each ad would or would not show.
-1. - [ ] Install the preview APK, open it: splash shows the icon on cream, then onboarding, in the Atkinson Hyperlegible font.
+1. - [ ] Install the build, open it: splash shows the icon on the sky color, then onboarding; the grid and word list are in Atkinson Hyperlegible, the rest in Figtree and Bricolage.
 2. - [ ] Time first launch to first found word (goal: about 30 s); tap Skip once and check it picks Large text and Easy.
 3. - [ ] Drag across words on Easy, Medium and Hard; check backwards words are refused on Easy/Medium and accepted on Hard.
 4. - [ ] Drag on the grid at a large text size and check the page never scrolls instead.

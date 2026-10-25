@@ -213,28 +213,41 @@ Implementation: `@shared/onboarding` provides `useOnboarding({ steps, storageKey
 
 ---
 
-## 7. Design system
+## 7. Design system: "Sky Garden"
 
-Built on `@shared/theme` tokens (`createTheme({ palette, typeScale, spacing })`), app overrides in `src/theme/`.
+*(Redesigned 2026-10-25 after the reference screens: a gamified word-search look kept calm and adult for the 45+ personas. Built on the shared kit (`@shared/ui`, `@shared/theme`, `@shared/time`, `@shared/sound`); app tokens in `src/theme/tokens.ts`, mode hooks in `src/theme/mode.ts`, motion in `src/ui/motion.ts`. Jest-verified only: it needs a new dev build before it can be seen on a phone.)*
+
+**Idea.** A soft sky with a few clouds behind every screen, white boards with a deep-blue frame, gold ribbons for titles, and one chunky lime "go" button for the move that starts or continues play (Play, Continue, Next puzzle). Stars and a streak flame are the only rewards; there are no coins, lives or timers (plan §1 promises). Deep blue stays the brand and the color of every selected state (tabs, radio cards, toggles, today's ring). **No red for "wrong"**: a selection that is not a word just fades; red appears only on "Reset progress".
 
 ### 7.1 Palette
-| Token | Light | Dark | High-contrast |
+Shared palette per mode (every body-text pair ≥ 7:1, checked in `theme/__tests__/contrast.test.ts`):
+
+| Token | Light (sky) | Dark (night sky) | High contrast |
 |---|---|---|---|
-| `bg` | `#FBF7EF` (warm cream) | `#121417` | `#000000` |
-| `surface` | `#FFFFFF` | `#1E2227` | `#000000` |
-| `gridCell` | `#FFFFFF` | `#262B31` | `#000000` |
-| `gridBorder` | `#E3DCCD` | `#3A4048` | `#FFFFFF` |
-| `textPrimary` | `#1B1B1F` | `#F2F2F2` | `#FFFFFF` |
-| `textSecondary` | `#4A4A55` | `#C5C9D0` | `#FFFF00` |
-| `primary` | `#1F5FAF` (deep blue) | `#7FB3FF` | `#FFFF00` |
-| `onPrimary` | `#FFFFFF` | `#0B1A2E` | `#000000` |
-| `success` | `#2E7D32` | `#81C784` | `#00FF00` |
-| `warning/hint` | `#B45309` | `#FBBF24` | `#FFA500` |
-| `selection` (in-drag) | `#1F5FAF` @ 35% | `#7FB3FF` @ 40% | `#FFFF00` @ 60% |
+| `background` | `#EAF6FC` | `#0D1B2E` | `#000000` |
+| `surface` / `surfaceAlt` | `#FFFFFF` / `#E1F0F8` | `#16283F` / `#1F3452` | `#000000` |
+| `text` / `textMuted` | `#13233F` / `#3C4A63` | `#F1F5FB` / `#C3CEDD` | `#FFFFFF` / `#FFFF00` |
+| `primary` / `onPrimary` | `#1F5FAF` (deep blue) / `#FFFFFF` | `#8EC0FF` / `#0B1A2E` | `#FFFF00` / `#000000` |
+| `primarySoft` | `#D6E8FA` | `#1C3557` | `#000000` |
+| `accent` | `#A85A00` | `#FFC857` | `#FFA500` |
+| `success` | `#2E7D32` | `#8BD48F` | `#00FF00` |
+| `border` | `#6A7F9C` | `#6C82A3` | `#FFFFFF` |
 
-Found-word highlight rotation (color-blind safe, ≥ 3:1 against cell): `#F4A261`, `#8ECAE6`, `#B5E48C`, `#F7B2BD`, `#CDB4DB`, `#FFD166` (light/dark use same hues at 55% opacity; high-contrast uses solid outline 4dp in `#FFFF00`/`#00FFFF` alternating). All text/background pairs ≥ 7:1 (WCAG AAA) for body text in all themes.
+App tokens (`appColors`): the sky `stage` gradient (light `#BFE6F8 → #DDF2FB → #F2FAFD`, dark `#0B1F3A → #102845 → #0D1B2E`), clouds, hills and sun of the Home scene (stars and a moon at night), the gold `ribbon` `#FFC93C` with `onRibbon` `#4A2C00` (8.3:1), the board frame `#1D4F8F` (`#4A7CC0` at night), the lime `go` button `#8BD449 → #6CBF3A` on a `#4C8F22` lip with `#143D00` labels (≥ 5.4:1), gold stars `#FFC93C` edged `#C98A00`, the streak flame `#E0591F`, and frosted panels (white at 86% over the sky; text on them stays ≥ 7:1).
 
-### 7.2 Type scale (font: Atkinson Hyperlegible via `expo-font`, fallback system)
+**Found-word pills** (`gameColors`): each found word is a rounded pill (stroke = cell × 0.8, round caps) with a fill and a darker edge. Light: coral, sky, lime, rose, lavender and gold fills (`#FFAE94 #9FD8F5 #B8E38A #F9AFC9 #CDB6F0 #FFD45E`, letters ≥ 8.6:1) with edges ≥ 4:1 against the white cell (`#D2593A #2A86BD #4B8F22 #C4417A #7C5BC4 #A87400`). Dark: deep jewel fills under light letters (≥ 6.8:1) with the original plan hues as edges (`#F4A261 #8ECAE6 #B5E48C #F7B2BD #CDB4DB #FFD166`). High contrast: 4dp outlines only, yellow and cyan alternating. The live selection is a see-through deep-blue pill (a yellow outline in high contrast). Found state is never color alone: strikethrough, a check and a color dot on the word chip.
+
+**High contrast** stays a real AAA mode: only black, white and yellow (cyan, green and orange only as the second outline, the success check and the hint ring); no sky, clouds, gradients or shadows, edges instead. `theme/__tests__/highContrast.test.ts` walks every high-contrast token, gradients and overlays included, and every color of the drawings.
+
+### 7.2 Type
+| Role | Family | Why |
+|---|---|---|
+| Grid letters, word-list chips, the word bubble | **Atkinson Hyperlegible** 700 | Drawn for low vision (open shapes, distinct I/l/1, O/0): the app's legibility promise |
+| Titles, ribbons, game buttons, big numbers | **Bricolage Grotesque** 800 | The portfolio's display face; gives the game its warmth |
+| Everything else (body, rows, captions, tabs) | **Figtree** 400–700 | The portfolio's interface face, very readable at 18–24sp |
+
+All three are embedded at build time with the expo-font plugin (no runtime loading, no fallback flash); `AppText` picks the family from the style and the weight file from `fontWeight`.
+
 | Role | Comfortable | Large (default) | Extra Large | Huge |
 |---|---|---|---|---|
 | Grid letter | 22sp | 26sp | 32sp | 38sp |
@@ -243,23 +256,35 @@ Found-word highlight rotation (color-blind safe, ≥ 3:1 against cell): `#F4A261
 | Button label | 20sp | 20sp | 22sp | 24sp |
 | Title | 26sp | 28sp | 30sp | 32sp |
 | Display (Complete) | 34sp | 36sp | 38sp | 40sp |
-Respect Android font scale with `allowFontScaling` but clamp via `maxFontSizeMultiplier={1.4}` on grid letters (grid size logic already enlarges).
+
+The text size scales the shared type (`fontScaleFor`), and everything respects the phone's font scale. Grid letters are the one place that caps it (`maxFontSizeMultiplier={1.4}`; the grid-size logic already enlarges the cells). Text inside fixed shapes (the hint badge, level badges, calendar days) keeps its drawn size by dividing by the font scale, and its spoken label carries the full value. Everything else wraps; nothing is cut with "…". The optional timer uses the shared fixed-width `Digits`.
 
 ### 7.3 Spacing, shape, touch
-- Spacing scale: 4, 8, 12, 16, 24, 32, 48. Screen gutter 16dp (24dp on tablets).
-- Radius: cards 16dp, buttons 14dp, grid 12dp, highlight stroke = cell height × 0.8 with round caps.
-- **Touch targets ≥ 56dp** for all buttons/rows (primary buttons 64dp). Grid cells ≥ 44dp, with selection snapping so near-misses still register (touch slop = 30% of cell).
-- Min 8dp between adjacent tappable controls.
+- Spacing 4, 8, 12, 16, 24, 32. Screen gutter 16dp. Radius: cards 20dp, game buttons 22dp, the board 22dp (its cells' panel 12dp), pills fully round.
+- **Touch targets ≥ 56dp** for all buttons and rows; the lime game buttons are **64dp** (primary). Grid cells ≥ 44dp with 30% touch slop. ≥ 8dp between adjacent controls.
+- Depth comes from the shared `theme.shadow(level)`; high contrast uses 2–3dp edges instead.
 
-### 7.4 Haptics & sounds
-- `expo-haptics`: word found → `notificationAsync(Success)`; puzzle complete → Success + 150 ms later `impactAsync(Medium)`; selection start → `selectionAsync()`. No haptic on invalid selection.
-- `expo-audio`: soft chime (word found, ~250 ms), gentle arpeggio (complete). Default ON at 60% volume, respects device silent mode. Toggles in Settings.
+### 7.4 Hero moments
+- **Game screen (§5.3):** the sky stage; a round back button, the title on a gold ribbon, the gold hint disc with its count badge, and a menu button. A thin progress bar ("3 of 8 found"), a word bubble with the letters under the finger, the board (one gesture surface), and the word panel. No banner or ad, ever.
+- **Puzzle Complete (§5.4):** "Well done!" on a large ribbon, soft rays behind three stars that land one after another, a one-line praise that never mentions speed, the pack picture and words found, the streak flame on a counted daily, confetti (never under Reduce Motion), then "Next puzzle" (lime, 64dp) and "Back to packs".
+- **Home (§5.1):** greeting and date with HUD chips (streak flame, stars collected), the Continue card (pack picture, progress bar), the Today's puzzle card (calendar picture, status with a check), a "Word packs" ribbon and a two-column grid of illustrated pack cards (level and stars). Rolling hills sit at the bottom of the sky.
+- **Daily (§5.5):** a hero card, streak and best-streak tiles, the month on a white card (finished days are lime circles with a check, missed days plain, today ringed), catch-up rows.
 
-### 7.5 Accessibility / TalkBack
-- Every grid cell `accessibilityLabel="Row 3, column 5, letter K"`; TalkBack users default to tap-tap mode (auto-switch when `AccessibilityInfo.isScreenReaderEnabled()`).
-- Word list announces "Lion, found" / "Tiger, not found". Found words announced via `AccessibilityInfo.announceForAccessibility("Found LION. 5 words left.")`.
-- Respect Reduce Motion (`AccessibilityInfo.isReduceMotionEnabled`) → no confetti, instant transitions.
-- Never convey state by color alone (strikethrough + check icon on found words).
+### 7.5 Pictures
+Twelve hand-drawn pack pictures (`src/features/packs/drawings.tsx`: a curled-up cat, a robin, a fruit bowl, a lattice pie, a suitcase, a skyline, a mountain, a gift, a four-season tree, yarn, a record, a cottage) plus two scenes (the onboarding magnifier over letter tiles, the Daily calendar), in one flat style on a 100×100 canvas, keyed by pack id, each on its own soft tile color. Every color goes through a tone function, so high contrast recolors the whole set yellow-on-black. A test checks every pack has one. The app icon, adaptive layers, splash, notification icon and feature graphic come from `scripts/generate-icons.cjs` (ASO §5, §7).
+
+### 7.6 Motion
+Reanimated only (expo-animation). The selection pill is driven by shared values set in worklet gesture handlers, so it follows the finger continuously on the UI thread; the domain decides the cells on release. Found pills draw in (240 ms, a shared value), chips tick (240 ms), the board settles in once (280 ms), stars pop 220 ms apart, the flame lands after them, the hint ring breathes for its 3 s. State changes are CSS transitions, one-shot effects CSS keyframes, everything the player causes is under 300 ms, and tabs never slide. Reduce Motion drops movement and the confetti; colors and opacity still change.
+
+### 7.7 Haptics & sounds
+- Shared `haptics`, gated by the Settings toggle (`setHapticsEnabled`): selection start → select; word found → success; puzzle complete → success, then a medium bump 150 ms later. Nothing for an invalid selection.
+- Shared sounds through the Settings toggle (`setSoundsEnabled`), on by default at a gentle volume, silent-mode aware: `check` for a found word, `complete` for a finished puzzle.
+
+### 7.8 Accessibility / TalkBack
+- Every grid cell `accessibilityLabel="Row 3, column 5, letter K"`; TalkBack users get tap-tap mode (cells become buttons).
+- The word list announces "Lion, found" / "Tiger, not found". Found words are announced via `announceForAccessibility("Found LION. 5 words left.")`.
+- Reduce Motion → no confetti and no movement. Pictures, the sky and confetti are hidden from screen readers.
+- Never convey state by color alone (strikethrough + check icon on found words; On/Off written next to every switch).
 - Test with Android font scale 2.0 and display size "Largest".
 
 ---
@@ -379,10 +404,10 @@ Write strategy: autosave `ws.current` on every found word and on `AppState` → 
 - **Opt-in timing:** in-app pre-prompt after first daily puzzle completion or 3rd puzzle completed (whichever first), never on first launch:
   - Title: "Want a reminder for tomorrow's puzzle?"
   - Body: "We'll send one gentle reminder a day. You can turn it off anytime."
-  - Time chips: **9:00 AM (default) · 1:00 PM · 7:00 PM · Choose time**
+  - Time chips: **9:00 AM (default) · 1:00 PM · 7:00 PM · Choose time** (the shared wheel). Times follow the phone's clock, or the Phone / 12-hour / 24-hour choice in Settings.
   - Buttons: **"Yes, remind me"** → system `POST_NOTIFICATIONS` request (Android 13+) → schedule; **"Not now"** → ask again at most once, after 7 more days.
-- Schedule: `DAILY` trigger at chosen hour/minute; channel `daily-puzzle` (importance DEFAULT, no sound override).
-- Copy rotates (no guilt): "Your daily puzzle is ready ☕ — today's theme: Garden", "A new word search is waiting for you."
+- Schedule: one-off notifications for the next 7 days at the chosen time, planned again on every open; channel `daily-chime` (importance DEFAULT, the shared soft chime `reminder.wav`, a gentle two-pulse vibration). The first version's silent `daily-puzzle` channel is deleted, because Android fixes a channel's sound when it is created. White notification icon, brand color `#1F5FAF`.
+- Copy rotates (no guilt, no emoji): "Your daily puzzle is ready. Today's theme: Garden", "A new word search is waiting for you."
 - Skip today's notification if the daily puzzle is already done (reschedule next one at completion via cancel + one-off trigger for tomorrow, then restore daily trigger).
 - Deep link: tapping opens `/play/daily-<dateKey>`.
 - Never more than one notification per day; no re-engagement spam in v1.
@@ -448,7 +473,7 @@ All versions: "latest compatible with the current Expo SDK" — install with `np
 | Haptics / audio | `expo-haptics`, `expo-audio` |
 | Notifications | `expo-notifications` |
 | Review | `expo-store-review` |
-| Fonts | `expo-font` + Atkinson Hyperlegible (OFL) |
+| Fonts | `expo-font` plugin, embedded: Atkinson Hyperlegible, Figtree, Bricolage Grotesque (all OFL) |
 | Splash / icon | `expo-splash-screen`, adaptive icon in `app.config.ts` |
 | Build | EAS Build (development, preview, production profiles); **dev client required** (`expo-dev-client`) — Expo Go cannot load AdMob |
 | Testing | Jest + `@testing-library/react-native`; generator unit tests; Maestro for E2E smoke |

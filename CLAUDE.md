@@ -13,6 +13,10 @@
   (2026-10-24) is Jest-verified only and needs a new dev build before it can be seen on a phone.
   Contraction Timer's redesign ("Dawn", 2026-10-25, plan §7) is on the kit too (Night stays in the shared
   high-contrast slot, sounds off by default, chime channel `kick-chime`); also Jest-verified only, needs a dev build.
+  Word Search's redesign ("Sky Garden", 2026-10-25, plan §7) is on the kit too: sky stage, gold ribbons, lime 64dp
+  game buttons, hand-drawn pack pictures, Atkinson for the grid (Figtree/Bricolage elsewhere), a UI-thread selection
+  pill, shared `Confetti` (new in `@shared/ui`), chime channel `daily-chime`; high contrast stays black/white/yellow AAA.
+  Jest-verified only; it adds native modules, so it needs its own new dev build.
 - Next: each app's `WHATS_LEFT.md` is the remaining-work checklist (device testing, real AdMob IDs
   in EAS, privacy policy hosting, Play Console forms, screenshots, closed testing).
 

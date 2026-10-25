@@ -58,7 +58,7 @@ What the automated checks actually cover:
 4. **Privacy policy:** complete `store/privacy-policy.md` (developer name, contact, ad partners), host it, then set `EXPO_PUBLIC_PRIVACY_POLICY_URL` (Settings shows the link only when it is set). Also set `EXPO_PUBLIC_CONTACT_EMAIL` for the "Send feedback" row (hidden without it).
 5. **app-ads.txt:** host it at the root of the developer website listed in Play Console.
 6. **Play Console:** create the app, enrol in Play App Signing, add a service account for `eas submit`.
-7. **Fonts and licence:** Atkinson Hyperlegible comes from `@expo-google-fonts/atkinson-hyperlegible` (SIL Open Font License).
+7. **Fonts and licence:** Atkinson Hyperlegible (`assets/fonts`, with its OFL text), Figtree and Bricolage Grotesque (`packages/shared/assets/fonts`) are all SIL Open Font License and embedded by the expo-font plugin.
 
 ## 3. Build and ship
 ```bash
@@ -76,8 +76,8 @@ placement, whether it would show now and why not, with the counters.
 
 | Area | Check | Status |
 |---|---|---|
-| Build | dev client builds with EAS, installs, launches; splash shows the icon on cream, then the fonts load, then onboarding | open |
-| Fonts | Atkinson Hyperlegible (regular and bold) renders in all text, the grid letters and the tab labels; the app still works if the fonts fail to load | open |
+| Build | dev client builds with EAS, installs, launches; splash shows the icon on the sky color, then onboarding (fonts are embedded, nothing loads at run time) | open |
+| Fonts | Atkinson Hyperlegible renders the grid letters and the word list; Figtree the interface; Bricolage the titles, ribbons and game buttons (all embedded with the expo-font plugin) | open |
 | Grid | dragging a finger across a word selects it on Easy, Medium and Hard; the direction snaps at 45°; the highlight follows the finger; a wrong selection fades with no buzz | open |
 | Grid | **a drag on the grid never scrolls the page**, including on a small phone or at a large text size where the page overflows (the page's scrolling is switched off while a finger is on the grid; this is untested on a real touch screen) | open |
 | Grid | tap-first-tap-last works; tapping the same cell cancels; "Tap only" in Settings removes dragging; touch slop at the grid edge feels right | open |
@@ -126,7 +126,7 @@ Only the graphics exist so far. Everything else in the plan's §17 "Play Console
 |---|---|---|
 | Listing title and short description | `ASO.md` (limits checked by a test) | ready, **but see "ASO claims" in §6** |
 | Full description | `ASO.md` (Word Search text, 2,608 chars, Applyra `check_metadata` valid on 2026-10-08) | ready, **claims need aligning with what is built** |
-| Icon 512, feature graphic 1024×500 | `store/` (made by `scripts/make-assets.mjs`) | made, **never viewed on Play** |
+| Icon 512, feature graphic 1024×500 | `store/` (made by `scripts/generate-icons.cjs`, run with resvg from a scratch folder) | made, **never viewed on Play** |
 | 8 screenshots 1080×1920 | — | **to capture on a device** |
 | Privacy policy | `store/privacy-policy.md` | **draft** with placeholders; needs the developer's details and hosting |
 | Data safety, content rating, app-ads.txt | — | **not written** |

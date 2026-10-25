@@ -170,7 +170,7 @@ Rules: put each primary term in the title or short description once, put seconda
 
 ## 6. Screenshot storyboard (8 × 1080×1920 portrait)
 
-Style: cream background, real device frame, top caption in 64–72px Atkinson Hyperlegible bold, at most 5 words, plus a smaller sub-line. Each screenshot shows real UI at the "Large" or "Extra Large" text size.
+Style: the app's soft sky background, real device frame, top caption in 64–72px Bricolage Grotesque, at most 5 words, plus a smaller sub-line. Each screenshot shows real UI at the "Large" or "Extra Large" text size.
 
 | # | Screen shown | Caption | Sub-line |
 |---|---|---|---|
