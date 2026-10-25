@@ -1,27 +1,23 @@
 import { useMemo } from 'react';
-import * as Haptics from 'expo-haptics';
-import { useHaptics } from '@shared/theme';
-import { useSettings } from './settings';
+import { haptics } from '@shared/theme';
 
 /**
- * Haptics that respect the Settings toggle (plan §7.4): a selection tick when a selection starts,
- * success when a word is found, success then a medium bump 150 ms later when the puzzle is complete.
- * Nothing for an invalid selection.
+ * Haptics (plan §7.4) through the shared helpers, which follow the Settings toggle (pushed with
+ * setHapticsEnabled by the settings store) and fire in the same tick as the visual: a selection tick
+ * when a selection starts, success when a word is found, success then a medium bump 150 ms later when
+ * the puzzle is complete. Nothing for an invalid selection.
  */
 export function useFeedback() {
-  const haptics = useHaptics();
-  const enabled = useSettings((s) => s.settings.haptics);
   return useMemo(
     () => ({
-      tap: () => enabled && haptics.tap(),
-      select: () => enabled && haptics.select(),
-      success: () => enabled && haptics.success(),
+      tap: () => void haptics.tap(),
+      select: () => void haptics.select(),
+      success: () => void haptics.success(),
       complete: () => {
-        if (!enabled) return;
-        haptics.success();
-        setTimeout(() => void Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium), 150);
+        void haptics.success();
+        setTimeout(() => void haptics.press(), 150);
       },
     }),
-    [enabled, haptics],
+    [],
   );
 }

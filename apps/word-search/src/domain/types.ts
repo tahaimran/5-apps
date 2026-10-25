@@ -35,6 +35,8 @@ export interface Settings {
   showTimer: boolean;
   sounds: boolean;
   reminder: ReminderSettings;
+  /** 12- or 24-hour times; undefined follows the phone's clock. */
+  timeFormat?: '12h' | '24h';
 }
 
 export interface PlacedWord {

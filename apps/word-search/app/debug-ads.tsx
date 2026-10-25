@@ -6,7 +6,7 @@ import { adContext } from '@/ads/guard';
 import { decide, PLACEMENTS } from '@/domain/adRules';
 import { useAds } from '@/store/ads';
 import { AppText } from '@/ui/AppText';
-import { BigButton } from '@/ui/BigButton';
+import { Button } from '@shared/ui';
 import { Screen } from '@/ui/Screen';
 
 /**
@@ -31,8 +31,7 @@ export default function DebugAds() {
     ['interstitials (last hour)', String(c.interstitialTimes.filter((x) => c.now - x < 3_600_000).length)],
   ];
   return (
-    <Screen>
-      <AppText accessibilityRole="header" style={[type.headline, { color: colors.text, fontWeight: '700' }]}>{t('adDebug.title')}</AppText>
+    <Screen modal title={t('adDebug.title')}>
       <AppText style={[type.body, { color: colors.textMuted }]}>{t('adDebug.intro')}</AppText>
       {PLACEMENTS.map((p) => {
         const d = decide(p, c);
@@ -49,7 +48,7 @@ export default function DebugAds() {
       {rows.map(([k, v]) => (
         <AppText key={k} style={[type.body, { color: colors.text }]}>{`${k}: ${v}`}</AppText>
       ))}
-      <BigButton variant="secondary" label={t('adDebug.back')} onPress={() => router.back()} />
+      <Button variant="secondary" label={t('adDebug.back')} onPress={() => router.back()} block />
     </Screen>
   );
 }

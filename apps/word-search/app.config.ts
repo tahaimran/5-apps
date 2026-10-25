@@ -18,6 +18,7 @@ const config: ExpoConfig = {
     versionCode: 1,
     adaptiveIcon: {
       foregroundImage: './assets/adaptive-icon-foreground.png',
+      backgroundImage: './assets/adaptive-icon-background.png',
       monochromeImage: './assets/adaptive-icon-monochrome.png',
       backgroundColor: '#1F5FAF',
     },
@@ -31,7 +32,7 @@ const config: ExpoConfig = {
       'android.permission.SCHEDULE_EXACT_ALARM',
       'android.permission.USE_EXACT_ALARM',
       'android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS',
-      // expo-audio adds these even with the microphone option off; two short sounds need none of them.
+      // expo-audio adds these even with the microphone option off; short game sounds need none of them.
       'android.permission.RECORD_AUDIO',
       'android.permission.FOREGROUND_SERVICE',
       'android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK',
@@ -43,16 +44,61 @@ const config: ExpoConfig = {
       'react-native-google-mobile-ads',
       { androidAppId: process.env.EXPO_PUBLIC_ADMOB_ANDROID_APP_ID ?? TEST_ANDROID_APP_ID },
     ],
-    ['expo-notifications', { color: '#1F5FAF' }],
-    // Plays two short game sounds only: no recording, so no microphone permission.
-    ['expo-audio', { microphonePermission: false }],
+    [
+      'expo-notifications',
+      {
+        icon: './assets/notification-icon.png',
+        color: '#1F5FAF',
+        // Bundled into res/raw; the daily reminder's chime channel refers to it by file name (src/notifications/reminder.ts).
+        sounds: ['../../packages/shared/assets/sounds/reminder.wav'],
+      },
+    ],
+    // Edge-to-edge without the OS's translucent strip behind 3-button navigation: the tab bar and the sky run
+    // under it, and the root sets the button color from the app's own theme.
+    ['expo-navigation-bar', { enforceContrast: false }],
+    // Short game sounds only: no microphone and no background playback service.
+    ['expo-audio', { microphonePermission: false, recordAudioAndroid: false, enableBackgroundPlayback: false }],
+    [
+      'expo-font',
+      {
+        // Embedded as Android font families, so fontFamily + fontWeight picks the real file and text never
+        // flashes in a fallback font. Atkinson Hyperlegible is for the grid letters and the word list (plan §7.2).
+        android: {
+          fonts: [
+            {
+              fontFamily: 'Figtree',
+              fontDefinitions: [
+                { path: '../../packages/shared/assets/fonts/Figtree_400Regular.ttf', weight: 400 },
+                { path: '../../packages/shared/assets/fonts/Figtree_500Medium.ttf', weight: 500 },
+                { path: '../../packages/shared/assets/fonts/Figtree_600SemiBold.ttf', weight: 600 },
+                { path: '../../packages/shared/assets/fonts/Figtree_700Bold.ttf', weight: 700 },
+              ],
+            },
+            {
+              fontFamily: 'Bricolage',
+              fontDefinitions: [
+                { path: '../../packages/shared/assets/fonts/BricolageGrotesque_600SemiBold.ttf', weight: 600 },
+                { path: '../../packages/shared/assets/fonts/BricolageGrotesque_800ExtraBold.ttf', weight: 800 },
+              ],
+            },
+            {
+              fontFamily: 'Atkinson',
+              fontDefinitions: [
+                { path: './assets/fonts/AtkinsonHyperlegible_400Regular.ttf', weight: 400 },
+                { path: './assets/fonts/AtkinsonHyperlegible_700Bold.ttf', weight: 700 },
+              ],
+            },
+          ],
+        },
+      },
+    ],
     [
       'expo-splash-screen',
       {
         image: './assets/splash-icon.png',
         imageWidth: 200,
-        backgroundColor: '#FBF7EF',
-        dark: { image: './assets/splash-icon.png', backgroundColor: '#121417' },
+        backgroundColor: '#EAF6FC',
+        dark: { image: './assets/splash-icon.png', backgroundColor: '#0D1B2E' },
       },
     ],
     ['expo-build-properties', { android: { compileSdkVersion: 36, targetSdkVersion: 36 } }],

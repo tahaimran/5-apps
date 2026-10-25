@@ -3,7 +3,16 @@ import { dailyPackId } from './daily';
 import type { DateKey, ReminderPrompt } from './types';
 
 export const REMINDER_ID = 'daily-reminder';
-export const REMINDER_CHANNEL = 'daily-puzzle';
+/**
+ * Android fixes a channel's sound when the channel is created, so the reminder moved to a new id when it
+ * gained the chime; the first version's silent `daily-puzzle` channel is deleted (LEGACY_CHANNELS).
+ */
+export const REMINDER_CHANNEL = 'daily-chime';
+export const LEGACY_CHANNELS = ['daily-puzzle'] as const;
+/** The shared chime, bundled into res/raw by the expo-notifications plugin (app.config.ts). */
+export const REMINDER_SOUND = 'reminder.wav';
+/** Two short, soft pulses: noticeable, never alarming. */
+export const GENTLE_VIBRATION = [0, 180, 140, 180];
 /** How many days ahead notifications are scheduled; each app open plans them again. */
 export const REMINDER_DAYS = 7;
 export const ASK_AGAIN_AFTER_MS = 7 * 86_400_000;

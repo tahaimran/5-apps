@@ -61,12 +61,37 @@ describe('store-facing config', () => {
 });
 
 describe('audio and reminder config', () => {
-  it('asks for no microphone permission for the two game sounds', () => {
-    const audio = pluginOptions('expo-audio')![1] as { microphonePermission: boolean };
-    expect(audio.microphonePermission).toBe(false);
+  const exists = (rel: string) => require('fs').existsSync(require('path').resolve(__dirname, '../..', rel));
+  it('configures expo-audio with no microphone, no recording and no background playback', () => {
+    expect(pluginOptions('expo-audio')![1]).toEqual({ microphonePermission: false, recordAudioAndroid: false, enableBackgroundPlayback: false });
   });
-  it('bundles the two sounds', () => {
-    for (const f of ['found.wav', 'complete.wav']) expect(require('fs').existsSync(require('path').resolve(__dirname, '../../assets/sounds', f))).toBe(true);
+  it('plays the shared sounds (a chime for a found word, an arpeggio for a finished puzzle)', () => {
+    for (const f of ['check.wav', 'complete.wav']) expect(exists(`../../packages/shared/assets/sounds/${f}`)).toBe(true);
+    expect(exists('assets/sounds')).toBe(false);
+  });
+  it('bundles the reminder chime and a white notification icon in the brand color', () => {
+    const notifications = pluginOptions('expo-notifications')![1] as { icon: string; color: string; sounds: string[] };
+    expect(notifications.color).toBe('#1F5FAF');
+    expect(exists(notifications.icon)).toBe(true);
+    expect(notifications.sounds.map((s) => require('path').basename(s))).toEqual(['reminder.wav']);
+    for (const s of notifications.sounds) expect(exists(s)).toBe(true);
+  });
+  it('embeds Figtree, Bricolage and Atkinson Hyperlegible with the expo-font plugin (no runtime font loading)', () => {
+    const font = pluginOptions('expo-font')![1] as { android: { fonts: { fontFamily: string; fontDefinitions: { path: string; weight: number }[] }[] } };
+    const families = Object.fromEntries(font.android.fonts.map((f) => [f.fontFamily, f.fontDefinitions]));
+    expect(Object.keys(families).sort()).toEqual(['Atkinson', 'Bricolage', 'Figtree']);
+    expect(families.Atkinson.map((d) => d.weight)).toEqual([400, 700]);
+    for (const defs of Object.values(families)) for (const d of defs) expect(exists(d.path)).toBe(true);
+    const pkg = require('../../package.json') as { dependencies: Record<string, string> };
+    expect(pkg.dependencies).not.toHaveProperty('@expo-google-fonts/atkinson-hyperlegible');
+    expect(pkg.dependencies).not.toHaveProperty('@expo/vector-icons');
+  });
+  it('has the native pieces of the redesign in one dev build', () => {
+    const pkg = require('../../package.json') as { dependencies: Record<string, string> };
+    for (const dep of ['expo-dev-client', 'expo-linear-gradient', 'expo-navigation-bar', 'lucide-react-native']) expect(pkg.dependencies).toHaveProperty(dep);
+    expect(plugins).toContain('expo-navigation-bar');
+    expect(config.android?.adaptiveIcon?.backgroundImage).toBeTruthy();
+    expect(exists(config.android!.adaptiveIcon!.backgroundImage!)).toBe(true);
   });
   it('blocks the microphone and foreground-service permissions the audio library adds on its own', () => {
     for (const p of ['RECORD_AUDIO', 'FOREGROUND_SERVICE', 'FOREGROUND_SERVICE_MEDIA_PLAYBACK']) expect(blocked).toContain(`android.permission.${p}`);

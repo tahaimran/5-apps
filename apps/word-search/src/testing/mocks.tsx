@@ -37,21 +37,22 @@ jest.mock('expo-haptics', () => ({
 }));
 jest.mock('expo-localization', () => ({
   getLocales: () => [{ languageCode: 'en', languageTag: 'en-US', textDirection: 'ltr' }],
+  // The phone's clock style: times in tests read "9:00 AM" unless a test picks 24-hour in Settings.
+  getCalendars: () => [{ uses24hourClock: false }],
   useLocales: () => [{ languageCode: 'en', languageTag: 'en-US', textDirection: 'ltr' }],
 }));
 /** The system review prompt: `available` is what the phone says, `request` records that it was shown. */
 export const mockReview = { available: false, request: jest.fn(async () => undefined) };
 jest.mock('expo-store-review', () => ({ isAvailableAsync: async () => mockReview.available, requestReview: () => mockReview.request() }));
-jest.mock('expo-font', () => ({ useFonts: () => [true, null] }));
 jest.mock('expo-splash-screen', () => ({ preventAutoHideAsync: async () => undefined, hideAsync: async () => undefined }));
 jest.mock('expo-status-bar', () => ({ StatusBar: () => null }));
-jest.mock('@expo-google-fonts/atkinson-hyperlegible', () => ({ AtkinsonHyperlegible_400Regular: 1, AtkinsonHyperlegible_700Bold: 2 }));
 
 /** What the fake system says about the notification permission, what the user answers, and what is scheduled. */
 export const mockNotif = { granted: false, canAskAgain: true, answer: true, keepAsking: false };
 export const mockNotifState = {
   pending: new Map<string, { identifier: string; content: Record<string, unknown>; trigger: Record<string, unknown> }>(),
   channels: new Map<string, Record<string, unknown>>(),
+  deletedChannels: [] as string[],
 };
 export const mockLastNotificationResponse: { current: unknown } = { current: null };
 export const resetNotifMock = () => {
@@ -62,6 +63,7 @@ export const resetNotifMock = () => {
   mockAudio.failCreate = false;
   mockNotifState.pending.clear();
   mockNotifState.channels.clear();
+  mockNotifState.deletedChannels.length = 0;
   mockLastNotificationResponse.current = null;
 };
 jest.mock('expo-notifications', () => ({
@@ -75,6 +77,7 @@ jest.mock('expo-notifications', () => ({
     return { granted: mockNotif.answer };
   },
   setNotificationChannelAsync: async (id: string, c: Record<string, unknown>) => void mockNotifState.channels.set(id, c),
+  deleteNotificationChannelAsync: async (id: string) => void mockNotifState.deletedChannels.push(id),
   setNotificationHandler: () => undefined,
   getAllScheduledNotificationsAsync: async () => [...mockNotifState.pending.values()],
   cancelScheduledNotificationAsync: async (id: string) => void mockNotifState.pending.delete(id),
@@ -91,7 +94,7 @@ export const mockAudio = { players: [] as { source: unknown; volume: number; pla
 jest.mock('expo-audio', () => ({
   createAudioPlayer: (source: unknown) => {
     if (mockAudio.failCreate) throw new Error('no audio');
-    const p = { source, volume: 1, play: jest.fn(), seekTo: jest.fn(async () => undefined) };
+    const p = { source, volume: 1, play: jest.fn(), seekTo: jest.fn(async () => undefined), remove: () => undefined };
     mockAudio.players.push(p);
     return p;
   },
@@ -147,9 +150,28 @@ jest.mock('react-native-svg', () => {
   const React = require('react');
   const { View } = require('react-native');
   const box = (props: Record<string, unknown>) => React.createElement(View, props);
-  return { __esModule: true, default: box, Svg: box, Circle: box, G: box, Path: box, Rect: box, Line: box, Text: box };
+  return {
+    __esModule: true,
+    default: box,
+    Svg: box,
+    Circle: box,
+    G: box,
+    Path: box,
+    Rect: box,
+    Line: box,
+    Text: box,
+    Ellipse: box,
+    Polygon: box,
+    Polyline: box,
+    Defs: box,
+    LinearGradient: box,
+    RadialGradient: box,
+    Stop: box,
+    ClipPath: box,
+  };
 });
-jest.mock('@expo/vector-icons', () => ({ MaterialCommunityIcons: () => null }));
+jest.mock('expo-linear-gradient', () => require('../../../../packages/shared/src/testing/animation').linearGradientMock());
+jest.mock('react-native-worklets', () => require('../../../../packages/shared/src/testing/animation').workletsMock());
 jest.mock('react-native-safe-area-context', () => require('react-native-safe-area-context/jest/mock').default);
 
 /**
@@ -183,9 +205,10 @@ jest.mock('react-native-gesture-handler', () => {
 /** `reduced: false` renders the animated paths. */
 export const mockMotion = { reduced: true };
 jest.mock('react-native-reanimated', () => {
-  const { View, ScrollView } = require('react-native');
+  const { View, ScrollView, Text } = require('react-native');
   const passthrough = (v: unknown) => v;
-  const Animated = { View, ScrollView, createAnimatedComponent: passthrough };
+  // Text too: layout-animated text (Animated.Text) would crash the tests without it.
+  const Animated = { View, ScrollView, Text, createAnimatedComponent: passthrough };
   return {
     // The complete stand-in from the shared package first; this app's overrides below win.
     ...require('../../../../packages/shared/src/testing/animation').reanimatedMock(),
@@ -201,6 +224,7 @@ jest.mock('react-native-reanimated', () => {
     withSpring: passthrough,
     withDelay: (_d: unknown, v: unknown) => v,
     runOnJS: (f: unknown) => f,
+    Easing: { ...require('../../../../packages/shared/src/testing/animation').reanimatedMock().Easing, ease: 1 },
   };
 });
 

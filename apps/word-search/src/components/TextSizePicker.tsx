@@ -6,21 +6,17 @@ import { TEXT_SIZES } from '@/theme/tokens';
 import { OptionCard } from '@/ui/OptionCard';
 import { SampleGrid } from './SampleGrid';
 
-/** The four letter sizes with a live sample (plan F4). Used by Settings, the play screen's menu and onboarding. */
+/** The four letter sizes as large radio cards with a live sample (plan F4, §6). Used by Settings, the play menu and onboarding. */
 export function TextSizePicker({ value, onChange, showSample = true }: { value: TextSize; onChange: (s: TextSize) => void; showSample?: boolean }) {
   const { spacing } = useTheme();
   return (
-    <View style={{ gap: spacing.sm }} accessibilityRole="radiogroup">
+    <View style={{ gap: spacing.sm }}>
       {showSample && <SampleGrid textSize={value} />}
-      {TEXT_SIZES.map((size) => (
-        <OptionCard
-          key={size}
-          label={t(`textSize.${size}`)}
-          detail={size === 'large' ? t('textSize.recommended') : undefined}
-          selected={value === size}
-          onPress={() => onChange(size)}
-        />
-      ))}
+      <View style={{ gap: spacing.sm }} accessibilityRole="radiogroup">
+        {TEXT_SIZES.map((size) => (
+          <OptionCard key={size} label={t(`textSize.${size}`)} detail={size === 'large' ? t('textSize.recommended') : undefined} selected={value === size} onPress={() => onChange(size)} />
+        ))}
+      </View>
     </View>
   );
 }

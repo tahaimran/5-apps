@@ -7,7 +7,7 @@ import { t } from '@shared/i18n';
 import { sharedStore } from '@shared/storage';
 import { dateKeyFor } from '@/domain/dateKey';
 import { getPack } from '@/domain/packs';
-import { planReminders, REMINDER_CHANNEL, REMINDER_ID, type PlannedReminder } from '@/domain/reminder';
+import { GENTLE_VIBRATION, LEGACY_CHANNELS, planReminders, REMINDER_CHANNEL, REMINDER_ID, REMINDER_SOUND, type PlannedReminder } from '@/domain/reminder';
 import { dailyIdToOpen } from '@/features/play/dailyOpen';
 import { openPuzzle } from '@/features/play/navigation';
 import { useAds } from '@/store/ads';
@@ -17,9 +17,37 @@ import { useSettings } from '@/store/settings';
 import { db } from '@/store/storage';
 import { useToday } from '@/store/today';
 
-/** Creates the "Daily puzzle" channel: default importance, no sound override (plan §10). Safe to call again. */
-export const setupNotifications = () =>
-  initNotifications([{ id: REMINDER_CHANNEL, name: t('reminder.channel'), description: t('reminder.channelDescription') }]);
+let channelsDone: Promise<void> | null = null;
+
+/**
+ * Creates the "Daily puzzle" channel (plan §10): default importance, the shared soft chime and a gentle
+ * vibration, and deletes the first version's silent channel. Safe to call again; a failure is retried.
+ */
+export function setupNotifications(): Promise<void> {
+  channelsDone ??= initNotifications([
+    {
+      id: REMINDER_CHANNEL,
+      name: t('reminder.channel'),
+      description: t('reminder.channelDescription'),
+      importance: Notifications.AndroidImportance.DEFAULT,
+      sound: REMINDER_SOUND,
+      vibrationPattern: GENTLE_VIBRATION,
+      lockscreenVisibility: Notifications.AndroidNotificationVisibility.PUBLIC,
+    },
+  ])
+    .then(() => Promise.all(LEGACY_CHANNELS.map((id) => Notifications.deleteNotificationChannelAsync(id).catch(() => undefined))))
+    .then(() => undefined)
+    .catch((e: unknown) => {
+      channelsDone = null;
+      throw e;
+    });
+  return channelsDone;
+}
+
+/** Tests only. */
+export const resetNotificationSetup = () => {
+  channelsDone = null;
+};
 
 /** The message of one planned day: a rotating, guilt-free line, with that day's theme. */
 export function contentFor(p: PlannedReminder): NotificationContent {

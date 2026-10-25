@@ -114,3 +114,21 @@ export function auditPressables(root: ReactTestInstance): string[] {
   }
   return problems;
 }
+
+/** Picks a time on the shared TimeField labelled `label` (the wheels are native-feeling; tests set the value). */
+export async function pickTime(root: ReactTestInstance, label: string, hhmm: string) {
+  const field = root.findAll((n) => typeof n.type !== 'string' && n.props.label === label && typeof n.props.onChange === 'function' && /^\d\d:\d\d$/.test(String(n.props.value)))[0];
+  if (!field) throw new Error(`No time field labelled ${label}`);
+  await act(async () => {
+    field.props.onChange(hhmm);
+  });
+}
+
+/** Moves a TimeField by `deltaMin` minutes from what it shows now (wrapping past midnight). */
+export async function shiftTime(root: ReactTestInstance, label: string, deltaMin: number) {
+  const field = root.findAll((n) => typeof n.type !== 'string' && n.props.label === label && /^\d\d:\d\d$/.test(String(n.props.value)))[0];
+  if (!field) throw new Error(`No time field labelled ${label}`);
+  const [h, m] = String(field.props.value).split(':').map(Number);
+  const total = (((h * 60 + m + deltaMin) % 1440) + 1440) % 1440;
+  await pickTime(root, label, `${String(Math.floor(total / 60)).padStart(2, '0')}:${String(total % 60).padStart(2, '0')}`);
+}

@@ -1,40 +1,47 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { AccessibilityInfo, AppState, Pressable, ScrollView, StyleSheet, useWindowDimensions, View } from 'react-native';
+import { AccessibilityInfo, AppState, ScrollView, StyleSheet, useWindowDimensions, View } from 'react-native';
 import { router, useLocalSearchParams } from 'expo-router';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { BigButton } from '@/ui/BigButton';
+import Animated, { useReducedMotion } from 'react-native-reanimated';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import ChevronLeft from 'lucide-react-native/icons/chevron-left';
+import EllipsisVertical from 'lucide-react-native/icons/ellipsis-vertical';
+import Lightbulb from 'lucide-react-native/icons/lightbulb';
+import PartyPopper from 'lucide-react-native/icons/party-popper';
 import { t } from '@shared/i18n';
+import { playSound } from '@shared/sound';
 import { useTheme } from '@shared/theme';
+import { Button, IconButton, PressableScale, showToast } from '@shared/ui';
 import { dailyPuzzle } from '@/domain/daily';
-import { unfoundWords } from '@/domain/game';
-import { hintsAvailable, HINT_RING_MS, refreshWallet } from '@/domain/hints';
+import { foundCount, unfoundWords } from '@/domain/game';
+import { wordCells } from '@/domain/generator';
 import { cellSizeFor, effectiveGridSize } from '@/domain/gridSize';
+import { hintsAvailable, HINT_RING_MS, refreshWallet } from '@/domain/hints';
 import { getPack } from '@/domain/packs';
 import { levelPuzzle, parsePuzzleId, TUTORIAL_ID, tutorialPuzzle } from '@/domain/puzzles';
-import type { Cell } from '@/domain/selection';
+import { cellCenter, type Cell } from '@/domain/selection';
 import type { Puzzle, SavedGame } from '@/domain/types';
 import { CoachFinger, CoachText } from '@/components/CoachMark';
 import { ElapsedTimer } from '@/components/ElapsedTimer';
-import { Grid } from '@/components/Grid';
+import { BOARD_FRAME, Grid } from '@/components/Grid';
 import { HintSheet } from '@/components/HintSheet';
 import { MenuSheet } from '@/components/MenuSheet';
 import { WordList } from '@/components/WordList';
+import { markTutorialDone } from '@/features/onboarding/finish';
 import { useFeedback } from '@/store/feedback';
 import { useGame } from '@/store/game';
 import { useHints } from '@/store/hints';
-import { useToday } from '@/store/today';
 import { useSettings } from '@/store/settings';
+import { useToday } from '@/store/today';
+import { useAdScreen } from '@/ads/guard';
+import { useAppColors, useIsHighContrast } from '@/theme/mode';
+import { GRID_FONT } from '@/theme/tokens';
 import { AppText } from '@/ui/AppText';
 import { formatDay } from '@/ui/format';
-import { Toast } from '@/ui/Toast';
+import { CSS_EASE_OUT, GRID_IN, GRID_IN_MS } from '@/ui/motion';
+import { ProgressBar } from '@/ui/ProgressBar';
+import { Ribbon } from '@/ui/Ribbon';
+import { SkyBackdrop } from '@/ui/SkyBackdrop';
 import { useScreenReader } from '@/ui/useScreenReader';
-import { useAdScreen } from '@/ads/guard';
-import { playSound } from '@/audio/sounds';
-import { cellCenter } from '@/domain/selection';
-import { wordCells } from '@/domain/generator';
-import { foundCount } from '@/domain/game';
-import { markTutorialDone } from '@/features/onboarding/finish';
 
 /** Plan §5.3: the celebration beat before the Complete screen. */
 export const CELEBRATION_MS = 600;
@@ -68,15 +75,59 @@ function TutorialFinger({ game, cellSize }: { game: SavedGame; cellSize: number 
   const cat = game.puzzle.words.find((w) => w.word === 'CAT');
   if (!cat) return null;
   const span = wordCells(cat, game.puzzle.size);
-  const at = (n: number) => cellCenter({ row: Math.floor(n / game.puzzle.size), col: n % game.puzzle.size }, cellSize);
+  const at = (n: number) => {
+    const c = cellCenter({ row: Math.floor(n / game.puzzle.size), col: n % game.puzzle.size }, cellSize);
+    return { x: c.x + BOARD_FRAME, y: c.y + BOARD_FRAME };
+  };
   return <CoachFinger from={at(span[0])} to={at(span[span.length - 1])} />;
+}
+
+/** The gold hint disc with its count badge (plan §5.3); grey-blue badge at zero, where it opens the refill sheet. */
+function HintButton({ count, onPress }: { count: number; onPress: () => void }) {
+  const { colors, touchTarget, shadow, fonts } = useTheme();
+  const { fontScale } = useWindowDimensions();
+  const app = useAppColors();
+  const hc = useIsHighContrast();
+  return (
+    <PressableScale
+      accessibilityRole="button"
+      accessibilityLabel={t('game.hintButton', { count })}
+      onPress={onPress}
+      scaleTo={0.9}
+      style={[styles.hint, { width: touchTarget, height: touchTarget, borderRadius: touchTarget / 2, backgroundColor: hc ? colors.background : app.gold, borderColor: app.goldEdge }, hc ? null : shadow(1)]}
+    >
+      <Lightbulb size={26} color={hc ? colors.primary : app.onGold} strokeWidth={2.5} />
+      <View style={[styles.badge, { backgroundColor: count > 0 ? colors.primary : colors.textMuted, borderColor: colors.surface }]}>
+        {/* A fixed badge: its number keeps its drawn size at any font scale (the button's label says the count). */}
+        <AppText style={{ color: colors.onPrimary, fontSize: 13 / fontScale, lineHeight: 16 / fontScale, fontWeight: '800', fontFamily: fonts.display }}>
+          {count}
+        </AppText>
+      </View>
+    </PressableScale>
+  );
+}
+
+/** The letters under the finger, above the board, so the word being traced can be read without lifting it. */
+function WordBubble({ letters }: { letters: string }) {
+  const { colors, radius, spacing, type, shadow } = useTheme();
+  const hc = useIsHighContrast();
+  return (
+    <View style={styles.bubbleRow} importantForAccessibility="no-hide-descendants" accessibilityElementsHidden>
+      {letters.length > 0 && (
+        <View style={[{ paddingHorizontal: spacing.lg, minHeight: 40, justifyContent: 'center', borderRadius: radius.pill, backgroundColor: colors.surface, borderWidth: 2, borderColor: colors.primary }, hc ? null : shadow(1)]}>
+          <AppText style={[type.bodyLarge, { fontFamily: GRID_FONT, color: colors.text, fontWeight: '700', letterSpacing: 4 }]}>{letters}</AppText>
+        </View>
+      )}
+    </View>
+  );
 }
 
 export default function Play() {
   const { puzzleId: rawId } = useLocalSearchParams<{ puzzleId: string }>();
   const puzzleId = String(rawId);
   useAdScreen('play'); // never an ad on this screen (plan §11)
-  const { colors, spacing, type, touchTarget } = useTheme();
+  const { colors, spacing, type, shadow, mode } = useTheme();
+  const reduced = useReducedMotion();
   const { width } = useWindowDimensions();
   const settings = useSettings((s) => s.settings);
   const feedback = useFeedback();
@@ -86,11 +137,11 @@ export default function Play() {
   const [celebrating, setCelebrating] = useState(false);
   const [sheet, setSheet] = useState<'none' | 'refill' | 'menu'>('none');
   const [ring, setRing] = useState<Cell[]>([]);
+  const [letters, setLetters] = useState('');
   const isTutorial = puzzleId === TUTORIAL_ID;
   const [touched, setTouched] = useState(false);
   // A finger on the grid must select letters, not scroll the page (the page only scrolls when it overflows).
   const [gridTouched, setGridTouched] = useState(false);
-  const [toast, setToast] = useState<string | null>(null);
   const [canSkip, setCanSkip] = useState(false);
   const ringTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const today = useToday((s) => s.today);
@@ -99,6 +150,7 @@ export default function Play() {
   const finishing = useRef(false);
   const mounted = useRef(true);
   const game = current && current.puzzle.id === puzzleId ? current : null;
+  const hc = mode === 'high-contrast';
 
   // Resume the saved puzzle, or build a new one after the placeholder has painted.
   useEffect(() => {
@@ -144,8 +196,8 @@ export default function Play() {
       AccessibilityInfo.announceForAccessibility(t('game.foundAnnounce', { word: out.result.word.word, count: left }));
       if (!out.complete) {
         feedback.success();
-        playSound('found');
-        if (isTutorial && foundCount(out.game) === 1) setToast(t('tutorial.found'));
+        playSound('check');
+        if (isTutorial && foundCount(out.game) === 1) showToast({ message: t('tutorial.found'), icon: PartyPopper, tone: 'success', duration: 4000 });
         return;
       }
       feedback.complete();
@@ -167,12 +219,6 @@ export default function Play() {
     const timer = setTimeout(() => setCanSkip(true), TUTORIAL_SKIP_MS);
     return () => clearTimeout(timer);
   }, [isTutorial]);
-
-  useEffect(() => {
-    if (!toast) return;
-    const timer = setTimeout(() => setToast(null), 4000);
-    return () => clearTimeout(timer);
-  }, [toast]);
 
   useEffect(
     () => () => {
@@ -208,72 +254,74 @@ export default function Play() {
   };
 
   const cellSize = game ? cellSizeFor(game.puzzle.size, width) : 0;
+  const found = game ? foundCount(game) : 0;
+  const total = game?.puzzle.words.length ?? 0;
+  const onPreview = useCallback((l: string) => setLetters(l), []);
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: colors.background }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: colors.background }} edges={['top', 'bottom']}>
+      <SkyBackdrop />
       <View style={[styles.bar, { minHeight: 64, paddingHorizontal: spacing.sm, gap: spacing.sm }]}>
-        <Pressable
-          accessibilityRole="button"
-          accessibilityLabel={t('game.back')}
+        <IconButton
+          icon={ChevronLeft}
+          label={t('game.back')}
           onPress={() => router.back()}
-          style={{ minWidth: touchTarget, minHeight: touchTarget, alignItems: 'center', justifyContent: 'center' }}
-        >
-          <MaterialCommunityIcons name="arrow-left" size={28} color={colors.text} />
-        </Pressable>
-        <AppText accessibilityRole="header" numberOfLines={1} style={[type.title, { color: colors.text, fontWeight: '700', flex: 1 }]}>
-          {game ? titleOf(game.puzzle) : ''}
-        </AppText>
-        {game && settings.showTimer && <ElapsedTimer />}
+          size={26}
+          style={[{ backgroundColor: colors.surface }, hc ? { borderWidth: 2, borderColor: colors.border } : shadow(1)]}
+        />
+        <View style={styles.flex}>{game ? <Ribbon title={titleOf(game.puzzle)} /> : null}</View>
+        {game && <HintButton count={hintsLeft} onPress={onHint} />}
         {game && (
-          <Pressable
-            accessibilityRole="button"
-            accessibilityLabel={t('game.hintButton', { count: hintsLeft })}
-            onPress={onHint}
-            style={{ minWidth: touchTarget, minHeight: touchTarget, alignItems: 'center', justifyContent: 'center' }}
-          >
-            <MaterialCommunityIcons name="lightbulb-on-outline" size={28} color={colors.accent} />
-            <View style={[styles.badge, { backgroundColor: hintsLeft > 0 ? colors.primary : colors.textMuted }]}>
-              <AppText style={{ color: colors.onPrimary, fontSize: 13, lineHeight: 16, fontWeight: '700' }}>{hintsLeft}</AppText>
-            </View>
-          </Pressable>
-        )}
-        {game && (
-          <Pressable
-            accessibilityRole="button"
-            accessibilityLabel={t('game.menu')}
+          <IconButton
+            icon={EllipsisVertical}
+            label={t('game.menu')}
             onPress={() => setSheet('menu')}
-            style={{ minWidth: touchTarget, minHeight: touchTarget, alignItems: 'center', justifyContent: 'center' }}
-          >
-            <MaterialCommunityIcons name="dots-vertical" size={28} color={colors.text} />
-          </Pressable>
+            size={26}
+            style={[{ backgroundColor: colors.surface }, hc ? { borderWidth: 2, borderColor: colors.border } : shadow(1)]}
+          />
         )}
       </View>
       {failed ? (
-        <AppText style={[type.bodyLarge, { color: colors.text, padding: spacing.lg }]}>{t('game.loadError')}</AppText>
+        <View style={{ padding: spacing.lg, gap: spacing.lg }}>
+          <AppText style={[type.bodyLarge, { color: colors.text }]}>{t('game.loadError')}</AppText>
+          <Button label={t('packs.backToPacks')} onPress={() => router.replace('/(tabs)')} />
+        </View>
       ) : !game ? (
-        <View accessible accessibilityLabel={t('game.loading')} style={{ alignSelf: 'center', width: width - 32, height: width - 32, backgroundColor: colors.surfaceAlt, borderRadius: 12, marginTop: spacing.md }} />
+        <View accessible accessibilityLabel={t('game.loading')} style={{ alignSelf: 'center', width: width - 20, height: width - 20, backgroundColor: colors.surfaceAlt, borderRadius: 20, marginTop: spacing.md }} />
       ) : (
-        <ScrollView scrollEnabled={!gridTouched} contentContainerStyle={{ alignItems: 'center', padding: spacing.lg, gap: spacing.lg }}>
-          {isTutorial && !touched && foundCount(game) === 0 && <CoachText />}
-          <View onTouchStart={() => setGridTouched(true)} onTouchEnd={() => setGridTouched(false)} onTouchCancel={() => setGridTouched(false)}>
-          <Grid
-            game={game}
-            cellSize={cellSize}
-            textSize={settings.textSize}
-            mode={settings.selectionMode}
-            screenReader={screenReader}
-            onSelect={celebrating ? () => undefined : onSelect}
-            onSelectionStart={() => {
-              setTouched(true);
-              feedback.select();
-            }}
-            hintCells={ring}
-          />
-          {isTutorial && !touched && foundCount(game) === 0 && <TutorialFinger game={game} cellSize={cellSize} />}
+        <ScrollView style={styles.clip} scrollEnabled={!gridTouched} contentContainerStyle={{ alignItems: 'center', paddingHorizontal: spacing.sm, paddingBottom: spacing.lg, gap: spacing.sm }}>
+          <View style={[styles.progress, { gap: spacing.md, paddingHorizontal: spacing.sm }]}>
+            <View style={styles.flex}>
+              <ProgressBar progress={total ? found / total : 0} />
+            </View>
+            <AppText style={[type.body, { color: colors.text, fontWeight: '700' }]}>{t('game.foundProgress', { found, total })}</AppText>
+            {settings.showTimer && <ElapsedTimer />}
           </View>
-          {toast && <View style={{ alignSelf: 'stretch' }}><Toast message={toast} /></View>}
-          {isTutorial && canSkip && <BigButton variant="secondary" label={t('tutorial.skip')} onPress={skipTutorial} />}
-          <View style={{ alignSelf: 'stretch' }}>
+          {isTutorial && !touched && found === 0 ? <CoachText /> : <WordBubble letters={letters} />}
+          <Animated.View
+            onTouchStart={() => setGridTouched(true)}
+            onTouchEnd={() => setGridTouched(false)}
+            onTouchCancel={() => setGridTouched(false)}
+            style={reduced ? null : { animationName: GRID_IN, animationDuration: GRID_IN_MS, animationTimingFunction: CSS_EASE_OUT }}
+          >
+            <Grid
+              game={game}
+              cellSize={cellSize}
+              textSize={settings.textSize}
+              mode={settings.selectionMode}
+              screenReader={screenReader}
+              onSelect={celebrating ? () => undefined : onSelect}
+              onSelectionStart={() => {
+                setTouched(true);
+                feedback.select();
+              }}
+              onPreview={onPreview}
+              hintCells={ring}
+            />
+            {isTutorial && !touched && found === 0 && <TutorialFinger game={game} cellSize={cellSize} />}
+          </Animated.View>
+          {isTutorial && canSkip && <Button variant="ghost" label={t('tutorial.skip')} onPress={skipTutorial} />}
+          <View style={[styles.stretch, { paddingHorizontal: spacing.xs }]}>
             <WordList words={game.puzzle.words} textSize={settings.textSize} />
           </View>
         </ScrollView>
@@ -285,6 +333,12 @@ export default function Play() {
 }
 
 const styles = StyleSheet.create({
+  flex: { flex: 1 },
+  clip: { flex: 1, overflow: 'hidden' },
   bar: { flexDirection: 'row', alignItems: 'center' },
-  badge: { position: 'absolute', top: 6, right: 4, minWidth: 20, height: 20, borderRadius: 10, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 4 },
+  progress: { flexDirection: 'row', alignItems: 'center', alignSelf: 'stretch' },
+  stretch: { alignSelf: 'stretch' },
+  bubbleRow: { minHeight: 44, alignItems: 'center', justifyContent: 'center' },
+  hint: { alignItems: 'center', justifyContent: 'center', borderWidth: 3 },
+  badge: { position: 'absolute', top: -4, right: -4, minWidth: 24, height: 24, borderRadius: 12, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 5, borderWidth: 2 },
 });

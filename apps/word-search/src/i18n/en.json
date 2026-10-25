@@ -25,15 +25,20 @@
     "continue": "Continue",
     "progress": "{found} of {total} words found",
     "packs": "Word packs",
-    "packLabel": "{name}, Level {level}",
     "streak_one": "{count}-day streak",
     "streak_other": "{count}-day streak",
     "streakLabel_one": "{count}-day streak",
     "streakLabel_other": "{count}-day streak",
     "today": "Today's puzzle",
-    "todayTheme": "{date} · {theme}",
+    "todayTheme": "Today's theme: {theme}",
     "playToday": "Play today's puzzle",
-    "continueToday": "Continue today's puzzle"
+    "continueToday": "Continue today's puzzle",
+    "continueLabel": "Keep going",
+    "starsLabel_one": "{count} star collected",
+    "starsLabel_other": "{count} stars collected",
+    "packLabel": "{name}, Level {level}",
+    "packLabelStars_one": "{name}, Level {level}, {count} star",
+    "packLabelStars_other": "{name}, Level {level}, {count} stars"
   },
   "daily": {
     "title": "Daily puzzle",
@@ -41,7 +46,7 @@
     "status": {
       "notStarted": "Not started",
       "inProgress": "In progress",
-      "done": "Done ✓"
+      "done": "Done"
     },
     "play": "Play today's puzzle",
     "continue": "Continue today's puzzle",
@@ -97,12 +102,19 @@
     "sounds": "Sounds",
     "reminderSection": "Daily reminder",
     "reminderSwitch": "Remind me every day",
-    "reminderTime": "Reminder time: {time}",
+    "reminderTime": "Reminder time",
     "rate": "Rate the app",
     "feedback": "Send feedback",
     "feedbackSubject": "Word Search feedback",
     "feedbackBody": "Hello,\n\n\n\n---\nApp version: {version}\nAndroid: {android}",
-    "privacyInfo": "How your data is handled"
+    "privacyInfo": "How your data is handled",
+    "soundsHint": "A soft chime when you find a word.",
+    "difficulty": "Difficulty",
+    "clock": "Clock",
+    "clockPhone": "Phone",
+    "clock12": "12-hour",
+    "clock24": "24-hour",
+    "clockPhoneLabel": "Same as my phone ({format})"
   },
   "game": {
     "back": "Back",
@@ -126,7 +138,9 @@
     "menu": "Menu",
     "timerLabel": "Time {time}",
     "hintAnnounce": "Hint: a word starts at row {row}, column {col}.",
-    "hintAnnounceEnds": "Hint: a word starts at row {first} and ends at row {last}."
+    "hintAnnounceEnds": "Hint: a word starts at row {first} and ends at row {last}.",
+    "wordsTitle": "Words to find",
+    "foundProgress": "{found} of {total} found"
   },
   "difficulty": {
     "easy": "Easy",
@@ -147,7 +161,9 @@
     "replayLabel_other": "Level {level}, {count} stars, play again",
     "errorTitle": "Pack unavailable",
     "error": "This pack couldn't open. Please try another pack.",
-    "backToPacks": "Back to packs"
+    "backToPacks": "Back to packs",
+    "stars_one": "{count} star collected",
+    "stars_other": "{count} stars collected"
   },
   "complete": {
     "title": "Well done!",
@@ -163,7 +179,12 @@
     "comeBack": "Come back tomorrow for a new puzzle.",
     "freezeUsed": "A streak freeze covered your missed day.",
     "freezeEarned": "You earned a streak freeze.",
-    "homeDaily": "Back to home"
+    "homeDaily": "Back to home",
+    "praise": {
+      "1": "Every word found.",
+      "2": "Nicely done.",
+      "3": "Not a single hint needed."
+    }
   },
   "resume": {
     "title": "Start a new puzzle?",
@@ -203,7 +224,13 @@
     "system": "Same as my phone",
     "light": "Light",
     "dark": "Dark",
-    "high-contrast": "High contrast"
+    "high-contrast": "High contrast",
+    "short": {
+      "system": "Phone",
+      "light": "Light",
+      "dark": "Dark",
+      "high-contrast": "Contrast"
+    }
   },
   "onboarding": {
     "level": {
@@ -223,7 +250,7 @@
     "sizeNote": "The sample above shows the size you pick.",
     "continue": "Continue",
     "levelTitle": "How would you like to play?",
-    "levelFooter": "Not sure? Start with Relaxed — you can switch anytime.",
+    "levelFooter": "Not sure? Start with Relaxed. You can switch anytime.",
     "startFirst": "Start my first puzzle"
   },
   "tutorial": {
@@ -246,7 +273,7 @@
     "channel": "Daily puzzle",
     "channelDescription": "One gentle reminder a day, at the time you choose.",
     "copy": {
-      "0": "Your daily puzzle is ready ☕ — today's theme: {theme}",
+      "0": "Your daily puzzle is ready. Today's theme: {theme}",
       "1": "A new word search is waiting for you.",
       "2": "Time for a calm moment? Today's theme: {theme}",
       "3": "Today's puzzle is ready whenever you are."

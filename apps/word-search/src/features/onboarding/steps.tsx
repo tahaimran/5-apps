@@ -1,24 +1,27 @@
 import { PixelRatio, View } from 'react-native';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import Compass from 'lucide-react-native/icons/compass';
+import MoveDiagonal from 'lucide-react-native/icons/move-diagonal';
+import MoveRight from 'lucide-react-native/icons/move-right';
 import { t } from '@shared/i18n';
 import type { OnboardingStep, StepContext } from '@shared/onboarding';
 import { useTheme } from '@shared/theme';
+import type { IconComponent } from '@shared/ui';
 import { TextSizePicker } from '@/components/TextSizePicker';
 import type { Difficulty } from '@/domain/types';
+import { SceneArt } from '@/features/packs/PackArt';
 import { AppText } from '@/ui/AppText';
 import { OptionCard } from '@/ui/OptionCard';
-import { SwitchRow } from '@/ui/SwitchRow';
+import { SettingsGroup, SwitchRow } from '@/ui/SettingsRow';
 import { defaultTextSize, SETUP_DEFAULTS, type OnboardingAnswers } from './answers';
 
 const LEVELS: Difficulty[] = ['easy', 'medium', 'hard'];
+const LEVEL_ICONS: Record<Difficulty, IconComponent> = { easy: MoveRight, medium: MoveDiagonal, hard: Compass };
 
+/** Plan §6 screen 1: a magnifying glass over large letters. */
 function Welcome() {
-  const { colors } = useTheme();
   return (
-    <View accessible={false} importantForAccessibility="no-hide-descendants" style={{ alignItems: 'center', paddingVertical: 24 }}>
-      <View style={{ width: 180, height: 180, borderRadius: 90, backgroundColor: colors.surfaceAlt, alignItems: 'center', justifyContent: 'center', borderWidth: 3, borderColor: colors.primary }}>
-        <MaterialCommunityIcons name="magnify" size={120} color={colors.primary} />
-      </View>
+    <View accessible={false} importantForAccessibility="no-hide-descendants" style={{ alignItems: 'center', paddingVertical: 8 }}>
+      <SceneArt scene="welcome" px={200} />
     </View>
   );
 }
@@ -29,7 +32,9 @@ function TextSizeStep({ ctx }: { ctx: StepContext }) {
   return (
     <View style={{ gap: spacing.lg }}>
       <TextSizePicker value={display.textSize} onChange={(textSize) => ctx.setValue({ ...display, textSize })} />
-      <SwitchRow label={t('onboarding.highContrast')} value={display.highContrast} onChange={(highContrast) => ctx.setValue({ ...display, highContrast })} />
+      <SettingsGroup>
+        <SwitchRow label={t('onboarding.highContrast')} value={display.highContrast} onChange={(highContrast) => ctx.setValue({ ...display, highContrast })} />
+      </SettingsGroup>
       <AppText style={[type.body, { color: colors.textMuted }]}>{t('onboarding.sizeNote')}</AppText>
     </View>
   );
@@ -41,7 +46,7 @@ function LevelStep({ ctx }: { ctx: StepContext }) {
   return (
     <View style={{ gap: spacing.sm }} accessibilityRole="radiogroup">
       {LEVELS.map((d) => (
-        <OptionCard key={d} label={t(`onboarding.level.${d}`)} detail={t(`onboarding.level.${d}Detail`)} selected={value === d} onPress={() => ctx.setValue(d)} />
+        <OptionCard key={d} icon={LEVEL_ICONS[d]} label={t(`onboarding.level.${d}`)} detail={t(`onboarding.level.${d}Detail`)} selected={value === d} onPress={() => ctx.setValue(d)} />
       ))}
       <AppText style={[type.body, { color: colors.textMuted, marginTop: spacing.sm }]}>{t('onboarding.levelFooter')}</AppText>
     </View>

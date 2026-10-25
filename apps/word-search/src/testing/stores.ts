@@ -14,7 +14,8 @@ import { useResult } from '@/store/result';
 import { useSettings } from '@/store/settings';
 import { useStats } from '@/store/stats';
 import { useToday } from '@/store/today';
-import { resetSounds } from '@/audio/sounds';
+import { releaseSounds } from '@shared/sound';
+import { resetNotificationSetup } from '@/notifications/reminder';
 import { resetDisk, resetNotifMock } from './mocks';
 
 /** Back to a fresh install between tests (the fake disk and every store). */
@@ -32,6 +33,7 @@ export function resetApp(now: Date = new Date()) {
   useReminderPrompt.setState({ prompt: defaultReminderPrompt() });
   useReview.setState({ review: defaultReview() });
   resetNotifMock();
-  resetSounds();
+  resetNotificationSetup();
+  releaseSounds();
   useAds.setState({ counters: defaultAdCounters(), lastFullScreenAt: 0, lastRewardedAt: 0, screen: 'other', lastExternalOpenAt: 0 });
 }

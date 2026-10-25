@@ -2,7 +2,7 @@ import { router } from 'expo-router';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
 import { AppText } from '@/ui/AppText';
-import { BigButton } from '@/ui/BigButton';
+import { GameButton } from '@/ui/GameButton';
 import { Screen } from '@/ui/Screen';
 
 const SECTIONS = ['onDevice', 'ads', 'notifications', 'noAccount', 'choices'] as const;
@@ -11,12 +11,11 @@ const SECTIONS = ['onDevice', 'ads', 'notifications', 'noAccount', 'choices'] as
 export default function Privacy() {
   const { colors, spacing, type } = useTheme();
   return (
-    <Screen>
-      <AppText accessibilityRole="header" style={[type.headline, { color: colors.text, fontWeight: '700' }]}>{t('privacy.title')}</AppText>
+    <Screen modal title={t('privacy.title')}>
       {SECTIONS.map((key) => (
         <AppText key={key} style={[type.bodyLarge, { color: colors.text, marginBottom: spacing.sm }]}>{t(`privacy.${key}`)}</AppText>
       ))}
-      <BigButton tall label={t('common.done')} onPress={() => router.back()} />
+      <GameButton label={t('common.done')} onPress={() => router.back()} />
     </Screen>
   );
 }

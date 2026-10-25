@@ -217,24 +217,38 @@ describe('Grid with TalkBack (plan §7.5)', () => {
 });
 
 describe('Grid drawing', () => {
-  it('draws one stroke per found word, in the high-contrast outline style too', async () => {
+  // The redesign draws each found word as a pill: an edge line under a fill line (in high contrast the
+  // fill is the cell color, which leaves a thick outline), so every mode now has two lines per word.
+  it('draws one edged pill per found word, in the high-contrast outline style too', async () => {
     const puzzle = puzzleOf('medium', 5);
     let game = startGame(puzzle, 0);
     game = applySelection(game, cellsOf(puzzle, 0)).game;
     game = applySelection(game, cellsOf(game.puzzle, 1)).game;
     for (const mode of ['light', 'dark', 'high-contrast'] as const) {
       const ui = await render(themed(<Grid {...props({ game, difficulty: 'medium' })} />, mode));
-      const strokes = ui.root.findAll((n) => typeof n.props.strokeLinecap === 'string' && n.props.x1 !== undefined && typeof n.type === 'string');
-      expect(strokes.length).toBe(mode === 'high-contrast' ? 4 : 2);
+      const pills = ui.root.findAll((n) => typeof n.props.strokeLinecap === 'string' && n.props.x1 !== undefined && typeof n.type === 'string' && n.props.testID === undefined);
+      expect(pills.length).toBe(4);
+      const { gameColors } = require('@/theme/tokens') as typeof import('@/theme/tokens');
+      const strokes = pills.map((p) => p.props.stroke);
+      expect(strokes).toContain(gameColors[mode].edges[game.puzzle.words.find((w) => w.found)!.colorIdx ?? 0]);
       await cleanup();
     }
   });
 
   it('rings the hinted cells', async () => {
-    const puzzle = puzzleOf('easy');
     const ui = await render(themed(<Grid {...props({ hintCells: [{ row: 0, col: 0 }, { row: 1, col: 1 }] })} />));
-    expect(ui.root.findAll((n) => n.props.r !== undefined && n.props.fill === 'none' && typeof n.type === 'string').length).toBe(2);
-    void puzzle;
+    expect(ui.root.findAll((n) => n.props.testID === 'hint-ring' && typeof n.type === 'string')).toHaveLength(2);
+  });
+
+  it('tells the word bubble which letters the finger is on, and clears it when the finger lifts', async () => {
+    const onPreview = jest.fn();
+    const p = props({ onPreview, mode: 'tapOnly' });
+    await render(themed(<Grid {...p} />));
+    const cells = cellsOf(p.puzzle, 1);
+    await act(async () => mockGestures.tap.onEnd!({ ...centerOf(cells[0]) }, true));
+    expect(onPreview).toHaveBeenLastCalledWith(p.puzzle.grid[cells[0].row][cells[0].col]);
+    await act(async () => mockGestures.tap.onEnd!({ ...centerOf(cells[cells.length - 1]) }, true));
+    expect(onPreview).toHaveBeenLastCalledWith('');
   });
 
   it('shows the selection as the finger moves', async () => {

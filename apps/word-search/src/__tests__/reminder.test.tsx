@@ -1,8 +1,9 @@
 import { mockAudio, mockGestures, mockLastNotificationResponse, mockNotif, mockNotifState, mockParams, mockReview, mockRouter } from '@/testing/mocks';
 import { resetApp } from '@/testing/stores';
-import { cleanup, flush, render } from '@/testing/ui';
+import { cleanup, flush, pickTime, render, shiftTime } from '@/testing/ui';
 import { act } from 'react';
 import { Dimensions, Linking, Platform } from 'react-native';
+import { t } from '@shared/i18n';
 import { ThemeProvider } from '@shared/theme';
 import { sharedStore } from '@shared/storage';
 import '@/bootstrap';
@@ -54,12 +55,21 @@ const turnOn = (hour = 9, minute = 0) => {
 };
 
 describe('scheduling the daily reminder (plan §10)', () => {
-  it('creates the "Daily puzzle" channel with default importance and no sound override', async () => {
+  it('creates the "Daily puzzle" chime channel (default importance, the shared chime, a gentle vibration) and deletes the old silent one', async () => {
     jest.replaceProperty(Platform, 'OS', 'android'); // channels exist on Android only
     await setupNotifications();
-    const channel = mockNotifState.channels.get('daily-puzzle')!;
-    expect(channel).toMatchObject({ name: 'Daily puzzle', importance: 3 });
-    expect(channel).not.toHaveProperty('sound');
+    const channel = mockNotifState.channels.get('daily-chime')!;
+    expect(channel).toMatchObject({ name: 'Daily puzzle', importance: 3, sound: 'reminder.wav', vibrationPattern: [0, 180, 140, 180] });
+    expect(mockNotifState.channels.has('daily-puzzle')).toBe(false);
+    expect(mockNotifState.deletedChannels).toContain('daily-puzzle');
+  });
+
+  it('writes the reminders without emoji or guilt', () => {
+    for (const i of [0, 1, 2, 3]) {
+      const line = t(`reminder.copy.${i}`, { theme: 'Garden' });
+      expect(line).not.toMatch(/\p{Extended_Pictographic}/u);
+      expect(line).not.toMatch(/miss|lost|don't forget|streak/i);
+    }
   });
 
   it('schedules nothing while reminders are off, or without the permission', async () => {
@@ -79,7 +89,7 @@ describe('scheduling the daily reminder (plan §10)', () => {
     for (const p of list) {
       expect(p.content.title).toBe('Word Search');
       expect(String(p.content.body)).not.toMatch(/\{|undefined/);
-      expect(p.trigger).toMatchObject({ type: 'date', channelId: 'daily-puzzle' });
+      expect(p.trigger).toMatchObject({ type: 'date', channelId: 'daily-chime' });
     }
     expect(new Set(list.map((p) => p.content.body)).size).toBeGreaterThan(1); // the lines rotate
     expect(list.some((p) => /today's theme: \w+/i.test(String(p.content.body)))).toBe(true);
@@ -163,12 +173,13 @@ describe('the pre-prompt sheet', () => {
     expect(useSettings.getState().settings.reminder).toEqual({ enabled: true, hour: 19, minute: 0 });
     expect(onClose).toHaveBeenCalled();
   });
-  it('lets the player choose any time with big buttons', async () => {
+  // The +/- time stepper became the shared wheel TimeField (the same picker as every other app).
+  it('lets the player choose any time on the shared wheel', async () => {
     const { ui } = await open();
+    expect(ui.byLabel(/^Choose time, /)).toHaveLength(0);
     await ui.press('Choose time');
-    await ui.press('Later hour');
-    await ui.press('Later minutes');
-    await ui.press('Later minutes');
+    await pickTime(ui.root, 'Choose time', '10:30');
+    expect(ui.byLabel('Choose time, 10:30 AM').length).toBeGreaterThan(0);
     await ui.press('Yes, remind me');
     await flush();
     expect(useSettings.getState().settings.reminder).toEqual({ enabled: true, hour: 10, minute: 30 });
@@ -376,15 +387,15 @@ describe('Settings: reminder, sounds, rate, feedback and privacy', () => {
     await act(async () => toggle().props.onValueChange(true));
     await flush();
     expect(useSettings.getState().settings.reminder.enabled).toBe(true);
-    expect(ui.texts()).toContain(`Reminder time: ${formatTime(9, 0)}`);
-    await ui.press('Later hour');
+    expect(ui.byLabel(`Reminder time, ${formatTime(9, 0)}`).length).toBeGreaterThan(0);
+    await shiftTime(ui.root, 'Reminder time', 60);
     await flush();
     expect(useSettings.getState().settings.reminder.hour).toBe(10);
     expect(pending().every((p) => (p.trigger as { date: Date }).date.getHours() === 10)).toBe(true);
     await act(async () => toggle().props.onValueChange(false));
     await flush();
     expect(pending()).toHaveLength(0);
-    expect(ui.byLabel('Later hour')).toHaveLength(0);
+    expect(ui.byLabel(/^Reminder time, /)).toHaveLength(0);
   });
 
   it('explains a refused permission and keeps the switch off', async () => {

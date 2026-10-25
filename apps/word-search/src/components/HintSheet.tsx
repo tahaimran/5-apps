@@ -1,11 +1,15 @@
 import { useEffect, useState } from 'react';
+import { StyleSheet, View } from 'react-native';
+import Lightbulb from 'lucide-react-native/icons/lightbulb';
 import { isRewardedReady, showRewarded } from '@shared/ads';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
+import { Button } from '@shared/ui';
 import { REWARD_HINTS } from '@/domain/hints';
 import { useHints } from '@/store/hints';
+import { useAppColors } from '@/theme/mode';
 import { AppText } from '@/ui/AppText';
-import { BigButton } from '@/ui/BigButton';
+import { GameButton } from '@/ui/GameButton';
 import { Sheet } from '@/ui/Sheet';
 
 export const HINT_REWARDED_PLACEMENT = 'hint_refill';
@@ -18,7 +22,8 @@ type Stage = 'offer' | 'loading' | 'earned' | 'noVideo' | 'notEarned';
  * so a missing ad never leaves the player stuck.
  */
 export function HintSheet({ visible, onClose }: { visible: boolean; onClose: () => void }) {
-  const { colors, spacing, type } = useTheme();
+  const { colors, type } = useTheme();
+  const app = useAppColors();
   const [stage, setStage] = useState<Stage>('offer');
   const [courtesy, setCourtesy] = useState(false);
 
@@ -55,17 +60,25 @@ export function HintSheet({ visible, onClose }: { visible: boolean; onClose: () 
   };
 
   return (
-    <Sheet visible={visible} onClose={onClose}>
-      <AppText accessibilityRole="header" style={[type.title, { color: colors.text, fontWeight: '700' }]}>{t('hints.outTitle')}</AppText>
-      <AppText accessibilityLiveRegion="polite" style={[type.bodyLarge, { color: colors.textMuted, marginBottom: spacing.sm }]}>{body[stage]}</AppText>
+    <Sheet visible={visible} onClose={onClose} title={t('hints.outTitle')}>
+      <View style={[styles.bulb, { backgroundColor: app.gold, borderColor: app.goldEdge }]} importantForAccessibility="no-hide-descendants">
+        <Lightbulb size={34} color={app.onGold} strokeWidth={2.4} />
+      </View>
+      <AppText accessibilityLiveRegion="polite" style={[type.bodyLarge, { color: colors.text }]}>
+        {body[stage]}
+      </AppText>
       {stage === 'offer' ? (
         <>
-          <BigButton tall label={t('hints.watch')} onPress={watch} />
-          <BigButton variant="secondary" label={t('hints.noThanks')} onPress={onClose} />
+          <GameButton label={t('hints.watch')} onPress={() => void watch()} />
+          <Button variant="ghost" label={t('hints.noThanks')} onPress={onClose} />
         </>
       ) : stage === 'loading' ? null : (
-        <BigButton tall label={t('common.done')} onPress={onClose} />
+        <GameButton label={t('common.done')} onPress={onClose} />
       )}
     </Sheet>
   );
 }
+
+const styles = StyleSheet.create({
+  bulb: { width: 64, height: 64, borderRadius: 32, borderWidth: 3, alignItems: 'center', justifyContent: 'center', alignSelf: 'center' },
+});

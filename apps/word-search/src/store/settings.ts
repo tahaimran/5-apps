@@ -1,4 +1,7 @@
 import { create } from 'zustand';
+import { setSoundsEnabled } from '@shared/sound';
+import { setHapticsEnabled } from '@shared/theme';
+import { setTimeFormatPreference } from '@shared/time/preference';
 import { defaultSettings } from '@/domain/defaults';
 import type { Settings } from '@/domain/types';
 import { db } from './storage';
@@ -29,3 +32,12 @@ export const useSettings = create<SettingsState>((set, get) => ({
     set({ settings: defaultSettings });
   },
 }));
+
+/** Shared pieces (sounds, haptics, the wheel TimeField, every formatted time) follow the choices made here. */
+const share = ({ sounds, haptics, timeFormat }: Settings) => {
+  setSoundsEnabled(sounds);
+  setHapticsEnabled(haptics);
+  setTimeFormatPreference(timeFormat);
+};
+share(useSettings.getState().settings);
+useSettings.subscribe((s) => share(s.settings));

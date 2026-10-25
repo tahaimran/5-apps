@@ -1,3 +1,4 @@
+import { formatClock } from '@shared/time/preference';
 import type { DateKey } from '@/domain/types';
 
 const toDate = (key: DateKey) => {
@@ -17,5 +18,5 @@ export const formatMonth = (monthKey: string): string => {
 /** Short weekday names starting on Sunday ("Sun" … "Sat"). */
 export const weekdayNames = (): string[] => Array.from({ length: 7 }, (_, i) => new Date(2023, 0, 1 + i).toLocaleDateString(undefined, { weekday: 'short' }));
 
-/** "9:00 AM" in the device language. */
-export const formatTime = (hour: number, minute: number): string => new Date(2023, 0, 1, hour, minute).toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit' });
+/** "9:00 AM" or "09:00": the phone's clock, or the 12/24-hour choice in Settings (@shared/time). */
+export const formatTime = (hour: number, minute: number): string => formatClock(new Date(2023, 0, 1, hour, minute));

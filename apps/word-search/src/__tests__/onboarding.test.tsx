@@ -4,6 +4,7 @@ import { cleanup, flush, render } from '@/testing/ui';
 import { act } from 'react';
 import { Dimensions, PixelRatio } from 'react-native';
 import { ThemeProvider } from '@shared/theme';
+import { hideToast, ToastHost } from '@shared/ui';
 import { sharedStore } from '@shared/storage';
 import '@/bootstrap';
 import { wordCells } from '@/domain/generator';
@@ -36,6 +37,7 @@ beforeEach(() => {
   jest.spyOn(PixelRatio, 'getFontScale').mockReturnValue(1);
 });
 afterEach(async () => {
+  await act(async () => hideToast());
   await cleanup();
   sharedStore.remove('theme.mode');
   sharedStore.remove('onboarding.completedAt');
@@ -70,7 +72,7 @@ describe('setup screens (plan §6 screens 1 to 3)', () => {
     for (const label of ['Relaxed. Smaller puzzles. Words go across and down.', 'Classic. Words can also go diagonally.', 'Challenging. Bigger puzzles. Words can go in any direction, even backwards.']) {
       expect(ui.byLabel(label)).toHaveLength(1);
     }
-    expect(ui.texts()).toContain('Not sure? Start with Relaxed — you can switch anytime.');
+    expect(ui.texts()).toContain('Not sure? Start with Relaxed. You can switch anytime.');
     await ui.press('Classic. Words can also go diagonally.');
     await ui.press('Start my first puzzle');
     await settle();
@@ -157,7 +159,15 @@ describe('where the app opens', () => {
 describe('tutorial puzzle (plan §6 screen 5)', () => {
   const play = async () => {
     mockParams.current = { puzzleId: 'tutorial' };
-    const ui = await render(wrap(<Play />));
+    // "You found it!" is a toast now; the host lives at the root of the app.
+    const ui = await render(
+      wrap(
+        <>
+          <Play />
+          <ToastHost />
+        </>,
+      ),
+    );
     await settle();
     return ui;
   };

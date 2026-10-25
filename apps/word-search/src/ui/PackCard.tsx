@@ -1,23 +1,49 @@
-import { Pressable } from 'react-native';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { StyleSheet, View } from 'react-native';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
+import { PressableScale } from '@shared/ui';
 import type { WordPack } from '@/domain/packs';
+import { PackTile } from '@/features/packs/PackArt';
+import { useIsHighContrast } from '@/theme/mode';
 import { AppText } from './AppText';
+import { StarShape } from './StarRow';
 
-/** A pack on Home: icon, name and the level the player is on. 120dp tall at least (plan §5.1). */
-export function PackCard({ pack, level, onPress }: { pack: WordPack; level: number; onPress: () => void }) {
-  const { colors, radius, spacing, type } = useTheme();
+/**
+ * A pack on Home (plan §5.1): its picture on a tile, the name, the level the player is on and the stars
+ * collected in it. At least 120dp tall; the name wraps rather than being cut.
+ */
+export function PackCard({ pack, level, stars, onPress }: { pack: WordPack; level: number; stars: number; onPress: () => void }) {
+  const { colors, radius, spacing, type, shadow, fonts } = useTheme();
+  const hc = useIsHighContrast();
   return (
-    <Pressable
+    <PressableScale
       accessibilityRole="button"
-      accessibilityLabel={t('home.packLabel', { name: pack.name, level })}
+      accessibilityLabel={stars > 0 ? t('home.packLabelStars', { name: pack.name, level, count: stars }) : t('home.packLabel', { name: pack.name, level })}
       onPress={onPress}
-      style={{ flexBasis: '48%', flexGrow: 1, minHeight: 120, padding: spacing.md, borderRadius: radius.lg, borderWidth: 1, borderColor: colors.border, backgroundColor: colors.surface, justifyContent: 'center', gap: spacing.xs }}
+      scaleTo={0.97}
+      style={[
+        styles.card,
+        { minHeight: 120, padding: spacing.md, gap: spacing.sm, borderRadius: radius.lg, backgroundColor: colors.surface },
+        hc ? { borderWidth: 2, borderColor: colors.border } : shadow(1),
+      ]}
     >
-      <MaterialCommunityIcons name={pack.icon as never} size={36} color={colors.primary} />
-      <AppText style={[type.bodyLarge, { color: colors.text, fontWeight: '700' }]}>{pack.name}</AppText>
-      <AppText style={[type.body, { color: colors.textMuted }]}>{t('packs.level', { level })}</AppText>
-    </Pressable>
+      <PackTile packId={pack.id} px={84} />
+      <AppText style={[type.bodyLarge, { color: colors.text, fontWeight: '800', fontFamily: fonts.display, textAlign: 'center' }]}>{pack.name}</AppText>
+      <View style={[styles.meta, { gap: spacing.sm }]}>
+        <AppText style={[type.body, { color: colors.textMuted, fontWeight: '600' }]}>{t('packs.level', { level })}</AppText>
+        {stars > 0 && (
+          <View style={styles.stars}>
+            <StarShape size={18} filled />
+            <AppText style={[type.body, { color: colors.text, fontWeight: '700' }]}>{stars}</AppText>
+          </View>
+        )}
+      </View>
+    </PressableScale>
   );
 }
+
+const styles = StyleSheet.create({
+  card: { flexBasis: '46%', flexGrow: 1, alignItems: 'center' },
+  meta: { flexDirection: 'row', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center' },
+  stars: { flexDirection: 'row', alignItems: 'center', gap: 3 },
+});

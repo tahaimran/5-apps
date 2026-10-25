@@ -21,7 +21,7 @@ import Onboarding from '../../app/onboarding';
 import DebugAds from '../../app/debug-ads';
 import Privacy from '../../app/privacy';
 import { ReminderSheet } from '@/components/ReminderSheet';
-import { TimeStepper } from '@/components/TimeStepper';
+import { TimeField } from '@shared/time';
 import { useSettings as useSettingsStore } from '@/store/settings';
 import PackScreen from '../../app/packs/[packId]';
 import { useGame } from '@/store/game';
@@ -44,7 +44,7 @@ beforeEach(() => {
   useProgress.getState().record('animals', 'easy', 2, 2);
   useGame.getState().begin(levelPuzzle('birds', 'easy', 1, 8)); // Home shows the Continue card
   useDaily.getState().complete('2026-10-07', '2026-10-07', 3);
-  useSettingsStore.getState().update({ reminder: { enabled: true, hour: 9, minute: 0 } }); // Settings shows the time stepper
+  useSettingsStore.getState().update({ reminder: { enabled: true, hour: 9, minute: 0 } }); // Settings shows the time field
 });
 afterEach(async () => {
   await cleanup();
@@ -63,7 +63,7 @@ const screens: [string, () => ReactElement, boolean][] = [
   ['Ad rules (debug)', () => <DebugAds />, true],
   ['Privacy', () => <Privacy />, true],
   ['Reminder pre-prompt', () => <ReminderSheet visible onClose={() => undefined} />, true],
-  ['Time stepper', () => <TimeStepper hour={9} minute={0} onChange={() => undefined} />, true],
+  ['Time field', () => <TimeField label="Reminder time" value="09:00" onChange={() => undefined} />, true],
   ['Pack levels', () => <PackScreen />, true],
 ];
 

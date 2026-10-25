@@ -95,4 +95,13 @@ describe('accessibility rules', () => {
     });
     expect(bad).toEqual([]);
   });
+
+  it('uses no emoji as icons or in the copy (icons are Lucide, decoration is drawn)', () => {
+    const en = fs.readFileSync(path.join(ROOT, 'src/i18n/en.json'), 'utf8');
+    expect(en).not.toMatch(/\p{Extended_Pictographic}/u);
+    const bad = scan((node, _sf, report) => {
+      if ((ts.isJsxText(node) || ts.isStringLiteral(node)) && /\p{Extended_Pictographic}/u.test(node.getText())) report(node, 'emoji in source');
+    });
+    expect(bad).toEqual([]);
+  });
 });

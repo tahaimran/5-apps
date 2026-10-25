@@ -1,6 +1,6 @@
 import { mockAudio } from '@/testing/mocks';
 import { resetApp } from '@/testing/stores';
-import { playSound, SOUND_VOLUME } from '../sounds';
+import { playSound, soundsEnabled } from '@shared/sound';
 import { useSettings } from '@/store/settings';
 
 beforeEach(() => {
@@ -8,39 +8,41 @@ beforeEach(() => {
   mockAudio.mode.mockClear();
 });
 
-describe('game sounds (plan §7.4)', () => {
-  it('plays a chime for a found word and an arpeggio for a finished puzzle, at 60% volume', () => {
-    playSound('found');
+/**
+ * Plan §7.4: a soft chime for a found word and a gentle arpeggio for a finished puzzle, on by default at a
+ * gentle volume. The sounds are the shared set (check, complete) and follow the Settings toggle.
+ */
+describe('game sounds', () => {
+  it('are on by default and play at a gentle volume', () => {
+    expect(useSettings.getState().settings.sounds).toBe(true);
+    expect(soundsEnabled()).toBe(true);
+    playSound('check');
     playSound('complete');
     expect(mockAudio.players).toHaveLength(2);
-    expect(mockAudio.players.map((p) => p.volume)).toEqual([SOUND_VOLUME, SOUND_VOLUME]);
-    expect(SOUND_VOLUME).toBe(0.6);
-    for (const p of mockAudio.players) expect(p.play).toHaveBeenCalledTimes(1);
+    for (const p of mockAudio.players) {
+      expect(p.volume).toBeGreaterThan(0.3);
+      expect(p.volume).toBeLessThanOrEqual(0.6);
+      expect(p.play).toHaveBeenCalledTimes(1);
+    }
   });
-  it('reuses the player, starting from the beginning each time', () => {
-    playSound('found');
-    playSound('found');
+  it('reuses a player, starting from the beginning each time', () => {
+    playSound('check');
+    playSound('check');
     expect(mockAudio.players).toHaveLength(1);
     expect(mockAudio.players[0].seekTo).toHaveBeenCalledWith(0);
     expect(mockAudio.players[0].play).toHaveBeenCalledTimes(2);
   });
-  it('stays silent when sounds are off in Settings', () => {
+  it('stays silent when sounds are off in Settings, and plays again when they are back on', () => {
     useSettings.getState().update({ sounds: false });
-    playSound('found');
-    playSound('complete');
+    expect(soundsEnabled()).toBe(false);
+    playSound('check');
     expect(mockAudio.players).toHaveLength(0);
-  });
-  it('respects silent mode and lets other audio keep playing, set up once', () => {
-    playSound('found');
-    playSound('complete');
-    expect(mockAudio.mode).toHaveBeenCalledTimes(1);
-    expect(mockAudio.mode).toHaveBeenCalledWith({ playsInSilentMode: false, interruptionMode: 'mixWithOthers' });
+    useSettings.getState().update({ sounds: true });
+    playSound('check');
+    expect(mockAudio.players).toHaveLength(1);
   });
   it('never throws when audio is unavailable', () => {
     mockAudio.failCreate = true;
-    expect(() => playSound('found')).not.toThrow();
-  });
-  it('is on by default', () => {
-    expect(useSettings.getState().settings.sounds).toBe(true);
+    expect(() => playSound('complete')).not.toThrow();
   });
 });

@@ -140,7 +140,7 @@ describe('Home daily card and Daily tab', () => {
     useGame.getState().discard();
     useDaily.getState().complete(TODAY, TODAY, 3);
     const done = await render(wrap(<Home />));
-    expect(done.texts()).toContain('Done ✓');
+    expect(done.texts()).toContain('Done'); // the check is an icon now, not a glyph in the copy
     expect(done.byLabel("Play today's puzzle")).toHaveLength(0);
     expect(done.byLabel('1-day streak')).toHaveLength(1);
   });
@@ -159,7 +159,7 @@ describe('Home daily card and Daily tab', () => {
     useDaily.getState().complete(TODAY, TODAY, 2);
     const ui = await render(wrap(<DailyTab />));
     expect(ui.texts()).toContain('Thursday, October 8');
-    expect(ui.texts()).toContain('Done ✓');
+    expect(ui.texts()).toContain('Done');
     expect(ui.texts()).toContain('Come back tomorrow for a new puzzle.');
     expect(ui.texts()).toContain('2 days');
     expect(ui.byLabel('Wed, Oct 7, completed')).toHaveLength(1);
@@ -189,7 +189,9 @@ describe('Home daily card and Daily tab', () => {
 
   it('rolls over to the next day when the date changes while the screen is open', async () => {
     const ui = await render(wrap(<Home />));
-    expect(ui.texts().some((t) => /^Thursday, October 8 · \w+/.test(t))).toBe(true);
+    // Home's header shows the date; the theme has its own line on the Today card.
+    expect(ui.texts()).toContain('Thursday, October 8');
+    expect(ui.texts().some((t) => /^Today's theme: \w+/.test(t))).toBe(true);
     await act(async () => {
       useToday.setState({ today: '2026-10-09' });
     });
@@ -207,7 +209,7 @@ describe('hints (plan F7, §8.5)', () => {
     await ui.press(hintLabel(3));
     expect(ui.byLabel(hintLabel(2))).toHaveLength(1);
     expect(useGame.getState().current?.hintsUsed).toBe(1);
-    const rings = () => ui.root.findAll((n) => n.props.r !== undefined && n.props.fill === 'none' && typeof n.type === 'string');
+    const rings = () => ui.root.findAll((n) => n.props.testID === 'hint-ring' && typeof n.type === 'string');
     expect(rings()).toHaveLength(1);
     await act(async () => {
       jest.advanceTimersByTime(3000);
@@ -220,7 +222,7 @@ describe('hints (plan F7, §8.5)', () => {
     const ui = await playScreen(id);
     await ui.press(hintLabel(3));
     await ui.press(hintLabel(2));
-    const rings = ui.root.findAll((n) => n.props.r !== undefined && n.props.fill === 'none' && typeof n.type === 'string');
+    const rings = ui.root.findAll((n) => n.props.testID === 'hint-ring' && typeof n.type === 'string');
     expect(rings).toHaveLength(2);
   });
 

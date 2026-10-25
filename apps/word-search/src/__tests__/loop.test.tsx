@@ -1,6 +1,6 @@
 import { mockGestures, mockParams, mockRouter } from '@/testing/mocks';
 import { resetApp } from '@/testing/stores';
-import { cleanup, flush, render } from '@/testing/ui';
+import { cleanup, flush, isPressable, render } from '@/testing/ui';
 import { act } from 'react';
 import { Alert, AppState, Dimensions } from 'react-native';
 import { ThemeProvider } from '@shared/theme';
@@ -185,7 +185,8 @@ describe('Home and pack screens', () => {
   it('shows the greeting for the time of day and a card for each of the 12 packs', async () => {
     const ui = await render(wrap(<Home />));
     expect(ui.texts()).toContain('Good morning');
-    expect(ui.root.findAll((n) => typeof n.props.accessibilityLabel === 'string' && /^.+, Level 1$/.test(n.props.accessibilityLabel) && n.props.onPress).length).toBe(12);
+    // The cards press with a dip (PressableScale), whose inner Pressable carries the same label: count Pressables.
+    expect(ui.root.findAll((n) => isPressable(n) && typeof n.props.accessibilityLabel === 'string' && /^.+, Level 1$/.test(n.props.accessibilityLabel)).length).toBe(12);
     await ui.press('Animals, Level 1');
     expect(mockRouter.push).toHaveBeenCalledWith({ pathname: '/packs/[packId]', params: { packId: 'animals' } });
   });
@@ -205,7 +206,8 @@ describe('Home and pack screens', () => {
     useProgress.getState().record('food', 'easy', 1, 3);
     const ui = await render(wrap(<Home />));
     expect(ui.byLabel('Continue')).toHaveLength(0);
-    expect(ui.byLabel('Food, Level 2')).toHaveLength(1);
+    // The card also says the stars collected in the pack now.
+    expect(ui.byLabel('Food, Level 2, 3 stars').length).toBeGreaterThan(0);
   });
 
   it('lists the current level with Play, one Next up, and the finished levels with stars', async () => {
