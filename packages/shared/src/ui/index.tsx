@@ -32,6 +32,8 @@ import Svg, { Circle } from 'react-native-svg';
 import { t } from '../i18n';
 import { useHaptics, useTheme, type Palette, type ThemeMode } from '../theme';
 
+export { Confetti, confettiPieces, type ConfettiProps } from './confetti';
+
 /** Strong ease-out for anything entering or responding (never ease-in on UI). */
 export const EASE_OUT = Easing.bezier(0.23, 1, 0.32, 1);
 /** On-screen movement and morphing. */

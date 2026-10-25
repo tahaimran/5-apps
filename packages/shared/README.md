@@ -58,6 +58,7 @@ showToast({ message, icon, tone, action }) and <ToastHost bottom={…} />      /
 <Stepper label value min max step format onPressValue> // step may be (value, dir) => size; snaps to the grid
 <SystemNavBar dark>                                    // nav-bar button style; renders nothing in builds without expo-navigation-bar
 <Digits value="12:07" size={72} color>                 // ticking numbers in fixed-width digit slots (never shift)
+<Confetti colors={[...]} onDone count duration>        // one-shot burst for a rare celebration; draws nothing under Reduce Motion
 insetTones(colors, mode)           // track + raised colors; in dark mode the raised part is the lighter one
 EASE_OUT, EASE_IN_OUT              // the curves to use for UI timing
 ```
