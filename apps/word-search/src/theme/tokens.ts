@@ -260,5 +260,9 @@ export const PRIMARY_TARGET = 64;
 /** Everything the app passes to the ThemeProvider (the font scale follows the text-size setting). */
 export const themeProps = { palette, fonts, touchTarget: TOUCH_TARGET } as const;
 
-/** Compact tab bar like Habits: 56dp of icons and labels, growing with the phone's font scale. */
-export const tabBarHeight = (fontScale: number): number => Math.round(44 + 16 * Math.max(1, fontScale));
+/** Tab labels follow the letter-size setting like the rest of the text (caption + 2sp). */
+export const tabLabelSize = (textSize: TextSize): number => Math.round(13 * fontScaleFor(textSize)) + 2;
+
+/** Compact tab bar like Habits: the icon pill and a label line, growing with the label size and the phone's font scale. */
+export const tabBarHeight = (fontScale: number, textSize: TextSize = 'large'): number =>
+  Math.round(42 + Math.round(tabLabelSize(textSize) * 1.25) * Math.max(1, fontScale));

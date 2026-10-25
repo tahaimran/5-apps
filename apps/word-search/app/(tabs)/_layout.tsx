@@ -7,7 +7,8 @@ import Settings from 'lucide-react-native/icons/settings';
 import { t } from '@shared/i18n';
 import { useTheme } from '@shared/theme';
 import type { IconComponent } from '@shared/ui';
-import { fonts, tabBarHeight } from '@/theme/tokens';
+import { useSettings } from '@/store/settings';
+import { fonts, tabBarHeight, tabLabelSize } from '@/theme/tokens';
 
 const icons: Record<'index' | 'daily' | 'settings', IconComponent> = { index: Search, daily: CalendarCheck, settings: Settings };
 const titles = { index: 'tabs.play', daily: 'tabs.daily', settings: 'tabs.settings' } as const;
@@ -17,6 +18,8 @@ export default function TabsLayout() {
   const { colors, shadow, mode } = useTheme();
   const insets = useSafeAreaInsets();
   const { fontScale } = useWindowDimensions();
+  const textSize = useSettings((s) => s.settings.textSize);
+  const label = tabLabelSize(textSize);
   const tab = (name: keyof typeof icons) => {
     const Icon = icons[name];
     return (
@@ -50,13 +53,13 @@ export default function TabsLayout() {
         tabBarActiveTintColor: colors.primary,
         tabBarInactiveTintColor: colors.textMuted,
         tabBarShowLabel: true,
-        tabBarLabelStyle: { fontFamily: fonts.body, fontWeight: '700', fontSize: 13, lineHeight: 16 },
+        tabBarLabelStyle: { fontFamily: fonts.body, fontWeight: '700', fontSize: label, lineHeight: Math.round(label * 1.25) },
         tabBarIconStyle: { height: 30 },
         tabBarStyle: {
           backgroundColor: colors.surface,
           borderTopWidth: mode === 'high-contrast' ? 2 : 0,
           borderTopColor: colors.border,
-          height: tabBarHeight(fontScale) + insets.bottom,
+          height: tabBarHeight(fontScale, textSize) + insets.bottom,
           paddingTop: 5,
           paddingBottom: insets.bottom + 4,
           ...(mode === 'high-contrast' ? {} : shadow(2)),

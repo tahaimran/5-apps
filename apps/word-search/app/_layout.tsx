@@ -31,6 +31,7 @@ function Root() {
   const { fontScale } = useWindowDimensions();
   const setupDone = useOnboardingComplete();
   const sounds = useSettings((s) => s.settings.sounds);
+  const textSize = useSettings((s) => s.settings.textSize);
   // The found-word chime and the finish arpeggio load up front so the first one plays without a delay.
   useEffect(() => {
     if (sounds) initSounds(['check', 'complete']);
@@ -60,7 +61,7 @@ function Root() {
         <Stack.Screen name="complete/[puzzleId]" options={{ presentation: 'modal', gestureEnabled: false, animation: 'fade' }} />
       </Stack>
       {/* Above the tab bar; one host for every screen (the tutorial's "You found it!" and other short notes). */}
-      <ToastHost bottom={tabBarHeight(fontScale) + insets.bottom + 12} />
+      <ToastHost bottom={tabBarHeight(fontScale, textSize) + insets.bottom + 12} />
     </>
   );
 }

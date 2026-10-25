@@ -8,14 +8,15 @@ const TAIL = 22;
 
 /**
  * A gold title ribbon with folded tails (the game's screen titles: "Daily puzzle", "Well done!").
- * The face is an ordinary view, so a long title or a large font wraps onto more lines and the ribbon
- * grows with it; only the tails are drawn. In high contrast it is a black band with a yellow edge.
+ * The face is an ordinary view, so a long title or a large font wraps onto a second line and the ribbon
+ * grows with it; past two lines the text shrinks to fit (never "…"). Only the tails are drawn. `sm` is the
+ * Game screen's header. In high contrast it is a black band with a yellow edge.
  */
-export function Ribbon({ title, size = 'md', header = true }: { title: string; size?: 'md' | 'lg'; header?: boolean }) {
+export function Ribbon({ title, size = 'md', header = true }: { title: string; size?: 'sm' | 'md' | 'lg'; header?: boolean }) {
   const { type, spacing } = useTheme();
   const app = useAppColors();
   const hc = useIsHighContrast();
-  const text = size === 'lg' ? type.display : type.title;
+  const text = size === 'lg' ? type.display : size === 'sm' ? type.bodyLarge : type.title;
   const tail = (flip: boolean) => (
     <Svg width={TAIL} height={40} viewBox="0 0 22 40" style={[styles.tail, flip ? styles.right : styles.left]}>
       <Path d={flip ? 'M0 0 L22 0 L12 20 L22 40 L0 40 Z' : 'M22 0 L0 0 L10 20 L0 40 L22 40 Z'} fill={app.ribbonShade} />
@@ -30,7 +31,7 @@ export function Ribbon({ title, size = 'md', header = true }: { title: string; s
           styles.face,
           {
             backgroundColor: app.ribbon,
-            paddingHorizontal: spacing.xl,
+            paddingHorizontal: size === 'sm' ? spacing.md : spacing.xl,
             paddingVertical: size === 'lg' ? spacing.sm : spacing.xs + 2,
             borderRadius: 10,
             borderWidth: hc ? 3 : 0,
@@ -38,7 +39,11 @@ export function Ribbon({ title, size = 'md', header = true }: { title: string; s
           },
         ]}
       >
+        {/* Two lines at most: a long title at the biggest sizes shrinks to fit instead of growing the header or being cut. */}
         <AppText
+          numberOfLines={2}
+          adjustsFontSizeToFit
+          minimumFontScale={0.55}
           accessibilityRole={header ? 'header' : undefined}
           style={[text, { color: app.onRibbon, fontWeight: '800', textAlign: 'center' }]}
         >

@@ -28,7 +28,9 @@ export function PackCard({ pack, level, stars, onPress }: { pack: WordPack; leve
       ]}
     >
       <PackTile packId={pack.id} px={84} />
-      <AppText style={[type.bodyLarge, { color: colors.text, fontWeight: '800', fontFamily: fonts.display, textAlign: 'center' }]}>{pack.name}</AppText>
+      <AppText numberOfLines={2} adjustsFontSizeToFit minimumFontScale={0.6} style={[type.bodyLarge, { color: colors.text, fontWeight: '800', fontFamily: fonts.display, textAlign: 'center' }]}>
+        {pack.name}
+      </AppText>
       <View style={[styles.meta, { gap: spacing.sm }]}>
         <AppText style={[type.body, { color: colors.textMuted, fontWeight: '600' }]}>{t('packs.level', { level })}</AppText>
         {stars > 0 && (

@@ -195,7 +195,9 @@ export function Grid({ game, cellSize, textSize, mode, screenReader, onSelect, o
   };
 
   const gesture = useMemo(() => {
+    // A slow, careful press still counts (the default gives up after 500 ms).
     const tap = Gesture.Tap()
+      .maxDuration(1500)
       .maxDistance(20)
       .onEnd((e: { x: number; y: number }, success?: boolean) => {
         'worklet';

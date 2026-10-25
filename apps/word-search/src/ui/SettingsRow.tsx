@@ -90,7 +90,11 @@ export function NavRow({
   );
 }
 
-/** A label with a Toggle on the right (and an optional icon and hint). */
+/**
+ * A label with a Toggle on the right (and an optional icon and hint). The whole row is the switch, so the
+ * target is the full 64dp row, not the small native switch; the label keeps at least half the row and the
+ * On/Off word and switch wrap under it at very large text rather than squeezing it.
+ */
 export function SwitchRow({
   label,
   value,
@@ -110,16 +114,26 @@ export function SwitchRow({
 }) {
   const { colors, spacing, type, touchTarget } = useTheme();
   return (
-    <View style={rowStyle(touchTarget, spacing)}>
+    <PressableScale
+      accessibilityRole="switch"
+      accessibilityLabel={label}
+      accessibilityHint={hint}
+      accessibilityState={{ checked: value }}
+      onPress={() => onChange(!value)}
+      scaleTo={0.98}
+      style={[rowStyle(touchTarget, spacing), styles.wrap]}
+    >
       {icon ? <IconCircle icon={icon} tint={tint} bg={bg} /> : null}
-      <View style={styles.flex}>
+      <View style={styles.label}>
         <AppText style={[type.bodyLarge, { color: colors.text, fontWeight: '600' }]}>{label}</AppText>
         {hint ? <AppText style={[type.body, { color: colors.textMuted }]}>{hint}</AppText> : null}
       </View>
-      {/* Plan §5.6: every switch also says On or Off in words. */}
-      <AppText style={[type.body, { color: colors.textMuted, fontWeight: '700' }]}>{value ? t('common.on') : t('common.off')}</AppText>
-      <Toggle label={label} value={value} onValueChange={onChange} />
-    </View>
+      <View style={[styles.row, { gap: spacing.sm, marginLeft: 'auto' }]} importantForAccessibility="no-hide-descendants">
+        {/* Plan §5.6: every switch also says On or Off in words. */}
+        <AppText style={[type.body, { color: colors.textMuted, fontWeight: '700' }]}>{value ? t('common.on') : t('common.off')}</AppText>
+        <Toggle label={label} value={value} onValueChange={onChange} />
+      </View>
+    </PressableScale>
   );
 }
 
@@ -181,6 +195,7 @@ const styles = StyleSheet.create({
   flex: { flex: 1 },
   circle: { alignItems: 'center', justifyContent: 'center' },
   row: { flexDirection: 'row', alignItems: 'center' },
+  wrap: { flexWrap: 'wrap' },
   // The label keeps at least half the row; a long value wraps within the rest instead of squeezing it.
   label: { flex: 1, minWidth: '50%' },
   value: { flexShrink: 1, maxWidth: '45%', textAlign: 'right' },

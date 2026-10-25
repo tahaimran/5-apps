@@ -134,7 +134,8 @@ export default function Complete() {
       <SkyBackdrop />
       <ScrollView style={styles.clip} contentContainerStyle={{ flexGrow: 1, justifyContent: 'center', padding: spacing.lg, gap: spacing.xl }}>
         <View style={{ alignItems: 'center', gap: spacing.lg }}>
-          <Animated.View style={rise(0)}>
+          {/* Above the rays, which reach up past the star stage. */}
+          <Animated.View style={[{ zIndex: 1 }, rise(0)]}>
             <Ribbon title={result.isTutorial ? t('tutorial.wonderful') : t('complete.title')} size="lg" />
           </Animated.View>
           {!result.isTutorial && (
@@ -170,7 +171,7 @@ export default function Complete() {
               ]}
             >
               <Flame size={32} color={app.flame} strokeWidth={2.4} />
-              <AppText style={[type.title, { color: colors.text, fontWeight: '800', fontFamily: fonts.display }]}>{t('complete.streak', { count: result.streak! })}</AppText>
+              <AppText style={[type.title, { color: colors.text, fontWeight: '800', fontFamily: fonts.display, flexShrink: 1 }]}>{t('complete.streak', { count: result.streak! })}</AppText>
             </Animated.View>
           )}
           {result.isDaily && result.streakCounted === false && (

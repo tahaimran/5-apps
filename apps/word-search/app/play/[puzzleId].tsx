@@ -107,15 +107,23 @@ function HintButton({ count, onPress }: { count: number; onPress: () => void }) 
   );
 }
 
-/** The letters under the finger, above the board, so the word being traced can be read without lifting it. */
+/**
+ * The letters under the finger, above the board, so the word being traced can be read without lifting it.
+ * Its slot has a fixed height whether or not it shows letters: the board must never move under a finger
+ * that is selecting. A long word shrinks to fit one line instead of growing the slot.
+ */
 function WordBubble({ letters }: { letters: string }) {
   const { colors, radius, spacing, type, shadow } = useTheme();
+  const { fontScale } = useWindowDimensions();
   const hc = useIsHighContrast();
+  const line = Math.ceil(type.bodyLarge.lineHeight * fontScale);
   return (
-    <View style={styles.bubbleRow} importantForAccessibility="no-hide-descendants" accessibilityElementsHidden>
+    <View style={[styles.bubbleRow, { height: line + 12 }]} importantForAccessibility="no-hide-descendants" accessibilityElementsHidden>
       {letters.length > 0 && (
-        <View style={[{ paddingHorizontal: spacing.lg, minHeight: 40, justifyContent: 'center', borderRadius: radius.pill, backgroundColor: colors.surface, borderWidth: 2, borderColor: colors.primary }, hc ? null : shadow(1)]}>
-          <AppText style={[type.bodyLarge, { fontFamily: GRID_FONT, color: colors.text, fontWeight: '700', letterSpacing: 4 }]}>{letters}</AppText>
+        <View style={[{ paddingHorizontal: spacing.lg, height: line + 8, maxWidth: '100%', justifyContent: 'center', borderRadius: radius.pill, backgroundColor: colors.surface, borderWidth: 2, borderColor: colors.primary }, hc ? null : shadow(1)]}>
+          <AppText numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.5} style={[type.bodyLarge, { fontFamily: GRID_FONT, color: colors.text, fontWeight: '700', letterSpacing: 4 }]}>
+            {letters}
+          </AppText>
         </View>
       )}
     </View>
@@ -269,7 +277,7 @@ export default function Play() {
           size={26}
           style={[{ backgroundColor: colors.surface }, hc ? { borderWidth: 2, borderColor: colors.border } : shadow(1)]}
         />
-        <View style={styles.flex}>{game ? <Ribbon title={titleOf(game.puzzle)} /> : null}</View>
+        <View style={styles.flex}>{game ? <Ribbon title={titleOf(game.puzzle)} size="sm" /> : null}</View>
         {game && <HintButton count={hintsLeft} onPress={onHint} />}
         {game && (
           <IconButton
@@ -290,14 +298,15 @@ export default function Play() {
         <View accessible accessibilityLabel={t('game.loading')} style={{ alignSelf: 'center', width: width - 20, height: width - 20, backgroundColor: colors.surfaceAlt, borderRadius: 20, marginTop: spacing.md }} />
       ) : (
         <ScrollView style={styles.clip} scrollEnabled={!gridTouched} contentContainerStyle={{ alignItems: 'center', paddingHorizontal: spacing.sm, paddingBottom: spacing.lg, gap: spacing.sm }}>
-          <View style={[styles.progress, { gap: spacing.md, paddingHorizontal: spacing.sm }]}>
-            <View style={styles.flex}>
+          <View style={[styles.progress, { columnGap: spacing.md, rowGap: spacing.xs, paddingHorizontal: spacing.sm }]}>
+            {/* The bar takes what is left of the line, and gets a line of its own when the text is large. */}
+            <View style={styles.bar100}>
               <ProgressBar progress={total ? found / total : 0} />
             </View>
             <AppText style={[type.body, { color: colors.text, fontWeight: '700' }]}>{t('game.foundProgress', { found, total })}</AppText>
             {settings.showTimer && <ElapsedTimer />}
           </View>
-          {isTutorial && !touched && found === 0 ? <CoachText /> : <WordBubble letters={letters} />}
+          <WordBubble letters={letters} />
           <Animated.View
             onTouchStart={() => setGridTouched(true)}
             onTouchEnd={() => setGridTouched(false)}
@@ -320,6 +329,8 @@ export default function Play() {
             />
             {isTutorial && !touched && found === 0 && <TutorialFinger game={game} cellSize={cellSize} />}
           </Animated.View>
+          {/* Under the board, so the board does not move when the card goes away at the first touch. */}
+          {isTutorial && !touched && found === 0 && <CoachText />}
           {isTutorial && canSkip && <Button variant="ghost" label={t('tutorial.skip')} onPress={skipTutorial} />}
           <View style={[styles.stretch, { paddingHorizontal: spacing.xs }]}>
             <WordList words={game.puzzle.words} textSize={settings.textSize} />
@@ -336,9 +347,10 @@ const styles = StyleSheet.create({
   flex: { flex: 1 },
   clip: { flex: 1, overflow: 'hidden' },
   bar: { flexDirection: 'row', alignItems: 'center' },
-  progress: { flexDirection: 'row', alignItems: 'center', alignSelf: 'stretch' },
+  progress: { flexDirection: 'row', alignItems: 'center', alignSelf: 'stretch', flexWrap: 'wrap', justifyContent: 'flex-end' },
+  bar100: { flexGrow: 1, flexBasis: 120 },
   stretch: { alignSelf: 'stretch' },
-  bubbleRow: { minHeight: 44, alignItems: 'center', justifyContent: 'center' },
+  bubbleRow: { alignItems: 'center', justifyContent: 'center', alignSelf: 'stretch' },
   hint: { alignItems: 'center', justifyContent: 'center', borderWidth: 3 },
   badge: { position: 'absolute', top: -4, right: -4, minWidth: 24, height: 24, borderRadius: 12, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 5, borderWidth: 2 },
 });

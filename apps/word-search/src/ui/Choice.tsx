@@ -12,8 +12,12 @@ export interface ChoiceOption<T extends string> {
   accessibilityLabel?: string;
 }
 
-/** Past this phone font scale a row of segments would squeeze its labels, so the choices stack instead. */
-export const SEGMENTED_MAX_FONT_SCALE = 1.05;
+/**
+ * Past this text scale (the phone's font scale times the app's own letter size) a row of segments would
+ * squeeze its labels, so the choices stack instead. Four segments get less room than three.
+ */
+export const SEGMENTED_MAX_FONT_SCALE = 1.3;
+export const SEGMENTED_MAX_FONT_SCALE_FOUR = 1.15;
 
 /**
  * One choice out of a few (theme, clock, units): the shared sliding Segmented control at normal text
@@ -21,8 +25,10 @@ export const SEGMENTED_MAX_FONT_SCALE = 1.05;
  */
 export function ChoiceGroup<T extends string>({ options, value, onChange }: { options: ChoiceOption<T>[]; value: T; onChange: (v: T) => void }) {
   const { fontScale } = useWindowDimensions();
-  const { spacing } = useTheme();
-  if (fontScale <= SEGMENTED_MAX_FONT_SCALE) return <Segmented options={options} value={value} onChange={onChange} />;
+  const { spacing, type } = useTheme();
+  // The app's letter size scales the shared type (body is 16sp at 1x).
+  const scale = fontScale * (type.body.fontSize / 16);
+  if (scale <= (options.length >= 4 ? SEGMENTED_MAX_FONT_SCALE_FOUR : SEGMENTED_MAX_FONT_SCALE)) return <Segmented options={options} value={value} onChange={onChange} />;
   return (
     <View accessibilityRole="radiogroup" style={{ gap: spacing.sm }}>
       {options.map((o) => (

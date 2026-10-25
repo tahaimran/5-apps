@@ -69,7 +69,8 @@ export default function Home() {
   return (
     <Screen backdrop={<SkyBackdrop scene="home" />} footer={<BannerSlot placement="home_banner" />}>
       <View style={[styles.header, { gap: spacing.sm }]}>
-        <View style={styles.flex}>
+        {/* Grows, but wraps the chips onto the next line rather than squeezing the greeting. */}
+        <View style={styles.greeting}>
           <AppText accessibilityRole="header" style={[type.headline, { color: colors.text, fontWeight: '800' }]}>
             {greeting}
           </AppText>
@@ -145,6 +146,7 @@ export default function Home() {
 
 const styles = StyleSheet.create({
   flex: { flex: 1 },
+  greeting: { flexGrow: 1, flexBasis: 220 },
   header: { flexDirection: 'row', alignItems: 'flex-start', flexWrap: 'wrap', paddingTop: 8 },
   chips: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'flex-end' },
   row: { flexDirection: 'row', alignItems: 'center' },
