@@ -5,10 +5,10 @@
   The old `claude/*` build branches are merged and can be ignored.
 - Built: shared package + all 5 apps (habit-tracker, water-reminder, word-search,
   trivia-quiz, contraction-timer). Milestones are ticked in each app's DEVELOPMENT_PLAN.md.
-- Verified on `main` (2026-10-09): tsc clean, expo-doctor 21/21, all jest tests pass in every package.
+- Verified on `main` (2026-10-26, after merging `feat/ui-polish`): tsc clean, all jest tests pass in every package.
 - EAS: all 5 apps linked to Expo account `tuahaimran` (owner + projectId in each `app.config.ts`);
   first `preview` APKs built 2026-10-09. Keystores are EAS-managed. Build from the app folder.
-- UI redesign on `feat/ui-polish` (not merged yet): Habits, Water and Quizora are on the shared kit
+- UI redesign from `feat/ui-polish` (merged into `main` 2026-10-26): Habits, Water and Quizora are on the shared kit
   (Figtree/Bricolage, Lucide, motion, sounds, 12/24-hour TimeField, chime channels, new icons). Quizora's redesign
   (2026-10-24) is Jest-verified only and needs a new dev build before it can be seen on a phone.
   Contraction Timer's redesign ("Dawn", 2026-10-25, plan §7) is on the kit too (Night stays in the shared
