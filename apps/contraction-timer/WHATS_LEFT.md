@@ -49,7 +49,7 @@ Install the preview APK, then check each item. Full list: `RELEASE.md` section 4
 - [ ] 25. If you can, try a cheap old phone (Android 8–10), a newer one and a large 6.7" one.
 
 ## 2. Set up money (AdMob)
-- [x] Create the app in AdMob (Android, package `com.fiveapps.contractiontimer`). Decide the final package name first; it can never change after the first upload.
+- [x] Create the app in AdMob (Android, package `com.tahaimran.contractiontimer`). The final package name is `com.tahaimran.contractiontimer` (final since 2026-10-27); it can never change after the first upload.
 - [x] Create 8 ad units: 4 banners, 1 native, 2 rewarded, 1 interstitial, 1 app open (one per placement below).
 - [ ] Run `eas env:create` (stores secrets in EAS, not git) for each of:
   `EXPO_PUBLIC_ADMOB_ANDROID_APP_ID`, `EXPO_PUBLIC_ADMOB_HISTORY_BANNER`, `EXPO_PUBLIC_ADMOB_WEEK_BANNER`,

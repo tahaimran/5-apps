@@ -56,7 +56,7 @@ previewed in the Habits dev client (react-native-view-shot is optional there; sh
 
 ## 4. Google Play Console forms
 - [ ] Target audience: ages 13–15, 16–17, 18+. Not for children, not in the Families program, "appeals to children" = No.
-- [ ] Content rating (IARC questionnaire): trivia, no violence; expect Everyone / PEGI 3; ads = Yes.
+- [ ] Content rating (IARC questionnaire): trivia, no violence; expect Everyone / PEGI 3; ads = Yes. *(2026-10-27: profanity and substance references edited out of the bank, so language and substance answers are No; see `store/PLAY_CONSOLE.md` §3.4)*
 - [ ] Ads: Contains ads = Yes. In-app purchases: none.
 - [ ] Data safety: AdMob collects advertising ID, approximate location (from IP), app interactions and diagnostics, for advertising, analytics and fraud prevention; shared with Google ad partners; encrypted in transit; no account, so deletion = uninstall. No crash reporter (no Sentry). The app itself collects no personal info.
 - [ ] Advertising ID declaration: Yes.

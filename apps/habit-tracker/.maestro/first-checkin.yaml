@@ -1,6 +1,6 @@
 # Install → first check-in in under 45 seconds (DEVELOPMENT_PLAN.md §6, KPI "time to first check-in").
 # Run on a fresh install:  maestro test .maestro/first-checkin.yaml
-appId: com.fiveapps.habittracker
+appId: com.tahaimran.habittracker
 ---
 - launchApp:
     clearState: true

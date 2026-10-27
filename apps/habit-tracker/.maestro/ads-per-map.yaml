@@ -1,5 +1,5 @@
 # Ads show only per the placement map (§12): none during onboarding, none before the first check-in.
-appId: com.fiveapps.habittracker
+appId: com.tahaimran.habittracker
 ---
 - launchApp:
     clearState: true

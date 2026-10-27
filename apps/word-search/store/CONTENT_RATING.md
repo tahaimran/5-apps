@@ -14,15 +14,14 @@ Category: **Game** (Word / puzzle). Answer honestly; the table is what the app d
 | References to alcohol, tobacco or drugs | No in practice — see the borderline words below |
 
 ## Borderline words (low risk, listed so the answer is a conscious one)
-- **EGGNOG** (holidays) and **CIDER** (holidays, seasons): often non-alcoholic; no alcohol is named or shown.
-  **TOAST** and **CHEERS** (holidays) are celebration words. Nothing else alcohol-, tobacco- or drug-related
+- **EGGNOG** and **CIDER** were swapped out on 2026-10-27 (holidays: COCOA and CANDLES; seasons: MAPLE), so no
+  drink that can be alcoholic remains. **TOAST** (bread, and holidays) and **CHEERS** (holidays) are everyday words. Nothing else alcohol-, tobacco- or drug-related
   (no WINE, BEER, RUM, CIGAR, etc.).
 - **POKER** and **BINGO** (hobbies) are game names, not gambling mechanics.
 - **KNIFE** (home), **HUNT** (holidays, as in egg hunt), **POPPY** (nature): everyday words.
 - Holiday words include CHRISTMAS, EASTER, HALLOWEEN, ANGEL, SANTA; plan feature F5 says no religion-specific pack, and
   these are mainstream holiday vocabulary.
-Answering "No" to the substance question is defensible. If you want zero doubt, swap EGGNOG and CIDER for other
-words in `assets/wordlists/holidays.json` and `seasons.json` (packs need ≥ 120 words; the pack tests check this).
+So the substance question is a clear **No**. Expected rating: **Everyone / PEGI 3**.
 
 ## Random filler letters
 The grid generator scans filler letters against a profanity blocklist and re-fills offending cells

@@ -16,7 +16,7 @@ import { useAppColors } from '@/theme/mode';
 import { Screen } from '@/ui/Screen';
 import { NavRow, SettingsGroup } from '@/ui/SettingsRow';
 
-const PACKAGE = (Constants.expoConfig?.android?.package as string | undefined) ?? 'com.fiveapps.contractiontimer';
+const PACKAGE = (Constants.expoConfig?.android?.package as string | undefined) ?? 'com.tahaimran.contractiontimer';
 const contactEmail = () => process.env.EXPO_PUBLIC_CONTACT_EMAIL;
 
 /** Opens the Play Store page; the web page is the fallback when the Store app is missing. */

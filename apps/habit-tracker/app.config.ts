@@ -14,7 +14,7 @@ const config: ExpoConfig = {
   platforms: ['android'],
   android: {
     // Keep in sync with promoPackages['habit-tracker'] in packages/shared/src/crosspromo/catalog.ts.
-    package: 'com.fiveapps.habittracker',
+    package: 'com.tahaimran.habittracker',
     versionCode: 1,
     adaptiveIcon: {
       foregroundImage: './assets/adaptive-icon-foreground.png',

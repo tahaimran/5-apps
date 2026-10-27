@@ -22,7 +22,7 @@ AdMob format mapping: `banner` = Banner (adaptive anchored), `native` = Native a
 | Field | Value |
 |---|---|
 | AdMob app name | `Habit Tracker: Streak & Widget` |
-| Package | `com.fiveapps.habittracker` |
+| Package | `com.tahaimran.habittracker` |
 | Max ad content rating | **T** |
 | App folder | `apps/habit-tracker` |
 
@@ -43,7 +43,7 @@ Plus: `EXPO_PUBLIC_ADMOB_ANDROID_APP_ID`. Units: 7 (1 banner, 1 native, 2 inters
 | Field | Value |
 |---|---|
 | AdMob app name | `Sipling: Drink Water Reminder` |
-| Package | `com.fiveapps.sipling` (**placeholder: the final package name is undecided, see Open questions**) |
+| Package | `com.tahaimran.waterreminder` (final since 2026-10-27) |
 | Max ad content rating | **T** |
 | App folder | `apps/water-reminder` |
 
@@ -64,7 +64,7 @@ Block extra categories: weight loss, supplements (health-claim app, keep medical
 | Field | Value |
 |---|---|
 | AdMob app name | `Word Search: Large Print Easy` |
-| Package | `com.fiveapps.wordsearchlarge` |
+| Package | `com.tahaimran.wordsearch` |
 | Max ad content rating | **PG** (older audience; the app sets PG in code, set the same in AdMob; G is also acceptable per `WHATS_LEFT.md`, PG is what the code sends) |
 | App folder | `apps/word-search` |
 
@@ -84,7 +84,7 @@ Block: gambling, dating.
 | Field | Value |
 |---|---|
 | AdMob app name | `Quizora: Trivia Quiz Offline` |
-| Package | `com.fiveapps.quizora` |
+| Package | `com.tahaimran.triviaquiz` |
 | Max ad content rating | **T** |
 | App folder | `apps/trivia-quiz` |
 
@@ -107,7 +107,7 @@ Block: gambling, dating.
 | Field | Value |
 |---|---|
 | AdMob app name | `Contraction Timer & Kick Count` |
-| Package | `com.fiveapps.contractiontimer` (the plan says decide the final name before first upload) |
+| Package | `com.tahaimran.contractiontimer` (the plan says decide the final name before first upload) |
 | Max ad content rating | **G** |
 | App folder | `apps/contraction-timer` |
 
@@ -152,10 +152,9 @@ get-rich-quick, politics, religion, drugs and supplements, astrology, shocking c
 
 ## Open questions (resolve before or during the run)
 
-- **Sipling package name** is a placeholder (`com.fiveapps.sipling`, also set in
-  `packages/shared/src/crosspromo/catalog.ts`). It cannot change after the first Play upload. AdMob does not need the
-  package for an unlisted app, so the browser task is not blocked, but confirm the final name before the first Play upload.
-- **Contraction Timer** has the same note about its final package name.
+- **Package names** are final (2026-10-27): `com.tahaimran.*`, set in each `app.config.ts` and in
+  `packages/shared/src/crosspromo/catalog.ts`. AdMob apps created before then are not tied to a package until they are
+  linked to the Play listing, so nothing changes in AdMob.
 - **Reward amounts** above are labels shown in AdMob only. The app code decides what is granted.
 
 ---

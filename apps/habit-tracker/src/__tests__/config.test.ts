@@ -25,7 +25,7 @@ describe('Android permissions', () => {
 describe('store-facing config', () => {
   it('has the listing identity from the plan', () => {
     expect(config).toMatchObject({ name: 'Habits', slug: 'habit-tracker', scheme: 'habittracker' });
-    expect(config.android?.package).toBe('com.fiveapps.habittracker');
+    expect(config.android?.package).toBe('com.tahaimran.habittracker');
     expect(config.platforms).toEqual(['android']);
   });
   it('targets a current Android API level', () => {

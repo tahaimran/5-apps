@@ -27,7 +27,10 @@
   and `/app-ads.txt`; slugs and URLs are in `docs/PLAY_UPLOAD.md` §A. Developer name Taha Imran, support
   `tahaimran.24@gmail.com`. Each `store/privacy-policy.md` mirrors the website copy. Live at https://www.tahaimran.com/ (Vercel, repo
   `tahaimran/tahawebsite`); `EXPO_PUBLIC_PRIVACY_POLICY_URL` and `EXPO_PUBLIC_CONTACT_EMAIL` are set in EAS for every app.
-- Next: `docs/PLAY_UPLOAD.md` §E decisions, then each app's `WHATS_LEFT.md` (device
+- Decisions (2026-10-27): package names are final (`com.tahaimran.habittracker`, `.waterreminder`, `.wordsearch`,
+  `.triviaquiz`, `.contractiontimer`); content edited for Everyone / PEGI 3; feedback email not declared in Data
+  safety (`docs/PLAY_UPLOAD.md` §E). Each app has a Play Console paste sheet in `store/PLAY_CONSOLE.md`.
+- Next: each app's `WHATS_LEFT.md` (device
   testing, real AdMob IDs in EAS, Play Console forms, closed testing).
 
 ## What this repo is

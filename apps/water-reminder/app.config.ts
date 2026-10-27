@@ -14,7 +14,7 @@ const config: ExpoConfig = {
   platforms: ['android'],
   android: {
     // Keep in sync with promoPackages['water-reminder'] in packages/shared/src/crosspromo/catalog.ts.
-    package: 'com.fiveapps.sipling',
+    package: 'com.tahaimran.waterreminder',
     versionCode: 1,
     adaptiveIcon: {
       foregroundImage: './assets/adaptive-icon-foreground.png',

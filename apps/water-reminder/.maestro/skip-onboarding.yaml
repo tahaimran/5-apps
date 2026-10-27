@@ -1,5 +1,5 @@
 # Skip applies the defaults but still shows the notification step, then lands on an empty Today.
-appId: com.fiveapps.sipling
+appId: com.tahaimran.waterreminder
 ---
 - launchApp:
     clearState: true

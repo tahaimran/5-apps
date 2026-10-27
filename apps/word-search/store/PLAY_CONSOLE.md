@@ -11,7 +11,7 @@ Those files are still the source of truth. If one of them changes, update this s
 
 | Field | Answer |
 |---|---|
-| Package name | `com.fiveapps.wordsearchlarge` (from `app.config.ts`). **It can never change after the first upload.** It is a placeholder now: if you change it, change `app.config.ts` and `packages/shared/src/crosspromo/catalog.ts` together (a test checks that they match), and update the AdMob app as well |
+| Package name | `com.tahaimran.wordsearch` (final, 2026-10-27; set in `app.config.ts`). **It can never change after the first upload.** |
 | App name (Create app dialog) | `Word Search: Large Print Easy` |
 | Default language | English (United States) – en-US |
 | App or game | **Game** |
@@ -163,10 +163,8 @@ Choose **Yes, my app contains ads**. The only ad network is Google AdMob, with n
 | Unrestricted internet access / web browser | No |
 | Contains ads (if asked) | Yes (AdMob, max ad content rating PG) |
 
-Note on substances: the word lists contain EGGNOG and CIDER (often non-alcoholic) and TOAST and CHEERS (celebration
-words). No alcohol is named or shown, so "No" is defensible (`store/CONTENT_RATING.md`). If you want no doubt at all,
-swap EGGNOG and CIDER in `assets/wordlists/holidays.json` and `seasons.json` before you submit (each pack needs at least
-120 words).
+Note on substances: EGGNOG and CIDER were swapped out of the word lists on 2026-10-27, so "No" is a clear answer.
+TOAST and CHEERS stay; they are everyday celebration words (`store/CONTENT_RATING.md`).
 
 **Expected rating:** Everyone / PEGI 3. After you submit, record the ratings you get in `store/CONTENT_RATING.md`.
 
@@ -203,8 +201,6 @@ https://support.google.com/admob/answer/10106796
 
 Leave everything else unticked: name, email, user IDs, address, phone, precise location, contacts, photos, audio, files,
 health and fitness, financial info, messages, web history and calendar.
-(If you choose Option B in "Owner decision: feedback email" below, also tick Personal info → **Email address** and
-App activity → **Other user-generated content**.)
 
 **Screen 3: Usage and handling for each data type**
 | Data type | Collected | Shared | Processed ephemerally | Required or optional | Purposes (same for collected and shared) |
@@ -219,14 +215,9 @@ App activity → **Other user-generated content**.)
 
 Puzzle progress, stars, streak, hints and settings stay on the phone and are not declared.
 
-**Owner decision: feedback email.** Settings → "Send feedback" opens the user's own email app (`mailto:`). The app
-sends nothing itself.
-| Option | Answer | Why |
-|---|---|---|
-| **A (recommended)** | Do not declare it | The app sends no data and the user's mail app does the sending. `store/DATA_SAFETY.md` says this is commonly left undeclared |
-| B (cautious) | Declare **Email address** and **Other user-generated content** as Collected, not shared, Optional, purpose **Developer communications** | This covers the case where Google counts emails that reach you as collected data |
-
-Choose once and give the same answer for word-search, trivia-quiz and contraction-timer (`docs/PLAY_UPLOAD.md` §E).
+**Feedback email (decided 2026-10-27): not declared.** Settings → "Send feedback" opens the user's own email app
+(`mailto:`); the user writes and sends the email, and the app itself transmits nothing, so it is not "collected" data
+in Play's sense. Same answer in Quizora and Contraction Timer (`store/DATA_SAFETY.md`).
 
 ### 3.8 Government apps
 **No**.
@@ -261,8 +252,8 @@ The full description's phrases "brain exercise" and "stress relief" are casual w
 | App bundle | the AAB from `eas build --profile production --platform android` |
 | Release name | Keep the name Play fills in from the bundle (version `1.0.0`; EAS manages the version code because `appVersionSource` is `remote` with `autoIncrement`) |
 
-Release notes (en-US, 238 / 500 without the tags). These are not in the docs: this text is a draft built only from the `ASO.md` feature
-list, so edit it if you like.
+Release notes (en-US, final, 238 / 500 without the tags; Play does not use them for search ranking, so they are written
+for people):
 ```
 <en-US>
 First release of Word Search: Large Print Easy.
@@ -281,11 +272,9 @@ production at 20% → 50% → 100% and watch that crash-free users stay at 99.5%
 
 ---
 
-## 5. Owner decisions in this sheet
+## 5. Decisions (all made 2026-10-27)
 
-- **Feedback email in Data safety** (section 3.7, "Owner decision: feedback email"): A = not declared (recommended),
-  B = declare Email address and Other user-generated content for Developer communications. Use the same answer in all
-  three apps that have a feedback button.
-- **Package name** (section 0): keep `com.fiveapps.wordsearchlarge` or change it before the first upload. This is not
-  an open item in §E, but it is permanent.
-- Optional, not a §E item: whether to swap EGGNOG and CIDER before the IARC questionnaire (section 3.4 note).
+- **Package name:** `com.tahaimran.wordsearch` (section 0).
+- **Content rating:** EGGNOG and CIDER swapped out, all answers No, expected Everyone / PEGI 3 (section 3.4).
+- **Data safety feedback email:** not declared (section 3.7).
+- **Release notes:** final (section 4).

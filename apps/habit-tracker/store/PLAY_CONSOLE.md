@@ -10,7 +10,7 @@ there first and then here.
 
 | Field | Value |
 |---|---|
-| Package name | `com.fiveapps.habittracker` (from `app.config.ts`). **This is a placeholder and becomes permanent after the first upload.** If you change it, also change `packages/shared/src/crosspromo/catalog.ts` and the AdMob app. |
+| Package name | `com.tahaimran.habittracker` (final, 2026-10-27; set in `app.config.ts`). **It can never change after the first upload.** |
 | App name (Create app) | `Habit Tracker: Streak & Widget` (the launcher label on the phone is `Habits`) |
 | Default language | English (United States) – en-US |
 | App or game | **App** |
@@ -155,24 +155,17 @@ Pick **Yes, my app contains ads** (Google AdMob only, no mediation).
 | Sexual content, nudity | No |
 | Profanity / crude language | No |
 | Gambling, simulated gambling | No |
-| **References to alcohol, tobacco or drugs** | **Owner decision, see below** |
+| References to alcohol, tobacco or drugs | **No** |
 | User-generated content or user-to-user interaction | No (notes are private and stay on the device) |
 | Shares the user's location with other users | No |
 | Purchases of digital goods | No (no IAP, no paywall) |
 | Ads | Yes (AdMob; max ad content rating T; sensitive categories blocked in AdMob) |
 | Unrestricted internet access / web browser | No |
 
-**Owner decision: the substance-reference question.** The template library (category "Quit") ships "No smoking" and
-"No alcohol", and onboarding offers the goal "🚭 Break a bad habit".
-
-| | Option A (recommended) | Option B |
-|---|---|---|
-| What you do | Keep the templates and answer **Yes**: the app references tobacco and alcohol, in a context of quitting them | Remove the "No smoking" and "No alcohol" templates in code, ship that build, then answer **No** |
-| Expected rating | It may come out above Everyone (for example PEGI 7 or a Teen-style result in some regions). IARC shows the real result. | Everyone / PEGI 3 (the plan's expectation) |
-| Reason | It is the truthful answer for the app as built, and the impact is small because the target audience is already 13+ | It is only valid once the templates are gone. Renaming them, for example to "Stay smoke-free", still mentions tobacco. |
-
-Do not answer No while the templates ship, because a mismatch can get the listing rejected. When you get the rating,
-write the final answers and the rating into `store/CONTENT_RATING.md`.
+**Decided 2026-10-27:** the "No smoking" and "No alcohol" templates were replaced with "No snooze button" and "No phone
+at meals" (and the cigarette and wine-glass icons left the icon picker), so the app no longer references alcohol,
+tobacco or drugs and every answer above is No. Expected rating: **Everyone / PEGI 3**. The build you upload must be
+one made after this change. Write the rating you get into `store/CONTENT_RATING.md`.
 
 ### 3.5 Target audience and content
 - Target age groups: tick **13–15**, **16–17**, **18 and over**. Leave every age group under 13 unticked.
@@ -257,8 +250,8 @@ features before you submit, and if one fits a general habit tracker, pick it hon
   from `eas build --profile production --platform android`. After that, `eas submit --platform android` sends builds to
   the internal track.
 - **Release name:** keep Play's default, which comes from the AAB (for example `1 (1.0.0)`).
-- **Release notes** (en-US, under 500 characters). The docs have no release-notes text, so this one was drafted from
-  the ASO.md §1.1 feature list. Edit it if you like.
+- **Release notes** (en-US, final, under 500 characters; Play does not use them for search ranking, so they are written
+  for people):
 
 ```
 <en-US>
@@ -280,9 +273,11 @@ First release of Habit Tracker.
   `_STATS_LIST`, `_LEAVE_STATS`, `_AFTER_EDIT`, `_STREAK_FREEZE`, `_APP_OPEN_WARM`), and the AAB should pass the 16 KB
   page check (`RELEASE.md`).
 
-## 5. Owner decisions in this sheet
+## 5. Decisions (all made 2026-10-27)
 
-- **Content rating, substance references:** keep the "No smoking" / "No alcohol" templates and answer Yes
-  (recommended), or remove them and answer No. This is in §3.4.
-- **Health apps (to check, not a docs decision):** the docs say no health features. Confirm against Play's current
-  list before you submit. This is in §3.10.
+- **Package name:** `com.tahaimran.habittracker` (§0).
+- **Content rating:** substance templates removed, all answers No, expected Everyone / PEGI 3 (§3.4).
+- **Data safety feedback email:** not applicable (this app has no mailto button).
+- **Release notes:** final (§4).
+- **Still to check when you fill it in:** Health apps (§3.10). The docs say no health features; confirm against the
+  options Play shows (it is a general habit tracker in Productivity).

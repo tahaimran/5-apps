@@ -45,7 +45,7 @@ Tip: to get a reminder soon, go to Settings and set "Wake up" to about 35 minute
 
 ## 2. Set up money (AdMob)
 - [x] Run `eas login` then `eas init` in `apps/water-reminder` to link the project (adds a projectId; commit it). *(done 2026-10-09)*
-- [ ] Decide the final package name now (it can never change after the first upload); today it is the placeholder `com.fiveapps.sipling` in `app.config.ts` and `packages/shared/src/crosspromo/catalog.ts` (keep both equal).
+- [x] Final package name: `com.tahaimran.waterreminder` (final since 2026-10-27; set in `app.config.ts` and `packages/shared/src/crosspromo/catalog.ts`). It can never change after the first upload.
 - [x] Create the Sipling app in AdMob and 6 ad units: banner (Today), native (History list), interstitial (History exit), 2 rewarded (skin unlock, streak freeze), app open.
 - [ ] Add these as EAS environment variables with `eas env:create` (never in git; see `.env.example`):
   `EXPO_PUBLIC_ADMOB_ANDROID_APP_ID`, `EXPO_PUBLIC_ADMOB_HOME_UNDER_RING`, `EXPO_PUBLIC_ADMOB_HISTORY_LIST`,

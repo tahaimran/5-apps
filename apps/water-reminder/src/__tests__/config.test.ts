@@ -32,7 +32,7 @@ describe('Android permissions', () => {
 describe('store-facing config', () => {
   it('has the listing identity from the plan', () => {
     expect(config).toMatchObject({ name: 'Sipling', slug: 'water-reminder', scheme: 'sipling' });
-    expect(config.android?.package).toBe('com.fiveapps.sipling');
+    expect(config.android?.package).toBe('com.tahaimran.waterreminder');
     expect(config.platforms).toEqual(['android']);
   });
   it('matches the package the cross-promo catalog links to', () => {

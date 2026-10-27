@@ -420,8 +420,8 @@ describe('Settings: reminder, sounds, rate, feedback and privacy', () => {
     const ui = await render(wrap(<SettingsScreen />));
     await ui.press('Rate the app');
     await flush();
-    expect(open).toHaveBeenNthCalledWith(1, 'market://details?id=com.fiveapps.wordsearchlarge');
-    expect(open).toHaveBeenNthCalledWith(2, 'https://play.google.com/store/apps/details?id=com.fiveapps.wordsearchlarge');
+    expect(open).toHaveBeenNthCalledWith(1, 'market://details?id=com.tahaimran.wordsearch');
+    expect(open).toHaveBeenNthCalledWith(2, 'https://play.google.com/store/apps/details?id=com.tahaimran.wordsearch');
   });
 
   it('shows "Send feedback" only when a contact email is configured, with the version prefilled', async () => {

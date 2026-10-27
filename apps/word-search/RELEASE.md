@@ -48,9 +48,8 @@ What the automated checks actually cover:
 
 ## 2. One-time setup (needs your accounts)
 1. **Expo/EAS:** `cd apps/word-search && eas login && eas init` (adds `extra.eas.projectId`; commit it).
-2. **Package name:** `com.fiveapps.wordsearchlarge` in `app.config.ts` is a placeholder shared with
-   `packages/shared/src/crosspromo/catalog.ts` (a test keeps them equal). The plan says "pick the portfolio prefix once and
-   never change it": decide the final application ID *before the first upload* and update both.
+2. **Package name:** `com.tahaimran.wordsearch` (final since 2026-10-27), in `app.config.ts` and
+   `packages/shared/src/crosspromo/catalog.ts` (a test keeps them equal). It cannot change after the first upload.
 3. **AdMob:** create the app and 4 ad units (home banner, packs banner, interstitial, rewarded) plus one app-open unit
    (`.env.example` lists the variables). Add them as EAS environment variables (`eas env:create`), never in git. Register
    your own phone as a test device in AdMob. Set the maximum ad content rating to G or PG and block gambling and dating
@@ -116,8 +115,8 @@ placement, whether it would show now and why not, with the counters.
 
 Handy commands:
 ```bash
-adb shell dumpsys package com.fiveapps.wordsearchlarge | grep permission   # compare with the list in §5
-adb shell am kill com.fiveapps.wordsearchlarge                             # kill the process (not force-stop) to test resume
+adb shell dumpsys package com.tahaimran.wordsearch | grep permission   # compare with the list in §5
+adb shell am kill com.tahaimran.wordsearch                             # kill the process (not force-stop) to test resume
 ```
 
 ## 5. Play Console content

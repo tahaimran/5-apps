@@ -56,9 +56,8 @@ real haptics API returns a promise); neither was in the app.
 
 ## 2. One-time setup (needs your accounts)
 1. **Expo/EAS:** `cd apps/contraction-timer && eas login && eas init` (adds `extra.eas.projectId`; commit it).
-2. **Package name:** `com.fiveapps.contractiontimer` in `app.config.ts` is shared with `packages/shared/src/crosspromo/catalog.ts`
-   (a test keeps them equal). The plan says the studio prefix is chosen once and never changed: decide the final application ID
-   *before the first upload* and update both.
+2. **Package name:** `com.tahaimran.contractiontimer` (final since 2026-10-27), in `app.config.ts` and `packages/shared/src/crosspromo/catalog.ts`
+   (a test keeps them equal). It cannot change after the first upload.
 3. **AdMob:** create the app and 8 ad units (`.env.example` lists the variables, one per placement) and set them as EAS environment
    variables (`eas env:create`), never in git. Register your own phone as a test device. **In the AdMob console** (plan §12, not done):
    block the sensitive categories listed there (dating, gambling, alcohol, sexual and reproductive health, weight loss, cosmetic
@@ -126,8 +125,8 @@ A quick way to see ad decisions on a development build: More → "Ad rules (deve
 
 Handy commands:
 ```bash
-adb shell dumpsys package com.fiveapps.contractiontimer | grep permission   # compare with the list in §5
-adb shell am kill com.fiveapps.contractiontimer                             # kill the process (not force-stop) to test resume
+adb shell dumpsys package com.tahaimran.contractiontimer | grep permission   # compare with the list in §5
+adb shell am kill com.tahaimran.contractiontimer                             # kill the process (not force-stop) to test resume
 adb shell dumpsys backup | grep -i contractiontimer                         # backup must not list the app
 ```
 

@@ -14,7 +14,7 @@ const config: ExpoConfig = {
   platforms: ['android'],
   android: {
     // Keep in sync with promoPackages['word-search'] in packages/shared/src/crosspromo/catalog.ts.
-    package: 'com.fiveapps.wordsearchlarge',
+    package: 'com.tahaimran.wordsearch',
     versionCode: 1,
     adaptiveIcon: {
       foregroundImage: './assets/adaptive-icon-foreground.png',

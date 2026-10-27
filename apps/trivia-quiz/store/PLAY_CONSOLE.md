@@ -23,10 +23,8 @@ copied from `ASO.md` §1 and §12, `store/DATA_SAFETY.md`, `store/CONTENT_RATING
 | Free or paid | **Free** |
 | Declarations | Tick **Developer Program Policies** and **US export laws** |
 
-**Package name:** `com.fiveapps.quizora` (from `app.config.ts` → `android.package`). Play reads it from the first
-AAB you upload. It is still a placeholder and **can never change after the first upload**. If you change it, change
-`app.config.ts`, `packages/shared/src/crosspromo/catalog.ts` (`promoPackages['trivia-quiz']`) and the AdMob app
-together first.
+**Package name:** `com.tahaimran.triviaquiz` (final, 2026-10-27; `app.config.ts` → `android.package`). Play reads it from
+the first AAB you upload, and it **can never change after that**.
 
 The launcher label on the phone is `Quizora` (`app.config.ts` → `name`). Only the store title is the longer one.
 
@@ -178,8 +176,8 @@ Answers (from `store/CONTENT_RATING.md`; content scanned 2026-10-26 across all 3
 | Fear / horror imagery | **No** (horror titles such as Frankenstein or Dracula appear only as text) |
 | Sexual content, nudity | **No** |
 | Gambling, simulated gambling, real-money rewards | **No** (no betting or casino play; XP and stars have no cash value) |
-| Language (profanity, crude humor) | **Owner decision: see below** |
-| References to alcohol, tobacco or drugs | **Owner decision: see below** |
+| Language (profanity, crude humor) | **No** |
+| References to alcohol, tobacco or drugs | **No** |
 | User-generated content / users can interact or exchange content | **No** (single player; Share sends a score picture through the system share sheet) |
 | Shares the user's location with other users | **No** |
 | Purchases of digital goods | **No** (no IAP; lifelines, extra hearts, Double XP and streak restores come from optional rewarded ads) |
@@ -188,31 +186,11 @@ Answers (from `store/CONTENT_RATING.md`; content scanned 2026-10-26 across all 3
 
 If a free-text field allows it, add: "Historical and literary references in text only, no depiction."
 
-**Owner decision (language).** Item `mov-000191` explains: "His line 'Frankly, my dear, I don't give a damn' is one of
-cinema's most famous." The band name "Sex Pistols" (`mus-000128`) is an answer.
+**Decided 2026-10-27:** the quoted "damn" (`mov-000191`), the Sex Pistols question and the dozen passing alcohol,
+tobacco and drug references were edited out of the question bank (list in `store/CONTENT_RATING.md`), so both
+answers are **No**. The build you upload must contain the rebuilt bank (it is in `assets/questions/en/`).
 
-| | Option A (recommended) | Option B |
-|---|---|---|
-| Answer | **Yes: mild / infrequent** (one quoted swear word) | **No** |
-| What you do first | Nothing | Drop the quote from the explanation in `content/raw/movies-*.json`, run `node scripts/build-bank.mjs`, ship that bank in the build |
-| Why | True for the bank as it ships today, and the audience is 13+, so a mild-language note costs little | Keeps the lowest rating, but it needs a content edit and must be in the AAB you rate |
-
-**Owner decision (alcohol, tobacco, drugs).** About a dozen passing factual references: Champagne as an answer option,
-duck confit "cooked in wine", Pasteur and wine, "drunken doctor" (`mov-000292`), the Beer Hall Putsch, the Whiskey
-Rebellion, "champagne of teas", Amy Winehouse (name only), Jamestown tobacco farming, the Opium Wars, caffeine and
-penicillin. None show or encourage use.
-
-| | Option A (recommended) | Option B |
-|---|---|---|
-| Answer | **Yes: references only, no depiction or encouragement of use** | **No** |
-| What you do first | Nothing | Edit the items listed in `store/CONTENT_RATING.md` flag 2, rebuild the bank, then answer |
-| Why | True, and `CONTENT_RATING.md` calls it low-impact for a 13+ audience | Keeps the lowest rating, but it means editing about 12 questions |
-
-Never answer "No" without making the edit: a mismatch can get the listing rejected.
-
-**Expected rating:** **Everyone / PEGI 3** if both answers are "No" after editing. Otherwise it may be one step higher
-in some regions (for example an alcohol-reference descriptor or PEGI 12). Write the final answers and the ratings you
-get into `store/CONTENT_RATING.md` after you submit.
+**Expected rating:** **Everyone / PEGI 3**. Write the ratings you get into `store/CONTENT_RATING.md` after you submit.
 
 ### 3.5 Target audience and content
 
@@ -275,14 +253,9 @@ Not declared, and why:
 - **Share** on the Daily Challenge result makes a score picture on the phone and hands it to the share sheet the user
   picks. The app sends nothing itself.
 
-**Owner decision (feedback email).** "Report this question" and Settings → "Send feedback" open the user's own email
-app (`mailto:` to tahaimran.24@gmail.com). The app sends nothing itself. Pick one answer and use it in all five apps
-(word-search and contraction-timer have the same buttons).
-
-| | Option A (recommended) | Option B (cautious) |
-|---|---|---|
-| Answer | Do **not** declare anything for it | Also tick Personal info → **Email address** and **Other user-generated content**: collected, **not** shared, **optional**, purpose **Developer communications** |
-| Why | The app transmits nothing; the user sends a normal email from their own mail app. This is what `DATA_SAFETY.md` uses now | Covers the emails you receive, at the cost of a longer data-safety label |
+**Feedback email (decided 2026-10-27): not declared.** "Report this question" and Settings → "Send feedback" open the
+user's own email app (`mailto:` to tahaimran.24@gmail.com); the user writes and sends the email, and the app itself
+transmits nothing, so it is not "collected" data in Play's sense. Same answer in Word Search and Contraction Timer.
 
 ### 3.8 Government apps
 Choose: **No**.
@@ -321,8 +294,8 @@ Test and release → Testing → **Internal testing** → Create new release
 | Play App Signing | On (default). Keystores are EAS-managed. |
 | Release name | Keep what Play fills in from the AAB: `<versionCode> (1.0.0)`. `version` is `1.0.0`; the versionCode is managed by EAS (`appVersionSource: remote`, `autoIncrement`), so it may not be 1. |
 
-Release notes (en-US, 413 / 500 without the tags; Play pre-fills the `<en-US>` tags, paste the text between them). Not in the docs: no release-notes text exists in `ASO.md` or `RELEASE.md`. This is
-a draft that uses only features the full description already names; edit it freely.
+Release notes (en-US, final, 413 / 500 without the tags; Play pre-fills the `<en-US>` tags, paste the text between them.
+Play does not use release notes for search ranking, so they are written for people):
 ```
 <en-US>
 First release of Quizora: an offline trivia quiz with 3,000+ general knowledge questions in 12 categories.
@@ -345,12 +318,10 @@ Before promoting:
 
 ---
 
-## 5. Owner decisions in this sheet
+## 5. Decisions (all made 2026-10-27)
 
-- **Content rating, language** (§3.4): answer "Yes, mild" (recommended) or edit the "damn" quote in `mov-000191` and
-  answer "No".
-- **Content rating, alcohol/tobacco/drugs** (§3.4): answer "Yes, references only" (recommended) or edit about 12
-  items and answer "No".
-- **Data safety, feedback email** (§3.7): leave the `mailto:` buttons undeclared (recommended) or declare Email
-  address + Other user-generated content for Developer communications. Use the same answer in all five apps.
-- **Package name** (§0): keep `com.fiveapps.quizora` or change it before the first upload; it is permanent after that.
+- **Package name:** `com.tahaimran.triviaquiz` (§0).
+- **Content rating:** profanity and substance references edited out of the bank, both answers No, expected
+  Everyone / PEGI 3 (§3.4).
+- **Data safety feedback email:** not declared (§3.7).
+- **Release notes:** final (§4).

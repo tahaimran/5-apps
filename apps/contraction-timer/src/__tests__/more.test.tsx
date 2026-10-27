@@ -77,8 +77,8 @@ describe('More (plan §5.5)', () => {
     open.mockImplementationOnce(async () => { throw new Error('no store'); }).mockResolvedValue(undefined);
     const ui = await render(wrap(<More />));
     await ui.press('Rate this app');
-    expect(open.mock.calls[0][0]).toBe('market://details?id=com.fiveapps.contractiontimer');
-    expect(open.mock.calls[1][0]).toBe('https://play.google.com/store/apps/details?id=com.fiveapps.contractiontimer');
+    expect(open.mock.calls[0][0]).toBe('market://details?id=com.tahaimran.contractiontimer');
+    expect(open.mock.calls[1][0]).toBe('https://play.google.com/store/apps/details?id=com.tahaimran.contractiontimer');
   });
   it('keeps the development-only ad rules row out of release builds, and shows it in development', async () => {
     const dev = (globalThis as { __DEV__?: boolean }).__DEV__;

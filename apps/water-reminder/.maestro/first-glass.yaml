@@ -1,6 +1,6 @@
 # Install → first glass in under 60 seconds (DEVELOPMENT_PLAN.md §6, KPI "first glass logged in session 1").
 # Run on a fresh install:  maestro test .maestro/first-glass.yaml
-appId: com.fiveapps.sipling
+appId: com.tahaimran.waterreminder
 ---
 - launchApp:
     clearState: true

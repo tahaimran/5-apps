@@ -39,7 +39,7 @@ Status (2026-10-09): the code checks pass (TypeScript has no errors, expo-doctor
 - [ ] Host `app-ads.txt` at the root of your developer website (e.g. `https://yoursite.com/app-ads.txt`) and wait for AdMob to verify it. *(hosted 2026-10-27 at https://www.tahaimran.com/app-ads.txt; what is left is the AdMob check once the app is live)*
 
 ## 3. Things you must write or host
-- [ ] Pick the final package name (permanent app ID). `com.fiveapps.habittracker` is a placeholder and cannot change after the first upload; if you change it, also update `packages/shared/src/crosspromo/catalog.ts`.
+- [x] Final package name: `com.tahaimran.habittracker` (final since 2026-10-27; set in `app.config.ts` and `packages/shared/src/crosspromo/catalog.ts`). It can never change after the first upload.
 - [x] Fill in `[date]`, `[studio name]` and `[support email]` in `store/privacy-policy.md` (the email appears twice). *(done 2026-10-27: Taha Imran, tahaimran.24@gmail.com; the policy is a page on the tahaimran.com website (`../tahaimran-website`, 2026-10-27))*
 - [x] Host the privacy policy on a public web page and set its link as `EXPO_PUBLIC_PRIVACY_POLICY_URL` in EAS. *(done 2026-10-27: live at https://www.tahaimran.com/apps/habits/privacy/; `EXPO_PUBLIC_PRIVACY_POLICY_URL` set in EAS for production, preview and development)*
 - [x] Get a developer website (needed for app-ads.txt and the Play listing) and a support email address. *(done 2026-10-27: https://www.tahaimran.com/ on Vercel; support email tahaimran.24@gmail.com)*
@@ -48,7 +48,7 @@ Status (2026-10-09): the code checks pass (TypeScript has no errors, expo-doctor
 - [ ] Create the app, turn on Play App Signing (Google keeps the signing key), and add a service account (robot login for `eas submit`).
 - [ ] Data safety: answer from `store/DATA_SAFETY.md`. You collect nothing yourself; the ads SDK collects device/advertising ID, app interactions, diagnostics and approximate location (from IP) for advertising, analytics and fraud prevention; encrypted in transit; no deletion request (no accounts). Double-check against Google's current AdMob guidance.
 - [ ] Ads: answer "Contains ads" = Yes, and declare the advertising ID (`AD_ID`) permission.
-- [ ] Content rating: decide how to handle the "No smoking" / "No alcohol" templates (see `store/CONTENT_RATING.md`). Answer truthfully; expected result is around Everyone / PEGI 3, maybe higher. Write the final answers into that file.
+- [ ] Content rating: decide how to handle the "No smoking" / "No alcohol" templates (see `store/CONTENT_RATING.md`). Answer truthfully; expected result is around Everyone / PEGI 3, maybe higher. Write the final answers into that file. *(decided 2026-10-27: the two templates were replaced, so all answers are No; see `store/PLAY_CONSOLE.md` §3.4)*
 - [ ] Target audience: 13+ (13–15, 16–17, 18+). Not for children; do not join the Families program.
 - [ ] Health apps declaration: answer honestly for a general habit tracker (the plan doesn't cover this; check what Play asks).
 - [ ] Privacy policy: paste the hosted URL.

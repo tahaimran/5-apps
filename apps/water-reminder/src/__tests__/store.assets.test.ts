@@ -129,7 +129,7 @@ describe('Maestro flows', () => {
   const templates = strings.filter((v: string) => v.replace(/\{\w+\}/g, '').trim().length >= 3).map((v: string) => new RegExp('^' + v.replace(/[.*+?^$()|[\]\\]/g, '\\$&').replace(/\{\w+\}/g, '.+') + '$'));
 
   it.each(flows)('%s targets the Sipling package', (file) => {
-    expect(read(`.maestro/${file}`)).toContain('appId: com.fiveapps.sipling');
+    expect(read(`.maestro/${file}`)).toContain('appId: com.tahaimran.waterreminder');
   });
   it.each(flows)('%s only taps and asserts text the app really shows', (file) => {
     const literals = [...read(`.maestro/${file}`).matchAll(/(?:tapOn|assertVisible|text|visible):\s*"([^"]+)"/g)].map((m) => m[1]).filter((l) => !/[.*%]/.test(l.replace(/\.$/, '')) || /^[^*%]*$/.test(l));

@@ -28,10 +28,9 @@ in `docs/CLOSED_TESTING.md`; testers sign up at https://www.tahaimran.com/testin
       | contraction-timer | https://www.tahaimran.com/apps/contraction-timer/privacy/ | https://www.tahaimran.com/apps/contraction-timer/ |
 
       Support page: https://www.tahaimran.com/support/. app-ads.txt: https://www.tahaimran.com/app-ads.txt
-- [ ] **Package names are permanent.** After the first upload a package name can never change. Today they are
-      placeholders: `com.fiveapps.habittracker`, `com.fiveapps.sipling`, `com.fiveapps.wordsearchlarge`,
-      `com.fiveapps.quizora`, `com.fiveapps.contractiontimer`. Decide now. If one changes, change `app.config.ts` and
-      `packages/shared/src/crosspromo/catalog.ts` together, and the AdMob app too.
+- [x] **Package names (final, 2026-10-27).** After the first upload a package name can never change:
+      `com.tahaimran.habittracker`, `com.tahaimran.waterreminder`, `com.tahaimran.wordsearch`,
+      `com.tahaimran.triviaquiz`, `com.tahaimran.contractiontimer` (each in `app.config.ts` and `packages/shared/src/crosspromo/catalog.ts`).
 - [x] **Privacy policies hosted.** Placeholders are filled and the Word Search / Quizora gaps fixed (2026-10-27); each
       policy is a page on the website (table above). Both EAS variables are set for every app (production, preview and
       development, 2026-10-27): `EXPO_PUBLIC_PRIVACY_POLICY_URL` = the URL above, `EXPO_PUBLIC_CONTACT_EMAIL` =
@@ -179,13 +178,17 @@ all functionality available without login · **Advertising ID** = Yes, used for 
 
 ---
 
-## E. Owner decisions before submitting
+## E. Owner decisions before submitting (all made 2026-10-27)
 
-- [ ] Feedback email: the `mailto:` feedback / "Report this question" buttons (word-search, trivia-quiz,
-      contraction-timer) send nothing from the app. The DATA_SAFETY files leave it undeclared and give the cautious
-      alternative. Pick one answer and use it everywhere.
-- [ ] Content-rating flags: habit-tracker (quit-smoking/alcohol templates) and trivia-quiz (quoted "damn", incidental
-      alcohol references). Answer truthfully or edit the content first.
+- [x] Feedback email: **not declared** in Data safety. The `mailto:` buttons (word-search, trivia-quiz,
+      contraction-timer) only open the user's own email app; the app transmits nothing. Written into each
+      `store/DATA_SAFETY.md` and `store/PLAY_CONSOLE.md`.
+- [x] Content rating: edited for **Everyone / PEGI 3** (all substance and language answers No).
+      habit-tracker: "No smoking" / "No alcohol" templates replaced with "No snooze button" / "No phone at meals".
+      trivia-quiz: the "damn" quote, the Sex Pistols question and about a dozen alcohol, tobacco and drug references
+      edited, bank rebuilt (3,600 questions). word-search: EGGNOG and CIDER swapped out of the word lists. Details in
+      each `store/CONTENT_RATING.md`. **Upload a build made after these changes.**
+- [x] Package names final (§A). Release notes final in each `store/PLAY_CONSOLE.md` §4.
 
 ## F. Release gates (do not publish to production until done)
 

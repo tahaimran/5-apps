@@ -5,11 +5,11 @@ export type PromoAppId = 'habit-tracker' | 'water-reminder' | 'word-search' | 't
  * app's app.json (update here if a package name changes before publishing).
  */
 export const promoPackages: Record<PromoAppId, string> = {
-  'habit-tracker': 'com.fiveapps.habittracker',
-  'water-reminder': 'com.fiveapps.sipling',
-  'word-search': 'com.fiveapps.wordsearchlarge',
-  'trivia-quiz': 'com.fiveapps.quizora',
-  'contraction-timer': 'com.fiveapps.contractiontimer',
+  'habit-tracker': 'com.tahaimran.habittracker',
+  'water-reminder': 'com.tahaimran.waterreminder',
+  'word-search': 'com.tahaimran.wordsearch',
+  'trivia-quiz': 'com.tahaimran.triviaquiz',
+  'contraction-timer': 'com.tahaimran.contractiontimer',
 };
 
 export const promoIds = Object.keys(promoPackages) as PromoAppId[];

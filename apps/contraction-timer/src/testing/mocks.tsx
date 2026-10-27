@@ -56,7 +56,7 @@ jest.mock('expo-sharing', () => ({
   isAvailableAsync: async () => mockShare.available,
   shareAsync: async (uri: string, options: Record<string, unknown>) => void mockShare.shared.push({ uri, options }),
 }));
-jest.mock('expo-constants', () => ({ __esModule: true, default: { expoConfig: { version: '1.0.0', android: { package: 'com.fiveapps.contractiontimer' } } } }));
+jest.mock('expo-constants', () => ({ __esModule: true, default: { expoConfig: { version: '1.0.0', android: { package: 'com.tahaimran.contractiontimer' } } } }));
 jest.mock('expo-linking', () => ({ openURL: jest.fn(async () => undefined) }));
 jest.mock('expo-haptics', () => ({
   impactAsync: jest.fn(),

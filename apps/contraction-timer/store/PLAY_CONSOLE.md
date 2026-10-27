@@ -17,7 +17,7 @@ Console shows the fields. Written 2026-10-27 from `ASO.md`, `store/DATA_SAFETY.m
 
 | Field | Answer |
 |---|---|
-| Package name (from `app.config.ts`) | `com.fiveapps.contractiontimer` |
+| Package name (from `app.config.ts`) | `com.tahaimran.contractiontimer` |
 | App name | `Contraction Timer & Kick Count` |
 | Default language | English (United States) – en-US |
 | App or game | App |
@@ -25,8 +25,7 @@ Console shows the fields. Written 2026-10-27 from `ASO.md`, `store/DATA_SAFETY.m
 | Declarations: Developer Program Policies | Tick |
 | Declarations: US export laws | Tick |
 
-- The package name is a **placeholder**. It is **permanent after the first upload**. If you change it, change
-  `app.config.ts` and `packages/shared/src/crosspromo/catalog.ts` together (a test keeps them equal), and the AdMob app too.
+- The package name is final (2026-10-27) and **can never change after the first upload**.
 - The app's launcher name in `app.config.ts` is `Contraction Timer` (shorter). That is fine: Play shows the listing title.
 - The first AAB is uploaded by hand (Internal testing → Create release). After that, `eas submit --platform android`
   uploads to the internal track.
@@ -256,15 +255,9 @@ Google's AdMob disclosure guide (re-check it on submission day, it changes): htt
 calendar. Pregnancy and labour entries stay on the phone (Android backup is off), so under Play's definition they are
 not "collected". Text and PDF summaries leave only when the user taps Share and picks an app; the app does not send them.
 
-**Owner decision (Send feedback button).** More → Send feedback opens the user's own email app (`mailto:`); the app
-sends nothing itself.
-
-| | Recommended: do not declare | Alternative: declare it |
-|---|---|---|
-| Answer | Add nothing for feedback | Tick **Personal info → Email address** and **App activity → Other user-generated content**: Collected Yes, Shared No, Optional, purpose **Developer communications** |
-| Reason | The app does not transmit anything; the user's own email app does, and this is how it is commonly answered | More cautious, but declares data the app itself never handles |
-
-Whichever you pick, answer the same way in word-search and trivia-quiz (PLAY_UPLOAD.md §E).
+**Send feedback (decided 2026-10-27): not declared.** More → Send feedback opens the user's own email app
+(`mailto:`); the user writes and sends the email, and the app itself transmits nothing, so it is not "collected" data
+in Play's sense. Same answer in Word Search and Quizora.
 
 ### 3.8 Government apps
 Is your app developed by or for a government? **No.**
@@ -311,8 +304,8 @@ Not a medical device. Not medical advice. Always follow your provider's guidance
 | App bundle | the production AAB from `eas build --profile production --platform android` |
 | Release name | Leave Play's default: `<versionCode> (1.0.0)`. versionCode comes from EAS (`appVersionSource: remote`, `autoIncrement` on) |
 
-**Release notes (en-US).** Not in the docs: there is no release-notes text in ASO.md, RELEASE.md or the plan. Drafted
-for this sheet from the full description's wording (415 characters); edit freely.
+**Release notes (en-US, final, 415 characters).** Play does not use release notes for search ranking, so they are
+written for people, using the full description's wording:
 ```
 <en-US>
 First release of Contraction Timer & Kick Count.
@@ -329,10 +322,11 @@ Everything stays on your phone.
 in for 14 days in a row**. For this app, **do not start the closed test until the midwife/doctor and legal reviews are
 done** (release gate at the top). Then: closed → production at 20% → 100% once crash-free users are 99.5% or more.
 
-## 5. Owner decisions in this sheet
-- **Data safety, Send feedback button** (3.7): recommended "do not declare"; alternative "declare Email address and
-  other messages for Developer communications, optional, not shared". Use the same answer in all apps that have it.
-- **Health apps feature type** (3.10): pick the closest current Play labels to "Pregnancy & reproductive health /
-  fitness & wellness tracking", never a medical-device option. A person signs the declaration.
-- **Package name** (0): `com.fiveapps.contractiontimer` is a placeholder; final before the first upload.
-- **Release notes** (4): drafted here, not from the docs.
+## 5. Decisions (all made 2026-10-27)
+
+- **Package name:** `com.tahaimran.contractiontimer` (0).
+- **Data safety, Send feedback button:** not declared (3.7).
+- **Release notes:** final (4).
+- **Still to do when you fill it in:** Health apps feature type (3.10). Pick the closest current Play labels to
+  "Pregnancy & reproductive health / fitness & wellness tracking", never a medical-device option. A person signs the
+  declaration.

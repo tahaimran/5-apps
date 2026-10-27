@@ -1,5 +1,5 @@
 # Run after restoring store/demo-backup.json (see store/SCREENSHOTS.md).
-appId: com.fiveapps.sipling
+appId: com.tahaimran.waterreminder
 ---
 - launchApp
 - takeScreenshot: store/screenshots/01-today

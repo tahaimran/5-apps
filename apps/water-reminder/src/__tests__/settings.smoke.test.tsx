@@ -234,14 +234,14 @@ describe('Settings index', () => {
     const open = jest.spyOn(Linking, 'openURL').mockResolvedValue(true);
     const ui = await render(themed(<SettingsIndex />));
     await ui.press('Rate Sipling');
-    expect(open).toHaveBeenCalledWith('market://details?id=com.fiveapps.sipling');
+    expect(open).toHaveBeenCalledWith('market://details?id=com.tahaimran.waterreminder');
   });
   it('falls back to the web store page', async () => {
     const open = jest.spyOn(Linking, 'openURL').mockRejectedValueOnce(new Error('no market')).mockResolvedValue(true);
     const ui = await render(themed(<SettingsIndex />));
     await ui.press('Rate Sipling');
     await flush();
-    expect(open).toHaveBeenLastCalledWith('https://play.google.com/store/apps/details?id=com.fiveapps.sipling');
+    expect(open).toHaveBeenLastCalledWith('https://play.google.com/store/apps/details?id=com.tahaimran.waterreminder');
   });
   it('shows the privacy policy only when its URL is configured', async () => {
     const ui = await render(themed(<SettingsIndex />));

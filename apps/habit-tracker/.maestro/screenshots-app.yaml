@@ -1,5 +1,5 @@
 # Run after importing store/demo-backup.json (see store/SCREENSHOTS.md).
-appId: com.fiveapps.habittracker
+appId: com.tahaimran.habittracker
 ---
 - launchApp
 - takeScreenshot: store/screenshots/01-today

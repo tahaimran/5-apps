@@ -1,4 +1,4 @@
-appId: com.fiveapps.sipling
+appId: com.tahaimran.waterreminder
 ---
 - launchApp:
     clearState: true

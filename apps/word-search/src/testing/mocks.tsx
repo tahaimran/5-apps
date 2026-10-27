@@ -26,7 +26,7 @@ jest.mock('react-native-mmkv', () => ({
   },
 }));
 jest.mock('expo-file-system', () => ({ Paths: { cache: 'file:///cache' }, File: class {} }));
-jest.mock('expo-constants', () => ({ __esModule: true, default: { expoConfig: { version: '1.0.0', android: { package: 'com.fiveapps.wordsearchlarge' } } } }));
+jest.mock('expo-constants', () => ({ __esModule: true, default: { expoConfig: { version: '1.0.0', android: { package: 'com.tahaimran.wordsearch' } } } }));
 jest.mock('expo-linking', () => ({ openURL: jest.fn(async () => undefined) }));
 jest.mock('expo-haptics', () => ({
   impactAsync: jest.fn(),

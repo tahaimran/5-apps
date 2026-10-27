@@ -12,28 +12,26 @@ Category: **Game** (Trivia). Answer honestly; the table is what the app does tod
 | Purchases of digital goods | No (no IAP; lifelines, extra hearts, Double XP and streak restores come from optional rewarded ads) |
 | Ads | Yes (AdMob; max ad content rating T; gambling and dating categories blocked in the AdMob console) |
 | Unrestricted internet access / web browser | No |
-| **Language (profanity, crude humor)** | **Decide before submitting — see flag 1** |
-| **References to alcohol, tobacco or drugs** | **Decide before submitting — see flag 2** |
+| Language (profanity, crude humor) | **No** (flag 1 edited out on 2026-10-27) |
+| References to alcohol, tobacco or drugs | **No** (flag 2 items edited on 2026-10-27) |
 
-## Flag 1: one quoted mild swear word
-`mov-000191` (Rhett Butler) explains: *"His line 'Frankly, my dear, I don't give a damn' is one of cinema's most
-famous."* That is a mild profanity in quotation. Band name "Sex Pistols" (`mus-000128`) appears as an answer.
-Options: answer the language question "mild/infrequent" truthfully, or edit the explanation (drop the quote) in
-`content/raw/movies-*.json` and rebuild the bank (`node scripts/build-bank.mjs`), then answer No.
+## Resolved (2026-10-27): flags 1 and 2 edited out for an Everyone / PEGI 3 rating
+Both flags from the 2026-10-26 scan were edited in `content/raw/` and the bank rebuilt (`node scripts/build-bank.mjs`,
+still 3,600 questions, 1,200 per difficulty):
+- **Language:** `mov-000191` no longer quotes "I don't give a damn". The "Anarchy in the U.K." question (answer
+  "Sex Pistols", was `mus-000128`) became a Buzzcocks question (`mus-000301`).
+- **Alcohol:** Champagne → Lemonade (`spo-000200`), Cider → Lemonade (tea question), duck confit "Red wine" →
+  Vinegar, Pasteur explanation no longer mentions wine, "drunken doctor" → "Doc Boone" (`mov-000292`), Beer Hall
+  Putsch question reworded to "a failed coup" (now `his-000302`), Whiskey Rebellion → The Gaspee Affair
+  (`his-000077`), "champagne of teas" removed, Don Quixote "Wine skins" → Haystacks.
+- **Tobacco:** Jamestown explanation no longer mentions tobacco farming (`his-000058`).
+- **Drugs:** "The Opium War" option → "The Seven Years' War" (`his-000121`); the Hong Kong question now names the
+  1842 Treaty of Nanking instead of the Opium War (now `his-000301`).
+A re-scan of the shipped bank finds no alcohol, tobacco, drug or profanity words. The only hit is "most widely
+drunk beverage" for tea, which is not an alcohol reference. Amy Winehouse appears by name only. Caffeine and
+penicillin appear as plain science facts, not drug use.
 
-## Flag 2: incidental alcohol, tobacco and drug references (about a dozen items, all factual, none encourage use)
-- Alcohol: Champagne as an answer option (`spo-000200`, the correct answer is Milk), duck confit "cooked in wine",
-  Pasteur and wine, "drunken doctor" (`mov-000292`), the Beer Hall Putsch (`his-000216`), the Whiskey Rebellion as
-  a wrong option (`his-000077`), "champagne of teas", Amy Winehouse (name only).
-- Tobacco: Jamestown "survived thanks in part to tobacco farming" (`his-000058`).
-- Drugs: the Opium Wars (`his-000121`, `his-000122`, historical); caffeine and penicillin as plain facts.
-These are passing textual references, not depictions of use. The IARC questionnaire asks whether the app
-*references* these substances; answering yes may move some regions off the lowest rating (for example an
-"Alcohol Reference" style descriptor or PEGI 12 instead of 3). Options:
-1. Answer truthfully ("references only, no depiction or encouragement") and accept the result; the audience is
-   13+ anyway, so this is low-impact.
-2. Edit the handful of items above and re-run the questionnaire.
-Do not answer "no" to make the rating lower; a mismatch can get the listing rejected.
+So both answers are **No**.
 
 ## Also present, for the record (factual, text only, no depiction)
 History and literature questions mention wars, assassinations (Lincoln, Kennedy, Franz Ferdinand), executions
@@ -43,7 +41,6 @@ gambling-related names (the Monaco casino, "Poker Face", the film *Casino* as a 
 IARC are about depicted violence, so these do not make the violence answers "yes", but mention "historical
 references in text, no depiction" if a free-text field allows it.
 
-Expected result: **Everyone / PEGI 3** if both flags are answered "no" after editing, otherwise possibly a step
-higher in some regions. Record the final questionnaire answers and the resulting ratings here after submission.
+Expected result: **Everyone / PEGI 3**. Record the final questionnaire answers and the resulting ratings here after submission.
 
 Target audience and content: **13+** (13–15, 16–17, 18+), not designed for children, not in Families.

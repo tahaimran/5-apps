@@ -1,4 +1,4 @@
-appId: com.fiveapps.habittracker
+appId: com.tahaimran.habittracker
 ---
 - launchApp:
     clearState: true

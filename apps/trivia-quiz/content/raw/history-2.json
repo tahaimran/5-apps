@@ -291,7 +291,7 @@
 "a": [
 "The Crimean War",
 "The Boer War",
-"The Opium War",
+"The Seven Years' War",
 "The Napoleonic Wars"
 ],
 "d": 2,
@@ -302,7 +302,7 @@
 ]
 },
 {
-"q": "Which island was ceded to Britain in 1842 after the First Opium War?",
+"q": "Which island did Britain gain under the 1842 Treaty of Nanking?",
 "a": [
 "Hong Kong",
 "Macau",
@@ -310,7 +310,7 @@
 "Singapore"
 ],
 "d": 2,
-"x": "The Treaty of Nanking gave Britain Hong Kong Island, which stayed British until 1997, along with the opening of five Chinese ports to trade.",
+"x": "The treaty gave Britain Hong Kong Island, which stayed British until 1997, and opened five Chinese ports to trade.",
 "tags": [
 "china",
 "uk"

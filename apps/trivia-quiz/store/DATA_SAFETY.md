@@ -24,10 +24,11 @@ health and fitness data, financial info, messages, web history, calendar.
 > **Share** on the Daily Challenge result makes a picture of the score on the phone (react-native-view-shot,
 > falling back to text) and hands it to the share sheet the user picks; the app does not transmit it.
 >
-> **Report this question** and **Send feedback** open the user's own email app (`mailto:`, shown only when
-> `EXPO_PUBLIC_CONTACT_EMAIL` is set); the app sends nothing itself. Commonly this is not declared; if you want to
-> be conservative, declare "Email address" and "Other user-generated content" as collected for "Developer
-> communications", not shared, optional. Decide once and answer the same way in all five apps.
+> **Report this question** and **Send feedback** open the user's own email app (`mailto:`, shown only when `EXPO_PUBLIC_CONTACT_EMAIL` is set,
+> which it now is). **Decision (2026-10-27): not declared.** Play's Data safety form covers data the app itself sends
+> off the device. Here the app only opens another app; the user writes and sends the email themselves, and the app
+> transmits nothing. The privacy policy still says what we receive by email and that we use it only to reply.
+> Answer the same way in every app that has the button.
 >
 > If ad mediation partners are added later (WHATS_LEFT "Nice to have"), list them here, in the privacy policy and in
 > app-ads.txt.

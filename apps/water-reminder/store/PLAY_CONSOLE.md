@@ -10,7 +10,7 @@ the exact option to click. Written 2026-10-27 from `ASO.md` §1 and §12, `store
 
 | Field | Value |
 |---|---|
-| Package name | `com.fiveapps.sipling` (placeholder in `app.config.ts`. **It can never change after the first upload.** If you change it, change `packages/shared/src/crosspromo/catalog.ts` and the AdMob app too) |
+| Package name | `com.tahaimran.waterreminder` (final, 2026-10-27; set in `app.config.ts`). **It can never change after the first upload.** |
 | App name | `Sipling: Drink Water Reminder` |
 | Default language | English (United States) – en-US |
 | App or game | **App** |
@@ -254,8 +254,8 @@ The pregnancy, breastfeeding and senior modes are not in this release. When they
 ```
 1.0.0
 ```
-- Release notes (en-US). Not in the docs: there are no release notes in `ASO.md` or `RELEASE.md`. The suggested text
-  below uses only claims from the full description (269 / 500 characters). Edit it if you like:
+- Release notes (en-US, final, 269 / 500 characters; Play does not use them for search ranking, so they are written for
+  people):
 ```
 <en-US>
 First release of Sipling. Set a personal daily water goal, get gentle reminders only while you are awake, log a glass with one tap (even from the notification), and watch your plant grow as you drink. Works offline, no account needed, and your data stays on your phone.
@@ -266,10 +266,9 @@ First release of Sipling. Set a personal daily water goal, get gentle reminders 
   Invite the same 12 testers to all 5 apps. After closed testing, release to 20% of production, then to 100% once
   crash-free users are at 99.5% or more.
 
-## 5. Owner decisions in this sheet
+## 5. Decisions (all made 2026-10-27)
 
-- **docs/PLAY_UPLOAD.md §E decisions: none for this app.** Sipling has no `mailto:` feedback or report button, so the
-  feedback email question (a) does not apply. Its content-rating answers are all clean, so question (b) does not apply.
-- Checks for you (not §E decisions):
-  - §0: the package name `com.fiveapps.sipling` is final before the first upload.
-  - §4: the release notes are a suggestion, not from the docs.
+- **Package name:** `com.tahaimran.waterreminder` (§0).
+- **Content rating:** all answers clean, expected Everyone / PEGI 3 (§3.4).
+- **Data safety feedback email:** not applicable (this app has no mailto button).
+- **Release notes:** final (§4).

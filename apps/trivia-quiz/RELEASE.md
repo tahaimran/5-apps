@@ -99,13 +99,13 @@ every placement, whether it would show now and why not, with the counters.
 | Privacy | the in-app privacy summary reads well at large text; the hosted policy URL opens from Settings | open |
 | Performance | cold start under 2 s and the bank load under 300 ms on a 2 GB Android 9 phone (Jest times the load on this machine only); 60 fps answer animations | open |
 | Size and native libs | AAB size; 16 KB page-size alignment of the native libs (mmkv, reanimated, worklets, svg, gesture handler, ads, view-shot) with `zipalign -c -P 16 -v 4 app.aab` | open |
-| Permissions | `adb shell dumpsys package com.fiveapps.quizora | grep permission` matches §5 (the Gradle-merged manifest of the real build was never seen) | open |
+| Permissions | `adb shell dumpsys package com.tahaimran.triviaquiz | grep permission` matches §5 (the Gradle-merged manifest of the real build was never seen) | open |
 | Devices | the plan's closed testing: at least 12 testers for 14 days if the developer account needs it, low-end Android 9 or 10, mid Android 13, a tablet | open |
 
 Handy commands:
 ```bash
-adb shell dumpsys package com.fiveapps.quizora | grep permission    # compare with the list in §5
-adb shell am kill com.fiveapps.quizora                              # kill the process (not force-stop) to test the lost round and onboarding resume
+adb shell dumpsys package com.tahaimran.triviaquiz | grep permission    # compare with the list in §5
+adb shell am kill com.tahaimran.triviaquiz                              # kill the process (not force-stop) to test the lost round and onboarding resume
 adb shell am start -a android.intent.action.VIEW -d quizora://daily # the notification deep link
 ```
 

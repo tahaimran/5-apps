@@ -37,9 +37,8 @@ What the automated checks actually cover:
 
 ## 2. One-time setup (needs your accounts)
 1. **Expo/EAS:** `cd apps/water-reminder && eas login && eas init` (adds `extra.eas.projectId`; commit it).
-2. **Package name:** `com.fiveapps.sipling` in `app.config.ts` is a placeholder shared with
-   `packages/shared/src/crosspromo/catalog.ts` (a test keeps them equal). Decide the final application ID
-   *before the first upload* (it cannot change later) and update both.
+2. **Package name:** `com.tahaimran.waterreminder` (final since 2026-10-27), in `app.config.ts` and
+   `packages/shared/src/crosspromo/catalog.ts` (a test keeps them equal). It cannot change after the first upload.
 3. **AdMob:** create the app and 6 ad units (`.env.example` lists the variables). Add them as EAS environment
    variables (`eas env:create`), never in git. Register your own phone as a test device in AdMob.
 4. **Privacy policy:** finish `store/privacy-policy.md`, host it, set `EXPO_PUBLIC_PRIVACY_POLICY_URL`.
@@ -94,9 +93,9 @@ minutes ago (the first reminder is wake + 30 min), keep a 2,000 to 2,300 ml goal
 Handy commands:
 ```bash
 adb shell dumpsys notification --noredact | grep -A6 sipling      # what is pending / posted
-adb shell dumpsys alarm | grep -B1 -A4 com.fiveapps.sipling        # alarms (inexact; none should be "exact")
-adb shell am kill com.fiveapps.sipling                             # kill the process, keep the alarms (a swipe from Recents is similar)
-adb shell dumpsys package com.fiveapps.sipling | grep permission   # compare with the list in §5
+adb shell dumpsys alarm | grep -B1 -A4 com.tahaimran.waterreminder        # alarms (inexact; none should be "exact")
+adb shell am kill com.tahaimran.waterreminder                             # kill the process, keep the alarms (a swipe from Recents is similar)
+adb shell dumpsys package com.tahaimran.waterreminder | grep permission   # compare with the list in §5
 ```
 Note `am force-stop` also cancels the app's alarms, so it is not a valid "killed app" test.
 

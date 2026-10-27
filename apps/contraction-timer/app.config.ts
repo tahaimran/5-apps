@@ -15,7 +15,7 @@ const config: ExpoConfig = {
   platforms: ['android'],
   android: {
     // Keep in sync with promoPackages['contraction-timer'] in packages/shared/src/crosspromo/catalog.ts.
-    package: 'com.fiveapps.contractiontimer',
+    package: 'com.tahaimran.contractiontimer',
     versionCode: 1,
     // Health entries are kept on the phone only. Android's automatic backup would copy them to the person's Google account
     // (and onto a new phone), which is a transfer the app's "nothing leaves the phone" promise does not cover, so it is off.

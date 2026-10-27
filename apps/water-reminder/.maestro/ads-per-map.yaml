@@ -1,6 +1,6 @@
 # Ads show only per the placement map (§12): none during onboarding, none before the first glass.
 # Needs a dev or preview build (test ad units). AdMob test ads carry the label "Test Ad".
-appId: com.fiveapps.sipling
+appId: com.tahaimran.waterreminder
 ---
 - launchApp:
     clearState: true

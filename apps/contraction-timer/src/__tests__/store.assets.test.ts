@@ -86,6 +86,6 @@ describe('ASO.md listing text', () => {
   });
   it('names the Android package the app really has, if it names one of ours anywhere', () => {
     const { promoPackages } = require('@shared/crosspromo/catalog') as typeof import('@shared/crosspromo/catalog');
-    for (const match of aso.matchAll(/com\.fiveapps\.[a-z]+/g)) expect(Object.values(promoPackages)).toContain(match[0]);
+    for (const match of aso.matchAll(/com\.tahaimran\.[a-z]+/g)) expect(Object.values(promoPackages)).toContain(match[0]);
   });
 });

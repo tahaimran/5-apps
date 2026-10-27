@@ -56,7 +56,7 @@ Tip: in a development build, Settings → "Ad rules (development builds only)" s
 - [ ] Later (once over ~1k daily users): add mediation (other ad networks bidding): Meta, AppLovin, Unity; then list each in app-ads.txt, privacy policy and Data safety.
 
 ## 3. Things you must write or host
-- [ ] Decide the final package name now (placeholder `com.fiveapps.wordsearchlarge`); it can never change after the first upload. Update `app.config.ts` and `packages/shared/src/crosspromo/catalog.ts` together.
+- [x] Final package name: `com.tahaimran.wordsearch` (final since 2026-10-27; set in `app.config.ts` and `packages/shared/src/crosspromo/catalog.ts`). It can never change after the first upload.
 - [x] Fill the placeholders in `store/privacy-policy.md`: developer name, contact email, date, ad partners. *(done 2026-10-27: Taha Imran, tahaimran.24@gmail.com; the policy is a page on the tahaimran.com website (`../tahaimran-website`, 2026-10-27))*
 - [x] Host the privacy policy (e.g. GitHub Pages) and set `EXPO_PUBLIC_PRIVACY_POLICY_URL` in EAS. *(done 2026-10-27: live at https://www.tahaimran.com/apps/word-search/privacy/; `EXPO_PUBLIC_PRIVACY_POLICY_URL` set in EAS for production, preview and development)*
 - [x] Set `EXPO_PUBLIC_CONTACT_EMAIL` in EAS (the "Send feedback" row is hidden without it). *(done 2026-10-27, for production, preview and development)*
@@ -66,7 +66,7 @@ Tip: in a development build, Settings → "Ad rules (development builds only)" s
 ## 4. Google Play Console forms
 - [ ] Create the app, turn on Play App Signing, add a service account (robot login) for `eas submit`.
 - [ ] Target audience: 18+ only; "Not designed for children"; not in the Families program.
-- [ ] Content rating (IARC questionnaire): puzzle/word game, no violence, no chat, no gambling → expect Everyone / PEGI 3.
+- [ ] Content rating (IARC questionnaire): puzzle/word game, no violence, no chat, no gambling → expect Everyone / PEGI 3. *(2026-10-27: EGGNOG and CIDER swapped out of the word lists; see `store/PLAY_CONSOLE.md` §3.4)*
 - [ ] Ads declaration: Contains ads = Yes.
 - [ ] Data safety: Device or other IDs (advertising ID) collected and shared with ad networks, for Advertising, Analytics, Fraud prevention.
 - [ ] Data safety: App info & performance (crash logs, diagnostics) collected by the Google ads SDK, for Analytics.

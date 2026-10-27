@@ -16,8 +16,8 @@ npx expo prebuild --platform android --no-install --clean        # native config
 
 ## 2. One-time setup (needs your accounts)
 1. **Expo/EAS:** `cd apps/habit-tracker && eas login && eas init` (adds `extra.eas.projectId` to the config; commit it).
-2. **Package name:** `com.fiveapps.habittracker` in `app.config.ts` is a placeholder. Decide the final application ID
-   *before the first upload* (it cannot change later). Update `packages/shared/src/crosspromo/catalog.ts` to match.
+2. **Package name:** `com.tahaimran.habittracker` (final since 2026-10-27), in `app.config.ts` and `packages/shared/src/crosspromo/catalog.ts`.
+   It cannot change after the first upload.
 3. **AdMob:** create the app and 7 ad units (`.env.example` lists the variables). Add them as EAS environment variables
    (`eas env:create`), never in git. Register your own phone as a test device in AdMob.
 4. **Privacy policy:** finish `store/privacy-policy.md`, host it, set `EXPO_PUBLIC_PRIVACY_POLICY_URL`.

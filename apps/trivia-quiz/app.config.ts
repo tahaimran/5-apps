@@ -15,7 +15,7 @@ const config: ExpoConfig = {
   platforms: ['android'],
   android: {
     // Keep in sync with promoPackages['trivia-quiz'] in packages/shared/src/crosspromo/catalog.ts.
-    package: 'com.fiveapps.quizora',
+    package: 'com.tahaimran.triviaquiz',
     versionCode: 1,
     adaptiveIcon: {
       foregroundImage: './assets/adaptive-icon-foreground.png',
