@@ -48,3 +48,5 @@ health and fitness data, financial info, messages, web history, calendar.
 - **App access:** all functionality available without login.
 - **In-app purchases:** none.
 - **Financial features / health apps / government / news:** No.
+
+**Processed ephemerally:** No, for every data type above. The Google Mobile Ads SDK sends this data to Google's servers, so it is not only held in memory (answer added 2026-10-27).

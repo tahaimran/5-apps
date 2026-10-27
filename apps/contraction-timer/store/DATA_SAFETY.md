@@ -47,3 +47,5 @@ web history, calendar.
 - **App access:** all functionality available without login.
 - **Health apps declaration:** see `HEALTH_DECLARATION.md`.
 - **Financial features / government / news:** No.
+
+**Processed ephemerally:** No, for every data type above. The Google Mobile Ads SDK sends this data to Google's servers, so it is not only held in memory (answer added 2026-10-27).

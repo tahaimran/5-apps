@@ -36,3 +36,5 @@ health and fitness data, financial info, messages, web history, calendar.
 - **Target audience:** 13–15, 16–17, 18+. Not designed for children; do **not** opt into Families.
 - **App access:** all functionality available without login.
 - **Financial features / health apps / government / news:** No. (This is a habit tracker; it makes no medical claims.)
+
+**Processed ephemerally:** No, for every data type above. The Google Mobile Ads SDK sends this data to Google's servers, so it is not only held in memory (answer added 2026-10-27).

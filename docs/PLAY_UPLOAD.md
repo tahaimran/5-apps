@@ -4,6 +4,10 @@ Checklist for creating the five listings in Play Console. Written 2026-10-26 fro
 `WHATS_LEFT.md` and `store/` folder. Paths are relative to `apps/<app>/`. Play limits: title 30, short description 80,
 full description 4,000 (UTF-16, as Play counts). All titles and short descriptions below were re-counted on 2026-10-26.
 
+**Filling in Play Console:** each app has a paste sheet, `store/PLAY_CONSOLE.md` (2026-10-27), with every field in
+Console order, ready to copy. **Closed testing** (12 testers × 14 days): plan, Google Group setup and tester messages
+in `docs/CLOSED_TESTING.md`; testers sign up at https://www.tahaimran.com/testing/.
+
 ---
 
 ## A. Do once (shared)
