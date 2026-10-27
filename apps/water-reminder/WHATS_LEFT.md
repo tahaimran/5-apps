@@ -57,11 +57,11 @@ Tip: to get a reminder soon, go to Settings and set "Wake up" to about 35 minute
 - [ ] Verify app-ads.txt in AdMob after the app is live.
 
 ## 3. Things you must write or host
-- [ ] Fill the placeholders in `store/privacy-policy.md`: `[date]`, `[studio name]`, `[support email]` (twice).
-- [ ] Host the privacy policy on your website and put its address in the EAS variable `EXPO_PUBLIC_PRIVACY_POLICY_URL` (Settings links to it).
-- [ ] Create a support email address for Play Console and the privacy policy.
-- [ ] Have a developer website (needed for app-ads.txt and the policy).
-- [ ] Run the Applyra metadata check on the new full description in `ASO.md` (it replaced misfiled Quizora trivia text; the old check result was for the wrong text).
+- [x] Fill the placeholders in `store/privacy-policy.md`: `[date]`, `[studio name]`, `[support email]` (twice). *(done 2026-10-27: Taha Imran, tahaimran.24@gmail.com; the policy is a page on the tahaimran.com website (`../tahaimran-website`, 2026-10-27))*
+- [x] Host the privacy policy on your website and put its address in the EAS variable `EXPO_PUBLIC_PRIVACY_POLICY_URL` (Settings links to it). *(done 2026-10-27: live at https://www.tahaimran.com/apps/sipling/privacy/; `EXPO_PUBLIC_PRIVACY_POLICY_URL` set in EAS for production, preview and development)*
+- [x] Create a support email address for Play Console and the privacy policy. *(done 2026-10-27: tahaimran.24@gmail.com, set in EAS as `EXPO_PUBLIC_CONTACT_EMAIL`)*
+- [x] Have a developer website (needed for app-ads.txt and the policy). *(done 2026-10-27: https://www.tahaimran.com/ on Vercel; support email tahaimran.24@gmail.com)*
+- [x] Run the Applyra metadata check on the new full description in `ASO.md` (it replaced misfiled Quizora trivia text; the old check result was for the wrong text). *(done 2026-10-26: valid)*
 
 ## 4. Google Play Console forms
 - [ ] Create the app, turn on Play App Signing, and add a service account so `eas submit` can upload.

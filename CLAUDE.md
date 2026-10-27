@@ -17,13 +17,18 @@
   game buttons, hand-drawn pack pictures, Atkinson for the grid (Figtree/Bricolage elsewhere), a UI-thread selection
   pill, shared `Confetti` (new in `@shared/ui`), chime channel `daily-chime`; high contrast stays black/white/yellow AAA.
   Jest-verified only; it adds native modules, so it needs its own new dev build.
-- Store assets (2026-10-26, uncommitted until reviewed): every app has 8 Play screenshots in `store/screenshots/`
+- Store assets (2026-10-26, committed 4d1c796): every app has 8 Play screenshots in `store/screenshots/`
   (real UI rendered with Expo web + captions/art; tooling and how-to in `tools/store-shots/`), a new feature graphic,
   a new icon set (from each `scripts/generate-icons.cjs`; needs a new native build to show on a phone), and
   privacy policy / DATA_SAFETY / CONTENT_RATING docs in `store/`. `docs/PLAY_UPLOAD.md` is the upload runbook.
   The listing wording fixes from WHATS_LEFT are applied in each `ASO.md` and re-checked in Applyra.
-- Next: `docs/PLAY_UPLOAD.md` §E decisions, then each app's `WHATS_LEFT.md` (device testing, real AdMob IDs
-  in EAS, privacy policy hosting, Play Console forms, closed testing).
+- Website (2026-10-27): the developer site tahaimran.com lives in the sibling folder `../tahaimran-website` (Astro,
+  not part of this repo). It has a page per app, each app's privacy policy at `/apps/<slug>/privacy/`, `/support/`
+  and `/app-ads.txt`; slugs and URLs are in `docs/PLAY_UPLOAD.md` §A. Developer name Taha Imran, support
+  `tahaimran.24@gmail.com`. Each `store/privacy-policy.md` mirrors the website copy. Live at https://www.tahaimran.com/ (Vercel, repo
+  `tahaimran/tahawebsite`); `EXPO_PUBLIC_PRIVACY_POLICY_URL` and `EXPO_PUBLIC_CONTACT_EMAIL` are set in EAS for every app.
+- Next: `docs/PLAY_UPLOAD.md` §E decisions, then each app's `WHATS_LEFT.md` (device
+  testing, real AdMob IDs in EAS, Play Console forms, closed testing).
 
 ## What this repo is
 An npm-workspaces monorepo of 5 Expo (React Native, TypeScript) Android apps monetized only by AdMob.

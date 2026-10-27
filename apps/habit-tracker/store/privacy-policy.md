@@ -1,10 +1,10 @@
 # Privacy Policy — Habits: Habit Tracker (Streak & Widget)
 
-> DRAFT for the portfolio website. Fill in the bracketed fields, have it reviewed, host it at a stable
-> URL, and put that URL in Play Console, in `EXPO_PUBLIC_PRIVACY_POLICY_URL`, and in the app listing.
-> This is not legal advice.
+> Hosted at https://www.tahaimran.com/apps/habits/privacy/ (use this URL in Play Console and as
+> `EXPO_PUBLIC_PRIVACY_POLICY_URL`). The website copy, `tahaimran-website/src/content/privacy/habits.md`, is the
+> one people read; keep this file in step with it. Not legal advice.
 
-**Effective date:** [date]  ·  **Developer:** [studio name]  ·  **Contact:** [support email]
+**Effective date:** October 27, 2026  ·  **Developer:** Taha Imran  ·  **Contact:** tahaimran.24@gmail.com
 
 ## The short version
 - The app has no account, no sign-in and no developer server. Your habits, check-ins, notes and settings stay **on your device**.
@@ -48,4 +48,4 @@ The app is not directed to children under 13 and we do not knowingly collect the
 We will update this page and its effective date when the app's data practices change.
 
 ## Contact
-[support email]
+[tahaimran.24@gmail.com](mailto:tahaimran.24@gmail.com)

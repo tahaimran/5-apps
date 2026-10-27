@@ -59,14 +59,14 @@ Install the preview APK, then check each item. Full list: `RELEASE.md` section 4
 - [ ] Register your phone as a test device in AdMob, so you never click your own real ads.
 - [x] Block sensitive ad categories in AdMob: dating, gambling, alcohol, sexual and reproductive health, weight loss, cosmetic procedures, get-rich-quick, politics, religion, drugs and supplements, astrology, shocking content, personal loans.
 - [x] Set the maximum ad content rating to **G** in AdMob.
-- [ ] Host `app-ads.txt` (a file proving you own the ads) at the root of your developer website, with your AdMob publisher line.
+- [ ] Host `app-ads.txt` (a file proving you own the ads) at the root of your developer website, with your AdMob publisher line. *(hosted 2026-10-27 at https://www.tahaimran.com/app-ads.txt; what is left is the AdMob check once the app is live)*
 
 ## 3. Things you must write, host or get reviewed
 - [ ] **Get the midwife/doctor review** listed at the top (week cards, checklists, pattern alert, kick counter limits, summary/PDF contents).
 - [ ] Get the disclaimer wording reviewed by a lawyer (onboarding screen 2, More → "Not medical advice", the Skip sheet, every export footer).
-- [ ] Write and host a privacy policy covering: health data stays on the phone, AdMob and UMP (Google's consent tool) get device data, Android backup is off, contact email.
-- [ ] Set `EXPO_PUBLIC_PRIVACY_POLICY_URL` in EAS (the link is hidden in the app until set).
-- [ ] Set `EXPO_PUBLIC_CONTACT_EMAIL` in EAS (the "Send feedback" button is hidden until set).
+- [x] Write and host a privacy policy covering: health data stays on the phone, AdMob and UMP (Google's consent tool) get device data, Android backup is off, contact email. *(done 2026-10-27: live at https://www.tahaimran.com/apps/contraction-timer/privacy/; `EXPO_PUBLIC_PRIVACY_POLICY_URL` set in EAS for production, preview and development)*
+- [x] Set `EXPO_PUBLIC_PRIVACY_POLICY_URL` in EAS (the link is hidden in the app until set). *(done 2026-10-27, for production, preview and development)*
+- [x] Set `EXPO_PUBLIC_CONTACT_EMAIL` in EAS (the "Send feedback" button is hidden until set). *(done 2026-10-27, for production, preview and development)*
 - [x] *(2026-10-26, re-checked in Applyra)* Fix the store description claims flagged in `RELEASE.md` §6: "Consider calling them now" (use the app's wording), the "LABOR PATTERN ALERT" heading and "when labor might be starting" (sounds like it detects labour), "your baby's rhythm", "in two taps" (it is three), and check "keeps timing even if the app is closed".
 - [ ] Decide on crash reporting. Sentry is in the plan but **not built**; if you add it, update the policy and Data safety too.
 

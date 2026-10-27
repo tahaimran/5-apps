@@ -8,23 +8,37 @@ full description 4,000 (UTF-16, as Play counts). All titles and short descriptio
 
 ## A. Do once (shared)
 
-- [ ] **Developer account.** Use one developer name for all 5 apps (ASO: "portfolio studio name"). Finish identity
-      verification. Add the **developer website** (it hosts the privacy policies and `app-ads.txt`) and a **support
-      email** in each app's store settings.
+- [ ] **Developer account.** Use one developer name for all 5 apps: **Taha Imran**. Finish identity verification.
+      In each app's store settings, set the developer website **https://www.tahaimran.com/** and the support email
+      **tahaimran.24@gmail.com**.
+- [x] **Website live.** https://www.tahaimran.com/ (Vercel, from the GitHub repo `tahaimran/tahawebsite`; source in the
+      sibling folder `../tahaimran-website`). `tahaimran.com` redirects to `www`.
+      Addresses for Play Console and EAS:
+
+      | App | Privacy policy URL | App page |
+      |---|---|---|
+      | habit-tracker | https://www.tahaimran.com/apps/habits/privacy/ | https://www.tahaimran.com/apps/habits/ |
+      | water-reminder | https://www.tahaimran.com/apps/sipling/privacy/ | https://www.tahaimran.com/apps/sipling/ |
+      | word-search | https://www.tahaimran.com/apps/word-search/privacy/ | https://www.tahaimran.com/apps/word-search/ |
+      | trivia-quiz | https://www.tahaimran.com/apps/quizora/privacy/ | https://www.tahaimran.com/apps/quizora/ |
+      | contraction-timer | https://www.tahaimran.com/apps/contraction-timer/privacy/ | https://www.tahaimran.com/apps/contraction-timer/ |
+
+      Support page: https://www.tahaimran.com/support/. app-ads.txt: https://www.tahaimran.com/app-ads.txt
 - [ ] **Package names are permanent.** After the first upload a package name can never change. Today they are
       placeholders: `com.fiveapps.habittracker`, `com.fiveapps.sipling`, `com.fiveapps.wordsearchlarge`,
       `com.fiveapps.quizora`, `com.fiveapps.contractiontimer`. Decide now. If one changes, change `app.config.ts` and
       `packages/shared/src/crosspromo/catalog.ts` together, and the AdMob app too.
-- [ ] **Privacy policies hosted.** Fill in the brackets in each `store/privacy-policy.md`, publish each one at a stable
-      URL on the developer website (e.g. GitHub Pages), and use that URL in Play Console and in EAS as
-      `EXPO_PUBLIC_PRIVACY_POLICY_URL`.
+- [x] **Privacy policies hosted.** Placeholders are filled and the Word Search / Quizora gaps fixed (2026-10-27); each
+      policy is a page on the website (table above). Both EAS variables are set for every app (production, preview and
+      development, 2026-10-27): `EXPO_PUBLIC_PRIVACY_POLICY_URL` = the URL above, `EXPO_PUBLIC_CONTACT_EMAIL` =
+      `tahaimran.24@gmail.com`. Paste the same URL in Play Console.
 - [ ] **app-ads.txt.** Host the single line in `store/app-ads.txt`
       (`google.com, pub-4070584433937766, DIRECT, f08c47fec0942fa0`, the same for all 5) at
-      `https://<developer-website>/app-ads.txt` (domain root), then verify it in AdMob after the apps are live.
+      `https://www.tahaimran.com/app-ads.txt` (live since 2026-10-27), then verify it in AdMob after the apps are live.
 - [ ] **AdMob IDs in EAS** (never in git; the app falls back to Google test IDs without them). For each app, from its
       folder, `eas env:create` for the **production** environment before building (`EXPO_PUBLIC_*` values are baked in at
       build time):
-  - all apps: `EXPO_PUBLIC_ADMOB_ANDROID_APP_ID`, `EXPO_PUBLIC_PRIVACY_POLICY_URL`, `EXPO_PUBLIC_CONTACT_EMAIL`
+  - all apps: `EXPO_PUBLIC_ADMOB_ANDROID_APP_ID` (`EXPO_PUBLIC_PRIVACY_POLICY_URL` and `EXPO_PUBLIC_CONTACT_EMAIL` are already set)
   - habit-tracker: `_TODAY_BOTTOM`, `_STATS_LIST`, `_LEAVE_STATS`, `_AFTER_EDIT`, `_STREAK_FREEZE`, `_APP_OPEN_WARM`, (`_THEME_UNLOCK` optional)
   - water-reminder: `_HOME_UNDER_RING`, `_HISTORY_LIST`, `_HISTORY_EXIT`, `_GARDEN_UNLOCK_SKIN`, `_STREAK_FREEZE`, `_APP_OPEN_WARM`
   - word-search: `_HOME_BANNER`, `_PACKS_BANNER`, `_LEVEL_COMPLETE`, `_HINT_REFILL`, `_APP_OPEN`
@@ -85,7 +99,7 @@ all functionality available without login · **Advertising ID** = Yes, used for 
 | Feature graphic | `store/feature-graphic-1024x500.png` |
 | Phone screenshots | `store/screenshots/`: 01-build-habits, 02-widget, 03-progress, 04-count-timer, 05-stats, 06-streak-freeze, 07-reminders, 08-private (plan in `store/SCREENSHOTS.md`) |
 | Category / tags | ASO.md §12: **Productivity**; tags Habit tracker, Productivity, Planner, Self-improvement, Reminders/To-do (closest available) |
-| Privacy policy URL | hosted `store/privacy-policy.md` (WHATS_LEFT) |
+| Privacy policy URL | https://www.tahaimran.com/apps/habits/privacy/ |
 | Data safety | `store/DATA_SAFETY.md` |
 | Content rating | `store/CONTENT_RATING.md` (Productivity/utility). **Owner decision:** the "No smoking"/"No alcohol" templates vs the substance-reference question |
 | Health apps declaration | No health features (`store/DATA_SAFETY.md`); no medical claims |
@@ -102,7 +116,7 @@ all functionality available without login · **Advertising ID** = Yes, used for 
 | Feature graphic | `store/feature-graphic-1024x500.png` |
 | Phone screenshots | `store/screenshots/`: 01-grow-your-plant, 02-reminder, 03-daily-goal, 04-smart-reminders, 05-garden, 06-weekly-progress, 07-drinks, 08-private (plan in `store/SCREENSHOTS.md`) |
 | Category / tags | ASO.md §12: **Health & Fitness**; tags Health & fitness tracker, Habit tracker, Water tracker/Hydration, Wellness, Reminders |
-| Privacy policy URL | hosted `store/privacy-policy.md` |
+| Privacy policy URL | https://www.tahaimran.com/apps/sipling/privacy/ |
 | Data safety | `store/DATA_SAFETY.md` |
 | Content rating | `store/CONTENT_RATING.md` (expected Everyone / PEGI 3) |
 | Health apps declaration | `store/HEALTH_DECLARATION.md` (hydration tracking; not a medical device) |
@@ -119,7 +133,7 @@ all functionality available without login · **Advertising ID** = Yes, used for 
 | Feature graphic | `store/feature-graphic-1024x500.png` |
 | Phone screenshots | `store/screenshots/`: 01-big-letters, 02-letter-size, 03-no-timers, 04-offline, 05-packs, 06-daily, 07-contrast-dark, 08-easy-to-hard |
 | Category / tags | ASO.md §12: **Games → Word**; tags Word, Word search, Puzzle, Casual, Offline |
-| Privacy policy URL | hosted `store/privacy-policy.md` (WHATS_LEFT §3) |
+| Privacy policy URL | https://www.tahaimran.com/apps/word-search/privacy/ |
 | Data safety | `store/DATA_SAFETY.md` |
 | Content rating | `store/CONTENT_RATING.md` (Game; expected Everyone / PEGI 3) |
 | Health apps declaration | No health features |
@@ -136,7 +150,7 @@ all functionality available without login · **Advertising ID** = Yes, used for 
 | Feature graphic | `store/feature-graphic-1024x500.png` |
 | Phone screenshots | `store/screenshots/`: 01-offline-questions, 02-daily-challenge, 03-learn-why, 04-categories, 05-levels, 06-blitz, 07-lifelines, 08-progress-dark |
 | Category / tags | ASO.md §12: **Games → Trivia**; tags Trivia, Quiz, Offline, Single player, Casual |
-| Privacy policy URL | hosted `store/privacy-policy.md` (delete its Sentry line; fill `[partners]` with "none") |
+| Privacy policy URL | https://www.tahaimran.com/apps/quizora/privacy/ |
 | Data safety | `store/DATA_SAFETY.md` |
 | Content rating | `store/CONTENT_RATING.md` (Game). **Owner decision:** one quoted "damn" and ~12 incidental alcohol/tobacco/opium references |
 | Health apps declaration | No health features |
@@ -153,7 +167,7 @@ all functionality available without login · **Advertising ID** = Yes, used for 
 | Feature graphic | `store/feature-graphic-1024x500.png` |
 | Phone screenshots | `store/screenshots/`: 01-one-button, 02-pattern-511, 03-share-summary, 04-night-mode, 05-partner-mode, 06-kick-counter, 07-pregnancy-weeks, 08-hospital-bag |
 | Category / tags | ASO.md §9: **Parenting**; tags Pregnancy, Parenting, Baby care, Health tracker, Timer |
-| Privacy policy URL | hosted `store/privacy-policy.md` |
+| Privacy policy URL | https://www.tahaimran.com/apps/contraction-timer/privacy/ |
 | Data safety | `store/DATA_SAFETY.md` |
 | Content rating | `store/CONTENT_RATING.md` (expected Everyone / PEGI 3; pregnancy topics stated honestly) |
 | Health apps declaration | `store/HEALTH_DECLARATION.md` (pregnancy tracking; not a medical device) |

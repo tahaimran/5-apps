@@ -44,15 +44,15 @@ previewed in the Habits dev client (react-native-view-shot is optional there; sh
 - [x] Create 8 ad units: menu (banner), round_end (interstitial), lifeline, extra_life, double_xp, streak_restore (rewarded), app_open, results_native (native).
 - [ ] Put the real IDs in EAS environment variables (never in git): `EXPO_PUBLIC_ADMOB_ANDROID_APP_ID`, `EXPO_PUBLIC_ADMOB_MENU`, `EXPO_PUBLIC_ADMOB_ROUND_END`, `EXPO_PUBLIC_ADMOB_LIFELINE`, `EXPO_PUBLIC_ADMOB_EXTRA_LIFE`, `EXPO_PUBLIC_ADMOB_DOUBLE_XP`, `EXPO_PUBLIC_ADMOB_STREAK_RESTORE`, `EXPO_PUBLIC_ADMOB_APP_OPEN`, `EXPO_PUBLIC_ADMOB_RESULTS_NATIVE`.
 - [x] Set "Max ad content rating" to T in AdMob, and block sensitive categories (gambling, dating).
-- [ ] Publish `app-ads.txt` (a file proving you own the ads) at `https://<your-site>/app-ads.txt` with `google.com, pub-<your id>, DIRECT, f08c47fec0942fa0`, then verify it in AdMob.
+- [ ] Publish `app-ads.txt` (a file proving you own the ads) at `https://<your-site>/app-ads.txt` with `google.com, pub-<your id>, DIRECT, f08c47fec0942fa0`, then verify it in AdMob. *(hosted 2026-10-27 at https://www.tahaimran.com/app-ads.txt; what is left is the AdMob check once the app is live)*
 - [ ] After the app is on Play, link the AdMob app to the Play listing.
 
 ## 3. Things you must write or host
 - [ ] Fact-check the questions: start with `content/review/flagged-by-writers.md`, then spot-check every category (wrong answers hurt ratings).
-- [ ] Fill in `store/privacy-policy.md`: replace [date], [Developer name], [contact email], [partners], [email]; delete the Sentry line (no crash reporter is in this build).
-- [ ] Host the privacy policy on your website and set `EXPO_PUBLIC_PRIVACY_POLICY_URL` in EAS.
-- [ ] Pick a contact email and set `EXPO_PUBLIC_CONTACT_EMAIL` in EAS (without it, "Report this question" and feedback stay hidden).
-- [ ] Set a developer website (the same site that hosts the policy and app-ads.txt).
+- [x] Fill in `store/privacy-policy.md`: replace [date], [Developer name], [contact email], [partners], [email]; delete the Sentry line (no crash reporter is in this build). *(done 2026-10-27: Taha Imran, tahaimran.24@gmail.com; the policy is a page on the tahaimran.com website (`../tahaimran-website`, 2026-10-27))*
+- [x] Host the privacy policy on your website and set `EXPO_PUBLIC_PRIVACY_POLICY_URL` in EAS. *(done 2026-10-27: live at https://www.tahaimran.com/apps/quizora/privacy/; `EXPO_PUBLIC_PRIVACY_POLICY_URL` set in EAS for production, preview and development)*
+- [x] Pick a contact email and set `EXPO_PUBLIC_CONTACT_EMAIL` in EAS (without it, "Report this question" and feedback stay hidden). *(done 2026-10-27: tahaimran.24@gmail.com, set in EAS as `EXPO_PUBLIC_CONTACT_EMAIL`)*
+- [x] Set a developer website (the same site that hosts the policy and app-ads.txt). *(done 2026-10-27: https://www.tahaimran.com/ on Vercel; support email tahaimran.24@gmail.com)*
 
 ## 4. Google Play Console forms
 - [ ] Target audience: ages 13–15, 16–17, 18+. Not for children, not in the Families program, "appeals to children" = No.

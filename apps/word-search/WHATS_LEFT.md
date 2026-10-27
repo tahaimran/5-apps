@@ -57,9 +57,9 @@ Tip: in a development build, Settings → "Ad rules (development builds only)" s
 
 ## 3. Things you must write or host
 - [ ] Decide the final package name now (placeholder `com.fiveapps.wordsearchlarge`); it can never change after the first upload. Update `app.config.ts` and `packages/shared/src/crosspromo/catalog.ts` together.
-- [ ] Fill the placeholders in `store/privacy-policy.md`: developer name, contact email, date, ad partners.
-- [ ] Host the privacy policy (e.g. GitHub Pages) and set `EXPO_PUBLIC_PRIVACY_POLICY_URL` in EAS.
-- [ ] Set `EXPO_PUBLIC_CONTACT_EMAIL` in EAS (the "Send feedback" row is hidden without it).
+- [x] Fill the placeholders in `store/privacy-policy.md`: developer name, contact email, date, ad partners. *(done 2026-10-27: Taha Imran, tahaimran.24@gmail.com; the policy is a page on the tahaimran.com website (`../tahaimran-website`, 2026-10-27))*
+- [x] Host the privacy policy (e.g. GitHub Pages) and set `EXPO_PUBLIC_PRIVACY_POLICY_URL` in EAS. *(done 2026-10-27: live at https://www.tahaimran.com/apps/word-search/privacy/; `EXPO_PUBLIC_PRIVACY_POLICY_URL` set in EAS for production, preview and development)*
+- [x] Set `EXPO_PUBLIC_CONTACT_EMAIL` in EAS (the "Send feedback" row is hidden without it). *(done 2026-10-27, for production, preview and development)*
 - [x] Fix the store description: it named packs that don't exist (Garden, Kitchen, Movies, Everyday Life); fixed in `ASO.md` on 2026-10-26. Real packs: Animals, Birds, Food, Baking, Travel, Cities, Nature, Holidays, Seasons, Hobbies, Music, Home & Family.
 - [x] Run `eas login` and `eas init` in `apps/word-search` and commit the added `projectId`. *(done 2026-10-09)*
 
