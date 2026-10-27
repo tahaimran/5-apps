@@ -51,7 +51,7 @@ Install the preview APK, then check each item. Full list: `RELEASE.md` section 4
 ## 2. Set up money (AdMob)
 - [x] Create the app in AdMob (Android, package `com.tahaimran.contractiontimer`). The final package name is `com.tahaimran.contractiontimer` (final since 2026-10-27); it can never change after the first upload.
 - [x] Create 8 ad units: 4 banners, 1 native, 2 rewarded, 1 interstitial, 1 app open (one per placement below).
-- [ ] Run `eas env:create` (stores secrets in EAS, not git) for each of:
+- [x] Run `eas env:create` (stores secrets in EAS, not git) for each of: *(done 2026-10-27: real IDs from AdMob set in EAS, production environment only)*
   `EXPO_PUBLIC_ADMOB_ANDROID_APP_ID`, `EXPO_PUBLIC_ADMOB_HISTORY_BANNER`, `EXPO_PUBLIC_ADMOB_WEEK_BANNER`,
   `EXPO_PUBLIC_ADMOB_CHECKLIST_BANNER`, `EXPO_PUBLIC_ADMOB_WEEK_NATIVE`, `EXPO_PUBLIC_ADMOB_PDF_THEME_REWARD`,
   `EXPO_PUBLIC_ADMOB_CHECKLIST_TEMPLATE_REWARD`, `EXPO_PUBLIC_ADMOB_WEEK_CLOSE_INTERSTITIAL`, `EXPO_PUBLIC_ADMOB_APP_OPEN`.
@@ -72,10 +72,10 @@ Install the preview APK, then check each item. Full list: `RELEASE.md` section 4
 
 ## 4. Google Play Console forms
 - [ ] **Health apps declaration:** category "Pregnancy & reproductive health / fitness & wellness tracking"; not a medical device, no diagnosis, no regulated medical function.
-- [ ] **Target audience:** **18+ only**; not designed for children; Families policy does not apply.
-- [ ] **Data safety:** health data "not collected" (stays on the device). Disclose AdMob: advertising ID, approximate location (IP), app interactions, diagnostics, shared with Google for ads. Encrypted in transit: yes. Deletion: in-app "Delete all data". (Leave out Sentry unless you add it.)
-- [ ] **Content rating (IARC questionnaire):** health/reference tool, no user-generated content; expect Everyone / PEGI 3; mention pregnancy and birth topics honestly.
-- [ ] **Ads:** "Contains ads" = Yes.
+- [x] **Target audience:** **18+ only**; not designed for children; Families policy does not apply. *(done 2026-10-27 in Play Console; see `docs/PLAY_UPLOAD.md` §A2)*
+- [x] **Data safety:** health data "not collected" (stays on the device). Disclose AdMob: advertising ID, approximate location (IP), app interactions, diagnostics, shared with Google for ads. Encrypted in transit: yes. Deletion: in-app "Delete all data". (Leave out Sentry unless you add it.) *(done 2026-10-27 in Play Console; see `docs/PLAY_UPLOAD.md` §A2)*
+- [x] **Content rating (IARC questionnaire):** health/reference tool, no user-generated content; expect Everyone / PEGI 3; mention pregnancy and birth topics honestly. *(rated 2026-10-27: Everyone / PEGI 3)*
+- [x] **Ads:** "Contains ads" = Yes. *(done 2026-10-27 in Play Console; see `docs/PLAY_UPLOAD.md` §A2)*
 - [ ] **Category:** Parenting. Tags: Pregnancy, Parenting, Baby care, Health tracker, Timer.
 - [ ] Add the developer website (where `app-ads.txt` lives), support email and privacy policy URL.
 
@@ -88,7 +88,7 @@ Install the preview APK, then check each item. Full list: `RELEASE.md` section 4
 
 ## 6. Release steps
 - [x] Run `cd apps/contraction-timer && eas login && eas init`, and commit the new `projectId`. *(done 2026-10-09)*
-- [ ] Create the app in Play Console, turn on Play App Signing, and add a service account (a key that lets `eas submit` upload).
+- [ ] Create the app in Play Console, turn on Play App Signing, and add a service account (a key that lets `eas submit` upload). *(apps created and Play App Signing accepted 2026-10-27; the service account is still to do)*
 - [ ] Build: `eas build --profile production --platform android` (makes the AAB file Play needs).
 - [ ] Upload: `eas submit --platform android` (goes to the internal testing track).
 - [ ] Read the pre-launch report in Play Console.

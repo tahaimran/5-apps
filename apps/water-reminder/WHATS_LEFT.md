@@ -47,7 +47,7 @@ Tip: to get a reminder soon, go to Settings and set "Wake up" to about 35 minute
 - [x] Run `eas login` then `eas init` in `apps/water-reminder` to link the project (adds a projectId; commit it). *(done 2026-10-09)*
 - [x] Final package name: `com.tahaimran.waterreminder` (final since 2026-10-27; set in `app.config.ts` and `packages/shared/src/crosspromo/catalog.ts`). It can never change after the first upload.
 - [x] Create the Sipling app in AdMob and 6 ad units: banner (Today), native (History list), interstitial (History exit), 2 rewarded (skin unlock, streak freeze), app open.
-- [ ] Add these as EAS environment variables with `eas env:create` (never in git; see `.env.example`):
+- [x] Add these as EAS environment variables with `eas env:create` (never in git; see `.env.example`): *(done 2026-10-27: real IDs from AdMob set in EAS, production environment only)*
   `EXPO_PUBLIC_ADMOB_ANDROID_APP_ID`, `EXPO_PUBLIC_ADMOB_HOME_UNDER_RING`, `EXPO_PUBLIC_ADMOB_HISTORY_LIST`,
   `EXPO_PUBLIC_ADMOB_HISTORY_EXIT`, `EXPO_PUBLIC_ADMOB_GARDEN_UNLOCK_SKIN`, `EXPO_PUBLIC_ADMOB_STREAK_FREEZE`,
   `EXPO_PUBLIC_ADMOB_APP_OPEN_WARM`.
@@ -64,14 +64,14 @@ Tip: to get a reminder soon, go to Settings and set "Wake up" to about 35 minute
 - [x] Run the Applyra metadata check on the new full description in `ASO.md` (it replaced misfiled Quizora trivia text; the old check result was for the wrong text). *(done 2026-10-26: valid)*
 
 ## 4. Google Play Console forms
-- [ ] Create the app, turn on Play App Signing, and add a service account so `eas submit` can upload.
-- [ ] Privacy policy: paste the hosted URL.
-- [ ] Ads: "Yes, contains ads."
-- [ ] Data safety (draft in `store/DATA_SAFETY.md`): collected by AdMob = device IDs (advertising ID), app interactions, crash logs; for ads/analytics; encrypted in transit; health info NOT collected (water logs stay on the phone). Check against Google's current AdMob guidance.
-- [ ] Declare use of the advertising ID (`AD_ID`) permission.
+- [ ] Create the app, turn on Play App Signing, and add a service account so `eas submit` can upload. *(apps created and Play App Signing accepted 2026-10-27; the service account is still to do)*
+- [x] Privacy policy: paste the hosted URL. *(done 2026-10-27 in Play Console; see `docs/PLAY_UPLOAD.md` §A2)*
+- [x] Ads: "Yes, contains ads." *(done 2026-10-27 in Play Console; see `docs/PLAY_UPLOAD.md` §A2)*
+- [x] Data safety (draft in `store/DATA_SAFETY.md`): collected by AdMob = device IDs (advertising ID), app interactions, crash logs; for ads/analytics; encrypted in transit; health info NOT collected (water logs stay on the phone). Check against Google's current AdMob guidance. *(done 2026-10-27 in Play Console; see `docs/PLAY_UPLOAD.md` §A2)*
+- [x] Declare use of the advertising ID (`AD_ID`) permission. *(done 2026-10-27 in Play Console; see `docs/PLAY_UPLOAD.md` §A2)*
 - [ ] Health apps declaration (draft in `store/HEALTH_DECLARATION.md`): wellness / hydration tracking, not a medical device, no Health Connect.
-- [ ] Content rating (IARC quiz, draft in `store/CONTENT_RATING.md`): no violence, no user content; expect Everyone / PEGI 3.
-- [ ] Target audience: 13+ (13-15, 16-17, 18+), not for children, no Families program. If reviewers say the cute plant appeals to kids, restate the adult wellness audience.
+- [x] Content rating (IARC quiz, draft in `store/CONTENT_RATING.md`): no violence, no user content; expect Everyone / PEGI 3. *(rated 2026-10-27: Everyone / PEGI 3)*
+- [x] Target audience: 13+ (13-15, 16-17, 18+), not for children, no Families program. If reviewers say the cute plant appeals to kids, restate the adult wellness audience. *(done 2026-10-27 in Play Console; see `docs/PLAY_UPLOAD.md` §A2)*
 - [ ] Permissions check: only notifications, boot, vibrate, ad ID, internet; no exact alarms, no battery-optimization request.
 
 ## 5. Store listing

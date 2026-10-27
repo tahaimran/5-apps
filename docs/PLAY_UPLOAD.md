@@ -53,9 +53,32 @@ in `docs/CLOSED_TESTING.md`; testers sign up at https://www.tahaimran.com/testin
       14 days in a row**. The clock starts only once a build is on the track, so upload each app to **Closed testing**
       as soon as it has a working build, and invite the **same 12 testers to all 5 apps** (docs/NEXT_SESSION.md).
       Exception: do not start contraction-timer's closed test before its clinical and legal reviews (section F).
-- [ ] **Play App Signing** on for every app (default for new apps). Keystores are EAS-managed.
+- [x] **Play App Signing** terms accepted when the apps were created (2026-10-27). Keystores are EAS-managed.
 - [ ] **Service account** for `eas submit`: create it in Google Cloud, grant it access in Play Console → Users and
       permissions, and point EAS at its JSON key. Never commit the key.
+
+## A2. Done in the consoles (2026-10-27, through the browser)
+
+| Where | What | State |
+|---|---|---|
+| Expo (EAS) | `EXPO_PUBLIC_PRIVACY_POLICY_URL`, `EXPO_PUBLIC_CONTACT_EMAIL` | set, production + preview + development, all 5 |
+| Expo (EAS) | all `EXPO_PUBLIC_ADMOB_*` (39 values, from the AdMob console) | set, **production only** (preview/dev keep Google test ads), visibility sensitive |
+| Play Console | the 5 apps created with the final package names | done (Habits 4975095451855770129, Sipling 4973862907574760959, Word Search 4974372961015572305, Quizora 4974533183106744120, Contraction Timer 4973187995228226991) |
+| Play Console | Store settings: category, email, website | done, all 5 (tags not set yet) |
+| Play Console | Default store listing: title, short + full description, icon, feature graphic, 8 screenshots | saved as draft, all 5 |
+| Play Console | App content: privacy policy, ads, sign-in details (none), government (no), financial (none), advertising ID (advertising + fraud prevention), target audience, data safety | done, all 5 |
+| Play Console | Content rating (IARC) | done for Habits, Sipling, Word Search, Contraction Timer (Everyone / PEGI 3 / USK 0). **Quizora: not done** (see below) |
+| Play Console | Health apps declaration | **not done**: owner fills and signs (all 5 show it) |
+| AdMob | EU consent (GDPR) message | **not published**: the builder's Publish did not go through; redo by hand |
+
+**Quizora content rating (owner):** category Game. Its history questions mention wars and assassinations, so the first
+question ("references to violence") is **Yes** → tick "Violence or implied violence against humans" → setting Realistic,
+not pixelated/childlike, reactions Realistic, presented **Referred to**, blood None, not in a war setting, innocent
+characters No, fierce sounds No. Every other question No (as for Word Search).
+
+**AdMob EU consent message (owner):** Privacy & messaging → European regulations → Create → name it, Select apps →
+tick only the 5 current apps (not "Crickey world cup 2019", "Whats app cleaner", "4464646"), add each app's privacy URL
+from the table in §A, Confirm, then Publish and check it is listed.
 
 ## B. Build and upload (per app)
 

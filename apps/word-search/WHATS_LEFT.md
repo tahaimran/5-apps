@@ -44,7 +44,7 @@ Tip: in a development build, Settings → "Ad rules (development builds only)" s
 ## 2. Set up money (AdMob)
 - [x] Create the app in AdMob (Android, "not yet published").
 - [x] Create 5 ad units: home banner, packs banner, interstitial (full-screen), rewarded (hint video), app open.
-- [ ] Add these as EAS environment variables (`eas env:create`), never in git:
+- [x] Add these as EAS environment variables (`eas env:create`), never in git: *(done 2026-10-27: real IDs from AdMob set in EAS, production environment only)*
   - `EXPO_PUBLIC_ADMOB_ANDROID_APP_ID` (the app ID, `ca-app-pub-…~…`)
   - `EXPO_PUBLIC_ADMOB_HOME_BANNER`, `EXPO_PUBLIC_ADMOB_PACKS_BANNER`
   - `EXPO_PUBLIC_ADMOB_LEVEL_COMPLETE` (interstitial), `EXPO_PUBLIC_ADMOB_HINT_REFILL` (rewarded), `EXPO_PUBLIC_ADMOB_APP_OPEN`
@@ -64,16 +64,16 @@ Tip: in a development build, Settings → "Ad rules (development builds only)" s
 - [x] Run `eas login` and `eas init` in `apps/word-search` and commit the added `projectId`. *(done 2026-10-09)*
 
 ## 4. Google Play Console forms
-- [ ] Create the app, turn on Play App Signing, add a service account (robot login) for `eas submit`.
-- [ ] Target audience: 18+ only; "Not designed for children"; not in the Families program.
-- [ ] Content rating (IARC questionnaire): puzzle/word game, no violence, no chat, no gambling → expect Everyone / PEGI 3. *(2026-10-27: EGGNOG and CIDER swapped out of the word lists; see `store/PLAY_CONSOLE.md` §3.4)*
-- [ ] Ads declaration: Contains ads = Yes.
-- [ ] Data safety: Device or other IDs (advertising ID) collected and shared with ad networks, for Advertising, Analytics, Fraud prevention.
-- [ ] Data safety: App info & performance (crash logs, diagnostics) collected by the Google ads SDK, for Analytics.
-- [ ] Data safety: Approximate location (from IP, by ad SDKs), following Google's AdMob Data safety guidance.
-- [ ] Data safety: encrypted in transit = Yes; no account; progress is on the phone only (uninstall or "Reset progress" deletes it).
-- [ ] Data safety: no personal info, contacts, photos, precise location or account creation.
-- [ ] Paste the privacy policy URL.
+- [ ] Create the app, turn on Play App Signing, add a service account (robot login) for `eas submit`. *(apps created and Play App Signing accepted 2026-10-27; the service account is still to do)*
+- [x] Target audience: 18+ only; "Not designed for children"; not in the Families program. *(done 2026-10-27 in Play Console; see `docs/PLAY_UPLOAD.md` §A2)*
+- [x] Content rating (IARC questionnaire): puzzle/word game, no violence, no chat, no gambling → expect Everyone / PEGI 3. *(2026-10-27: EGGNOG and CIDER swapped out of the word lists; see `store/PLAY_CONSOLE.md` §3.4)* *(rated 2026-10-27: Everyone / PEGI 3)*
+- [x] Ads declaration: Contains ads = Yes. *(done 2026-10-27 in Play Console; see `docs/PLAY_UPLOAD.md` §A2)*
+- [x] Data safety: Device or other IDs (advertising ID) collected and shared with ad networks, for Advertising, Analytics, Fraud prevention. *(done 2026-10-27 in Play Console; see `docs/PLAY_UPLOAD.md` §A2)*
+- [x] Data safety: App info & performance (crash logs, diagnostics) collected by the Google ads SDK, for Analytics. *(done 2026-10-27 in Play Console; see `docs/PLAY_UPLOAD.md` §A2)*
+- [x] Data safety: Approximate location (from IP, by ad SDKs), following Google's AdMob Data safety guidance. *(done 2026-10-27 in Play Console; see `docs/PLAY_UPLOAD.md` §A2)*
+- [x] Data safety: encrypted in transit = Yes; no account; progress is on the phone only (uninstall or "Reset progress" deletes it). *(done 2026-10-27 in Play Console; see `docs/PLAY_UPLOAD.md` §A2)*
+- [x] Data safety: no personal info, contacts, photos, precise location or account creation. *(done 2026-10-27 in Play Console; see `docs/PLAY_UPLOAD.md` §A2)*
+- [x] Paste the privacy policy URL. *(done 2026-10-27 in Play Console; see `docs/PLAY_UPLOAD.md` §A2)*
 
 ## 5. Store listing
 Already made:

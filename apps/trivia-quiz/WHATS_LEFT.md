@@ -42,7 +42,7 @@ previewed in the Habits dev client (react-native-view-shot is optional there; sh
 ## 2. Set up money (AdMob)
 - [x] Create the Quizora app in AdMob (Android).
 - [x] Create 8 ad units: menu (banner), round_end (interstitial), lifeline, extra_life, double_xp, streak_restore (rewarded), app_open, results_native (native).
-- [ ] Put the real IDs in EAS environment variables (never in git): `EXPO_PUBLIC_ADMOB_ANDROID_APP_ID`, `EXPO_PUBLIC_ADMOB_MENU`, `EXPO_PUBLIC_ADMOB_ROUND_END`, `EXPO_PUBLIC_ADMOB_LIFELINE`, `EXPO_PUBLIC_ADMOB_EXTRA_LIFE`, `EXPO_PUBLIC_ADMOB_DOUBLE_XP`, `EXPO_PUBLIC_ADMOB_STREAK_RESTORE`, `EXPO_PUBLIC_ADMOB_APP_OPEN`, `EXPO_PUBLIC_ADMOB_RESULTS_NATIVE`.
+- [x] Put the real IDs in EAS environment variables (never in git): `EXPO_PUBLIC_ADMOB_ANDROID_APP_ID`, `EXPO_PUBLIC_ADMOB_MENU`, `EXPO_PUBLIC_ADMOB_ROUND_END`, `EXPO_PUBLIC_ADMOB_LIFELINE`, `EXPO_PUBLIC_ADMOB_EXTRA_LIFE`, `EXPO_PUBLIC_ADMOB_DOUBLE_XP`, `EXPO_PUBLIC_ADMOB_STREAK_RESTORE`, `EXPO_PUBLIC_ADMOB_APP_OPEN`, `EXPO_PUBLIC_ADMOB_RESULTS_NATIVE`. *(done 2026-10-27: real IDs from AdMob set in EAS, production environment only)*
 - [x] Set "Max ad content rating" to T in AdMob, and block sensitive categories (gambling, dating).
 - [ ] Publish `app-ads.txt` (a file proving you own the ads) at `https://<your-site>/app-ads.txt` with `google.com, pub-<your id>, DIRECT, f08c47fec0942fa0`, then verify it in AdMob. *(hosted 2026-10-27 at https://www.tahaimran.com/app-ads.txt; what is left is the AdMob check once the app is live)*
 - [ ] After the app is on Play, link the AdMob app to the Play listing.
@@ -55,12 +55,12 @@ previewed in the Habits dev client (react-native-view-shot is optional there; sh
 - [x] Set a developer website (the same site that hosts the policy and app-ads.txt). *(done 2026-10-27: https://www.tahaimran.com/ on Vercel; support email tahaimran.24@gmail.com)*
 
 ## 4. Google Play Console forms
-- [ ] Target audience: ages 13–15, 16–17, 18+. Not for children, not in the Families program, "appeals to children" = No.
-- [ ] Content rating (IARC questionnaire): trivia, no violence; expect Everyone / PEGI 3; ads = Yes. *(2026-10-27: profanity and substance references edited out of the bank, so language and substance answers are No; see `store/PLAY_CONSOLE.md` §3.4)*
-- [ ] Ads: Contains ads = Yes. In-app purchases: none.
-- [ ] Data safety: AdMob collects advertising ID, approximate location (from IP), app interactions and diagnostics, for advertising, analytics and fraud prevention; shared with Google ad partners; encrypted in transit; no account, so deletion = uninstall. No crash reporter (no Sentry). The app itself collects no personal info.
-- [ ] Advertising ID declaration: Yes.
-- [ ] Privacy policy URL: paste the hosted link.
+- [x] Target audience: ages 13–15, 16–17, 18+. Not for children, not in the Families program, "appeals to children" = No. *(done 2026-10-27 in Play Console; see `docs/PLAY_UPLOAD.md` §A2)*
+- [ ] Content rating (IARC questionnaire): trivia, no violence; expect Everyone / PEGI 3; ads = Yes. *(2026-10-27: profanity and substance references edited out of the bank, so language and substance answers are No; see `store/PLAY_CONSOLE.md` §3.4)* *(still to submit: answers in `docs/PLAY_UPLOAD.md` §A2)*
+- [x] Ads: Contains ads = Yes. In-app purchases: none. *(done 2026-10-27 in Play Console; see `docs/PLAY_UPLOAD.md` §A2)*
+- [x] Data safety: AdMob collects advertising ID, approximate location (from IP), app interactions and diagnostics, for advertising, analytics and fraud prevention; shared with Google ad partners; encrypted in transit; no account, so deletion = uninstall. No crash reporter (no Sentry). The app itself collects no personal info. *(done 2026-10-27 in Play Console; see `docs/PLAY_UPLOAD.md` §A2)*
+- [x] Advertising ID declaration: Yes. *(done 2026-10-27 in Play Console; see `docs/PLAY_UPLOAD.md` §A2)*
+- [x] Privacy policy URL: paste the hosted link. *(done 2026-10-27 in Play Console; see `docs/PLAY_UPLOAD.md` §A2)*
 
 ## 5. Store listing
 Already exist: title, short and full description (`ASO.md` §1), icon (`store/icon-512.png`), feature graphic (`store/feature-graphic-1024x500.png`). New icon set (2026-10-26): it only shows on a phone after a new native build.
@@ -69,7 +69,7 @@ Already exist: title, short and full description (`ASO.md` §1), icon (`store/ic
 - [x] Soften "IQ" and "boost your reasoning" (there is a Logic & IQ category, but no IQ score).
 - [x] Don't imply flag pictures: flags are text descriptions only. *(2026-10-26: "flags" removed from the geography line)*
 - [x] Take 8 phone screenshots (1080×1920) of the real app, following `ASO.md` §6: `store/screenshots/` (see `store/SCREENSHOTS.md`).
-- [ ] Set category to Trivia (Games).
+- [x] Set category to Trivia (Games). *(done 2026-10-27 in Play Console; see `docs/PLAY_UPLOAD.md` §A2)*
 
 ## 6. Release steps
 - [ ] Build the store file: `eas build --profile production --platform android` (makes an AAB, the file Play wants).
