@@ -67,6 +67,14 @@ deliberately absent from all fields, even though "water reminder free app" has t
 "every feature … is available to everyone" and "supported by ads". Revisit only in the description if week-4 data
 shows we cannot rank for it (description use is allowed by policy, title use is not).
 
+**Applyra check (2026-10-26):** `check_metadata`, store GPLAY, run on the title, short description and the full
+description above (identical to `store/FULL_DESCRIPTION_DRAFT.md`). Result **`valid: true`**: title 29/30, short
+description 78/80, full description **2,096/4,000** (1,904 left; the 2,097 above counted a trailing newline).
+**0 errors, 0 warnings, 0 info, no notes**; no policy rules fired. The description is cleared to paste. Two
+wording notes, not Applyra findings: the description no longer contains the "every feature … is available to
+everyone" line quoted in the paragraph above (it says "There is no paywall" instead), and "Back up your data to a
+file and restore it on a new phone" must stay true in the release build. Not re-run per locale.
+
 ### Applyra autocomplete (GPLAY, US, en-US)
 
 | Prefix | Suggestions (in order) |

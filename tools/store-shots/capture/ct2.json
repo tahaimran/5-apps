@@ -1,0 +1,9 @@
+{ "base": "http://localhost:8094", "out": "../raw/ct", "fakeTime": "2026-10-29T21:40:00",
+  "shots": [
+    {"name":"pattern","url":"/shots?history=1&due=2026-12-08&seed=17&pattern=1&go=/timer"},
+    {"name":"preg","url":"/shots?due=2026-12-08&bag=0.7&go=/pregnancy"},
+    {"name":"preg2","url":"/shots?due=2026-12-08&bag=0.7&go=/pregnancy","steps":[{"scroll":700}]},
+    {"name":"week34","url":"/shots?due=2026-12-08&bag=0.7&go=/pregnancy/week/34"},
+    {"name":"due","url":"/shots?due=2026-12-08&go=/pregnancy/due-date"},
+    {"name":"bag","url":"/shots?due=2026-12-08&bag=0.7&go=/pregnancy/hospital-bag"}
+  ]}

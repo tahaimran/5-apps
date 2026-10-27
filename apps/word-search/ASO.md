@@ -19,7 +19,7 @@ Easy word search for seniors: big letters, offline puzzles, no timer pressure.
 ```
 Covers "easy word search", "word search for seniors", "offline", "puzzles" and the main benefit (big letters, no pressure).
 
-### Full description (2,608 / 4,000 chars)
+### Full description (2,537 / 4,000 chars; pack list corrected 2026-10-26, Applyra check_metadata valid with 0 warnings)
 ```
 A calm, easy word search made for comfortable reading. Big letters, strong contrast and no timer pressure, so you can relax and enjoy every puzzle at your own pace.
 
@@ -43,14 +43,13 @@ PLAYS OFFLINE, ANYWHERE
 • Unlimited puzzles, so you never run out of words
 
 THEMED WORD PACKS
-Find words from friendly, familiar topics:
-• Animals, Birds and Garden
-• Food, Baking and Kitchen
-• Travel, Cities and Nature
+Find words from 12 friendly, familiar topics:
+• Animals, Birds and Nature
+• Food and Baking
+• Travel and Cities
 • Holidays and Seasons
-• Music, Movies and Hobbies
-• Home, Family and Everyday Life
-New packs are added in updates.
+• Music and Hobbies
+• Home & Family
 
 DAILY WORD CHALLENGE
 A fresh daily puzzle is waiting each morning. Keep your streak going, collect stars and watch your word collection grow. An optional reminder can let you know when today's puzzle is ready.
@@ -178,7 +177,7 @@ Style: the app's soft sky background, real device frame, top caption in 64–72p
 | 2 | Side-by-side of 4 text sizes on the same grid | **Pick Your Letter Size** | From comfortable to huge |
 | 3 | Game screen with no timer, calm word list | **No Timers. No Pressure.** | Play at your own pace |
 | 4 | Airplane-mode icon over grid | **Play Offline, Anywhere** | Unlimited puzzles, no Wi‑Fi needed |
-| 5 | Packs grid (Animals, Food, Travel, Holidays...) | **Dozens of Themed Packs** | Animals, food, travel, holidays and more |
+| 5 | Packs grid (Animals, Food, Travel, Holidays...) | **12 Themed Word Packs** | Animals, food, travel, holidays and more |
 | 6 | Daily tab calendar with streak flame | **A New Puzzle Every Day** | Build your daily streak |
 | 7 | High-contrast and dark themes split | **High Contrast & Dark Mode** | Comfortable day or night |
 | 8 | Easy / Medium / Hard grid comparison | **Easy to Hard — You Choose** | Diagonals and backwards words for a challenge |

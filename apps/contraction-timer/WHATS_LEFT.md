@@ -67,7 +67,7 @@ Install the preview APK, then check each item. Full list: `RELEASE.md` section 4
 - [ ] Write and host a privacy policy covering: health data stays on the phone, AdMob and UMP (Google's consent tool) get device data, Android backup is off, contact email.
 - [ ] Set `EXPO_PUBLIC_PRIVACY_POLICY_URL` in EAS (the link is hidden in the app until set).
 - [ ] Set `EXPO_PUBLIC_CONTACT_EMAIL` in EAS (the "Send feedback" button is hidden until set).
-- [ ] Fix the store description claims flagged in `RELEASE.md` §6: "Consider calling them now" (use the app's wording), the "LABOR PATTERN ALERT" heading and "when labor might be starting" (sounds like it detects labour), "your baby's rhythm", "in two taps" (it is three), and check "keeps timing even if the app is closed".
+- [x] *(2026-10-26, re-checked in Applyra)* Fix the store description claims flagged in `RELEASE.md` §6: "Consider calling them now" (use the app's wording), the "LABOR PATTERN ALERT" heading and "when labor might be starting" (sounds like it detects labour), "your baby's rhythm", "in two taps" (it is three), and check "keeps timing even if the app is closed".
 - [ ] Decide on crash reporting. Sentry is in the plan but **not built**; if you add it, update the policy and Data safety too.
 
 ## 4. Google Play Console forms
@@ -81,9 +81,9 @@ Install the preview APK, then check each item. Full list: `RELEASE.md` section 4
 
 ## 5. Store listing
 - [x] Title, short and full description: written in `ASO.md` (fix the claims in section 3 first).
-- [x] Icon 512×512: `store/icon-512.png` (never viewed on Play).
+- [x] Icon 512×512: `store/icon-512.png` (never viewed on Play). New icon set (2026-10-26): it only shows on a phone after a new native build.
 - [x] Feature graphic 1024×500: `store/feature-graphic-1024x500.png`.
-- [ ] Capture 8 screenshots (1080×1920) from a real phone, following the storyboard in `ASO.md` §5. Real UI only.
+- [x] 8 screenshots (1080×1920) of the real UI, following the storyboard in `ASO.md` §5: `store/screenshots/` (see `store/SCREENSHOTS.md`). Spot-check against a device build.
 - [ ] Optional: make the 30-second promo video (`ASO.md` §5).
 
 ## 6. Release steps

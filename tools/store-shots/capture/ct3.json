@@ -1,0 +1,3 @@
+{ "base": "http://localhost:8094", "out": "../raw/ct", "fakeTime": "2026-10-29T21:40:00",
+  "shots": [ {"name":"pattern-s","url":"/shots?history=1&due=2026-12-08&seed=17&pattern=1&go=/timer","steps":[{"scroll":520}]},
+  {"name":"pattern-s2","url":"/shots?history=1&due=2026-12-08&seed=17&pattern=1&go=/timer","steps":[{"scroll":900}]} ]}

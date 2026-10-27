@@ -17,6 +17,7 @@ The working name "Trivia Quiz Offline – General Knowledge & IQ" was dropped be
 
 ### Applyra `check_metadata` (store GPLAY) result
 - `valid: true`. Title 28/30, short description 79/80, full description 2,555/4,000.
+- Re-run 2026-10-26 after the WHATS_LEFT wording fixes (no accuracy promise, no "regular content updates", "Logic & IQ category" instead of "boost your reasoning", no flags implied): `valid: true`, full description 2,518/4,000, 0 warnings.
 - **0 errors, 0 warnings, 0 info, no notes.** No price, ranking, call-to-action or kids policy flags.
 - Changes made before the check: v1.1 features (Pass & Play, IQ Test) were taken out of the launch description so the listing does not advertise features that are not in the app yet. They will be added back when v1.1 ships. The working short description was 81 characters and was cut to 79.
 
@@ -30,12 +31,12 @@ Every question is stored on your phone. Play on the subway, on a flight or in a 
 
 ★ 12 CATEGORIES, 3,000+ QUESTIONS
 • General knowledge quiz
-• Geography quiz game: capitals, rivers, countries and flags
+• Geography quiz game: capitals, rivers and countries
 • History trivia questions from ancient Rome to the space race
 • Science, nature and animal facts quiz
 • Movie trivia quiz and music trivia
 • Sports, food, literature and logic puzzles
-Each question is checked for accuracy, and we keep adding more with regular content updates.
+Every category runs from easy warm-ups to tough brain teasers.
 
 ★ DAILY TRIVIA CHALLENGE + STREAKS
 Ten handpicked questions every day, the same set for every player. Keep your streak alive, earn streak freezes and watch your calendar fill up. Two minutes a day keeps your brain sharp.
@@ -44,7 +45,7 @@ Ten handpicked questions every day, the same set for every player. Keep your str
 • Classic levels: 30 levels per category, earn up to 3 stars and unlock the next level
 • Category play: pick a topic and difficulty and practice as long as you like
 • Timed Blitz: answer as many as you can in 60 seconds
-• Logic and IQ rounds: number series, patterns and riddles to boost your reasoning
+• Logic & IQ category: number series, patterns and riddles that test your thinking
 
 ★ LEARN SOMETHING WITH EVERY ANSWER
 Right or wrong, each question ends with a quick fun fact that explains the answer. It is brain training trivia that actually teaches you something.

@@ -1,0 +1,11 @@
+{ "base": "http://localhost:8093", "out": "../raw/tq", "fakeTime": "2026-10-29T19:41:00",
+  "shots": [
+    {"name":"quiz-right","url":"/shots?round=classic&cat=geography&level=13&seed=7","wait":2500,"steps":[{"click":"Lake Victoria","wait":2500}]},
+    {"name":"quiz-fifty","url":"/shots?round=classic&cat=geography&level=13&seed=7","wait":4500,"steps":[{"click":"50/50","wait":1500}]},
+    {"name":"blitz2","url":"/shots?round=blitz&seed=3","wait":2000,"steps":[{"click":"Vatican City","wait":1600},{"eval":"document.body.innerText.slice(0,300)","wait":10}]},
+    {"name":"daily","url":"/shots?round=daily","wait":3500},
+    {"name":"stats-dark","url":"/shots?theme=dark&go=/(tabs)/stats","dark":true},
+    {"name":"settings","url":"/shots?go=/(tabs)/settings"},
+    {"name":"category","url":"/shots?go=/category"},
+    {"name":"home-played","url":"/shots?daily=1"}
+  ]}

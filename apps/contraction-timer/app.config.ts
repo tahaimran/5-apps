@@ -24,7 +24,7 @@ const config: ExpoConfig = {
       foregroundImage: './assets/adaptive-icon-foreground.png',
       backgroundImage: './assets/adaptive-icon-background.png',
       monochromeImage: './assets/adaptive-icon-monochrome.png',
-      backgroundColor: '#FBF6F2',
+      backgroundColor: '#17716C',
     },
     // POST_NOTIFICATIONS: the optional kick reminder (asked for only when the person turns it on).
     // VIBRATE: haptics. AD_ID: declared for AdMob. The ads SDK adds INTERNET, ACCESS_NETWORK_STATE and WAKE_LOCK, and

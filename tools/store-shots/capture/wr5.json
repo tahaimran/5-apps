@@ -1,0 +1,2 @@
+{ "base": "http://localhost:8091", "out": "../raw/wr", "fakeTime": "2026-10-29T13:41:00", "demo": "../data/wr-demo.json",
+  "shots": [ {"name":"goal","url":"/shots?go=/settings/goal"}, {"name":"goal-scroll","url":"/shots?go=/settings/goal","steps":[{"scroll":500}]} ]}

@@ -20,7 +20,7 @@ const config: ExpoConfig = {
       foregroundImage: './assets/adaptive-icon-foreground.png',
       backgroundImage: './assets/adaptive-icon-background.png',
       monochromeImage: './assets/adaptive-icon-monochrome.png',
-      backgroundColor: '#1F86D0',
+      backgroundColor: '#FFB23E',
     },
     // Exactly what plan §18 allows (INTERNET, WAKE_LOCK and ACCESS_NETWORK_STATE come from the ads
     // SDK). No exact alarms, no battery-optimization prompt, no storage, no overlays.

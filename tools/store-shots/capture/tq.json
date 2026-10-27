@@ -1,0 +1,11 @@
+{ "base": "http://localhost:8093", "out": "../raw/tq", "fakeTime": "2026-10-29T19:41:00",
+  "shots": [
+    {"name":"home","url":"/shots"},
+    {"name":"play","url":"/shots?go=/(tabs)/play"},
+    {"name":"stats","url":"/shots?go=/(tabs)/stats"},
+    {"name":"classic","url":"/shots?go=/classic"},
+    {"name":"classic-geo","url":"/shots?go=/classic/geography"},
+    {"name":"quiz","url":"/shots?round=classic&cat=geography&level=13&seed=7","wait":2500},
+    {"name":"blitz","url":"/shots?round=blitz&seed=3","wait":4000},
+    {"name":"home-dark","url":"/shots?theme=dark","dark":true}
+  ]}

@@ -1,28 +1,34 @@
-# Screenshots (8 × 1080×1920, portrait)
+# Screenshots (8 × 1080×1920, portrait) and feature graphic
 
-The storyboard and captions are in `../ASO.md §6`. Screenshots must show the real app, so they have to be
-captured from a build on a device or emulator. They are not generated here.
+The final set is in `store/screenshots/` (`01-build-habits.png` … `08-private.png`) and the feature graphic is
+`store/feature-graphic-1024x500.png`. Upload them in this order. They follow the storyboard in `../ASO.md §6`.
 
-## Capture
-1. Install a build (`eas build --profile preview`), clean install, system language English, light theme,
-   1080×1920 emulator (Pixel 4a class), demo mode on (clock 9:41, full battery).
-2. Onboarding slides (5): `maestro test .maestro/screenshots-onboarding.yaml`
-3. Load demo data: `adb push store/demo-backup.json /sdcard/Download/` →
-   Settings → Backup & restore → Import → pick `demo-backup.json` → Replace and restore.
-   (`node scripts/make-demo-backup.mjs --end YYYY-MM-DD` regenerates it so the history ends today.)
-4. App screens: `maestro test .maestro/screenshots-app.yaml` (writes PNGs to `store/screenshots/`).
-5. Widget slide (2) and notification slide (7) are taken by hand: add the widget to a launcher with the
-   light and dark wallpaper; trigger a reminder with `adb shell cmd notification post`.
-6. Add captions and the violet gradient frame in a design tool (Inter Bold 64px, one orange word).
+## How they were made
+Every phone screen and pop-out card is the **real app UI**: the app was run with Expo for web (react-native-web)
+in headless Chrome at a 412×915 dp phone viewport (2.625× density, so a 1082×2402 capture), with demo data restored
+from `store/demo-backup.json` (history ending Thursday 2026-10-29, clock fixed at 9:41). Native-only modules
+(AdMob, notifications) were stubbed for the web render. The home-screen widget on slide 2 is the real `TodayWidget`
+component rendered from the same data; the launcher around it (wallpaper, clock, dock) is drawn.
+The compositor then adds the violet panorama art (one ribbon flowing across all 8 slides), captions in Bricolage
+Grotesque 800, a phone frame with a 9:41 status bar, and enlarged "pop-out" crops of the same captures.
+The tooling is in `tools/store-shots/` (see its README).
 
-## Mapping
-| # | Source |
-|---|---|
-| 1 Today, streak 12 | `screenshots-app.yaml` → `01-today` (demo data: 4 habits, flame 12) |
-| 2 Widget | manual |
-| 3 Heatmap | `02-detail` |
-| 4 Count + timer | `03-count-timer` (Today scrolled to water + study) |
-| 5 Onboarding | `screenshots-onboarding.yaml` → `goals`, `starters` |
-| 6 Freeze | manual: Settings → Streak freezes, or the at-risk card on Today in the evening |
-| 7 Reminders | Settings → Reminders + a system notification |
-| 8 Privacy/backup | `04-backup` |
+## Captions
+| # | File | Caption | Sub-line |
+|---|---|---|---|
+| 1 | 01-build-habits | Build habits that **stick** | Daily streaks, reminders & a widget |
+| 2 | 02-widget | Check off from your **home screen** | Tick habits without opening the app |
+| 3 | 03-progress | See your progress **grow** | Heatmap, best streak & completion rates |
+| 4 | 04-count-timer | Track water, workouts & **study time** | Yes/no, counts and timers |
+| 5 | 05-stats | Weekly stats that **motivate** | Every check-in adds up |
+| 6 | 06-streak-freeze | Missed a day? **Keep your streak** | Streak freezes protect your progress |
+| 7 | 07-reminders | Gentle reminders, **your way** | Pick the time for each habit |
+| 8 | 08-private | Private. Offline. **No sign-up.** | Your habits stay on your phone |
+
+Play's graphics policy bans price and promotional wording in screenshots and the feature graphic, so "no paywall"
+and "free" are not used there (they stay in the full description). The feature graphic tagline is
+"Streaks, reminders & a widget".
+
+## Before upload
+- Recapture after any UI change that shows on these screens (the captures reflect `main` on 2026-10-26).
+- When a real device build is available, spot-check that the screens match it (fonts, spacing).

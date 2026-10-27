@@ -60,7 +60,7 @@ Tip: in a development build, Settings → "Ad rules (development builds only)" s
 - [ ] Fill the placeholders in `store/privacy-policy.md`: developer name, contact email, date, ad partners.
 - [ ] Host the privacy policy (e.g. GitHub Pages) and set `EXPO_PUBLIC_PRIVACY_POLICY_URL` in EAS.
 - [ ] Set `EXPO_PUBLIC_CONTACT_EMAIL` in EAS (the "Send feedback" row is hidden without it).
-- [ ] Fix the store description: it names packs that don't exist (Garden, Kitchen, Movies, Everyday Life). Real packs: Animals, Birds, Food, Baking, Travel, Cities, Nature, Holidays, Seasons, Hobbies, Music, Home & Family.
+- [x] Fix the store description: it named packs that don't exist (Garden, Kitchen, Movies, Everyday Life); fixed in `ASO.md` on 2026-10-26. Real packs: Animals, Birds, Food, Baking, Travel, Cities, Nature, Holidays, Seasons, Hobbies, Music, Home & Family.
 - [x] Run `eas login` and `eas init` in `apps/word-search` and commit the added `projectId`. *(done 2026-10-09)*
 
 ## 4. Google Play Console forms
@@ -81,8 +81,8 @@ Already made:
 - [x] Icon 512×512 (`store/icon-512.png`) and feature graphic 1024×500 (`store/feature-graphic-1024x500.png`); never seen on Play.
 
 Still missing:
-- [ ] Capture 8 screenshots, 1080×1920, from the preview build on a phone.
-- [ ] Look at the icon, adaptive icon and feature graphic on a real launcher and in the Play preview.
+- [x] 8 screenshots (1080×1920) of the real UI: `store/screenshots/` (see `store/SCREENSHOTS.md`). Spot-check them against a device build.
+- [ ] Look at the icon, adaptive icon and feature graphic on a real launcher and in the Play preview. New icon set (2026-10-26): it only shows on a phone after a new native build.
 
 ## 6. Release steps
 - [ ] Build the release file: `cd apps/word-search && eas build --profile production --platform android` (AAB, version number goes up by itself).

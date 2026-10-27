@@ -26,7 +26,7 @@ Short description rationale: verb-first benefit ("Time contractions"), the diffe
 ```
 A calm, one-tap contraction timer and kick counter for the last weeks of pregnancy. Big buttons, a dark night mode for 3am, and a clear summary you can send to your midwife or doctor. Everything stays on your phone.
 
-When labor might be starting, you don't need a cluttered app. You need one giant button, honest numbers and a gentle nudge to call your care team when your pattern matches the plan they gave you. This contraction tracker and contraction counter is built for exactly that moment, for you and your birth partner.
+When contractions start, you don't need a cluttered app. You need one giant button, honest numbers and a gentle nudge to call your care team when your pattern matches the plan they gave you. This contraction tracker and contraction counter is built for exactly that moment, for you and your birth partner.
 
 ⏱ CONTRACTION TIMER
 • One giant button: tap when a contraction starts, tap again when it ends
@@ -35,22 +35,22 @@ When labor might be starting, you don't need a cluttered app. You need one giant
 • Tag each contraction as mild, moderate or strong
 • Works one-handed and in the dark, with haptic feedback on every tap
 • Screen stays awake while you are timing
-• Keeps timing even if your phone locks or the app is closed
+• Your session is saved: lock the phone or close the app and the timer picks up where it left off
 
-🔔 LABOR PATTERN ALERT (5-1-1, 4-1-1, 3-1-1)
+🔔 PATTERN ALERT (5-1-1, 4-1-1, 3-1-1)
 • Choose the rule your provider recommended, or set your own
-• A gentle message appears when your recent contractions match it: "This matches the pattern your provider asked you to watch for. Consider calling them now."
+• A gentle message appears when your last hour matches it: "Your last hour matches the 5-1-1 pattern your provider mentioned. It may be time to call them."
 • No diagnosis, no guessing: the app shows your numbers, your provider decides
 
 📄 SHARE WITH YOUR MIDWIFE OR DOCTOR
 • Session history with every contraction listed
-• Send a clean text summary by message or email in two taps
+• Send a clean text summary by message or email in a few taps
 • Create a PDF summary on your phone and share it with your hospital or birth center
 • Nothing is uploaded: no account, no cloud, no tracking of your health data
 
 👣 KICK COUNTER
 • Count to 10 movements and see how long it took
-• History of every kick session so you can notice your baby's usual rhythm
+• History of every kick session, ready to show your provider
 • Optional daily reminder at the time you choose
 • Talk to your provider if movements feel different from usual
 
@@ -89,7 +89,8 @@ Keyword density (natural, no stuffing): "contraction timer" ×2 (+ title), "cont
 | Run | Input | Result |
 |---|---|---|
 | 1 | Title + short + full description v1 (without the "contraction tracker / counter" sentence) | `valid: true`. Title 30/30, short 75/80, description 3,205/4,000 (Play counts UTF-16; emoji cost >1 char). **0 errors.** 1 *warning* (informational: visible 3,200 vs store-counted 3,205 because of emoji) + 1 *info* (emoji allowed in description, banned in app name). No policy rules fired (price / ranking / call-to-action / play-program / kids / rival-platform all clear). |
-| 2 (final) | Final title + short + description (§1.1, adds "contraction tracker and contraction counter" sentence after autocomplete) | `valid: true`. Title 30/30, short 75/80, description **3,320/4,000** (680 left). **0 errors**, no policy rules fired. Same 1 non-policy warning (visible 3,315 vs store-counted 3,320 due to emoji) + 1 info (emoji OK in description). |
+| 2 | Final title + short + description (§1.1, adds "contraction tracker and contraction counter" sentence after autocomplete) | `valid: true`. Title 30/30, short 75/80, description **3,320/4,000** (680 left). **0 errors**, no policy rules fired. Same 1 non-policy warning (visible 3,315 vs store-counted 3,320 due to emoji) + 1 info (emoji OK in description). |
+| 3 (final, 2026-10-26) | §1.1 after the RELEASE.md §6 claim fixes: "PATTERN ALERT" heading, the app's own banner wording, no "when labor might be starting", no "baby's rhythm", "a few taps", session-restore wording | `valid: true`. Title 30/30, short 75/80, description **3,331/4,000**. **0 errors**, no policy rules fired; the same emoji-length warning and info. |
 
 Action on warnings: the emoji length warning is not a policy problem; we keep ~650 chars of headroom so it can never push us over 4,000. No title emoji.
 
@@ -171,7 +172,7 @@ Left: phone mockup showing the Timer in night mode (black/red) with "Stop 0:47" 
 | 3 | Share sheet with text summary + PDF preview | **Send a clear summary to your midwife** |
 | 4 | Night mode red-shifted timer | **Night mode made for 3am** |
 | 5 | Partner mode giant digits, partner's hand holding phone | **Partner mode: big text, zero setup** |
-| 6 | Kick counter 10/10 "in 14 min" + history | **Count kicks to 10 and see your baby's rhythm** |
+| 6 | Kick counter 10/10 "in 14 min" + history | **Count kicks to 10** (sub-line: "Every session saved in your history") |
 | 7 | My Pregnancy: week 34, cantaloupe size card + due date | **Due date calculator & week-by-week sizes** |
 | 8 | Hospital bag checklist 70% | **Hospital bag & birth plan checklists. Private, offline** |
 

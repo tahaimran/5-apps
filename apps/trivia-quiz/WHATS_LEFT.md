@@ -63,12 +63,12 @@ previewed in the Habits dev client (react-native-view-shot is optional there; sh
 - [ ] Privacy policy URL: paste the hosted link.
 
 ## 5. Store listing
-Already exist: title, short and full description (`ASO.md` §1), icon (`store/icon-512.png`), feature graphic (`store/feature-graphic-1024x500.png`).
-- [ ] Remove or soften "Each question is checked for accuracy" in the description until the fact-check is done.
-- [ ] Remove "regular content updates" unless you set up EAS Update (see step 6).
-- [ ] Soften "IQ" and "boost your reasoning" (there is a Logic & IQ category, but no IQ score).
-- [ ] Don't imply flag pictures: flags are text descriptions only.
-- [ ] Take 8 phone screenshots (1080×1920) of the real app, following `ASO.md` §6 (none exist yet).
+Already exist: title, short and full description (`ASO.md` §1), icon (`store/icon-512.png`), feature graphic (`store/feature-graphic-1024x500.png`). New icon set (2026-10-26): it only shows on a phone after a new native build.
+- [x] Remove or soften "Each question is checked for accuracy" in the description until the fact-check is done. *(2026-10-26)*
+- [x] Remove "regular content updates" unless you set up EAS Update (see step 6). *(2026-10-26)*
+- [x] Soften "IQ" and "boost your reasoning" (there is a Logic & IQ category, but no IQ score).
+- [x] Don't imply flag pictures: flags are text descriptions only. *(2026-10-26: "flags" removed from the geography line)*
+- [x] Take 8 phone screenshots (1080×1920) of the real app, following `ASO.md` §6: `store/screenshots/` (see `store/SCREENSHOTS.md`).
 - [ ] Set category to Trivia (Games).
 
 ## 6. Release steps

@@ -1,0 +1,2 @@
+{ "base": "http://localhost:8091", "out": "../raw/wr", "fakeTime": "2026-10-29T13:41:00", "demo": "../data/wr-demo.json",
+  "shots": [ {"name":"plants","url":"/shots?go=/shots-plants","viewport":{"w":1000,"h":600,"dpr":3}} ]}

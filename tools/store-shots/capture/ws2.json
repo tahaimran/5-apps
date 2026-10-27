@@ -1,0 +1,1 @@
+{"base":"http://localhost:8092","out":"../raw/ws","fakeTime":"2026-10-29T10:12:00","css":"a[role=tab] div{overflow:visible !important}","shots":[{"name":"complete","url":"/shots?result=1&go=/complete/daily:2026-10-29:easy","wait":5000},{"name":"settings","url":"/shots?go=/(tabs)/settings"},{"name":"home-dark","url":"/shots?theme=dark","dark":true}]}

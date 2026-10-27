@@ -1,0 +1,12 @@
+{ "base": "http://localhost:8091", "out": "../raw/wr", "fakeTime": "2026-10-29T13:41:00", "demo": "../data/wr-demo.json",
+  "shots": [
+    {"name":"today","url":"/shots","wait":5000},
+    {"name":"garden","url":"/shots?go=/(tabs)/garden"},
+    {"name":"history","url":"/shots?go=/(tabs)/history"},
+    {"name":"settings","url":"/shots?go=/settings"},
+    {"name":"reminders","url":"/shots?go=/settings/reminders"},
+    {"name":"privacy","url":"/shots?go=/settings/privacy"},
+    {"name":"logcustom","url":"/shots?go=/log-custom"},
+    {"name":"onb","url":"/shots?fresh=1&go=/onboarding"},
+    {"name":"today-dark","url":"/shots?theme=dark","dark":true,"wait":5000}
+  ]}

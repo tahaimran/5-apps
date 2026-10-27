@@ -21,7 +21,7 @@ const config: ExpoConfig = {
       foregroundImage: './assets/adaptive-icon-foreground.png',
       backgroundImage: './assets/adaptive-icon-background.png',
       monochromeImage: './assets/adaptive-icon-monochrome.png',
-      backgroundColor: '#5B3FE0',
+      backgroundColor: '#FFC233',
     },
     // The ads SDK adds INTERNET, WAKE_LOCK and ACCESS_NETWORK_STATE. POST_NOTIFICATIONS and
     // RECEIVE_BOOT_COMPLETED are for the daily reminder (it survives a reboot). No exact alarms.

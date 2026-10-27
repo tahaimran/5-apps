@@ -56,10 +56,10 @@ Status (2026-10-09): the code checks pass (TypeScript has no errors, expo-doctor
 ## 5. Store listing
 Already done:
 - [x] Title, short and full description in `ASO.md` (length limits checked).
-- [x] Icon 512×512 (`store/icon-512.png`) and feature graphic 1024×500 (`store/feature-graphic-1024x500.png`).
+- [x] Icon 512×512 (`store/icon-512.png`) and feature graphic 1024×500 (`store/feature-graphic-1024x500.png`), redone 2026-10-26. New icon set (2026-10-26): it only shows on a phone after a new native build.
 
 Still missing:
-- [ ] Capture 8 screenshots (1080×1920) from a real build, following `store/SCREENSHOTS.md` (demo data in `store/demo-backup.json`, Maestro scripts for most shots).
+- [x] 8 screenshots (1080×1920) of the real UI with captions and art: `store/screenshots/` (how they were made: `store/SCREENSHOTS.md`). Spot-check them against a device build.
 - [ ] Take the widget and notification shots by hand, then add captions and the violet frame in a design tool.
 
 ## 6. Release steps

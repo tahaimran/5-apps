@@ -1,5 +1,7 @@
-// Regenerates the Sipling icon set (icon, adaptive layers, monochrome, splash, notification icon) and the
-// Play graphics (512 icon, 1024×500 feature graphic) from one droplet-and-sprout mark.
+// Regenerates the Sipling icon set (icon, adaptive layers, monochrome, splash, notification icon, 512 store
+// icon) from one mark: a happy water droplet with a two-leaf sprout growing from its tip, on a sunny
+// gradient (every big competitor is blue-on-blue, so the warm tile is what makes it stand out).
+// The 1024×500 feature graphic is made separately with the store screenshots (see store/SCREENSHOTS.md).
 // The renderer is not an app dependency; run it from a scratch folder:
 //   npm i @resvg/resvg-js@2.6.2 && node generate-icons.cjs <apps/water-reminder/assets> <apps/water-reminder/store> [preview-dir]
 const fs = require('fs');
@@ -10,56 +12,80 @@ const [assets, store, preview] = process.argv.slice(2);
 if (!assets || !store) throw new Error('usage: node generate-icons.cjs <assets dir> <store dir> [preview dir]');
 
 // The droplet on a 1024 canvas: tip at the top, round belly below.
-const DROP = 'M512 196 C 604 330 742 462 742 618 C 742 746 640 846 512 846 C 384 846 282 746 282 618 C 282 462 420 330 512 196 Z';
-// Water inside the drop: a gentle wave line two-fifths of the way up.
-const WATER = 'M250 664 C 318 632 386 632 454 664 C 522 696 590 696 658 664 C 726 632 794 632 862 664 L 862 900 L 250 900 Z';
-const STEM = 'M512 736 L512 600';
-const LEAF_L = 'M512 600 C 500 528 438 486 368 492 C 372 562 430 610 512 600 Z';
-const LEAF_R = 'M512 596 C 520 514 584 464 666 468 C 664 550 600 602 512 596 Z';
+const DROP = 'M512 232 C 596 344 774 470 774 650 C 774 790 660 902 512 902 C 364 902 250 790 250 650 C 250 470 428 344 512 232 Z';
+// Deeper water in the lower belly, for depth.
+const WATER = 'M220 770 C 318 732 416 732 512 770 C 608 808 706 808 804 770 L 804 940 L 220 940 Z';
+// The sprout grows out of the tip: a short stem and two leaves.
+const STEM = 'M512 250 C 512 214 512 196 512 170';
+const LEAF_L = 'M508 206 C 466 128 376 100 290 128 C 320 214 420 252 508 206 Z';
+const LEAF_R = 'M516 184 C 550 92 650 50 752 74 C 728 176 620 226 516 184 Z';
+const VEIN_L = 'M496 202 C 450 176 400 162 352 158';
+const VEIN_R = 'M528 178 C 584 148 640 122 694 108';
+// Face: two eyes and a smile, a little below the belly's middle.
+const EYES = [
+  [446, 652],
+  [578, 652],
+];
+const SMILE = 'M462 716 C 486 754 538 754 562 716';
 
 /** The mark, centered at (512,512); `k` scales it (1 = full-bleed icon size). */
 function mark({ k = 1, mono = false } = {}) {
-  // The drop's visual center sits a little low (the belly is heavier than the tip), so lift it 9px.
-  const t = `translate(512 503) scale(${k}) translate(-512 -521)`;
+  // Drop + leaves span y 66–902; center that box on 512.
+  const t = `translate(512 512) scale(${k}) translate(-512 -484)`;
   if (mono) {
-    // Monochrome / notification: a solid drop with the sprout cut out (launchers use alpha only).
-    return `<g transform="${t}"><mask id="cut"><rect width="1024" height="1024" fill="#FFFFFF"/>
-      <path d="${STEM}" stroke="#000" stroke-width="30" stroke-linecap="round"/><path d="${LEAF_L}" fill="#000"/><path d="${LEAF_R}" fill="#000"/>
-    </mask><path d="${DROP}" fill="#FFFFFF" mask="url(#cut)"/></g>`;
+    // Monochrome / notification: a solid drop and leaves, the face cut out (launchers use alpha only).
+    return `<g transform="${t}"><mask id="cut"><rect x="-200" y="-200" width="1424" height="1424" fill="#FFFFFF"/>
+      ${EYES.map(([x, y]) => `<circle cx="${x}" cy="${y}" r="30" fill="#000"/>`).join('')}
+      <path d="${SMILE}" stroke="#000" stroke-width="26" stroke-linecap="round" fill="none"/>
+    </mask><g mask="url(#cut)"><path d="${DROP}" fill="#FFFFFF"/>
+      <path d="${STEM}" stroke="#FFFFFF" stroke-width="30" stroke-linecap="round" fill="none"/>
+      <path d="${LEAF_L}" fill="#FFFFFF"/><path d="${LEAF_R}" fill="#FFFFFF"/></g></g>`;
   }
   return `<g transform="${t}">
-    <path d="${DROP}" fill="#063B6B" fill-opacity="0.28" transform="translate(0 18)" filter="url(#soft)"/>
-    <path d="${DROP}" fill="url(#drop)"/>
-    <clipPath id="inside"><path d="${DROP}"/></clipPath>
-    <path d="${WATER}" fill="url(#water)" clip-path="url(#inside)"/>
-    <path d="${STEM}" stroke="#2A9257" stroke-width="28" stroke-linecap="round"/>
+    <ellipse cx="512" cy="918" rx="240" ry="34" fill="#8A3A00" fill-opacity="0.35" filter="url(#soft)"/>
+    <path d="${STEM}" stroke="#1E8A4C" stroke-width="30" stroke-linecap="round" fill="none"/>
     <path d="${LEAF_L}" fill="url(#leaf)"/>
     <path d="${LEAF_R}" fill="url(#leaf)"/>
-    <ellipse cx="420" cy="420" rx="34" ry="62" fill="#FFFFFF" fill-opacity="0.7" transform="rotate(28 420 420)"/>
+    <path d="${VEIN_L}" stroke="#1E8A4C" stroke-opacity="0.45" stroke-width="10" stroke-linecap="round" fill="none"/>
+    <path d="${VEIN_R}" stroke="#1E8A4C" stroke-opacity="0.45" stroke-width="10" stroke-linecap="round" fill="none"/>
+    <path d="${DROP}" fill="url(#drop)"/>
+    <clipPath id="inside"><path d="${DROP}"/></clipPath>
+    <g clip-path="url(#inside)">
+      <path d="${WATER}" fill="url(#water)"/>
+      <path d="M220 770 C 318 732 416 732 512 770 C 608 808 706 808 804 770" stroke="#FFFFFF" stroke-opacity="0.55" stroke-width="10" fill="none"/>
+    </g>
+    <path d="${DROP}" fill="none" stroke="#FFFFFF" stroke-opacity="0.9" stroke-width="10"/>
+    <ellipse cx="370" cy="560" rx="38" ry="92" fill="#FFFFFF" fill-opacity="0.85" transform="rotate(24 392 540)"/>
+    <circle cx="404" cy="440" r="18" fill="#FFFFFF" fill-opacity="0.85"/>
+    ${EYES.map(([x, y]) => `<circle cx="${x}" cy="${y}" r="30" fill="#0A2E55"/><circle cx="${x + 9}" cy="${y - 10}" r="9" fill="#FFFFFF"/>`).join('')}
+    <path d="${SMILE}" stroke="#0A2E55" stroke-width="22" stroke-linecap="round" fill="none"/>
+    <ellipse cx="396" cy="716" rx="34" ry="20" fill="#FF7A93" fill-opacity="0.85"/>
+    <ellipse cx="628" cy="716" rx="34" ry="20" fill="#FF7A93" fill-opacity="0.85"/>
   </g>`;
 }
 
 const defs = `
   <defs>
-    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="16"/></filter>
-    <linearGradient id="bg" x1="0" y1="0" x2="0.55" y2="1">
-      <stop offset="0" stop-color="#3FB1F0"/><stop offset="1" stop-color="#0B5DA3"/>
+    <filter id="soft" x="-30%" y="-100%" width="160%" height="300%"><feGaussianBlur stdDeviation="14"/></filter>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.7" y2="1">
+      <stop offset="0" stop-color="#FFE36E"/><stop offset="0.5" stop-color="#FFB23E"/><stop offset="1" stop-color="#FF7A3D"/>
     </linearGradient>
-    <radialGradient id="sheen" cx="0.2" cy="0.1" r="0.8">
-      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.3"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    <radialGradient id="sheen" cx="0.3" cy="0.2" r="0.7">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.5"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
     </radialGradient>
-    <linearGradient id="drop" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#EAF6FE"/>
+    <linearGradient id="drop" x1="0.2" y1="0" x2="0.7" y2="1">
+      <stop offset="0" stop-color="#C9F3FF"/><stop offset="0.45" stop-color="#6FD3FF"/><stop offset="1" stop-color="#2AA2F2"/>
     </linearGradient>
     <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#8FD6FA"/><stop offset="1" stop-color="#4FB3EE"/>
+      <stop offset="0" stop-color="#2BA8F5"/><stop offset="1" stop-color="#1679D6"/>
     </linearGradient>
     <linearGradient id="leaf" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#6BD494"/><stop offset="1" stop-color="#2E9E5B"/>
+      <stop offset="0" stop-color="#9BF07A"/><stop offset="1" stop-color="#2FB25C"/>
     </linearGradient>
   </defs>`;
 
-const background = (w = 1024, h = 1024) => `<rect width="${w}" height="${h}" fill="url(#bg)"/><rect width="${w}" height="${h}" fill="url(#sheen)"/>`;
+const background = (w = 1024, h = 1024) =>
+  `<rect width="${w}" height="${h}" fill="url(#bg)"/><rect width="${w}" height="${h}" fill="url(#sheen)"/>`;
 const svg = (body, { rounded = false } = {}) =>
   `<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">${defs}${
     rounded ? `<clipPath id="r"><rect width="1024" height="1024" rx="230"/></clipPath><g clip-path="url(#r)">${body}</g>` : body
@@ -71,13 +97,13 @@ function write(file, markup, size = 1024) {
   console.log(path.basename(file), size, `${(png.length / 1024).toFixed(0)}KB`);
 }
 
-const full = svg(background() + mark());
+const full = svg(background() + mark({ k: 1.12 }));
 // Adaptive icons: the launcher masks a 108dp layer to ~72dp, so the mark sits in the inner ~61%.
-const fg = svg(mark({ k: 0.8 }));
+const fg = svg(mark({ k: 0.74 }));
 const bgOnly = svg(background());
-const mono = svg(mark({ k: 0.8, mono: true }));
+const mono = svg(mark({ k: 0.74, mono: true }));
 // Splash: the whole icon as a rounded tile, so it reads on both the light and dark splash colors.
-const splash = svg(background() + mark(), { rounded: true });
+const splash = svg(background() + mark({ k: 1.12 }), { rounded: true });
 
 write(path.join(assets, 'icon.png'), full);
 write(path.join(assets, 'adaptive-icon-foreground.png'), fg);
@@ -91,67 +117,21 @@ const note = `<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" vie
 write(path.join(assets, 'notification-icon.png'), note, 96);
 
 if (preview) {
-  // How launchers show it: circle, squircle and rounded-square masks over the adaptive layers.
+  // How launchers show it: circle, squircle and rounded-square masks over the adaptive layers,
+  // plus the full icon at 48 px.
   const masks = `<svg xmlns="http://www.w3.org/2000/svg" width="2200" height="760" viewBox="0 0 2200 760">${defs}
     <rect width="2200" height="760" fill="#F2F8FC"/>
     ${[0, 1, 2]
       .map((i) => {
         const x = 60 + i * 720;
         const clip = i === 0 ? `<circle cx="${x + 320}" cy="380" r="320"/>` : `<rect x="${x}" y="60" width="640" height="640" rx="${i === 1 ? 150 : 40}"/>`;
-        return `<clipPath id="m${i}">${clip}</clipPath><g clip-path="url(#m${i})"><g transform="translate(${x - 64} -4) scale(0.75)">${background()}${mark({ k: 0.8 })}</g></g>`;
+        // The 108dp layer drawn at 853px so its 72dp visible part fills the 640px mask.
+        return `<clipPath id="m${i}">${clip}</clipPath><g clip-path="url(#m${i})"><g transform="translate(${x + 320 - 426.5} ${380 - 426.5}) scale(0.833)">${background()}${mark({ k: 0.74 })}</g></g>`;
       })
       .join('')}
   </svg>`;
   write(path.join(preview, 'preview-masks.png'), masks, 1100);
+  write(path.join(preview, 'preview-48.png'), full, 48);
+  write(path.join(preview, 'preview-mono.png'), `<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024"><rect width="1024" height="1024" fill="#3A4A5A"/>${mark({ k: 0.74, mono: true })}</svg>`, 256);
   write(path.join(preview, 'preview-notification.png'), `<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96"><rect width="96" height="96" fill="#136CAD"/><image href="data:image/png;base64,${fs.readFileSync(path.join(assets, 'notification-icon.png')).toString('base64')}" width="96" height="96"/></svg>`, 192);
-}
-
-// Play Store feature graphic (1024×500), per ASO.md §7: the headline in the app's fonts, a small
-// mark, three pots growing seed → sprout → bloom, and waves along the bottom.
-{
-  // apps/<app>/assets → packages/shared/assets/fonts, wherever this script runs from.
-  const fontDir = path.resolve(assets, '../../../packages/shared/assets/fonts');
-  const pot = (x, stage) => {
-    const leaf = '#2E9E5B';
-    const plant =
-      stage === 0
-        ? `<path d="M${x - 8} 352 q 8 -12 16 0 q -8 8 -16 0 Z" fill="#8A5A3C"/>`
-        : `<path d="M${x} 356 L${x} ${stage === 1 ? 318 : 282}" stroke="${leaf}" stroke-width="7" stroke-linecap="round"/>
-           <path d="M${x} ${stage === 1 ? 330 : 312} c -10 -16 -30 -20 -42 -14 c 6 16 26 22 42 14 Z" fill="url(#leaf)"/>
-           <path d="M${x} ${stage === 1 ? 326 : 300} c 10 -18 30 -22 44 -16 c -6 18 -28 24 -44 16 Z" fill="url(#leaf)"/>
-           ${
-             stage === 2
-               ? [0, 72, 144, 216, 288].map((a) => `<circle cx="${x + 13 * Math.cos((a * Math.PI) / 180)}" cy="${270 + 13 * Math.sin((a * Math.PI) / 180)}" r="10" fill="#FF8FB1"/>`).join('') +
-                 `<circle cx="${x}" cy="270" r="8" fill="#FFC94D"/>`
-               : ''
-           }`;
-    return `${plant}
-      <rect x="${x - 58}" y="352" width="116" height="20" rx="8" fill="#C86B3C"/>
-      <path d="M${x - 48} 372 L${x + 48} 372 L${x + 36} 430 L${x - 36} 430 Z" fill="#C86B3C"/>
-      <path d="M${x - 48} 372 L${x + 48} 372 L${x + 46} 380 L${x - 46} 380 Z" fill="#000" fill-opacity="0.12"/>`;
-  };
-  const wave = (y, amp, alpha) =>
-    `<path d="M0 ${y} C 128 ${y - amp} 256 ${y - amp} 384 ${y} C 512 ${y + amp} 640 ${y + amp} 768 ${y} C 896 ${y - amp} 960 ${y - amp} 1024 ${y} L1024 500 L0 500 Z" fill="#FFFFFF" fill-opacity="${alpha}"/>`;
-  const feature = `<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="500" viewBox="0 0 1024 500">${defs}
-    ${background(1024, 500)}
-    ${wave(436, 14, 0.1)}${wave(456, 10, 0.12)}
-    <g transform="translate(64 96) scale(0.11)">${mark()}</g>
-    <text x="186" y="160" font-family="Bricolage Grotesque" font-weight="800" font-size="44" fill="#FFFFFF">Sipling</text>
-    <text x="64" y="262" font-family="Bricolage Grotesque" font-weight="800" font-size="62" fill="#FFFFFF">Drink water.</text>
-    <text x="64" y="334" font-family="Bricolage Grotesque" font-weight="800" font-size="62" fill="#FFFFFF">Grow a plant.</text>
-    <text x="66" y="386" font-family="Figtree" font-weight="600" font-size="26" fill="#FFFFFF" fill-opacity="0.92">Gentle reminders, private and offline</text>
-    ${pot(640, 0)}${pot(780, 1)}${pot(920, 2)}
-  </svg>`;
-  const png = new Resvg(feature, {
-    fitTo: { mode: 'width', value: 1024 },
-    font: {
-      fontFiles: ['BricolageGrotesque_800ExtraBold.ttf', 'Figtree_600SemiBold.ttf'].map((f) => path.join(fontDir, f)),
-      loadSystemFonts: false,
-      defaultFontFamily: 'Figtree',
-    },
-  })
-    .render()
-    .asPng();
-  fs.writeFileSync(path.join(store, 'feature-graphic-1024x500.png'), png);
-  console.log('feature-graphic-1024x500.png', `${(png.length / 1024).toFixed(0)}KB`);
 }

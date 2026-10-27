@@ -1,0 +1,13 @@
+{
+  "name": "store-shots",
+  "private": true,
+  "description": "Play Store screenshots, feature graphics and icon checks rendered from the apps' real UI (see README.md). Not an npm workspace.",
+  "scripts": {
+    "fonts": "node web/make-fonts.cjs"
+  },
+  "devDependencies": {
+    "@resvg/resvg-js": "2.6.2",
+    "pngjs": "7.0.0",
+    "puppeteer-core": "23.11.1"
+  }
+}

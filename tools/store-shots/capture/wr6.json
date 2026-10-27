@@ -1,0 +1,2 @@
+{ "base": "http://localhost:8091", "out": "../raw/wr", "fakeTime": "2026-10-29T13:41:00", "demo": "../data/wr-demo.json",
+  "shots": [ {"name":"backup","url":"/shots?go=/settings/backup"}, {"name":"settings-scroll","url":"/shots?go=/settings","steps":[{"scroll":1400}]} ]}

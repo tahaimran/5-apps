@@ -76,9 +76,9 @@ Tip: to get a reminder soon, go to Settings and set "Wake up" to about 35 minute
 
 ## 5. Store listing
 Already there: title, short and full description (`ASO.md`), icon 512 px and feature graphic 1024x500 (`store/`, never viewed on Play), screenshot plan (`store/SCREENSHOTS.md`), demo data (`store/demo-backup.json`).
-- [ ] Capture the 8 screenshots on a device or emulator following `store/SCREENSHOTS.md` (none exist yet).
-- [ ] Add captions and the light-blue frame to the screenshots in a design tool.
-- [ ] Look at the icon and feature graphic in the Play preview; the feature graphic is simpler than ASO.md §7 asks.
+- [x] 8 screenshots (1080×1920) of the real UI: `store/screenshots/` (see `store/SCREENSHOTS.md`). Spot-check them against a device build.
+- [x] Captions and art are on the screenshots (2026-10-26).
+- [ ] Look at the icon and feature graphic in the Play preview (both redone 2026-10-26 to match ASO.md §7). New icon set (2026-10-26): it only shows on a phone after a new native build.
 - [ ] Re-read the listing for medical claims (there must be none).
 
 ## 6. Release steps

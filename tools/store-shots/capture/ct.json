@@ -1,0 +1,16 @@
+{ "base": "http://localhost:8094", "out": "../raw/ct", "fakeTime": "2026-10-29T21:40:00",
+  "shots": [
+    {"name":"timer-rest","url":"/shots?history=1&due=2026-12-08&go=/timer"},
+    {"name":"timer-run","url":"/shots?history=1&due=2026-12-08&seed=8&run=47&go=/timer"},
+    {"name":"pattern","url":"/shots?history=1&due=2026-12-08&seed=14&pattern=1&go=/timer"},
+    {"name":"night","url":"/shots?theme=night&history=1&due=2026-12-08&seed=8&run=47&go=/timer","fakeTime":"2026-10-30T03:12:00"},
+    {"name":"partner","url":"/shots?partner=1&history=1&due=2026-12-08&seed=8&run=38&go=/timer"},
+    {"name":"share","url":"/shots?history=1&due=2026-12-08&seed=14&pattern=1&go=/modals/share-summary?id={active}"},
+    {"name":"session","url":"/shots?history=1&due=2026-12-08&seed=14&pattern=1&go=/timer/session/{active}"},
+    {"name":"thistory","url":"/shots?history=1&due=2026-12-08&go=/timer/history"},
+    {"name":"kicks","url":"/shots?kickhist=1&kicks=10&due=2026-12-08&go=/kicks","fakeTime":"2026-10-29T15:20:00"},
+    {"name":"kicks-mid","url":"/shots?kickhist=1&kicks=7&kmins=9&due=2026-12-08&go=/kicks","fakeTime":"2026-10-29T15:20:00"},
+    {"name":"khistory","url":"/shots?kickhist=1&due=2026-12-08&go=/kicks/history","fakeTime":"2026-10-29T15:20:00"},
+    {"name":"preg","url":"/shots?due=2026-12-08&go=/pregnancy"},
+    {"name":"bag","url":"/shots?due=2026-12-08&bag=0.7&go=/pregnancy/hospital-bag"}
+  ]}
