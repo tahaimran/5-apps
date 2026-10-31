@@ -48,9 +48,9 @@ Tip: in a development build, Settings → "Ad rules (development builds only)" s
   - `EXPO_PUBLIC_ADMOB_ANDROID_APP_ID` (the app ID, `ca-app-pub-…~…`)
   - `EXPO_PUBLIC_ADMOB_HOME_BANNER`, `EXPO_PUBLIC_ADMOB_PACKS_BANNER`
   - `EXPO_PUBLIC_ADMOB_LEVEL_COMPLETE` (interstitial), `EXPO_PUBLIC_ADMOB_HINT_REFILL` (rewarded), `EXPO_PUBLIC_ADMOB_APP_OPEN`
-- [ ] Register your own phone as a test device in AdMob (so you never click your own real ads).
+- [x] Register your own phone as a test device in AdMob (so you never click your own real ads). *(added 2026-10-31 as "Taha's Android phone")*
 - [x] Set max ad content rating to G or PG and block gambling and dating ad categories in AdMob.
-- [ ] Set up the EU consent message (GDPR) in AdMob's Privacy & messaging page.
+- [x] Set up the EU consent message (GDPR) in AdMob's Privacy & messaging page. *(published 2026-10-31, "EU consent - 5 apps")*
 - [x] Write app-ads.txt (a file proving you own the ad slots): `google.com, pub-<your publisher id>, DIRECT, f08c47fec0942fa0`.
 - [ ] Host app-ads.txt at the root of the website you list in Play Console.
 - [ ] Later (once over ~1k daily users): add mediation (other ad networks bidding): Meta, AppLovin, Unity; then list each in app-ads.txt, privacy policy and Data safety.
@@ -64,7 +64,7 @@ Tip: in a development build, Settings → "Ad rules (development builds only)" s
 - [x] Run `eas login` and `eas init` in `apps/word-search` and commit the added `projectId`. *(done 2026-10-09)*
 
 ## 4. Google Play Console forms
-- [ ] Create the app, turn on Play App Signing, add a service account (robot login) for `eas submit`. *(apps created and Play App Signing accepted 2026-10-27; the service account is still to do)*
+- [ ] Create the app, turn on Play App Signing, add a service account (robot login) for `eas submit`. *(apps created and Play App Signing accepted 2026-10-27; service account added in Play Console 2026-10-31; still to point `eas.json` / EAS at its key)*
 - [x] Target audience: 18+ only; "Not designed for children"; not in the Families program. *(done 2026-10-27 in Play Console; see `docs/PLAY_UPLOAD.md` §A2)*
 - [x] Content rating (IARC questionnaire): puzzle/word game, no violence, no chat, no gambling → expect Everyone / PEGI 3. *(2026-10-27: EGGNOG and CIDER swapped out of the word lists; see `store/PLAY_CONSOLE.md` §3.4)* *(rated 2026-10-27: Everyone / PEGI 3)*
 - [x] Ads declaration: Contains ads = Yes. *(done 2026-10-27 in Play Console; see `docs/PLAY_UPLOAD.md` §A2)*

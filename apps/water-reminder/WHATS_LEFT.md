@@ -51,8 +51,8 @@ Tip: to get a reminder soon, go to Settings and set "Wake up" to about 35 minute
   `EXPO_PUBLIC_ADMOB_ANDROID_APP_ID`, `EXPO_PUBLIC_ADMOB_HOME_UNDER_RING`, `EXPO_PUBLIC_ADMOB_HISTORY_LIST`,
   `EXPO_PUBLIC_ADMOB_HISTORY_EXIT`, `EXPO_PUBLIC_ADMOB_GARDEN_UNLOCK_SKIN`, `EXPO_PUBLIC_ADMOB_STREAK_FREEZE`,
   `EXPO_PUBLIC_ADMOB_APP_OPEN_WARM`.
-- [ ] Register your own phone as a test device in AdMob (so you never click your own real ads).
-- [ ] Set up the consent (GDPR) message in AdMob's Privacy & messaging for EEA users.
+- [x] Register your own phone as a test device in AdMob (so you never click your own real ads). *(added 2026-10-31 as "Taha's Android phone")*
+- [x] Set up the consent (GDPR) message in AdMob's Privacy & messaging for EEA users. *(published 2026-10-31, "EU consent - 5 apps")*
 - [x] Fill in `store/app-ads.txt` (replace `pub-0000000000000000` with your AdMob publisher ID) and host it at the root of your developer website.
 - [ ] Verify app-ads.txt in AdMob after the app is live.
 
@@ -64,12 +64,12 @@ Tip: to get a reminder soon, go to Settings and set "Wake up" to about 35 minute
 - [x] Run the Applyra metadata check on the new full description in `ASO.md` (it replaced misfiled Quizora trivia text; the old check result was for the wrong text). *(done 2026-10-26: valid)*
 
 ## 4. Google Play Console forms
-- [ ] Create the app, turn on Play App Signing, and add a service account so `eas submit` can upload. *(apps created and Play App Signing accepted 2026-10-27; the service account is still to do)*
+- [ ] Create the app, turn on Play App Signing, and add a service account so `eas submit` can upload. *(apps created and Play App Signing accepted 2026-10-27; service account added in Play Console 2026-10-31; still to point `eas.json` / EAS at its key)*
 - [x] Privacy policy: paste the hosted URL. *(done 2026-10-27 in Play Console; see `docs/PLAY_UPLOAD.md` §A2)*
 - [x] Ads: "Yes, contains ads." *(done 2026-10-27 in Play Console; see `docs/PLAY_UPLOAD.md` §A2)*
 - [x] Data safety (draft in `store/DATA_SAFETY.md`): collected by AdMob = device IDs (advertising ID), app interactions, crash logs; for ads/analytics; encrypted in transit; health info NOT collected (water logs stay on the phone). Check against Google's current AdMob guidance. *(done 2026-10-27 in Play Console; see `docs/PLAY_UPLOAD.md` §A2)*
 - [x] Declare use of the advertising ID (`AD_ID`) permission. *(done 2026-10-27 in Play Console; see `docs/PLAY_UPLOAD.md` §A2)*
-- [ ] Health apps declaration (draft in `store/HEALTH_DECLARATION.md`): wellness / hydration tracking, not a medical device, no Health Connect.
+- [x] Health apps declaration (draft in `store/HEALTH_DECLARATION.md`): wellness / hydration tracking, not a medical device, no Health Connect. *(filed 2026-10-31: "Nutrition and weight management")*
 - [x] Content rating (IARC quiz, draft in `store/CONTENT_RATING.md`): no violence, no user content; expect Everyone / PEGI 3. *(rated 2026-10-27: Everyone / PEGI 3)*
 - [x] Target audience: 13+ (13-15, 16-17, 18+), not for children, no Families program. If reviewers say the cute plant appeals to kids, restate the adult wellness audience. *(done 2026-10-27 in Play Console; see `docs/PLAY_UPLOAD.md` §A2)*
 - [ ] Permissions check: only notifications, boot, vibrate, ad ID, internet; no exact alarms, no battery-optimization request.

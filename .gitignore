@@ -12,3 +12,6 @@ ios/
 
 # Real AdMob IDs (see docs/admob/)
 docs/admob/*.local.*
+
+# Google Cloud service-account keys (Play upload); never commit
+tactile-entry-*.json

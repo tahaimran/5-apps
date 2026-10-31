@@ -56,7 +56,7 @@ previewed in the Habits dev client (react-native-view-shot is optional there; sh
 
 ## 4. Google Play Console forms
 - [x] Target audience: ages 13–15, 16–17, 18+. Not for children, not in the Families program, "appeals to children" = No. *(done 2026-10-27 in Play Console; see `docs/PLAY_UPLOAD.md` §A2)*
-- [ ] Content rating (IARC questionnaire): trivia, no violence; expect Everyone / PEGI 3; ads = Yes. *(2026-10-27: profanity and substance references edited out of the bank, so language and substance answers are No; see `store/PLAY_CONSOLE.md` §3.4)* *(still to submit: answers in `docs/PLAY_UPLOAD.md` §A2)*
+- [x] Content rating (IARC questionnaire): trivia, no violence; expect Everyone / PEGI 3; ads = Yes. *(2026-10-27: profanity and substance references edited out of the bank, so language and substance answers are No; see `store/PLAY_CONSOLE.md` §3.4)* *(submitted 2026-10-31 with the answers in `docs/PLAY_UPLOAD.md` §A2: PEGI 3, ESRB Everyone 10+ "Violent References", USK 6+, ClassInd all ages)*
 - [x] Ads: Contains ads = Yes. In-app purchases: none. *(done 2026-10-27 in Play Console; see `docs/PLAY_UPLOAD.md` §A2)*
 - [x] Data safety: AdMob collects advertising ID, approximate location (from IP), app interactions and diagnostics, for advertising, analytics and fraud prevention; shared with Google ad partners; encrypted in transit; no account, so deletion = uninstall. No crash reporter (no Sentry). The app itself collects no personal info. *(done 2026-10-27 in Play Console; see `docs/PLAY_UPLOAD.md` §A2)*
 - [x] Advertising ID declaration: Yes. *(done 2026-10-27 in Play Console; see `docs/PLAY_UPLOAD.md` §A2)*

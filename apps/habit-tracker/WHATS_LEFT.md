@@ -19,7 +19,7 @@ Status (2026-10-09): the code checks pass (TypeScript has no errors, expo-doctor
 14. - [ ] TalkBack (Android's screen reader): go through onboarding → check-in → habit detail → settings.
 15. - [ ] Font size: set the phone's text size to the largest (about 1.6×) and look at every screen.
 16. - [ ] Reduced motion: turn on "Remove animations" in Android settings; confetti should be skipped but the toast still shows.
-17. - [ ] Register your own phone as a test device in AdMob so real ads never count as your own clicks.
+17. - [x] Register your own phone as a test device in AdMob so real ads never count as your own clicks. *(added 2026-10-31 as "Taha's Android phone")*
 
 ## 2. Set up money (AdMob)
 - [x] Create the app in AdMob (Android, not yet listed on Play).
@@ -34,7 +34,7 @@ Status (2026-10-09): the code checks pass (TypeScript has no errors, expo-doctor
   - [ ] `EXPO_PUBLIC_ADMOB_APP_OPEN_WARM` (app-open)
   - [ ] `EXPO_PUBLIC_ADMOB_THEME_UNLOCK` (rewarded; optional for now, premium themes are not built yet)
 - [x] In AdMob, set the max ad content rating to **T** and block sensitive categories.
-- [ ] Set up the GDPR consent message (EU privacy form) in AdMob → Privacy & messaging.
+- [x] Set up the GDPR consent message (EU privacy form) in AdMob → Privacy & messaging. *(published 2026-10-31, "EU consent - 5 apps")*
 - [x] Replace `pub-0000000000000000` in `store/app-ads.txt` with your publisher ID (AdMob → Settings → Account information).
 - [ ] Host `app-ads.txt` at the root of your developer website (e.g. `https://yoursite.com/app-ads.txt`) and wait for AdMob to verify it. *(hosted 2026-10-27 at https://www.tahaimran.com/app-ads.txt; what is left is the AdMob check once the app is live)*
 
@@ -45,12 +45,12 @@ Status (2026-10-09): the code checks pass (TypeScript has no errors, expo-doctor
 - [x] Get a developer website (needed for app-ads.txt and the Play listing) and a support email address. *(done 2026-10-27: https://www.tahaimran.com/ on Vercel; support email tahaimran.24@gmail.com)*
 
 ## 4. Google Play Console forms
-- [ ] Create the app, turn on Play App Signing (Google keeps the signing key), and add a service account (robot login for `eas submit`). *(apps created and Play App Signing accepted 2026-10-27; the service account is still to do)*
+- [ ] Create the app, turn on Play App Signing (Google keeps the signing key), and add a service account (robot login for `eas submit`). *(apps created and Play App Signing accepted 2026-10-27; service account added in Play Console 2026-10-31; still to point `eas.json` / EAS at its key)*
 - [x] Data safety: answer from `store/DATA_SAFETY.md`. You collect nothing yourself; the ads SDK collects device/advertising ID, app interactions, diagnostics and approximate location (from IP) for advertising, analytics and fraud prevention; encrypted in transit; no deletion request (no accounts). Double-check against Google's current AdMob guidance. *(done 2026-10-27 in Play Console; see `docs/PLAY_UPLOAD.md` §A2)*
 - [x] Ads: answer "Contains ads" = Yes, and declare the advertising ID (`AD_ID`) permission. *(done 2026-10-27 in Play Console; see `docs/PLAY_UPLOAD.md` §A2)*
 - [x] Content rating: decide how to handle the "No smoking" / "No alcohol" templates (see `store/CONTENT_RATING.md`). Answer truthfully; expected result is around Everyone / PEGI 3, maybe higher. Write the final answers into that file. *(decided 2026-10-27: the two templates were replaced, so all answers are No; see `store/PLAY_CONSOLE.md` §3.4)* *(rated 2026-10-27: Everyone / PEGI 3)*
 - [x] Target audience: 13+ (13–15, 16–17, 18+). Not for children; do not join the Families program. *(done 2026-10-27 in Play Console; see `docs/PLAY_UPLOAD.md` §A2)*
-- [ ] Health apps declaration: answer honestly for a general habit tracker (the plan doesn't cover this; check what Play asks).
+- [x] Health apps declaration: answer honestly for a general habit tracker (the plan doesn't cover this; check what Play asks). *(filed 2026-10-31: no health features)*
 - [x] Privacy policy: paste the hosted URL. *(done 2026-10-27 in Play Console; see `docs/PLAY_UPLOAD.md` §A2)*
 
 ## 5. Store listing

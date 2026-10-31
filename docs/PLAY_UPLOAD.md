@@ -55,9 +55,11 @@ in `docs/CLOSED_TESTING.md`; testers sign up at https://www.tahaimran.com/testin
       Exception: do not start contraction-timer's closed test before its clinical and legal reviews (section F).
 - [x] **Play App Signing** terms accepted when the apps were created (2026-10-27). Keystores are EAS-managed.
 - [ ] **Service account** for `eas submit`: create it in Google Cloud, grant it access in Play Console → Users and
-      permissions, and point EAS at its JSON key. Never commit the key.
+      permissions, and point EAS at its JSON key. Never commit the key. *(2026-10-31: created and active in Play Console
+      as `tahaimran5apps@tactile-entry-331005.iam.gserviceaccount.com`; still to upload the key to EAS with
+      `eas credentials` and keep the JSON out of the repo)*
 
-## A2. Done in the consoles (2026-10-27, through the browser)
+## A2. Done in the consoles (2026-10-27 and 2026-10-31, through the browser)
 
 | Where | What | State |
 |---|---|---|
@@ -65,18 +67,19 @@ in `docs/CLOSED_TESTING.md`; testers sign up at https://www.tahaimran.com/testin
 | Expo (EAS) | all `EXPO_PUBLIC_ADMOB_*` (39 values, from the AdMob console) | set, **production only** (preview/dev keep Google test ads), visibility sensitive |
 | Play Console | the 5 apps created with the final package names | done (Habits 4975095451855770129, Sipling 4973862907574760959, Word Search 4974372961015572305, Quizora 4974533183106744120, Contraction Timer 4973187995228226991) |
 | Play Console | Store settings: category, email, website | done, all 5 (tags not set yet) |
-| Play Console | Default store listing: title, short + full description, icon, feature graphic, 8 screenshots | saved as draft, all 5 |
+| Play Console | Default store listing: title, short + full description, icon, feature graphic, 8 screenshots | saved as draft, all 5. **Not complete:** the listing's Review step now asks for an AI asset declaration ("Don't label assets" or "Label assets as created or edited using AI"); owner picks, then Save |
 | Play Console | App content: privacy policy, ads, sign-in details (none), government (no), financial (none), advertising ID (advertising + fraud prevention), target audience, data safety | done, all 5 |
-| Play Console | Content rating (IARC) | done for Habits, Sipling, Word Search, Contraction Timer (Everyone / PEGI 3 / USK 0). **Quizora: not done** (see below) |
-| Play Console | Health apps declaration | **not done**: owner fills and signs (all 5 show it) |
-| AdMob | EU consent (GDPR) message | **not published**: the builder's Publish did not go through; redo by hand |
+| Play Console | Content rating (IARC) | done, all 5. Habits, Sipling, Word Search, Contraction Timer: Everyone / PEGI 3 / USK 0. Quizora (2026-10-31, answers below): PEGI 3, ESRB Everyone 10+ (Violent References), USK 6+ |
+| Play Console | Health apps declaration | done 2026-10-31: Habits, Word Search, Quizora "no health features"; Sipling "Nutrition and weight management"; Contraction Timer "Reproductive and sexual health" (no medical-device or clinical options). No regional requirements asked |
+| AdMob | EU consent (GDPR) message | published 2026-10-31 as "EU consent - 5 apps": the 5 current apps only, English, Consent + Manage options + **Do not consent** (on for every country) |
+| AdMob | Test device | added 2026-10-31: "Taha's Android phone" (Android, by advertising ID), so real ads on it are served as test ads |
 
-**Quizora content rating (owner):** category Game. Its history questions mention wars and assassinations, so the first
+**Quizora content rating (submitted 2026-10-31):** category Game. Its history questions mention wars and assassinations, so the first
 question ("references to violence") is **Yes** → tick "Violence or implied violence against humans" → setting Realistic,
 not pixelated/childlike, reactions Realistic, presented **Referred to**, blood None, not in a war setting, innocent
 characters No, fierce sounds No. Every other question No (as for Word Search).
 
-**AdMob EU consent message (owner):** Privacy & messaging → European regulations → Create → name it, Select apps →
+**AdMob EU consent message (published 2026-10-31):** Privacy & messaging → European regulations → Create → name it, Select apps →
 tick only the 5 current apps (not "Crickey world cup 2019", "Whats app cleaner", "4464646"), add each app's privacy URL
 from the table in §A, Confirm, then Publish and check it is listed.
 
