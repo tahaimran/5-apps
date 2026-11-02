@@ -59,20 +59,25 @@ in `docs/CLOSED_TESTING.md`; testers sign up at https://www.tahaimran.com/testin
       as `tahaimran5apps@tactile-entry-331005.iam.gserviceaccount.com`; still to upload the key to EAS with
       `eas credentials` and keep the JSON out of the repo)*
 
-## A2. Done in the consoles (2026-10-27 and 2026-10-31, through the browser)
+## A2. Done in the consoles (2026-10-27, 2026-10-31 and 2026-11-02)
 
 | Where | What | State |
 |---|---|---|
 | Expo (EAS) | `EXPO_PUBLIC_PRIVACY_POLICY_URL`, `EXPO_PUBLIC_CONTACT_EMAIL` | set, production + preview + development, all 5 |
 | Expo (EAS) | all `EXPO_PUBLIC_ADMOB_*` (39 values, from the AdMob console) | set, **production only** (preview/dev keep Google test ads), visibility sensitive |
 | Play Console | the 5 apps created with the final package names | done (Habits 4975095451855770129, Sipling 4973862907574760959, Word Search 4974372961015572305, Quizora 4974533183106744120, Contraction Timer 4973187995228226991) |
-| Play Console | Store settings: category, email, website | done, all 5 (tags not set yet) |
+| Play Console | Store settings: category, email, website, tags | done, all 5. Tags (2026-11-02, Play's fixed list has no "Habit tracker", "Offline" or "Single player"): Habits: Activity tracker, Calendar, Lifestyle, Productivity, Self-help · Sipling: Activity tracker, Food & drink, Health & fitness, Lifestyle, Self-help · Word Search: Brain training, Casual, Puzzle, Word, Word search · Quizora: Brain teaser, Brain training, Casual, Educational, Trivia · Contraction Timer: Activity tracker, Baby care, Clock alarm & timer, Health & fitness, Parenting |
 | Play Console | Default store listing: title, short + full description, icon, feature graphic, 8 screenshots | saved, all 5 (2026-10-31). AI asset declaration: **labelled as created or edited using AI**, every asset (icon, feature graphic, 8 screenshots). All 11 "Finish setting up" tasks are now complete for every app |
 | Play Console | App content: privacy policy, ads, sign-in details (none), government (no), financial (none), advertising ID (advertising + fraud prevention), target audience, data safety | done, all 5 |
 | Play Console | Content rating (IARC) | done, all 5. Habits, Sipling, Word Search, Contraction Timer: Everyone / PEGI 3 / USK 0. Quizora (2026-10-31, answers below): PEGI 3, ESRB Everyone 10+ (Violent References), USK 6+ |
 | Play Console | Health apps declaration | done 2026-10-31: Habits, Word Search, Quizora "no health features"; Sipling "Nutrition and weight management"; Contraction Timer "Reproductive and sexual health" (no medical-device or clinical options). No regional requirements asked |
 | AdMob | EU consent (GDPR) message | published 2026-10-31 as "EU consent - 5 apps": the 5 current apps only, English, Consent + Manage options + **Do not consent** (on for every country) |
 | AdMob | Test device | added 2026-10-31: "Taha's Android phone" (Android, by advertising ID), so real ads on it are served as test ads |
+| EAS + Play | Production builds 1.0.0 (versionCode 3) | built 2026-11-01 and submitted 2026-11-02 with `eas submit` to **Internal testing**, all 5. The first upload did **not** have to be manual: the service account could submit straight away |
+| Play Console | Internal testing testers | email list "Internal - Taha" (tahaimran.24@gmail.com) on all 5 tracks; all 5 tracks Active. Opt-in links: Habits https://play.google.com/apps/internaltest/4699962712438688747 · Sipling https://play.google.com/apps/internaltest/4701577562165538789 · Word Search https://play.google.com/apps/internaltest/4700006769043442793 · Quizora https://play.google.com/apps/internaltest/4700377348355744150 · Contraction Timer https://play.google.com/apps/internaltest/4699478399997122987 |
+| Local check | The 5 AABs (2026-11-02) | every 64-bit native library (52 per app, arm64-v8a + x86_64) has ELF LOAD alignment ≥ 16 KB; the manifest has the real AdMob app ID; the JS bundle has the real ad unit IDs and no `dev-*` routes |
+| Play Console | Pre-launch report | none yet: Play did not generate one for the internal-track uploads; it should come with the first closed-testing release |
+| Service account | Key file | moved out of the repo to `E:/5-App-Project/secrets/play-service-account.json`; each `apps/*/eas.json` `submit.production.android.serviceAccountKeyPath` points at it (`../../../secrets/play-service-account.json`). `.easignore` excludes key files so a build never uploads one |
 
 **Quizora content rating (submitted 2026-10-31):** category Game. Its history questions mention wars and assassinations, so the first
 question ("references to violence") is **Yes** → tick "Violence or implied violence against humans" → setting Realistic,
@@ -85,18 +90,19 @@ from the table in §A, Confirm, then Publish and check it is listed.
 
 ## B. Build and upload (per app)
 
-- [ ] **EAS quota:** the free Android build quota is used up until **2026-11-01** (it resets then). Five production
-      builds are needed; build only when the quota allows, or on a paid plan.
+- [x] **EAS quota:** reset 2026-11-01; the five production builds were made then.
 - [ ] **New icons and redesigns need a new native build.** The new launcher icons, splash, notification icons, fonts
       and native modules of the `feat/ui-polish` redesign exist only in builds made after them; the 2026-10-09 preview
       APKs show the old look. The production build includes them; check the icon on a real launcher from the
       internal-testing install.
-- [ ] Build: `cd apps/<app> && eas build --profile production --platform android` → an **AAB** (`eas.json`:
-      `app-bundle`, `autoIncrement` on).
-- [ ] **First upload is manual.** Create the app in Play Console and upload the first AAB by hand (Internal testing →
-      Create release); Google's API cannot submit to an app that has never had a release. After that:
-      `eas submit --platform android` (goes to the **internal** track, `eas.json` → `submit.production`).
-- [ ] Check the AAB is 16 KB page-size compatible (`zipalign -c -P 16 -v 4 app.aab`) and read the pre-launch report.
+- [x] Build: `cd apps/<app> && eas build --profile production --platform android` → an **AAB** (`eas.json`:
+      `app-bundle`, `autoIncrement` on). Done 2026-11-01 for all 5 (1.0.0, versionCode 3).
+- [x] **Upload:** `eas submit --platform android --profile production` (goes to the **internal** track, `eas.json` →
+      `submit.production`, key from `serviceAccountKeyPath`). A manual first upload turned out not to be needed
+      (2026-11-02, all 5 submitted this way).
+- [x] Check the AAB is 16 KB page-size compatible: done 2026-11-02 by reading the ELF alignment of every 64-bit `.so`
+      (zipalign is not installed here); all aligned.
+- [ ] Read the pre-launch report once Play generates one (expected with the first closed-testing release).
 - [ ] Promote internal → closed (12 testers, 14 days) → production at 20%, then 100% when crash-free users ≥ 99.5%.
 
 ## C. Play Console asset rules (check before uploading)

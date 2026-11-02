@@ -76,7 +76,7 @@ Install the preview APK, then check each item. Full list: `RELEASE.md` section 4
 - [x] **Data safety:** health data "not collected" (stays on the device). Disclose AdMob: advertising ID, approximate location (IP), app interactions, diagnostics, shared with Google for ads. Encrypted in transit: yes. Deletion: in-app "Delete all data". (Leave out Sentry unless you add it.) *(done 2026-10-27 in Play Console; see `docs/PLAY_UPLOAD.md` §A2)*
 - [x] **Content rating (IARC questionnaire):** health/reference tool, no user-generated content; expect Everyone / PEGI 3; mention pregnancy and birth topics honestly. *(rated 2026-10-27: Everyone / PEGI 3)*
 - [x] **Ads:** "Contains ads" = Yes. *(done 2026-10-27 in Play Console; see `docs/PLAY_UPLOAD.md` §A2)*
-- [ ] **Category:** Parenting. Tags: Pregnancy, Parenting, Baby care, Health tracker, Timer.
+- [x] **Category:** Parenting. Tags: Pregnancy, Parenting, Baby care, Health tracker, Timer. *(set 2026-11-02 from Play's fixed list: Activity tracker, Baby care, Clock alarm & timer, Health & fitness, Parenting; there is no "Pregnancy" tag)*
 - [ ] Add the developer website (where `app-ads.txt` lives), support email and privacy policy URL.
 
 ## 5. Store listing
@@ -88,9 +88,9 @@ Install the preview APK, then check each item. Full list: `RELEASE.md` section 4
 
 ## 6. Release steps
 - [x] Run `cd apps/contraction-timer && eas login && eas init`, and commit the new `projectId`. *(done 2026-10-09)*
-- [ ] Create the app in Play Console, turn on Play App Signing, and add a service account (a key that lets `eas submit` upload). *(apps created and Play App Signing accepted 2026-10-27; service account added in Play Console 2026-10-31; still to point `eas.json` / EAS at its key)*
-- [ ] Build: `eas build --profile production --platform android` (makes the AAB file Play needs).
-- [ ] Upload: `eas submit --platform android` (goes to the internal testing track).
+- [x] Create the app in Play Console, turn on Play App Signing, and add a service account (a key that lets `eas submit` upload). *(apps created and Play App Signing accepted 2026-10-27; service account added in Play Console 2026-10-31; still to point `eas.json` / EAS at its key)* *(2026-11-02: key moved to `E:/5-App-Project/secrets/`, `eas.json` → `serviceAccountKeyPath`)*
+- [x] Build: `eas build --profile production --platform android` (makes the AAB file Play needs). *(done 2026-11-01/02: 1.0.0, versionCode 3)* *(2026-11-02: all 52 64-bit native libraries are 16 KB aligned)*
+- [x] Upload: `eas submit --platform android` (goes to the internal testing track). *(submitted 2026-11-02; internal track Active, tester list "Internal - Taha")*
 - [ ] Read the pre-launch report in Play Console.
 - [ ] Do not start closed testing until the midwife and legal reviews are done.
 - [ ] Run closed testing with at least **12 testers for 14 days** (required for new personal accounts).

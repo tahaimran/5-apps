@@ -30,8 +30,10 @@
 - Decisions (2026-10-27): package names are final (`com.tahaimran.habittracker`, `.waterreminder`, `.wordsearch`,
   `.triviaquiz`, `.contractiontimer`); content edited for Everyone / PEGI 3; feedback email not declared in Data
   safety (`docs/PLAY_UPLOAD.md` §E). Each app has a Play Console paste sheet in `store/PLAY_CONSOLE.md`.
-- Next: each app's `WHATS_LEFT.md` (device
-  testing, real AdMob IDs in EAS, Play Console forms, closed testing).
+- Play (2026-11-02): all Play Console setup done; production 1.0.0 (versionCode 3) built and submitted with `eas submit`
+  to Internal testing for all 5 (tester list "Internal - Taha"). The Play service-account key lives outside the repo
+  (`../secrets/play-service-account.json`, referenced by each `eas.json`); never copy it back in. Status table: `docs/PLAY_UPLOAD.md` §A2.
+- Next: device testing from the internal-testing installs (each `WHATS_LEFT.md`), then closed testing (12 testers × 14 days).
 
 ## What this repo is
 An npm-workspaces monorepo of 5 Expo (React Native, TypeScript) Android apps monetized only by AdMob.

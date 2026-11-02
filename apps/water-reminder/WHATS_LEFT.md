@@ -64,7 +64,7 @@ Tip: to get a reminder soon, go to Settings and set "Wake up" to about 35 minute
 - [x] Run the Applyra metadata check on the new full description in `ASO.md` (it replaced misfiled Quizora trivia text; the old check result was for the wrong text). *(done 2026-10-26: valid)*
 
 ## 4. Google Play Console forms
-- [ ] Create the app, turn on Play App Signing, and add a service account so `eas submit` can upload. *(apps created and Play App Signing accepted 2026-10-27; service account added in Play Console 2026-10-31; still to point `eas.json` / EAS at its key)*
+- [x] Create the app, turn on Play App Signing, and add a service account so `eas submit` can upload. *(apps created and Play App Signing accepted 2026-10-27; service account added in Play Console 2026-10-31; still to point `eas.json` / EAS at its key)* *(2026-11-02: key moved to `E:/5-App-Project/secrets/`, `eas.json` → `serviceAccountKeyPath`)*
 - [x] Privacy policy: paste the hosted URL. *(done 2026-10-27 in Play Console; see `docs/PLAY_UPLOAD.md` §A2)*
 - [x] Ads: "Yes, contains ads." *(done 2026-10-27 in Play Console; see `docs/PLAY_UPLOAD.md` §A2)*
 - [x] Data safety (draft in `store/DATA_SAFETY.md`): collected by AdMob = device IDs (advertising ID), app interactions, crash logs; for ads/analytics; encrypted in transit; health info NOT collected (water logs stay on the phone). Check against Google's current AdMob guidance. *(done 2026-10-27 in Play Console; see `docs/PLAY_UPLOAD.md` §A2)*
@@ -82,9 +82,9 @@ Already there: title, short and full description (`ASO.md`), icon 512 px and fea
 - [ ] Re-read the listing for medical claims (there must be none).
 
 ## 6. Release steps
-- [ ] Build the release file: `eas build --profile production --platform android` (makes an AAB, Play's upload format).
-- [ ] Check the AAB is under 40 MB and its native libraries support 16 KB pages (newer Android phones require it).
-- [ ] Upload with `eas submit --platform android` (goes to the internal testing track).
+- [x] Build the release file: `eas build --profile production --platform android` (makes an AAB, Play's upload format). *(done 2026-11-01/02: 1.0.0, versionCode 3)*
+- [ ] Check the AAB is under 40 MB and its native libraries support 16 KB pages (newer Android phones require it). *(16 KB: all aligned, 2026-11-02. The AAB file is 85 MB because it holds 4 CPU types; check the per-phone download size in Play Console → App size)*
+- [x] Upload with `eas submit --platform android` (goes to the internal testing track). *(submitted 2026-11-02; internal track Active, tester list "Internal - Taha")*
 - [ ] Test the internal build on your phone with real ads switched off for you (test device) and read the pre-launch report.
 - [ ] Run closed testing with 12+ testers for 14 days in a row (required for new personal developer accounts).
 - [ ] Apply for production, then release to 20% of users.

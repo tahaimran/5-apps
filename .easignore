@@ -17,3 +17,13 @@ docs/admob/*.local.*
 .agents/
 .claude/
 skills-lock.json
+
+# Google Cloud service-account keys (Play upload); never upload with a build
+tactile-entry-*.json
+*service-account*.json
+
+# Local scratch files that must not ship (Expo Router would turn app/dev-*.tsx into routes)
+apps/contraction-timer/app/dev-*.tsx
+apps/contraction-timer/ct.png
+apps/water-reminder/wt*.PNG
+apps/habit-tracker/store/Untitled-*.md

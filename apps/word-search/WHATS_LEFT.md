@@ -64,7 +64,7 @@ Tip: in a development build, Settings → "Ad rules (development builds only)" s
 - [x] Run `eas login` and `eas init` in `apps/word-search` and commit the added `projectId`. *(done 2026-10-09)*
 
 ## 4. Google Play Console forms
-- [ ] Create the app, turn on Play App Signing, add a service account (robot login) for `eas submit`. *(apps created and Play App Signing accepted 2026-10-27; service account added in Play Console 2026-10-31; still to point `eas.json` / EAS at its key)*
+- [x] Create the app, turn on Play App Signing, add a service account (robot login) for `eas submit`. *(apps created and Play App Signing accepted 2026-10-27; service account added in Play Console 2026-10-31; still to point `eas.json` / EAS at its key)* *(2026-11-02: key moved to `E:/5-App-Project/secrets/`, `eas.json` → `serviceAccountKeyPath`)*
 - [x] Target audience: 18+ only; "Not designed for children"; not in the Families program. *(done 2026-10-27 in Play Console; see `docs/PLAY_UPLOAD.md` §A2)*
 - [x] Content rating (IARC questionnaire): puzzle/word game, no violence, no chat, no gambling → expect Everyone / PEGI 3. *(2026-10-27: EGGNOG and CIDER swapped out of the word lists; see `store/PLAY_CONSOLE.md` §3.4)* *(rated 2026-10-27: Everyone / PEGI 3)*
 - [x] Ads declaration: Contains ads = Yes. *(done 2026-10-27 in Play Console; see `docs/PLAY_UPLOAD.md` §A2)*
@@ -85,9 +85,9 @@ Still missing:
 - [ ] Look at the icon, adaptive icon and feature graphic on a real launcher and in the Play preview. New icon set (2026-10-26): it only shows on a phone after a new native build.
 
 ## 6. Release steps
-- [ ] Build the release file: `cd apps/word-search && eas build --profile production --platform android` (AAB, version number goes up by itself).
-- [ ] Check the AAB meets Play's 16 KB memory-page rule: `zipalign -c -P 16 -v 4 app.aab`.
-- [ ] Upload it: `eas submit --platform android` (goes to the internal testing track).
+- [x] Build the release file: `cd apps/word-search && eas build --profile production --platform android` (AAB, version number goes up by itself). *(done 2026-11-01/02: 1.0.0, versionCode 3)*
+- [x] Check the AAB meets Play's 16 KB memory-page rule: `zipalign -c -P 16 -v 4 app.aab`. *(2026-11-02: all 52 64-bit native libraries are 16 KB aligned)*
+- [x] Upload it: `eas submit --platform android` (goes to the internal testing track). *(submitted 2026-11-02; internal track Active, tester list "Internal - Taha")*
 - [ ] Install from internal testing, redo the key checks in section 1 with real ads, read the pre-launch report.
 - [ ] Run closed testing: 12 testers for 14 days in a row (required for new personal developer accounts).
 - [ ] Apply for production, then roll out in stages: 20% → 50% → 100%.

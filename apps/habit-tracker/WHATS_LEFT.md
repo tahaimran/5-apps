@@ -45,7 +45,7 @@ Status (2026-10-09): the code checks pass (TypeScript has no errors, expo-doctor
 - [x] Get a developer website (needed for app-ads.txt and the Play listing) and a support email address. *(done 2026-10-27: https://www.tahaimran.com/ on Vercel; support email tahaimran.24@gmail.com)*
 
 ## 4. Google Play Console forms
-- [ ] Create the app, turn on Play App Signing (Google keeps the signing key), and add a service account (robot login for `eas submit`). *(apps created and Play App Signing accepted 2026-10-27; service account added in Play Console 2026-10-31; still to point `eas.json` / EAS at its key)*
+- [x] Create the app, turn on Play App Signing (Google keeps the signing key), and add a service account (robot login for `eas submit`). *(apps created and Play App Signing accepted 2026-10-27; service account added in Play Console 2026-10-31; still to point `eas.json` / EAS at its key)* *(2026-11-02: key moved to `E:/5-App-Project/secrets/`, `eas.json` → `serviceAccountKeyPath`)*
 - [x] Data safety: answer from `store/DATA_SAFETY.md`. You collect nothing yourself; the ads SDK collects device/advertising ID, app interactions, diagnostics and approximate location (from IP) for advertising, analytics and fraud prevention; encrypted in transit; no deletion request (no accounts). Double-check against Google's current AdMob guidance. *(done 2026-10-27 in Play Console; see `docs/PLAY_UPLOAD.md` §A2)*
 - [x] Ads: answer "Contains ads" = Yes, and declare the advertising ID (`AD_ID`) permission. *(done 2026-10-27 in Play Console; see `docs/PLAY_UPLOAD.md` §A2)*
 - [x] Content rating: decide how to handle the "No smoking" / "No alcohol" templates (see `store/CONTENT_RATING.md`). Answer truthfully; expected result is around Everyone / PEGI 3, maybe higher. Write the final answers into that file. *(decided 2026-10-27: the two templates were replaced, so all answers are No; see `store/PLAY_CONSOLE.md` §3.4)* *(rated 2026-10-27: Everyone / PEGI 3)*
@@ -64,9 +64,9 @@ Still missing:
 
 ## 6. Release steps
 - [ ] Run the checks in `RELEASE.md` §1 before every build.
-- [ ] Build the store file: `eas build --profile production --platform android` (makes an AAB, the Play upload format).
-- [ ] Check the AAB supports 16 KB memory pages (a new Play requirement) with `zipalign` or bundletool, as in `RELEASE.md`.
-- [ ] Upload with `eas submit --platform android` (goes to the internal testing track).
+- [x] Build the store file: `eas build --profile production --platform android` (makes an AAB, the Play upload format). *(done 2026-11-01/02: 1.0.0, versionCode 3)*
+- [x] Check the AAB supports 16 KB memory pages (a new Play requirement) with `zipalign` or bundletool, as in `RELEASE.md`. *(2026-11-02: all 52 64-bit native libraries are 16 KB aligned)*
+- [x] Upload with `eas submit --platform android` (goes to the internal testing track). *(submitted 2026-11-02; internal track Active, tester list "Internal - Taha")*
 - [ ] Read Play's pre-launch report (automatic test on real phones) and fix anything it flags.
 - [ ] Run closed testing with at least 12 testers for 14 days (required for new personal developer accounts).
 - [ ] Apply for production, then roll out 20% → 50% → 100%, watching crash-free ≥ 99.5% and ANR (app freezes) < 0.3%.

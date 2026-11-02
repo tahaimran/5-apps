@@ -72,9 +72,9 @@ Already exist: title, short and full description (`ASO.md` §1), icon (`store/ic
 - [x] Set category to Trivia (Games). *(done 2026-10-27 in Play Console; see `docs/PLAY_UPLOAD.md` §A2)*
 
 ## 6. Release steps
-- [ ] Build the store file: `eas build --profile production --platform android` (makes an AAB, the file Play wants).
-- [ ] Upload it: `eas submit --platform android` (goes to the internal testing track).
-- [ ] Check the build targets the current Play API level and is 16 KB page-size compatible (a new Play requirement).
+- [x] Build the store file: `eas build --profile production --platform android` (makes an AAB, the file Play wants). *(done 2026-11-01/02: 1.0.0, versionCode 3)*
+- [x] Upload it: `eas submit --platform android` (goes to the internal testing track). *(submitted 2026-11-02; internal track Active, tester list "Internal - Taha")*
+- [x] Check the build targets the current Play API level and is 16 KB page-size compatible (a new Play requirement). *(Play accepted the upload; 16 KB: all aligned, 2026-11-02)*
 - [ ] Run a closed test with at least 12 testers for 14 days (required for new personal accounts), then apply for production.
 - [ ] Release to 20% of users, watch crashes for 48 hours (crash < 1.09%, freezes < 0.47%), then go to 100%.
 - [ ] Optional, for adding or fixing questions without a store update: `npx expo install expo-updates`, `eas update:configure`, set a `runtimeVersion`, then `eas update --channel production` (not set up yet).
